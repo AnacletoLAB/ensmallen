@@ -1,66 +1,13 @@
 use super::*;
 
 use indicatif::ProgressIterator;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use rayon::{iter::IntoParallelIterator, ThreadPool};
 use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use std::{collections::HashSet, sync::atomic::AtomicU32};
 use vec_rand::xorshift::xorshift as rand_u64;
-
-const NOT_PRESENT: u32 = u32::MAX;
-
-/// Returns a rayon thread pool handling Creation errors.
-///
-/// Getting a thread pool might return the error "Resource temporarly unavailable"
-/// if the number of processes currently on the system is more than what set in
-/// `ulimit -a`, which by default is 256851.
-///
-/// Moreover, we return an error if the number of selected CPUS is 1 or less.
-/// Because the algorithms which use the pool requires at least 2 threads, and
-/// we generally provide also an optimized single-thread version.
-fn get_thread_pool() -> Result<(usize, ThreadPool), String> {
-    let cpu_number = rayon::current_num_threads();
-
-    if cpu_number <= 1 {
-        return Err(concat!(
-            "Cannot execute the parallel connected_components method when",
-            " only a single CPU is made available.\n",
-            "This might be an erroroneus configuration of the envionment",
-            " variable RAYON_NUM_THREADS.\n",
-            "If you really want to compute the connected components with",
-            " these configurations, consider using random_spanning_arborescence_kruskal."
-        )
-        .to_string());
-    }
-
-    let mut attempts_left = 1_000_000;
-    loop {
-        match rayon::ThreadPoolBuilder::new()
-            .num_threads(cpu_number)
-            .build()
-        {
-            Ok(thread_pool) => return Ok((cpu_number, thread_pool)),
-            Err(internal_error) => {
-                if attempts_left == 0 {
-                    return Err(format!(
-                        concat!(
-                            "Unknown error while trying to allocate the thread pool for ",
-                            "executing the parallel connected components algorithm.\n",
-                            "In our experience this happens once in every 100 milions calls\n",
-                            "The interal error is {:?}."
-                        ),
-                        internal_error
-                    ));
-                }
-                let delay = std::time::Duration::from_millis(50);
-                std::thread::sleep(delay);
-                attempts_left -= 1;
-            }
-        }
-    }
-}
 
 /// # Implementation of algorithms relative to trees.
 ///
@@ -473,13 +420,11 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
     ///
     /// # Raises
-    /// * If this method is called on a directed graph.
     /// * If the system configuration does not allow for the creation of the thread pool.
     pub fn spanning_arborescence(
         &self,
         verbose: Option<bool>,
     ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_), String> {
-        self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
         let mut parents = vec![NOT_PRESENT; nodes_number];
@@ -496,8 +441,6 @@ impl Graph {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
 
-        // since we were able to build a stub tree with cpu.len() leafs,
-        // we spawn the treads and make anyone of them build the sub-trees.
         pool.scope(|s| {
             // for each leaf of the previous stub tree start a DFS keeping track
             // of which nodes we visited and updating accordingly the parents vector.

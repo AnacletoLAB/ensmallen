@@ -11,9 +11,7 @@ use std::sync::atomic::Ordering;
 
 impl Graph {
     /// Returns iterator over the unweighted degree centrality for all nodes.
-    pub fn iter_degree_centrality(
-        &self,
-    ) -> Result<impl Iterator<Item = f64> + '_, String> {
+    pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f64> + '_, String> {
         self.must_have_edges()?;
 
         let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f64 };
@@ -62,18 +60,12 @@ impl Graph {
     pub unsafe fn get_unchecked_closeness_centrality_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> f64 {
-        1.0 / self
-            .get_unchecked_breath_first_search_from_node_ids(
-                node_id,
-                None,
-                None,
-                Some(false),
-                Some(false),
-                Some(false),
-                None,
-            )
-            .total_distance as f64
+    ) -> Result<f64, String> {
+        Ok(1.0
+            / self
+                .get_unchecked_breath_first_search_from_node_ids(node_id, None, None)?
+                .into_par_iter_finite_distances()
+                .sum::<NodeT>() as f64)
     }
 
     /// Return closeness centrality of the requested node.
@@ -132,7 +124,7 @@ impl Graph {
     pub fn par_iter_closeness_centrality(
         &self,
         verbose: Option<bool>,
-    ) -> impl ParallelIterator<Item = f64> + '_ {
+    ) -> impl ParallelIterator<Item = Result<f64, String>> + '_ {
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -206,9 +198,8 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
-        self.par_iter_closeness_centrality(verbose)
-            .collect()
+    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Result<Vec<f64>, String> {
+        self.par_iter_closeness_centrality(verbose).collect()
     }
 
     /// Return closeness centrality for all nodes.
@@ -259,17 +250,18 @@ impl Graph {
     pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(
         &self,
         node_id: NodeT,
-    ) -> f64 {
-        self.get_unchecked_breath_first_search_from_node_ids(
-            node_id,
-            None,
-            None,
-            Some(false),
-            Some(false),
-            Some(false),
-            None,
-        )
-        .total_harmonic_distance
+    ) -> Result<f64, String> {
+        Ok(self
+            .get_unchecked_breath_first_search_from_node_ids(node_id, None, None)?
+            .into_par_iter_finite_distances()
+            .map(|distance| {
+                if distance != 0 {
+                    1.0 / distance as f64
+                } else {
+                    0.0
+                }
+            })
+            .sum())
     }
 
     /// Return harmonic centrality of the requested node.
@@ -313,7 +305,7 @@ impl Graph {
     pub fn par_iter_harmonic_centrality(
         &self,
         verbose: Option<bool>,
-    ) -> impl ParallelIterator<Item = f64> + '_ {
+    ) -> impl ParallelIterator<Item = Result<f64, String>> + '_ {
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
             verbose,
@@ -375,9 +367,8 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
-    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
-        self.par_iter_harmonic_centrality(verbose)
-            .collect()
+    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Result<Vec<f64>, String> {
+        self.par_iter_harmonic_centrality(verbose).collect()
     }
 
     /// Return harmonic centrality for all nodes.
