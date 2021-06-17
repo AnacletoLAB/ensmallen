@@ -4,7 +4,6 @@ use rayon::iter::ParallelIterator;
 
 /// # Transitivity.
 impl Graph {
-
     #[fuzz_type(iterations: Option<u8>)]
     /// Returns graph to the i-th transitivity closure iteration.
     ///
@@ -46,17 +45,13 @@ impl Graph {
                             self.get_unchecked_breath_first_search_from_node_ids(
                                 src_node_id,
                                 None,
-                                None,
-                                Some(false),
-                                Some(false),
-                                Some(true),
                                 iterations,
                             )
-                            .visited
                             .unwrap()
+                            .into_distances()
                             .into_iter()
                             .enumerate()
-                            .filter(|(_, flag)| *flag)
+                            .filter(|&(_, distance)| distance != NOT_PRESENT)
                             .map(move |(dst_node_id, _)| {
                                 Ok((src_node_id, dst_node_id as NodeT, None, None))
                             })
@@ -124,18 +119,14 @@ impl Graph {
                             self.get_unchecked_breath_first_search_from_node_ids(
                                 src_node_id,
                                 None,
-                                None,
-                                Some(true),
-                                Some(false),
-                                Some(false),
                                 iterations,
                             )
-                            .distances
                             .unwrap()
+                            .into_distances()
                             .into_iter()
                             .enumerate()
-                            .filter(move |(dst_node_id, distance)| {
-                                *distance != NodeT::MAX && src_node_id != *dst_node_id as NodeT
+                            .filter(move |&(dst_node_id, distance)| {
+                                distance != NOT_PRESENT && src_node_id != dst_node_id as NodeT
                             })
                             .map(move |(dst_node_id, distance)| {
                                 Ok((

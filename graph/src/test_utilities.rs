@@ -302,17 +302,13 @@ pub fn test_spanning_arborescence_bader(graph: &Graph, verbose: Option<bool>) {
     let random_kruskal_tree = graph
         .random_spanning_arborescence_kruskal(Some(42), None, verbose)
         .0;
-    if !graph.directed {
-        let spanning_arborescence_bader: Vec<(NodeT, NodeT)> =
-            graph.spanning_arborescence(verbose).unwrap().1.collect();
-        assert_eq!(
+    let spanning_arborescence_bader: Vec<(NodeT, NodeT)> =
+        graph.spanning_arborescence(verbose).unwrap().1.collect();
+    assert_eq!(
             spanning_arborescence_bader.len(), kruskal_tree.len(),
             "The number of extracted edges forming the spanning arborescence computed by the bader's algorithm does not match the one computed by kruskal. The graph report is:\n{:?}\nThe bader's tree is:\n{:?}\nThe kruskal's tree is:\n{:?}",
             graph.textual_report(), spanning_arborescence_bader, kruskal_tree,
         );
-    } else {
-        assert!(graph.spanning_arborescence(verbose).is_err());
-    }
     assert_eq!(random_kruskal_tree.len() as usize, kruskal_tree.len());
 }
 
@@ -682,10 +678,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<(),
     );
 
     for singleton_node_id in graph.iter_singleton_node_ids() {
-        assert!(
-            unsafe { graph.get_unchecked_node_degree_from_node_id(singleton_node_id) }
-                == 0
-        );
+        assert!(unsafe { graph.get_unchecked_node_degree_from_node_id(singleton_node_id) } == 0);
         assert!(unsafe { graph.is_unchecked_singleton_from_node_id(singleton_node_id) });
     }
 
@@ -1053,7 +1046,7 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
     // If the graph is empty the other tests on BFS make little sense
     if !graph.has_nodes() {
         assert!(graph
-            .get_breath_first_search_from_node_ids(0, None, None, None, None, None, None)
+            .get_breath_first_search_from_node_ids(0, None, None)
             .is_err());
         return Ok(());
     }
@@ -1065,18 +1058,16 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
             graph.iter_node_ids().for_each(|src_node_id| {
                 graph.iter_node_ids().for_each(|dst_node_id| unsafe {
                     // Check that the obtained results are simmetric
-                    let src_to_dst = graph
-                        .get_unchecked_minimum_path_node_ids_from_node_ids(
-                            src_node_id,
-                            dst_node_id,
-                            maximal_depth,
-                        );
-                    let dst_to_src = graph
-                        .get_unchecked_minimum_path_node_ids_from_node_ids(
-                            dst_node_id,
-                            src_node_id,
-                            maximal_depth,
-                        );
+                    let src_to_dst = graph.get_unchecked_minimum_path_node_ids_from_node_ids(
+                        src_node_id,
+                        dst_node_id,
+                        maximal_depth,
+                    );
+                    let dst_to_src = graph.get_unchecked_minimum_path_node_ids_from_node_ids(
+                        dst_node_id,
+                        src_node_id,
+                        maximal_depth,
+                    );
                     if src_node_id == dst_node_id {
                         assert!(src_to_dst.is_err());
                         assert!(dst_to_src.is_err());
@@ -1093,12 +1084,11 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
                         assert_eq!(src_to_dst.len(), dst_to_src.len());
                         assert_eq!(src_to_dst, dst_to_src.into_iter().rev().collect::<Vec<_>>());
                         // Test that the k-paths return a compatible result
-                        let kpaths = graph
-                            .get_unchecked_k_shortest_path_node_ids_from_node_ids(
-                                src_node_id,
-                                dst_node_id,
-                                5,
-                            );
+                        let kpaths = graph.get_unchecked_k_shortest_path_node_ids_from_node_ids(
+                            src_node_id,
+                            dst_node_id,
+                            5,
+                        );
                         let min_length = kpaths.into_iter().map(|path| path.len()).min().unwrap();
                         assert_eq!(min_length, src_to_dst.len());
                     }
@@ -2216,10 +2206,7 @@ pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(
                     .get_diameter(Some(false), verbose)
                     .unwrap()
                     .is_finite());
-                assert!(graph
-                    .get_diameter(Some(true), verbose)
-                    .unwrap()
-                    .is_finite());
+                assert!(graph.get_diameter(Some(true), verbose).unwrap().is_finite());
             }
         }
 
