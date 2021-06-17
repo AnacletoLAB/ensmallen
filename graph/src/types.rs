@@ -45,7 +45,7 @@ pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign + Hash {
 
 /// Automatically implement the methods needed to convert from and to usize
 /// for the given numerical type.
-macro_rules! impl_to_from_usize {
+macro_rules! macro_impl_to_from_usize {
     ($($ty:ty)*) => {
         $(
             impl ToFromUsize for $ty {
@@ -62,7 +62,7 @@ macro_rules! impl_to_from_usize {
     }
 }
 
-impl_to_from_usize!(u8 u16 u32 u64 usize);
+macro_impl_to_from_usize!(u8 u16 u32 u64 usize);
 
 use std::cell::UnsafeCell;
 

@@ -2,7 +2,21 @@ use super::*;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Extern{
-    pub body: String
+    pub visibility: Visibility,
+    pub doc: String,
+    pub attributes: Vec<Attribute>,
+    pub content: String
+}
+
+impl Default for Extern {
+    fn default() -> Self {
+        Extern {
+            doc: String::new(),
+            attributes: Vec::new(),
+            visibility: Visibility::Private,
+            content: String::new(),
+        }
+    }
 }
 
 impl CanParse for Extern {
@@ -18,13 +32,17 @@ impl Parse for Extern {
         if data.starts_with(b"crate"){
             data = skip_whitespace(&data[5..]);
             let (data, body) = split_at(data, b';');
-            return (data, Extern{body: String::from_utf8(body.to_vec()).unwrap()});
+            let mut result = Extern::default();
+            result.content = bytes_to_string(body);
+            return (data, result);
         }
 
         assert!(data.starts_with(b"\"C\""));
         data = skip_whitespace(&data[3..]);
         let (data, body) = get_next_matching(data, b'{', b'}');
 
-        (data, Extern{body: String::from_utf8(body.to_vec()).unwrap()})
+        let mut result = Extern::default();
+        result.content = bytes_to_string(body);
+        (data, result)
     }
 }

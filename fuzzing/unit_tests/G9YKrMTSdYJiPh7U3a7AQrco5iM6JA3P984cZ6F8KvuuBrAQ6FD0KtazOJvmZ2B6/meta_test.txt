@@ -1,0 +1,1203 @@
+MetaParams {
+    seed: 506382244953655047,
+    spanningarborescencekruskal: SpanningArborescenceKruskal {
+        verbose: Some(
+            true,
+        ),
+    },
+    spanningarborescence: SpanningArborescence {
+        verbose: Some(
+            true,
+        ),
+    },
+    connectedcomponents: ConnectedComponents {
+        verbose: Some(
+            true,
+        ),
+    },
+    getnodelabelpredictionminibatch: GetNodeLabelPredictionMiniBatch {
+        idx: 506381209866536952,
+        batch_size: Some(
+            117901063,
+        ),
+        include_central_node: Some(
+            true,
+        ),
+        return_edge_weights: Some(
+            true,
+        ),
+        max_neighbours: Some(
+            117901063,
+        ),
+    },
+    pariteredgepredictionmetrics: ParIterEdgePredictionMetrics {
+        normalize: Some(
+            true,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getokapibm25nodefeaturepropagation: GetOkapiBm25NodeFeaturePropagation {
+        features: [
+            [
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061705,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999590228546600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135992521609053260000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008988876904698533,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008313805000061395,
+                135999696916088060000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999697022771250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+                -246710687774582520000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+            ],
+        ],
+        iterations: Some(
+             115,
+        ),
+        maximal_distance: Some(
+            8319119876378817395,
+        ),
+        k1: Some(
+            135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+        ),
+        b: Some(
+            135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+        ),
+        include_central_node: None,
+        verbose: Some(
+            true,
+        ),
+    },
+    getokapibm25nodelabelpropagation: GetOkapiBm25NodeLabelPropagation {
+        iterations: Some(
+             115,
+        ),
+        maximal_distance: Some(
+            8319119876378817395,
+        ),
+        k1: Some(
+            135999696916777530000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0,
+        ),
+        b: Some(
+            0.0000000000000000000000000000000000000000009956582889377193,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    sortbyincreasingoutboundnodedegree: SortByIncreasingOutboundNodeDegree {
+        verbose: Some(
+            true,
+        ),
+    },
+    sortbydecreasingoutboundnodedegree: SortByDecreasingOutboundNodeDegree {
+        verbose: Some(
+            true,
+        ),
+    },
+    todot: ToDot {
+        use_node_names: Some(
+            true,
+        ),
+    },
+    remapfromnodeids: RemapFromNodeIds {
+        node_ids: [
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            253693711,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252644879,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+            252645135,
+        ],
+        verbose: None,
+    },
+    issingletonfromnodeid: IsSingletonFromNodeId {
+        node_id: 926103344,
+    },
+    issingletonwithselfloopsfromnodeid: IsSingletonWithSelfloopsFromNodeId {
+        node_id: 892680496,
+    },
+    hasnodetypeid: HasNodeTypeId {
+        node_type_id: 13361,
+    },
+    hasedgetypeid: HasEdgeTypeId {
+        edge_type_id: 12596,
+    },
+    hasedgefromnodeids: HasEdgeFromNodeIds {
+        src: 960051513,
+        dst: 960051257,
+    },
+    hasselfloopfromnodeid: HasSelfloopFromNodeId {
+        node_id: 960051513,
+    },
+    hasedgefromnodeidsandedgetypeid: HasEdgeFromNodeIdsAndEdgeTypeId {
+        src: 2341178251,
+        dst: 2341178251,
+        edge_type: Some(
+            35723,
+        ),
+    },
+    istrapnodefromnodeid: IsTrapNodeFromNodeId {
+        node_id: 2341178251,
+    },
+    getpreferentialattachmentfromnodeids: GetPreferentialAttachmentFromNodeIds {
+        source_node_id: 2341178251,
+        destination_node_id: 2341178251,
+        normalize: true,
+    },
+    getweightedpreferentialattachmentfromnodeids: GetWeightedPreferentialAttachmentFromNodeIds {
+        source_node_id: 2341178251,
+        destination_node_id: 2341178251,
+        normalize: true,
+    },
+    getjaccardcoefficientfromnodeids: GetJaccardCoefficientFromNodeIds {
+        source_node_id: 2341178251,
+        destination_node_id: 2341178251,
+    },
+    getadamicadarindexfromnodeids: GetAdamicAdarIndexFromNodeIds {
+        source_node_id: 2341178251,
+        destination_node_id: 2341178251,
+    },
+    getresourceallocationindexfromnodeids: GetResourceAllocationIndexFromNodeIds {
+        source_node_id: 2341178251,
+        destination_node_id: 2341178251,
+    },
+    getweightedresourceallocationindexfromnodeids: GetWeightedResourceAllocationIndexFromNodeIds {
+        source_node_id: 2341178251,
+        destination_node_id: 2341178251,
+    },
+    enable: Enable {
+        vector_sources: Some(
+            true,
+        ),
+        vector_destinations: Some(
+            true,
+        ),
+        vector_cumulative_node_degrees: Some(
+            true,
+        ),
+    },
+    getnumberoftriangles: GetNumberOfTriangles {
+        normalize: Some(
+            true,
+        ),
+        low_centrality: Some(
+            10055284024492657547,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    gettransitivity: GetTransitivity {
+        low_centrality: Some(
+            10055284024492657547,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getnumberoftrianglespernode: GetNumberOfTrianglesPerNode {
+        normalize: Some(
+            true,
+        ),
+        low_centrality: Some(
+            10055284024492657547,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    iterclusteringcoefficientpernode: IterClusteringCoefficientPerNode {
+        low_centrality: Some(
+            10055284024492657547,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getclusteringcoefficientpernode: GetClusteringCoefficientPerNode {
+        low_centrality: Some(
+            10055284024492657547,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getclusteringcoefficient: GetClusteringCoefficient {
+        low_centrality: Some(
+            10055284024492657547,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getaverageclusteringcoefficient: GetAverageClusteringCoefficient {
+        low_centrality: Some(
+            10016005571817999243,
+        ),
+        verbose: Some(
+            true,
+        ),
+    },
+    getminimumpathnodeidsfromnodeids: GetMinimumPathNodeIdsFromNodeIds {
+        src_node_id: 2341178251,
+        dst_node_id: 2341178251,
+        maximal_depth: Some(
+            2341178251,
+        ),
+    },
+    getkshortestpathnodeidsfromnodeids: GetKShortestPathNodeIdsFromNodeIds {
+        src_node_id: 2341178251,
+        dst_node_id: 2341178251,
+        k:  139,
+    },
+    geteccentricityfromnodeid: GetEccentricityFromNodeId {
+        node_id: 2341178251,
+    },
+    getweightedeccentricityfromnodeid: GetWeightedEccentricityFromNodeId {
+        node_id: 2341178251,
+        use_edge_weights_as_probabilities: Some(
+            true,
+        ),
+    },
+    getweightedminimumpathnodeidsfromnodeids: GetWeightedMinimumPathNodeIdsFromNodeIds {
+        src_node_id: 2341178251,
+        dst_node_id: 2341178251,
+        use_edge_weights_as_probabilities: Some(
+            true,
+        ),
+        maximal_depth: Some(
+            2341178251,
+        ),
+    },
+    getbreathfirstsearchfromnodeids: GetBreathFirstSearchFromNodeIds {
+        src_node_id: 2341178251,
+        compute_predecessors: Some(
+            true,
+        ),
+        maximal_depth: Some(
+            2341178251,
+        ),
+    },
+    getdijkstrafromnodeids: GetDijkstraFromNodeIds {
+        src_node_id: 2341178251,
+        maybe_dst_node_id: Some(
+            2341178251,
+        ),
+        maybe_dst_node_ids: Some(
+            [
+                2341178251,
+                1097279768,
+                409882929,
+            ],
+        ),
+        compute_predecessors: Some(
+            false,
+        ),
+        maximal_depth: None,
+        use_edge_weights_as_probabilities: None,
+    },
+    getdiameternaive: GetDiameterNaive {
+        ignore_infinity: None,
+        verbose: Some(
+            false,
+        ),
+    },
+    getdiameter: GetDiameter {
+        ignore_infinity: None,
+        verbose: Some(
+            false,
+        ),
+    },
+    getweighteddiameternaive: GetWeightedDiameterNaive {
+        ignore_infinity: None,
+        use_edge_weights_as_probabilities: Some(
+            false,
+        ),
+        verbose: None,
+    },
+    iteredgeidsfromnodeids: IterEdgeIdsFromNodeIds {
+        src: 2834134113,
+        dst: 4173463469,
+    },
+    iteredgenodeidsandedgetypeidfromedgetypeid: IterEdgeNodeIdsAndEdgeTypeIdFromEdgeTypeId {
+        edge_type_id: Some(
+            49820,
+        ),
+        directed: false,
+    },
+    iternodeidsandnodetypeidsfromnodetypeid: IterNodeIdsAndNodeTypeIdsFromNodeTypeId {
+        node_type_id: None,
+    },
+    iternodenamesandnodetypenamesfromnodetypeid: IterNodeNamesAndNodeTypeNamesFromNodeTypeId {
+        node_type_id: Some(
+            28349,
+        ),
+    },
+    iteredgenodenamesandedgetypenamefromedgetypeid: IterEdgeNodeNamesAndEdgeTypeNameFromEdgeTypeId {
+        edge_type_id: None,
+        directed: false,
+    },
+    gettransitiveclosure: GetTransitiveClosure {
+        iterations: None,
+        verbose: None,
+    },
+    getallshortestpaths: GetAllShortestPaths {
+        iterations: None,
+        verbose: None,
+    },
+    getweightedallshortestpaths: GetWeightedAllShortestPaths {
+        iterations: Some(
+             189,
+        ),
+        use_edge_weights_as_probabilities: None,
+        verbose: None,
+    },
+    getsourcenodeidfromedgeid: GetSourceNodeIdFromEdgeId {
+        edge_id: 8349629581565305784,
+    },
+    getdestinationnodeidfromedgeid: GetDestinationNodeIdFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    getsourcenodenamefromedgeid: GetSourceNodeNameFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    getdestinationnodenamefromedgeid: GetDestinationNodeNameFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    getnodenamesfromedgeid: GetNodeNamesFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    getnodeidsfromedgeid: GetNodeIdsFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    getedgeidfromnodeids: GetEdgeIdFromNodeIds {
+        src: 1936946035,
+        dst: 1936946035,
+    },
+    getnodeidsandedgetypeidfromedgeid: GetNodeIdsAndEdgeTypeIdFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    getnodeidsandedgetypeidandedgeweightfromedgeid: GetNodeIdsAndEdgeTypeIdAndEdgeWeightFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    gettopkcentralnodeids: GetTopKCentralNodeIds {
+        k: 1936946035,
+    },
+    getweightedtopkcentralnodeids: GetWeightedTopKCentralNodeIds {
+        k: 1936946035,
+    },
+    getnodedegreefromnodeid: GetNodeDegreeFromNodeId {
+        node_id: 1936946035,
+    },
+    getweightednodedegreefromnodeid: GetWeightedNodeDegreeFromNodeId {
+        node_id: 1936946035,
+    },
+    gettopkcentralnodenames: GetTopKCentralNodeNames {
+        k: 1936946035,
+    },
+    getnodetypeidfromnodeid: GetNodeTypeIdFromNodeId {
+        node_id: 1936946035,
+    },
+    getedgetypeidfromedgeid: GetEdgeTypeIdFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    getnodetypenamesfromnodeid: GetNodeTypeNamesFromNodeId {
+        node_id: 1936946035,
+    },
+    getedgetypenamefromedgeid: GetEdgeTypeNameFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    getedgetypenamefromedgetypeid: GetEdgeTypeNameFromEdgeTypeId {
+        edge_type_id: 29555,
+    },
+    getedgeweightfromedgeid: GetEdgeWeightFromEdgeId {
+        edge_id: 8319119876378817395,
+    },
+    getedgeweightfromnodeids: GetEdgeWeightFromNodeIds {
+        src: 1936946035,
+        dst: 1936946036,
+    },
+    getedgeweightfromnodeidsandedgetypeid: GetEdgeWeightFromNodeIdsAndEdgeTypeId {
+        src: 1936946035,
+        dst: 1936946035,
+        edge_type: Some(
+            29555,
+        ),
+    },
+    getnodenamefromnodeid: GetNodeNameFromNodeId {
+        node_id: 1936946035,
+    },
+    getedgenodenamesfromedgenodeids: GetEdgeNodeNamesFromEdgeNodeIds {
+        edge_node_ids: [
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                2004054899,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+            (
+                1936946035,
+                1936946035,
+            ),
+        ],
+    },
+    getedgecountfromedgetypeid: GetEdgeCountFromEdgeTypeId {
+        edge_type_id: Some(
+            29555,
+        ),
+    },
+    getnodecountfromnodetypeid: GetNodeCountFromNodeTypeId {
+        node_type_id: Some(
+            29555,
+        ),
+    },
+    getneighbournodeidsfromnodeid: GetNeighbourNodeIdsFromNodeId {
+        node_id: 1936946035,
+    },
+    getminmaxedgeidsfromnodeids: GetMinmaxEdgeIdsFromNodeIds {
+        src: 1936946035,
+        dst: 1936946035,
+    },
+    getedgeidfromnodeidsandedgetypeid: GetEdgeIdFromNodeIdsAndEdgeTypeId {
+        src: 1936946035,
+        dst: 1936946035,
+        edge_type: Some(
+            29555,
+        ),
+    },
+    getminmaxedgeidsfromsourcenodeid: GetMinmaxEdgeIdsFromSourceNodeId {
+        src: 1936946035,
+    },
+    getnodetypenamefromnodetypeid: GetNodeTypeNameFromNodeTypeId {
+        node_type_id: 29555,
+    },
+    filterfromids: FilterFromIds {
+        node_ids_to_keep: Some(
+            [
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                925919160,
+                1936945968,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                29555,
+            ],
+        ),
+        node_ids_to_filter: Some(
+            [
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                1936946035,
+                510684706,
+                4221609440,
+                1475503701,
+            ],
+        ),
+        node_type_ids_to_keep: Some(
+            [],
+        ),
+        node_type_ids_to_filter: Some(
+            [
+                Some(
+                    [
+                        13875,
+                        13105,
+                    ],
+                ),
+                Some(
+                    [],
+                ),
+            ],
+        ),
+        node_type_id_to_keep: None,
+        node_type_id_to_filter: None,
+        edge_ids_to_keep: None,
+        edge_ids_to_filter: Some(
+            [],
+        ),
+        edge_node_ids_to_keep: Some(
+            [
+                (
+                    3714189879,
+                    2886945928,
+                ),
+                (
+                    3681957052,
+                    4258530736,
+                ),
+            ],
+        ),
+        edge_node_ids_to_filter: Some(
+            [
+                (
+                    85524205,
+                    3089257139,
+                ),
+                (
+                    3274931781,
+                    2031045421,
+                ),
+            ],
+        ),
+        edge_type_ids_to_keep: None,
+        edge_type_ids_to_filter: Some(
+            [],
+        ),
+        min_edge_weight: None,
+        max_edge_weight: None,
+        filter_singleton_nodes: Some(
+            false,
+        ),
+        filter_singleton_nodes_with_selfloop: None,
+        filter_selfloops: Some(
+            false,
+        ),
+        filter_parallel_edges: Some(
+            true,
+        ),
+        verbose: Some(
+            false,
+        ),
+    },
+    dropunknownnodetypes: DropUnknownNodeTypes {
+        verbose: Some(
+            true,
+        ),
+    },
+    dropunknownedgetypes: DropUnknownEdgeTypes {
+        verbose: None,
+    },
+    dropsingletonnodes: DropSingletonNodes {
+        verbose: None,
+    },
+    dropsingletonnodeswithselfloops: DropSingletonNodesWithSelfloops {
+        verbose: Some(
+            false,
+        ),
+    },
+    dropdisconnectednodes: DropDisconnectedNodes {
+        verbose: None,
+    },
+    dropselfloops: DropSelfloops {
+        verbose: None,
+    },
+    dropparalleledges: DropParallelEdges {
+        verbose: None,
+    },
+    validatenodeid: ValidateNodeId {
+        node_id: 2579136342,
+    },
+    validatenodeids: ValidateNodeIds {
+        node_ids: [],
+    },
+    validateedgeid: ValidateEdgeId {
+        edge_id: 17506321826814554838,
+    },
+    validateedgeids: ValidateEdgeIds {
+        edge_ids: [],
+    },
+    validatenodetypeid: ValidateNodeTypeId {
+        node_type_id: None,
+    },
+    validatenodetypeids: ValidateNodeTypeIds {
+        node_type_ids: [],
+    },
+    validateedgetypeid: ValidateEdgeTypeId {
+        edge_type_id: None,
+    },
+    validateedgetypeids: ValidateEdgeTypeIds {
+        edge_type_ids: [],
+    },
+    pariterclosenesscentrality: ParIterClosenessCentrality {
+        verbose: None,
+    },
+    pariterweightedclosenesscentrality: ParIterWeightedClosenessCentrality {
+        use_edge_weights_as_probabilities: None,
+        verbose: None,
+    },
+    getclosenesscentrality: GetClosenessCentrality {
+        verbose: None,
+    },
+    getweightedclosenesscentrality: GetWeightedClosenessCentrality {
+        use_edge_weights_as_probabilities: None,
+        verbose: None,
+    },
+    pariterharmoniccentrality: ParIterHarmonicCentrality {
+        verbose: None,
+    },
+    pariterweightedharmoniccentrality: ParIterWeightedHarmonicCentrality {
+        use_edge_weights_as_probabilities: None,
+        verbose: None,
+    },
+    getharmoniccentrality: GetHarmonicCentrality {
+        verbose: None,
+    },
+    getweightedharmoniccentrality: GetWeightedHarmonicCentrality {
+        use_edge_weights_as_probabilities: None,
+        verbose: None,
+    },
+    getstresscentrality: GetStressCentrality {
+        normalize: None,
+        verbose: None,
+    },
+    getbetweennesscentrality: GetBetweennessCentrality {
+        normalize: None,
+        verbose: None,
+    },
+    geteigenvectorcentrality: GetEigenvectorCentrality {
+        maximum_iterations_number: None,
+        tollerance: None,
+    },
+    getweightedeigenvectorcentrality: GetWeightedEigenvectorCentrality {
+        maximum_iterations_number: None,
+        tollerance: None,
+    },
+    removeinplacenodetypeids: RemoveInplaceNodeTypeIds {
+        node_type_ids_to_remove: [],
+    },
+    removeinplaceedgetypeids: RemoveInplaceEdgeTypeIds {
+        edge_type_ids_to_remove: [],
+    },
+    removenodetypeid: RemoveNodeTypeId {
+        node_type_id: 62194,
+    },
+    removeedgetypeid: RemoveEdgeTypeId {
+        edge_type_id: 62194,
+    },
+    removeedgetypes: RemoveEdgeTypes {
+        verbose: None,
+    },
+    encodeedge: EncodeEdge {
+        src: 4076008178,
+        dst: 4076008178,
+    },
+    decodeedge: DecodeEdge {
+        edge: 17506321826814554866,
+    },
+    getnodereportfromnodeid: GetNodeReportFromNodeId {
+        node_id: 4076008178,
+    },
+    getconnectedcomponentsnumber: GetConnectedComponentsNumber {
+        verbose: None,
+    },
+    getsourcenodeids: GetSourceNodeIds {
+        directed: false,
+    },
+    getsourcenames: GetSourceNames {
+        directed: false,
+    },
+    getdestinationnodeids: GetDestinationNodeIds {
+        directed: false,
+    },
+    getdestinationnames: GetDestinationNames {
+        directed: false,
+    },
+    getedgenodeids: GetEdgeNodeIds {
+        directed: false,
+    },
+    getedgenodenames: GetEdgeNodeNames {
+        directed: false,
+    },
+    getedgenodeidswithunknownedgetypes: GetEdgeNodeIdsWithUnknownEdgeTypes {
+        directed: false,
+    },
+    getedgenodeidswithknownedgetypes: GetEdgeNodeIdsWithKnownEdgeTypes {
+        directed: false,
+    },
+    getedgenodenameswithunknownedgetypes: GetEdgeNodeNamesWithUnknownEdgeTypes {
+        directed: false,
+    },
+    getedgenodenameswithknownedgetypes: GetEdgeNodeNamesWithKnownEdgeTypes {
+        directed: false,
+    },
+    getnodeconnectedcomponentids: GetNodeConnectedComponentIds {
+        verbose: None,
+    },
+    getdenseweightedadjacencymatrix: GetDenseWeightedAdjacencyMatrix {
+        weight: None,
+    },
+    itersourcenodeids: IterSourceNodeIds {
+        directed: false,
+    },
+    paritersourcenodeids: ParIterSourceNodeIds {
+        directed: false,
+    },
+    iterdestinationnodeids: IterDestinationNodeIds {
+        directed: false,
+    },
+    pariterdestinationnodeids: ParIterDestinationNodeIds {
+        directed: false,
+    },
+    iteredgenodeids: IterEdgeNodeIds {
+        directed: false,
+    },
+    iteredges: IterEdges {
+        directed: false,
+    },
+    pariteredgenodeids: ParIterEdgeNodeIds {
+        directed: false,
+    },
+    pariteredges: ParIterEdges {
+        directed: false,
+    },
+    iteredgenodeidsandedgetypeid: IterEdgeNodeIdsAndEdgeTypeId {
+        directed: false,
+    },
+    iteredgenodenamesandedgetypename: IterEdgeNodeNamesAndEdgeTypeName {
+        directed: false,
+    },
+    pariteredgenodenamesandedgetypename: ParIterEdgeNodeNamesAndEdgeTypeName {
+        directed: false,
+    },
+    pariteredgenodeidsandedgetypeid: ParIterEdgeNodeIdsAndEdgeTypeId {
+        directed: false,
+    },
+    pariteredgenodenamesandedgetypenameandedgeweight: ParIterEdgeNodeNamesAndEdgeTypeNameAndEdgeWeight {
+        directed: false,
+    },
+    iteredgenodenamesandedgetypenameandedgeweight: IterEdgeNodeNamesAndEdgeTypeNameAndEdgeWeight {
+        directed: false,
+    },
+    pariteredgenodeidsandedgetypeidandedgeweight: ParIterEdgeNodeIdsAndEdgeTypeIdAndEdgeWeight {
+        directed: false,
+    },
+    iteredgenodeidsandedgetypeidandedgeweight: IterEdgeNodeIdsAndEdgeTypeIdAndEdgeWeight {
+        directed: false,
+    },
+    iteruniqueedgenodeids: IterUniqueEdgeNodeIds {
+        directed: false,
+    },
+    iteredgenodeidswithunknownedgetypes: IterEdgeNodeIdsWithUnknownEdgeTypes {
+        directed: false,
+    },
+    iteredgenodeidswithknownedgetypes: IterEdgeNodeIdsWithKnownEdgeTypes {
+        directed: false,
+    },
+    iteredgenodenameswithunknownedgetypes: IterEdgeNodeNamesWithUnknownEdgeTypes {
+        directed: false,
+    },
+    iteredgenodenameswithknownedgetypes: IterEdgeNodeNamesWithKnownEdgeTypes {
+        directed: false,
+    },
+    pariteredgenodeidswithunknownedgetypes: ParIterEdgeNodeIdsWithUnknownEdgeTypes {
+        directed: false,
+    },
+    pariteredgenodeidswithknownedgetypes: ParIterEdgeNodeIdsWithKnownEdgeTypes {
+        directed: false,
+    },
+    pariteredgenodenameswithunknownedgetypes: ParIterEdgeNodeNamesWithUnknownEdgeTypes {
+        directed: true,
+    },
+    pariteredgenodenameswithknownedgetypes: ParIterEdgeNodeNamesWithKnownEdgeTypes {
+        directed: false,
+    },
+    getlaplaciantransformedgraph: GetLaplacianTransformedGraph {
+        verbose: None,
+    },
+    getrandomwalknormalizedlaplaciantransformedgraph: GetRandomWalkNormalizedLaplacianTransformedGraph {
+        verbose: None,
+    },
+    getsymmetricnormalizedlaplaciantransformedgraph: GetSymmetricNormalizedLaplacianTransformedGraph {
+        verbose: None,
+    },
+    getsymmetricnormalizedtransformedgraph: GetSymmetricNormalizedTransformedGraph {
+        verbose: None,
+    },
+    getweightedlaplaciantransformedgraph: GetWeightedLaplacianTransformedGraph {
+        verbose: None,
+    },
+    getweightedsymmetricnormalizedlaplaciantransformedgraph: GetWeightedSymmetricNormalizedLaplacianTransformedGraph {
+        verbose: None,
+    },
+    getweightedsymmetricnormalizedtransformedgraph: GetWeightedSymmetricNormalizedTransformedGraph {
+        verbose: None,
+    },
+    getweightedrandomwalknormalizedlaplaciantransformedgraph: GetWeightedRandomWalkNormalizedLaplacianTransformedGraph {
+        verbose: None,
+    },
+    isconnected: IsConnected {
+        verbose: None,
+    },
+    touppertriangular: ToUpperTriangular {
+        verbose: None,
+    },
+    tolowertriangular: ToLowerTriangular {
+        verbose: None,
+    },
+    tomaindiagonal: ToMainDiagonal {
+        verbose: None,
+    },
+    toantidiagonal: ToAntiDiagonal {
+        verbose: None,
+    },
+    tobidiagonal: ToBidiagonal {
+        verbose: None,
+    },
+    toarrowhead: ToArrowhead {
+        verbose: None,
+    },
+    totransposed: ToTransposed {
+        verbose: None,
+    },
+    tocomplementary: ToComplementary {
+        verbose: None,
+    },
+    nodelabelholdout: NodeLabelHoldout {
+        train_size: -0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010900715865588752,
+        use_stratification: Some(
+            true,
+        ),
+        random_state: Some(
+            11212726789901884315,
+        ),
+    },
+    edgelabelholdout: EdgeLabelHoldout {
+        train_size: -0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010900715865557387,
+        use_stratification: Some(
+            true,
+        ),
+        random_state: Some(
+            11212726789901884315,
+        ),
+    },
+    randomsubgraph: RandomSubgraph {
+        nodes_number: 2610666395,
+        random_state: Some(
+            17506321826814554779,
+        ),
+        verbose: None,
+    },
+    from_vec: FromVecHarnessParams {
+        directed: false,
+        directed_edge_list: false,
+        ignore_duplicated_nodes: false,
+        ignore_duplicated_edges: false,
+        verbose: false,
+        numeric_edge_types_ids: false,
+        numeric_node_ids: false,
+        numeric_edge_node_ids: false,
+        numeric_node_types_ids: false,
+        has_node_types: false,
+        has_edge_types: false,
+        has_edge_weights: false,
+        edges: [
+            Ok(
+                (
+                    "ssssssssssssssssssssssssssss@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\u{0}\u{0}\u{0}\u{1}@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+                    "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+                    None,
+                    None,
+                ),
+            ),
+        ],
+        nodes: None,
+    },
+}

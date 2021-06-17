@@ -1,7 +1,23 @@
 use super::*;
 
 #[derive(Debug, Clone, PartialEq)]
-pub struct Use(pub String);
+pub struct Use {
+    pub visibility: Visibility,
+    pub doc: String,
+    pub attributes: Vec<Attribute>,
+    pub content: String,
+}
+
+impl Default for Use {
+    fn default() -> Self {
+        Use {
+            doc: String::new(),
+            attributes: Vec::new(),
+            visibility: Visibility::Private,
+            content: String::new(),
+        }
+    }
+}
 
 impl CanParse for Use{
     fn can_parse(data: &[u8]) -> bool {
@@ -12,24 +28,27 @@ impl CanParse for Use{
 impl Parse for Use {
     /// If the line starts with "use " parse everything until the cloumn.
     fn parse(mut data: &[u8]) -> (&[u8], Self) {
-        let mut result = String::new();
+        let mut content = String::new();
         // skip "use " and the whitespace
         data = skip_whitespace(&data[4..]);
     
         while data[0] != b';' {
-            result.push(next_char!(data) as char);
+            content.push(next_char!(data) as char);
         }
 
         // Skip the column
         data = skip_whitespace(&data[1..]);
 
-        (data, Use(result))
+        let mut result = Use::default();
+        result.content = content;
+        (data, result)
     }
 }
 
 impl From<Use> for String {
     fn from(data: Use) -> String {
-        data.0
+        // TODO! update viz to include visibility and other sutff
+        data.content
     }
 }
 

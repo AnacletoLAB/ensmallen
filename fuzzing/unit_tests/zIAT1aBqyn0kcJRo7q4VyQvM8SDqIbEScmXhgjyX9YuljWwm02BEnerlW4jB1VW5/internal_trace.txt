@@ -1,0 +1,14 @@
+Some(
+    [
+        "iter_unique_edge_type_names()",
+        "iter_one_hot_encoded_edge_type_ids()",
+        "iter_edge_node_ids_and_edge_type_id_from_edge_type_id(edge_type_id: None, directed: false)",
+        "get_maximum_node_types_number()",
+        "get_average_clustering_coefficient(low_centrality: None, verbose: None)",
+        "get_singleton_with_selfloops_node_ids()",
+        "get_singleton_with_selfloops_node_names()",
+        "iter_node_ids()",
+        "par_iter_edge_node_ids_with_known_edge_types(directed: false)",
+        "get_weighted_eigenvector_centrality(maximum_iterations_number: None, tollerance: None)",
+    ],
+)

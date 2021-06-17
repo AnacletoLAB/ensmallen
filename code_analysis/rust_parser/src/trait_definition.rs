@@ -3,7 +3,7 @@ use super::*;
 #[derive(Debug, Clone, PartialEq)]
 pub struct TraitDefinition{
     pub name: Type,
-    pub value: Type,
+    pub value: Option<Type>,
     pub visibility: Visibility,
     pub doc: String,
     pub attributes: Vec<Attribute>,
@@ -23,9 +23,12 @@ impl Parse for TraitDefinition {
         assert!(data.starts_with(b"trait"));
         data = &data[5..];
         let type_name = parse!(data,  Type);
-        assert!(data.starts_with(b":"));
-        data = &data[1..];
-        let type_value = parse!(data, Type);
+        let type_value = if data[0] == b':' {
+            data = &data[1..];
+            Some(parse!(data, Type))
+        } else  {
+            None
+        };
         assert!(data.starts_with(b"{"));
         let (data, body) = get_next_matching(data, b'{', b'}');
         (

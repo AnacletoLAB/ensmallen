@@ -60,5 +60,14 @@ pub enum Error {
     },
     MissingUnchecked{
         method_name: String,
-    }
+    },
+    MethodNameDoesNotMatchRegex{
+        method_name: String,
+        regexes: Vec<String>,
+    },
+    RegexSytnaxError{
+        source: String,
+        error_msg: String,
+    },
+    
 }

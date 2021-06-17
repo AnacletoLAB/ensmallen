@@ -1,0 +1,6 @@
+file,"/Workspace/Github/ensmallen_graph/graph/src/test_utilities.rs"
+line,1089
+col,25
+message,assertion failed: `(left == right)`
+  left: `[0, 2, 1]`,
+ right: `[0, 3, 1]`

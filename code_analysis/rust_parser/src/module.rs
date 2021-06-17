@@ -12,6 +12,7 @@ pub struct Module {
     pub consts: Vec<Const>,
     pub statics: Vec<Static>,
     pub impls: Vec<Impl>,
+    pub macros: Vec<Macro>,
     pub functions: Vec<Function>,
     pub externs: Vec<Extern>,
     pub mods: Vec<Module>,
@@ -49,11 +50,28 @@ impl Default for Module {
             consts: Vec::new(),
             statics: Vec::new(),
             impls: Vec::new(),
+            macros: Vec::new(),
             functions: Vec::new(),
             externs: Vec::new(),
             mods: Vec::new(),
         }
     }
+}
+
+/// standard parsing of statements
+macro_rules! maybe_parse {
+    ($data:expr, $doc:ident, $attrs:expr, $type:ty, $res_vector:expr) => {
+        if <$type>::can_parse($data) {
+            let (tmp_data, mut val) = <$type>::parse(skip_whitespace($data));
+            $data = skip_whitespace(tmp_data);
+            val.doc = $doc;
+            $doc = String::new();
+            val.attributes = $attrs;
+            $attrs = Vec::new();
+            $res_vector.push(val);
+            continue;
+        }
+    };
 }
 
 impl Parse for Module {
@@ -71,80 +89,9 @@ impl Parse for Module {
                 break;
             }
 
-            if Use::can_parse(data) {
-                result.uses.push(parse!(data, Use));
-                continue;
-            }
-            if Function::can_parse(data) {
-                let mut func = parse!(data, Function);
-                func.doc = doc;
-                doc = String::new();
-                func.attributes = attrs;
-                attrs = Vec::new();
-                result.functions.push(func);
-                continue;
-            }
-            if Struct::can_parse(data) {
-                let mut struc = parse!(data, Struct);
-                struc.doc = doc;
-                doc = String::new();
-                struc.attributes = attrs;
-                attrs = Vec::new();
-                result.structs.push(struc);
-                continue;
-            }
-            if Enum::can_parse(data) {
-                let mut struc = parse!(data, Enum);
-                struc.doc = doc;
-                doc = String::new();
-                struc.attributes = attrs;
-                attrs = Vec::new();
-                result.enums.push(struc);
-                continue;
-            }
-            if Const::can_parse(data) {
-                let mut current_const = parse!(data, Const);
-                current_const.doc = doc;
-                doc = String::new();
-                current_const.attributes = attrs;
-                attrs = Vec::new();
-                result.consts.push(current_const);
-                continue;
-            }
-            if Static::can_parse(data) {
-                let mut current_stat = parse!(data, Static);
-                current_stat.doc = doc;
-                doc = String::new();
-                current_stat.attributes = attrs;
-                attrs = Vec::new();
-                result.statics.push(current_stat);
-                continue;
-            }
-            if TypeDefinition::can_parse(data) {
-                let mut typedef = parse!(data, TypeDefinition);
-                typedef.doc = doc;
-                doc = String::new();
-                typedef.attributes = attrs;
-                attrs = Vec::new();
-                result.types.push(typedef);
-                continue;
-            }
-            if TraitDefinition::can_parse(data) {
-                let mut traitdef = parse!(data, TraitDefinition);
-                traitdef.doc = doc;
-                doc = String::new();
-                traitdef.attributes = attrs;
-                attrs = Vec::new();
-                result.traits.push(traitdef);
-                continue;
-            }
-            if Impl::can_parse(data) {
-                let mut current_impl = parse!(data, Impl);
-                current_impl.doc = doc;
-                doc = String::new();
-                current_impl.attributes = attrs;
-                attrs = Vec::new();
-                result.impls.push(current_impl);
+            if Attribute::can_parse(data){
+                let attr = parse!(data, Attribute);
+                attrs.push(attr);
                 continue;
             }
             if DocLine::can_parse(data) {
@@ -159,21 +106,23 @@ impl Parse for Module {
                 module_doc.push('\n');
                 continue;
             }
-            if Attribute::can_parse(data){
-                let attr = parse!(data, Attribute);
-                attrs.push(attr);
-                continue;
-            }
-            if Extern::can_parse(data){
-                let exter = parse!(data, Extern);
-                result.externs.push(exter);
-                continue;
-            }
             if data.starts_with(b"//") {
                 let (inner, _comment) = split_at(data, b'\n');
                 data = inner;
                 continue;
             }
+
+            maybe_parse!(data, doc, attrs, Function,        result.functions);
+            maybe_parse!(data, doc, attrs, Struct,          result.structs);
+            maybe_parse!(data, doc, attrs, Enum,            result.enums);
+            maybe_parse!(data, doc, attrs, Const,           result.consts);
+            maybe_parse!(data, doc, attrs, Static,          result.statics);
+            maybe_parse!(data, doc, attrs, TypeDefinition,  result.types);
+            maybe_parse!(data, doc, attrs, TraitDefinition, result.traits);
+            maybe_parse!(data, doc, attrs, Impl,            result.impls);
+            maybe_parse!(data, doc, attrs, Extern,          result.externs);
+            maybe_parse!(data, doc, attrs, Use,             result.uses);
+            maybe_parse!(data, doc, attrs, Macro,           result.macros);
 
             panic!("Cannot parse the following module line: {}", &String::from_utf8(data.to_vec()).unwrap()[..50]);
         }
