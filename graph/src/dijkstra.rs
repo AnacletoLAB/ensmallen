@@ -163,6 +163,10 @@ impl Graph {
                     'outer: loop {
                         let (node_id, depth) = 'inner: loop {
                             {
+                                if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                                    break 'outer;
+                                }
+
                                 for mut stack in
                                     (thread_id..(shared_stacks.len() + thread_id)).map(|id| {
                                         shared_stacks[id % shared_stacks.len()].lock().expect(
@@ -173,10 +177,6 @@ impl Graph {
                                     if let Some(stack_tuple) = stack.pop_front() {
                                         break 'inner stack_tuple;
                                     }
-                                }
-
-                                if active_nodes_number.load(Ordering::SeqCst) == 0 {
-                                    break 'outer;
                                 }
                             }
                         };
