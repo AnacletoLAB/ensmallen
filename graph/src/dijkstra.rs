@@ -1067,6 +1067,16 @@ impl Graph {
     }
 
     /// Returns approximated diameter and tentative low eccentricity node for an UNDIRECTED graph.
+    /// This method returns a lowerbound of the diameter by doing the following steps:
+    /// * Find the most central node
+    /// * Find the most distant node from the most central one (and get a first 
+    ///    approximation of the diameter lowerbound)
+    /// * Get the median node in this path
+    /// * Find the most distant node from the median node
+    /// * Find the most distant node form the last one, and get the second approx
+    ///     of the diameter lowerbound.
+    ///
+    /// This basically creates a "cross" that spans the graph.
     fn get_four_sweep(&self) -> Result<(NodeT, NodeT), String> {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let a1 = unsafe {
@@ -1118,7 +1128,10 @@ impl Graph {
                 "This method is not defined YET for directed graphs! We will add it in the future!"
             )
         }
+        // get the lowerbound of the diameter
         let (mut tentative_diameter, low_eccentricity_node) = self.get_four_sweep()?;
+        // find the distances of all the nodes from the node with low eccentricty,
+        // and thus with high centrality
         let distances = unsafe {
             self.get_unchecked_breath_first_search_from_node_ids(low_eccentricity_node, None, None)?
                 .into_distances()
@@ -1132,11 +1145,13 @@ impl Graph {
             "The central node eccentricity cannot be zero!"
         );
 
+        // 
         let mut distances_and_node_ids = distances
             .into_iter()
             .zip(self.iter_node_ids())
             .filter(|&(distance, _)| distance != NodeT::MAX && tentative_diameter < distance * 2)
             .collect::<Vec<(NodeT, NodeT)>>();
+
         distances_and_node_ids.par_sort_unstable_by(|(a, _), &(b, _)| b.cmp(a));
 
         let pb = get_loading_bar(

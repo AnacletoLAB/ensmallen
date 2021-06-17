@@ -4,7 +4,7 @@ use permutation::permutation;
 /// # Queries
 /// The naming convention we follow is:
 /// * `/get_(.+?)_from_(.+)/`
-/// * `/get_unchecked_(.+?)_from_(.+)/`
+/// * `/get_(.+?)_from_(.+)_unchecked/`
 impl Graph {
     #[no_inverse_method]
     /// Returns option with the weight of the given edge id.

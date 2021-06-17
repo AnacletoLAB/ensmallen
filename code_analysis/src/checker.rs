@@ -1,10 +1,13 @@
 use super::*;
 use std::fs;
 use std::sync::Mutex;
+use std::collections::HashSet;
 
 #[derive(Debug)]
 pub struct Checker{
     pub(crate) modules: Vec<Module>,
+
+    pub(crate) method_names: HashSet<String>,
 
     /// This doesn't requires an actual mutex because rust doesn't currently 
     /// support partial move yet, we need this because in all the checks we
@@ -14,8 +17,22 @@ pub struct Checker{
 
 impl Checker {
     pub fn new(modules: Vec<Module>) -> Checker {
+        let mut method_names = HashSet::new();
+
+        for module in &modules {
+            for imp in &module.impls {
+                if imp.struct_name != "Graph" {
+                    continue;
+                }
+                for method in &imp.methods{
+                    method_names.insert(method.name.clone());
+                }
+            }
+        }
+
         Checker{
             modules,
+            method_names,
             errors: Mutex::new(Vec::new()),
         }
     }
@@ -39,8 +56,6 @@ impl Checker {
         self.check_doc();
         self.check_names();
 
-        // if regexes in the impl doc, the methods MUST follow the rule, can be disable with #[ignore_regex_name]
-
         // getters
         // check common typos like edge -> egde whether -> wether, wheter, weather
         // the capture groups in the methods name regexes must be in the allowed terms list.
@@ -50,8 +65,6 @@ impl Checker {
         // if il metodo contiene _weighted_ deve esistere anche _ eccetto se con #[no_unweighted]
         // if il metodo contiene _ deve esistere anche _weighted_ eccetto se con #[no_weighted]
 
-        // if il metodo contiene known deve esistere anche unknown eccetto se con #[no_unknown]
-        // if il metodo contiene unknown deve esistere anche known eccetto se con #[no_known]
 
         // if il metodo contiene directed deve esistere anche undirected eccetto se con #[no_undirected]
         // if il metodo contiene undirected deve esistere anche directed eccetto se con #[no_directed]

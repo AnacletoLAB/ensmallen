@@ -4,8 +4,8 @@ use super::*;
 /// The naming convention for unchecked methods follows:
 /// * `/is_(.+?)_from_(.+)/`
 /// * `/has_(.+?)_from_(.+)/`
-/// * `/is_unchecked_(.+?)_from_(.+)/`
-/// * `/has_unchecked_(.+?)_from_(.+)/`
+/// * `/is_(.+?)_from_(.+)_unchecked/`
+/// * `/has_(.+?)_from_(.+)_unchecked/`
 impl Graph {
     /// Returns boolean representing if given node is a singleton.
     ///

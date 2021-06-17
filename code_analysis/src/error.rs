@@ -69,5 +69,12 @@ pub enum Error {
         source: String,
         error_msg: String,
     },
-    
+    WrongKeywordPositionInMethodName {
+        method_name: String,
+        keyword: String,
+    },
+    MissingDualMethod {
+        method_name: String,
+        keyword: String,
+    },
 }
