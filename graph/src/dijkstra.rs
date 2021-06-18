@@ -135,12 +135,14 @@ impl Graph {
     pub unsafe fn get_unchecked_breath_first_search_from_node_ids_sequential(
         &self,
         src_node_id: NodeT,
+        dst_node_id: Option<NodeT>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> ShortestPathsResultBFS {
         let compute_predecessors = compute_predecessors.unwrap_or(true);
 
         let nodes_number = self.get_nodes_number() as usize;
+        let mut found_destination = false;
 
         let mut parents: Option<Vec<NodeT>> = if compute_predecessors {
             let mut parents = vec![NOT_PRESENT; nodes_number];
@@ -152,7 +154,7 @@ impl Graph {
 
         let mut distances: Vec<NodeT> = vec![NOT_PRESENT; nodes_number];
         distances[src_node_id as usize] = 0;
-        
+
         let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back((src_node_id, 0));
 
@@ -166,10 +168,13 @@ impl Graph {
                     continue;
                 }
             }
-            
+
             // explore the neighbourhood of the current node
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 .for_each(|neighbour_node_id| {
+                    if found_destination {
+                        return;
+                    }
                     // If the node was not previously visited
                     if distances[neighbour_node_id as usize] == NOT_PRESENT {
                         // Set it's distance
@@ -180,15 +185,21 @@ impl Graph {
                             parents[neighbour_node_id as usize] = node_id;
                         }
 
+                        if let Some(dst_node_id) = dst_node_id {
+                            if neighbour_node_id == dst_node_id {
+                                found_destination = true;
+                            }
+                        }
+
                         // add the node to the nodes to explore
                         nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
                     }
                 });
+            if found_destination {
+                break;
+            }
         }
-        ShortestPathsResultBFS::new(
-            distances,
-            parents,
-        )
+        ShortestPathsResultBFS::new(distances, parents)
     }
 
     #[manual_binding]
@@ -240,7 +251,8 @@ impl Graph {
                     'outer: loop {
                         let (node_id, depth) = 'inner: loop {
                             {
-                                let currently_active_nodes_number = active_nodes_number.load(Ordering::Relaxed);
+                                let currently_active_nodes_number =
+                                    active_nodes_number.load(Ordering::Relaxed);
                                 if currently_active_nodes_number == 0 {
                                     break 'outer;
                                 }
@@ -320,8 +332,12 @@ impl Graph {
         if src_node_id == dst_node_id {
             return Err("The minimum path on a selfloop is not defined.".to_string());
         }
-        let bfs =
-            self.get_unchecked_breath_first_search_from_node_ids_sequential(src_node_id, None, maximal_depth);
+        let bfs = self.get_unchecked_breath_first_search_from_node_ids_sequential(
+            src_node_id,
+            Some(dst_node_id),
+            None,
+            maximal_depth,
+        );
 
         // If the distance is infinite, the destination node is not connected.
         if !bfs.has_path_to_node_id(dst_node_id) {
@@ -601,8 +617,11 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_eccentricity_from_node_id_sequential(&self, node_id: NodeT) -> NodeT {
-        self.get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None)
+    pub unsafe fn get_unchecked_eccentricity_from_node_id_sequential(
+        &self,
+        node_id: NodeT,
+    ) -> NodeT {
+        self.get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None, None)
             .into_eccentricity()
     }
 
@@ -656,8 +675,9 @@ impl Graph {
     /// # Raises
     /// * If the given node ID does not exist in the graph.
     pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
-        self.validate_node_id(node_id)
-            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id_sequential(node_id) })
+        self.validate_node_id(node_id).map(|node_id| unsafe {
+            self.get_unchecked_eccentricity_from_node_id_sequential(node_id)
+        })
     }
 
     /// Returns weighted eccentricity of the given node ID.
@@ -698,7 +718,9 @@ impl Graph {
     /// * If the given node name does not exist in the current graph instance.
     pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
         self.get_node_id_from_node_name(node_name)
-            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id_sequential(node_id) })
+            .map(|node_id| unsafe {
+                self.get_unchecked_eccentricity_from_node_id_sequential(node_id)
+            })
     }
 
     /// Returns weighted eccentricity of the given node name.
@@ -792,7 +814,12 @@ impl Graph {
         }
 
         let bfs: Option<ShortestPathsResultBFS> = maximal_depth.map(|md| {
-            self.get_unchecked_breath_first_search_from_node_ids_sequential(src_node_id, None, Some(md))
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(
+                src_node_id,
+                maybe_dst_node_id,
+                None,
+                Some(md),
+            )
         });
 
         let mut nodes_to_explore: DijkstraQueue =
@@ -1087,17 +1114,21 @@ impl Graph {
     pub fn get_breath_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
+        dst_node_id: Option<NodeT>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> Result<ShortestPathsResultBFS, String> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         unsafe {
-            Ok(self.get_unchecked_breath_first_search_from_node_ids_sequential(
-                src_node_id,
-                compute_predecessors,
-                maximal_depth,
-            ))
+            Ok(
+                self.get_unchecked_breath_first_search_from_node_ids_sequential(
+                    src_node_id,
+                    dst_node_id,
+                    compute_predecessors,
+                    maximal_depth,
+                ),
+            )
         }
     }
 
@@ -1159,7 +1190,7 @@ impl Graph {
     /// Returns approximated diameter and tentative low eccentricity node for an UNDIRECTED graph.
     /// This method returns a lowerbound of the diameter by doing the following steps:
     /// * Find the most central node
-    /// * Find the most distant node from the most central one (and get a first 
+    /// * Find the most distant node from the most central one (and get a first
     ///    approximation of the diameter lowerbound)
     /// * Get the median node in this path
     /// * Find the most distant node from the median node
@@ -1170,11 +1201,16 @@ impl Graph {
     fn get_four_sweep(&self) -> Result<(NodeT, NodeT), String> {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let a1 = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids_sequential(most_central_node_id, None, None)
-                .into_most_distant_node_id()
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(
+                most_central_node_id,
+                None,
+                None,
+                None,
+            )
+            .into_most_distant_node_id()
         };
         let (eccentricity_a1, b1) = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids_sequential(a1, None, None)
+            self.get_unchecked_breath_first_search_from_node_ids_parallel(a1, None, None)
                 .into_eccentricity_and_most_distant_node_id()
         };
         if a1 == b1 {
@@ -1186,11 +1222,11 @@ impl Graph {
         };
         let r2 = path[path.len() / 2];
         let a2 = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids_sequential(r2, None, None)
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(r2, None, None, None)
                 .into_most_distant_node_id()
         };
         let (eccentricity_a2, b2) = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids_sequential(a2, None, None)
+            self.get_unchecked_breath_first_search_from_node_ids_parallel(a2, None, None)
                 .into_eccentricity_and_most_distant_node_id()
         };
         let lower_bound_diameter = eccentricity_a1.max(eccentricity_a2);
@@ -1220,7 +1256,7 @@ impl Graph {
         }
 
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
-        if unsafe{self.is_unchecked_disconnected_from_node_id(most_central_node_id)} {
+        if unsafe { self.is_unchecked_disconnected_from_node_id(most_central_node_id) } {
             return Ok(0.0);
         }
 
@@ -1229,8 +1265,13 @@ impl Graph {
         // find the distances of all the nodes from the node with low eccentricty,
         // and thus with high centrality
         let distances = unsafe {
-            self.get_unchecked_breath_first_search_from_node_ids_sequential(low_eccentricity_node, None, None)
-                .into_distances()
+            self.get_unchecked_breath_first_search_from_node_ids_sequential(
+                low_eccentricity_node,
+                None,
+                None,
+                None,
+            )
+            .into_distances()
         };
         assert!(
             tentative_diameter != NodeT::MAX,
@@ -1250,7 +1291,7 @@ impl Graph {
             .filter(|&(distance, _)| distance != NodeT::MAX && tentative_diameter < distance * 2)
             .collect::<Vec<(NodeT, NodeT)>>();
 
-        // sort the nodes by distance, so that we will start checking from the 
+        // sort the nodes by distance, so that we will start checking from the
         // most distant ones which are the most probable to be an extreme of the
         // diameter
         distances_and_node_ids.par_sort_unstable_by(|(a, _), &(b, _)| b.cmp(a));
@@ -1312,8 +1353,10 @@ impl Graph {
         Ok(self
             .par_iter_node_ids()
             .progress_with(pb)
-            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id_sequential(node_id) })
-            .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
+            .map(|node_id| unsafe {
+                self.get_unchecked_eccentricity_from_node_id_sequential(node_id)
+            })
+            .filter(|&distance| !ignore_infinity || distance != NOT_PRESENT)
             .max()
             .unwrap_or(0) as f64)
     }
@@ -1424,6 +1467,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `src_node_name`: &str - Node name root of the tree of minimum paths.
+    /// * `dst_node_name`: Option<&str> - Destination node name.
     /// * `compute_predecessors`: Option<bool> - Whether to compute the vector of predecessors.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the DFS for.
 
@@ -1435,15 +1479,21 @@ impl Graph {
     pub fn get_breath_first_search_from_node_names(
         &self,
         src_node_name: &str,
+        dst_node_name: Option<&str>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
     ) -> Result<ShortestPathsResultBFS, String> {
         unsafe {
-            Ok(self.get_unchecked_breath_first_search_from_node_ids_sequential(
-                self.get_node_id_from_node_name(src_node_name)?,
-                compute_predecessors,
-                maximal_depth,
-            ))
+            Ok(
+                self.get_unchecked_breath_first_search_from_node_ids_sequential(
+                    self.get_node_id_from_node_name(src_node_name)?,
+                    dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
+                        Ok(Some(self.get_node_id_from_node_name(dst_node_name)?))
+                    })?,
+                    compute_predecessors,
+                    maximal_depth,
+                ),
+            )
         }
     }
 

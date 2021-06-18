@@ -45,6 +45,7 @@ impl Graph {
                             self.get_unchecked_breath_first_search_from_node_ids_sequential(
                                 src_node_id,
                                 None,
+                                None,
                                 iterations,
                             )
                             .into_distances()
@@ -117,6 +118,7 @@ impl Graph {
                         Some(
                             self.get_unchecked_breath_first_search_from_node_ids_sequential(
                                 src_node_id,
+                                None,
                                 None,
                                 iterations,
                             )

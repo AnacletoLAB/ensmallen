@@ -57,15 +57,11 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_closeness_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> f64 {
-        1.0
-            / self
-                .get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None)
-                .into_iter_finite_distances()
-                .sum::<NodeT>() as f64
+    pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+        1.0 / self
+            .get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None, None)
+            .into_iter_finite_distances()
+            .sum::<NodeT>() as f64
     }
 
     /// Return closeness centrality of the requested node.
@@ -247,12 +243,8 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> f64 {
-        self
-            .get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None)
+    pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+        self.get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None, None)
             .into_iter_finite_distances()
             .map(|distance| {
                 if distance != 0 {

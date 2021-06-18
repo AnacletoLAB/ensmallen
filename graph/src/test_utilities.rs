@@ -1050,7 +1050,7 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
     // If the graph is empty the other tests on BFS make little sense
     if !graph.has_nodes() {
         assert!(graph
-            .get_breath_first_search_from_node_ids(0, None, None)
+            .get_breath_first_search_from_node_ids(0, None, None, None)
             .is_err());
         return Ok(());
     }
@@ -2179,7 +2179,7 @@ pub fn test_graph_remapping(graph: &mut Graph, verbose: Option<bool>) -> Result<
 
 pub fn test_graph_diameter(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     // TODO! update this when we will support the graph diameter on directed graphs
-    let (n_of_components, _, biggest) = graph.get_connected_components_number(verbose);
+    let (n_of_components, _, _) = graph.get_connected_components_number(verbose);
 
     assert_eq!(
         graph.get_diameter_naive(Some(false), verbose),
