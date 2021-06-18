@@ -107,6 +107,30 @@ impl Graph {
             .collect()
     }
 
+    /// Raises an error if the graph contains unknown node types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain node types.
+    /// * If the graph contains unknown node types.
+    pub fn must_not_contain_unknown_node_types(&self) -> Result<(), String> {
+        if self.has_unknown_node_types()? {
+            return Err("The graph contains unknown node types.".to_string());
+        }
+        Ok(())
+    }
+
+    /// Raises an error if the graph contains unknown edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge types.
+    /// * If the graph contains unknown edge types.
+    pub fn must_not_contain_unknown_edge_types(&self) -> Result<(), String> {
+        if self.has_unknown_edge_types()? {
+            return Err("The graph contains unknown edge types.".to_string());
+        }
+        Ok(())
+    }
+
     /// Validates provided node type ID.
     ///
     /// # Arguments
@@ -360,6 +384,62 @@ impl Graph {
     }
 
     #[no_binding]
+    /// Raises an error if the graph does not have known node types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain any known node types.
+    pub fn must_have_known_node_types(&self) -> Result<(), String> {
+        if !self.has_known_node_types()? {
+            return Err("The current graph instance does contain any known node type.".to_string());
+        }
+        Ok(())
+    }
+
+    #[no_binding]
+    /// Raises an error if the graph does not have unknown node types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain any unknown node types.
+    pub fn must_have_unknown_node_types(&self) -> Result<(), String> {
+        if !self.has_unknown_node_types()? {
+            return Err(concat!(
+                "The current graph instance does contain any unknown node type.\n",
+                "Possibly you have forgotten to execute a node-label holdout?"
+            )
+            .to_string());
+        }
+        Ok(())
+    }
+
+    #[no_binding]
+    /// Raises an error if the graph does not have known edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain any known edge types.
+    pub fn must_have_known_edge_types(&self) -> Result<(), String> {
+        if !self.has_known_edge_types()? {
+            return Err("The current graph instance does contain any known edge type.".to_string());
+        }
+        Ok(())
+    }
+
+    #[no_binding]
+    /// Raises an error if the graph does not have unknown edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not contain any unknown edge types.
+    pub fn must_have_unknown_edge_types(&self) -> Result<(), String> {
+        if !self.has_unknown_edge_types()? {
+            return Err(concat!(
+                "The current graph instance does contain any unknown edge type.\n",
+                "Possibly you have forgotten to execute a edge-label holdout?"
+            )
+            .to_string());
+        }
+        Ok(())
+    }
+
+    #[no_binding]
     /// Raises an error if the graph does not have weights.
     ///
     /// # Example
@@ -394,7 +474,7 @@ impl Graph {
     ///
     /// ```rust
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, false, false, false);
-    /// # let graph_with_negative_weights = graph_with_weights.get_unweighted_laplacian_transformed_graph(Some(false));
+    /// # let graph_with_negative_weights = graph_with_weights.get_laplacian_transformed_graph(Some(false));
     /// assert!(graph_with_weights.must_have_positive_edge_weights().is_ok());
     /// assert!(graph_with_negative_weights.must_have_positive_edge_weights().is_err());
     /// ```

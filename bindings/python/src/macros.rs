@@ -1,7 +1,6 @@
-extern crate edit_distance;
-use edit_distance::edit_distance;
 use pyo3::types::PyDict;
 use std::collections::HashSet;
+use strsim::levenshtein;
 
 #[macro_export]
 macro_rules! normalize_kwargs {
@@ -123,7 +122,7 @@ pub fn validate_kwargs(kwargs: &PyDict, columns: &[&str]) -> Result<(), String> 
     for k in &keys {
         let (distance, column) = columns
             .iter()
-            .map(|col| (edit_distance(k, col), col))
+            .map(|col| (levenshtein(k, col), col))
             .min_by_key(|x| x.0)
             .unwrap();
 

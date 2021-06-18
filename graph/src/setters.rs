@@ -11,15 +11,7 @@ impl Graph {
     ///
     /// * `name`: String - Name of the graph.
     pub fn set_name(&mut self, name: String) {
-        self.invalidate_report();
         self.name = name;
-    }
-
-    /// Invalidate the cache for the textual report.
-    /// This should be called as the first line of every methods that either get
-    /// a mutable reference to self or get ownership of self.
-    pub(crate) fn invalidate_report(&self) {
-        *self.cached_report.write() = None;
     }
 
     /// Replace all edge types (if present) and set all the edge to edge_type.
@@ -57,7 +49,6 @@ impl Graph {
             )
             .to_string()
         })?;
-        self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
         vocabulary.insert(edge_type.into())?;
         vocabulary.build_reverse_mapping()?;
@@ -95,7 +86,6 @@ impl Graph {
         node_type: S,
     ) -> Result<&Graph, String> {
         self.must_have_nodes()?;
-        self.invalidate_report();
         let mut vocabulary = Vocabulary::default();
         vocabulary.insert(node_type.into())?;
         vocabulary.build_reverse_mapping()?;
@@ -137,7 +127,7 @@ impl Graph {
     ) -> Result<&Graph, String> {
         self.must_have_node_types()?;
 
-        // if the user passed no values, we won't modify the graph so we can 
+        // if the user passed no values, we won't modify the graph so we can
         // return ealry
         if node_type_ids_to_remove.is_empty() {
             return Ok(self);
@@ -145,57 +135,50 @@ impl Graph {
         // check that the values are in the range of node type ids
         self.validate_node_type_id(node_type_ids_to_remove.iter().max().cloned())?;
 
-        // if there are duplicated nodes it's probably an error 
+        // if there are duplicated nodes it's probably an error
         if node_type_ids_to_remove.len() != node_type_ids_to_remove.iter().unique().count() {
-            return Err("In the given vector of node type ids to remove there are duplicated values.".to_string());
+            return Err(
+                "In the given vector of node type ids to remove there are duplicated values."
+                    .to_string(),
+            );
         }
-
-        // we modify the graph so we must invalidate the report
-        self.invalidate_report();
-
 
         if let Some(node_types) = self.node_types.as_mut() {
             // compute the new node ids once the given ones are removed
             // we need this to keep a dense mapping.
-            let new_node_type_ids = 
-            unsafe{
-                node_types.unchecked_remove_values(node_type_ids_to_remove.clone())
-            };
+            let new_node_type_ids =
+                unsafe { node_types.unchecked_remove_values(node_type_ids_to_remove.clone()) };
 
             // Counter of how many new nodes have unknown type (aka how many nodes we removed)
             let new_unknown_nodes = AtomicU32::new(0);
 
             // Iter over each node and update its node
-            node_types
-                .ids
-                .par_iter_mut()
-                .for_each(|node_type_ids| {
-                    if let Some(ntis) = node_type_ids.as_mut() {
-                        // We remove the given node type if one was given.
-                        for node_type_id_to_remove in &node_type_ids_to_remove {
-                            if let Some(pos) = ntis.iter().position(|x| *x == *node_type_id_to_remove) {
-                                ntis.remove(pos);
-                            }
+            node_types.ids.par_iter_mut().for_each(|node_type_ids| {
+                if let Some(ntis) = node_type_ids.as_mut() {
+                    // We remove the given node type if one was given.
+                    for node_type_id_to_remove in &node_type_ids_to_remove {
+                        if let Some(pos) = ntis.iter().position(|x| *x == *node_type_id_to_remove) {
+                            ntis.remove(pos);
                         }
-
-                        // node type anymore, we replace its empty vector with a None.
-                        if ntis.is_empty() {
-                            *node_type_ids = None;
-                            new_unknown_nodes.fetch_add(1, Ordering::SeqCst);
-                            return;
-                        }
-
-                        // densify the mapping
-                        ntis.iter_mut()
-                            .for_each(|node_type_id| {
-                                if let Some(idx) = new_node_type_ids[*node_type_id as usize] {
-                                    *node_type_id = idx as NodeTypeT;
-                                } else {
-                                    unreachable!("This should not happen");
-                                }
-                            }); // If after we have removed the node type the node does not have any
                     }
-                });
+
+                    // node type anymore, we replace its empty vector with a None.
+                    if ntis.is_empty() {
+                        *node_type_ids = None;
+                        new_unknown_nodes.fetch_add(1, Ordering::SeqCst);
+                        return;
+                    }
+
+                    // densify the mapping
+                    ntis.iter_mut().for_each(|node_type_id| {
+                        if let Some(idx) = new_node_type_ids[*node_type_id as usize] {
+                            *node_type_id = idx as NodeTypeT;
+                        } else {
+                            unreachable!("This should not happen");
+                        }
+                    }); // If after we have removed the node type the node does not have any
+                }
+            });
 
             node_types.unknown_count += new_unknown_nodes.load(Ordering::SeqCst);
         }
@@ -247,7 +230,7 @@ impl Graph {
             .to_string()
         })?;
 
-        // if the user passed no values, we won't modify the graph so we can 
+        // if the user passed no values, we won't modify the graph so we can
         // return ealry
         if edge_type_ids_to_remove.is_empty() {
             return Ok(self);
@@ -256,27 +239,34 @@ impl Graph {
         // check that the values are in the range of edge type ids
         self.validate_edge_type_id(edge_type_ids_to_remove.iter().max().cloned())?;
 
-        // if there are duplicated edges it's probably an error 
+        // if there are duplicated edges it's probably an error
         if edge_type_ids_to_remove.len() != edge_type_ids_to_remove.iter().unique().count() {
-            return Err("In the given vector of edge type ids to remove there are duplicated values.".to_string());
+            return Err(
+                "In the given vector of edge type ids to remove there are duplicated values."
+                    .to_string(),
+            );
         }
-
-        self.invalidate_report();
 
         if let Some(edge_types) = self.edge_types.as_mut() {
             // compute the new edge ids once the given ones are removed
             // we need this to keep a dense mapping.
-            let new_edge_type_ids = 
-            unsafe{
-                edge_types.unchecked_remove_values(edge_type_ids_to_remove)
-            };
+            let new_edge_type_ids =
+                unsafe { edge_types.unchecked_remove_values(edge_type_ids_to_remove) };
 
             let new_unknown_edges = AtomicU64::new(0);
             edge_types
                 .ids
                 .par_iter_mut()
                 .for_each(|maybe_edge_type_id| {
-                    *maybe_edge_type_id = maybe_edge_type_id.and_then(|x| new_edge_type_ids[x as usize].map(|x| x as EdgeTypeT));
+                    *maybe_edge_type_id = maybe_edge_type_id.and_then(|x| {
+                        new_edge_type_ids[x as usize].map_or_else(
+                            || {
+                                new_unknown_edges.fetch_add(1, Ordering::SeqCst);
+                                None
+                            },
+                            |x| Some(x as EdgeTypeT),
+                        )
+                    });
                 });
             edge_types.unknown_count += new_unknown_edges.load(Ordering::SeqCst);
         }
@@ -448,7 +438,6 @@ impl Graph {
     ///
     pub fn remove_inplace_node_types(&mut self) -> Result<&Graph, String> {
         self.must_have_node_types()?;
-        self.invalidate_report();
         self.node_types = None;
         Ok(self)
     }
@@ -477,7 +466,6 @@ impl Graph {
     pub fn remove_inplace_edge_types(&mut self) -> Result<&Graph, String> {
         self.must_have_edge_types()?;
         self.must_not_be_multigraph()?;
-        self.invalidate_report();
         self.edge_types = None;
         Ok(self)
     }
@@ -507,7 +495,6 @@ impl Graph {
     ///
     pub fn remove_inplace_edge_weights(&mut self) -> Result<&Graph, String> {
         self.must_have_edge_weights()?;
-        self.invalidate_report();
         self.weights = None;
         Ok(self)
     }

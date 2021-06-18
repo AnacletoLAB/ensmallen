@@ -1,6 +1,5 @@
 use numpy::{PyArray, PyArray1, PyArray2};
-use pyo3::exceptions::PyTypeError;
-use pyo3::exceptions::PyValueError;
+use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use pyo3::wrap_pymodule;
@@ -24,9 +23,12 @@ mod types;
 pub(crate) use crate::types::*;
 mod walks;
 pub(crate) use crate::types::EnsmallenGraph;
-
-mod auto_generated_bindings;
 mod operators;
+
+// automatically generated files
+mod auto_generated_bindings;
+mod method_names_list;
+pub use method_names_list::*;
 
 #[pymodule]
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {

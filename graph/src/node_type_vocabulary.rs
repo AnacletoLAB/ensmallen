@@ -12,6 +12,11 @@ pub struct NodeTypeVocabulary {
     pub ids: Vec<Option<Vec<NodeTypeT>>>,
     pub vocabulary: Vocabulary<NodeTypeT>,
     pub counts: Vec<NodeT>,
+    pub min_count: NodeT,
+    pub max_count: NodeT,
+    /// Maximum number of node type given to any node.
+    /// TODO: update this value in a way that is always correct and minimal.
+    pub max_multilabel_count: NodeTypeT,
     pub unknown_count: NodeT,
     pub multilabel: bool,
 }
@@ -36,6 +41,9 @@ impl Default for NodeTypeVocabulary {
             ids: Vec::new(),
             vocabulary: Vocabulary::default(),
             counts: Vec::new(),
+            min_count: 0,
+            max_count: 0,
+            max_multilabel_count: 0,
             unknown_count: NodeT::from_usize(0),
             multilabel: false,
         }
@@ -56,6 +64,9 @@ impl NodeTypeVocabulary {
                     ids,
                     vocabulary: vocab,
                     counts: Vec::new(),
+                    min_count: 0,
+                    max_count: 0,
+                    max_multilabel_count: 0,
                     unknown_count: NodeT::from_usize(0),
                     multilabel,
                 };
@@ -79,6 +90,12 @@ impl NodeTypeVocabulary {
             }
         }
         self.counts = counts;
+        self.update_min_max_count();
+    }
+
+    fn update_min_max_count(&mut self) {
+        self.min_count = self.counts.iter().cloned().min().unwrap_or(0);
+        self.max_count = self.counts.iter().cloned().max().unwrap_or(0);
     }
 
     /// Computes the reverse terms mapping.
@@ -96,7 +113,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `maybe_values`: Option<Vec<S>> - The values to be inserted.
-    pub fn unchecked_insert_values<S: AsRef<str> + Into<String> + std::fmt::Debug>(
+    pub unsafe fn unchecked_insert_values<S: AsRef<str> + Into<String> + std::fmt::Debug>(
         &mut self,
         maybe_values: Option<Vec<S>>,
     ) -> Option<Vec<NodeTypeT>> {
@@ -109,6 +126,7 @@ impl NodeTypeVocabulary {
                     .collect::<Vec<NodeTypeT>>();
 
                 self.multilabel = self.multilabel || ids.len() > 1;
+                self.max_multilabel_count = self.max_multilabel_count.max(ids.len() as NodeTypeT);
 
                 // Push the sorted IDs
                 self.ids.push(Some(ids.clone()));
@@ -163,6 +181,7 @@ impl NodeTypeVocabulary {
                     ));
                 }
                 self.multilabel = self.multilabel || ids.len() > 1;
+                self.max_multilabel_count = self.max_multilabel_count.max(ids.len() as NodeTypeT);
                 // Push the sorted IDs
                 self.ids.push(Some(ids.clone()));
                 Some(ids)
@@ -185,8 +204,21 @@ impl NodeTypeVocabulary {
     }
 
     /// Returns number of minimum node-count.
-    pub fn min_node_type_count(&self) -> NodeT {
-        *self.counts.iter().min().unwrap_or(&0)
+    pub fn get_minimum_node_type_count(&self) -> NodeT {
+        self.min_count
+    }
+
+    /// Returns number of maximum node-count.
+    pub fn get_maximum_node_type_count(&self) -> NodeT {
+        self.max_count
+    }
+
+    /// Returns number of maximum multilabel count.
+    ///
+    /// This value is the maximum number of multilabel counts
+    /// that appear in any given node in the graph.
+    pub fn get_maximum_multilabel_count(&self) -> NodeTypeT {
+        self.max_multilabel_count
     }
 
     /// Returns number of unknown nodes.
@@ -260,24 +292,32 @@ impl NodeTypeVocabulary {
         self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
         self
     }
-    
+
     /// Remove a node type from the vocabulary
     ///
     /// # Safety
     /// If any of the given values to be removed to not exist in the vocabulary
     /// this method will panic.
-    pub unsafe fn unchecked_remove_values(&mut self, node_type_ids_to_remove: Vec<NodeTypeT>) -> Vec<Option<usize>>{
+    pub unsafe fn unchecked_remove_values(
+        &mut self,
+        node_type_ids_to_remove: Vec<NodeTypeT>,
+    ) -> Vec<Option<usize>> {
         // this assumes that the new ids are obtained by "removing" the values
         // so the new ids will keep the relative ordering between each others
-        self.counts = self.counts.iter().enumerate()
+        self.counts = self
+            .counts
+            .iter()
+            .enumerate()
             .filter_map(|(i, v)| {
                 if !node_type_ids_to_remove.contains(&(i as NodeTypeT)) {
                     Some(*v)
                 } else {
                     None
                 }
-            }).collect();
-
-        self.vocabulary.unchecked_remove_values(node_type_ids_to_remove)
+            })
+            .collect();
+        self.update_min_max_count();
+        self.vocabulary
+            .unchecked_remove_values(node_type_ids_to_remove)
     }
 }

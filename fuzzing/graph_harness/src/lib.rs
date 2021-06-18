@@ -20,6 +20,3 @@ pub use signal_handler::*;
 
 mod meta_test;
 pub use meta_test::*;
-
-mod fuzz_features;
-pub use fuzz_features::*;

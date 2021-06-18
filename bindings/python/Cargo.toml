@@ -29,7 +29,8 @@ env_logger = "0.8.1"
 graph = { path = "../../graph" }
 tags = { path = "../../graph/tags" }
 numpy = "0.13.1"
-edit-distance = "2.1.0"
+strsim = "0.10.0"
+markdown = "0.3"
 rayon = "1.5.0"
 ctrlc = "3.1.7"
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }

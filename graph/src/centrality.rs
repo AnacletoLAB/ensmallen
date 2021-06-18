@@ -11,14 +11,12 @@ use std::sync::atomic::Ordering;
 
 impl Graph {
     /// Returns iterator over the unweighted degree centrality for all nodes.
-    pub fn iter_unweighted_degree_centrality(
-        &self,
-    ) -> Result<impl Iterator<Item = f64> + '_, String> {
+    pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f64> + '_, String> {
         self.must_have_edges()?;
 
-        let max_degree = unsafe { self.get_unchecked_unweighted_max_node_degree() as f64 };
+        let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f64 };
         Ok(self
-            .iter_unweighted_node_degrees()
+            .iter_node_degrees()
             .map(move |degree| degree as f64 / max_degree))
     }
 
@@ -29,15 +27,15 @@ impl Graph {
         self.must_have_edges()?;
         self.must_have_positive_edge_weights()?;
 
-        let weighted_max_degree = self.get_weighted_max_node_degree()? as f64;
+        let weighted_max_degree = self.get_weighted_maximum_node_degree()? as f64;
         Ok(self
             .par_iter_weighted_node_degrees()?
             .map(move |degree| degree as f64 / weighted_max_degree))
     }
 
     /// Returns vector of unweighted degree centrality for all nodes.
-    pub fn get_unweighted_degree_centrality(&self) -> Result<Vec<f64>, String> {
-        Ok(self.iter_unweighted_degree_centrality()?.collect())
+    pub fn get_degree_centrality(&self) -> Result<Vec<f64>, String> {
+        Ok(self.iter_degree_centrality()?.collect())
     }
 
     /// Returns vector of weighted degree centrality for all nodes.
@@ -59,21 +57,11 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_closeness_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> f64 {
+    pub unsafe fn get_unchecked_closeness_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
         1.0 / self
-            .get_unchecked_breath_first_search_from_node_ids(
-                node_id,
-                None,
-                None,
-                Some(false),
-                Some(false),
-                Some(false),
-                None,
-            )
-            .3 as f64
+            .get_unchecked_breath_first_search_from_node_ids(node_id, None, None, None)
+            .into_iter_finite_distances()
+            .sum::<NodeT>() as f64
     }
 
     /// Return closeness centrality of the requested node.
@@ -114,7 +102,7 @@ impl Graph {
                 None,
                 Some(use_edge_weights_as_probabilities),
             )
-            .2;
+            .total_distance;
         if use_edge_weights_as_probabilities {
             total_distance
         } else {
@@ -129,7 +117,7 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn par_iter_unweighted_closeness_centrality(
+    pub fn par_iter_closeness_centrality(
         &self,
         verbose: Option<bool>,
     ) -> impl ParallelIterator<Item = f64> + '_ {
@@ -142,7 +130,7 @@ impl Graph {
         self.par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| unsafe {
-                self.get_unchecked_unweighted_closeness_centrality_from_node_id(node_id)
+                self.get_unchecked_closeness_centrality_from_node_id(node_id)
             })
     }
 
@@ -206,9 +194,8 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Centrality in Social Networks by Freeman](https://www.bebr.ufl.edu/sites/default/files/Centrality%20in%20Social%20Networks.pdf)
-    pub fn get_unweighted_closeness_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
-        self.par_iter_unweighted_closeness_centrality(verbose)
-            .collect()
+    pub fn get_closeness_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
+        self.par_iter_closeness_centrality(verbose).collect()
     }
 
     /// Return closeness centrality for all nodes.
@@ -256,20 +243,17 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_unweighted_harmonic_centrality_from_node_id(
-        &self,
-        node_id: NodeT,
-    ) -> f64 {
-        self.get_unchecked_breath_first_search_from_node_ids(
-            node_id,
-            None,
-            None,
-            Some(false),
-            Some(false),
-            Some(false),
-            None,
-        )
-        .5
+    pub unsafe fn get_unchecked_harmonic_centrality_from_node_id(&self, node_id: NodeT) -> f64 {
+        self.get_unchecked_breath_first_search_from_node_ids(node_id, None, None, None)
+            .into_iter_finite_distances()
+            .map(|distance| {
+                if distance != 0 {
+                    1.0 / distance as f64
+                } else {
+                    0.0
+                }
+            })
+            .sum()
     }
 
     /// Return harmonic centrality of the requested node.
@@ -299,7 +283,7 @@ impl Graph {
             None,
             Some(use_edge_weights_as_probabilities),
         )
-        .3
+        .total_harmonic_distance
     }
 
     /// Return parallel iterator over harmonic centrality for all nodes.
@@ -310,7 +294,7 @@ impl Graph {
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
     ///
-    pub fn par_iter_unweighted_harmonic_centrality(
+    pub fn par_iter_harmonic_centrality(
         &self,
         verbose: Option<bool>,
     ) -> impl ParallelIterator<Item = f64> + '_ {
@@ -323,7 +307,7 @@ impl Graph {
         self.par_iter_node_ids()
             .progress_with(pb)
             .map(move |node_id| unsafe {
-                self.get_unchecked_unweighted_harmonic_centrality_from_node_id(node_id)
+                self.get_unchecked_harmonic_centrality_from_node_id(node_id)
             })
     }
 
@@ -375,9 +359,8 @@ impl Graph {
     ///
     /// # References
     /// The metric is described in [Axioms for centrality by Boldi and Vigna](https://www.tandfonline.com/doi/abs/10.1080/15427951.2013.865686).
-    pub fn get_unweighted_harmonic_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
-        self.par_iter_unweighted_harmonic_centrality(verbose)
-            .collect()
+    pub fn get_harmonic_centrality(&self, verbose: Option<bool>) -> Vec<f64> {
+        self.par_iter_harmonic_centrality(verbose).collect()
     }
 
     /// Return harmonic centrality for all nodes.
@@ -581,12 +564,13 @@ impl Graph {
         centralities
     }
 
+    #[fuzz_type(maximum_iterations_number: Option<u8>)]
     /// Returns vector with unweighted eigenvector centrality.
     ///
     /// # Arguments
     /// * `maximum_iterations_number`: Option<usize> - The maximum number of iterations to consider.
     /// * `tollerance`: Option<f64> - The maximum error tollerance for convergence.
-    pub fn get_unweighted_eigenvector_centrality(
+    pub fn get_eigenvector_centrality(
         &self,
         maximum_iterations_number: Option<usize>,
         tollerance: Option<f64>,
@@ -643,6 +627,7 @@ impl Graph {
         ))
     }
 
+    #[fuzz_type(maximum_iterations_number: Option<u8>)]
     /// Returns vector with unweighted eigenvector centrality.
     ///
     /// # Arguments
@@ -658,7 +643,7 @@ impl Graph {
         let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
         if tollerance < f64::EPSILON {
             return Err(
-                "The tollerance must be a non-zero positive value bigger than epislon (1e-16)."
+                "The tollerance must be a non-zero positive value bigger than epsilon (1e-16)."
                     .to_string(),
             );
         }
@@ -670,6 +655,7 @@ impl Graph {
             vec![1.0 / self.get_nodes_number() as f64; self.get_nodes_number() as usize];
         for _ in 0..maximum_iterations_number {
             self.par_iter_node_ids().for_each(|src| {
+                // TODO: this can be done in a faster way
                 unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
                     .for_each(|dst| unsafe {
                         centralities[dst as usize].fetch_add(

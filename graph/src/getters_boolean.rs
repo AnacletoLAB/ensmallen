@@ -9,6 +9,13 @@ use super::*;
 /// * `/has_unchecked_(.+)/`
 /// * `/is_unchecked_(.+)/`.
 impl Graph {
+    /// Return if graph has name that is not the default one.
+    ///
+    /// TODO: use a default for the default graph name!
+    pub fn has_default_graph_name(&self) -> bool {
+        self.get_name() == "Graph"
+    }
+
     /// Return if the graph has any nodes.
     ///
     /// # Example
@@ -94,7 +101,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool, String> {
-        Ok(self.get_min_edge_weight()? > 0.0 && self.get_max_edge_weight()? <= 1.0)
+        Ok(self.get_mininum_edge_weight()? > 0.0 && self.get_maximum_edge_weight()? <= 1.0)
     }
 
     /// Returns whether a graph has one or more weighted singleton nodes.
@@ -105,6 +112,21 @@ impl Graph {
     /// * If the graph does not contain edge weights.
     pub fn has_weighted_singleton_nodes(&self) -> Result<bool, String> {
         Ok(self.get_weighted_singleton_nodes_number()? > 0)
+    }
+
+    /// Returns whether the graph has constant weights.
+    ///
+    /// # Implementative details
+    /// If the minimum edge weight is closer than the maximum edge weight
+    /// then the f32 epsilon we consider the weights functionally constant.
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
+    pub fn has_constant_edge_weights(&self) -> Result<bool, String> {
+        Ok(
+            (self.get_maximum_edge_weight()? - self.get_mininum_edge_weight()?).abs()
+                < WeightT::EPSILON,
+        )
     }
 
     /// Returns boolean representing whether graph has negative weights.
@@ -120,7 +142,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain weights.
     pub fn has_negative_edge_weights(&self) -> Result<bool, String> {
-        self.get_min_edge_weight()
+        self.get_mininum_edge_weight()
             .map(|min_edge_weight| min_edge_weight < 0.0)
     }
 
@@ -217,12 +239,28 @@ impl Graph {
         Ok(self.get_unknown_node_types_number()? > 0)
     }
 
+    /// Returns whether there are known node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn has_known_node_types(&self) -> Result<bool, String> {
+        Ok(self.get_known_node_types_number()? > 0)
+    }
+
     /// Returns whether there are unknown edge types.
     ///
     /// # Raises
     /// * If the graph does not have node types.
     pub fn has_unknown_edge_types(&self) -> Result<bool, String> {
         Ok(self.get_unknown_edge_types_number()? > 0)
+    }
+
+    /// Returns whether there are known edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn has_known_edge_types(&self) -> Result<bool, String> {
+        Ok(self.get_known_edge_types_number()? > 0)
     }
 
     /// Returns whether the nodes have an homogenous node type.
@@ -297,6 +335,32 @@ impl Graph {
 
     /// Return if there are multiple edges between two nodes
     pub fn is_multigraph(&self) -> bool {
-        self.get_multigraph_edges_number() > 0
+        self.get_parallel_edges_number() > 0
+    }
+
+    /// Returns whether the node IDs are sorted by decreasing outbound node degree.
+    ///
+    /// # Implications
+    /// The implications of having a graph with node IDs sorted by the
+    /// outbound node degrees are multiple.
+    /// For instance, it makes it possible to create a NCE loss that
+    /// is able to better approximate a complete Softmax by sampling
+    /// the output labels using a Zipfian distribution, which is what
+    /// most graphs follow.
+    pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
+        self.nodes_are_sorted_by_decreasing_outbound_node_degree
+    }
+
+    /// Returns whether the node IDs are sorted by increasing outbound node degree.
+    ///
+    /// # Implications
+    /// The implications of having a graph with node IDs sorted by the
+    /// outbound node degrees are multiple.
+    /// For instance, it makes it possible to create a NCE loss that
+    /// is able to better approximate a complete Softmax by sampling
+    /// the output labels using a Zipfian distribution, which is what
+    /// most graphs follow.
+    pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
+        self.nodes_are_sorted_by_increasing_outbound_node_degree
     }
 }

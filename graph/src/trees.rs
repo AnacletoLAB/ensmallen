@@ -1,66 +1,13 @@
 use super::*;
 
 use indicatif::ProgressIterator;
+use rayon::iter::IntoParallelIterator;
 use rayon::iter::IntoParallelRefMutIterator;
 use rayon::iter::ParallelIterator;
-use rayon::{iter::IntoParallelIterator, ThreadPool};
 use std::sync::atomic::{AtomicBool, AtomicUsize, Ordering};
 use std::sync::{Arc, Mutex};
 use std::{collections::HashSet, sync::atomic::AtomicU32};
 use vec_rand::xorshift::xorshift as rand_u64;
-
-const NOT_PRESENT: u32 = u32::MAX;
-
-/// Returns a rayon thread pool handling Creation errors.
-///
-/// Getting a thread pool might return the error "Resource temporarly unavailable"
-/// if the number of processes currently on the system is more than what set in
-/// `ulimit -a`, which by default is 256851.
-///
-/// Moreover, we return an error if the number of selected CPUS is 1 or less.
-/// Because the algorithms which use the pool requires at least 2 threads, and
-/// we generally provide also an optimized single-thread version.
-fn get_thread_pool() -> Result<(usize, ThreadPool), String> {
-    let cpu_number = rayon::current_num_threads();
-
-    if cpu_number <= 1 {
-        return Err(concat!(
-            "Cannot execute the parallel connected_components method when",
-            " only a single CPU is made available.\n",
-            "This might be an erroroneus configuration of the envionment",
-            " variable RAYON_NUM_THREADS.\n",
-            "If you really want to compute the connected components with",
-            " these configurations, consider using random_spanning_arborescence_kruskal."
-        )
-        .to_string());
-    }
-
-    let mut attempts_left = 1_000_000;
-    loop {
-        match rayon::ThreadPoolBuilder::new()
-            .num_threads(cpu_number)
-            .build()
-        {
-            Ok(thread_pool) => return Ok((cpu_number, thread_pool)),
-            Err(internal_error) => {
-                if attempts_left == 0 {
-                    return Err(format!(
-                        concat!(
-                            "Unknown error while trying to allocate the thread pool for ",
-                            "executing the parallel connected components algorithm.\n",
-                            "In our experience this happens once in every 100 milions calls\n",
-                            "The interal error is {:?}."
-                        ),
-                        internal_error
-                    ));
-                }
-                let delay = std::time::Duration::from_millis(50);
-                std::thread::sleep(delay);
-                attempts_left -= 1;
-            }
-        }
-    }
-}
 
 /// # Implementation of algorithms relative to trees.
 ///
@@ -90,7 +37,7 @@ impl Graph {
         let updated_random_state = rand_u64(rand_u64(splitmix64(random_state)));
         (updated_random_state..edges_number + updated_random_state).filter_map(move |i| {
             let edge_id = i % edges_number;
-            let (src, dst) = unsafe{self.get_unchecked_node_ids_from_edge_id(edge_id)};
+            let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
             match src == dst || !self.directed && src > dst {
                 true => None,
                 false => Some((edge_id, src, dst)),
@@ -117,37 +64,39 @@ impl Graph {
             format!("Building random spanning tree for {}", self.name).as_ref(),
             self.get_directed_edges_number() as usize,
         );
-        let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> = if let (Some(uet), _) =
-            (undesired_edge_types, &self.edge_types)
-        {
-            // We cannot retrun two different iters that reference data owned by
-            // this function, so we clone it. This is fine since it should contains
-            // only few values
-            let uet_copy = uet.clone(); 
-            Box::new(
-                self.iter_edges_from_random_state(random_state)
-                    .filter_map(move |(edge_id, src, dst)| {
-                        if uet.contains(&unsafe{self.get_unchecked_edge_type_id_from_edge_id(edge_id)}) {
-                            return None;
-                        }
-                        Some((src, dst))
-                    })
-                    .chain(self.iter_edges_from_random_state(random_state).filter_map(
-                        move |(edge_id, src, dst)| {
-                            if !uet_copy.contains(&unsafe{self.get_unchecked_edge_type_id_from_edge_id(edge_id)})
-                            {
+        let result: Box<dyn Iterator<Item = (NodeT, NodeT)>> =
+            if let (Some(uet), _) = (undesired_edge_types, &self.edge_types) {
+                // We cannot retrun two different iters that reference data owned by
+                // this function, so we clone it. This is fine since it should contains
+                // only few values
+                let uet_copy = uet.clone();
+                Box::new(
+                    self.iter_edges_from_random_state(random_state)
+                        .filter_map(move |(edge_id, src, dst)| {
+                            if uet.contains(&unsafe {
+                                self.get_unchecked_edge_type_id_from_edge_id(edge_id)
+                            }) {
                                 return None;
                             }
                             Some((src, dst))
-                        },
-                    )),
-            )
-        } else {
-            Box::new(
-                self.iter_edges_from_random_state(random_state)
-                    .map(|(_, src, dst)| (src, dst)),
-            )
-        };
+                        })
+                        .chain(self.iter_edges_from_random_state(random_state).filter_map(
+                            move |(edge_id, src, dst)| {
+                                if !uet_copy.contains(&unsafe {
+                                    self.get_unchecked_edge_type_id_from_edge_id(edge_id)
+                                }) {
+                                    return None;
+                                }
+                                Some((src, dst))
+                            },
+                        )),
+                )
+            } else {
+                Box::new(
+                    self.iter_edges_from_random_state(random_state)
+                        .map(|(_, src, dst)| (src, dst)),
+                )
+            };
 
         result.progress_with(pb)
     }
@@ -221,7 +170,7 @@ impl Graph {
             // We iterate through the singleton nodes and the singleton nodes
             // with self-loops.
             self.iter_singleton_node_ids()
-                .chain(self.iter_singleton_with_selfloops_node_ids())
+                .chain(self.iter_singleton_nodes_with_selfloops_node_ids())
                 .enumerate()
                 .for_each(|(component_number, node_id)| {
                     components[node_id as usize] = component_number as NodeT;
@@ -267,14 +216,8 @@ impl Graph {
                     if src_component == dst_component {
                         return;
                     }
-                    let (node_id_to_update, min_component_id, max_component_id) =
-                        match src_component < dst_component {
-                            true => (dst, src_component, dst_component),
-                            false => (src, dst_component, src_component),
-                        };
-
-                    // We update the node to update with the new component ID.
-                    components[node_id_to_update as usize] = min_component_id;
+                    let min_component_id = src_component.min(dst_component);
+                    let max_component_id = src_component.max(dst_component);
 
                     // We merge the two component sizes.
                     component_sizes[min_component_id as usize] +=
@@ -303,17 +246,16 @@ impl Graph {
                                 // We need to invalidate the size of the component
                                 // we have remapped because otherwise we may count it
                                 // when computing the minimum component size.
-                                *component_size = NOT_PRESENT;
+                                *component_size = 0;
                             }
                         });
                 }
                 // If only one node has a component, the second node must be added.
                 _ => {
                     let (component_id, not_inserted_node) = match src_component == NOT_PRESENT {
-                        true => (dst_component, src),
-                        false => (src_component, dst),
+                        true => (components_remapping[dst_component as usize], src),
+                        false => (components_remapping[src_component as usize], dst),
                     };
-                    let component_id = components_remapping[component_id as usize];
                     component_sizes[component_id as usize] += 1;
                     max_component_size =
                         max_component_size.max(component_sizes[component_id as usize]);
@@ -345,7 +287,11 @@ impl Graph {
             min_component_size = match components_number {
                 1 => max_component_size,
                 2 => self.get_nodes_number() - max_component_size,
-                _ => component_sizes.into_par_iter().min().unwrap(),
+                _ => component_sizes
+                    .into_par_iter()
+                    .filter(|val| *val > 0)
+                    .min()
+                    .unwrap(),
             };
         }
 
@@ -474,7 +420,6 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar or not.
     ///
     /// # Raises
-    /// * If this method is called on a directed graph.
     /// * If the system configuration does not allow for the creation of the thread pool.
     pub fn spanning_arborescence(
         &self,
@@ -497,8 +442,6 @@ impl Graph {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
 
-        // since we were able to build a stub tree with cpu.len() leafs,
-        // we spawn the treads and make anyone of them build the sub-trees.
         pool.scope(|s| {
             // for each leaf of the previous stub tree start a DFS keeping track
             // of which nodes we visited and updating accordingly the parents vector.
@@ -534,7 +477,7 @@ impl Graph {
                                 break;
                             }
                             (*parents)[src] = src as NodeT;
-            
+
                             shared_stacks[0].lock().expect("The lock is poisoned from the panic of another thread")
                                 .push(src as NodeT);
                             active_nodes_number.fetch_add(1, Ordering::SeqCst);
@@ -643,6 +586,7 @@ impl Graph {
     ///  #     false,     // has_node_types
     ///  #     false,     // has_edge_types
     ///  #     false,     // has_edge_weights
+    ///  #     false,    // maybe_contains_invalid_weights
     ///  #     true,    // maybe_has_singleton
     ///  #     true,    // maybe_has_singleton_with_selfloops
     ///  #     true,    // maybe_has_node_traps

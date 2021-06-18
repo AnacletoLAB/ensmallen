@@ -4,9 +4,9 @@ use rayon::prelude::*;
 /// # Iterators
 /// The methods must follow the following naming convenction
 /// * `/iter_(.+?)_from_(.+)/`
-/// * `/iter_unchecked_(.+?)_from_(.+)/`
+/// * `/iter_(.+?)_from_(.+)_unchecked/`
 /// * `/par_iter_(.+?)_from_(.+)/`
-/// * `/par_iter_unchecked_(.+?)_from_(.+)/`
+/// * `/par_iter_(.+?)_from_(.+)_unchecked/`
 impl Graph {
     /// Returns range of the edge ids of edges starting from the given source node.
     ///

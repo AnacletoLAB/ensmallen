@@ -41,7 +41,7 @@ impl Graph {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
-        let only_from_same_component = only_from_same_component.unwrap_or(false);    
+        let only_from_same_component = only_from_same_component.unwrap_or(false);
         let mut random_state = random_state.unwrap_or(0xbadf00d);
         let verbose = verbose.unwrap_or(false);
 
@@ -222,7 +222,7 @@ impl Graph {
         pb1.finish();
 
         Graph::from_integer_unsorted(
-            negative_edges_hashset.into_iter().flat_map(|edge| {
+            negative_edges_hashset.into_par_iter().flat_map(|edge| {
                 let (src, dst) = self.decode_edge(edge);
                 if !self.is_directed() && src != dst {
                     vec![Ok((src, dst, None, None)), Ok((dst, src, None, None))]
@@ -235,6 +235,7 @@ impl Graph {
             None,
             self.directed,
             format!("Negative {}", self.name.clone()),
+            false,
             false,
             false,
             false,
@@ -292,8 +293,8 @@ impl Graph {
     /// * `include_all_edge_types`: bool - Whether to include all the edge types in the graph, if the graph is a multigraph.
     /// * `user_condition_for_validation_edges`: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool - The function to use to put edges in validation set.
     /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
-    /// * `train_graph_might_have_singletons`: bool - Whether it is known that the resulting training graph may have singletons.
-    /// * `train_graph_might_have_singletons_with_selfloops`: bool - Whether it is known that the resulting training graph may have singletons with selfloops.
+    /// * `train_graph_might_contain_singletons`: bool - Whether it is known that the resulting training graph may have singletons.
+    /// * `train_graph_might_contain_singletons_with_selfloops`: bool - Whether it is known that the resulting training graph may have singletons with selfloops.
     ///
     /// # Raises
     /// * If the sampled validation edges are not enough for the required validation edges number.
@@ -304,8 +305,8 @@ impl Graph {
         include_all_edge_types: bool,
         user_condition_for_validation_edges: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: Option<bool>,
-        train_graph_might_have_singletons: bool,
-        train_graph_might_have_singletons_with_selfloops: bool,
+        train_graph_might_contain_singletons: bool,
+        train_graph_might_contain_singletons_with_selfloops: bool,
     ) -> Result<(Graph, Graph), String> {
         let verbose = verbose.unwrap_or(false);
         let random_state = random_state.unwrap_or(0xbadf00d);
@@ -324,10 +325,9 @@ impl Graph {
         let mut last_length = 0;
 
         for (edge_id, (src, dst, edge_type)) in edge_indices.into_iter().map(|edge_id| {
-            (
-                edge_id,
-                unsafe{self.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id)},
-            )
+            (edge_id, unsafe {
+                self.get_unchecked_node_ids_and_edge_type_id_from_edge_id(edge_id)
+            })
         }) {
             // If the graph is undirected and we have extracted an edge that is a
             // simmetric one, we can skip this iteration.
@@ -349,9 +349,11 @@ impl Graph {
                 if !self.directed {
                     // we compute also the backward edge ids that are required.
                     valid_edges_bitmap.extend(self.compute_edge_ids_vector(
-                        unsafe{self.get_unchecked_edge_id_from_node_ids_and_edge_type_id(
-                            dst, src, edge_type,
-                        )},
+                        unsafe {
+                            self.get_unchecked_edge_id_from_node_ids_and_edge_type_id(
+                                dst, src, edge_type,
+                            )
+                        },
                         dst,
                         src,
                         include_all_edge_types,
@@ -413,8 +415,9 @@ impl Graph {
                 true,
                 self.has_edge_types(),
                 self.has_edge_weights(),
-                train_graph_might_have_singletons,
-                train_graph_might_have_singletons_with_selfloops,
+                false,
+                train_graph_might_contain_singletons,
+                train_graph_might_contain_singletons_with_selfloops,
                 true,
             )?,
             Graph::from_integer_sorted(
@@ -437,6 +440,7 @@ impl Graph {
                 true,
                 self.has_edge_types(),
                 self.has_edge_weights(),
+                false,
                 true,
                 self.has_selfloops(),
                 true,
@@ -509,7 +513,7 @@ impl Graph {
         if let Some(etis) = &edge_type_ids {
             let selected_edges_number: EdgeT = etis
                 .iter()
-                .map(|et| unsafe{self.get_unchecked_edge_count_from_edge_type_id(*et)} as EdgeT)
+                .map(|et| unsafe { self.get_unchecked_edge_count_from_edge_type_id(*et) } as EdgeT)
                 .sum();
             validation_edges_number = (selected_edges_number as f64 * (1.0 - train_size)) as EdgeT;
         }
@@ -852,11 +856,11 @@ impl Graph {
             // add the edges to the relative vectors
             edge_set[..train_size].iter().for_each(|edge_id| {
                 train_edge_types[*edge_id as usize] =
-                unsafe{self.get_unchecked_edge_type_id_from_edge_id(*edge_id)}
+                    unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) }
             });
             edge_set[train_size..].iter().for_each(|edge_id| {
                 test_edge_types[*edge_id as usize] =
-                unsafe{self.get_unchecked_edge_type_id_from_edge_id(*edge_id)}
+                    unsafe { self.get_unchecked_edge_type_id_from_edge_id(*edge_id) }
             });
         }
 
@@ -965,7 +969,9 @@ impl Graph {
             stack.push(*node);
             while !stack.is_empty() {
                 let src = stack.pop().unwrap();
-                for dst in unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)} {
+                for dst in
+                    unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(src) }
+                {
                     if !unique_nodes.contains(dst) && src != dst {
                         stack.push(dst);
                     }
@@ -1000,10 +1006,16 @@ impl Graph {
             .collect();
 
         Graph::from_integer_sorted(
-            edges_bitmap.iter().progress_with(pb3).map(|edge_id| unsafe {
-                Ok(self
-                    .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(edge_id))
-            }),
+            edges_bitmap
+                .iter()
+                .progress_with(pb3)
+                .map(|edge_id| unsafe {
+                    Ok(
+                        self.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+                            edge_id,
+                        ),
+                    )
+                }),
             edges_bitmap.len() as usize,
             self.nodes.clone(),
             self.node_types.clone(),
@@ -1014,6 +1026,7 @@ impl Graph {
             false,
             self.has_edge_types(),
             self.has_edge_weights(),
+            false,
             true,
             self.has_selfloops(),
             true,
@@ -1091,7 +1104,7 @@ impl Graph {
                 })
                 .collect::<Vec<EdgeT>>()
         } else {
-            self.iter_edge_ids(self.directed)
+            self.iter_edge_node_ids(self.directed)
                 .map(|(edge_id, _, _)| edge_id)
                 .collect::<Vec<EdgeT>>()
         };

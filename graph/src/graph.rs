@@ -4,7 +4,6 @@ use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
 use roaring::RoaringBitmap;
-use std::collections::HashMap;
 
 /// A graph representation optimized for executing random walks on huge graphs.
 ///
@@ -44,7 +43,7 @@ use std::collections::HashMap;
 ///    ).unwrap();
 ///
 /// // Enable Speed-ups but it uses more memory.
-/// cora.enable(Some(true), Some(true), Some(true), None).unwrap();
+/// cora.enable(Some(true), Some(true), Some(true)).unwrap();
 /// ```
 #[derive(Clone, Debug)]
 pub struct Graph {
@@ -90,6 +89,8 @@ pub struct Graph {
     pub(crate) min_node_degree: NodeT,
     /// Maximum outbound node degree.
     pub(crate) max_node_degree: NodeT,
+    // Id of one the nodes with max_node_degree.
+    pub(crate) most_central_node_id: NodeT,
     /// Minimum edge weight. Is None if weights are not defined.
     pub(crate) min_edge_weight: Option<WeightT>,
     /// Maximum edge weight. Is None if weights are not defined.
@@ -98,19 +99,19 @@ pub struct Graph {
     pub(crate) min_weighted_node_degree: Option<f64>,
     /// Maximum weighted node degree. Is None if weights are not defined.
     pub(crate) max_weighted_node_degree: Option<f64>,
+    // Total edge weights
+    pub(crate) total_weights: Option<f64>,
     /// Number of nodes with zero weighted node degree.
     pub(crate) weighted_singleton_nodes_number: Option<NodeT>,
+    /// Whether the node IDs are provided sorted by decreasing outbound node degree.
+    pub(crate) nodes_are_sorted_by_decreasing_outbound_node_degree: bool,
+    /// Whether the node IDs are provided sorted by increasing outbound node degree.
+    pub(crate) nodes_are_sorted_by_increasing_outbound_node_degree: bool,
     /// Graph name
     pub(crate) name: String,
     pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
     pub(crate) singleton_nodes_with_selfloops: Option<RoaringBitmap>,
     pub(crate) unique_sources: Option<EliasFano>,
-
-    /// Cache of the textual report. This is needed because in some of the bindings
-    /// (such as whitin jupyter) the textual report is called multiple times like\
-    /// every time the IDE tries to auto-complete.
-    /// This cache must be invalidated everytime the graph is modified.
-    pub(crate) cached_report: ClonableRwLock<Option<String>>,
 
     // /////////////////////////////////////////////////////////////////////////
     // Elias-Fano Caching related attributes
@@ -121,8 +122,6 @@ pub struct Graph {
     pub(crate) sources: Option<Vec<NodeT>>,
     /// Vector of cumulative_node_degrees to execute fast walks if required.
     pub(crate) cumulative_node_degrees: Option<Vec<EdgeT>>,
-    // Hashmap of cached destinations to execute faster walks if required.
-    pub(crate) cached_destinations: Option<HashMap<NodeT, Vec<NodeT>>>,
 }
 
 /// # Graph utility methods
@@ -149,9 +148,13 @@ impl Graph {
         singleton_nodes_with_selfloops: Option<RoaringBitmap>,
         min_node_degree: NodeT,
         max_node_degree: NodeT,
+        most_central_node_id: NodeT,
         min_weighted_node_degree: Option<f64>,
         max_weighted_node_degree: Option<f64>,
+        total_weights: Option<f64>,
         weighted_singleton_nodes_number: Option<NodeT>,
+        nodes_are_sorted_by_decreasing_outbound_node_degree: bool,
+        nodes_are_sorted_by_increasing_outbound_node_degree: bool,
     ) -> Graph {
         Graph {
             directed,
@@ -169,20 +172,22 @@ impl Graph {
             max_edge_weight,
             min_node_degree,
             max_node_degree,
+            most_central_node_id,
             node_types: node_types.map(|nts| nts.set_numeric_ids(false)),
             edge_types: edge_types.map(|ets| ets.set_numeric_ids(false)),
             nodes: nodes.set_numeric_ids(false),
             sources: None,
             destinations: None,
             cumulative_node_degrees: None,
-            cached_destinations: None,
             name: name.into(),
             connected_nodes,
             singleton_nodes_with_selfloops,
-            cached_report: ClonableRwLock::new(None),
             min_weighted_node_degree,
             max_weighted_node_degree,
+            total_weights,
             weighted_singleton_nodes_number,
+            nodes_are_sorted_by_decreasing_outbound_node_degree,
+            nodes_are_sorted_by_increasing_outbound_node_degree,
         }
     }
 

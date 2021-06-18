@@ -1,8 +1,6 @@
-use bitvec::prelude::*;
 use std::fmt::Display;
 use std::hash::Hash;
 use std::ops::AddAssign;
-use std::sync::{RwLock, RwLockReadGuard, RwLockWriteGuard};
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -30,22 +28,8 @@ pub type Triple = (NodeT, NodeT, Option<EdgeTypeT>);
 pub type Quadruple = (NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>);
 /// Quadrule of string edge data
 pub type StringQuadruple = (String, String, Option<String>, Option<WeightT>);
-/// Return type for shortest paths algorithms
-pub type ShortestPathsResultBFS = (
-    Option<Vec<NodeT>>,
-    Option<Vec<Option<NodeT>>>,
-    Option<BitVec<Lsb0, u8>>,
-    NodeT,
-    NodeT,
-    f64,
-);
-pub type ShortestPathsDjkstra = (
-    Vec<f64>,
-    Option<Vec<Option<NodeT>>>,
-    f64,
-    f64,
-    f64,
-);
+/// Symbol reserved to unmapped nodes for algoritms such as connected components.
+pub const NOT_PRESENT: NodeT = NodeT::MAX;
 
 /// Trait used for the Vocabulary class.
 /// It represent an unsigned integer that can be converted to and from usize.
@@ -61,7 +45,7 @@ pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign + Hash {
 
 /// Automatically implement the methods needed to convert from and to usize
 /// for the given numerical type.
-macro_rules! impl_to_from_usize {
+macro_rules! macro_impl_to_from_usize {
     ($($ty:ty)*) => {
         $(
             impl ToFromUsize for $ty {
@@ -78,35 +62,7 @@ macro_rules! impl_to_from_usize {
     }
 }
 
-impl_to_from_usize!(u8 u16 u32 u64 usize);
-
-#[derive(Debug)]
-pub(crate) struct ClonableRwLock<T: Clone + std::fmt::Debug> {
-    value: RwLock<T>,
-}
-
-impl<T: Clone + std::fmt::Debug> ClonableRwLock<T> {
-    pub fn new(val: T) -> ClonableRwLock<T> {
-        ClonableRwLock {
-            value: RwLock::new(val),
-        }
-    }
-
-    pub fn read(&self) -> RwLockReadGuard<T> {
-        self.value.read().unwrap()
-    }
-    pub fn write(&self) -> RwLockWriteGuard<T> {
-        self.value.write().unwrap()
-    }
-}
-
-impl<T: Clone + std::fmt::Debug> Clone for ClonableRwLock<T> {
-    fn clone(&self) -> ClonableRwLock<T> {
-        ClonableRwLock {
-            value: RwLock::new(self.read().clone()),
-        }
-    }
-}
+macro_impl_to_from_usize!(u8 u16 u32 u64 usize);
 
 use std::cell::UnsafeCell;
 

@@ -55,8 +55,7 @@ pub struct EdgeFileReaderParams {
     pub skip_edge_types_if_unavailable: Option<bool>,
     pub file: String,
 }
-
-pub fn from_csv_harness(data: FromCsvHarnessParams) {
+pub fn from_csv_harness_with_panic_handling(data: FromCsvHarnessParams) {
     let edges_path = graph::test_utilities::random_path(None);
     let nodes_path = graph::test_utilities::random_path(None);
 
@@ -74,6 +73,20 @@ pub fn from_csv_harness(data: FromCsvHarnessParams) {
             handle_panics_from_csv_once_loaded(Some(info), data_copy2.clone(), g_copy.clone());
         }));
 
+        let _ = graph::test_utilities::default_test_suite(&mut g, Some(false));
+    }
+
+    let _ = remove_file(edges_path);
+    let _ = remove_file(nodes_path);
+}
+
+pub fn from_csv_harness(data: FromCsvHarnessParams) {
+    let edges_path = graph::test_utilities::random_path(None);
+    let nodes_path = graph::test_utilities::random_path(None);
+
+    let graph = load_graph(&edges_path, &nodes_path, data);
+
+    if let Ok(mut g) = graph {
         let _ = graph::test_utilities::default_test_suite(&mut g, Some(false));
     }
 

@@ -22,6 +22,14 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         }
     }
 
+    pub fn with_capacity(capacity: usize) -> Vocabulary<IndexT> {
+        Vocabulary {
+            map: HashMap::with_capacity(capacity),
+            reverse_map: Vec::new(),
+            numeric_ids: false,
+        }
+    }
+
     fn normalize_value(&self, value: &str) -> Result<(String, IndexT), String> {
         Ok(if self.numeric_ids {
             let parsed_value = value.parse::<usize>().map_err(|_| {
@@ -58,7 +66,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub(crate) fn unchecked_insert(&mut self, value: String) -> IndexT {
+    pub unsafe fn unchecked_insert(&mut self, value: String) -> IndexT {
         let current_length = self.map.len();
         let numeric_ids = self.numeric_ids;
         *self.map.entry(value).or_insert_with_key(|value| {
@@ -75,7 +83,7 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     /// # Arguments
     ///
     /// * `value`: String - The value to be inserted.
-    pub(crate) fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<(IndexT, bool), String> {
+    pub fn insert<S: AsRef<str>>(&mut self, value: S) -> Result<(IndexT, bool), String> {
         let value = value.as_ref();
 
         if value.is_empty() {
@@ -192,26 +200,38 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         self
     }
 
-    /// Remove a value from the vocabulary
-    pub unsafe fn unchecked_remove_values(&mut self, type_ids_to_remove: Vec<IndexT>) -> Vec<Option<usize>> {
+    /// Removegiven values from the vocabulary
+    ///
+    /// # Arguments
+    /// * `type_ids_to_remove`: Vec<IndexT> - The values to be removed.
+    ///
+    /// # Safety
+    /// This method will panic if you try to remove values that do not exist
+    /// in the current vocabulary.
+    pub unsafe fn unchecked_remove_values(
+        &mut self,
+        type_ids_to_remove: Vec<IndexT>,
+    ) -> Vec<Option<usize>> {
         // compute the new dense mapping of the indices
-        let new_type_ids_map = (0..self.reverse_map.len()).scan(
-            0,
-            |offset, type_id| {
+        let new_type_ids_map = (0..self.reverse_map.len())
+            .scan(0, |offset, type_id| {
                 if type_ids_to_remove.contains(&IndexT::from_usize(type_id)) {
                     *offset += 1;
                     return Some(None);
                 }
                 Some(Some(type_id - *offset))
-            }
-        ).collect::<Vec<_>>();
+            })
+            .collect::<Vec<_>>();
 
         // update the mapping
-        self.map = self.map.iter()
-            .filter_map(|(key, val)|{
+        self.map = self
+            .map
+            .iter()
+            .filter_map(|(key, val)| {
                 new_type_ids_map[IndexT::to_usize(*val)]
                     .map(|x| (key.clone(), IndexT::from_usize(x)))
-            }).collect();
+            })
+            .collect();
 
         // re-build the reverse mapping
         // since we start from a valid state this should never fail

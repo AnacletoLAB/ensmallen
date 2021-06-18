@@ -66,8 +66,7 @@ impl Graph {
 
         // Create the components counter
         let counter = Counter::init(components_vector.clone());
-        let component_counts: Vec<(NodeT, NodeT)> =
-            counter.most_common_ordered();
+        let component_counts: Vec<(NodeT, NodeT)> = counter.most_common_ordered();
 
         // Insert the top k biggest components components
         if let Some(tkc) = top_k_components {
@@ -110,7 +109,7 @@ impl Graph {
             .iter()
             .map(|component_id| *counter.get(&component_id).unwrap())
             .min();
-            
+
         Graph::from_string_unsorted(
             self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                 .progress_with(pb)
@@ -123,21 +122,23 @@ impl Graph {
                         }
                     },
                 ),
-            Some(self.iter_node_names_and_node_type_names().progress_with(pb_nodes).filter_map(
-                |(node_id, node_name, _, node_type_names)| {
-                    match keep_components.contains(components_vector[node_id as usize]) {
-                        true => Some(Ok((node_name, node_type_names))),
-                        false => None,
-                    }
-                },
-            )),
+            Some(
+                self.iter_node_names_and_node_type_names()
+                    .progress_with(pb_nodes)
+                    .filter_map(|(node_id, node_name, _, node_type_names)| {
+                        match keep_components.contains(components_vector[node_id as usize]) {
+                            true => Some(Ok((node_name, node_type_names))),
+                            false => None,
+                        }
+                    }),
+            ),
             self.directed,
             true,
             self.get_name(),
             false,
             true,
             true,
-            true,                  // Approximation of expected nodes number.
+            true, // Approximation of expected nodes number.
             false,
             false,
             false,
@@ -145,6 +146,7 @@ impl Graph {
             self.has_node_types(),
             self.has_edge_types(),
             self.has_edge_weights(),
+            false,
             min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
             self.has_singleton_nodes_with_selfloops()
                 && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),

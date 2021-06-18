@@ -10,7 +10,7 @@
 //!     .set_numeric_node_ids(Some(true))
 //!     .set_header(Some(false));
 //!  
-//! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6108, 242, "Graph").unwrap();
+//! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6, 6, "Graph").unwrap();
 //!
 //!
 //! ```
@@ -22,6 +22,7 @@
 //! * `connected_node`: a node which is nor a `singleton` nor a `singleton_with_selfloops`.
 
 #![warn(unused_macros)]
+#![feature(is_sorted)]
 #![feature(map_first_last)]
 #![type_length_limit = "3764086"]
 #![feature(option_result_unwrap_unchecked)]
@@ -66,7 +67,10 @@ pub mod utils;
 pub(crate) use self::utils::*;
 
 mod bitmaps;
+mod centrality;
+mod dense;
 mod edge_lists;
+mod edge_metrics;
 mod filters;
 mod getters;
 mod graph;
@@ -74,22 +78,26 @@ mod hash;
 mod holdouts;
 mod iter_queries;
 mod iters;
-mod edge_metrics;
-mod thickeners;
+mod laplacian;
 mod modifiers;
 mod operators;
-mod laplacian;
+mod polygons;
 mod preprocessing;
 mod remap;
 mod remove;
-mod polygons;
+mod selfloops;
 mod setters;
 mod tarjan;
+mod url_utilities;
+mod tfidf;
+mod thickeners;
+mod to_conversions;
+mod transitivity;
 mod trees;
 mod types;
+mod sort;
 mod vertex_cover;
 mod walks;
-mod centrality;
 pub mod walks_parameters;
 
 mod report;
@@ -100,13 +108,14 @@ mod queries_boolean;
 mod queries_walk;
 pub use self::queries::*;
 pub use self::queries_boolean::*;
+pub use self::url_utilities::*;
 
 pub mod test_utilities;
 
+pub use self::edge_metrics::*;
 pub use self::getters::*;
 pub use self::graph::Graph;
 pub use self::holdouts::*;
-pub use self::edge_metrics::*;
 pub use self::operators::*;
 pub use self::setters::*;
 pub use self::tarjan::*;
@@ -115,10 +124,14 @@ pub use self::types::*;
 pub use self::walks::*;
 pub use self::walks_parameters::*;
 pub use preprocessing::*;
+pub use tfidf::*;
 
 mod dijkstra_queue;
-use dijkstra_queue::*;
+pub use dijkstra_queue::*;
 
 use vec_rand::splitmix64;
 
 use tags::*;
+
+mod visualizations;
+pub use visualizations::*;

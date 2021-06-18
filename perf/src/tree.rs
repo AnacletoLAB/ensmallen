@@ -12,8 +12,8 @@ fn main() {
         .set_verbose(Some(false))
         .set_header(Some(true));
     let mut graph = Graph::from_unsorted_csv(edges_reader, None, false, false, "Graph".to_owned()).unwrap();
-
-    graph.enable(true, true, true, None).unwrap();
+    
+    graph.enable(Some(true), Some(true), Some(true)).unwrap();
 
     for _ in 0..1_000 {
         let _pred = graph.spanning_arborescence(false);

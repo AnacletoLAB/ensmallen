@@ -9,7 +9,7 @@ use std::collections::HashMap;
 /// * `/get_(.+)/`
 ///
 /// The naming convention for unchecked methods follows:
-/// * `/get_unchecked_(.+)/`
+/// * `/get_(.+)_unchecked/`
 impl Graph {
     /// Returns number a triple with (number of components, number of nodes of the smallest component, number of nodes of the biggest component )
     ///
@@ -110,7 +110,8 @@ impl Graph {
     /// println!("The graph singleton_with_selfloops node IDs are {:?}.", graph.get_singleton_with_selfloops_node_ids());
     /// ```
     pub fn get_singleton_with_selfloops_node_ids(&self) -> Vec<NodeT> {
-        self.iter_singleton_with_selfloops_node_ids().collect()
+        self.iter_singleton_nodes_with_selfloops_node_ids()
+            .collect()
     }
 
     /// Returns vector of singleton_with_selfloops node names of the graph.
@@ -121,7 +122,8 @@ impl Graph {
     /// println!("The graph singleton_with_selfloops node names are {:?}.", graph.get_singleton_with_selfloops_node_names());
     /// ```
     pub fn get_singleton_with_selfloops_node_names(&self) -> Vec<String> {
-        self.iter_singleton_with_selfloops_node_names().collect()
+        self.iter_singleton_nodes_with_selfloops_node_names()
+            .collect()
     }
 
     /// Returns number of not singleton nodes within the graph.
@@ -173,7 +175,7 @@ impl Graph {
                     self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                         .map(|dst| self.is_unchecked_trap_node_from_node_id(dst) as usize as f64)
                         .sum::<f64>()
-                        / self.get_unchecked_unweighted_node_degree_from_node_id(node_id) as f64
+                        / self.get_unchecked_node_degree_from_node_id(node_id) as f64
                 } else {
                     1.0
                 }
@@ -182,20 +184,31 @@ impl Graph {
             / self.get_nodes_number() as f64
     }
 
-    /// Returns mean node degree of the graph.
+    /// Returns unweighted mean node degree of the graph.
     ///
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mean node degree of the graph is  {}", graph.get_unweighted_node_degrees_mean().unwrap());
+    /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
     /// ```
-    pub fn get_unweighted_node_degrees_mean(&self) -> Result<f64, String> {
+    pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
         if !self.has_nodes() {
             return Err(
                 "The mean of the node degrees is not defined on an empty graph".to_string(),
             );
         }
         Ok(self.get_directed_edges_number() as f64 / self.get_nodes_number() as f64)
+    }
+
+    /// Returns weighted mean node degree of the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The mean node degree of the graph is  {}", graph.get_weighted_node_degrees_mean().unwrap());
+    /// ```
+    pub fn get_weighted_node_degrees_mean(&self) -> Result<f64, String> {
+        Ok(self.get_total_edge_weights()? / self.get_nodes_number() as f64)
     }
 
     /// Returns number of undirected edges of the graph.
@@ -206,8 +219,8 @@ impl Graph {
     /// println!("The number of undirected edges of the graph is  {}", graph.get_undirected_edges_number());
     /// ```
     pub fn get_undirected_edges_number(&self) -> EdgeT {
-        (self.get_directed_edges_number() - self.get_selfloop_nodes_number()) / 2
-            + self.get_selfloop_nodes_number()
+        (self.get_directed_edges_number() - self.get_selfloop_number()) / 2
+            + self.get_selfloop_number()
     }
 
     /// Returns number of undirected edges of the graph.
@@ -255,11 +268,11 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The median node degree of the graph is  {}", graph.get_unweighted_node_degrees_median().unwrap());
+    /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
     /// ```
-    pub fn get_unweighted_node_degrees_median(&self) -> Result<NodeT, String> {
+    pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
         self.must_have_nodes()?;
-        let mut degrees = self.get_unweighted_node_degrees();
+        let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
         Ok(degrees[(self.get_nodes_number() / 2) as usize])
     }
@@ -285,14 +298,44 @@ impl Graph {
     /// The method will return an undefined value (0) when the graph
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
-    pub unsafe fn get_unchecked_unweighted_max_node_degree(&self) -> NodeT {
+    pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
         self.max_node_degree
     }
 
     /// Returns maximum weighted node degree of the graph.
-    pub fn get_weighted_max_node_degree(&self) -> Result<f64, String> {
+    ///
+    /// # Safety
+    /// This method will cause a panic on graphs without
+    /// edge weights.
+    pub unsafe fn get_unchecked_weighted_maximum_node_degree(&self) -> f64 {
+        self.max_weighted_node_degree.unwrap()
+    }
+
+    /// Returns maximum weighted node degree of the graph.
+    ///
+    /// # Raises
+    /// * If the current graph does not contain edge weights.
+    pub fn get_weighted_maximum_node_degree(&self) -> Result<f64, String> {
         self.must_have_edge_weights()?;
-        Ok(self.max_weighted_node_degree.unwrap())
+        Ok(unsafe { self.get_unchecked_weighted_maximum_node_degree() })
+    }
+
+    /// Returns minimum weighted node degree of the graph.
+    ///
+    /// # Safety
+    /// This method will cause a panic on graphs without
+    /// edge weights.
+    pub unsafe fn get_unchecked_weighted_minimum_node_degree(&self) -> f64 {
+        self.max_weighted_node_degree.unwrap()
+    }
+
+    /// Returns minimum weighted node degree of the graph.
+    ///
+    /// # Raises
+    /// * If the current graph does not contain edge weights.
+    pub fn get_weighted_minimum_node_degree(&self) -> Result<f64, String> {
+        self.must_have_edge_weights()?;
+        Ok(unsafe { self.get_unchecked_weighted_minimum_node_degree() })
     }
 
     /// Returns maximum node degree of the graph.
@@ -300,14 +343,14 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_unweighted_max_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_maximum_node_degree().unwrap());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_unweighted_max_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_maximum_node_degree(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_unweighted_max_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_maximum_node_degree() })
     }
 
     /// Returns maximum node degree of the graph.
@@ -318,25 +361,21 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_argmax_node_degree()});
+    /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
-    pub unsafe fn get_unchecked_argmax_node_degree(&self) -> NodeT {
-        self.par_iter_unweighted_node_degrees()
-            .enumerate()
-            .max_by_key(|&(_, value)| value)
-            .map(|(idx, _)| idx)
-            .unwrap_unchecked() as NodeT
+    pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
+        self.most_central_node_id
     }
     /// Returns maximum node degree of the graph.
     ///
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", graph.get_argmax_node_degree().unwrap());
+    /// println!("The maximum node degree of the graph is  {}", graph.get_most_central_node_id().unwrap());
     /// ```
-    pub fn get_argmax_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_most_central_node_id(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_argmax_node_degree() as NodeT })
+            .map(|_| unsafe { self.get_unchecked_most_central_node_id() as NodeT })
     }
 
     /// Returns minimum node degree of the graph.
@@ -345,12 +384,12 @@ impl Graph {
     /// The method will return an undefined value (NodeT::MAX) when the graph
     /// does not contain nodes. In those cases the value is not properly
     /// defined.
-    pub unsafe fn get_unchecked_unweighted_min_node_degree(&self) -> NodeT {
+    pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
         self.min_node_degree
     }
 
     /// Returns minimum weighted node degree of the graph.
-    pub fn get_weighted_min_node_degree(&self) -> Result<f64, String> {
+    pub fn get_weighted_mininum_node_degree(&self) -> Result<f64, String> {
         self.must_have_edge_weights()?;
         Ok(self.min_weighted_node_degree.unwrap())
     }
@@ -360,14 +399,14 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The minimum node degree of the graph is  {}", graph.get_min_node_degree().unwrap());
+    /// println!("The minimum node degree of the graph is  {}", graph.get_minimum_node_degree().unwrap());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_min_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_minimum_node_degree(&self) -> Result<NodeT, String> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_unweighted_min_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_minimum_node_degree() })
     }
 
     /// Returns mode node degree of the graph.
@@ -375,15 +414,15 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The mode node degree of the graph is  {}", graph.get_unweighted_node_degrees_mode().unwrap());
+    /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
     /// ```
-    pub fn get_unweighted_node_degrees_mode(&self) -> Result<NodeT, String> {
+    pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
         if !self.has_nodes() {
             return Err(
                 "The mode of the node degrees is not defined on an empty graph".to_string(),
             );
         }
-        let counter: Counter<NodeT, usize> = Counter::init(self.iter_unweighted_node_degrees());
+        let counter: Counter<NodeT, usize> = Counter::init(self.iter_node_degrees());
         Ok(*counter
             .iter()
             .max_by_key(|&(_, count)| count)
@@ -396,9 +435,9 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_nodes_number());
+    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloop_number());
     /// ```
-    pub fn get_selfloop_nodes_number(&self) -> EdgeT {
+    pub fn get_selfloop_number(&self) -> EdgeT {
         self.selfloop_number
     }
 
@@ -424,7 +463,7 @@ impl Graph {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(self.get_selfloop_nodes_number() as f64 / self.get_directed_edges_number() as f64)
+        Ok(self.get_selfloop_number() as f64 / self.get_directed_edges_number() as f64)
     }
     /// Return name of the graph.
     ///
@@ -563,6 +602,25 @@ impl Graph {
         Ok(self.weights.clone().unwrap())
     }
 
+    /// Return total edge weights, if graph has weights.
+    ///
+    /// # Example
+    /// To get the total edge weights you can use:
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
+    /// assert!(graph_with_weights.get_total_edge_weights().is_ok());
+    /// assert!(graph_without_weights.get_total_edge_weights().is_err());
+    /// println!("The graph total edge weights is {:?}.", graph_with_weights.get_total_edge_weights());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
+    pub fn get_total_edge_weights(&self) -> Result<f64, String> {
+        self.must_have_edge_weights()
+            .map(|_| self.total_weights.unwrap())
+    }
+
     /// Return the minimum weight, if graph has weights.
     ///
     /// # Example
@@ -570,14 +628,14 @@ impl Graph {
     /// ```rust
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
-    /// assert!(graph_with_weights.get_min_edge_weight().is_ok());
-    /// assert!(graph_without_weights.get_min_edge_weight().is_err());
-    /// println!("The graph minimum weight is {:?}.", graph_with_weights.get_min_edge_weight());
+    /// assert!(graph_with_weights.get_mininum_edge_weight().is_ok());
+    /// assert!(graph_without_weights.get_mininum_edge_weight().is_err());
+    /// println!("The graph minimum weight is {:?}.", graph_with_weights.get_mininum_edge_weight());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn get_min_edge_weight(&self) -> Result<WeightT, String> {
+    pub fn get_mininum_edge_weight(&self) -> Result<WeightT, String> {
         self.must_have_edge_weights()
             .map(|_| self.min_edge_weight.unwrap())
     }
@@ -589,14 +647,14 @@ impl Graph {
     /// ```rust
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
     /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
-    /// assert!(graph_with_weights.get_max_edge_weight().is_ok());
-    /// assert!(graph_without_weights.get_max_edge_weight().is_err());
-    /// println!("The graph maximum weight is {:?}.", graph_with_weights.get_max_edge_weight());
+    /// assert!(graph_with_weights.get_maximum_edge_weight().is_ok());
+    /// assert!(graph_without_weights.get_maximum_edge_weight().is_err());
+    /// println!("The graph maximum weight is {:?}.", graph_with_weights.get_maximum_edge_weight());
     /// ```
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn get_max_edge_weight(&self) -> Result<WeightT, String> {
+    pub fn get_maximum_edge_weight(&self) -> Result<WeightT, String> {
         self.must_have_edge_weights()
             .map(|_| self.max_edge_weight.unwrap())
     }
@@ -626,12 +684,28 @@ impl Graph {
         Ok(self.iter_one_hot_encoded_node_type_ids()?.collect())
     }
 
+    /// Returns one-hot encoded known node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_one_hot_encoded_known_node_types(&self) -> Result<Vec<Vec<bool>>, String> {
+        Ok(self.iter_one_hot_encoded_known_node_type_ids()?.collect())
+    }
+
     /// Returns one-hot encoded edge types.
     ///
     /// # Raises
     /// * If the graph does not have edge types.
     pub fn get_one_hot_encoded_edge_types(&self) -> Result<Vec<Vec<bool>>, String> {
         Ok(self.iter_one_hot_encoded_edge_type_ids()?.collect())
+    }
+
+    /// Returns one-hot encoded known edge types.
+    ///
+    /// # Raises
+    /// * If the graph does not have edge types.
+    pub fn get_one_hot_encoded_known_edge_types(&self) -> Result<Vec<Vec<bool>>, String> {
+        Ok(self.iter_one_hot_encoded_known_edge_type_ids()?.collect())
     }
 
     /// Return the node types names.
@@ -703,7 +777,7 @@ impl Graph {
     /// # Arguments
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_edge_node_ids(&self, directed: bool) -> Vec<Vec<NodeT>> {
-        self.par_iter_edge_ids(directed)
+        self.par_iter_edge_node_ids(directed)
             .map(|(_, src, dst)| vec![src, dst])
             .collect()
     }
@@ -763,7 +837,25 @@ impl Graph {
     /// * If there are no node types in the graph.
     pub fn get_minimum_node_types_number(&self) -> Result<NodeT, String> {
         self.must_have_node_types()
-            .map(|node_types| node_types.min_node_type_count())
+            .map(|node_types| node_types.get_minimum_node_type_count())
+    }
+
+    /// Returns maximum number of node types.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_maximum_node_types_number(&self) -> Result<NodeT, String> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.get_maximum_node_type_count())
+    }
+
+    /// Returns number of maximum multilabel count.
+    ///
+    /// This value is the maximum number of multilabel counts
+    /// that appear in any given node in the graph.
+    pub fn get_maximum_multilabel_count(&self) -> Result<NodeTypeT, String> {
+        self.must_have_node_types()
+            .map(|node_types| node_types.get_maximum_multilabel_count())
     }
 
     /// Returns number of singleton node types.
@@ -803,6 +895,180 @@ impl Graph {
     pub fn get_unknown_edge_types_number(&self) -> Result<EdgeT, String> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.get_unknown_count())
+    }
+
+    /// Returns edge IDs of the edges with unknown edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_ids_with_unknown_edge_types(&self) -> Result<Vec<EdgeT>, String> {
+        self.iter_edge_ids_with_unknown_edge_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns edge IDs of the edges with known edge types
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_ids_with_known_edge_types(&self) -> Result<Vec<EdgeT>, String> {
+        self.iter_edge_ids_with_known_edge_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns edge node IDs of the edges with unknown edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_node_ids_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<Vec<(NodeT, NodeT)>, String> {
+        self.iter_edge_node_ids_with_unknown_edge_types(directed)
+            .map(|x| x.collect())
+    }
+
+    /// Returns edge node IDs of the edges with known edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_node_ids_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<Vec<(NodeT, NodeT)>, String> {
+        self.iter_edge_node_ids_with_known_edge_types(directed)
+            .map(|x| x.collect())
+    }
+
+    /// Returns edge node names of the edges with unknown edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_node_names_with_unknown_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<Vec<(String, String)>, String> {
+        self.iter_edge_node_names_with_unknown_edge_types(directed)
+            .map(|x| x.collect())
+    }
+
+    /// Returns edge node names of the edges with known edge types
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to iterated the edges as a directed or undirected edge list.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_node_names_with_known_edge_types(
+        &self,
+        directed: bool,
+    ) -> Result<Vec<(String, String)>, String> {
+        self.iter_edge_node_names_with_known_edge_types(directed)
+            .map(|x| x.collect())
+    }
+
+    /// Returns a boolean vector that for each node contains whether it has an
+    /// unknown node type.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_ids_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>, String> {
+        self.iter_edge_ids_with_unknown_edge_types().map(|x| {
+            let mut mask = vec![false; self.get_directed_edges_number() as usize];
+            x.for_each(|id| {
+                mask[id as usize] = true;
+            });
+            mask
+        })
+    }
+
+    /// Returns a boolean vector that for each node contains whether it has an
+    /// unknown edge type.
+    ///
+    /// # Raises
+    /// * If there are no edge types in the graph.
+    pub fn get_edge_ids_with_known_edge_types_mask(&self) -> Result<Vec<bool>, String> {
+        self.iter_edge_ids_with_known_edge_types().map(|x| {
+            let mut mask = vec![false; self.get_directed_edges_number() as usize];
+            x.for_each(|id| {
+                mask[id as usize] = true;
+            });
+            mask
+        })
+    }
+
+    /// Returns node IDs of the nodes with unknown node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_with_unknown_node_types(&self) -> Result<Vec<NodeT>, String> {
+        self.iter_node_ids_with_unknown_node_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns node IDs of the nodes with known node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_with_known_node_types(&self) -> Result<Vec<NodeT>, String> {
+        self.iter_node_ids_with_known_node_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with unknown node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_with_unknown_node_types(&self) -> Result<Vec<String>, String> {
+        self.iter_node_names_with_unknown_node_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns node names of the nodes with known node types
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_names_with_known_node_types(&self) -> Result<Vec<String>, String> {
+        self.iter_node_names_with_known_node_types()
+            .map(|x| x.collect())
+    }
+
+    /// Returns a boolean vector that for each node contains whether it has an
+    /// unknown node type.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_with_unknown_node_types_mask(&self) -> Result<Vec<bool>, String> {
+        self.iter_node_ids_with_unknown_node_types().map(|x| {
+            let mut mask = vec![false; self.get_nodes_number() as usize];
+            x.for_each(|id| {
+                mask[id as usize] = true;
+            });
+            mask
+        })
+    }
+
+    /// Returns a boolean vector that for each node contains whether it has an
+    /// known node type.
+    ///
+    /// # Raises
+    /// * If there are no node types in the graph.
+    pub fn get_node_ids_with_known_node_types_mask(&self) -> Result<Vec<bool>, String> {
+        self.iter_node_ids_with_known_node_types().map(|x| {
+            let mut mask = vec![false; self.get_nodes_number() as usize];
+            x.for_each(|id| {
+                mask[id as usize] = true;
+            });
+            mask
+        })
     }
 
     /// Returns the number of edge with known edge type.
@@ -917,8 +1183,8 @@ impl Graph {
     }
 
     /// Returns the unweighted degree of every node in the graph.
-    pub fn get_unweighted_node_degrees(&self) -> Vec<NodeT> {
-        self.par_iter_unweighted_node_degrees().collect()
+    pub fn get_node_degrees(&self) -> Vec<NodeT> {
+        self.par_iter_node_degrees().collect()
     }
 
     /// Returns the weighted degree of every node in the graph.
@@ -940,7 +1206,7 @@ impl Graph {
     }
 
     /// Return number of edges that have multigraph syblings.
-    pub fn get_multigraph_edges_number(&self) -> EdgeT {
+    pub fn get_parallel_edges_number(&self) -> EdgeT {
         self.get_directed_edges_number() - self.unique_edges_number
     }
 

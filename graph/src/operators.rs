@@ -1,3 +1,5 @@
+use rayon::iter::{IntoParallelIterator, ParallelIterator};
+
 use super::*;
 use std::ops;
 
@@ -17,17 +19,17 @@ fn build_operator_graph_name(main: &Graph, other: &Graph, operator: String) -> S
 /// * `other`: &Graph - The other graph.
 /// * `operator`: String - The operator used.
 /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
-/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
+/// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_string_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
 ) -> Result<Graph, String> {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
@@ -42,18 +44,22 @@ fn generic_string_operator(
                     // introducing duplicates.
                     // TODO: handle None type edge types and avoid duplicating those!
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_from_node_names_and_edge_type_name(
+                        if dg.has_edge_from_node_names_and_edge_type_name(
                             src_name,
                             dst_name,
                             edge_type_name.as_deref(),
-                        );
+                        ) {
+                            return false;
+                        }
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_from_node_names_and_edge_type_name(
+                        if !mhg.has_edge_from_node_names_and_edge_type_name(
                             src_name,
                             dst_name,
                             edge_type_name.as_deref(),
-                        );
+                        ) {
+                            return false;
+                        }
                     }
                     true
                 })
@@ -76,16 +82,12 @@ fn generic_string_operator(
             };
             Ok((node_name, node_type_names))
         })
-        .chain(
-            other
-                .iter_node_names_and_node_type_names()
-                .filter_map(|(_, node_name, _, node_type_names)| {
-                    match main.has_node_name(&node_name) {
-                        true => None,
-                        false => Some(Ok((node_name, node_type_names))),
-                    }
-                }),
-        );
+        .chain(other.iter_node_names_and_node_type_names().filter_map(
+            |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
+                true => None,
+                false => Some(Ok((node_name, node_type_names))),
+            },
+        ));
 
     Graph::from_string_unsorted(
         edges_iterator,
@@ -104,9 +106,10 @@ fn generic_string_operator(
         main.has_node_types(),
         main.has_edge_types(),
         main.has_edge_weights(),
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        false,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
         false,
     )
 }
@@ -123,38 +126,43 @@ fn generic_string_operator(
 /// * `other`: &Graph - The other graph.
 /// * `operator`: String - The operator used.
 /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-/// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
-/// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-/// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
+/// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
+/// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+/// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
 fn generic_integer_operator(
     main: &Graph,
     other: &Graph,
     operator: String,
     graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-    might_have_singletons: bool,
-    might_have_singletons_with_selfloops: bool,
-    might_have_trap_nodes: bool,
-) -> Result<Graph, String> {
+    might_contain_singletons: bool,
+    might_contain_singletons_with_selfloops: bool,
+    might_contain_trap_nodes: bool,
+) -> Graph {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
     let edges_iterator = graphs
-        .iter()
+        .into_par_iter()
         .flat_map(|(one, deny_graph, must_have_graph)| {
-            one.iter_edge_node_ids_and_edge_type_id_and_edge_weight(main.directed)
+            one.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
                 .filter(move |(_, src, dst, edge_type, _)| {
                     // If the secondary graph is given
                     // we filter out the edges that were previously added to avoid
                     // introducing duplicates.
                     if let Some(dg) = deny_graph {
-                        return !dg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type);
+                        if dg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type) {
+                            return false;
+                        }
                     }
                     if let Some(mhg) = must_have_graph {
-                        return mhg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type);
+                        if !mhg.has_edge_from_node_ids_and_edge_type_id(*src, *dst, *edge_type) {
+                            return false;
+                        }
                     }
                     true
                 })
                 .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight)))
+                .collect::<Vec<_>>()
         });
 
     let node_types = match (&main.node_types, &other.node_types) {
@@ -189,11 +197,13 @@ fn generic_integer_operator(
         false,
         main.has_edge_types(),
         main.has_edge_weights(),
-        might_have_singletons,
-        might_have_singletons_with_selfloops,
-        might_have_trap_nodes,
+        false,
+        might_contain_singletons,
+        might_contain_singletons_with_selfloops,
+        might_contain_trap_nodes,
         false,
     )
+    .unwrap()
 }
 
 impl<'a, 'b> Graph {
@@ -202,7 +212,7 @@ impl<'a, 'b> Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The other graph to validate operation with.
-    /// 
+    ///
     /// # Raises
     /// * If a graph is directed and the other is undirected.
     /// * If one of the two graphs has edge weights and the other does not.
@@ -243,7 +253,7 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The other graph.
-    /// 
+    ///
     /// # Raises
     /// * If a graph is directed and the other is undirected.
     /// * If one of the two graphs has edge weights and the other does not.
@@ -278,36 +288,36 @@ impl Graph {
     /// * `other`: &Graph - The other graph.
     /// * `operator`: String - The operator used.
     /// * `graphs`: Vec<(&Graph, Option<&Graph>, Option<&Graph>)> - Graph list for the operation.
-    /// * `might_have_singletons`: bool - Whether we expect the graph to have singletons.
-    /// * `might_have_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
-    /// * `might_have_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
+    /// * `might_contain_singletons`: bool - Whether we expect the graph to have singletons.
+    /// * `might_contain_singletons_with_selfloops`: bool - Whether we expect the graph to have singletons with self-loops.
+    /// * `might_contain_trap_nodes`: bool - Whether we expect the graph to have trap nodes.
     pub(crate) fn generic_operator(
         &self,
         other: &Graph,
         operator: String,
         graphs: Vec<(&Graph, Option<&Graph>, Option<&Graph>)>,
-        might_have_singletons: bool,
-        might_have_singletons_with_selfloops: bool,
-        might_have_trap_nodes: bool,
+        might_contain_singletons: bool,
+        might_contain_singletons_with_selfloops: bool,
+        might_contain_trap_nodes: bool,
     ) -> Result<Graph, String> {
         match self.is_compatible(other)? {
-            true => generic_integer_operator(
+            true => Ok(generic_integer_operator(
                 self,
                 other,
                 operator,
                 graphs,
-                might_have_singletons,
-                might_have_singletons_with_selfloops,
-                might_have_trap_nodes,
-            ),
+                might_contain_singletons,
+                might_contain_singletons_with_selfloops,
+                might_contain_trap_nodes,
+            )),
             false => generic_string_operator(
                 self,
                 other,
                 operator,
                 graphs,
-                might_have_singletons,
-                might_have_singletons_with_selfloops,
-                might_have_trap_nodes,
+                might_contain_singletons,
+                might_contain_singletons_with_selfloops,
+                might_contain_trap_nodes,
             ),
         }
     }
