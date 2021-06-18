@@ -64,7 +64,7 @@ impl Graph {
         1.0
             / self
                 .get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None)
-                .into_par_iter_finite_distances()
+                .into_iter_finite_distances()
                 .sum::<NodeT>() as f64
     }
 
@@ -253,7 +253,7 @@ impl Graph {
     ) -> f64 {
         self
             .get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None)
-            .into_par_iter_finite_distances()
+            .into_iter_finite_distances()
             .map(|distance| {
                 if distance != 0 {
                     1.0 / distance as f64

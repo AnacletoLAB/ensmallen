@@ -50,6 +50,12 @@ impl ShortestPathsResultBFS {
             .filter(|&distance| distance != NOT_PRESENT)
     }
 
+    pub(crate) fn into_iter_finite_distances(self) -> impl Iterator<Item = NodeT> {
+        self.distances
+            .into_iter()
+            .filter(|&distance| distance != NOT_PRESENT)
+    }
+
     pub(crate) fn into_par_iter_node_ids_and_finite_distances(
         self,
     ) -> impl ParallelIterator<Item = (NodeT, NodeT)> {
