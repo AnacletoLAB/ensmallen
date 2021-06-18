@@ -1,12 +1,12 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
-use indicatif::ProgressIterator;
 use num_traits::Zero;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
 use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
 use std::collections::VecDeque;
+use std::sync::atomic::{AtomicU32, Ordering};
 
 pub struct ShortestPathsResultBFS {
     distances: Vec<NodeT>,
@@ -1134,9 +1134,18 @@ impl Graph {
             )
         };
 
-        let bfs2 = unsafe {
+        let second_candidate_most_eccentric_node_id = unsafe {
             self.get_unchecked_breath_first_search_from_node_ids(
                 bfs1.get_median_point(bfs1.get_most_distant_node())?,
+                None,
+                Some(true),
+                None,
+            )
+            .get_most_distant_node()
+        };
+        let bfs2 = unsafe {
+            self.get_unchecked_breath_first_search_from_node_ids(
+                second_candidate_most_eccentric_node_id,
                 None,
                 Some(true),
                 None,
@@ -1169,7 +1178,7 @@ impl Graph {
         }
 
         // get the lowerbound of the diameter
-        let (mut tentative_diameter, low_eccentricity_node) = self.get_four_sweep()?;
+        let (tentative_diameter, low_eccentricity_node) = self.get_four_sweep()?;
         // find the distances of all the nodes from the node with low eccentricty,
         // and thus with high centrality
         let bfs = unsafe {
@@ -1205,6 +1214,9 @@ impl Graph {
         // threads for no good reason.
         node_ids_and_distances.sort_by(|(a, _), &(b, _)| b.cmp(a));
 
+        // Put tentative diameter into an AtomicU32
+        let tentative_diameter = AtomicU32::new(tentative_diameter);
+
         let pb = get_loading_bar(
             verbose.unwrap_or(true) && node_ids_and_distances.len() > 1,
             "Computing diameter",
@@ -1214,18 +1226,20 @@ impl Graph {
         // for each possible node of the outer crown compute the maximum path
         // from there, this way we can find the exact diameter
         node_ids_and_distances
-            .into_iter()
+            .into_par_iter()
             .progress_with(pb)
             .for_each(|(distance, node_id)| unsafe {
                 // If we have not yet reached the bound
-                if tentative_diameter < distance * 2 {
+                if tentative_diameter.load(Ordering::Relaxed) < distance * 2 {
                     // We compute the new candidate diameter.
-                    tentative_diameter = tentative_diameter
-                        .max(self.get_unchecked_eccentricity_from_node_id(node_id));
+                    tentative_diameter.fetch_max(
+                        self.get_unchecked_eccentricity_from_node_id(node_id),
+                        Ordering::Relaxed,
+                    );
                 }
             });
 
-        Ok(tentative_diameter as f64)
+        Ok(tentative_diameter.into_inner() as f64)
     }
 
     /// Returns diameter of the graph using naive method.
