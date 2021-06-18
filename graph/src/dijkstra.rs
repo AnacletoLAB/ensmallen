@@ -229,18 +229,13 @@ impl Graph {
 
         pool.scope(|s| {
             (0..shared_stacks.len()).for_each(|_| {
-                s.spawn(|_| 'outer: loop {
+                s.spawn(|_| {
                     let thread_id = rayon::current_thread_index().unwrap_or(0);
-                    let (node_id, depth) = 'inner: loop {
-                        {
-                            for stack in
-                                (thread_id..(shared_stacks.len() + thread_id)).map(|id| {
-                                    shared_stacks[id % shared_stacks.len()].lock().expect(
-                                        "The lock is poisoned from the panic of another thread",
-                                    )
-                                })
+                    'outer: loop {
+                        let (node_id, depth) = 'inner: loop {
                             {
-                                if active_nodes_number.load(Ordering::Relaxed) == 0 {
+                                let currently_active_nodes_number = active_nodes_number.load(Ordering::Relaxed);
+                                if currently_active_nodes_number == 0 {
                                     break 'outer;
                                 }
 
@@ -256,37 +251,35 @@ impl Graph {
                                     }
                                 }
                             }
+                        };
 
-                            if active_nodes_number.load(Ordering::SeqCst) == 0 {
-                                break 'outer;
-                            }
-                        }
-                    };
+                        let new_neighbour_distance = depth + 1;
 
-                    let new_neighbour_distance = depth + 1;
-
-                    if maximal_depth.map_or(true, |md| md >= new_neighbour_distance) {
-                        self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                            .for_each(|neighbour_node_id| {
-                                if distances[neighbour_node_id as usize]
-                                    .fetch_min(new_neighbour_distance, Ordering::SeqCst)
-                                    > new_neighbour_distance
-                                {
-                                    if let Some(parents) = parents.as_ref() {
-                                        parents[neighbour_node_id as usize]
-                                            .store(node_id, Ordering::SeqCst);
+                        if maximal_depth.map_or(true, |md| md >= new_neighbour_distance) {
+                            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                                .for_each(|neighbour_node_id| {
+                                    if distances[neighbour_node_id as usize]
+                                        .fetch_min(new_neighbour_distance, Ordering::SeqCst)
+                                        > new_neighbour_distance
+                                    {
+                                        if let Some(parents) = parents.as_ref() {
+                                            parents[neighbour_node_id as usize]
+                                                .store(node_id, Ordering::SeqCst);
+                                        }
+                                        active_nodes_number.fetch_add(1, Ordering::SeqCst);
+                                        shared_stacks[rand_u64(neighbour_node_id as u64) as usize
+                                            % shared_stacks.len()]
+                                        .lock()
+                                        .expect(
+                                            "The lock is poisoned from the panic of another thread",
+                                        )
+                                        .push_back((neighbour_node_id, new_neighbour_distance));
                                     }
-                                    active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                    shared_stacks[rand_u64(neighbour_node_id as u64) as usize
-                                        % shared_stacks.len()]
-                                    .lock()
-                                    .expect("The lock is poisoned from the panic of another thread")
-                                    .push_back((neighbour_node_id, new_neighbour_distance));
-                                }
-                            });
-                    }
+                                });
+                        }
 
-                    active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                        active_nodes_number.fetch_sub(1, Ordering::SeqCst);
+                    }
                 });
             });
         });
@@ -602,8 +595,22 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
-    pub unsafe fn get_unchecked_eccentricity_from_node_id(&self, node_id: NodeT) -> NodeT {
+    pub unsafe fn get_unchecked_eccentricity_from_node_id_sequential(&self, node_id: NodeT) -> NodeT {
         self.get_unchecked_breath_first_search_from_node_ids_sequential(node_id, None, None)
+            .into_eccentricity()
+    }
+
+    /// Returns unweighted eccentricity of the given node.
+    ///
+    /// This method will panic if the given node ID does not exists in the graph.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Node for which to compute the eccentricity.
+    ///
+    /// # Safety
+    /// If any of the given node IDs does not exist in the graph the method will panic.
+    pub unsafe fn get_unchecked_eccentricity_from_node_id_parallel(&self, node_id: NodeT) -> NodeT {
+        self.get_unchecked_breath_first_search_from_node_ids_parallel(node_id, None, None)
             .into_eccentricity()
     }
 
@@ -644,7 +651,7 @@ impl Graph {
     /// * If the given node ID does not exist in the graph.
     pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
         self.validate_node_id(node_id)
-            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
+            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id_sequential(node_id) })
     }
 
     /// Returns weighted eccentricity of the given node ID.
@@ -685,7 +692,7 @@ impl Graph {
     /// * If the given node name does not exist in the current graph instance.
     pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
         self.get_node_id_from_node_name(node_name)
-            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
+            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id_sequential(node_id) })
     }
 
     /// Returns weighted eccentricity of the given node name.
@@ -1258,7 +1265,7 @@ impl Graph {
                 if tentative_diameter < distance * 2 {
                     // We compute the new candidate diameter.
                     tentative_diameter = tentative_diameter
-                        .max(self.get_unchecked_eccentricity_from_node_id(node_id));
+                        .max(self.get_unchecked_eccentricity_from_node_id_parallel(node_id));
                 }
             });
 
@@ -1299,7 +1306,7 @@ impl Graph {
         Ok(self
             .par_iter_node_ids()
             .progress_with(pb)
-            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
+            .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id_sequential(node_id) })
             .filter(|&distance| !ignore_infinity || distance != NodeT::MAX)
             .max()
             .unwrap_or(0) as f64)
