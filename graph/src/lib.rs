@@ -94,6 +94,7 @@ mod thickeners;
 mod to_conversions;
 mod transitivity;
 mod trees;
+mod random_graphs;
 mod types;
 mod sort;
 mod vertex_cover;

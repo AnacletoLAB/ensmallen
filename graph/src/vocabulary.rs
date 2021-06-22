@@ -30,6 +30,14 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         }
     }
 
+    pub fn from_range(capacity: usize) -> Vocabulary<IndexT> {
+        Vocabulary {
+            map: HashMap::with_capacity(capacity),
+            reverse_map: Vec::new(),
+            numeric_ids: false,
+        }
+    }
+
     fn normalize_value(&self, value: &str) -> Result<(String, IndexT), String> {
         Ok(if self.numeric_ids {
             let parsed_value = value.parse::<usize>().map_err(|_| {

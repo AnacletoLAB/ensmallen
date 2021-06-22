@@ -178,8 +178,7 @@ fn generic_integer_operator(
                             *mid = oid.clone();
                         }
                     });
-                NodeTypeVocabulary::from_structs(main_node_types, Some(mnts.vocabulary.clone()))
-                    .unwrap()
+                NodeTypeVocabulary::from_structs(main_node_types, mnts.vocabulary.clone())
             }
         }),
         (Some(mnts), _) => Some(mnts.clone()),

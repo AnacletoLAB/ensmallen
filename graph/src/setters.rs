@@ -91,9 +91,9 @@ impl Graph {
         vocabulary.build_reverse_mapping()?;
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); self.get_nodes_number() as usize],
-            Some(vocabulary),
+            vocabulary,
         );
-        self.node_types = node_types;
+        self.node_types = Some(node_types);
         Ok(self)
     }
 

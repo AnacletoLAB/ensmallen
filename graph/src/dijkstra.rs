@@ -169,6 +169,8 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    /// TODO! Explore chains accelerations!
     pub unsafe fn get_unchecked_breath_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
@@ -220,7 +222,7 @@ impl Graph {
                         return;
                     }
                     // If the node was not previously visited
-                    if distances[neighbour_node_id as usize] == NOT_PRESENT {
+                    if distances[neighbour_node_id as usize] > new_neighbour_distance {
                         // Set it's distance
                         distances[neighbour_node_id as usize] = new_neighbour_distance;
 

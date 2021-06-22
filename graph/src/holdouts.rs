@@ -751,14 +751,14 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_structs(
+        train_graph.node_types = Some(NodeTypeVocabulary::from_structs(
             train_node_types,
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
-        test_graph.node_types = NodeTypeVocabulary::from_structs(
+            self.node_types.clone().unwrap().vocabulary,
+        ));
+        test_graph.node_types = Some(NodeTypeVocabulary::from_structs(
             test_node_types,
-            self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
-        );
+            self.node_types.clone().unwrap().vocabulary,
+        ));
 
         Ok((train_graph, test_graph))
     }

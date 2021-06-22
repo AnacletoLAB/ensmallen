@@ -1622,7 +1622,7 @@ impl Graph {
     /// Create new Graph object from unsorted source.
     ///
     /// # Arguments
-    /// * `edges_iterator`: impl Iterator<Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>> - Iterator over the egde node IDs.
+    /// * `edges_iterator`: impl Iterator<Item = Result<(NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>), String>> - Iterator over the egde node IDs.
     /// * `nodes`: Vocabulary<NodeT> - Vocabulary of the node IDs.
     /// * `node_types`: Option<NodeTypeVocabulary> - Option of the vocabulary of the node type IDs.
     /// * `edge_types_vocabulary`: Option<Vocabulary<EdgeTypeT>> - Option of the Vocabulary of the edge type IDs.
@@ -1637,7 +1637,7 @@ impl Graph {
     /// * `verbose`: bool - Whether to show theloading bars while loading the graph.
     pub fn from_integer_unsorted(
         edges_iterator: impl ParallelIterator<
-            Item = Result<(NodeT, NodeT, Option<NodeTypeT>, Option<WeightT>), String>,
+            Item = Result<(NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>), String>,
         >,
         nodes: Vocabulary<NodeT>,
         node_types: Option<NodeTypeVocabulary>,
