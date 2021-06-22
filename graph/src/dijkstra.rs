@@ -437,6 +437,8 @@ impl Graph {
                         // it does not make sense to be explored further.
                         if counts[neighbour_node_id as usize] >= k
                             || counts[dst_node_id as usize] >= k
+                            // We do not want nodes to go back to the direct source node.
+                            || node_id == neighbour_node_id
                         {
                             return None;
                         }
