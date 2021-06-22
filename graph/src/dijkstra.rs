@@ -441,9 +441,14 @@ impl Graph {
                             return None;
                         }
                         counts[neighbour_node_id as usize] += 1;
-                        // We do not want nodes to go back to the direct source node.
-                        if node_id == neighbour_node_id {
-                            return None;
+                        // We do not want nodes to go back to nodes within
+                        // the same path they are currently building.
+                        let mut current_position = node_position;
+                        while stub_graph[current_position].0 != usize::MAX {
+                            if neighbour_node_id == stub_graph[current_position].1 {
+                                return None;
+                            }
+                            current_position = stub_graph[current_position].0;
                         }
                         // If the neighbour is the destination
                         // we can just add all of these paths
