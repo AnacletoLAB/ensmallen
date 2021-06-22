@@ -401,7 +401,8 @@ impl Graph {
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
     /// * `k`: usize - Number of paths to find.
-    /// * `max_path_length`: Option<usize> - Maximum length of the paths.
+    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
+    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -414,9 +415,13 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
+        max_path_length: Option<usize>,
+        verbose: Option<bool>,
     ) -> Vec<Vec<NodeT>> {
         let nodes_number = self.get_nodes_number() as usize;
         let mut counts = vec![0; nodes_number];
+        let verbose = verbose.unwrap_or(true);
+        let max_path_length = max_path_length.unwrap_or(usize::MAX);
         // We do not want to have multiple paths re-passing through the source.
         counts[src_node_id as usize] = k;
         counts[dst_node_id as usize] = k;
@@ -440,6 +445,9 @@ impl Graph {
         let mut nodes_to_explore: VecDeque<(usize, NodeT)> = VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back((0, src_node_id));
 
+        // Get the loading bar
+        let pb = get_loading_bar(verbose, "Computing k shortest paths", k * nodes_number);
+
         while let Some((node_position, node_id)) = nodes_to_explore.pop_front() {
             let mut current_path = if node_id == src_node_id {
                 Vec::new()
@@ -451,6 +459,9 @@ impl Graph {
             while stub_graph[position].0 != usize::MAX {
                 current_path.push(stub_graph[position].1);
                 position = stub_graph[position].0;
+            }
+            if current_path.len() >= max_path_length {
+                continue;
             }
             let found_destination = AtomicBool::new(false);
             let new_nodes = self
@@ -479,6 +490,8 @@ impl Graph {
                     true
                 })
                 .collect::<Vec<NodeT>>();
+            // Increase progress.
+            pb.inc(current_path.len() as u64);
             // If the neighbour is the destination
             // we can just add all of these paths
             // immediately and avoid pushing them onto
@@ -519,8 +532,9 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
-    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `k`: usize - Number of paths to find.
+    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
+    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -533,12 +547,16 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
+        max_path_length: Option<usize>,
+        verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
         Ok(unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
                 k,
+                max_path_length,
+                verbose,
             )
         })
     }
@@ -551,6 +569,8 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `k`: usize - Number of paths to find.
+    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
+    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -563,12 +583,16 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
+        max_path_length: Option<usize>,
+        verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
         Ok(unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 k,
+                max_path_length,
+                verbose,
             )
         })
     }
@@ -581,6 +605,8 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `k`: usize - Number of paths to find.
+    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
+    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -593,20 +619,28 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
+        max_path_length: Option<usize>,
+        verbose: Option<bool>,
     ) -> Result<Vec<Vec<String>>, String> {
-        self.get_k_shortest_path_node_ids_from_node_names(src_node_name, dst_node_name, k)
-            .map(|paths| {
-                paths
-                    .into_iter()
-                    .map(|path| {
-                        path.into_iter()
-                            .map(|node_id| unsafe {
-                                self.get_unchecked_node_name_from_node_id(node_id)
-                            })
-                            .collect()
-                    })
-                    .collect()
-            })
+        self.get_k_shortest_path_node_ids_from_node_names(
+            src_node_name,
+            dst_node_name,
+            k,
+            max_path_length,
+            verbose,
+        )
+        .map(|paths| {
+            paths
+                .into_iter()
+                .map(|path| {
+                    path.into_iter()
+                        .map(|node_id| unsafe {
+                            self.get_unchecked_node_name_from_node_id(node_id)
+                        })
+                        .collect()
+                })
+                .collect()
+        })
     }
 
     /// Returns unweighted eccentricity of the given node.
