@@ -114,7 +114,7 @@ impl Graph {
         &self,
         node_ids: Vec<NodeT>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         if node_ids.len() != self.get_nodes_number() as usize {
             return Err(format!(
                 concat!(
@@ -171,12 +171,12 @@ impl Graph {
         &self,
         node_names: Vec<&str>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         self.remap_from_node_ids(
             node_names
                 .into_iter()
                 .map(|node_name| self.get_node_id_from_node_name(node_name))
-                .collect::<Result<Vec<NodeT>, String>>()?,
+                .collect::<Result<Vec<NodeT>>>()?,
             verbose,
         )
     }
@@ -195,7 +195,7 @@ impl Graph {
     /// assert_eq!(graph, graph.remap_from_graph(&graph, None).unwrap());
     /// ```
     ///
-    pub fn remap_from_graph(&self, other: &Graph, verbose: Option<bool>) -> Result<Graph, String> {
+    pub fn remap_from_graph(&self, other: &Graph, verbose: Option<bool>) -> Result<Graph> {
         let verbose = verbose.unwrap_or(false);
         let pb = get_loading_bar(
             verbose,

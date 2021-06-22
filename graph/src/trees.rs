@@ -424,7 +424,7 @@ impl Graph {
     pub fn spanning_arborescence(
         &self,
         verbose: Option<bool>,
-    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_), String> {
+    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT)> + '_)> {
         self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
@@ -609,7 +609,8 @@ impl Graph {
     pub fn connected_components(
         &self,
         verbose: Option<bool>,
-    ) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT), String> {
+    ) -> Result<(Vec<NodeT>, NodeT, NodeT, NodeT)> {
+        // TODO! refactor atomics
         self.must_be_undirected()?;
         if !self.has_nodes() {
             return Ok((Vec::new(), 0, 0, 0));

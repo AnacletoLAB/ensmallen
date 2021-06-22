@@ -46,7 +46,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node to be checked for.
-    pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
+    pub fn is_singleton_from_node_id(&self, node_id: NodeT) -> Result<bool> {
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.is_unchecked_singleton_from_node_id(node_id) })
     }
@@ -81,7 +81,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_name`: &str - The node name to be checked for.
-    pub fn is_singleton_from_node_name(&self, node_name: &str) -> Result<bool, String> {
+    pub fn is_singleton_from_node_name(&self, node_name: &str) -> Result<bool> {
         Ok(unsafe {
             self.is_unchecked_singleton_from_node_id(self.get_node_id_from_node_name(node_name)?)
         })
@@ -268,7 +268,7 @@ impl Graph {
     ///
     /// * `node_id`: NodeT - Integer ID of the node, if this is bigger that the number of nodes it will panic.
     ///
-    pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool, String> {
+    pub fn is_trap_node_from_node_id(&self, node_id: NodeT) -> Result<bool> {
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.is_unchecked_trap_node_from_node_id(node_id) })
     }

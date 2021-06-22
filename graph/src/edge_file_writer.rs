@@ -236,7 +236,7 @@ impl EdgeFileWriter {
     /// # Arguments
     ///
     /// * `graph`: &Graph - the graph to write out.
-    pub fn dump(&self, graph: &Graph) -> Result<(), String> {
+    pub fn dump(&self, graph: &Graph) -> Result<()> {
         let directed: bool = self.directed.unwrap_or_else(|| graph.is_directed());
         // build the header
         let mut header = vec![

@@ -1,4 +1,24 @@
+
 use super::*;
+
+mod parse_nodes;
+pub use parse_nodes::*;
+
+mod parse_types;
+pub use parse_types::*;
+
+mod parse_edges;
+pub use parse_edges::*;
+
+mod edge_node_names_parser;
+pub use edge_node_names_parser::*;
+
+mod edge_type_parser;
+pub use edge_type_parser::*;
+
+mod node_type_parser;
+pub use node_type_parser::*;
+
 use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use indicatif::ProgressIterator;
@@ -38,9 +58,7 @@ type ParsedStringEdgesType = Result<
         Option<NodeT>,
         bool,
         bool,
-    ),
-    String,
->;
+    )>;
 
 /// Returns result representing if the given combination of numeric node ids and edge node ids is valid.
 ///
@@ -58,7 +76,7 @@ fn check_numeric_ids_compatibility(
     has_nodes_list: bool,
     numeric_node_ids: bool,
     numeric_edge_node_ids: bool,
-) -> Result<(), String> {
+) -> Result<()> {
     if has_nodes_list && numeric_node_ids && !numeric_edge_node_ids {
         return Err(concat!(
             "You are trying to load a numeric node list and a non numeric edge list.\n",
@@ -69,104 +87,6 @@ fn check_numeric_ids_compatibility(
         .to_string());
     }
     Ok(())
-}
-
-/// Returns iterator of nodes handling the node IDs.
-///
-/// # Arguments
-/// nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
-///     Iterator over the node list.
-/// ignore_duplicated_nodes: bool,
-///     Whether to just ignore the duplicated node types.
-/// node_list_is_correct: bool,
-///     Parameter to pinky promise that the node list is correct.
-///     If you provide a broken node list to this method while promising
-///     that the node list is correct, be prepared to deal with the fallout.
-///     This parameter is mainly meant to be used internally when creating
-///     graphs that CANNOT BE BROKEN by design. If you use this parameter
-///     from any of the bindings, be SURE that the node list is actually
-///     correct.
-///     We assume that any provided node list is broken until disproved.
-/// nodes: &'b mut Vocabulary<NodeT>,
-///     Vocabulary of the nodes to be populated.
-pub(crate) fn parse_node_ids<'a>(
-    nodes_iter: impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + 'a,
-    ignore_duplicated_nodes: bool,
-    node_list_is_correct: bool,
-    nodes: &'a mut Vocabulary<NodeT>,
-) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a> {
-    // If the user is telling us that the node list is **surely correct**,
-    // we can skip a significant amount of checks and therefore create
-    // a simpler iterator.
-    if node_list_is_correct {
-        Box::new(nodes_iter.map_ok(move |(node_name, node_type)| unsafe {
-            (nodes.unchecked_insert(node_name), node_type)
-        }))
-    } else {
-        Box::new(nodes_iter.filter_map(move |row| {
-            row.map_or_else(|err| Some(Err(err)),  |(node_name, node_type)| {
-                nodes.insert(node_name.as_str()).map_or_else(|err| Some(Err(err)), |(node_id, already_present_in_vocabulary)|{
-                    if already_present_in_vocabulary{
-                        if ignore_duplicated_nodes {
-                            None
-                        } else {
-                            Some(Err(format!(
-                                concat!(
-                                    "The node {node_name} appears multiple times in the node list.\n",
-                                    "The node type of the row is {node_type:?}.\n",
-                                    "The library does not currently support multiple node types for a single node."
-                                ),
-                                node_name = node_name,
-                                node_type = node_type
-                            )))
-                        }
-                    } else {
-                        Some(Ok((node_id, node_type)))
-                    }
-                })
-            })
-        }))
-    }
-}
-
-/// Returns iterator of nodes handling the node type IDs.
-///
-/// # Arguments
-/// nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,
-///     Iterator over the node list.
-/// node_list_is_correct: bool,
-///     Parameter to pinky promise that the node list is correct.
-///     If you provide a broken node list to this method while promising
-///     that the node list is correct, be prepared to deal with the fallout.
-///     This parameter is mainly meant to be used internally when creating
-///     graphs that CANNOT BE BROKEN by design. If you use this parameter
-///     from any of the bindings, be SURE that the node list is actually
-///     correct.
-///     We assume that any provided node list is broken until disproved.
-/// node_types_vocabulary: &'b mut NodeTypeVocabulary,
-///     Node types vocabulary to be populated.
-pub(crate) fn parse_node_type_ids<'a>(
-    nodes_iter: impl Iterator<Item = Result<(NodeT, Option<Vec<String>>), String>> + 'a,
-    node_list_is_correct: bool,
-    node_types_vocabulary: &'a mut NodeTypeVocabulary,
-) -> Box<dyn Iterator<Item = Result<(NodeT, Option<Vec<NodeTypeT>>), String>> + 'a> {
-    if node_list_is_correct {
-        Box::new(nodes_iter.map_ok(move |(node_id, node_type_names)| unsafe {
-            (
-                node_id,
-                node_types_vocabulary.unchecked_insert_values(node_type_names),
-            )
-        }))
-    } else {
-        Box::new(nodes_iter.map(move |row| {
-            row.and_then(|(node_id, node_type_names)| {
-                Ok((
-                    node_id,
-                    node_types_vocabulary.insert_values(node_type_names)?,
-                ))
-            })
-        }))
-    }
 }
 
 /// Returns modified iterator, adding what is need to digest edge node names into edge node IDs.
@@ -1146,54 +1066,6 @@ pub(crate) fn build_edges(
     ))
 }
 
-fn parse_nodes(
-    nodes_iterator: Option<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>>>,
-    ignore_duplicated_nodes: bool,
-    node_list_is_correct: bool,
-    numeric_node_ids: bool,
-    numeric_node_types_ids: bool,
-    numeric_edge_node_ids: bool,
-    has_node_types: bool,
-) -> Result<(Vocabulary<NodeT>, Option<NodeTypeVocabulary>), String> {
-    let mut nodes = Vocabulary::default()
-        .set_numeric_ids(numeric_node_ids || numeric_edge_node_ids && nodes_iterator.is_none());
-
-    let node_types = if let Some(ni) = nodes_iterator {
-        // TODO: the following can likely be dealt with in a better way.
-        let node_iterator = parse_node_ids(
-            ni,
-            ignore_duplicated_nodes,
-            node_list_is_correct,
-            &mut nodes,
-        );
-        // In the case there is a node types we need to add its proper iterator.
-        if has_node_types {
-            let mut node_types =
-                NodeTypeVocabulary::default().set_numeric_ids(numeric_node_types_ids);
-            for row in parse_node_type_ids(node_iterator, node_list_is_correct, &mut node_types) {
-                row?;
-            }
-            node_types.build_reverse_mapping()?;
-            node_types.build_counts();
-
-            if node_types.is_empty() {
-                Ok(None)
-            } else {
-                Ok::<_, String>(Some(node_types))
-            }
-        } else {
-            for row in node_iterator {
-                row?;
-            }
-            Ok::<_, String>(None)
-        }?
-    } else {
-        None
-    };
-
-    Ok((nodes, node_types))
-}
-
 // TODO!: add docstring
 pub(crate) fn parse_string_edges(
     edges_iter: impl Iterator<Item = Result<StringQuadruple, String>>,
@@ -1441,7 +1313,7 @@ impl Graph {
         might_contain_singletons: bool,
         might_contain_singletons_with_selfloops: bool,
         might_contain_trap_nodes: bool,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         let (
             edges,
             unique_sources,
@@ -1560,7 +1432,7 @@ impl Graph {
         might_contain_singletons_with_selfloops: bool,
         might_contain_trap_nodes: bool,
         verbose: bool,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         check_numeric_ids_compatibility(
             nodes_iterator.is_some(),
             numeric_node_ids,
@@ -1652,7 +1524,7 @@ impl Graph {
         might_contain_singletons_with_selfloops: bool,
         might_contain_trap_nodes: bool,
         verbose: bool,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         let (edges_number, edges_iterator) =
             parse_unsorted_quadruples(edges_iterator.collect::<Result<Vec<_>, String>>()?, verbose);
 
@@ -1723,7 +1595,7 @@ impl Graph {
         might_contain_singletons: bool,
         might_contain_singletons_with_selfloops: bool,
         might_contain_trap_nodes: bool,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         check_numeric_ids_compatibility(
             nodes_iterator.is_some(),
             numeric_node_ids,

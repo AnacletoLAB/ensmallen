@@ -23,7 +23,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given node ID does not exists in the graph.
-    pub fn validate_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+    pub fn validate_node_id(&self, node_id: NodeT) -> Result<NodeT> {
         if node_id >= self.get_nodes_number() {
             return Err(format!(
                 "The given node id ({}) is higher than the number of nodes within the graph ({}).",
@@ -50,7 +50,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given node ID does not exists in the graph.
-    pub fn validate_node_ids(&self, node_ids: Vec<NodeT>) -> Result<Vec<NodeT>, String> {
+    pub fn validate_node_ids(&self, node_ids: Vec<NodeT>) -> Result<Vec<NodeT>> {
         node_ids
             .into_iter()
             .map(|node_id| self.validate_node_id(node_id))
@@ -73,7 +73,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given edge ID does not exists in the graph.
-    pub fn validate_edge_id(&self, edge_id: EdgeT) -> Result<EdgeT, String> {
+    pub fn validate_edge_id(&self, edge_id: EdgeT) -> Result<EdgeT> {
         if edge_id >= self.get_directed_edges_number() {
             return Err(format!(
                 "The given edge id ({}) is higher than the number of edges within the graph ({}).",
@@ -100,7 +100,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If any of the given edge ID does not exists in the graph.
-    pub fn validate_edge_ids(&self, edge_ids: Vec<EdgeT>) -> Result<Vec<EdgeT>, String> {
+    pub fn validate_edge_ids(&self, edge_ids: Vec<EdgeT>) -> Result<Vec<EdgeT>> {
         edge_ids
             .into_iter()
             .map(|edge_id| self.validate_edge_id(edge_id))
@@ -112,7 +112,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain node types.
     /// * If the graph contains unknown node types.
-    pub fn must_not_contain_unknown_node_types(&self) -> Result<(), String> {
+    pub fn must_not_contain_unknown_node_types(&self) -> Result<()> {
         if self.has_unknown_node_types()? {
             return Err("The graph contains unknown node types.".to_string());
         }
@@ -124,7 +124,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain edge types.
     /// * If the graph contains unknown edge types.
-    pub fn must_not_contain_unknown_edge_types(&self) -> Result<(), String> {
+    pub fn must_not_contain_unknown_edge_types(&self) -> Result<()> {
         if self.has_unknown_edge_types()? {
             return Err("The graph contains unknown edge types.".to_string());
         }
@@ -150,7 +150,7 @@ impl Graph {
     pub fn validate_node_type_id(
         &self,
         node_type_id: Option<NodeTypeT>,
-    ) -> Result<Option<NodeTypeT>, String> {
+    ) -> Result<Option<NodeTypeT>> {
         self.get_node_types_number().and_then(|node_types_number| {
             node_type_id.map_or_else( || if !self.has_unknown_node_types()?{
                 Err(
@@ -182,7 +182,7 @@ impl Graph {
     pub fn validate_node_type_ids(
         &self,
         node_type_ids: Vec<Option<NodeTypeT>>,
-    ) -> Result<Vec<Option<NodeTypeT>>, String> {
+    ) -> Result<Vec<Option<NodeTypeT>>> {
         self.must_have_node_types()?;
         node_type_ids
             .into_iter()
@@ -209,7 +209,7 @@ impl Graph {
     pub fn validate_edge_type_id(
         &self,
         edge_type_id: Option<EdgeTypeT>,
-    ) -> Result<Option<EdgeTypeT>, String> {
+    ) -> Result<Option<EdgeTypeT>> {
         self.get_edge_types_number().and_then(|edge_types_number| {
             edge_type_id.map_or_else( || if !self.has_unknown_edge_types()?{
                 Err(
@@ -241,7 +241,7 @@ impl Graph {
     pub fn validate_edge_type_ids(
         &self,
         edge_type_ids: Vec<Option<EdgeTypeT>>,
-    ) -> Result<Vec<Option<EdgeTypeT>>, String> {
+    ) -> Result<Vec<Option<EdgeTypeT>>> {
         self.must_have_edge_types()?;
         edge_type_ids
             .into_iter()
@@ -264,7 +264,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain node types.
-    pub fn must_have_node_types(&self) -> Result<&NodeTypeVocabulary, String> {
+    pub fn must_have_node_types(&self) -> Result<&NodeTypeVocabulary> {
         if !self.has_node_types() {
             return Err("The current graph instance does not have node types.".to_string());
         }
@@ -286,7 +286,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn must_have_edge_types(&self) -> Result<&EdgeTypeVocabulary, String> {
+    pub fn must_have_edge_types(&self) -> Result<&EdgeTypeVocabulary> {
         if !self.has_edge_types() {
             return Err("The current graph instance does not have edge types.".to_string());
         }
@@ -307,7 +307,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph is directed.
-    pub fn must_be_undirected(&self) -> Result<(), String> {
+    pub fn must_be_undirected(&self) -> Result<()> {
         if self.is_directed() {
             return Err("The current graph instance is not undirected.".to_string());
         }
@@ -328,7 +328,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph is not a multigraph.
-    pub fn must_be_multigraph(&self) -> Result<(), String> {
+    pub fn must_be_multigraph(&self) -> Result<()> {
         if !self.is_multigraph() {
             return Err(
                 "The current graph instance must be a multigraph to run this method.".to_string(),
@@ -351,7 +351,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph is a multigraph.
-    pub fn must_not_be_multigraph(&self) -> Result<(), String> {
+    pub fn must_not_be_multigraph(&self) -> Result<()> {
         if self.is_multigraph() {
             return Err(
                 "The current graph instance must not be a multigraph to run this method."
@@ -376,7 +376,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge weights.
-    pub fn must_have_edge_weights(&self) -> Result<&Vec<WeightT>, String> {
+    pub fn must_have_edge_weights(&self) -> Result<&Vec<WeightT>> {
         if !self.has_edge_weights() {
             return Err("The current graph instance does not have weights.".to_string());
         }
@@ -388,7 +388,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain any known node types.
-    pub fn must_have_known_node_types(&self) -> Result<(), String> {
+    pub fn must_have_known_node_types(&self) -> Result<()> {
         if !self.has_known_node_types()? {
             return Err("The current graph instance does contain any known node type.".to_string());
         }
@@ -400,7 +400,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain any unknown node types.
-    pub fn must_have_unknown_node_types(&self) -> Result<(), String> {
+    pub fn must_have_unknown_node_types(&self) -> Result<()> {
         if !self.has_unknown_node_types()? {
             return Err(concat!(
                 "The current graph instance does contain any unknown node type.\n",
@@ -416,7 +416,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain any known edge types.
-    pub fn must_have_known_edge_types(&self) -> Result<(), String> {
+    pub fn must_have_known_edge_types(&self) -> Result<()> {
         if !self.has_known_edge_types()? {
             return Err("The current graph instance does contain any known edge type.".to_string());
         }
@@ -428,7 +428,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain any unknown edge types.
-    pub fn must_have_unknown_edge_types(&self) -> Result<(), String> {
+    pub fn must_have_unknown_edge_types(&self) -> Result<()> {
         if !self.has_unknown_edge_types()? {
             return Err(concat!(
                 "The current graph instance does contain any unknown edge type.\n",
@@ -456,7 +456,7 @@ impl Graph {
     /// * If the graph does not have edge weights.
     pub fn must_have_edge_weights_representing_probabilities(
         &self,
-    ) -> Result<&Vec<WeightT>, String> {
+    ) -> Result<&Vec<WeightT>> {
         if !self.has_edge_weights_representing_probabilities()? {
             return Err(
                 "The current graph instance does not contain weights representing probabilities."
@@ -482,7 +482,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain edge weights.
     /// * If the graph contains negative edge weights.
-    pub fn must_have_positive_edge_weights(&self) -> Result<&Vec<WeightT>, String> {
+    pub fn must_have_positive_edge_weights(&self) -> Result<&Vec<WeightT>> {
         if self.has_negative_edge_weights()? {
             return Err("The current graph instance contains negative edge weights.".to_string());
         }
@@ -493,7 +493,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edges.
-    pub fn must_not_contain_weighted_singleton_nodes(&self) -> Result<(), String> {
+    pub fn must_not_contain_weighted_singleton_nodes(&self) -> Result<()> {
         if self.has_weighted_singleton_nodes()? {
             return Err(concat!(
                 "The current graph instance contains weighted ",
@@ -518,7 +518,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edges.
-    pub fn must_have_edges(&self) -> Result<(), String> {
+    pub fn must_have_edges(&self) -> Result<()> {
         if !self.has_edges() {
             return Err("The current graph instance does not have any edge.".to_string());
         }
@@ -539,7 +539,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have nodes.
-    pub fn must_have_nodes(&self) -> Result<(), String> {
+    pub fn must_have_nodes(&self) -> Result<()> {
         if !self.has_nodes() {
             return Err("The current graph instance does not have any node.".to_string());
         }

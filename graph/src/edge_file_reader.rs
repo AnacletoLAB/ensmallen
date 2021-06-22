@@ -29,7 +29,7 @@ impl EdgeFileReader {
     ///
     /// * reader: CSVFilereader - Path where to store/load the file.
     ///
-    pub fn new<S: Into<String>>(path: S) -> Result<EdgeFileReader, String> {
+    pub fn new<S: Into<String>>(path: S) -> Result<EdgeFileReader> {
         Ok(EdgeFileReader {
             reader: CSVFileReader::new(path, "edge list".to_owned())?,
             sources_column_number: 0,
@@ -57,7 +57,7 @@ impl EdgeFileReader {
     pub fn set_sources_column<S: Into<String>>(
         mut self,
         sources_column: Option<S>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(column) = sources_column {
             let column = column.into();
             if column.is_empty() {
@@ -87,7 +87,7 @@ impl EdgeFileReader {
     pub fn set_sources_column_number(
         mut self,
         sources_column_number: Option<usize>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(column) = sources_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if column >= expected_elements {
@@ -113,7 +113,7 @@ impl EdgeFileReader {
     pub fn set_destinations_column<S: Into<String>>(
         mut self,
         destinations_column: Option<S>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(column) = destinations_column {
             let column = column.into();
             if column.is_empty() {
@@ -142,7 +142,7 @@ impl EdgeFileReader {
     pub fn set_destinations_column_number(
         mut self,
         destinations_column_number: Option<usize>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(column) = destinations_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if column >= expected_elements {
@@ -168,7 +168,7 @@ impl EdgeFileReader {
     pub fn set_edge_types_column<S: Into<String>>(
         mut self,
         edge_type_column: Option<S>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(column) = edge_type_column {
             let column = column.into();
             if column.is_empty() {
@@ -197,7 +197,7 @@ impl EdgeFileReader {
     pub fn set_edge_types_column_number(
         mut self,
         edge_types_column_number: Option<usize>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(etcn) = &edge_types_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if *etcn >= expected_elements {
@@ -226,7 +226,7 @@ impl EdgeFileReader {
     pub fn set_weights_column<S: Into<String>>(
         mut self,
         weights_column: Option<S>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(column) = weights_column {
             let column = column.into();
             if column.is_empty() {
@@ -255,7 +255,7 @@ impl EdgeFileReader {
     pub fn set_weights_column_number(
         mut self,
         weights_column_number: Option<usize>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(wcn) = &weights_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
             if *wcn >= expected_elements {
@@ -379,7 +379,7 @@ impl EdgeFileReader {
     pub fn set_comment_symbol(
         mut self,
         comment_symbol: Option<String>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(cs) = comment_symbol {
             if cs.is_empty() {
                 return Err("The given comment symbol is empty.".to_string());
@@ -482,7 +482,7 @@ impl EdgeFileReader {
     pub fn set_separator<S: Into<String>>(
         mut self,
         separator: Option<S>,
-    ) -> Result<EdgeFileReader, String> {
+    ) -> Result<EdgeFileReader> {
         if let Some(sep) = separator {
             let sep = sep.into();
             if sep.is_empty() {
@@ -544,7 +544,7 @@ impl EdgeFileReader {
     /// # Arguments
     ///
     /// * vals: Vec<String> - Vector of the values of the line to be parsed
-    fn parse_edge_line(&self, vals: Vec<Option<String>>) -> Result<StringQuadruple, String> {
+    fn parse_edge_line(&self, vals: Vec<Option<String>>) -> Result<StringQuadruple> {
         // extract the values
         let maybe_source_node_name = vals[self.sources_column_number].clone();
         let maybe_destination_node_name = vals[self.destinations_column_number].clone();
@@ -584,7 +584,7 @@ impl EdgeFileReader {
     /// Return iterator of rows of the edge file.
     pub fn read_lines(
         &self,
-    ) -> Result<impl Iterator<Item = Result<StringQuadruple, String>> + '_, String> {
+    ) -> Result<impl Iterator<Item = Result<StringQuadruple, String>> + '_> {
         if self.destinations_column_number == self.sources_column_number {
             return Err("The destinations column is the same as the sources one.".to_string());
         }

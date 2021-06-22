@@ -1,3 +1,4 @@
+use super::*;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
 use std::{fs::File, io::prelude::*, io::BufReader};
@@ -51,7 +52,7 @@ impl CSVFileReader {
     /// * path: String - Path where to store/load the file.
     /// * list_name: String - Name of the list that is being loaded.
     ///
-    pub fn new<S: Into<String>>(path: S, list_name: String) -> Result<CSVFileReader, String> {
+    pub fn new<S: Into<String>>(path: S, list_name: String) -> Result<CSVFileReader> {
         let path = path.into();
         // check file existance
         match File::open(&path) {
@@ -72,7 +73,7 @@ impl CSVFileReader {
         }
     }
 
-    fn get_buffer_reader(&self) -> Result<BufReader<File>, String> {
+    fn get_buffer_reader(&self) -> Result<BufReader<File>> {
         let file = File::open(&self.path);
         file.map_or_else(
             |_| Err(format!("Cannot open the file at {}", self.path)),
@@ -81,7 +82,7 @@ impl CSVFileReader {
     }
 
     /// Read the whole file and return how many rows it has.
-    pub(crate) fn count_rows(&self) -> Result<usize, String> {
+    pub(crate) fn count_rows(&self) -> Result<usize> {
         Ok(std::cmp::min(
             self.get_buffer_reader()?.lines().count(),
             self.max_rows_number.unwrap_or(u64::MAX) as usize,
@@ -89,7 +90,7 @@ impl CSVFileReader {
     }
 
     /// Return list of components of the header.
-    pub fn get_header(&self) -> Result<Vec<String>, String> {
+    pub fn get_header(&self) -> Result<Vec<String>> {
         if let Some(first_line) = self.get_lines_iterator(false)?.next() {
             Ok(first_line?
                 .split(&self.separator)
@@ -103,7 +104,7 @@ impl CSVFileReader {
     pub fn get_lines_iterator(
         &self,
         skip_header: bool,
-    ) -> Result<impl Iterator<Item = Result<String, String>> + '_, String> {
+    ) -> Result<impl Iterator<Item = Result<String>> + '_> {
         let rows_to_skip = match skip_header {
             true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {
                 Some(v) => Ok(v),
@@ -129,7 +130,7 @@ impl CSVFileReader {
     }
 
     /// Return elements of the first line not to be skipped.
-    pub fn get_elements_per_line(&self) -> Result<usize, String> {
+    pub fn get_elements_per_line(&self) -> Result<usize> {
         let first_line = self.get_lines_iterator(true)?.next();
         match first_line {
             Some(fl) => {
@@ -150,7 +151,7 @@ impl CSVFileReader {
     /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(
         &self,
-    ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>, String>> + '_, String> {
+    ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>>> + '_> {
         let pb = get_loading_bar(
             self.verbose,
             format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
@@ -183,7 +184,7 @@ impl CSVFileReader {
     ///
     /// * column_name: String - Column to get the number of.
     ///
-    pub fn get_column_number(&self, column_name: String) -> Result<usize, String> {
+    pub fn get_column_number(&self, column_name: String) -> Result<usize> {
         let header = self.get_header()?;
 
         match header.iter().position(|x| *x == column_name) {

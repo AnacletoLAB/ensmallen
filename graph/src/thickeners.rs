@@ -12,7 +12,7 @@ pub enum Distance {
 impl TryFrom<&str> for Distance {
     type Error = String;
 
-    fn try_from(value: &str) -> Result<Self, Self::Error> {
+    fn try_from(value: &str) -> std::result::Result<Self, Self::Error> {
         match value {
             "L2" => Ok(Distance::L2),
             "COSINE" => Ok(Distance::Cosine),
@@ -47,7 +47,7 @@ impl Graph {
         max_degree: Option<NodeT>,
         distance_name: Option<&str>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         // check that the parameters are sane
         self.must_have_nodes()?;
         validate_features(&features, self.get_nodes_number() as usize)?;

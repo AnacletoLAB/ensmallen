@@ -1,3 +1,5 @@
+use super::*;
+
 /// Returns whether the given node name is valid according to given seeds.
 ///
 /// # Arguments
@@ -16,7 +18,7 @@ fn is_valid_node_name_from_seeds(
     id_acronym: Option<&str>,
     id_length: Option<usize>,
     numeric_part_length: Option<usize>,
-) -> Result<(), String> {
+) -> Result<()> {
     if base_name.is_none() && id_acronym.is_none() {
         panic!(concat!(
             "There is some error: both base name and ID acronym are None.",
@@ -1220,7 +1222,7 @@ unsafe fn format_reactome_url_from_node_name(node_name: &str) -> String {
 ///
 /// # Raises
 /// * If there is no known url source for the given node name.
-pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String, String> {
+pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String> {
     if is_valid_flybase_node_name(node_name) {
         return Ok(unsafe { format_flybase_url_from_node_name(node_name) });
     }
@@ -1342,7 +1344,7 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String, Str
 ///
 /// # Raises
 /// * If there is no known url source for the given node name.
-pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str, String> {
+pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str> {
     if is_valid_flybase_node_name(node_name) {
         return Ok("FlyBase");
     }
@@ -1486,7 +1488,7 @@ unsafe fn format_biolink_from_object(object_name: &str) -> String {
 /// * If there is no known url source for the given node type.
 pub fn get_node_type_source_url_from_node_type_name(
     node_type_name: &str,
-) -> Result<String, String> {
+) -> Result<String> {
     if is_valid_biolink_from_object(node_type_name) {
         return Ok(unsafe { format_biolink_from_object(node_type_name) });
     }
@@ -1513,7 +1515,7 @@ pub fn get_node_type_source_url_from_node_type_name(
 /// * If there is no known url source for the given edge type.
 pub fn get_edge_type_source_url_from_edge_type_name(
     edge_type_name: &str,
-) -> Result<String, String> {
+) -> Result<String> {
     if is_valid_biolink_from_object(edge_type_name) {
         return Ok(unsafe { format_biolink_from_object(edge_type_name) });
     }

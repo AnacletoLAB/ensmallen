@@ -21,7 +21,7 @@ impl Graph {
         edges_number: usize,
         nodes_number: NodeT,
         name: S,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         edge_file_reader = edge_file_reader.set_graph_name(name.clone().into());
         node_file_reader = node_file_reader.map(|nfr| nfr.set_graph_name(name.clone().into()));
         Graph::from_string_sorted(
@@ -80,7 +80,7 @@ impl Graph {
         directed: bool,
         directed_edge_list: bool,
         name: S,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         edge_file_reader = edge_file_reader.set_graph_name(name.clone().into());
         node_file_reader = node_file_reader.map(|nfr| nfr.set_graph_name(name.clone().into()));
         Graph::from_string_unsorted(

@@ -27,7 +27,7 @@ impl Graph {
     pub fn set_inplace_all_edge_types<S: Into<String>>(
         &mut self,
         edge_type: S,
-    ) -> Result<&Graph, String> {
+    ) -> Result<&Graph> {
         // If the graph does not have edges, it does not make sense to
         // try and set the edge types.
         self.must_have_edges()?;
@@ -71,7 +71,7 @@ impl Graph {
         &self,
         edge_type: S,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         let mut graph = self.drop_parallel_edges(verbose);
         graph.set_inplace_all_edge_types(edge_type)?;
         Ok(graph)
@@ -84,7 +84,7 @@ impl Graph {
     pub fn set_inplace_all_node_types<S: Into<String>>(
         &mut self,
         node_type: S,
-    ) -> Result<&Graph, String> {
+    ) -> Result<&Graph> {
         self.must_have_nodes()?;
         let mut vocabulary = Vocabulary::default();
         vocabulary.insert(node_type.into())?;
@@ -103,7 +103,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type`: S - The node type to assing to all the nodes.
-    pub fn set_all_node_types<S: Into<String>>(&self, node_type: S) -> Result<Graph, String> {
+    pub fn set_all_node_types<S: Into<String>>(&self, node_type: S) -> Result<Graph> {
         let mut graph = self.clone();
         graph.set_inplace_all_node_types(node_type)?;
         Ok(graph)
@@ -124,7 +124,7 @@ impl Graph {
     pub fn remove_inplace_node_type_ids(
         &mut self,
         node_type_ids_to_remove: Vec<NodeTypeT>,
-    ) -> Result<&Graph, String> {
+    ) -> Result<&Graph> {
         self.must_have_node_types()?;
 
         // if the user passed no values, we won't modify the graph so we can
@@ -193,7 +193,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     ///
-    pub fn remove_inplace_singleton_node_types(&mut self) -> Result<&mut Graph, String> {
+    pub fn remove_inplace_singleton_node_types(&mut self) -> Result<&mut Graph> {
         self.remove_inplace_node_type_ids(self.get_singleton_node_type_ids()?)?;
         Ok(self)
     }
@@ -211,7 +211,7 @@ impl Graph {
     pub fn remove_inplace_edge_type_ids(
         &mut self,
         edge_type_ids_to_remove: Vec<EdgeTypeT>,
-    ) -> Result<&mut Graph, String> {
+    ) -> Result<&mut Graph> {
         self.must_have_edge_types()?;
 
         self.must_not_be_multigraph().map_err(|_| {
@@ -281,7 +281,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     ///
-    pub fn remove_inplace_singleton_edge_types(&mut self) -> Result<&mut Graph, String> {
+    pub fn remove_inplace_singleton_edge_types(&mut self) -> Result<&mut Graph> {
         self.remove_inplace_edge_type_ids(self.get_singleton_edge_type_ids()?)?;
         Ok(self)
     }
@@ -301,7 +301,7 @@ impl Graph {
     pub fn remove_inplace_node_type_name(
         &mut self,
         node_type_name: &str,
-    ) -> Result<&Graph, String> {
+    ) -> Result<&Graph> {
         let node_type_id = self.get_node_type_id_from_node_type_name(node_type_name)?;
         self.remove_inplace_node_type_ids(vec![node_type_id])?;
         Ok(self)
@@ -319,7 +319,7 @@ impl Graph {
     /// * If the graph does not have node types.
     /// * If the given node type ID does not exists in the graph.
     ///
-    pub fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Graph, String> {
+    pub fn remove_node_type_id(&self, node_type_id: NodeTypeT) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_node_type_ids(vec![node_type_id])?;
         Ok(graph)
@@ -333,7 +333,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     ///
-    pub fn remove_singleton_node_types(&self) -> Result<Graph, String> {
+    pub fn remove_singleton_node_types(&self) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_singleton_node_types()?;
         Ok(graph)
@@ -351,7 +351,7 @@ impl Graph {
     /// * If the graph does not have node types.
     /// * If the given node type name does not exists in the graph.
     ///
-    pub fn remove_node_type_name(&self, node_type_name: &str) -> Result<Graph, String> {
+    pub fn remove_node_type_name(&self, node_type_name: &str) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_node_type_name(node_type_name)?;
         Ok(graph)
@@ -372,7 +372,7 @@ impl Graph {
     pub fn remove_inplace_edge_type_name(
         &mut self,
         edge_type_name: &str,
-    ) -> Result<&mut Graph, String> {
+    ) -> Result<&mut Graph> {
         let edge_type_id = self
             .get_edge_type_id_from_edge_type_name(Some(edge_type_name))?
             .unwrap();
@@ -391,7 +391,7 @@ impl Graph {
     /// * If the graph does not have edge types.
     /// * If the given edge type ID does not exists in the graph.
     ///
-    pub fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> Result<Graph, String> {
+    pub fn remove_edge_type_id(&self, edge_type_id: EdgeTypeT) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_edge_type_ids(vec![edge_type_id])?;
         Ok(graph)
@@ -405,7 +405,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     ///
-    pub fn remove_singleton_edge_types(&self) -> Result<Graph, String> {
+    pub fn remove_singleton_edge_types(&self) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_singleton_edge_types()?;
         Ok(graph)
@@ -423,7 +423,7 @@ impl Graph {
     /// * If the graph does not have edge types.
     /// * If the given edge type name does not exists in the graph.
     ///
-    pub fn remove_edge_type_name(&self, edge_type_name: &str) -> Result<Graph, String> {
+    pub fn remove_edge_type_name(&self, edge_type_name: &str) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_edge_type_name(edge_type_name)?;
         Ok(graph)
@@ -436,7 +436,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     ///
-    pub fn remove_inplace_node_types(&mut self) -> Result<&Graph, String> {
+    pub fn remove_inplace_node_types(&mut self) -> Result<&Graph> {
         self.must_have_node_types()?;
         self.node_types = None;
         Ok(self)
@@ -449,7 +449,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have node types.
     ///
-    pub fn remove_node_types(&self) -> Result<Graph, String> {
+    pub fn remove_node_types(&self) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_node_types()?;
         Ok(graph)
@@ -463,7 +463,7 @@ impl Graph {
     /// * If the graph does not have edge types.
     /// * If the graph is a multigraph.
     ///
-    pub fn remove_inplace_edge_types(&mut self) -> Result<&Graph, String> {
+    pub fn remove_inplace_edge_types(&mut self) -> Result<&Graph> {
         self.must_have_edge_types()?;
         self.must_not_be_multigraph()?;
         self.edge_types = None;
@@ -480,7 +480,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge types.
     ///
-    pub fn remove_edge_types(&self, verbose: Option<bool>) -> Result<Graph, String> {
+    pub fn remove_edge_types(&self, verbose: Option<bool>) -> Result<Graph> {
         let mut graph = self.drop_parallel_edges(verbose);
         graph.remove_inplace_edge_types()?;
         Ok(graph)
@@ -493,7 +493,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge weights.
     ///
-    pub fn remove_inplace_edge_weights(&mut self) -> Result<&Graph, String> {
+    pub fn remove_inplace_edge_weights(&mut self) -> Result<&Graph> {
         self.must_have_edge_weights()?;
         self.weights = None;
         Ok(self)
@@ -506,7 +506,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edge weights.
     ///
-    pub fn remove_edge_weights(&self) -> Result<Graph, String> {
+    pub fn remove_edge_weights(&self) -> Result<Graph> {
         let mut graph = self.clone();
         graph.remove_inplace_edge_weights()?;
         Ok(graph)

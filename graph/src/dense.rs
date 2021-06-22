@@ -46,7 +46,7 @@ impl Graph {
     pub fn get_dense_weighted_adjacency_matrix(
         &self,
         weight: Option<WeightT>,
-    ) -> Result<Vec<Vec<WeightT>>, String> {
+    ) -> Result<Vec<Vec<WeightT>>> {
         // If the graph does not have edge weights we raise an error.
         self.must_have_edge_weights()?;
         // Unwrap the weight to the default 0.0 if it was not given.

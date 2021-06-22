@@ -19,7 +19,7 @@ impl Graph {
         edge_type_name: Option<&str>,
         weight: Option<WeightT>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         let verbose = verbose.unwrap_or(true);
         let edge_type_id = if edge_type_name.is_some() {
             self.get_edge_type_id_from_edge_type_name(edge_type_name)?

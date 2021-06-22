@@ -32,7 +32,7 @@ impl NodeFileReader {
     ///
     /// * reader: CSVFileParameters - Path where to store/load the file.
     ///
-    pub fn new<S: Into<String>>(path: S) -> Result<NodeFileReader, String> {
+    pub fn new<S: Into<String>>(path: S) -> Result<NodeFileReader> {
         Ok(NodeFileReader {
             reader: CSVFileReader::new(path, "node list".to_owned())?,
             default_node_type: None,
@@ -55,7 +55,7 @@ impl NodeFileReader {
     pub fn set_nodes_column<S: Into<String>>(
         mut self,
         nodes_column: Option<S>,
-    ) -> Result<NodeFileReader, String> {
+    ) -> Result<NodeFileReader> {
         if let Some(column) = nodes_column {
             let column = column.into();
             if column.is_empty() {
@@ -97,7 +97,7 @@ impl NodeFileReader {
     pub fn set_node_types_column<S: Into<String>>(
         mut self,
         nodes_type_column: Option<S>,
-    ) -> Result<NodeFileReader, String> {
+    ) -> Result<NodeFileReader> {
         if let Some(column) = nodes_type_column {
             let column = column.into();
             if column.is_empty() {
@@ -140,7 +140,7 @@ impl NodeFileReader {
     pub fn set_skip_node_types_if_unavailable(
         mut self,
         skip_node_types_if_unavailable: Option<bool>,
-    ) -> Result<NodeFileReader, String> {
+    ) -> Result<NodeFileReader> {
         if let Some(skip) = skip_node_types_if_unavailable {
             self.skip_node_types_if_unavailable = skip;
         }
@@ -156,7 +156,7 @@ impl NodeFileReader {
     pub fn set_might_contain_singleton_nodes(
         mut self,
         might_contain_singletons: Option<bool>,
-    ) -> Result<NodeFileReader, String> {
+    ) -> Result<NodeFileReader> {
         if let Some(skip) = might_contain_singletons {
             self.might_contain_singletons = skip;
         }
@@ -172,7 +172,7 @@ impl NodeFileReader {
     pub fn set_comment_symbol(
         mut self,
         comment_symbol: Option<String>,
-    ) -> Result<NodeFileReader, String> {
+    ) -> Result<NodeFileReader> {
         if let Some(cs) = comment_symbol {
             if cs.is_empty() {
                 return Err("The given comment symbol is empty.".to_string());
@@ -273,7 +273,7 @@ impl NodeFileReader {
     pub fn set_separator<S: Into<String>>(
         mut self,
         separator: Option<S>,
-    ) -> Result<NodeFileReader, String> {
+    ) -> Result<NodeFileReader> {
         if let Some(sep) = separator {
             let sep = sep.into();
             if sep.is_empty() {
@@ -302,7 +302,7 @@ impl NodeFileReader {
     pub fn set_node_types_separator<S: Into<String>>(
         mut self,
         node_types_separator: Option<S>,
-    ) -> Result<NodeFileReader, String> {
+    ) -> Result<NodeFileReader> {
         if let Some(sep) = node_types_separator {
             let sep = sep.into();
             if sep.is_empty() {
@@ -358,7 +358,7 @@ impl NodeFileReader {
     /// Return iterator of the lines of the node file.
     pub fn read_lines(
         &self,
-    ) -> Result<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + '_, String>
+    ) -> Result<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + '_>
     {
         // Validating that at least a column was given.
         if [self.nodes_column_number, self.node_types_column_number]

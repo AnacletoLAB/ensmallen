@@ -30,7 +30,7 @@ fn generic_string_operator(
     might_contain_singletons: bool,
     might_contain_singletons_with_selfloops: bool,
     might_contain_trap_nodes: bool,
-) -> Result<Graph, String> {
+) -> Result<Graph> {
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
@@ -218,7 +218,7 @@ impl<'a, 'b> Graph {
     /// * If one of the two graphs has edge weights and the other does not.
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
-    pub(crate) fn validate_operator_terms(&self, other: &'b Graph) -> Result<(), String> {
+    pub(crate) fn validate_operator_terms(&self, other: &'b Graph) -> Result<()> {
         if self.directed != other.directed {
             return Err(String::from(
                 "The graphs must either be both directed or undirected.",
@@ -259,7 +259,7 @@ impl Graph {
     /// * If one of the two graphs has edge weights and the other does not.
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
-    pub(crate) fn is_compatible(&self, other: &Graph) -> Result<bool, String> {
+    pub(crate) fn is_compatible(&self, other: &Graph) -> Result<bool> {
         self.validate_operator_terms(other)?;
         if self.nodes != other.nodes {
             return Ok(false);
@@ -299,7 +299,7 @@ impl Graph {
         might_contain_singletons: bool,
         might_contain_singletons_with_selfloops: bool,
         might_contain_trap_nodes: bool,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         match self.is_compatible(other)? {
             true => Ok(generic_integer_operator(
                 self,
@@ -324,7 +324,7 @@ impl Graph {
 }
 
 impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
-    type Output = Result<Graph, String>;
+    type Output = Result<Graph>;
     /// Return graph composed of the two graphs.
     ///
     /// The two graphs must have the same nodes, node types and edge types.
@@ -333,7 +333,7 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
     ///
     /// * `other`: &Graph - Graph to be summed.
     ///
-    fn bitor(self, other: &'b Graph) -> Result<Graph, String> {
+    fn bitor(self, other: &'b Graph) -> Result<Graph> {
         self.generic_operator(
             other,
             "|".to_owned(),
@@ -349,7 +349,7 @@ impl<'a, 'b> ops::BitOr<&'b Graph> for &'a Graph {
 }
 
 impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
-    type Output = Result<Graph, String>;
+    type Output = Result<Graph>;
     /// Return graph composed of the two graphs.
     ///
     /// The two graphs must have the same nodes, node types and edge types.
@@ -358,7 +358,7 @@ impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
     ///
     /// * `other`: &Graph - Graph to be summed.
     ///
-    fn bitxor(self, other: &'b Graph) -> Result<Graph, String> {
+    fn bitxor(self, other: &'b Graph) -> Result<Graph> {
         self.generic_operator(
             self,
             "^".to_owned(),
@@ -372,7 +372,7 @@ impl<'a, 'b> ops::BitXor<&'b Graph> for &'a Graph {
 }
 
 impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
-    type Output = Result<Graph, String>;
+    type Output = Result<Graph>;
     /// Return subtraction for graphs objects.
     ///
     /// The two graphs must have the same nodes, node types and edge types.
@@ -381,7 +381,7 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
     ///
     /// * `other`: &Graph - Graph to be subtracted.
     ///
-    fn sub(self, other: &'b Graph) -> Result<Graph, String> {
+    fn sub(self, other: &'b Graph) -> Result<Graph> {
         self.generic_operator(
             other,
             "-".to_owned(),
@@ -394,7 +394,7 @@ impl<'a, 'b> ops::Sub<&'b Graph> for &'a Graph {
 }
 
 impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
-    type Output = Result<Graph, String>;
+    type Output = Result<Graph>;
     /// Return graph obtained from the intersection of the two graph.
     ///
     /// The two graphs must have the same nodes, node types and edge types.
@@ -403,7 +403,7 @@ impl<'a, 'b> ops::BitAnd<&'b Graph> for &'a Graph {
     ///
     /// * `other`: &Graph - Graph to be subtracted.
     ///
-    fn bitand(self, other: &'b Graph) -> Result<Graph, String> {
+    fn bitand(self, other: &'b Graph) -> Result<Graph> {
         self.generic_operator(
             other,
             "&".to_owned(),

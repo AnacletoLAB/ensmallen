@@ -24,7 +24,7 @@ impl Graph {
         minimum_component_size: Option<NodeT>,
         top_k_components: Option<NodeT>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         let verbose = verbose.unwrap_or(false);
         let mut keep_components = RoaringBitmap::new();
         let components_vector = self.get_node_connected_component_ids(Some(verbose));

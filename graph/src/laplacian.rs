@@ -96,7 +96,7 @@ impl Graph {
     pub fn get_symmetric_normalized_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         self.must_be_undirected()?;
         Graph::from_integer_unsorted(
             self.par_iter_edge_node_ids_and_edge_type_id(true).map(
@@ -143,7 +143,7 @@ impl Graph {
     pub fn get_symmetric_normalized_transformed_graph(
         &self,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         self.must_be_undirected()?;
         Graph::from_integer_unsorted(
             self.par_iter_edge_node_ids_and_edge_type_id(true)
@@ -187,7 +187,7 @@ impl Graph {
     pub fn get_weighted_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         self.must_have_edge_weights()?;
         Graph::from_integer_unsorted(
             self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
@@ -234,7 +234,7 @@ impl Graph {
     pub fn get_weighted_symmetric_normalized_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         self.must_have_edge_weights()?;
         self.must_be_undirected()?;
         self.must_not_contain_weighted_singleton_nodes()?;
@@ -290,7 +290,7 @@ impl Graph {
     pub fn get_weighted_symmetric_normalized_transformed_graph(
         &self,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         self.must_be_undirected()?;
         self.must_not_contain_weighted_singleton_nodes()?;
         let weighted_node_degrees = self.get_weighted_node_degrees()?;
@@ -344,7 +344,7 @@ impl Graph {
     pub fn get_weighted_random_walk_normalized_laplacian_transformed_graph(
         &self,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         self.must_have_edge_weights()?;
         self.must_not_contain_weighted_singleton_nodes()?;
         Graph::from_integer_unsorted(

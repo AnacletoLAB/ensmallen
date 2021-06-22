@@ -187,7 +187,7 @@ impl Graph {
         iterations: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         if let Some(i) = iterations {
             if i == 0 {
                 return Ok(self.clone());

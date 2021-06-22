@@ -59,7 +59,7 @@ impl Graph {
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         if !self.is_directed() && (edge_ids_to_keep.is_some() || edge_ids_to_filter.is_some()) {
             return Err(concat!(
                 "It is not possible to filter by edge ids on an undirected ",
@@ -343,7 +343,7 @@ impl Graph {
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         self.filter_from_ids(
             node_names_to_keep.map_or(Ok::<_, String>(None), |nntk| {
                 Ok(Some(self.get_node_ids_from_node_names(nntk)?))

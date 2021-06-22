@@ -100,7 +100,7 @@ impl Graph {
     /// assert!(normalized.has_edge_weights_representing_probabilities().unwrap());
     /// ```
     ///
-    pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool, String> {
+    pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool> {
         Ok(self.get_mininum_edge_weight()? > 0.0 && self.get_maximum_edge_weight()? <= 1.0)
     }
 
@@ -110,7 +110,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn has_weighted_singleton_nodes(&self) -> Result<bool, String> {
+    pub fn has_weighted_singleton_nodes(&self) -> Result<bool> {
         Ok(self.get_weighted_singleton_nodes_number()? > 0)
     }
 
@@ -122,7 +122,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn has_constant_edge_weights(&self) -> Result<bool, String> {
+    pub fn has_constant_edge_weights(&self) -> Result<bool> {
         Ok(
             (self.get_maximum_edge_weight()? - self.get_mininum_edge_weight()?).abs()
                 < WeightT::EPSILON,
@@ -141,7 +141,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain weights.
-    pub fn has_negative_edge_weights(&self) -> Result<bool, String> {
+    pub fn has_negative_edge_weights(&self) -> Result<bool> {
         self.get_mininum_edge_weight()
             .map(|min_edge_weight| min_edge_weight < 0.0)
     }
@@ -226,7 +226,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_multilabel_node_types(&self) -> Result<bool, String> {
+    pub fn has_multilabel_node_types(&self) -> Result<bool> {
         self.must_have_node_types()
             .map(|node_types| node_types.is_multilabel())
     }
@@ -235,7 +235,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_unknown_node_types(&self) -> Result<bool, String> {
+    pub fn has_unknown_node_types(&self) -> Result<bool> {
         Ok(self.get_unknown_node_types_number()? > 0)
     }
 
@@ -243,7 +243,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_known_node_types(&self) -> Result<bool, String> {
+    pub fn has_known_node_types(&self) -> Result<bool> {
         Ok(self.get_known_node_types_number()? > 0)
     }
 
@@ -251,7 +251,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_unknown_edge_types(&self) -> Result<bool, String> {
+    pub fn has_unknown_edge_types(&self) -> Result<bool> {
         Ok(self.get_unknown_edge_types_number()? > 0)
     }
 
@@ -259,7 +259,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn has_known_edge_types(&self) -> Result<bool, String> {
+    pub fn has_known_edge_types(&self) -> Result<bool> {
         Ok(self.get_known_edge_types_number()? > 0)
     }
 
@@ -267,7 +267,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_homogeneous_node_types(&self) -> Result<bool, String> {
+    pub fn has_homogeneous_node_types(&self) -> Result<bool> {
         Ok(self.get_node_types_number()? == 1)
     }
 
@@ -275,7 +275,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn has_homogeneous_edge_types(&self) -> Result<bool, String> {
+    pub fn has_homogeneous_edge_types(&self) -> Result<bool> {
         Ok(self.get_edge_types_number()? == 1)
     }
 
@@ -283,7 +283,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_singleton_node_types(&self) -> Result<bool, String> {
+    pub fn has_singleton_node_types(&self) -> Result<bool> {
         Ok(self.get_minimum_node_types_number()? == 1)
     }
 
@@ -301,7 +301,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_node_types_oddities(&self) -> Result<bool, String> {
+    pub fn has_node_types_oddities(&self) -> Result<bool> {
         Ok([
             self.has_singleton_node_types()?,
             self.has_homogeneous_node_types()?,
@@ -315,7 +315,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn has_singleton_edge_types(&self) -> Result<bool, String> {
+    pub fn has_singleton_edge_types(&self) -> Result<bool> {
         Ok(self.get_minimum_edge_types_number()? == 1)
     }
 
@@ -323,7 +323,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn has_edge_types_oddities(&self) -> Result<bool, String> {
+    pub fn has_edge_types_oddities(&self) -> Result<bool> {
         Ok([
             self.has_singleton_edge_types()?,
             self.has_homogeneous_edge_types()?,

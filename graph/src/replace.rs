@@ -24,7 +24,7 @@ impl Graph {
         node_type_names_mapping: Option<HashMap<Option<Vec<String>>, Option<Vec<String>>>>,
         edge_type_name_mapping: Option<HashMap<Option<String>, Option<String>>>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         let verbose = verbose.unwrap_or(false);
         if node_type_names_mapping.is_some() && node_type_name_mapping.is_some() {
             return Err(
@@ -166,7 +166,7 @@ impl Graph {
         &self,
         node_type_names: Vec<String>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         if node_type_names
             .iter()
             .any(|node_type_name| node_type_name.is_empty())
@@ -191,7 +191,7 @@ impl Graph {
         &self,
         edge_type_name: String,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         if edge_type_name.is_empty() {
             return Err("The given edge type is empty!".to_string());
         }

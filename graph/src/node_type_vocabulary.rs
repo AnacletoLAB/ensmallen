@@ -102,7 +102,7 @@ impl NodeTypeVocabulary {
     ///
     /// # Raises
     /// * If the terms mapping is found to be not dense.
-    pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
+    pub fn build_reverse_mapping(&mut self) -> Result<()> {
         self.vocabulary.build_reverse_mapping()
     }
 
@@ -147,7 +147,7 @@ impl NodeTypeVocabulary {
     pub fn insert_values<S: AsRef<str> + std::fmt::Debug>(
         &mut self,
         maybe_values: Option<Vec<S>>,
-    ) -> Result<Option<Vec<NodeTypeT>>, String> {
+    ) -> Result<Option<Vec<NodeTypeT>>> {
         Ok(match maybe_values {
             Some(values) => {
                 // Check if there is at least one node type
@@ -162,7 +162,7 @@ impl NodeTypeVocabulary {
                             .insert(value.as_ref())
                             .map(|values| values.0)
                     })
-                    .collect::<Result<Vec<NodeTypeT>, String>>()?;
+                    .collect::<Result<Vec<NodeTypeT>>>()?;
                 // Sort the slice
                 ids.sort_unstable();
 
@@ -240,7 +240,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `id`: NodeTypeT - Node Type ID to be translated.
-    pub fn translate(&self, id: NodeTypeT) -> Result<String, String> {
+    pub fn translate(&self, id: NodeTypeT) -> Result<String> {
         self.vocabulary.translate(id)
     }
 
@@ -260,7 +260,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `ids`: Vec<NodeTypeT> - Node Type IDs to be translated.
-    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Result<Vec<String>, String> {
+    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Result<Vec<String>> {
         ids.into_iter().map(|id| self.translate(id)).collect()
     }
 

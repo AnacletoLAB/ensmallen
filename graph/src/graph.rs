@@ -227,7 +227,7 @@ impl Graph {
     /// * If one of the two graphs has edge weights and the other does not.
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
-    pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
+    pub fn overlaps(&self, other: &Graph) -> Result<bool> {
         Ok(match self.is_compatible(other)? {
             true => other
                 .par_iter_edge_node_ids_and_edge_type_id(other.directed)
@@ -277,7 +277,7 @@ impl Graph {
     /// * If one of the two graphs has edge weights and the other does not.
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
-    pub fn contains(&self, other: &Graph) -> Result<bool, String> {
+    pub fn contains(&self, other: &Graph) -> Result<bool> {
         Ok(match self.is_compatible(other)? {
             true => other
                 .par_iter_edge_node_ids_and_edge_type_id(other.directed)

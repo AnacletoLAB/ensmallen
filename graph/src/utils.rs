@@ -1,6 +1,11 @@
 use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::ThreadPool;
+use std::ops::Range;
+use std::sync::atomic::AtomicUsize;
+use std::sync::atomic::Ordering;
+
+
 
 #[macro_export]
 /// Take a vector and make it a None if its empty, Some(vector) otherwise
@@ -51,7 +56,7 @@ pub fn get_loading_bar(verbose: bool, desc: &str, total_iterations: usize) -> Pr
 /// Moreover, we return an error if the number of selected CPUS is 1 or less.
 /// Because the algorithms which use the pool requires at least 2 threads, and
 /// we generally provide also an optimized single-thread version.
-pub(crate) fn get_thread_pool() -> Result<(usize, ThreadPool), String> {
+pub(crate) fn get_thread_pool() -> Result<(usize, ThreadPool)> {
     let cpu_number = rayon::current_num_threads();
 
     if cpu_number <= 1 {
@@ -106,7 +111,7 @@ pub(crate) fn get_thread_pool() -> Result<(usize, ThreadPool), String> {
 pub(crate) fn validate_features(
     features: &[Vec<f64>],
     expected_elements_number: usize,
-) -> Result<(), String> {
+) -> Result<()> {
     if features.len() != expected_elements_number {
         return Err(format!(
             concat!(
@@ -177,7 +182,7 @@ impl Graph {
 /// assert_eq!(parse_weight("2.0".to_string()).unwrap(), 2.0);
 /// ```
 ///
-pub fn parse_weight(weight: String) -> Result<WeightT, String> {
+pub fn parse_weight(weight: String) -> Result<WeightT> {
     weight
         .parse::<WeightT>()
         .map_err(|_| format!("Cannot parse weight {} as a float.", weight))

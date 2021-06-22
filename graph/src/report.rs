@@ -217,7 +217,7 @@ impl Graph {
         &self,
         other: &Graph,
         verbose: Option<bool>,
-    ) -> Result<String, String> {
+    ) -> Result<String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
@@ -351,7 +351,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Whether to show a loading bar in graph operations.
     ///
-    pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
+    pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String> {
         self.validate_node_id(node_id)?;
         let mut partial_reports: Vec<String> = Vec::new();
         let node_name = unsafe { self.get_unchecked_node_name_from_node_id(node_id) };
@@ -419,7 +419,7 @@ impl Graph {
     /// # Arguments
     /// * `node_name`: &str - Whether to show a loading bar in graph operations.
     ///
-    pub fn get_node_report_from_node_name(&self, node_name: &str) -> Result<String, String> {
+    pub fn get_node_report_from_node_name(&self, node_name: &str) -> Result<String> {
         self.get_node_id_from_node_name(node_name)
             .and_then(|node_id| self.get_node_report_from_node_id(node_id))
     }

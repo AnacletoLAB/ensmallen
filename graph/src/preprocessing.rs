@@ -69,7 +69,7 @@ pub fn cooccurence_matrix(
     window_size: usize,
     number_of_sequences: usize,
     verbose: Option<bool>,
-) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)>), String> {
+) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)>)> {
     let verbose = verbose.unwrap_or(false);
     let mut cooccurence_matrix: HashMap<(NodeT, NodeT), f64> = HashMap::new();
     let mut max_frequency = 0.0;
@@ -151,7 +151,7 @@ impl Graph {
         walk_parameters: &'a WalksParameters,
         quantity: NodeT,
         window_size: usize,
-    ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a, String> {
+    ) -> Result<impl ParallelIterator<Item = (Vec<NodeT>, NodeT)> + 'a> {
         Ok(word2vec(
             self.iter_random_walks(quantity, walk_parameters)?,
             window_size,
@@ -175,7 +175,7 @@ impl Graph {
         walks_parameters: &'a WalksParameters,
         window_size: usize,
         verbose: Option<bool>,
-    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)> + 'a), String> {
+    ) -> Result<(usize, impl Iterator<Item = (NodeT, NodeT, f64)> + 'a)> {
         self.must_have_edges()?;
         let walks = self.iter_complete_walks(walks_parameters)?;
         cooccurence_matrix(
@@ -216,8 +216,7 @@ impl Graph {
         return_edge_weights: Option<bool>,
         max_neighbours: Option<NodeT>,
     ) -> Result<
-        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), Vec<NodeTypeT>)> + '_,
-        String,
+        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), Vec<NodeTypeT>)> + '_
     > {
         if let Some(return_edge_weights) = return_edge_weights {
             if return_edge_weights {
@@ -331,8 +330,7 @@ impl Graph {
                     Option<EdgeTypeT>,
                     bool,
                 ),
-            > + 'a,
-        String,
+            > + 'a
     > {
         let batch_size = batch_size.unwrap_or(1024);
         let negative_samples_rate = negative_samples_rate.unwrap_or(0.5);
@@ -521,7 +519,7 @@ impl Graph {
         maximal_sampling_attempts: Option<usize>,
         shuffle: Option<bool>,
         graph_to_avoid: Option<&'a Graph>,
-    ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a, String> {
+    ) -> Result<impl ParallelIterator<Item = (f64, f64, bool)> + 'a> {
         let iter = self.get_edge_prediction_mini_batch(
             idx,
             batch_size,
@@ -662,7 +660,7 @@ impl Graph {
         b: Option<f64>,
         include_central_node: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Vec<Vec<f64>>, String> {
+    ) -> Result<Vec<Vec<f64>>> {
         // The graph must have nodes to support node feature propagation
         self.must_have_nodes()?;
         // Validate the provided features
@@ -854,7 +852,7 @@ impl Graph {
         k1: Option<f64>,
         b: Option<f64>,
         verbose: Option<bool>,
-    ) -> Result<Vec<Vec<f64>>, String> {
+    ) -> Result<Vec<Vec<f64>>> {
         self.get_okapi_bm25_node_feature_propagation(
             self.get_one_hot_encoded_node_types()?
                 .into_iter()

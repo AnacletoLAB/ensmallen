@@ -27,6 +27,9 @@
 #![type_length_limit = "3764086"]
 #![feature(option_result_unwrap_unchecked)]
 
+mod method_caller;
+pub(crate) use method_caller::*;
+
 mod vocabulary;
 pub use self::vocabulary::Vocabulary;
 mod node_type_vocabulary;

@@ -1,6 +1,6 @@
 use std::fmt::Display;
 use std::hash::Hash;
-use std::ops::AddAssign;
+use std::ops::{Add, Sub, AddAssign};
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -31,12 +31,14 @@ pub type StringQuadruple = (String, String, Option<String>, Option<WeightT>);
 /// Symbol reserved to unmapped nodes for algoritms such as connected components.
 pub const NOT_PRESENT: NodeT = NodeT::MAX;
 
+pub type Result<T> = std::result::Result<T, String>;
+
 /// Trait used for the Vocabulary class.
 /// It represent an unsigned integer that can be converted to and from usize.
 /// This allows us to save memory using indicies of smaller size than u64
 /// and it has no effects on performance because it's optimized away during
 /// compilaton.
-pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign + Hash {
+pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign + Add + Sub<Output = Self> + Hash {
     /// create the type from a usize
     fn from_usize(v: usize) -> Self;
     /// create an usize from the type

@@ -260,7 +260,7 @@ impl Graph {
     }
 
     /// Returns total number of triads in the weighted graph.
-    pub fn get_weighted_triads_number(&self) -> Result<f64, String> {
+    pub fn get_weighted_triads_number(&self) -> Result<f64> {
         Ok(self
             .par_iter_weighted_node_degrees()?
             .map(|degree| {

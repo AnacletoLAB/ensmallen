@@ -11,7 +11,7 @@ use std::sync::atomic::Ordering;
 
 impl Graph {
     /// Returns iterator over the unweighted degree centrality for all nodes.
-    pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f64> + '_, String> {
+    pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f64> + '_> {
         self.must_have_edges()?;
 
         let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f64 };
@@ -23,7 +23,7 @@ impl Graph {
     /// Returns iterator over the weighted degree centrality for all nodes.
     pub fn par_iter_weighted_degree_centrality(
         &self,
-    ) -> Result<impl IndexedParallelIterator<Item = f64> + '_, String> {
+    ) -> Result<impl IndexedParallelIterator<Item = f64> + '_> {
         self.must_have_edges()?;
         self.must_have_positive_edge_weights()?;
 
@@ -34,12 +34,12 @@ impl Graph {
     }
 
     /// Returns vector of unweighted degree centrality for all nodes.
-    pub fn get_degree_centrality(&self) -> Result<Vec<f64>, String> {
+    pub fn get_degree_centrality(&self) -> Result<Vec<f64>> {
         Ok(self.iter_degree_centrality()?.collect())
     }
 
     /// Returns vector of weighted degree centrality for all nodes.
-    pub fn get_weighted_degree_centrality(&self) -> Result<Vec<f64>, String> {
+    pub fn get_weighted_degree_centrality(&self) -> Result<Vec<f64>> {
         Ok(self.par_iter_weighted_degree_centrality()?.collect())
     }
 
@@ -164,7 +164,7 @@ impl Graph {
         &self,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<impl ParallelIterator<Item = f64> + '_, String> {
+    ) -> Result<impl ParallelIterator<Item = f64> + '_> {
         self.must_have_positive_edge_weights()?;
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         if use_edge_weights_as_probabilities {
@@ -225,7 +225,7 @@ impl Graph {
         &self,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Vec<f64>, String> {
+    ) -> Result<Vec<f64>> {
         self.par_iter_weighted_closeness_centrality(use_edge_weights_as_probabilities, verbose)
             .map(|x| x.collect())
     }
@@ -328,7 +328,7 @@ impl Graph {
         &self,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<impl ParallelIterator<Item = f64> + '_, String> {
+    ) -> Result<impl ParallelIterator<Item = f64> + '_> {
         self.must_have_positive_edge_weights()?;
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
         if use_edge_weights_as_probabilities {
@@ -375,7 +375,7 @@ impl Graph {
         &self,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Vec<f64>, String> {
+    ) -> Result<Vec<f64>> {
         self.par_iter_weighted_harmonic_centrality(use_edge_weights_as_probabilities, verbose)
             .map(|x| x.collect())
     }
@@ -574,7 +574,7 @@ impl Graph {
         &self,
         maximum_iterations_number: Option<usize>,
         tollerance: Option<f64>,
-    ) -> Result<Vec<f64>, String> {
+    ) -> Result<Vec<f64>> {
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
         let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;
         if tollerance < f64::EPSILON {
@@ -637,7 +637,7 @@ impl Graph {
         &self,
         maximum_iterations_number: Option<usize>,
         tollerance: Option<f64>,
-    ) -> Result<Vec<f64>, String> {
+    ) -> Result<Vec<f64>> {
         self.must_have_positive_edge_weights()?;
         let maximum_iterations_number = maximum_iterations_number.unwrap_or(1000);
         let tollerance = tollerance.unwrap_or(1e-6) * self.get_nodes_number() as f64;

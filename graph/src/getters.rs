@@ -51,7 +51,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn get_weighted_singleton_nodes_number(&self) -> Result<NodeT, String> {
+    pub fn get_weighted_singleton_nodes_number(&self) -> Result<NodeT> {
         self.must_have_edge_weights()?;
         Ok(self.weighted_singleton_nodes_number.unwrap())
     }
@@ -144,7 +144,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The graph density is {}", graph.get_density().unwrap());
     /// ```
-    pub fn get_density(&self) -> Result<f64, String> {
+    pub fn get_density(&self) -> Result<f64> {
         if !self.has_nodes() {
             return Err("The density of an empty graph is undefined.".to_string());
         }
@@ -191,7 +191,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The mean node degree of the graph is  {}", graph.get_node_degrees_mean().unwrap());
     /// ```
-    pub fn get_node_degrees_mean(&self) -> Result<f64, String> {
+    pub fn get_node_degrees_mean(&self) -> Result<f64> {
         if !self.has_nodes() {
             return Err(
                 "The mean of the node degrees is not defined on an empty graph".to_string(),
@@ -207,7 +207,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The mean node degree of the graph is  {}", graph.get_weighted_node_degrees_mean().unwrap());
     /// ```
-    pub fn get_weighted_node_degrees_mean(&self) -> Result<f64, String> {
+    pub fn get_weighted_node_degrees_mean(&self) -> Result<f64> {
         Ok(self.get_total_edge_weights()? / self.get_nodes_number() as f64)
     }
 
@@ -270,7 +270,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The median node degree of the graph is  {}", graph.get_node_degrees_median().unwrap());
     /// ```
-    pub fn get_node_degrees_median(&self) -> Result<NodeT, String> {
+    pub fn get_node_degrees_median(&self) -> Result<NodeT> {
         self.must_have_nodes()?;
         let mut degrees = self.get_node_degrees();
         degrees.par_sort_unstable();
@@ -284,7 +284,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The weighted median node degree of the graph is  {}", graph.get_weighted_node_degrees_median().unwrap());
     /// ```
-    pub fn get_weighted_node_degrees_median(&self) -> Result<f64, String> {
+    pub fn get_weighted_node_degrees_median(&self) -> Result<f64> {
         self.must_have_nodes()?;
         self.must_have_edge_weights()?;
         let mut weighted_degrees = self.get_weighted_node_degrees()?;
@@ -315,7 +315,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the current graph does not contain edge weights.
-    pub fn get_weighted_maximum_node_degree(&self) -> Result<f64, String> {
+    pub fn get_weighted_maximum_node_degree(&self) -> Result<f64> {
         self.must_have_edge_weights()?;
         Ok(unsafe { self.get_unchecked_weighted_maximum_node_degree() })
     }
@@ -333,7 +333,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the current graph does not contain edge weights.
-    pub fn get_weighted_minimum_node_degree(&self) -> Result<f64, String> {
+    pub fn get_weighted_minimum_node_degree(&self) -> Result<f64> {
         self.must_have_edge_weights()?;
         Ok(unsafe { self.get_unchecked_weighted_minimum_node_degree() })
     }
@@ -348,7 +348,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_maximum_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_maximum_node_degree(&self) -> Result<NodeT> {
         self.must_have_nodes()
             .map(|_| unsafe { self.get_unchecked_maximum_node_degree() })
     }
@@ -373,7 +373,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The maximum node degree of the graph is  {}", graph.get_most_central_node_id().unwrap());
     /// ```
-    pub fn get_most_central_node_id(&self) -> Result<NodeT, String> {
+    pub fn get_most_central_node_id(&self) -> Result<NodeT> {
         self.must_have_nodes()
             .map(|_| unsafe { self.get_unchecked_most_central_node_id() as NodeT })
     }
@@ -389,7 +389,7 @@ impl Graph {
     }
 
     /// Returns minimum weighted node degree of the graph.
-    pub fn get_weighted_mininum_node_degree(&self) -> Result<f64, String> {
+    pub fn get_weighted_mininum_node_degree(&self) -> Result<f64> {
         self.must_have_edge_weights()?;
         Ok(self.min_weighted_node_degree.unwrap())
     }
@@ -404,7 +404,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain any node (is an empty graph).
-    pub fn get_minimum_node_degree(&self) -> Result<NodeT, String> {
+    pub fn get_minimum_node_degree(&self) -> Result<NodeT> {
         self.must_have_nodes()
             .map(|_| unsafe { self.get_unchecked_minimum_node_degree() })
     }
@@ -416,7 +416,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The mode node degree of the graph is  {}", graph.get_node_degrees_mode().unwrap());
     /// ```
-    pub fn get_node_degrees_mode(&self) -> Result<NodeT, String> {
+    pub fn get_node_degrees_mode(&self) -> Result<NodeT> {
         if !self.has_nodes() {
             return Err(
                 "The mode of the node degrees is not defined on an empty graph".to_string(),
@@ -459,7 +459,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The rate of self-loops in the graph is  {}", graph.get_selfloop_nodes_rate().unwrap());
     /// ```
-    pub fn get_selfloop_nodes_rate(&self) -> Result<f64, String> {
+    pub fn get_selfloop_nodes_rate(&self) -> Result<f64> {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
@@ -541,7 +541,7 @@ impl Graph {
     }
 
     /// Return the edge types of the edges.
-    pub fn get_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>, String> {
+    pub fn get_edge_type_ids(&self) -> Result<Vec<Option<EdgeTypeT>>> {
         self.must_have_edge_types()
             .map(|_| self.edge_types.as_ref().map(|ets| ets.ids.clone()).unwrap())
     }
@@ -558,13 +558,13 @@ impl Graph {
     /// println!("The graph edge types are {:?}", graph_with_edge_types.get_unique_edge_type_ids());
     /// ```
     ///
-    pub fn get_unique_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>, String> {
+    pub fn get_unique_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>> {
         self.iter_unique_edge_type_ids()
             .map(|edge_type_ids| edge_type_ids.collect())
     }
 
     /// Return the edge types names.
-    pub fn get_edge_type_names(&self) -> Result<Vec<Option<String>>, String> {
+    pub fn get_edge_type_names(&self) -> Result<Vec<Option<String>>> {
         self.must_have_edge_types().map(|_| {
             self.edge_types
                 .as_ref()
@@ -581,7 +581,7 @@ impl Graph {
     }
 
     /// Return the edge types names.
-    pub fn get_unique_edge_type_names(&self) -> Result<Vec<String>, String> {
+    pub fn get_unique_edge_type_names(&self) -> Result<Vec<String>> {
         self.iter_unique_edge_type_names()
             .map(|iter_unique_edge_type_names| iter_unique_edge_type_names.collect())
     }
@@ -597,7 +597,7 @@ impl Graph {
     /// assert!(graph_without_weights.get_edge_weights().is_err());
     /// println!("The graph weights are {:?}.", graph_with_weights.get_edge_weights());
     /// ```
-    pub fn get_edge_weights(&self) -> Result<Vec<WeightT>, String> {
+    pub fn get_edge_weights(&self) -> Result<Vec<WeightT>> {
         self.must_have_edge_weights()?;
         Ok(self.weights.clone().unwrap())
     }
@@ -616,7 +616,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn get_total_edge_weights(&self) -> Result<f64, String> {
+    pub fn get_total_edge_weights(&self) -> Result<f64> {
         self.must_have_edge_weights()
             .map(|_| self.total_weights.unwrap())
     }
@@ -635,7 +635,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn get_mininum_edge_weight(&self) -> Result<WeightT, String> {
+    pub fn get_mininum_edge_weight(&self) -> Result<WeightT> {
         self.must_have_edge_weights()
             .map(|_| self.min_edge_weight.unwrap())
     }
@@ -654,7 +654,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn get_maximum_edge_weight(&self) -> Result<WeightT, String> {
+    pub fn get_maximum_edge_weight(&self) -> Result<WeightT> {
         self.must_have_edge_weights()
             .map(|_| self.max_edge_weight.unwrap())
     }
@@ -671,7 +671,7 @@ impl Graph {
     /// println!("The graph node types are {:?}", graph_with_node_types.get_node_type_ids());
     /// ```
     ///
-    pub fn get_node_type_ids(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>, String> {
+    pub fn get_node_type_ids(&self) -> Result<Vec<Option<Vec<NodeTypeT>>>> {
         self.must_have_node_types()
             .map(|_| self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
     }
@@ -680,7 +680,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn get_one_hot_encoded_node_types(&self) -> Result<Vec<Vec<bool>>, String> {
+    pub fn get_one_hot_encoded_node_types(&self) -> Result<Vec<Vec<bool>>> {
         Ok(self.iter_one_hot_encoded_node_type_ids()?.collect())
     }
 
@@ -688,7 +688,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn get_one_hot_encoded_known_node_types(&self) -> Result<Vec<Vec<bool>>, String> {
+    pub fn get_one_hot_encoded_known_node_types(&self) -> Result<Vec<Vec<bool>>> {
         Ok(self.iter_one_hot_encoded_known_node_type_ids()?.collect())
     }
 
@@ -696,7 +696,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn get_one_hot_encoded_edge_types(&self) -> Result<Vec<Vec<bool>>, String> {
+    pub fn get_one_hot_encoded_edge_types(&self) -> Result<Vec<Vec<bool>>> {
         Ok(self.iter_one_hot_encoded_edge_type_ids()?.collect())
     }
 
@@ -704,7 +704,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn get_one_hot_encoded_known_edge_types(&self) -> Result<Vec<Vec<bool>>, String> {
+    pub fn get_one_hot_encoded_known_edge_types(&self) -> Result<Vec<Vec<bool>>> {
         Ok(self.iter_one_hot_encoded_known_edge_type_ids()?.collect())
     }
 
@@ -720,7 +720,7 @@ impl Graph {
     /// println!("The graph node types are {:?}", graph_with_node_types.get_node_type_names());
     /// ```
     ///
-    pub fn get_node_type_names(&self) -> Result<Vec<Option<Vec<String>>>, String> {
+    pub fn get_node_type_names(&self) -> Result<Vec<Option<Vec<String>>>> {
         self.must_have_node_types().map(|_| {
             self.iter_node_ids()
                 .map(|node_id| unsafe { self.get_unchecked_node_type_names_from_node_id(node_id) })
@@ -740,7 +740,7 @@ impl Graph {
     /// println!("The graph node types are {:?}", graph_with_node_types.get_unique_node_type_ids());
     /// ```
     ///
-    pub fn get_unique_node_type_ids(&self) -> Result<Vec<NodeTypeT>, String> {
+    pub fn get_unique_node_type_ids(&self) -> Result<Vec<NodeTypeT>> {
         self.iter_unique_node_type_ids()
             .map(|iter_unique_node_type_ids| iter_unique_node_type_ids.collect())
     }
@@ -757,7 +757,7 @@ impl Graph {
     /// println!("The graph node types are {:?}", graph_with_node_types.get_unique_node_type_names());
     /// ```
     ///
-    pub fn get_unique_node_type_names(&self) -> Result<Vec<String>, String> {
+    pub fn get_unique_node_type_names(&self) -> Result<Vec<String>> {
         self.iter_unique_node_type_names()
             .map(|iter_unique_node_type_names| iter_unique_node_type_names.collect())
     }
@@ -796,7 +796,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_unknown_node_types_number(&self) -> Result<NodeT, String> {
+    pub fn get_unknown_node_types_number(&self) -> Result<NodeT> {
         self.must_have_node_types()
             .map(|node_types| node_types.get_unknown_count())
     }
@@ -805,7 +805,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_known_node_types_number(&self) -> Result<NodeT, String> {
+    pub fn get_known_node_types_number(&self) -> Result<NodeT> {
         Ok(self.get_nodes_number() - self.get_unknown_node_types_number()?)
     }
 
@@ -813,7 +813,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_unknown_node_types_rate(&self) -> Result<f64, String> {
+    pub fn get_unknown_node_types_rate(&self) -> Result<f64> {
         self.get_unknown_node_types_number()
             .map(|unknown_node_types_number| {
                 unknown_node_types_number as f64 / self.get_nodes_number() as f64
@@ -824,7 +824,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_known_node_types_rate(&self) -> Result<f64, String> {
+    pub fn get_known_node_types_rate(&self) -> Result<f64> {
         self.get_known_node_types_number()
             .map(|known_node_types_number| {
                 known_node_types_number as f64 / self.get_nodes_number() as f64
@@ -835,7 +835,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_minimum_node_types_number(&self) -> Result<NodeT, String> {
+    pub fn get_minimum_node_types_number(&self) -> Result<NodeT> {
         self.must_have_node_types()
             .map(|node_types| node_types.get_minimum_node_type_count())
     }
@@ -844,7 +844,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_maximum_node_types_number(&self) -> Result<NodeT, String> {
+    pub fn get_maximum_node_types_number(&self) -> Result<NodeT> {
         self.must_have_node_types()
             .map(|node_types| node_types.get_maximum_node_type_count())
     }
@@ -853,7 +853,7 @@ impl Graph {
     ///
     /// This value is the maximum number of multilabel counts
     /// that appear in any given node in the graph.
-    pub fn get_maximum_multilabel_count(&self) -> Result<NodeTypeT, String> {
+    pub fn get_maximum_multilabel_count(&self) -> Result<NodeTypeT> {
         self.must_have_node_types()
             .map(|node_types| node_types.get_maximum_multilabel_count())
     }
@@ -862,7 +862,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn get_singleton_node_types_number(&self) -> Result<NodeTypeT, String> {
+    pub fn get_singleton_node_types_number(&self) -> Result<NodeTypeT> {
         self.iter_node_type_counts().map(|iter_node_type_counts| {
             iter_node_type_counts
                 .map(|node_type_count| (node_type_count == 1) as NodeTypeT)
@@ -874,7 +874,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn get_singleton_node_type_ids(&self) -> Result<Vec<NodeTypeT>, String> {
+    pub fn get_singleton_node_type_ids(&self) -> Result<Vec<NodeTypeT>> {
         self.iter_singleton_node_type_ids()
             .map(|iter_singleton_node_type_ids| iter_singleton_node_type_ids.collect())
     }
@@ -883,7 +883,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn get_singleton_node_type_names(&self) -> Result<Vec<String>, String> {
+    pub fn get_singleton_node_type_names(&self) -> Result<Vec<String>> {
         self.iter_singleton_node_type_names()
             .map(|iter_singleton_node_type_names| iter_singleton_node_type_names.collect())
     }
@@ -892,7 +892,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_unknown_edge_types_number(&self) -> Result<EdgeT, String> {
+    pub fn get_unknown_edge_types_number(&self) -> Result<EdgeT> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.get_unknown_count())
     }
@@ -901,7 +901,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_unknown_edge_types(&self) -> Result<Vec<EdgeT>, String> {
+    pub fn get_edge_ids_with_unknown_edge_types(&self) -> Result<Vec<EdgeT>> {
         self.iter_edge_ids_with_unknown_edge_types()
             .map(|x| x.collect())
     }
@@ -910,7 +910,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_known_edge_types(&self) -> Result<Vec<EdgeT>, String> {
+    pub fn get_edge_ids_with_known_edge_types(&self) -> Result<Vec<EdgeT>> {
         self.iter_edge_ids_with_known_edge_types()
             .map(|x| x.collect())
     }
@@ -925,7 +925,7 @@ impl Graph {
     pub fn get_edge_node_ids_with_unknown_edge_types(
         &self,
         directed: bool,
-    ) -> Result<Vec<(NodeT, NodeT)>, String> {
+    ) -> Result<Vec<(NodeT, NodeT)>> {
         self.iter_edge_node_ids_with_unknown_edge_types(directed)
             .map(|x| x.collect())
     }
@@ -940,7 +940,7 @@ impl Graph {
     pub fn get_edge_node_ids_with_known_edge_types(
         &self,
         directed: bool,
-    ) -> Result<Vec<(NodeT, NodeT)>, String> {
+    ) -> Result<Vec<(NodeT, NodeT)>> {
         self.iter_edge_node_ids_with_known_edge_types(directed)
             .map(|x| x.collect())
     }
@@ -955,7 +955,7 @@ impl Graph {
     pub fn get_edge_node_names_with_unknown_edge_types(
         &self,
         directed: bool,
-    ) -> Result<Vec<(String, String)>, String> {
+    ) -> Result<Vec<(String, String)>> {
         self.iter_edge_node_names_with_unknown_edge_types(directed)
             .map(|x| x.collect())
     }
@@ -970,7 +970,7 @@ impl Graph {
     pub fn get_edge_node_names_with_known_edge_types(
         &self,
         directed: bool,
-    ) -> Result<Vec<(String, String)>, String> {
+    ) -> Result<Vec<(String, String)>> {
         self.iter_edge_node_names_with_known_edge_types(directed)
             .map(|x| x.collect())
     }
@@ -980,7 +980,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>, String> {
+    pub fn get_edge_ids_with_unknown_edge_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_edge_ids_with_unknown_edge_types().map(|x| {
             let mut mask = vec![false; self.get_directed_edges_number() as usize];
             x.for_each(|id| {
@@ -995,7 +995,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_edge_ids_with_known_edge_types_mask(&self) -> Result<Vec<bool>, String> {
+    pub fn get_edge_ids_with_known_edge_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_edge_ids_with_known_edge_types().map(|x| {
             let mut mask = vec![false; self.get_directed_edges_number() as usize];
             x.for_each(|id| {
@@ -1009,7 +1009,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_ids_with_unknown_node_types(&self) -> Result<Vec<NodeT>, String> {
+    pub fn get_node_ids_with_unknown_node_types(&self) -> Result<Vec<NodeT>> {
         self.iter_node_ids_with_unknown_node_types()
             .map(|x| x.collect())
     }
@@ -1018,7 +1018,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_ids_with_known_node_types(&self) -> Result<Vec<NodeT>, String> {
+    pub fn get_node_ids_with_known_node_types(&self) -> Result<Vec<NodeT>> {
         self.iter_node_ids_with_known_node_types()
             .map(|x| x.collect())
     }
@@ -1027,7 +1027,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_names_with_unknown_node_types(&self) -> Result<Vec<String>, String> {
+    pub fn get_node_names_with_unknown_node_types(&self) -> Result<Vec<String>> {
         self.iter_node_names_with_unknown_node_types()
             .map(|x| x.collect())
     }
@@ -1036,7 +1036,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_names_with_known_node_types(&self) -> Result<Vec<String>, String> {
+    pub fn get_node_names_with_known_node_types(&self) -> Result<Vec<String>> {
         self.iter_node_names_with_known_node_types()
             .map(|x| x.collect())
     }
@@ -1046,7 +1046,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_ids_with_unknown_node_types_mask(&self) -> Result<Vec<bool>, String> {
+    pub fn get_node_ids_with_unknown_node_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_node_ids_with_unknown_node_types().map(|x| {
             let mut mask = vec![false; self.get_nodes_number() as usize];
             x.for_each(|id| {
@@ -1061,7 +1061,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the graph.
-    pub fn get_node_ids_with_known_node_types_mask(&self) -> Result<Vec<bool>, String> {
+    pub fn get_node_ids_with_known_node_types_mask(&self) -> Result<Vec<bool>> {
         self.iter_node_ids_with_known_node_types().map(|x| {
             let mut mask = vec![false; self.get_nodes_number() as usize];
             x.for_each(|id| {
@@ -1075,7 +1075,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_known_edge_types_number(&self) -> Result<EdgeT, String> {
+    pub fn get_known_edge_types_number(&self) -> Result<EdgeT> {
         Ok(self.get_directed_edges_number() - self.get_unknown_edge_types_number()?)
     }
 
@@ -1083,7 +1083,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_unknown_edge_types_rate(&self) -> Result<f64, String> {
+    pub fn get_unknown_edge_types_rate(&self) -> Result<f64> {
         self.get_unknown_edge_types_number()
             .map(|unknown_edge_types_number| {
                 unknown_edge_types_number as f64 / self.get_directed_edges_number() as f64
@@ -1094,7 +1094,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_known_edge_types_rate(&self) -> Result<f64, String> {
+    pub fn get_known_edge_types_rate(&self) -> Result<f64> {
         self.get_known_edge_types_number()
             .map(|known_edge_types_number| {
                 known_edge_types_number as f64 / self.get_directed_edges_number() as f64
@@ -1105,7 +1105,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the graph.
-    pub fn get_minimum_edge_types_number(&self) -> Result<EdgeT, String> {
+    pub fn get_minimum_edge_types_number(&self) -> Result<EdgeT> {
         self.must_have_edge_types()
             .map(|edge_types| edge_types.min_edge_type_count())
     }
@@ -1114,7 +1114,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn get_singleton_edge_types_number(&self) -> Result<EdgeTypeT, String> {
+    pub fn get_singleton_edge_types_number(&self) -> Result<EdgeTypeT> {
         self.iter_edge_type_counts().map(|iter_edge_type_counts| {
             iter_edge_type_counts
                 .map(|edge_type_count| (edge_type_count == 1) as EdgeTypeT)
@@ -1126,7 +1126,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn get_singleton_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>, String> {
+    pub fn get_singleton_edge_type_ids(&self) -> Result<Vec<EdgeTypeT>> {
         self.iter_singleton_edge_type_ids()
             .map(|iter_singleton_edge_type_ids| iter_singleton_edge_type_ids.collect())
     }
@@ -1135,7 +1135,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn get_singleton_edge_type_names(&self) -> Result<Vec<String>, String> {
+    pub fn get_singleton_edge_type_names(&self) -> Result<Vec<String>> {
         self.iter_singleton_edge_type_names()
             .map(|iter_singleton_edge_type_names| iter_singleton_edge_type_names.collect())
     }
@@ -1168,7 +1168,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the current graph.
-    pub fn get_edge_types_number(&self) -> Result<EdgeTypeT, String> {
+    pub fn get_edge_types_number(&self) -> Result<EdgeTypeT> {
         self.must_have_edge_types()
             .map(|ets| ets.len() as EdgeTypeT)
     }
@@ -1177,7 +1177,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the current graph.
-    pub fn get_node_types_number(&self) -> Result<NodeTypeT, String> {
+    pub fn get_node_types_number(&self) -> Result<NodeTypeT> {
         self.must_have_node_types()
             .map(|nts| nts.len() as NodeTypeT)
     }
@@ -1188,7 +1188,7 @@ impl Graph {
     }
 
     /// Returns the weighted degree of every node in the graph.
-    pub fn get_weighted_node_degrees(&self) -> Result<Vec<f64>, String> {
+    pub fn get_weighted_node_degrees(&self) -> Result<Vec<f64>> {
         Ok(self.par_iter_weighted_node_degrees()?.collect())
     }
 
@@ -1248,7 +1248,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the current graph instance.
-    pub fn get_edge_type_id_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, EdgeT>, String> {
+    pub fn get_edge_type_id_counts_hashmap(&self) -> Result<HashMap<EdgeTypeT, EdgeT>> {
         self.iter_unique_edge_type_ids_and_counts()
             .map(|iter_unique_edge_type_ids_and_counts| {
                 iter_unique_edge_type_ids_and_counts.collect()
@@ -1268,7 +1268,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no edge types in the current graph instance.
-    pub fn get_edge_type_names_counts_hashmap(&self) -> Result<HashMap<String, EdgeT>, String> {
+    pub fn get_edge_type_names_counts_hashmap(&self) -> Result<HashMap<String, EdgeT>> {
         self.iter_unique_edge_type_names_and_counts().map(
             |iter_unique_edge_type_names_and_counts| {
                 iter_unique_edge_type_names_and_counts.collect()
@@ -1289,7 +1289,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the current graph instance.
-    pub fn get_node_type_id_counts_hashmap(&self) -> Result<HashMap<NodeTypeT, NodeT>, String> {
+    pub fn get_node_type_id_counts_hashmap(&self) -> Result<HashMap<NodeTypeT, NodeT>> {
         self.iter_unique_node_type_ids_and_counts()
             .map(|iter_unique_node_type_ids_and_counts| {
                 iter_unique_node_type_ids_and_counts.collect()
@@ -1310,7 +1310,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If there are no node types in the current graph instance.
-    pub fn get_node_type_names_counts_hashmap(&self) -> Result<HashMap<String, NodeT>, String> {
+    pub fn get_node_type_names_counts_hashmap(&self) -> Result<HashMap<String, NodeT>> {
         self.iter_unique_node_type_names_and_counts().map(
             |iter_unique_node_type_names_and_counts| {
                 iter_unique_node_type_names_and_counts.collect()
