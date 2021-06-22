@@ -423,9 +423,9 @@ impl Graph {
         // - The node itself.
         let mut stub_graph: Vec<(usize, NodeT)> = Vec::with_capacity(nodes_number);
         stub_graph.push((usize::MAX, src_node_id));
-        let mut paths: Vec<Vec<NodeT>> = Vec::with_capacity(k);
+        let mut reconstruction_positions: Vec<usize> = Vec::with_capacity(k);
         let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(verbose, "Computing k shortest paths", nodes_number * k);
+        let pb = get_loading_bar(verbose, "Computing k shortest paths", k);
 
         // In the nodes_to_explore deque the tuples contain:
         // - The position of the node ID of the tuple in the stub graph
@@ -434,6 +434,7 @@ impl Graph {
         nodes_to_explore.push_back((0, src_node_id));
 
         while let Some((node_position, node_id)) = nodes_to_explore.pop_front() {
+            pb.set_length(pb.length().max(nodes_to_explore.len() as u64));
             nodes_to_explore.extend(
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     .filter_map(|neighbour_node_id| {
@@ -453,21 +454,7 @@ impl Graph {
                         if neighbour_node_id == dst_node_id {
                             // Reconstruct the path found starting from
                             // the stub graph.
-                            // We initialize the path from the destination
-                            // back to the source node.
-                            let mut path = vec![dst_node_id];
-                            // We initialize the position and we start
-                            // going backwards.
-                            let mut current_position = node_position;
-                            // We start to populate the output.
-                            while stub_graph[current_position].0 != usize::MAX {
-                                path.push(stub_graph[current_position].1);
-                                current_position = stub_graph[current_position].0;
-                            }
-                            // Add the source node
-                            path.push(src_node_id);
-                            // Reverse the path.
-                            paths.push(path.into_iter().rev().collect());
+                            reconstruction_positions.push(node_position);
                             None
                         } else {
                             stub_graph.push((node_position, neighbour_node_id));
@@ -481,7 +468,21 @@ impl Graph {
             }
         }
 
-        paths
+        reconstruction_positions
+            .into_par_iter()
+            .map(|mut position| {
+                let mut path = vec![dst_node_id];
+                // We start to populate the output.
+                while stub_graph[position].0 != usize::MAX {
+                    path.push(stub_graph[position].1);
+                    position = stub_graph[position].0;
+                }
+                // Add the source node
+                path.push(src_node_id);
+                // Reverse the path.
+                path.into_iter().rev().collect()
+            })
+            .collect()
     }
 
     #[fuzz_type(k: u8)]

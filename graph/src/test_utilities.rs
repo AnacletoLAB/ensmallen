@@ -1100,6 +1100,12 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
                             assert_eq!(*path.first().unwrap(), src_node_id);
                             assert_eq!(*path.last().unwrap(), dst_node_id);
                         }
+                        // Check if every step in the path exists in the graph
+                        for path in kpaths.iter() {
+                            path.iter()
+                                .zip(path.iter().skip(1))
+                                .all(|(&src, &dst)| graph.has_edge_from_node_ids(src, dst));
+                        }
                         let min_length = kpaths.into_iter().map(|path| path.len()).min().unwrap();
                         assert_eq!(min_length, src_to_dst.len());
                     }
