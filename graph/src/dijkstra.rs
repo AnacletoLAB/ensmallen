@@ -399,7 +399,6 @@ impl Graph {
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
     /// * `k`: usize - Number of paths to find.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while computing the k shortest paths.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -412,7 +411,6 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-        verbose: Option<bool>,
     ) -> Vec<Vec<NodeT>> {
         let nodes_number = self.get_nodes_number() as usize;
         let mut counts = vec![0; nodes_number];
@@ -424,8 +422,6 @@ impl Graph {
         let mut stub_graph: Vec<(usize, NodeT)> = Vec::with_capacity(nodes_number);
         stub_graph.push((usize::MAX, src_node_id));
         let mut reconstruction_positions: Vec<usize> = Vec::with_capacity(k);
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(verbose, "Computing k shortest paths", k);
 
         // In the nodes_to_explore deque the tuples contain:
         // - The position of the node ID of the tuple in the stub graph
@@ -434,7 +430,6 @@ impl Graph {
         nodes_to_explore.push_back((0, src_node_id));
 
         while let Some((node_position, node_id)) = nodes_to_explore.pop_front() {
-            pb.set_length(pb.length().max(nodes_to_explore.len() as u64));
             nodes_to_explore.extend(
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     .filter_map(|neighbour_node_id| {
@@ -445,7 +440,6 @@ impl Graph {
                         {
                             return None;
                         }
-                        pb.inc(1);
                         counts[neighbour_node_id as usize] += 1;
                         // If the neighbour is the destination
                         // we can just add all of these paths
@@ -494,7 +488,6 @@ impl Graph {
     /// * `dst_node_id`: NodeT - Destination node ID.
     /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `k`: usize - Number of paths to find.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while computing the k shortest paths.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -507,14 +500,12 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-        verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
         Ok(unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
                 k,
-                verbose,
             )
         })
     }
@@ -527,7 +518,6 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `k`: usize - Number of paths to find.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while computing the k shortest paths.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -540,14 +530,12 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-        verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
         Ok(unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 k,
-                verbose,
             )
         })
     }
@@ -560,7 +548,6 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `k`: usize - Number of paths to find.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while computing the k shortest paths.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -573,9 +560,8 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-        verbose: Option<bool>,
     ) -> Result<Vec<Vec<String>>, String> {
-        self.get_k_shortest_path_node_ids_from_node_names(src_node_name, dst_node_name, k, verbose)
+        self.get_k_shortest_path_node_ids_from_node_names(src_node_name, dst_node_name, k)
             .map(|paths| {
                 paths
                     .into_iter()
