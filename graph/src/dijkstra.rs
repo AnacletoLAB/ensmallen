@@ -453,7 +453,7 @@ impl Graph {
                             // the stub graph.
                             // We initialize the path from the destination
                             // back to the source node.
-                            let mut path = vec![dst_node_id, neighbour_node_id];
+                            let mut path = vec![dst_node_id];
                             // We initialize the position and we start
                             // going backwards.
                             let mut current_position = node_position;
