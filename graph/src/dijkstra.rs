@@ -214,31 +214,32 @@ impl Graph {
             }
 
             // explore the neighbourhood of the current node
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                .for_each(|neighbour_node_id| {
-                    if found_destination {
-                        return;
-                    }
-                    // If the node was not previously visited
-                    if distances[neighbour_node_id as usize] == NOT_PRESENT {
-                        // Set it's distance
-                        distances[neighbour_node_id as usize] = new_neighbour_distance;
+            nodes_to_explore.extend(
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .filter_map(|neighbour_node_id| {
+                        // If the node was not previously visited
+                        if !found_destination
+                            && distances[neighbour_node_id as usize] == NOT_PRESENT
+                        {
+                            // Set it's distance
+                            distances[neighbour_node_id as usize] = new_neighbour_distance;
 
-                        // and set its parent if we are asked to
-                        if let Some(predecessors) = predecessors.as_mut() {
-                            predecessors[neighbour_node_id as usize] = node_id;
-                        }
-
-                        if let Some(dst_node_id) = dst_node_id {
-                            if neighbour_node_id == dst_node_id {
-                                found_destination = true;
+                            // and set its parent if we are asked to
+                            if let Some(predecessors) = predecessors.as_mut() {
+                                predecessors[neighbour_node_id as usize] = node_id;
                             }
-                        }
 
-                        // add the node to the nodes to explore
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
-                    }
-                });
+                            if let Some(dst_node_id) = dst_node_id {
+                                if neighbour_node_id == dst_node_id {
+                                    found_destination = true;
+                                }
+                            }
+                            Some((neighbour_node_id, new_neighbour_distance))
+                        } else {
+                            None
+                        }
+                    }),
+            );
             if found_destination {
                 break;
             }
@@ -423,28 +424,32 @@ impl Graph {
         nodes_to_explore.push_back(vec![src_node_id]);
 
         while let Some(path) = nodes_to_explore.pop_front() {
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(*path.last().unwrap())
-                .for_each(|neighbour_node_id| {
-                    // If the neighbours has already been used all the possible times,
-                    // it does not make sense to be explored further.
-                    if counts[neighbour_node_id as usize] >= k || counts[dst_node_id as usize] >= k
-                    {
-                        return;
-                    }
-                    pb.inc(1);
-                    let mut new_path = path.clone();
-                    new_path.push(neighbour_node_id);
-                    counts[neighbour_node_id as usize] += 1;
-                    // If the neighbour is the destination
-                    // we can just add all of these paths
-                    // immediately and avoid pushing them onto
-                    // the queue.
-                    if neighbour_node_id == dst_node_id {
-                        paths.push(new_path);
-                    } else {
-                        nodes_to_explore.push_back(new_path);
-                    }
-                });
+            nodes_to_explore.extend(
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(*path.last().unwrap())
+                    .filter_map(|neighbour_node_id| {
+                        // If the neighbours has already been used all the possible times,
+                        // it does not make sense to be explored further.
+                        if counts[neighbour_node_id as usize] >= k
+                            || counts[dst_node_id as usize] >= k
+                        {
+                            return None;
+                        }
+                        pb.inc(1);
+                        let mut new_path = path.clone();
+                        new_path.push(neighbour_node_id);
+                        counts[neighbour_node_id as usize] += 1;
+                        // If the neighbour is the destination
+                        // we can just add all of these paths
+                        // immediately and avoid pushing them onto
+                        // the queue.
+                        if neighbour_node_id == dst_node_id {
+                            paths.push(new_path);
+                            None
+                        } else {
+                            Some(new_path)
+                        }
+                    }),
+            );
             // If we have found all the required paths we can exit
             if counts[dst_node_id as usize] >= k {
                 break;
