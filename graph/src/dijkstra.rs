@@ -417,14 +417,13 @@ impl Graph {
         let mut counts = vec![0; nodes_number];
         let mut paths = Vec::new();
         let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(verbose, "Computing shortest paths", k);
+        let pb = get_loading_bar(verbose, "Computing k shortest paths", nodes_number * k);
 
         let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back(vec![src_node_id]);
 
         while let Some(path) = nodes_to_explore.pop_front() {
-            let node_id = *path.last().unwrap();
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(*path.last().unwrap())
                 .for_each(|neighbour_node_id| {
                     // If the neighbours has already been used all the possible times,
                     // it does not make sense to be explored further.
@@ -432,6 +431,7 @@ impl Graph {
                     {
                         return;
                     }
+                    pb.inc(1);
                     let mut new_path = path.clone();
                     new_path.push(neighbour_node_id);
                     counts[neighbour_node_id as usize] += 1;
@@ -441,7 +441,6 @@ impl Graph {
                     // the queue.
                     if neighbour_node_id == dst_node_id {
                         paths.push(new_path);
-                        pb.inc(1);
                     } else {
                         nodes_to_explore.push_back(new_path);
                     }
