@@ -424,10 +424,6 @@ impl Graph {
 
         while let Some(path) = nodes_to_explore.pop_front() {
             let node_id = *path.last().unwrap();
-            if counts[node_id as usize] >= k {
-                continue;
-            }
-            counts[node_id as usize] += 1;
             self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 .for_each(|neighbour_node_id| {
                     // If the neighbours has already been used all the possible times,
@@ -438,12 +434,12 @@ impl Graph {
                     }
                     let mut new_path = path.clone();
                     new_path.push(neighbour_node_id);
+                    counts[neighbour_node_id as usize] += 1;
                     // If the neighbour is the destination
                     // we can just add all of these paths
                     // immediately and avoid pushing them onto
                     // the queue.
                     if neighbour_node_id == dst_node_id {
-                        counts[dst_node_id as usize] += 1;
                         paths.push(new_path);
                         pb.inc(1);
                     } else {
