@@ -423,9 +423,14 @@ impl Graph {
         nodes_to_explore.push_back(vec![src_node_id]);
 
         while let Some(path) = nodes_to_explore.pop_front() {
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(*path.last().unwrap())
+            let node_id = *path.last().unwrap();
+            if counts[node_id as usize] >= k {
+                continue;
+            }
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                 .for_each(|neighbour_node_id| {
-                    if counts[dst_node_id as usize] >= k {
+                    if counts[neighbour_node_id as usize] >= k || counts[dst_node_id as usize] >= k
+                    {
                         return;
                     }
                     let mut new_path = path.clone();
