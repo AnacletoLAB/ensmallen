@@ -416,12 +416,14 @@ impl Graph {
     ) -> Vec<Vec<NodeT>> {
         let nodes_number = self.get_nodes_number() as usize;
         let mut counts = vec![0; nodes_number];
+        // We do not want to have multiple paths re-passing through the source.
+        counts[src_node_id as usize] = k;
         // In the stub graph the tuple contains:
         // - The position in the vector of the parent node (usize::MAX when node is root)
         // - The node itself.
-        let mut stub_graph: Vec<(usize, NodeT)> = Vec::new();
+        let mut stub_graph: Vec<(usize, NodeT)> = Vec::with_capacity(nodes_number);
         stub_graph.push((usize::MAX, src_node_id));
-        let mut paths: Vec<Vec<NodeT>> = Vec::new();
+        let mut paths: Vec<Vec<NodeT>> = Vec::with_capacity(k);
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(verbose, "Computing k shortest paths", nodes_number * k);
 
@@ -459,8 +461,8 @@ impl Graph {
                             let mut current_position = node_position;
                             // We start to populate the output.
                             while stub_graph[current_position].0 != usize::MAX {
-                                current_position = stub_graph[current_position].0;
                                 path.push(stub_graph[current_position].1);
+                                current_position = stub_graph[current_position].0;
                             }
                             // Add the source node
                             path.push(src_node_id);
