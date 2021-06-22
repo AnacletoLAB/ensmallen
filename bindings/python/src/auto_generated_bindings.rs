@@ -2518,7 +2518,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, k)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, k, max_path_length, verbose)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// Parameters
@@ -2529,6 +2529,10 @@ impl EnsmallenGraph {
     ///     Destination node ID.
     /// k: int,
     ///     Number of paths to find.
+    /// max_path_length: Optional[int],
+    ///     Maximum length of the paths. By default None.
+    /// verbose: Optional[bool],
+    ///     Whether to show a tentative loading bar. By default true.
     ///
     ///
     /// Safety
@@ -2539,13 +2543,21 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
+        max_path_length: Option<usize>,
+        verbose: Option<bool>,
     ) -> Vec<Vec<NodeT>> {
         self.graph
-            .get_unchecked_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k)
+            .get_unchecked_k_shortest_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                k,
+                max_path_length,
+                verbose,
+            )
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, k)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, k, max_path_length, verbose)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// Parameters
@@ -2554,10 +2566,12 @@ impl EnsmallenGraph {
     ///     Source node ID.
     /// dst_node_id: int,
     ///     Destination node ID.
-    /// maximal_depth: Optional[int],
-    ///     The maximal depth to execute the BFS for.
     /// k: int,
     ///     Number of paths to find.
+    /// max_path_length: Optional[int],
+    ///     Maximum length of the paths. By default None.
+    /// verbose: Optional[bool],
+    ///     Whether to show a tentative loading bar. By default true.
     ///
     ///
     /// Raises
@@ -2570,14 +2584,20 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
+        max_path_length: Option<usize>,
+        verbose: Option<bool>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
-        pe!(self
-            .graph
-            .get_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k))
+        pe!(self.graph.get_k_shortest_path_node_ids_from_node_ids(
+            src_node_id,
+            dst_node_id,
+            k,
+            max_path_length,
+            verbose
+        ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, k, max_path_length, verbose)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node name.
     ///
     /// Parameters
@@ -2588,6 +2608,10 @@ impl EnsmallenGraph {
     ///     Destination node name.
     /// k: int,
     ///     Number of paths to find.
+    /// max_path_length: Optional[int],
+    ///     Maximum length of the paths. By default None.
+    /// verbose: Optional[bool],
+    ///     Whether to show a tentative loading bar. By default true.
     ///
     ///
     /// Raises
@@ -2600,16 +2624,20 @@ impl EnsmallenGraph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
+        max_path_length: Option<usize>,
+        verbose: Option<bool>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         pe!(self.graph.get_k_shortest_path_node_ids_from_node_names(
             src_node_name,
             dst_node_name,
-            k
+            k,
+            max_path_length,
+            verbose
         ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, k, max_path_length, verbose)"]
     /// Return vector of the k minimum paths node names between given source node and destination node name.
     ///
     /// Parameters
@@ -2620,6 +2648,10 @@ impl EnsmallenGraph {
     ///     Destination node name.
     /// k: int,
     ///     Number of paths to find.
+    /// max_path_length: Optional[int],
+    ///     Maximum length of the paths. By default None.
+    /// verbose: Optional[bool],
+    ///     Whether to show a tentative loading bar. By default true.
     ///
     ///
     /// Raises
@@ -2632,11 +2664,15 @@ impl EnsmallenGraph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
+        max_path_length: Option<usize>,
+        verbose: Option<bool>,
     ) -> PyResult<Vec<Vec<String>>> {
         pe!(self.graph.get_k_shortest_path_node_names_from_node_names(
             src_node_name,
             dst_node_name,
-            k
+            k,
+            max_path_length,
+            verbose
         ))
     }
 
