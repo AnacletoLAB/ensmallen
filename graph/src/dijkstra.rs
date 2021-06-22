@@ -437,12 +437,14 @@ impl Graph {
                         // it does not make sense to be explored further.
                         if counts[neighbour_node_id as usize] >= k
                             || counts[dst_node_id as usize] >= k
-                            // We do not want nodes to go back to the direct source node.
-                            || node_id == neighbour_node_id
                         {
                             return None;
                         }
                         counts[neighbour_node_id as usize] += 1;
+                        // We do not want nodes to go back to the direct source node.
+                        if node_id == neighbour_node_id {
+                            return None;
+                        }
                         // If the neighbour is the destination
                         // we can just add all of these paths
                         // immediately and avoid pushing them onto
