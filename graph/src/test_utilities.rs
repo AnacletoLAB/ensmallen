@@ -1101,12 +1101,14 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
                         }
                         // Check if every step in the path exists in the graph
                         for path in kpaths.iter() {
-                            path.iter()
-                                .zip(path.iter().skip(1))
-                                .all(|(&src, &dst)| graph.has_edge_from_node_ids(src, dst));
+                            path.iter().zip(path.iter().skip(1)).for_each(|(&src, &dst)| {
+                                assert!(
+                                    graph.has_edge_from_node_ids(src, dst),
+                                    "There should be an edge between {} and {} to have a path like {:?}.", src, dst, path);
+                            });
                         }
-                        let min_length = kpaths.into_iter().map(|path| path.len()).min().unwrap();
-                        assert_eq!(min_length, src_to_dst.len());
+                        let min_length = kpaths.iter().map(|path| path.len()).min().unwrap();
+                        assert_eq!(min_length, src_to_dst.len(), "{:?}", kpaths);
                     }
                 });
             });

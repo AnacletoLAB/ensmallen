@@ -401,6 +401,7 @@ impl Graph {
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
     /// * `k`: usize - Number of paths to find.
+    /// * `max_path_length`: Option<usize> - Maximum length of the paths.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -418,6 +419,7 @@ impl Graph {
         let mut counts = vec![0; nodes_number];
         // We do not want to have multiple paths re-passing through the source.
         counts[src_node_id as usize] = k;
+        counts[dst_node_id as usize] = k;
         // We wrap counts into an object that can be concurrently accessed by multiple
         // threads. This part may lead to collisions in case of multigraphs, but should
         // not lead to crashes or significant slow downs unless in pathogenic cases,
@@ -439,7 +441,11 @@ impl Graph {
         nodes_to_explore.push_back((0, src_node_id));
 
         while let Some((node_position, node_id)) = nodes_to_explore.pop_front() {
-            let mut current_path = Vec::new();
+            let mut current_path = if node_id == src_node_id {
+                Vec::new()
+            } else {
+                vec![node_id]
+            };
             let mut position = node_position;
             // We start to populate the output.
             while stub_graph[position].0 != usize::MAX {
@@ -457,7 +463,6 @@ impl Graph {
                     // immediately and avoid pushing them onto
                     // the queue.
                     if neighbour_node_id == dst_node_id {
-                        (*counts)[dst_node_id as usize] += 1;
                         found_destination.store(true, Ordering::Relaxed);
                         return false;
                     }
