@@ -2518,7 +2518,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, k)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, k, verbose)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// Parameters
@@ -2529,6 +2529,8 @@ impl EnsmallenGraph {
     ///     Destination node ID.
     /// k: int,
     ///     Number of paths to find.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while computing the k shortest paths.
     ///
     ///
     /// Safety
@@ -2539,13 +2541,19 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
+        verbose: Option<bool>,
     ) -> Vec<Vec<NodeT>> {
         self.graph
-            .get_unchecked_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k)
+            .get_unchecked_k_shortest_path_node_ids_from_node_ids(
+                src_node_id,
+                dst_node_id,
+                k,
+                verbose,
+            )
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_id, dst_node_id, k)"]
+    #[text_signature = "($self, src_node_id, dst_node_id, k, verbose)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node ID.
     ///
     /// Parameters
@@ -2558,6 +2566,8 @@ impl EnsmallenGraph {
     ///     The maximal depth to execute the BFS for.
     /// k: int,
     ///     Number of paths to find.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while computing the k shortest paths.
     ///
     ///
     /// Raises
@@ -2570,14 +2580,18 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
+        verbose: Option<bool>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
-        pe!(self
-            .graph
-            .get_k_shortest_path_node_ids_from_node_ids(src_node_id, dst_node_id, k))
+        pe!(self.graph.get_k_shortest_path_node_ids_from_node_ids(
+            src_node_id,
+            dst_node_id,
+            k,
+            verbose
+        ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, k, verbose)"]
     /// Return vector of the k minimum paths node IDs between given source node and destination node name.
     ///
     /// Parameters
@@ -2588,6 +2602,8 @@ impl EnsmallenGraph {
     ///     Destination node name.
     /// k: int,
     ///     Number of paths to find.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while computing the k shortest paths.
     ///
     ///
     /// Raises
@@ -2600,16 +2616,18 @@ impl EnsmallenGraph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
+        verbose: Option<bool>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         pe!(self.graph.get_k_shortest_path_node_ids_from_node_names(
             src_node_name,
             dst_node_name,
-            k
+            k,
+            verbose
         ))
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, src_node_name, dst_node_name, k)"]
+    #[text_signature = "($self, src_node_name, dst_node_name, k, verbose)"]
     /// Return vector of the k minimum paths node names between given source node and destination node name.
     ///
     /// Parameters
@@ -2620,6 +2638,8 @@ impl EnsmallenGraph {
     ///     Destination node name.
     /// k: int,
     ///     Number of paths to find.
+    /// verbose: Optional[bool],
+    ///     Whether to show a loading bar while computing the k shortest paths.
     ///
     ///
     /// Raises
@@ -2632,11 +2652,13 @@ impl EnsmallenGraph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
+        verbose: Option<bool>,
     ) -> PyResult<Vec<Vec<String>>> {
         pe!(self.graph.get_k_shortest_path_node_names_from_node_names(
             src_node_name,
             dst_node_name,
-            k
+            k,
+            verbose
         ))
     }
 
