@@ -416,16 +416,24 @@ impl Graph {
     ) -> Vec<Vec<NodeT>> {
         let nodes_number = self.get_nodes_number() as usize;
         let mut counts = vec![0; nodes_number];
-        let mut paths = Vec::new();
+        // In the stub graph the tuple contains:
+        // - The position in the vector of the parent node (usize::MAX when node is root)
+        // - The node itself.
+        let mut stub_graph: Vec<(usize, NodeT)> = Vec::new();
+        stub_graph.push((usize::MAX, src_node_id));
+        let mut paths: Vec<Vec<NodeT>> = Vec::new();
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(verbose, "Computing k shortest paths", nodes_number * k);
 
-        let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
-        nodes_to_explore.push_back(vec![src_node_id]);
+        // In the nodes_to_explore deque the tuples contain:
+        // - The position of the node ID of the tuple in the stub graph
+        // - The node itself.
+        let mut nodes_to_explore: VecDeque<(usize, NodeT)> = VecDeque::with_capacity(nodes_number);
+        nodes_to_explore.push_back((0, src_node_id));
 
-        while let Some(path) = nodes_to_explore.pop_front() {
+        while let Some((node_position, node_id)) = nodes_to_explore.pop_front() {
             nodes_to_explore.extend(
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(*path.last().unwrap())
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
                     .filter_map(|neighbour_node_id| {
                         // If the neighbours has already been used all the possible times,
                         // it does not make sense to be explored further.
@@ -435,18 +443,33 @@ impl Graph {
                             return None;
                         }
                         pb.inc(1);
-                        let mut new_path = path.clone();
-                        new_path.push(neighbour_node_id);
                         counts[neighbour_node_id as usize] += 1;
                         // If the neighbour is the destination
                         // we can just add all of these paths
                         // immediately and avoid pushing them onto
                         // the queue.
                         if neighbour_node_id == dst_node_id {
-                            paths.push(new_path);
+                            // Reconstruct the path found starting from
+                            // the stub graph.
+                            // We initialize the path from the destination
+                            // back to the source node.
+                            let mut path = vec![dst_node_id, neighbour_node_id];
+                            // We initialize the position and we start
+                            // going backwards.
+                            let mut current_position = node_position;
+                            // We start to populate the output.
+                            while stub_graph[current_position].0 != usize::MAX {
+                                current_position = stub_graph[current_position].0;
+                                path.push(stub_graph[current_position].1);
+                            }
+                            // Add the source node
+                            path.push(src_node_id);
+                            // Reverse the path.
+                            paths.push(path.into_iter().rev().collect());
                             None
                         } else {
-                            Some(new_path)
+                            stub_graph.push((node_position, neighbour_node_id));
+                            Some((stub_graph.len() - 1, neighbour_node_id))
                         }
                     }),
             );
