@@ -3,9 +3,11 @@ use indicatif::ParallelProgressIterator;
 use num_traits::Zero;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
+use rayon::iter::ParallelBridge;
 use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
 use std::collections::VecDeque;
+use std::sync::atomic::AtomicBool;
 use std::sync::atomic::{AtomicU32, Ordering};
 
 pub struct ShortestPathsResultBFS {
@@ -416,6 +418,13 @@ impl Graph {
         let mut counts = vec![0; nodes_number];
         // We do not want to have multiple paths re-passing through the source.
         counts[src_node_id as usize] = k;
+        // We wrap counts into an object that can be concurrently accessed by multiple
+        // threads. This part may lead to collisions in case of multigraphs, but should
+        // not lead to crashes or significant slow downs unless in pathogenic cases,
+        // like multigraphs with A LOT of parallell edges.
+        let thread_shared_counts = ThreadDataRaceAware {
+            value: std::cell::UnsafeCell::new(&mut counts),
+        };
         // In the stub graph the tuple contains:
         // - The position in the vector of the parent node (usize::MAX when node is root)
         // - The node itself.
@@ -437,44 +446,63 @@ impl Graph {
                 current_path.push(stub_graph[position].1);
                 position = stub_graph[position].0;
             }
-            nodes_to_explore.extend(
-                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                    .filter_map(|neighbour_node_id| {
-                        // If the neighbours has already been used all the possible times,
-                        // it does not make sense to be explored further.
-                        if counts[neighbour_node_id as usize] >= k
-                            || counts[dst_node_id as usize] >= k
+            let found_destination = AtomicBool::new(false);
+            let new_nodes = self
+                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .par_bridge()
+                .filter(|&neighbour_node_id| unsafe {
+                    let counts = thread_shared_counts.value.get();
+                    // If the neighbour is the destination
+                    // we can just add all of these paths
+                    // immediately and avoid pushing them onto
+                    // the queue.
+                    if neighbour_node_id == dst_node_id {
+                        (*counts)[dst_node_id as usize] += 1;
+                        found_destination.store(true, Ordering::Relaxed);
+                        return false;
+                    }
+                    // If the neighbours has already been used all the possible times,
+                    // it does not make sense to be explored further.
+                    if (*counts)[neighbour_node_id as usize] >= k
                             // We do not want nodes to go back to nodes within
                             // the same path they are currently building.
                             || current_path.contains(&neighbour_node_id)
-                        {
-                            return None;
-                        }
-                        counts[neighbour_node_id as usize] += 1;
-                        // If the neighbour is the destination
-                        // we can just add all of these paths
-                        // immediately and avoid pushing them onto
-                        // the queue.
-                        if neighbour_node_id == dst_node_id {
-                            // Reconstruct the path found starting from
-                            // the stub graph.
-                            let mut path = current_path.clone();
-                            path.push(src_node_id);
-                            path = path.into_iter().rev().collect();
-                            path.push(dst_node_id);
+                    {
+                        return false;
+                    }
+                    (*counts)[neighbour_node_id as usize] += 1;
+                    true
+                })
+                .collect::<Vec<NodeT>>();
+            // If the neighbour is the destination
+            // we can just add all of these paths
+            // immediately and avoid pushing them onto
+            // the queue.
+            if found_destination.into_inner() {
+                // Reconstruct the path found starting from
+                // the stub graph.
+                current_path.push(src_node_id);
+                current_path = current_path.into_iter().rev().collect();
+                current_path.push(dst_node_id);
+                paths.push(current_path);
+            }
 
-                            paths.push(path);
-                            None
-                        } else {
-                            stub_graph.push((node_position, neighbour_node_id));
-                            Some((stub_graph.len() - 1, neighbour_node_id))
-                        }
-                    }),
-            );
-            // If we have found all the required paths we can exit
-            if counts[dst_node_id as usize] >= k {
+            if paths.len() == k {
                 break;
             }
+
+            // The current graph size is the size of the stub graph
+            // minus the root node.
+            let current_graph_size = stub_graph.len() - 1;
+            stub_graph.extend(
+                new_nodes
+                    .iter()
+                    .cloned()
+                    .map(|neighbour_node_id| (node_position, neighbour_node_id)),
+            );
+            nodes_to_explore.extend(new_nodes.into_iter().enumerate().map(
+                |(offset, neighbour_node_id)| (current_graph_size + offset, neighbour_node_id),
+            ));
         }
         paths
     }
