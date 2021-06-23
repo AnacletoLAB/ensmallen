@@ -504,17 +504,16 @@ impl Graph {
                 path.push(stub_graph[position].1);
                 position = stub_graph[position].0;
             }
-            let found_destination = AtomicBool::new(false);
+            let mut found_destination = false;
             let new_nodes = self
                 .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                .par_bridge()
                 .filter(|&neighbour_node_id| {
                     // If the neighbour is the destination
                     // we can just add all of these paths
                     // immediately and avoid pushing them onto
                     // the queue.
                     if neighbour_node_id == dst_node_id {
-                        found_destination.store(true, Ordering::Relaxed);
+                        found_destination = true;
                         return false;
                     }
                     // If the neighbours has already been used all the possible times,
@@ -533,7 +532,7 @@ impl Graph {
             // we can just add all of these paths
             // immediately and avoid pushing them onto
             // the queue.
-            if found_destination.into_inner() {
+            if found_destination {
                 // Reconstruct the path found starting from
                 // the stub graph.
                 reconstruction_positions.push(node_position);
