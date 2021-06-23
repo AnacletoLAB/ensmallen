@@ -475,11 +475,11 @@ impl Graph {
                     {
                         return false;
                     }
+                    pb.inc(1);
                     counts[neighbour_node_id as usize] += 1;
                     true
                 })
                 .collect::<Vec<NodeT>>();
-            pb.inc(new_nodes.len() as u64);
             // If the neighbour is the destination
             // we can just add all of these paths
             // immediately and avoid pushing them onto
