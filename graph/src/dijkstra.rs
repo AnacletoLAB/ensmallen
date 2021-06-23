@@ -491,7 +491,7 @@ impl Graph {
         while let Some((node_position, node_id, depth)) = nodes_to_explore.pop_front() {
             // If the current path has reached a depth greater than the maximum allowed
             // we skip it and proceed to the next path.
-            if depth > max_path_length {
+            if depth >= max_path_length {
                 continue;
             }
             let mut found_destination = false;
