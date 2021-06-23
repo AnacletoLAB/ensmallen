@@ -1092,9 +1092,25 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
                             src_node_id,
                             dst_node_id,
                             5,
-                        );
-                        let min_length = kpaths.into_iter().map(|path| path.len()).min().unwrap();
-                        assert_eq!(min_length, src_to_dst.len());
+                            None,
+                            None
+                        ).unwrap();
+                        // A path starting from a given source node and finishing in a given
+                        // destination node must have those nodes as first and last respectively.
+                        for path in kpaths.iter() {
+                            assert_eq!(*path.first().unwrap(), src_node_id);
+                            assert_eq!(*path.last().unwrap(), dst_node_id);
+                        }
+                        // Check if every step in the path exists in the graph
+                        for path in kpaths.iter() {
+                            path.iter().zip(path.iter().skip(1)).for_each(|(&src, &dst)| {
+                                assert!(
+                                    graph.has_edge_from_node_ids(src, dst),
+                                    "There should be an edge between {} and {} to have a path like {:?}.", src, dst, path);
+                            });
+                        }
+                        let min_length = kpaths.iter().map(|path| path.len()).min().unwrap();
+                        assert_eq!(min_length, src_to_dst.len(), "{:?}", kpaths);
                     }
                 });
             });
