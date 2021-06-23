@@ -512,7 +512,6 @@ impl Graph {
         reconstruction_positions
             .into_par_iter()
             .map(|mut position| {
-                dbg!(position, stub_graph.clone());
                 let mut path = vec![dst_node_id];
                 // We start to populate the output.
                 while stub_graph[position].0 != usize::MAX {
