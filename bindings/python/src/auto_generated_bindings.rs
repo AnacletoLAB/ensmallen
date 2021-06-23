@@ -2543,17 +2543,18 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-        max_path_length: Option<usize>,
+        max_path_length: Option<NodeT>,
         verbose: Option<bool>,
-    ) -> Vec<Vec<NodeT>> {
-        self.graph
+    ) -> PyResult<Vec<Vec<NodeT>>> {
+        pe!(self
+            .graph
             .get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 src_node_id,
                 dst_node_id,
                 k,
                 max_path_length,
-                verbose,
-            )
+                verbose
+            ))
     }
 
     #[automatically_generated_binding]
@@ -2584,7 +2585,7 @@ impl EnsmallenGraph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-        max_path_length: Option<usize>,
+        max_path_length: Option<NodeT>,
         verbose: Option<bool>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         pe!(self.graph.get_k_shortest_path_node_ids_from_node_ids(
@@ -2624,7 +2625,7 @@ impl EnsmallenGraph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-        max_path_length: Option<usize>,
+        max_path_length: Option<NodeT>,
         verbose: Option<bool>,
     ) -> PyResult<Vec<Vec<NodeT>>> {
         pe!(self.graph.get_k_shortest_path_node_ids_from_node_names(
@@ -2664,7 +2665,7 @@ impl EnsmallenGraph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-        max_path_length: Option<usize>,
+        max_path_length: Option<NodeT>,
         verbose: Option<bool>,
     ) -> PyResult<Vec<Vec<String>>> {
         pe!(self.graph.get_k_shortest_path_node_names_from_node_names(
