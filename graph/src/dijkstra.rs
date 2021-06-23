@@ -515,8 +515,16 @@ impl Graph {
                     {
                         return false;
                     }
-                    pb.inc(1);
-                    counts[neighbour_node_id as usize] += 1;
+                    // If this is an undirected graph, each of the neighbours
+                    // of this node surely have in degree equal to the out degree
+                    // TODO! extend this for directed graphs!
+                    let delta = if self.is_directed() {
+                        1
+                    } else {
+                        self.get_unchecked_node_degree_from_node_id(neighbour_node_id) as u64
+                    };
+                    pb.inc(delta);
+                    counts[neighbour_node_id as usize] += delta as usize;
                     true
                 })
                 .collect::<Vec<NodeT>>();
