@@ -1094,7 +1094,7 @@ pub fn test_bfs(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> 
                             5,
                             None,
                             None
-                        );
+                        ).unwrap();
                         // A path starting from a given source node and finishing in a given
                         // destination node must have those nodes as first and last respectively.
                         for path in kpaths.iter() {

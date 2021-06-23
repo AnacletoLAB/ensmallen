@@ -413,16 +413,56 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-        max_path_length: Option<usize>,
+        max_path_length: Option<NodeT>,
         verbose: Option<bool>,
-    ) -> Vec<Vec<NodeT>> {
+    ) -> Result<Vec<Vec<NodeT>>, String> {
         let nodes_number = self.get_nodes_number() as usize;
         if nodes_number < 2 {
             panic!("It is impossible to execute this method on a graph with less than 2 nodes.");
         }
         let mut counts = vec![0; nodes_number];
         let verbose = verbose.unwrap_or(true);
-        let max_path_length = max_path_length.unwrap_or(usize::MAX);
+        let mut total_nodes_to_exclude = 2;
+        let srd_bfs = self.get_unchecked_breath_first_search_from_node_ids(
+            src_node_id,
+            None,
+            None,
+            max_path_length,
+        );
+        if !srd_bfs.has_path_to_node_id(dst_node_id) {
+            return Err(concat!(
+                "There is no path between the given source node id ",
+                "and destination node with the provided parametrization ",
+                "in the current graph."
+            )
+            .to_string());
+        }
+        let src_distances = srd_bfs.into_distances();
+        let max_path_length = max_path_length.unwrap_or(NodeT::MAX);
+
+        // If the graph is undirected
+        // TODO! update this for directed graph using the in-star
+        if !self.is_directed() && max_path_length != NodeT::MAX {
+            let dst_distances = self
+                .get_unchecked_breath_first_search_from_node_ids(
+                    dst_node_id,
+                    None,
+                    None,
+                    Some(max_path_length),
+                )
+                .into_distances();
+            src_distances
+                .into_iter()
+                .zip(dst_distances.into_iter())
+                .enumerate()
+                .for_each(|(node_id, (dst1, dst2))| {
+                    if dst1.saturating_add(dst2) > max_path_length {
+                        total_nodes_to_exclude += 1;
+                        counts[node_id] = k;
+                    }
+                });
+        }
+
         // We do not want to have multiple paths re-passing through the source.
         counts[src_node_id as usize] = k;
         counts[dst_node_id as usize] = k;
@@ -436,7 +476,7 @@ impl Graph {
         // - The position of the node ID of the tuple in the stub graph
         // - The node itself.
         // - The current depth
-        let mut nodes_to_explore: VecDeque<(usize, NodeT, usize)> =
+        let mut nodes_to_explore: VecDeque<(usize, NodeT, NodeT)> =
             VecDeque::with_capacity(nodes_number);
         nodes_to_explore.push_back((0, src_node_id, 0));
         let mut reconstruction_positions: Vec<usize> = Vec::with_capacity(k);
@@ -509,7 +549,7 @@ impl Graph {
                 },
             ));
         }
-        reconstruction_positions
+        Ok(reconstruction_positions
             .into_par_iter()
             .map(|mut position| {
                 let mut path = vec![dst_node_id];
@@ -523,7 +563,7 @@ impl Graph {
                 // Reverse the path.
                 path.into_iter().rev().collect()
             })
-            .collect()
+            .collect())
     }
 
     #[fuzz_type(k: u8)]
@@ -548,10 +588,10 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-        max_path_length: Option<usize>,
+        max_path_length: Option<NodeT>,
         verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
-        Ok(unsafe {
+        unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
@@ -559,7 +599,7 @@ impl Graph {
                 max_path_length,
                 verbose,
             )
-        })
+        }
     }
 
     #[fuzz_type(k: u8)]
@@ -584,10 +624,10 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-        max_path_length: Option<usize>,
+        max_path_length: Option<NodeT>,
         verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
-        Ok(unsafe {
+        unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
@@ -595,7 +635,7 @@ impl Graph {
                 max_path_length,
                 verbose,
             )
-        })
+        }
     }
 
     #[fuzz_type(k: u8)]
@@ -620,7 +660,7 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-        max_path_length: Option<usize>,
+        max_path_length: Option<NodeT>,
         verbose: Option<bool>,
     ) -> Result<Vec<Vec<String>>, String> {
         self.get_k_shortest_path_node_ids_from_node_names(
