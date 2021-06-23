@@ -485,7 +485,7 @@ impl Graph {
         let pb = get_loading_bar(
             verbose,
             "Computing k shortest paths",
-            k * (nodes_number - 2),
+            k * (nodes_number - total_nodes_to_exclude),
         );
 
         while let Some((node_position, node_id, depth)) = nodes_to_explore.pop_front() {
