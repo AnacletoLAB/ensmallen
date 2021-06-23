@@ -494,6 +494,14 @@ impl Graph {
             if depth >= max_path_length {
                 continue;
             }
+            let mut path = Vec::with_capacity(depth as usize);
+            path.push(node_id);
+            let mut position = node_position;
+            // We start to populate the output.
+            while stub_graph[position].0 != usize::MAX {
+                path.push(stub_graph[position].1);
+                position = stub_graph[position].0;
+            }
             let mut found_destination = false;
             let new_nodes = self
                 .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
@@ -509,22 +517,13 @@ impl Graph {
                     // If the neighbours has already been used all the possible times,
                     // it does not make sense to be explored further.
                     if counts[neighbour_node_id as usize] >= k
-                            // We do not want nodes to go back to nodes within
-                            // the same path they are currently building.
-                            || node_id == neighbour_node_id
+                            // We do not want selfloops
+                            || path.contains(&neighbour_node_id)
                     {
                         return false;
                     }
-                    // If this is an undirected graph, each of the neighbours
-                    // of this node surely have in degree equal to the out degree
-                    // TODO! extend this for directed graphs!
-                    let delta = if self.is_directed() {
-                        1
-                    } else {
-                        self.get_unchecked_node_degree_from_node_id(neighbour_node_id) as u64
-                    };
-                    pb.inc(delta);
-                    counts[neighbour_node_id as usize] += delta as usize;
+                    pb.inc(1);
+                    counts[neighbour_node_id as usize] += 1;
                     true
                 })
                 .collect::<Vec<NodeT>>();
