@@ -3,9 +3,11 @@ use indicatif::ParallelProgressIterator;
 use num_traits::Zero;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
+use rayon::iter::ParallelBridge;
 use rayon::iter::ParallelIterator;
 use std::cmp::Ord;
 use std::collections::VecDeque;
+use std::sync::atomic::AtomicBool;
 use std::sync::atomic::{AtomicU32, Ordering};
 
 pub struct ShortestPathsResultBFS {
@@ -502,16 +504,17 @@ impl Graph {
                 path.push(stub_graph[position].1);
                 position = stub_graph[position].0;
             }
-            let mut found_destination = false;
+            let found_destination = AtomicBool::new(false);
             let new_nodes = self
                 .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .par_bridge()
                 .filter(|&neighbour_node_id| {
                     // If the neighbour is the destination
                     // we can just add all of these paths
                     // immediately and avoid pushing them onto
                     // the queue.
                     if neighbour_node_id == dst_node_id {
-                        found_destination = true;
+                        found_destination.store(true, Ordering::Relaxed);
                         return false;
                     }
                     // If the neighbours has already been used all the possible times,
@@ -522,16 +525,15 @@ impl Graph {
                     {
                         return false;
                     }
-                    pb.inc(1);
-                    counts[neighbour_node_id as usize] += 1;
                     true
                 })
                 .collect::<Vec<NodeT>>();
+            pb.inc(new_nodes.len() as u64);
             // If the neighbour is the destination
             // we can just add all of these paths
             // immediately and avoid pushing them onto
             // the queue.
-            if found_destination {
+            if found_destination.into_inner() {
                 // Reconstruct the path found starting from
                 // the stub graph.
                 reconstruction_positions.push(node_position);
@@ -544,12 +546,10 @@ impl Graph {
 
             // The current graph size is the size of the stub graph
             let current_graph_size = stub_graph.len();
-            stub_graph.extend(
-                new_nodes
-                    .iter()
-                    .cloned()
-                    .map(|neighbour_node_id| (node_position, neighbour_node_id)),
-            );
+            stub_graph.extend(new_nodes.iter().cloned().map(|neighbour_node_id| {
+                counts[neighbour_node_id as usize] += 1;
+                (node_position, neighbour_node_id)
+            }));
             nodes_to_explore.extend(new_nodes.into_iter().enumerate().map(
                 |(offset, neighbour_node_id)| {
                     (current_graph_size + offset, neighbour_node_id, depth + 1)
