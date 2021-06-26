@@ -89,6 +89,7 @@ fn parse_unsorted_edges(
                 (*src1, *dst1, *edt1).cmp(&(*src2, *dst2, *edt2))
             });
             // Likely here we need to call a custom core builder.
+
         },
         (Some(ei), true, false) => {
             let mut unsorted_edge_list =ei.map(|(src, dst, et, _)| unsafe{(src, dst, et.unwrap_unchecked())})
