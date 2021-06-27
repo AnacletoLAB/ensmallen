@@ -3601,6 +3601,42 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
+    /// Returns boolean mask of known node types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn get_known_node_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_known_node_types_mask())?,
+            bool
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns boolean mask of unknown node types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn get_unknown_node_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_unknown_node_types_mask())?,
+            bool
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
     /// Returns one-hot encoded known node types.
     ///
     /// Raises
