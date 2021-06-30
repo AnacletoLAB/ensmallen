@@ -2097,7 +2097,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the current graph does not allow for the creation of a spanning tree for the requested training size.
     ///
-    pub fn connected_holdout(
+    pub fn get_connected_holdout(
         &self,
         train_size: f64,
         random_state: Option<EdgeT>,
@@ -2105,7 +2105,7 @@ impl EnsmallenGraph {
         include_all_edge_types: Option<bool>,
         verbose: Option<bool>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        let (g1, g2) = pe!(self.graph.connected_holdout(
+        let (g1, g2) = pe!(self.graph.get_connected_holdout(
             train_size,
             random_state,
             edge_types,
@@ -2121,7 +2121,7 @@ impl EnsmallenGraph {
     ///
     /// The holdouts returned are a tuple of graphs. In neither holdouts the
     /// graph connectivity is necessarily preserved. To maintain that, use
-    /// the method `connected_holdout`.
+    /// the method `get_connected_holdout`.
     ///
     /// Parameters
     /// ----------
@@ -2191,16 +2191,56 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If stratification is requested but the graph has a multilabel node types.
     ///
-    pub fn node_label_holdout(
+    pub fn get_node_label_random_holdout(
         &self,
         train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let (g1, g2) = pe!(self.graph.get_node_label_random_holdout(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, k, k_index, use_stratification, random_state)"]
+    /// Returns node-label fold for training ML algorithms on the graph node labels.
+    ///
+    /// Parameters
+    /// ----------
+    /// k: int,
+    ///     The number of folds.
+    /// k_index: int,
+    ///     Which fold to use for the validation.
+    /// use_stratification: Optional[bool],
+    ///     Whether to use node-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If stratification is requested but the graph has a single node type.
+    /// ValueError
+    ///     If stratification is requested but the graph has a multilabel node types.
+    ///
+    pub fn get_node_label_kfold(
+        &self,
+        k: usize,
+        k_index: usize,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         let (g1, g2) =
             pe!(self
                 .graph
-                .node_label_holdout(train_size, use_stratification, random_state))?;
+                .get_node_label_kfold(k, k_index, use_stratification, random_state))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
@@ -2233,16 +2273,62 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If stratification is required but the graph has singleton edge types.
     ///
-    pub fn edge_label_holdout(
+    pub fn get_edge_label_random_holdout(
         &self,
         train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let (g1, g2) = pe!(self.graph.get_edge_label_random_holdout(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, k, k_index, use_stratification, random_state)"]
+    /// Returns edge-label kfold for training ML algorithms on the graph edge labels.
+    /// This is commonly used for edge type prediction tasks.
+    ///
+    /// This method returns two graphs, the train and the test one.
+    /// The edges of the graph will be splitted in the train and test graphs according
+    /// to the `train_size` argument.
+    ///
+    /// If stratification is enabled, the train and test will have the same ratios of
+    /// edge types.
+    ///
+    /// Parameters
+    /// ----------
+    /// k: int,
+    ///     The number of folds.
+    /// k_index: int,
+    ///     Which fold to use for the validation.
+    /// use_stratification: Optional[bool],
+    ///     Whether to use edge-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    /// ValueError
+    ///     If stratification is required but the graph has singleton edge types.
+    ///
+    pub fn get_edge_label_kfold(
+        &self,
+        k: usize,
+        k_index: usize,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
         let (g1, g2) =
             pe!(self
                 .graph
-                .edge_label_holdout(train_size, use_stratification, random_state))?;
+                .get_edge_label_kfold(k, k_index, use_stratification, random_state))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
@@ -2275,7 +2361,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph has less than the requested number of nodes.
     ///
-    pub fn random_subgraph(
+    pub fn get_random_subgraph(
         &self,
         nodes_number: NodeT,
         random_state: Option<usize>,
@@ -2284,7 +2370,7 @@ impl EnsmallenGraph {
         Ok(EnsmallenGraph {
             graph: pe!(self
                 .graph
-                .random_subgraph(nodes_number, random_state, verbose))?,
+                .get_random_subgraph(nodes_number, random_state, verbose))?,
         })
     }
 
@@ -2320,17 +2406,21 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the number of k folds is higher than the number of edges in the graph.
     ///
-    pub fn kfold(
+    pub fn get_edge_prediction_kfold(
         &self,
-        k: EdgeT,
-        k_index: u64,
+        k: usize,
+        k_index: usize,
         edge_types: Option<Vec<Option<String>>>,
         random_state: Option<EdgeT>,
         verbose: Option<bool>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        let (g1, g2) = pe!(self
-            .graph
-            .kfold(k, k_index, edge_types, random_state, verbose))?;
+        let (g1, g2) = pe!(self.graph.get_edge_prediction_kfold(
+            k,
+            k_index,
+            edge_types,
+            random_state,
+            verbose
+        ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
@@ -2538,6 +2628,8 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    ///  TODO! take a look at https://github.com/Murali-group/PathLinker/blob/master/ksp_Astar.py
     pub unsafe fn get_unchecked_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
