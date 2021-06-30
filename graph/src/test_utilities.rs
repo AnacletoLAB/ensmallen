@@ -1450,7 +1450,7 @@ pub fn test_random_walks(graph: &mut Graph, _verbose: Option<bool>) -> Result<()
 pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<(), String> {
     if !graph.has_edge_types() {
         assert!(graph
-            .connected_holdout(0.8, None, Some(vec![None]), Some(false), None)
+            .get_connected_holdout(0.8, None, Some(vec![None]), Some(false), None)
             .is_err());
     }
     for include_all_edge_types in &[false, true] {
@@ -1464,7 +1464,7 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<(), St
         )?;
         default_holdout_test_suite(graph, &train, &test)?;
         let (train, test) =
-            graph.connected_holdout(0.8, None, None, Some(*include_all_edge_types), verbose)?;
+            graph.get_connected_holdout(0.8, None, None, Some(*include_all_edge_types), verbose)?;
         assert_eq!(graph.get_nodes_number(), train.get_nodes_number());
         assert_eq!(graph.get_nodes_number(), test.get_nodes_number());
 
@@ -1660,9 +1660,9 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
 pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), String> {
     let k = 3;
     for i in 0..k {
-        let (train, test) = graph.kfold(k, i, None, None, None)?;
+        let (train, test) = graph.get_edge_prediction_kfold(k, i, None, None, None)?;
         assert!(
-            test.get_edges_number() <= (graph.get_edges_number() / k) + 1,
+            test.get_edges_number() <= (graph.get_edges_number() / k as u64) + 1,
             concat!(
                 "Check that test kfolds respect size bound has failed!\n",
                 "The value of k is {}.\n",
@@ -1676,7 +1676,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), Strin
             graph.textual_report(),
             train.textual_report(),
             test.textual_report(),
-            (graph.get_edges_number() / k) + 1,
+            (graph.get_edges_number() / k as u64) + 1,
             test.get_edges_number(),
             i
         );
@@ -1685,7 +1685,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<(), Strin
 
     if let Ok(edge_t) = graph.get_edge_type_name_from_edge_type_id(0) {
         for i in 0..k {
-            let (train, test) = graph.kfold(k, i, Some(vec![Some(edge_t.clone())]), None, None)?;
+            let (train, test) = graph.get_edge_prediction_kfold(k, i, Some(vec![Some(edge_t.clone())]), None, None)?;
             default_holdout_test_suite(graph, &train, &test)?;
         }
     }
@@ -1731,7 +1731,7 @@ pub fn test_negative_edges_generation(
 
 pub fn test_subgraph_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<(), String> {
     let expected_nodes = graph.get_connected_nodes_number() / 10;
-    let subgraph = graph.random_subgraph(expected_nodes, None, verbose)?;
+    let subgraph = graph.get_random_subgraph(expected_nodes, None, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
     assert!(subgraph.get_connected_nodes_number() <= expected_nodes + 1);
     Ok(())
@@ -1894,12 +1894,12 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Resu
                 && (graph.has_multilabel_node_types()? || graph.has_singleton_node_types()?))
         {
             assert!(graph
-                .node_label_holdout(0.8, Some(use_stratification), Some(42))
+                .get_node_label_random_holdout(0.8, Some(use_stratification), Some(42))
                 .is_err());
             continue;
         }
 
-        let (train, test) = graph.node_label_holdout(0.8, Some(use_stratification), Some(42))?;
+        let (train, test) = graph.get_node_label_random_holdout(0.8, Some(use_stratification), Some(42))?;
         assert!(train.has_unknown_node_types()?);
         assert!(test.has_unknown_node_types()?);
         assert!(!test
@@ -1938,11 +1938,11 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Resu
             || !graph.has_edge_types()
         {
             assert!(graph
-                .edge_label_holdout(0.8, Some(*use_stratification), None)
+                .get_edge_label_random_holdout(0.8, Some(*use_stratification), None)
                 .is_err());
             continue;
         }
-        let (train, test) = graph.edge_label_holdout(0.8, Some(*use_stratification), None)?;
+        let (train, test) = graph.get_edge_label_random_holdout(0.8, Some(*use_stratification), None)?;
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
         assert!(!test
