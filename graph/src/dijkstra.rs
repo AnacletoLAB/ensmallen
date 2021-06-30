@@ -408,6 +408,8 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    /// TODO! take a look at https://github.com/Murali-group/PathLinker/blob/master/ksp_Astar.py
     pub unsafe fn get_unchecked_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
