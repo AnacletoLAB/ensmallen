@@ -214,31 +214,32 @@ impl Graph {
             }
 
             // explore the neighbourhood of the current node
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                .for_each(|neighbour_node_id| {
-                    if found_destination {
-                        return;
-                    }
-                    // If the node was not previously visited
-                    if distances[neighbour_node_id as usize] == NOT_PRESENT {
-                        // Set it's distance
-                        distances[neighbour_node_id as usize] = new_neighbour_distance;
+            nodes_to_explore.extend(
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .filter_map(|neighbour_node_id| {
+                        // If the node was not previously visited
+                        if !found_destination
+                            && distances[neighbour_node_id as usize] == NOT_PRESENT
+                        {
+                            // Set it's distance
+                            distances[neighbour_node_id as usize] = new_neighbour_distance;
 
-                        // and set its parent if we are asked to
-                        if let Some(predecessors) = predecessors.as_mut() {
-                            predecessors[neighbour_node_id as usize] = node_id;
-                        }
-
-                        if let Some(dst_node_id) = dst_node_id {
-                            if neighbour_node_id == dst_node_id {
-                                found_destination = true;
+                            // and set its parent if we are asked to
+                            if let Some(predecessors) = predecessors.as_mut() {
+                                predecessors[neighbour_node_id as usize] = node_id;
                             }
-                        }
 
-                        // add the node to the nodes to explore
-                        nodes_to_explore.push_back((neighbour_node_id, new_neighbour_distance));
-                    }
-                });
+                            if let Some(dst_node_id) = dst_node_id {
+                                if neighbour_node_id == dst_node_id {
+                                    found_destination = true;
+                                }
+                            }
+                            Some((neighbour_node_id, new_neighbour_distance))
+                        } else {
+                            None
+                        }
+                    }),
+            );
             if found_destination {
                 break;
             }
@@ -398,6 +399,8 @@ impl Graph {
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
     /// * `k`: usize - Number of paths to find.
+    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
+    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -405,46 +408,168 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    /// TODO! take a look at https://github.com/Murali-group/PathLinker/blob/master/ksp_Astar.py
     pub unsafe fn get_unchecked_k_shortest_path_node_ids_from_node_ids(
         &self,
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-    ) -> Vec<Vec<NodeT>> {
+        max_path_length: Option<NodeT>,
+        verbose: Option<bool>,
+    ) -> Result<Vec<Vec<NodeT>>, String> {
         let nodes_number = self.get_nodes_number() as usize;
+        if nodes_number < 2 {
+            panic!("It is impossible to execute this method on a graph with less than 2 nodes.");
+        }
         let mut counts = vec![0; nodes_number];
-        let mut paths = Vec::new();
+        let verbose = verbose.unwrap_or(true);
+        let mut total_nodes_to_exclude = 2;
+        let srd_bfs = self.get_unchecked_breath_first_search_from_node_ids(
+            src_node_id,
+            None,
+            None,
+            max_path_length,
+        );
+        if !srd_bfs.has_path_to_node_id(dst_node_id) {
+            return Err(concat!(
+                "There is no path between the given source node id ",
+                "and destination node with the provided parametrization ",
+                "in the current graph."
+            )
+            .to_string());
+        }
+        let src_distances = srd_bfs.into_distances();
+        let max_path_length = max_path_length.unwrap_or(NodeT::MAX);
 
-        let mut nodes_to_explore = VecDeque::with_capacity(nodes_number);
-        nodes_to_explore.push_back(vec![src_node_id]);
-
-        while let Some(path) = nodes_to_explore.pop_front() {
-            // If we have found all the required paths we can exit
-            if counts[dst_node_id as usize] >= k {
-                break;
-            }
-            let node_id = *path.last().unwrap();
-            counts[node_id as usize] += 1;
-
-            if node_id == dst_node_id {
-                paths.push(path);
-                continue;
-            }
-
-            // If the number of identified paths to
-            // node ID is greater than k, we can continue.
-            if counts[node_id as usize] > k {
-                continue;
-            }
-
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                .for_each(|neighbour_node_id| {
-                    let mut new_path = path.clone();
-                    new_path.push(neighbour_node_id);
-                    nodes_to_explore.push_back(new_path);
+        // If the graph is undirected
+        // TODO! update this for directed graph using the in-star
+        if !self.is_directed() && max_path_length != NodeT::MAX {
+            let dst_distances = self
+                .get_unchecked_breath_first_search_from_node_ids(
+                    dst_node_id,
+                    None,
+                    None,
+                    Some(max_path_length),
+                )
+                .into_distances();
+            src_distances
+                .into_iter()
+                .zip(dst_distances.into_iter())
+                .enumerate()
+                .for_each(|(node_id, (dst1, dst2))| {
+                    if dst1.saturating_add(dst2) > max_path_length {
+                        total_nodes_to_exclude += 1;
+                        counts[node_id] = k;
+                    }
                 });
         }
-        paths
+
+        // We do not want to have multiple paths re-passing through the source.
+        counts[src_node_id as usize] = k;
+        counts[dst_node_id as usize] = k;
+        // In the stub graph the tuple contains:
+        // - The position in the vector of the parent node (usize::MAX when node is root)
+        // - The node itself.
+        let mut stub_graph: Vec<(usize, NodeT)> = Vec::with_capacity(nodes_number);
+        stub_graph.push((usize::MAX, src_node_id));
+
+        // In the nodes_to_explore deque the tuples contain:
+        // - The position of the node ID of the tuple in the stub graph
+        // - The node itself.
+        // - The current depth
+        let mut nodes_to_explore: VecDeque<(usize, NodeT, NodeT)> =
+            VecDeque::with_capacity(nodes_number);
+        nodes_to_explore.push_back((0, src_node_id, 0));
+        let mut reconstruction_positions: Vec<usize> = Vec::with_capacity(k);
+
+        // Get the loading bar
+        let pb = get_loading_bar(
+            verbose,
+            "Computing k shortest paths",
+            k * (nodes_number - total_nodes_to_exclude),
+        );
+
+        while let Some((node_position, node_id, depth)) = nodes_to_explore.pop_front() {
+            // If the current path has reached a depth greater than the maximum allowed
+            // we skip it and proceed to the next path.
+            if depth >= max_path_length {
+                continue;
+            }
+            let mut path = Vec::with_capacity(depth as usize);
+            path.push(node_id);
+            let mut position = node_position;
+            // We start to populate the output.
+            while stub_graph[position].0 != usize::MAX {
+                path.push(stub_graph[position].1);
+                position = stub_graph[position].0;
+            }
+            let mut found_destination = false;
+            let new_nodes = self
+                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .filter(|&neighbour_node_id| {
+                    // If the neighbour is the destination
+                    // we can just add all of these paths
+                    // immediately and avoid pushing them onto
+                    // the queue.
+                    if neighbour_node_id == dst_node_id {
+                        found_destination = true;
+                        return false;
+                    }
+                    // If the neighbours has already been used all the possible times,
+                    // it does not make sense to be explored further.
+                    if counts[neighbour_node_id as usize] >= k
+                            // We do not want selfloops
+                            || path.contains(&neighbour_node_id)
+                    {
+                        return false;
+                    }
+                    true
+                })
+                .collect::<Vec<NodeT>>();
+            pb.inc(new_nodes.len() as u64);
+            // If the neighbour is the destination
+            // we can just add all of these paths
+            // immediately and avoid pushing them onto
+            // the queue.
+            if found_destination {
+                // Reconstruct the path found starting from
+                // the stub graph.
+                reconstruction_positions.push(node_position);
+                // The check to finish is needed only when
+                // we push a new value to the vector.
+                if reconstruction_positions.len() == k {
+                    break;
+                }
+            }
+
+            // The current graph size is the size of the stub graph
+            let current_graph_size = stub_graph.len();
+            stub_graph.extend(new_nodes.iter().cloned().map(|neighbour_node_id| {
+                counts[neighbour_node_id as usize] += 1;
+                (node_position, neighbour_node_id)
+            }));
+            nodes_to_explore.extend(new_nodes.into_iter().enumerate().map(
+                |(offset, neighbour_node_id)| {
+                    (current_graph_size + offset, neighbour_node_id, depth + 1)
+                },
+            ));
+        }
+        Ok(reconstruction_positions
+            .into_par_iter()
+            .map(|mut position| {
+                let mut path = vec![dst_node_id];
+                // We start to populate the output.
+                while stub_graph[position].0 != usize::MAX {
+                    path.push(stub_graph[position].1);
+                    position = stub_graph[position].0;
+                }
+                // Add the source node
+                path.push(src_node_id);
+                // Reverse the path.
+                path.into_iter().rev().collect()
+            })
+            .collect())
     }
 
     #[fuzz_type(k: u8)]
@@ -454,8 +579,9 @@ impl Graph {
     /// # Arguments
     /// * `src_node_id`: NodeT - Source node ID.
     /// * `dst_node_id`: NodeT - Destination node ID.
-    /// * `maximal_depth`: Option<NodeT> - The maximal depth to execute the BFS for.
     /// * `k`: usize - Number of paths to find.
+    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
+    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -468,14 +594,18 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
+        max_path_length: Option<NodeT>,
+        verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
-        Ok(unsafe {
+        unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
                 self.validate_node_id(dst_node_id)?,
                 k,
+                max_path_length,
+                verbose,
             )
-        })
+        }
     }
 
     #[fuzz_type(k: u8)]
@@ -486,6 +616,8 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `k`: usize - Number of paths to find.
+    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
+    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -498,14 +630,18 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
+        max_path_length: Option<NodeT>,
+        verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
-        Ok(unsafe {
+        unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
                 self.get_node_id_from_node_name(dst_node_name)?,
                 k,
+                max_path_length,
+                verbose,
             )
-        })
+        }
     }
 
     #[fuzz_type(k: u8)]
@@ -516,6 +652,8 @@ impl Graph {
     /// * `src_node_name`: &str - Source node name.
     /// * `dst_node_name`: &str - Destination node name.
     /// * `k`: usize - Number of paths to find.
+    /// * `max_path_length`: Option<usize> - Maximum length of the paths. By default None.
+    /// * `verbose`: Option<bool> - Whether to show a tentative loading bar. By default true.
     ///
     /// # Implementative details
     /// This method is not converted to a numpy array because it would have
@@ -528,20 +666,28 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
+        max_path_length: Option<NodeT>,
+        verbose: Option<bool>,
     ) -> Result<Vec<Vec<String>>, String> {
-        self.get_k_shortest_path_node_ids_from_node_names(src_node_name, dst_node_name, k)
-            .map(|paths| {
-                paths
-                    .into_iter()
-                    .map(|path| {
-                        path.into_iter()
-                            .map(|node_id| unsafe {
-                                self.get_unchecked_node_name_from_node_id(node_id)
-                            })
-                            .collect()
-                    })
-                    .collect()
-            })
+        self.get_k_shortest_path_node_ids_from_node_names(
+            src_node_name,
+            dst_node_name,
+            k,
+            max_path_length,
+            verbose,
+        )
+        .map(|paths| {
+            paths
+                .into_iter()
+                .map(|path| {
+                    path.into_iter()
+                        .map(|node_id| unsafe {
+                            self.get_unchecked_node_name_from_node_id(node_id)
+                        })
+                        .collect()
+                })
+                .collect()
+        })
     }
 
     /// Returns unweighted eccentricity of the given node.
