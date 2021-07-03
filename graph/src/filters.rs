@@ -79,7 +79,7 @@ impl Graph {
         let pb_edges = get_loading_bar(
             verbose,
             format!(
-                "Building edges of graph {} without required attributes",
+                "Building filtered edges",
                 self.name
             )
             .as_ref(),
@@ -89,7 +89,7 @@ impl Graph {
         let pb_nodes = get_loading_bar(
             verbose,
             format!(
-                "Building nodes of graph {} without required attributes",
+                "Building filtered nodes",
                 self.name
             )
             .as_ref(),
