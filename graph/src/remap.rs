@@ -51,13 +51,13 @@ impl Graph {
 
         let pb_edges = get_loading_bar(
             verbose,
-            "Building sorted edges with node IDs in increasing outbound node degree",
+            "Building sorted edges",
             self.get_directed_edges_number() as usize,
         );
 
         let pb_nodes = get_loading_bar(
             verbose,
-            "Building node IDs {} with increasing outbound node degree",
+            "Building sorted nodes",
             self.get_nodes_number() as usize,
         );
 
