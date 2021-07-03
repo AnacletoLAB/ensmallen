@@ -78,21 +78,13 @@ impl Graph {
         let verbose = verbose.unwrap_or(true);
         let pb_edges = get_loading_bar(
             verbose,
-            format!(
-                "Building filtered edges",
-                self.name
-            )
-            .as_ref(),
+            "Building filtered edges",
             self.get_directed_edges_number() as usize,
         );
 
         let pb_nodes = get_loading_bar(
             verbose,
-            format!(
-                "Building filtered nodes",
-                self.name
-            )
-            .as_ref(),
+            "Building filtered nodes",
             self.get_nodes_number() as usize,
         );
 
