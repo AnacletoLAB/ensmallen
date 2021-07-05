@@ -418,10 +418,10 @@ impl Graph {
         max_path_length: Option<NodeT>,
         verbose: Option<bool>,
     ) -> Result<Vec<Vec<NodeT>>, String> {
-        let nodes_number = self.get_nodes_number() as usize;
-        if nodes_number < 2 {
-            panic!("It is impossible to execute this method on a graph with less than 2 nodes.");
+        if src_node_id == dst_node_id {
+            return Err("The minimum path on a selfloop is not defined.".to_string());
         }
+        let nodes_number = self.get_nodes_number() as usize;
         let mut counts = vec![0; nodes_number];
         let verbose = verbose.unwrap_or(true);
         let mut total_nodes_to_exclude = 2;

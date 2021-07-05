@@ -129,6 +129,7 @@ fn rust_update_return_explore_weight_transition(
     }
 }
 
+#[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 extern "C" {
     fn c_update_explore_weight_transition(
         transition: *const f32,

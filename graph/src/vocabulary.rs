@@ -13,6 +13,33 @@ pub struct Vocabulary<IndexT: ToFromUsize> {
     pub numeric_ids: bool,
 }
 
+#[derive(Debug, Clone)]
+pub struct VocabularyMemoryStats {
+    pub map: usize,
+    pub reverse_map: usize,
+    pub metadata: usize,
+}
+
+impl VocabularyMemoryStats {
+    pub fn total(&self) -> usize {
+        self.map + self.reverse_map + self.metadata
+    }
+}
+
+impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
+    pub fn memory_stats(&self) -> VocabularyMemoryStats {
+        use std::mem::size_of;
+        VocabularyMemoryStats{
+            // https://github.com/servo/servo/issues/6908
+            map: (self.map.capacity() as f64 * 1.1) as usize 
+            * (size_of::<String>() + size_of::<IndexT>() + size_of::<usize>())
+            + self.map.keys().map(|s| size_of::<String>() + s.capacity() * size_of::<char>()).sum::<usize>(),
+            reverse_map: size_of::<Vec<String>>() + self.reverse_map.iter().map(|s| size_of::<String>() + s.capacity() * size_of::<char>()).sum::<usize>(),
+            metadata: size_of::<bool>(),
+        }
+    }
+}
+
 impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     pub fn default() -> Vocabulary<IndexT> {
         Vocabulary {

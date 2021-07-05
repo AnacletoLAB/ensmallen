@@ -1,3 +1,5 @@
+use crate::vocabulary::VocabularyMemoryStats;
+
 use super::*;
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
@@ -19,6 +21,44 @@ pub struct NodeTypeVocabulary {
     pub max_multilabel_count: NodeTypeT,
     pub unknown_count: NodeT,
     pub multilabel: bool,
+}
+
+#[derive(Debug, Clone)]
+pub struct NodeTypeVocabularyMemoryStats {
+    pub ids: usize,
+    pub vocabulary: VocabularyMemoryStats,
+    pub counts: usize,
+    pub metadata: usize,
+}
+
+impl NodeTypeVocabularyMemoryStats {
+    pub fn total(&self) -> usize {
+        self.ids + self.vocabulary.total() 
+        + self.counts + self.metadata
+    }
+}
+
+
+impl NodeTypeVocabulary {
+    pub fn memory_stats(&self) -> NodeTypeVocabularyMemoryStats {
+        use std::mem::size_of;
+        NodeTypeVocabularyMemoryStats{
+            ids: size_of::<Vec<Option<Vec<NodeTypeT>>>>() + self.ids.iter()
+                .map(|x| 
+                    size_of::<Option<Vec<NodeTypeT>>>() + x.as_ref().map_or(0, |v| 
+                        size_of::<Vec<NodeTypeT>>() + 
+                        v.capacity() * size_of::<NodeTypeT>()
+                )
+            ).sum::<usize>(),
+            vocabulary: self.vocabulary.memory_stats(),
+            counts: size_of::<Vec<NodeT>>() + self.counts.capacity() * size_of::<NodeT>(),
+            metadata: size_of::<NodeT>()
+            + size_of::<NodeT>()
+            + size_of::<NodeTypeT>()
+            + size_of::<NodeT>()
+            + size_of::<bool>()
+        }
+    }
 }
 
 impl NodeTypeVocabulary {

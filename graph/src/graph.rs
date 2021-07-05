@@ -1,7 +1,7 @@
 //! A graph representation optimized for executing random walks on huge graphs.
 use super::*;
 use bitvec::prelude::*;
-use elias_fano_rust::EliasFano;
+use elias_fano_rust::{EliasFano, EliasFanoMemoryStats};
 use rayon::prelude::*;
 use roaring::RoaringBitmap;
 
@@ -294,5 +294,84 @@ impl Graph {
                     )
                 }),
         })
+    }
+}
+
+
+
+#[derive(Clone, Debug)]
+pub struct GraphMemoryStats {
+    pub edges: EliasFanoMemoryStats,
+    pub weights: usize,
+
+    pub node_types: Option<NodeTypeVocabularyMemoryStats>,
+    pub edge_types: Option<EdgeTypeVocabularyMemoryStats>,
+    pub nodes: VocabularyMemoryStats,
+
+    /// Graph name
+    pub name: usize,
+    pub connected_nodes: usize,
+    pub singleton_nodes_with_selfloops: usize,
+    pub unique_sources: usize,
+
+    pub destinations: usize,
+    pub sources: usize,
+    pub cumulative_node_degrees: usize,
+
+    pub metadata: usize,
+}
+
+impl GraphMemoryStats {
+    pub fn total(&self) -> usize {
+        self.edges.total()
+        + self.weights
+        + self.node_types.as_ref().map_or(0, |x| x.total())
+        + self.edge_types.as_ref().map_or(0, |x| x.total())
+        + self.nodes.total()
+        + self.name
+        + self.connected_nodes
+        + self.singleton_nodes_with_selfloops
+        + self.unique_sources
+        + self.destinations
+        + self.sources
+        + self.cumulative_node_degrees
+        + self.metadata
+    }
+}
+
+impl Graph {
+    #[manual_binding]
+    /// Returns the memory usage of all the fields of graph
+    pub fn memory_stats(&self) -> GraphMemoryStats {
+        use std::mem::size_of;
+        GraphMemoryStats{
+            // Exact main structures
+            edges: self.edges.memory_stats(),
+            weights: size_of::<Option<Vec<WeightT>>>() + self.weights.as_ref().map_or(0, |v| v.capacity() * size_of::<WeightT>()),
+
+            node_types: self.node_types.as_ref().map(|nt| nt.memory_stats()),
+            edge_types: self.edge_types.as_ref().map(|et| et.memory_stats()),
+            nodes: self.nodes.memory_stats(),
+
+            // Approximated structures, here we consider an Option at None being 
+            /// of size 0  
+            name: size_of::<String>() + self.name.capacity() * size_of::<char>(),
+            connected_nodes: size_of::<Option<BitVec<Lsb0, u8>>>() + self.connected_nodes.as_ref().map_or(0, |bv| bv.capacity() * size_of::<u8>()),
+            singleton_nodes_with_selfloops: self.singleton_nodes_with_selfloops.as_ref().map_or(0, |rb| rb.size()),
+            unique_sources: self.unique_sources.as_ref().map_or(0, |e| e.size()),
+
+            // Exact caching data
+            destinations: size_of::<Option<Vec<NodeT>>>() + self.destinations.as_ref().map_or(0, |v| v.capacity() * size_of::<NodeT>()),
+            sources: size_of::<Option<Vec<NodeT>>>() + self.sources.as_ref().map_or(0, |v| v.capacity() * size_of::<NodeT>()),
+            cumulative_node_degrees: size_of::<Option<Vec<EdgeT>>>() + self.cumulative_node_degrees.as_ref().map_or(0, |v| v.capacity() * size_of::<EdgeT>()),
+
+            // Exact metadata
+            metadata: size_of::<u8>() + size_of::<u64>() + size_of::<bool>()
+            + size_of::<NodeT>() + size_of::<EdgeT>() + size_of::<NodeT>()
+            + size_of::<NodeT>() + size_of::<EdgeT>() + size_of::<NodeT>() 
+            + size_of::<NodeT>() + size_of::<NodeT>() + size_of::<Option<WeightT>>()
+            + size_of::<Option<WeightT>>() + size_of::<Option<f64>>() + size_of::<Option<f64>>()
+            + size_of::<Option<f64>>() + size_of::<Option<NodeT>>() + size_of::<bool>() + size_of::<bool>()
+        } 
     }
 }

@@ -148,3 +148,18 @@ impl EnsmallenGraph {
         self.__repr__()
     }
 }
+
+#[pymethods]
+impl EnsmallenGraph {
+    #[text_signature = "($self)"]
+    /// Returns a report of how much memory (in bytes) each sub-module of the current graph uses.
+    pub fn memory_stats(&self) -> String {
+        format!("{:#4?}", self.graph.memory_stats())
+    }
+
+    #[text_signature = "($self)"]
+    /// Returns a report of how much memory (in bytes) the current graph uses.
+    pub fn size(&self) -> usize {
+        self.graph.memory_stats().total()
+    }
+}

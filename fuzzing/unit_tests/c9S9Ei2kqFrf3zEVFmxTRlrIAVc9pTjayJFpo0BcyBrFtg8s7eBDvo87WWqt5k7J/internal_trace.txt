@@ -1,0 +1,14 @@
+Some(
+    [
+        "get_source_node_ids(directed: false)",
+        "remove_inplace_singleton_edge_types()",
+        "to_bidiagonal(verbose: None)",
+        "approximated_vertex_cover_set()",
+        "get_weighted_mininum_node_degree()",
+        "get_parallel_edges_number()",
+        "must_have_known_edge_types()",
+        "has_node_type_id(node_type_id: 1799)",
+        "has_constant_edge_weights()",
+        "remove_edge_types(verbose: None)",
+    ],
+)
