@@ -43,6 +43,8 @@ pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign + Add + Sub<Outp
     fn from_usize(v: usize) -> Self;
     /// create an usize from the type
     fn to_usize(v: Self) -> usize;
+    /// Retrun the maximum encodable number
+    fn get_max() -> Self;
 }
 
 /// Automatically implement the methods needed to convert from and to usize
@@ -58,6 +60,11 @@ macro_rules! macro_impl_to_from_usize {
                 #[inline(always)]
                 fn to_usize(v: $ty) -> usize {
                     v as usize
+                }
+
+                #[inline(always)]
+                fn get_max() -> $ty {
+                    $ty::MAX
                 }
             }
         )*
