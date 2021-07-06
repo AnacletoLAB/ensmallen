@@ -10,6 +10,7 @@ macro_rules! create_edge_list {
         $node_method:expr,
         $edge_types_vocabulary:expr,
         $edge_types_method:expr,
+        ($($workaround:ident),*),
         ($($input_tuple:ident),*),
         ($($results:ident),*),
         ($($default:expr),*),
@@ -33,12 +34,12 @@ macro_rules! create_edge_list {
             let ei = ei.method_caller($node_method, &mut node_parser);
             if $directed || $complete {
                 ei.map(|line| match line {
-                    Ok((src, dst, edge_type, weight)) => unsafe { Ok((src, dst, $($input_tuple,)*)) },
+                    Ok((src, dst, $($workaround,)*)) => unsafe { Ok((src, dst, $($input_tuple,)*)) },
                     Err(e) => Err(e)
                 }).collect::<Vec<Result<_>>>()
             } else {
                 ei.flat_map(|line| match line {
-                    Ok((src, dst, edge_type, weight)) => unsafe {
+                    Ok((src, dst, $($workaround,)*)) => unsafe {
                         if src == dst {
                             vec![Ok((src, dst, $($input_tuple,)*))]
                         } else {
@@ -190,8 +191,9 @@ fn parse_unsorted_edges(
                 edge_types_vocabulary,
                 edge_types_method,
                 (edge_type, weight),
+                (edge_type, weight),
                 (edge_types, weights),
-                (None, f64::NAN),
+                (None, WeightT::NAN),
                 directed,
                 complete,
                 duplicates
@@ -207,6 +209,7 @@ fn parse_unsorted_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                (edge_type, weight),
                 (edge_type),
                 (edge_types),
                 (None),
@@ -225,9 +228,10 @@ fn parse_unsorted_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                (edge_type, weight),
                 (weight),
                 (weights),
-                (f64::NAN),
+                (WeightT::NAN),
                 directed,
                 complete,
                 duplicates
@@ -243,6 +247,7 @@ fn parse_unsorted_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                (edge_type, weight),
                 (),
                 (),
                 (),
