@@ -1,6 +1,7 @@
-use std::sync::atomic::AtomicU32;
-
+use itertools::Itertools;
 use rayon::iter::ParallelIterator;
+use std::sync::atomic::AtomicU32;
+use std::sync::atomic::Ordering::Relaxed;
 
 use super::*;
 
@@ -33,7 +34,8 @@ fn parse_nodes(
             "in the context where the node types have not been provided.\n",
             "If the node types within the nodes list are numeric, simply use ",
             "the numeric node types ids parameter."
-        ));
+        )
+        .to_string());
     }
 
     let node_types_method = match (
@@ -47,15 +49,16 @@ fn parse_nodes(
         (false, _, _, false) => NodeTypeParser::ignore,
         (true, true, true, false) => NodeTypeParser::parse_strings_unchecked,
         (true, true, false, false) => NodeTypeParser::parse_strings,
-        (true, false, true, false) => NodeTypeParser::translate_unchecked,
-        (true, false, false, false) => NodeTypeParser::translate,
+        (true, false, true, false) => NodeTypeParser::get_unchecked,
+        (true, false, false, false) => NodeTypeParser::get,
         (_, _, true, true) => NodeTypeParser::to_numeric_unchecked,
         (_, _, false, true) => NodeTypeParser::to_numeric,
     };
     let mut node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new());
 
+    let mut node_type_parser = NodeTypeParser::new(node_types_vocabulary);
     let nodes_iterator =
-        nodes_iterator.map(|ni| ni.method_caller(node_types_method, &mut node_types_vocabulary));
+        nodes_iterator.map(|ni| ni.method_caller(node_types_method, &mut node_type_parser));
 
     let (nodes_vocabulary, node_types_ids) = match (
         nodes_iterator,
@@ -63,45 +66,80 @@ fn parse_nodes(
         numeric_node_ids,
         minimum_node_ids,
     ) {
+        // When the nodes iterator was provided, and the node IDs are expected
+        // NOT to be numeric and a minimum node ID is therefore meaningless.
         (Some(ni), _, false, None) => {
             let (nodes_names, node_types_ids): (Vec<String>, Option<Vec<Option<Vec<NodeTypeT>>>>) =
                 if has_node_types {
-                    let (nodes_names, node_types_ids) = ni.unzip()?;
+                    // If there are node types we need to collect them.
+                    // We need to use the unzip utility because in this context we do not
+                    // know the number of the nodes and we need to use a ParallellIterator,
+                    // note that it is NOT an IndexedParallellIterator.
+                    let (nodes_names, node_types_ids) =
+                        ni.collect::<Result<(Vec<String>, Vec<Option<Vec<NodeTypeT>>>)>>()?;
                     (nodes_names, Some(node_types_ids))
                 } else {
                     (
-                        ni.map(|x| x.map_ok(|(name, _)| name)).collect(),
-                        node_types_vocabulary,
+                        ni.map(|x| x.map(|(name, _)| name))
+                            .collect::<Result<Vec<String>>>()?,
+                        None,
                     )
                 };
-            (Vocabulary::from_reverse_map(nodes_names), node_types_ids)
+            Ok((Vocabulary::from_reverse_map(nodes_names), node_types_ids))
         }
+        // When the node iterator was provided, and the nodes number is not known
+        // and the node IDs are expected to be numeric.
         (Some(ni), None, true, _) => {
+            // In case the node types are expected to exist.
             let (min, max, node_types_ids) = if has_node_types {
                 let min = AtomicU32::new(NodeT::MAX);
                 let max = AtomicU32::new(0);
                 let node_type_ids = ni
-                    .map(|(node_name, node_type_ids)| {
-                        let node_id = node_name.parse::<NodeT>().map_err(|_| {
-                            format!(
-                                "The node name '{}' cannot be parsed as an integer",
-                                node_name
-                            )
-                        })?;
-                        min.fetch_min(node_id);
-                        max.fetch_max(node_id);
-                        Ok(node_type_ids)
+                    .map(|line| {
+                        match line {
+                            Ok((node_name, node_type_ids)) => {
+                                let node_id = node_name.parse::<NodeT>().map_err(|_| {
+                                    format!(
+                                        concat!(
+                                            "While parsing the provided node list, ",
+                                            "the node ID {:?} was found and it is not ",
+                                            "possible to convert it to an integer as was requested.",
+                                        ),
+                                        node_name
+                                    )
+                                })?;
+                                min.fetch_min(node_id, Relaxed);
+                                max.fetch_max(node_id, Relaxed);
+                                Ok(node_type_ids)
+                            },
+                            Err(e) => Err(e) 
+                        }
                     })
                     .collect::<Result<Vec<Option<Vec<NodeTypeT>>>>>()?;
                 (min.into_inner(), max.into_inner(), Some(node_type_ids))
             } else {
+                // Alternatively we can focus exclusively on the
+                // node IDs, which being numeric boil down to collecting
+                // the minimum and the maximum value.
                 let (min, max) = ni
-                    .map(|x| {
-                        x.parse::<NodeT>().map_err(|_| {
-                            format!("The string '{}' cannot be parsed as an integer", x)
-                        })
+                    .map(|line| {
+                        match line {
+                            Ok((node_name, _)) => {
+                                match node_name.parse::<NodeT>() {
+                                    Ok(node_id)=> Ok(node_id),
+                                    Err(_) => format!(
+                                        concat!(
+                                            "While parsing the provided node list, ",
+                                            "the node ID {:?} was found and it is not ",
+                                            "possible to convert it to an integer as was requested.",
+                                        ),
+                                        node_name
+                                    )
+                                }},
+                            Err(e) => Err(e)
+                        }
                     })
-                    .map(|x| (x, x))
+                    .map(|x| x.map(|node_id| (node_id, node_id)))
                     .reduce(|v1, v2| match (v1, v2) {
                         (Ok(min1, max1), Ok(min2, max2)) => Ok((min1.min(min2), max1.max(max2))),
                         (Err(e), _) | (_, Err(e)) => Err(e),
@@ -111,16 +149,16 @@ fn parse_nodes(
             let minimum_node_ids = minimum_node_ids.unwrap_or(min);
 
             if min < minimum_node_ids {
-                // TODO! improve error
-                return Err(
-                    "The given minimum id is bigger than the minimum id found in the iterator",
-                );
+                return Err(format!(
+                    concat!(
+                        "The given minimum id {:?} is higher ",
+                        "than the minimum id found in the iterator {:?}."
+                    ),
+                    minimum_node_ids, min
+                ));
             }
 
-            Ok(
-                Vocabulary::from_range(min.min(minimum_node_ids)..max),
-                node_types_ids,
-            )
+            Ok((Vocabulary::from_range(min.min(minimum_node_ids)..max), None))
         }
         (None, Some(ntn), true, None) => Ok(Vocabulary::from_range(0..ntn)),
         (None, Some(ntn), true, Some(min_val)) => {
@@ -134,7 +172,7 @@ fn parse_nodes(
         (None, None, false, None) => Ok(Vocabulary::new()),
         // TODO! imporve error
         _ => unreachable!("All other cases must be explictily handled."),
-    };
+    }?;
 
     (
         nodes_vocabulary,
