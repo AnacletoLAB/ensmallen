@@ -85,7 +85,7 @@ fn parse_nodes(
                         None,
                     )
                 };
-            Ok((Vocabulary::from_reverse_map(nodes_names), node_types_ids))
+            Ok((Vocabulary::from_reverse_map(nodes_names)?, node_types_ids))
         }
         // When the node iterator was provided, and the nodes number is not known
         // and the node IDs are expected to be numeric.
@@ -95,25 +95,23 @@ fn parse_nodes(
                 let min = AtomicU32::new(NodeT::MAX);
                 let max = AtomicU32::new(0);
                 let node_type_ids = ni
-                    .map(|line| {
-                        match line {
-                            Ok((node_name, node_type_ids)) => {
-                                let node_id = node_name.parse::<NodeT>().map_err(|_| {
-                                    format!(
-                                        concat!(
-                                            "While parsing the provided node list, ",
-                                            "the node ID {:?} was found and it is not ",
-                                            "possible to convert it to an integer as was requested.",
-                                        ),
-                                        node_name
-                                    )
-                                })?;
-                                min.fetch_min(node_id, Relaxed);
-                                max.fetch_max(node_id, Relaxed);
-                                Ok(node_type_ids)
-                            },
-                            Err(e) => Err(e) 
+                    .map(|line| match line {
+                        Ok((node_name, node_type_ids)) => {
+                            let node_id = node_name.parse::<NodeT>().map_err(|_| {
+                                format!(
+                                    concat!(
+                                        "While parsing the provided node list, ",
+                                        "the node ID {:?} was found and it is not ",
+                                        "possible to convert it to an integer as was requested.",
+                                    ),
+                                    node_name
+                                )
+                            })?;
+                            min.fetch_min(node_id, Relaxed);
+                            max.fetch_max(node_id, Relaxed);
+                            Ok(node_type_ids)
                         }
+                        Err(e) => Err(e),
                     })
                     .collect::<Result<Vec<Option<Vec<NodeTypeT>>>>>()?;
                 (min.into_inner(), max.into_inner(), Some(node_type_ids))
@@ -121,28 +119,29 @@ fn parse_nodes(
                 // Alternatively we can focus exclusively on the
                 // node IDs, which being numeric boil down to collecting
                 // the minimum and the maximum value.
-                let (min, max) = ni
-                    .map(|line| {
-                        match line {
-                            Ok((node_name, _)) => {
-                                match node_name.parse::<NodeT>() {
-                                    Ok(node_id)=> Ok(node_id),
-                                    Err(_) => format!(
-                                        concat!(
-                                            "While parsing the provided node list, ",
-                                            "the node ID {:?} was found and it is not ",
-                                            "possible to convert it to an integer as was requested.",
-                                        ),
-                                        node_name
-                                    )
-                                }},
-                            Err(e) => Err(e)
-                        }
+                let (min, max): (NodeT, NodeT) = ni
+                    .map(|line| match line {
+                        Ok((node_name, _)) => match node_name.parse::<NodeT>() {
+                            Ok(node_id) => Ok(node_id),
+                            Err(_) => Err(format!(
+                                concat!(
+                                    "While parsing the provided node list, ",
+                                    "the node ID {:?} was found and it is not ",
+                                    "possible to convert it to an integer as was requested.",
+                                ),
+                                node_name
+                            )),
+                        },
+                        Err(e) => Err(e),
                     })
-                    .map(|x| x.map(|node_id| (node_id, node_id)))
-                    .reduce(|v1, v2| match (v1, v2) {
-                        (Ok(min1, max1), Ok(min2, max2)) => Ok((min1.min(min2), max1.max(max2))),
-                        (Err(e), _) | (_, Err(e)) => Err(e),
+                    .map(|maybe_node_id: Result<NodeT>| maybe_node_id.map(|node_id| (node_id, node_id)))
+                    .reduce(|| Ok((NodeT::MAX, 0)), |v1, v2| match (v1, v2) {
+                        (Ok((min1, max1)), Ok((min2, max2))) => {
+                            Ok((min1.min(min2), max1.max(max2)))
+                        }
+                        (Ok((min1, max1)), Err(e2)) => Ok((min1, max1)),
+                        (Err(e1), Ok((min2, max2))) => Ok((min2, max2)),
+                        (Err(e1), Err(e2)) => Err(e1)
                     })?;
                 (min, max, None)
             };
@@ -160,16 +159,16 @@ fn parse_nodes(
 
             Ok((Vocabulary::from_range(min.min(minimum_node_ids)..max), None))
         }
-        (None, Some(ntn), true, None) => Ok(Vocabulary::from_range(0..ntn)),
+        (None, Some(ntn), true, None) => Ok((Vocabulary::from_range(0..ntn), None)),
         (None, Some(ntn), true, Some(min_val)) => {
-            Ok(Vocabulary::from_range(min_val..min_val + ntn))
+            Ok((Vocabulary::from_range(min_val..min_val + ntn), None))
         }
         (None, Some(ntn), true, _) => {
             let min = minimum_node_ids.unwrap_or(0);
-            Ok(Vocabulary::from_range(min..min))
+            Ok((Vocabulary::from_range(min..min), None))
         }
-        (None, Some(ntn), false, None) => Ok(Vocabulary::with_capacity(ntn)),
-        (None, None, false, None) => Ok(Vocabulary::new()),
+        (None, Some(ntn), false, None) => Ok((Vocabulary::with_capacity(ntn as usize), None)),
+        (None, None, false, None) => Ok((Vocabulary::new(), None)),
         // TODO! imporve error
         _ => unreachable!("All other cases must be explictily handled."),
     }?;

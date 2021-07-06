@@ -26,10 +26,15 @@ pub(crate) fn parse_types<TypeT: FromStr + ToFromUsize>(
                     x.parse::<TypeT>()
                         .map_err(|_| format!("The string '{}' cannot be parsed as an integer", x))
                 })
-                .map(|x| (x, x))
-                .reduce(|v1, v2| match (v1, v2) {
-                    (Ok(min1, max1), Ok(min2, max2)) => Ok((min1.min(min2), max1.max(max2))),
-                    (Err(e), _) | (_, Err(e)) => Err(e),
+                .map(|maybe_type_id| maybe_type_id.map(|type_id|(type_id, type_id)))
+                .
+                reduce(|| Ok((TypeT::MAX, 0)), |v1, v2| match (v1, v2) {
+                    (Ok((min1, max1)), Ok((min2, max2))) => {
+                        Ok((min1.min(min2), max1.max(max2)))
+                    }
+                    (Ok((min1, max1)), Err(e2)) => Ok((min1, max1)),
+                    (Err(e1), Ok((min2, max2))) => Ok((min2, max2)),
+                    (Err(e1), Err(e2)) => Err(e1)
                 })?;
             let minimum_id = minimum_id.unwrap_or(min);
 
