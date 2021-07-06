@@ -1450,7 +1450,7 @@ impl Graph {
                     dst_node_names
                         .into_iter()
                         .map(|node_name| self.get_node_id_from_node_name(node_name))
-                        .collect::<Result<_, _>>()?,
+                        .collect::<Result<_>>()?,
                 ))
             })?,
             compute_predecessors,

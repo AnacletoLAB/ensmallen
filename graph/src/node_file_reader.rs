@@ -1,3 +1,5 @@
+use rayon::iter::ParallelIterator;
+
 use super::*;
 
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
@@ -358,7 +360,7 @@ impl NodeFileReader {
     /// Return iterator of the lines of the node file.
     pub fn read_lines(
         &self,
-    ) -> Result<impl Iterator<Item = Result<(String, Option<Vec<String>>), String>> + '_>
+    ) -> Result<impl ParallelIterator<Item = Result<(String, Option<Vec<String>>)>> + '_>
     {
         // Validating that at least a column was given.
         if [self.nodes_column_number, self.node_types_column_number]

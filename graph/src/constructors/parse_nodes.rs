@@ -1,5 +1,7 @@
 use std::sync::atomic::AtomicU32;
 
+use rayon::iter::ParallelIterator;
+
 use super::*;
 
 fn parse_nodes(

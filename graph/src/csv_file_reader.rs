@@ -1,6 +1,7 @@
 use super::*;
-use indicatif::ProgressIterator;
+use indicatif::ParallelProgressIterator;
 use itertools::Itertools;
+use rayon::iter::{ParallelBridge, ParallelIterator};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
 use crate::utils::get_loading_bar;
@@ -151,7 +152,7 @@ impl CSVFileReader {
     /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(
         &self,
-    ) -> Result<impl Iterator<Item = Result<Vec<Option<String>>>> + '_> {
+    ) -> Result<impl ParallelIterator<Item = Result<Vec<Option<String>>>> + '_> {
         let pb = get_loading_bar(
             self.verbose,
             format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
@@ -161,20 +162,24 @@ impl CSVFileReader {
         let number_of_elements_per_line = self.get_elements_per_line()?;
         Ok(self
             .get_lines_iterator(true)?
-            .progress_with(pb)
-            // skip empty lines
+            // Reading only the requested amount of lines.
             .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
+            .par_bridge()
+            .progress_with(pb)
             // Handling NaN values and padding them to the number of rows
-            .map_ok(move |line| {
-                let mut elements: Vec<Option<String>> = line
-                    .split(&self.separator)
-                    .map(|element| match element.is_empty() {
-                        true => None,
-                        false => Some(element.to_string()),
-                    })
-                    .collect();
-                elements.resize(number_of_elements_per_line, None);
-                elements
+            .map(move |line| match line {
+                Ok(line) => {
+                    let mut elements: Vec<Option<String>> = line
+                        .split(&self.separator)
+                        .map(|element| match element.is_empty() {
+                            true => None,
+                            false => Some(element.to_string()),
+                        })
+                        .collect();
+                    elements.resize(number_of_elements_per_line, None);
+                    Ok(elements)
+                }
+                Err(e) => Err(e),
             }))
     }
 

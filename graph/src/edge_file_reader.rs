@@ -1,4 +1,4 @@
-use itertools::Itertools;
+use rayon::iter::ParallelIterator;
 
 use super::*;
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
@@ -376,10 +376,7 @@ impl EdgeFileReader {
     ///
     /// * comment_symbol: Option<String> - if the reader should ignore or not duplicated edges.
     ///
-    pub fn set_comment_symbol(
-        mut self,
-        comment_symbol: Option<String>,
-    ) -> Result<EdgeFileReader> {
+    pub fn set_comment_symbol(mut self, comment_symbol: Option<String>) -> Result<EdgeFileReader> {
         if let Some(cs) = comment_symbol {
             if cs.is_empty() {
                 return Err("The given comment symbol is empty.".to_string());
@@ -582,9 +579,7 @@ impl EdgeFileReader {
     }
 
     /// Return iterator of rows of the edge file.
-    pub fn read_lines(
-        &self,
-    ) -> Result<impl Iterator<Item = Result<StringQuadruple, String>> + '_> {
+    pub fn read_lines(&self) -> Result<impl ParallelIterator<Item = Result<StringQuadruple>> + '_> {
         if self.destinations_column_number == self.sources_column_number {
             return Err("The destinations column is the same as the sources one.".to_string());
         }
@@ -632,8 +627,11 @@ impl EdgeFileReader {
                 Ok(vals) => self.parse_edge_line(vals),
                 Err(e) => Err(e),
             })
-            .filter_ok(move |(source_node_name, destination_node_name, _, _)| {
-                !self.skip_selfloops || source_node_name != destination_node_name
+            .filter(move |edge| match edge {
+                Ok((source_node_name, destination_node_name, _, _)) => {
+                    !self.skip_selfloops || source_node_name != destination_node_name
+                }
+                Err(e) => true,
             }))
     }
 }

@@ -7,8 +7,7 @@ impl NodeTypeParser {
         &mut self,
         value: Result<(N, Option<Vec<String>>)>,
     ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
-        let (node_name, _node_type_names) = value?;
-        Ok((node_name, None))
+        Ok((value?.0, None))
     }
 
     pub fn parse_strings<N>(
@@ -17,7 +16,9 @@ impl NodeTypeParser {
     ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
         let (node_name, node_type_names) = value?;
         let vocabulary = self.get_mutable_write();
-        Ok((node_name, vocabulary.insert_values(node_type_names)?))
+        Ok((node_name, node_type_names.unwrap_unchecked().into_iter().map(|ntn|{
+            vocabulary.insert_value()?
+        }))
     }
 
     pub fn parse_strings_unchecked<N>(
@@ -32,23 +33,23 @@ impl NodeTypeParser {
         ))
     }
 
-    pub fn translate<N>(
+    pub fn get<N>(
         &mut self,
         value: Result<(N, Option<Vec<String>>)>,
     ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
         let (node_name, node_type_names) = value?;
         let vocabulary = self.get_immutable();
-        Ok((node_name, vocabulary.translate(node_type_names)?))
+        Ok((node_name, vocabulary.get(node_type_names)?))
     }
 
-    pub fn translate_unchecked<N>(
+    pub fn get_unchecked<N>(
         &mut self,
         value: Result<(N, Option<Vec<String>>)>,
     ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
         let (node_name, node_type_names) = value?;
         let vocabulary = self.get_immutable();
         Ok((node_name, unsafe {
-            vocabulary.unchecked_translate(node_type_names)?
+            vocabulary.unchecked_get(node_type_names)?
         }))
     }
 
