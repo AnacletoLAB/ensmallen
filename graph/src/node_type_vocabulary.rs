@@ -53,27 +53,33 @@ impl Default for NodeTypeVocabulary {
 impl NodeTypeVocabulary {
     pub fn from_structs(
         ids: Vec<Option<Vec<NodeTypeT>>>,
+        vocabulary: Vocabulary<NodeTypeT>,
+    ) -> NodeTypeVocabulary {
+        let multilabel = ids
+            .iter()
+            .any(|node_types| node_types.as_ref().map_or(false, |nts| nts.len() > 1));
+        let mut vocabvec = NodeTypeVocabulary {
+            ids,
+            vocabulary,
+            counts: Vec::new(),
+            min_count: 0,
+            max_count: 0,
+            max_multilabel_count: 0,
+            unknown_count: NodeT::from_usize(0),
+            multilabel,
+        };
+        vocabvec.build_counts();
+        vocabvec
+    }
+
+    pub fn from_option_structs(
+        ids: Option<Vec<Option<NodeTypeT>>>,
         vocabulary: Option<Vocabulary<NodeTypeT>>,
     ) -> Option<NodeTypeVocabulary> {
-        match vocabulary {
-            Some(vocab) => {
-                let multilabel = ids
-                    .iter()
-                    .any(|node_types| node_types.as_ref().map_or(false, |nts| nts.len() > 1));
-                let mut vocabvec = NodeTypeVocabulary {
-                    ids,
-                    vocabulary: vocab,
-                    counts: Vec::new(),
-                    min_count: 0,
-                    max_count: 0,
-                    max_multilabel_count: 0,
-                    unknown_count: NodeT::from_usize(0),
-                    multilabel,
-                };
-                vocabvec.build_counts();
-                Some(vocabvec)
-            }
-            None => None,
+        if let (Some(ids), Some(vocabulary)) = (ids, vocabulary) {
+            Some(NodeTypeVocabulary::from_structs(ids, vocabulary))
+        } else {
+            None
         }
     }
 

@@ -243,6 +243,10 @@ macro_rules! impl_struct_func {
                 }
             }
 
+            pub fn into_inner(self) -> $context_type {
+                self.context
+            }
+
             #[inline]
             fn get_immutable(&self) -> &$context_type {
                 &self.context

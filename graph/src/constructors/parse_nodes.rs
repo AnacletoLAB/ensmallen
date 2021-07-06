@@ -1,4 +1,3 @@
-use itertools::Itertools;
 use rayon::iter::ParallelIterator;
 use std::sync::atomic::AtomicU32;
 use std::sync::atomic::Ordering::Relaxed;
@@ -85,7 +84,7 @@ fn parse_nodes(
                         None,
                     )
                 };
-            Ok((Vocabulary::from_reverse_map(nodes_names)?, node_types_ids))
+            Ok::<_, String>((Vocabulary::from_reverse_map(nodes_names)?, node_types_ids))
         }
         // When the node iterator was provided, and the nodes number is not known
         // and the node IDs are expected to be numeric.
@@ -97,16 +96,17 @@ fn parse_nodes(
                 let node_type_ids = ni
                     .map(|line| match line {
                         Ok((node_name, node_type_ids)) => {
-                            let node_id = node_name.parse::<NodeT>().map_err(|_| {
-                                format!(
+                            let node_id = match node_name.parse::<NodeT>() {
+                                Ok(node_id) => Ok(node_id),
+                                Err(_) => Err(format!(
                                     concat!(
                                         "While parsing the provided node list, ",
                                         "the node ID {:?} was found and it is not ",
                                         "possible to convert it to an integer as was requested.",
                                     ),
                                     node_name
-                                )
-                            })?;
+                                ))
+                            }?;
                             min.fetch_min(node_id, Relaxed);
                             max.fetch_max(node_id, Relaxed);
                             Ok(node_type_ids)
@@ -173,8 +173,8 @@ fn parse_nodes(
         _ => unreachable!("All other cases must be explictily handled."),
     }?;
 
-    (
+    Ok((
         nodes_vocabulary,
-        node_types_ids.map(|ntis| NodeTypeVocabulary::from_structs(ntis, node_types_vocabulary)),
-    )
+        node_types_ids.map(|ntis| NodeTypeVocabulary::from_structs(ntis, node_type_parser.into_inner())),
+    ))
 }
