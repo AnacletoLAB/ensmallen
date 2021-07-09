@@ -152,7 +152,7 @@ impl CSVFileReader {
     /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(
         &self,
-    ) -> Result<impl ParallelIterator<Item = Result<Vec<Option<String>>>> + '_> {
+    ) -> Result<impl ParallelIterator<Item = Result<(usize, Vec<Option<String>>)>> + '_> {
         let pb = get_loading_bar(
             self.verbose,
             format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
@@ -164,20 +164,28 @@ impl CSVFileReader {
             .get_lines_iterator(true)?
             // Reading only the requested amount of lines.
             .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
+            .enumerate()
             .par_bridge()
             .progress_with(pb)
             // Handling NaN values and padding them to the number of rows
-            .map(move |line| match line {
+            .map(move |(line_number, line)| match line {
                 Ok(line) => {
-                    let mut elements: Vec<Option<String>> = line
-                        .split(&self.separator)
-                        .map(|element| match element.is_empty() {
-                            true => None,
-                            false => Some(element.to_string()),
-                        })
-                        .collect();
-                    elements.resize(number_of_elements_per_line, None);
-                    Ok(elements)
+                    let mut elements: Vec<Option<String>> = vec![None; number_of_elements_per_line];
+                    for (i, term) in line.split(&self.separator).enumerate() {
+                        if i >= number_of_elements_per_line {
+                            return Err(format!(
+                                concat!(
+                                    "Line number {} contains more elements ",
+                                    "separated by the provided separator {:?} ",
+                                    "the expected number of elements {}."
+                                ),
+                                line_number, self.separator, number_of_elements_per_line
+                            ));
+                        }
+                        // TODO! Investigate how to avoid this clone!
+                        elements[i] = Some(term.to_string());
+                    }
+                    Ok((line_number, elements))
                 }
                 Err(e) => Err(e),
             }))

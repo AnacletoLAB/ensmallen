@@ -579,7 +579,7 @@ impl EdgeFileReader {
     }
 
     /// Return iterator of rows of the edge file.
-    pub fn read_lines(&self) -> Result<impl ParallelIterator<Item = Result<StringQuadruple>> + '_> {
+    pub fn read_lines(&self) -> Result<impl ParallelIterator<Item = Result<(usize, StringQuadruple)>> + '_> {
         if self.destinations_column_number == self.sources_column_number {
             return Err("The destinations column is the same as the sources one.".to_string());
         }
@@ -623,12 +623,12 @@ impl EdgeFileReader {
         Ok(self
             .reader
             .read_lines()?
-            .map(move |values| match values {
-                Ok(vals) => self.parse_edge_line(vals),
+            .map(move |line| match line {
+                Ok((line_number, vals)) => Ok((line_number, self.parse_edge_line(vals)?)),
                 Err(e) => Err(e),
             })
             .filter(move |edge| match edge {
-                Ok((source_node_name, destination_node_name, _, _)) => {
+                Ok((_, (source_node_name, destination_node_name, _, _))) => {
                     !self.skip_selfloops || source_node_name != destination_node_name
                 }
                 Err(e) => true,

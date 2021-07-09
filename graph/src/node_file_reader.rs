@@ -360,7 +360,7 @@ impl NodeFileReader {
     /// Return iterator of the lines of the node file.
     pub fn read_lines(
         &self,
-    ) -> Result<impl ParallelIterator<Item = Result<(String, Option<Vec<String>>)>> + '_>
+    ) -> Result<impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>> + '_>
     {
         // Validating that at least a column was given.
         if [self.nodes_column_number, self.node_types_column_number]
@@ -397,22 +397,28 @@ impl NodeFileReader {
         Ok(self
             .reader
             .read_lines()?
-            .enumerate()
-            .map(move |(line_number, values)| match values {
-                Ok(vals) => {
+            .map(move |line| match line {
+                Ok((line_number, row_values)) => {
                     let node_name = match self.nodes_column_number {
-                        Some(column) => match vals[column].to_owned() {
+                        Some(column_number) => match row_values[column_number].to_owned() {
                             Some(node_name) => node_name,
                             None => {
                                 return Err(
-                                    "One of the provided node IDs is empty or None.".to_owned()
+                                    format!(
+                                        concat!(
+                                            "While reading the provided node list, ",
+                                            "one of the provided node IDs is empty or None.\n",
+                                            "The number of the line with the error is {}."
+                                        ),
+                                        line_number
+                                    )
                                 )
                             }
                         },
                         None => line_number.to_string(),
                     };
                     let maybe_node_types_string = match self.node_types_column_number {
-                        Some(column) => match vals[column].to_owned() {
+                        Some(column_number) => match row_values[column_number].to_owned() {
                             Some(node_type) => Some(node_type),
                             None => self.default_node_type.clone(),
                         },
@@ -429,7 +435,7 @@ impl NodeFileReader {
                     };
 
                     // Return tuple with string and list of node types
-                    Ok((node_name, node_types))
+                    Ok((line_number, (node_name, node_types)))
                 }
                 Err(e) => Err(e),
             }))

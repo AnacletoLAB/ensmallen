@@ -3,7 +3,7 @@ use elias_fano_rust::{ConcurrentEliasFanoBuilder, EliasFano};
 use rayon::prelude::*;
 use std::cmp::Ordering;
 
-macro_rules! create_edge_list {
+macro_rules! create_unsorted_edge_list {
     (
         $eis:expr,
         $nodes:expr,
@@ -30,16 +30,14 @@ macro_rules! create_edge_list {
             // create the edges in the opposite direction, or alternatively
             // the user has specified that the edge list is already complete
             // hence there is no need to create the inverse edges.
-            let ei = ei.method_caller($edge_types_method, &mut edge_type_parser);
-            let ei = ei.method_caller($node_method, &mut node_parser);
             if $directed || $complete {
-                ei.map(|line| match line {
-                    Ok((src, dst, $($workaround,)*)) => unsafe { Ok((src, dst, $($input_tuple,)*)) },
+                ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).map(|line| match line {
+                    Ok((_, (src, dst, $($workaround,)*))) => unsafe { Ok((src, dst, $($input_tuple,)*)) },
                     Err(e) => Err(e)
                 }).collect::<Vec<Result<_>>>()
             } else {
-                ei.flat_map(|line| match line {
-                    Ok((src, dst, $($workaround,)*)) => unsafe {
+                ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).flat_map(|line| match line {
+                    Ok((_, (src, dst, $($workaround,)*))) => unsafe {
                         if src == dst {
                             vec![Ok((src, dst, $($input_tuple,)*))]
                         } else {
@@ -71,7 +69,7 @@ macro_rules! create_edge_list {
         // Get the number of nodes and edges.
         let edges_number = unsorted_edge_list.len();
         let nodes_number = $nodes.len();
-        // First we collect the weights and edge types
+        // We create the empty vectors for edge types and weights
         $(
             let mut $results = vec![$default; edges_number];
         )*
@@ -99,9 +97,64 @@ macro_rules! create_edge_list {
     }}
 }
 
+macro_rules! create_sorted_edge_list {
+    (
+        $eis:expr,
+        $nodes:expr,
+        $node_method:expr,
+        $edge_types_vocabulary:expr,
+        $edge_types_method:expr,
+        $edges_number:expr,
+        ($($workaround:ident),*),
+        ($($input_tuple:ident),*),
+        ($($results:ident),*),
+        ($($default:expr),*),
+    ) => {{
+        // Create the edge type parser
+        let mut edge_type_parser = EdgeTypeParser::new($edge_types_vocabulary);
+        // Create the node parser
+        let mut node_parser = EdgeNodeNamesParser::new($nodes);
+        // Creating directly the edge list, as the value are SWORN
+        // to be sorted and correct and complete.
+        // Get the number of nodes and edges.
+        let nodes_number = $nodes.len();
+        // Current offset
+        let mut offset = 0 as usize;
+        // First we create the weights and edge types vectors
+        $(
+            let mut $results = vec![$default; $edges_number];
+        )*
+        // We also create the builder for the elias fano
+        let node_bits = get_node_bits(nodes_number as NodeT);
+        let maximum_edges_number = encode_max_edge(nodes_number as NodeT, node_bits);
+        let elias_fano_builder = ConcurrentEliasFanoBuilder::new(
+            $edges_number as u64,
+            maximum_edges_number
+        )?;
+        $eis.into_iter().for_each(|ei| {
+            ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).for_each(|line| {
+                // There cannot be results when iterating on a sorted vector.
+                let (i, (src, dst, $($workaround),*)) = line.unwrap();
+                elias_fano_builder.set((offset + i) as u64, encode_edge(src, dst, node_bits));
+                $(
+                    $results[offset + i] = $input_tuple;
+                )*
+            });
+            offset = elias_fano_builder.len() as usize;
+        });
+
+        // Finalizing the edges structure constructor
+        let edges = elias_fano_builder.build();
+        // Return the computed values
+        (edges, $($results),*)
+    }}
+}
+
 fn parse_unsorted_edges(
     edges_iterators: Option<
-        Vec<impl ParallelIterator<Item = Result<(String, String, Option<String>, WeightT)>>>,
+        Vec<
+            impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,
+        >,
     >,
     nodes: Vocabulary<NodeT>,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
@@ -111,6 +164,7 @@ fn parse_unsorted_edges(
     correct: Option<bool>,
     complete: Option<bool>,
     duplicates: Option<bool>,
+    sorted: Option<bool>,
     expected_edges_number: Option<usize>,
     numeric_edge_list_node_ids: Option<bool>,
     numeric_edge_list_edge_type_ids: Option<bool>,
@@ -121,8 +175,39 @@ fn parse_unsorted_edges(
     Option<Vec<WeightT>>,
 )> {
     let correct = correct.unwrap_or(false);
-    let complete = complete.unwrap_or(false);
+    let complete = complete.unwrap_or(directed);
     let duplicates = duplicates.unwrap_or(true);
+    let sorted = sorted.unwrap_or(false);
+
+    if sorted && expected_edges_number.is_none() {
+        return Err(concat!(
+            "It is not possible to build a sorted edge list ",
+            "without knowing at least a rough estimate of the ",
+            "number of edges in the edge list.\n",
+            "This estimate must be at least within a ",
+            "binary exponentiation range, that is between ",
+            "2^{n} and 2^{n+1}."
+        )
+        .to_string());
+    }
+
+    if sorted && !complete {
+        return Err(concat!(
+            "It is not possible to build a sorted edge list ",
+            "if it is not provided as complete."
+        )
+        .to_string());
+    }
+
+    if sorted && !correct {
+        return Err(concat!(
+            "It is not possible to build a sorted edge list ",
+            "if it is not provided as correct, that is ",
+            "without any sort of error."
+        )
+        .to_string());
+    }
+
     let numeric_edge_list_node_ids = numeric_edge_list_node_ids.unwrap_or(false);
     let numeric_edge_list_edge_type_ids = numeric_edge_list_edge_type_ids.unwrap_or(false);
 
@@ -177,88 +262,154 @@ fn parse_unsorted_edges(
     // Here we handle the collection of the iterator
     // in a way to collect only non-None values and hence avoid
     // potentially a huge amount of allocations.
-    let (edges, edge_type_ids, weights) = match (edges_iterators, has_edge_types, has_edge_weights)
-    {
-        (None, _, _) => {
-            // Here likely needs to simply return None
-        }
-        (Some(eis), true, true) => {
-            // Building the edge list
-            let (edges, edge_type_ids, weights) = create_edge_list!(
-                eis,
-                nodes,
-                node_method,
-                edge_types_vocabulary,
-                edge_types_method,
-                (edge_type, weight),
-                (edge_type, weight),
-                (edge_types, weights),
-                (None, WeightT::NAN),
-                directed,
-                complete,
-                duplicates
-            );
-            // Return the computed values
-            (edges, Some(edge_type_ids), Some(weights))
-        }
-        (Some(eis), true, false) => {
-            // Building the edge list
-            let (edges, edge_type_ids) = create_edge_list!(
-                eis,
-                nodes,
-                node_method,
-                edge_types_vocabulary,
-                edge_types_method,
-                (edge_type, weight),
-                (edge_type),
-                (edge_types),
-                (None),
-                directed,
-                complete,
-                duplicates
-            );
-            // Return the computed values
-            (edges, Some(edge_type_ids), None)
-        }
-        (Some(eis), false, true) => {
-            // Building the edge list
-            let (edges, weights) = create_edge_list!(
-                eis,
-                nodes,
-                node_method,
-                edge_types_vocabulary,
-                edge_types_method,
-                (edge_type, weight),
-                (weight),
-                (weights),
-                (WeightT::NAN),
-                directed,
-                complete,
-                duplicates
-            );
-            // Return the computed values
-            (edges, None, Some(weights))
-        }
-        (Some(eis), false, false) => {
-            // Building the edge list
-            let (edges,) = create_edge_list!(
-                eis,
-                nodes,
-                node_method,
-                edge_types_vocabulary,
-                edge_types_method,
-                (edge_type, weight),
-                (),
-                (),
-                (),
-                directed,
-                complete,
-                duplicates
-            );
-            // Return the computed values
-            (edges, None, None)
-        }
-    };
+    let (edges, edge_type_ids, weights) =
+        match (edges_iterators, sorted, has_edge_types, has_edge_weights) {
+            (None, _, _, _) => (EliasFano::new(0, 0)?, None, None),
+            // When the edge lists are provided and are:
+            // - Sorted
+            // - Completely defined in both directions
+            // - Sworn on the tomb of Von Neumann to be a correct edge list
+            (Some(eis), true, true, true) => {
+                let (edges, edge_type_ids, weights) = create_sorted_edge_list!(
+                    eis,
+                    nodes,
+                    node_method,
+                    edge_types_vocabulary,
+                    edge_types_method,
+                    expected_edges_number.unwrap(),
+                    (edge_type, weight),
+                    (edge_type, weight),
+                    (edge_types, weights),
+                    (None, WeightT::NAN),
+                );
+                // Return the computed values
+                (edges, Some(edge_type_ids), Some(weights))
+            }
+            (Some(eis), true, false, true) => {
+                let (edges, weights) = create_sorted_edge_list!(
+                    eis,
+                    nodes,
+                    node_method,
+                    edge_types_vocabulary,
+                    edge_types_method,
+                    expected_edges_number.unwrap(),
+                    (edge_type, weight),
+                    (weight),
+                    (weights),
+                    (WeightT::NAN),
+                );
+                // Return the computed values
+                (edges, None, Some(weights))
+            }
+            (Some(eis), true, true, false) => {
+                let (edges, edge_type_ids) = create_sorted_edge_list!(
+                    eis,
+                    nodes,
+                    node_method,
+                    edge_types_vocabulary,
+                    edge_types_method,
+                    expected_edges_number.unwrap(),
+                    (edge_type, weight),
+                    (edge_type),
+                    (edge_types),
+                    (None),
+                );
+                // Return the computed values
+                (edges, Some(edge_type_ids), None)
+            }
+            (Some(eis), true, false, false) => {
+                let (edges,) = create_sorted_edge_list!(
+                    eis,
+                    nodes,
+                    node_method,
+                    edge_types_vocabulary,
+                    edge_types_method,
+                    expected_edges_number.unwrap(),
+                    (edge_type, weight),
+                    (),
+                    (),
+                    (),
+                );
+                // Return the computed values
+                (edges, None, None)
+            }
+            (Some(eis), false, true, true) => {
+                // Building the edge list
+                let (edges, edge_type_ids, weights) = create_unsorted_edge_list!(
+                    eis,
+                    nodes,
+                    node_method,
+                    edge_types_vocabulary,
+                    edge_types_method,
+                    (edge_type, weight),
+                    (edge_type, weight),
+                    (edge_types, weights),
+                    (None, WeightT::NAN),
+                    directed,
+                    complete,
+                    duplicates
+                );
+                // Return the computed values
+                (edges, Some(edge_type_ids), Some(weights))
+            }
+            (Some(eis), false, true, false) => {
+                // Building the edge list
+                let (edges, edge_type_ids) = create_unsorted_edge_list!(
+                    eis,
+                    nodes,
+                    node_method,
+                    edge_types_vocabulary,
+                    edge_types_method,
+                    (edge_type, weight),
+                    (edge_type),
+                    (edge_types),
+                    (None),
+                    directed,
+                    complete,
+                    duplicates
+                );
+                // Return the computed values
+                (edges, Some(edge_type_ids), None)
+            }
+            (Some(eis), false, false, true) => {
+                // Building the edge list
+                let (edges, weights) = create_unsorted_edge_list!(
+                    eis,
+                    nodes,
+                    node_method,
+                    edge_types_vocabulary,
+                    edge_types_method,
+                    (edge_type, weight),
+                    (weight),
+                    (weights),
+                    (WeightT::NAN),
+                    directed,
+                    complete,
+                    duplicates
+                );
+                // Return the computed values
+                (edges, None, Some(weights))
+            }
+            (Some(eis), false, false, false) => {
+                // Building the edge list
+                let (edges,) = create_unsorted_edge_list!(
+                    eis,
+                    nodes,
+                    node_method,
+                    edge_types_vocabulary,
+                    edge_types_method,
+                    (edge_type, weight),
+                    (),
+                    (),
+                    (),
+                    directed,
+                    complete,
+                    duplicates
+                );
+                // Return the computed values
+                (edges, None, None)
+            }
+        };
 
     Ok((
         nodes,
