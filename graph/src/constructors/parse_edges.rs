@@ -109,9 +109,9 @@ macro_rules! parse_unsorted_string_edge_list {
         parse_unsorted_edge_list!(
             unsorted_edge_list,
             $nodes.len(),
-            ($($input_tuple,)*),
-            ($($results,)*),
-            ($($default,)*),
+            ($($input_tuple),*),
+            ($($results),*),
+            ($($default),*),
             $duplicates
         )
     }}
@@ -216,9 +216,9 @@ macro_rules! parse_unsorted_integer_edge_list {
         parse_unsorted_edge_list!(
             unsorted_edge_list,
             $nodes_number,
-            ($($input_tuple,)*),
-            ($($results,)*),
-            ($($default,)*),
+            ($($input_tuple),*),
+            ($($results),*),
+            ($($default),*),
             $duplicates
         )
     }}
