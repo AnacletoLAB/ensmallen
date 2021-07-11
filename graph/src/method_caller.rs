@@ -54,9 +54,7 @@
 //!    }
 //! ```
 
-use super::*;
 use rayon::iter::plumbing::*;
-use rayon::iter::Map;
 use rayon::prelude::*;
 use std::iter::Iterator;
 

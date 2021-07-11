@@ -1,5 +1,10 @@
+use crate::constructors::build_graph_from_integers;
+use crate::constructors::build_graph_from_strings;
+
 use super::*;
-use indicatif::ProgressIterator;
+use indicatif::ParallelProgressIterator;
+use rayon::iter::Empty;
+use rayon::iter::ParallelIterator;
 
 impl Graph {
     /// Returns a **NEW** Graph that does not have the required attributes.
@@ -129,8 +134,6 @@ impl Graph {
         let min_edge_weight = min_edge_weight.unwrap_or(WeightT::NEG_INFINITY);
         let max_edge_weight = max_edge_weight.unwrap_or(WeightT::INFINITY);
 
-        let mut last_edge: Option<(NodeT, NodeT)> = None;
-
         let mut edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
             EdgeT,
             NodeT,
@@ -138,10 +141,17 @@ impl Graph {
             Option<EdgeTypeT>,
             Option<WeightT>,
         )| {
-            let result = edge_ids_to_keep.as_ref().map_or(true, |edge_ids| edge_ids.contains(edge_id)) &&
+            edge_ids_to_keep.as_ref().map_or(true, |edge_ids| edge_ids.contains(edge_id)) &&
             edge_ids_to_filter.as_ref().map_or(true, |edge_ids| !edge_ids.contains(edge_id)) &&
             // If parallel edges need to be filtered out.
-            (!filter_parallel_edges || last_edge.as_ref().map_or(true, |(last_src, last_dst)| *last_dst!=*dst || *last_src!=*src)) &&
+            (!filter_parallel_edges || {
+                if *edge_id == 0 {
+                    true
+                } else {
+                    let (last_src, last_dst) = unsafe {self.get_unchecked_node_ids_from_edge_id(edge_id-1)};
+                    last_src == *src && last_dst == *dst
+                }
+            }) &&
             // If selfloops need to be filtered out.
             (!filter_selfloops || src != dst) &&
             // If singleton nodes with selfloops need to be filtered out
@@ -152,9 +162,7 @@ impl Graph {
             !edge_node_ids_to_filter.as_ref().map_or(false, |edge_node_ids| edge_node_ids.contains(&(*src, *dst)) || !self.is_directed() && edge_node_ids.contains(&(*dst, *src))) &&
             edge_type_ids_to_keep.as_ref().map_or(true, |ntitk| ntitk.contains(edge_type_id)) &&
             edge_type_ids_to_filter.as_ref().map_or(true, |ntitf| !ntitf.contains(edge_type_id)) &&
-            weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight);
-            last_edge.replace((*src, *dst));
-            result
+            weight.map_or(true, |weight| weight >= min_edge_weight && weight <= max_edge_weight)
         };
 
         let node_filter = |(node_id, _, node_type_ids, _): &(
@@ -212,29 +220,57 @@ impl Graph {
 
         match (has_node_filters, has_edge_filters) {
             (false, false) => Ok(self.clone()),
-            (false, true) => Graph::from_integer_sorted(
-                self.iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                    .progress_with(pb_edges)
-                    .filter(edge_filter)
-                    .map(|(_, src, dst, edge_type, weight)| Ok((src, dst, edge_type, weight))),
-                edges_number as usize,
+            (false, true) => build_graph_from_integers(
+                Some(
+                    self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                        .progress_with(pb_edges)
+                        .filter(edge_filter)
+                        .map(|(_, src, dst, edge_type, weight)| {
+                            // We use 0 as index because this edge list
+                            // is filtered and therefore there will be gaps
+                            // in between the various edges and we cannot build
+                            // an Elias-Fano object in parallell with gaps.
+                            (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                        }),
+                ),
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-                self.directed,
-                true,
-                self.get_name(),
-                false,
-                self.has_edge_types(),
                 self.has_edge_weights(),
-                false,
-                true,
-                self.has_selfloops() && !filter_selfloops,
-                true,
+                self.is_directed(),
+                Some(true),
+                Some(false),
+                Some(false),
+                Some(edges_number),
+                self.get_name(),
             ),
             (true, _) => {
-                Graph::from_string_unsorted(
-                    self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
+                build_graph_from_strings(
+                    None::<Empty<_>>,
+                    None,
+                    false,
+                    None,
+                    self.has_node_types(),
+                    Some(
+                        self.par_iter_node_names_and_node_type_names()
+                            .progress_with(pb_nodes)
+                            .filter(node_filter)
+                            .map(|(_, node_name, _, node_types)| Ok((0 as usize, (node_name, node_types)))),
+                    ),
+                    // The number of nodes is unknown because of the filter
+                    // it may be possible, in some cases, to get this value by
+                    // further expanding this filtering method.
+                    None,
+                    true,
+                    false,
+                    false,
+                    None,
+                    None::<Empty<_>>,
+                    None,
+                    false,
+                    None,
+                    self.has_edge_types(),
+                    Some(self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                         .progress_with(pb_edges)
                         .filter(
                             |(edge_id, src, src_name, dst, dst_name, edge_type, _, weight)| unsafe {
@@ -254,37 +290,21 @@ impl Graph {
                             },
                         )
                         .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                            Ok((src_name, dst_name, edge_type_name, weight))
-                        }),
-                    Some(
-                        self.iter_node_names_and_node_type_names()
-                            .progress_with(pb_nodes)
-                            .filter(node_filter)
-                            .map(|(_, node_name, _, node_types)| Ok((node_name, node_types))),
-                    ),
-                    self.is_directed(),
-                    true,
-                    self.get_name(),
-                    false,
-                    true,
-                    false,
-                    true,
-                    // TODO: UPDATE THE FOLLOWING FOUR BOOLEANS
-                    false,
-                    false,
-                    false,
-                    false,
-                    self.has_node_types(),
-                    self.has_edge_types(),
+                            Ok((0 as usize, (src_name, dst_name, edge_type_name, weight.unwrap_or(WeightT::NAN))))
+                        })),
                     self.has_edge_weights(),
-                    false,
-                    // TODO: Almost any edge filtering procedure may produce singletons.
-                    // Consider refining the following for the subset that do not
-                    // which should basically be only those that remove singletons.
-                    true,
-                    self.has_selfloops() && !filter_selfloops,
-                    true,
-                    verbose,
+                    self.is_directed(),
+                    Some(true),
+                    Some(true),
+                    Some(false),
+                    Some(false),
+                    // The number of edges is unknown because of the filter
+                    // it may be possible, in some cases, to get this value by
+                    // further expanding this filtering method.
+                    None,
+                    Some(true),
+                    Some(false),
+                    self.get_name(),
                 )
             }
         }

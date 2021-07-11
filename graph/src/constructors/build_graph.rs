@@ -20,9 +20,9 @@ use rayon::prelude::*;
 /// `numeric_edge_type_ids`: bool - Whether the provided edge type IDs are to be loaded as numeric.
 /// `minimum_edge_type_id`: Option<EdgeTypeT> - The minimum edge type ID, if the are numeric.
 /// `has_edge_types`: bool - Whether the graph has edge types.
-/// `edges_iterators`: Option<Vec<impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,>,> - Iterator over the provided edge list.
+/// `edges_iterator`: Option<impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,> - Iterator over the provided edge list.
 /// `has_edge_weights`: bool - Whether the graph has edge weights.
-/// `directed`: bool - Whether the graph is meant to be loaded as directed or undirected. 
+/// `directed`: bool - Whether the graph is meant to be loaded as directed or undirected.
 /// `edge_list_is_correct`: Option<bool> - Whether the edge list is correct and checks can be skipped.
 /// `complete`: Option<bool> - Whether the edge list is complete, i.e. fully defined for undirected graphs in both directions.
 /// `duplicates`: Option<bool> - Whether there may be duplicated edges in the graph.
@@ -38,7 +38,9 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
     numeric_node_type_ids: bool,
     minimum_node_type_id: Option<NodeTypeT>,
     has_node_types: bool,
-    nodes_iterator: Option<impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>>,
+    nodes_iterator: Option<
+        impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+    >,
     nodes_number: Option<NodeT>,
     node_list_is_correct: bool,
     numeric_node_ids: bool,
@@ -49,11 +51,7 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
     numeric_edge_type_ids: bool,
     minimum_edge_type_id: Option<EdgeTypeT>,
     has_edge_types: bool,
-    edges_iterators: Option<
-        Vec<
-            impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,
-        >,
-    >,
+    edges_iterator: Option<impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>>,
     has_edge_weights: bool,
     directed: bool,
     correct: Option<bool>,
@@ -89,7 +87,7 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
         has_edge_types,
     )?;
     let (nodes, edges, edge_types, weights) = parse_string_edges(
-        edges_iterators,
+        edges_iterator,
         nodes,
         edge_types_vocabulary,
         has_edge_types,
@@ -111,23 +109,19 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
 /// Return new graph object built from integer iterators.
 ///
 /// # Arguments
-/// `edges_iterators`: Option<Vec<impl ParallelIterator<Item = Result<(usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>>,>,> - Iterator over the provided numeric edge list.
+/// `edges_iterator`: Option<Vec<impl ParallelIterator<Item = Result<(usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>>,>,> - Iterator over the provided numeric edge list.
 /// `nodes`: Vocabulary<NodeT> - The node vocabulary.
 /// `node_types`: Option<NodeTypeVocabulary> - The node types vocabulary, if they exist in this graph.
 /// `edge_types_vocabulary`: Option<Vocabulary<EdgeTypeT>> - The edge types vocabulary, if they exist in this graph.
 /// `has_edge_weights`: bool - Whether this graph has edge weights.
-/// `directed`: bool - Whether the graph is meant to be loaded as directed or undirected. 
+/// `directed`: bool - Whether the graph is meant to be loaded as directed or undirected.
 /// `complete`: Option<bool> - Whether the edge list is complete, i.e. fully defined for undirected graphs in both directions.
 /// `duplicates`: Option<bool> - Whether there may be duplicated edges in the graph.
 /// `sorted`: Option<bool> - Whether the provided edge list is sorted.
 /// `edges_number`: Option<EdgeT> - The number of edges in the graph, if known.
 /// `name`: S - The name of the graph.
 pub(crate) fn build_graph_from_integers<S: Into<String>>(
-    edges_iterators: Option<
-        Vec<
-            impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>,
-        >,
-    >,
+    edges_iterator: Option<impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>>,
     nodes: Vocabulary<NodeT>,
     node_types: Option<NodeTypeVocabulary>,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
@@ -140,7 +134,7 @@ pub(crate) fn build_graph_from_integers<S: Into<String>>(
     name: S,
 ) -> Result<Graph> {
     let (edges, edge_types, weights) = parse_integer_edges(
-        edges_iterators,
+        edges_iterator,
         nodes.len() as NodeT,
         edge_types_vocabulary,
         has_edge_weights,

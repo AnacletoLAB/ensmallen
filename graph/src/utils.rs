@@ -1,9 +1,6 @@
 use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::ThreadPool;
-use std::ops::Range;
-use std::sync::atomic::AtomicUsize;
-use std::sync::atomic::Ordering;
 
 
 

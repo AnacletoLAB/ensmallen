@@ -58,7 +58,7 @@ macro_rules! parse_unsorted_edge_list {
 
 macro_rules! parse_unsorted_string_edge_list {
     (
-        $eis:expr,
+        $ei:expr,
         $nodes:expr,
         $node_method:expr,
         $edge_types_vocabulary:expr,
@@ -75,36 +75,32 @@ macro_rules! parse_unsorted_string_edge_list {
         let mut edge_type_parser = EdgeTypeParser::new($edge_types_vocabulary);
         // Create the node parser
         let mut node_parser = EdgeNodeNamesParser::new($nodes);
-        // Collecting the edges into a mutable vector of tuples
-        // collecting exclusively what needs to be collected.
-        let mut unsorted_edge_list = $eis.into_iter().flat_map(|ei| {
-            // If the provided edge list is either
-            // of a directed graph, hence there is no need in the first place to
-            // create the edges in the opposite direction, or alternatively
-            // the user has specified that the edge list is already complete
-            // hence there is no need to create the inverse edges.
-            if $directed || $complete {
-                ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).map(|line| match line {
-                    Ok((_, (src, dst, $($workaround,)*))) => unsafe { Ok((src, dst, $($input_tuple,)*)) },
-                    Err(e) => Err(e)
-                }).collect::<Vec<Result<_>>>()
-            } else {
-                ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).flat_map(|line| match line {
-                    Ok((_, (src, dst, $($workaround,)*))) => unsafe {
-                        if src == dst {
-                            vec![Ok((src, dst, $($input_tuple,)*))]
-                        } else {
-                            vec![
-                                Ok((src, dst, $($input_tuple,)*)),
-                                Ok((dst, src, $($input_tuple,)*)),
-                            ]
-                        }
-                    },
-                    Err(e) => vec![Err(e)]
-                })
-                .collect::<Vec<Result<_>>>()
-            }
-        }).collect::<Result<Vec<_>>>()?;
+        // If the provided edge list is either
+        // of a directed graph, hence there is no need in the first place to
+        // create the edges in the opposite direction, or alternatively
+        // the user has specified that the edge list is already complete
+        // hence there is no need to create the inverse edges.
+        let unsorted_edge_list = if $directed || $complete {
+            $ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).map(|line| match line {
+                Ok((_, (src, dst, $($workaround,)*))) => unsafe { Ok((src, dst, $($input_tuple,)*)) },
+                Err(e) => Err(e)
+            }).collect::<Result<Vec<_>>>()
+        } else {
+            $ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).flat_map(|line| match line {
+                Ok((_, (src, dst, $($workaround,)*))) => unsafe {
+                    if src == dst {
+                        vec![Ok((src, dst, $($input_tuple,)*))]
+                    } else {
+                        vec![
+                            Ok((src, dst, $($input_tuple,)*)),
+                            Ok((dst, src, $($input_tuple,)*)),
+                        ]
+                    }
+                },
+                Err(e) => vec![Err(e)]
+            })
+            .collect::<Result<Vec<_>>>()
+        }?;
         // Build the actual numeric edge lists
         parse_unsorted_edge_list!(
             unsorted_edge_list,
@@ -119,7 +115,7 @@ macro_rules! parse_unsorted_string_edge_list {
 
 macro_rules! parse_sorted_string_edge_list {
     (
-        $eis:expr,
+        $ei:expr,
         $nodes:expr,
         $node_method:expr,
         $edge_types_vocabulary:expr,
@@ -138,8 +134,6 @@ macro_rules! parse_sorted_string_edge_list {
         // to be sorted and correct and complete.
         // Get the number of nodes and edges.
         let nodes_number = $nodes.len();
-        // Current offset
-        let mut offset = 0 as usize;
         // First we create the weights and edge types vectors
         $(
             let mut $results = vec![$default; $edges_number as usize];
@@ -151,16 +145,13 @@ macro_rules! parse_sorted_string_edge_list {
             $edges_number as u64,
             maximum_edges_number
         )?;
-        $eis.into_iter().for_each(|ei| {
-            ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).for_each(|line| {
-                // There cannot be results when iterating on a sorted vector.
-                let (i, (src, dst, $($workaround),*)) = line.unwrap();
-                elias_fano_builder.set((offset + i) as u64, encode_edge(src, dst, node_bits));
-                $(
-                    $results[offset + i] = $input_tuple;
-                )*
-            });
-            offset = elias_fano_builder.len() as usize;
+        $ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).for_each(|line| {
+            // There cannot be results when iterating on a sorted vector.
+            let (i, (src, dst, $($workaround),*)) = line.unwrap();
+            elias_fano_builder.set(i as u64, encode_edge(src, dst, node_bits));
+            $(
+                $results[i] = $input_tuple;
+            )*
         });
 
         // Finalizing the edges structure constructor
@@ -172,7 +163,7 @@ macro_rules! parse_sorted_string_edge_list {
 
 macro_rules! parse_unsorted_integer_edge_list {
     (
-        $eis:expr,
+        $ei:expr,
         $nodes_number:expr,
         ($($workaround:ident),*),
         ($($input_tuple:ident),*),
@@ -182,30 +173,26 @@ macro_rules! parse_unsorted_integer_edge_list {
         $complete:expr,
         $duplicates:expr
     ) => {{
-        // Collecting the edges into a mutable vector of tuples
-        // collecting exclusively what needs to be collected.
-        let mut unsorted_edge_list = $eis.into_iter().flat_map(|ei| {
-            // If the provided edge list is either
-            // of a directed graph, hence there is no need in the first place to
-            // create the edges in the opposite direction, or alternatively
-            // the user has specified that the edge list is already complete
-            // hence there is no need to create the inverse edges.
-            if $directed || $complete {
-                ei.map(|(_, (src, dst, $($workaround,)*))| (src, dst, $($input_tuple,)*)).collect::<Vec<_>>()
-            } else {
-                ei.flat_map(|(_, (src, dst, $($workaround,)*))| {
-                    if src == dst {
-                        vec![(src, dst, $($input_tuple,)*)]
-                    } else {
-                        vec![
-                            (src, dst, $($input_tuple,)*),
-                            (dst, src, $($input_tuple,)*),
-                        ]
-                    }
-                })
-                .collect::<Vec<_>>()
-            }
-        }).collect::<Vec<_>>();
+        // If the provided edge list is either
+        // of a directed graph, hence there is no need in the first place to
+        // create the edges in the opposite direction, or alternatively
+        // the user has specified that the edge list is already complete
+        // hence there is no need to create the inverse edges.
+        let mut unsorted_edge_list = if $directed || $complete {
+            $ei.map(|(_, (src, dst, $($workaround,)*))| (src, dst, $($input_tuple,)*)).collect::<Vec<_>>()
+        } else {
+            $ei.flat_map(|(_, (src, dst, $($workaround,)*))| {
+                if src == dst {
+                    vec![(src, dst, $($input_tuple,)*)]
+                } else {
+                    vec![
+                        (src, dst, $($input_tuple,)*),
+                        (dst, src, $($input_tuple,)*),
+                    ]
+                }
+            })
+            .collect::<Vec<_>>()
+        };
         // Build the actual numeric edge lists
         parse_unsorted_edge_list!(
             unsorted_edge_list,
@@ -220,7 +207,7 @@ macro_rules! parse_unsorted_integer_edge_list {
 
 macro_rules! parse_sorted_integer_edge_list {
     (
-        $eis:expr,
+        $ei:expr,
         $nodes_number:expr,
         $edges_number:expr,
         ($($workaround:ident),*),
@@ -228,8 +215,6 @@ macro_rules! parse_sorted_integer_edge_list {
         ($($results:ident),*),
         ($($default:expr),*),
     ) => {{
-        // Current offset
-        let mut offset = 0 as usize;
         // First we create the weights and edge types vectors
         $(
             let mut $results = vec![$default; $edges_number as usize];
@@ -241,14 +226,11 @@ macro_rules! parse_sorted_integer_edge_list {
             $edges_number as u64,
             maximum_edges_number
         )?;
-        $eis.into_iter().for_each(|ei| {
-            ei.for_each(|(i, (src, dst, $($workaround),*))| {
-                elias_fano_builder.set((offset + i) as u64, encode_edge(src, dst, node_bits));
-                $(
-                    $results[offset + i] = $input_tuple;
-                )*
-            });
-            offset = elias_fano_builder.len() as usize;
+        $ei.for_each(|(i, (src, dst, $($workaround),*))| {
+            elias_fano_builder.set(i as u64, encode_edge(src, dst, node_bits));
+            $(
+                $results[i] = $input_tuple;
+            )*
         });
 
         // Finalizing the edges structure constructor
@@ -264,7 +246,7 @@ fn check_general_edge_constructor_parameters_consistency<I>(
     complete: bool,
     correct: bool,
     edges_number: Option<EdgeT>,
-    edges_iterators: Option<Vec<I>>,
+    edges_iterator: Option<I>,
 ) -> Result<()> {
     if sorted && edges_number.is_none() {
         return Err(concat!(
@@ -295,7 +277,7 @@ fn check_general_edge_constructor_parameters_consistency<I>(
         .to_string());
     }
 
-    if edges_iterators.as_ref().map_or(true, |ei| ei.is_empty()) && has_edge_types {
+    if edges_iterator.is_none() && has_edge_types {
         return Err(concat!(
             "Edge types vocabulary was provided ",
             "but no edge list was given."
@@ -307,10 +289,8 @@ fn check_general_edge_constructor_parameters_consistency<I>(
 
 // TODO! trovare un nome
 pub(crate) fn parse_string_edges(
-    edges_iterators: Option<
-        Vec<
-            impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,
-        >,
+    edges_iterator: Option<
+        impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,
     >,
     nodes: Vocabulary<NodeT>,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
@@ -344,7 +324,7 @@ pub(crate) fn parse_string_edges(
         complete,
         correct,
         edges_number,
-        edges_iterators,
+        edges_iterator,
     )?;
 
     if !has_edge_types && numeric_edge_list_edge_type_ids {
@@ -388,15 +368,15 @@ pub(crate) fn parse_string_edges(
     // in a way to collect only non-None values and hence avoid
     // potentially a huge amount of allocations.
     let (edges, edge_type_ids, weights) =
-        match (edges_iterators, sorted, has_edge_types, has_edge_weights) {
+        match (edges_iterator, sorted, has_edge_types, has_edge_weights) {
             (None, _, _, _) => (EliasFano::new(0, 0)?, None, None),
             // When the edge lists are provided and are:
             // - Sorted
             // - Completely defined in both directions
             // - Sworn on the tomb of Von Neumann to be a correct edge list
-            (Some(eis), true, true, true) => {
+            (Some(ei), true, true, true) => {
                 let (edges, edge_type_ids, weights) = parse_sorted_string_edge_list!(
-                    eis,
+                    ei,
                     nodes,
                     node_method,
                     edge_types_vocabulary,
@@ -410,9 +390,9 @@ pub(crate) fn parse_string_edges(
                 // Return the computed values
                 (edges, Some(edge_type_ids), Some(weights))
             }
-            (Some(eis), true, false, true) => {
+            (Some(ei), true, false, true) => {
                 let (edges, weights) = parse_sorted_string_edge_list!(
-                    eis,
+                    ei,
                     nodes,
                     node_method,
                     edge_types_vocabulary,
@@ -426,9 +406,9 @@ pub(crate) fn parse_string_edges(
                 // Return the computed values
                 (edges, None, Some(weights))
             }
-            (Some(eis), true, true, false) => {
+            (Some(ei), true, true, false) => {
                 let (edges, edge_type_ids) = parse_sorted_string_edge_list!(
-                    eis,
+                    ei,
                     nodes,
                     node_method,
                     edge_types_vocabulary,
@@ -442,9 +422,9 @@ pub(crate) fn parse_string_edges(
                 // Return the computed values
                 (edges, Some(edge_type_ids), None)
             }
-            (Some(eis), true, false, false) => {
+            (Some(ei), true, false, false) => {
                 let (edges,) = parse_sorted_string_edge_list!(
-                    eis,
+                    ei,
                     nodes,
                     node_method,
                     edge_types_vocabulary,
@@ -458,10 +438,10 @@ pub(crate) fn parse_string_edges(
                 // Return the computed values
                 (edges, None, None)
             }
-            (Some(eis), false, true, true) => {
+            (Some(ei), false, true, true) => {
                 // Building the edge list
                 let (edges, edge_type_ids, weights) = parse_unsorted_string_edge_list!(
-                    eis,
+                    ei,
                     nodes,
                     node_method,
                     edge_types_vocabulary,
@@ -477,10 +457,10 @@ pub(crate) fn parse_string_edges(
                 // Return the computed values
                 (edges, Some(edge_type_ids), Some(weights))
             }
-            (Some(eis), false, true, false) => {
+            (Some(ei), false, true, false) => {
                 // Building the edge list
                 let (edges, edge_type_ids) = parse_unsorted_string_edge_list!(
-                    eis,
+                    ei,
                     nodes,
                     node_method,
                     edge_types_vocabulary,
@@ -496,10 +476,10 @@ pub(crate) fn parse_string_edges(
                 // Return the computed values
                 (edges, Some(edge_type_ids), None)
             }
-            (Some(eis), false, false, true) => {
+            (Some(ei), false, false, true) => {
                 // Building the edge list
                 let (edges, weights) = parse_unsorted_string_edge_list!(
-                    eis,
+                    ei,
                     nodes,
                     node_method,
                     edge_types_vocabulary,
@@ -515,10 +495,10 @@ pub(crate) fn parse_string_edges(
                 // Return the computed values
                 (edges, None, Some(weights))
             }
-            (Some(eis), false, false, false) => {
+            (Some(ei), false, false, false) => {
                 // Building the edge list
                 let (edges,) = parse_unsorted_string_edge_list!(
-                    eis,
+                    ei,
                     nodes,
                     node_method,
                     edge_types_vocabulary,
@@ -546,8 +526,8 @@ pub(crate) fn parse_string_edges(
 
 // TODO! trovare un nome
 pub(crate) fn parse_integer_edges(
-    edges_iterators: Option<
-        Vec<impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>>,
+    edges_iterator: Option<
+        impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>,
     >,
     nodes_number: NodeT,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
@@ -569,22 +549,22 @@ pub(crate) fn parse_integer_edges(
         complete,
         true,
         edges_number,
-        edges_iterators,
+        edges_iterator,
     )?;
 
     // Here we handle the collection of the iterator
     // in a way to collect only non-None values and hence avoid
     // potentially a huge amount of allocations.
     let (edges, edge_type_ids, weights) =
-        match (edges_iterators, sorted, has_edge_types, has_edge_weights) {
+        match (edges_iterator, sorted, has_edge_types, has_edge_weights) {
             (None, _, _, _) => (EliasFano::new(0, 0)?, None, None),
             // When the edge lists are provided and are:
             // - Sorted
             // - Completely defined in both directions
             // - Sworn on the tomb of Von Neumann to be a correct edge list
-            (Some(eis), true, true, true) => {
+            (Some(ei), true, true, true) => {
                 let (edges, edge_type_ids, weights) = parse_sorted_integer_edge_list!(
-                    eis,
+                    ei,
                     nodes_number,
                     edges_number.unwrap(),
                     (edge_type, weight),
@@ -595,9 +575,9 @@ pub(crate) fn parse_integer_edges(
                 // Return the computed values
                 (edges, Some(edge_type_ids), Some(weights))
             }
-            (Some(eis), true, false, true) => {
+            (Some(ei), true, false, true) => {
                 let (edges, weights) = parse_sorted_integer_edge_list!(
-                    eis,
+                    ei,
                     nodes_number,
                     edges_number.unwrap(),
                     (edge_type, weight),
@@ -608,9 +588,9 @@ pub(crate) fn parse_integer_edges(
                 // Return the computed values
                 (edges, None, Some(weights))
             }
-            (Some(eis), true, true, false) => {
+            (Some(ei), true, true, false) => {
                 let (edges, edge_type_ids) = parse_sorted_integer_edge_list!(
-                    eis,
+                    ei,
                     nodes_number,
                     edges_number.unwrap(),
                     (edge_type, weight),
@@ -621,9 +601,9 @@ pub(crate) fn parse_integer_edges(
                 // Return the computed values
                 (edges, Some(edge_type_ids), None)
             }
-            (Some(eis), true, false, false) => {
+            (Some(ei), true, false, false) => {
                 let (edges,) = parse_sorted_integer_edge_list!(
-                    eis,
+                    ei,
                     nodes_number,
                     edges_number.unwrap(),
                     (edge_type, weight),
@@ -634,10 +614,10 @@ pub(crate) fn parse_integer_edges(
                 // Return the computed values
                 (edges, None, None)
             }
-            (Some(eis), false, true, true) => {
+            (Some(ei), false, true, true) => {
                 // Building the edge list
                 let (edges, edge_type_ids, weights) = parse_unsorted_integer_edge_list!(
-                    eis,
+                    ei,
                     nodes_number,
                     (edge_type, weight),
                     (edge_type, weight),
@@ -650,10 +630,10 @@ pub(crate) fn parse_integer_edges(
                 // Return the computed values
                 (edges, Some(edge_type_ids), Some(weights))
             }
-            (Some(eis), false, true, false) => {
+            (Some(ei), false, true, false) => {
                 // Building the edge list
                 let (edges, edge_type_ids) = parse_unsorted_integer_edge_list!(
-                    eis,
+                    ei,
                     nodes_number,
                     (edge_type, weight),
                     (edge_type),
@@ -666,10 +646,10 @@ pub(crate) fn parse_integer_edges(
                 // Return the computed values
                 (edges, Some(edge_type_ids), None)
             }
-            (Some(eis), false, false, true) => {
+            (Some(ei), false, false, true) => {
                 // Building the edge list
                 let (edges, weights) = parse_unsorted_integer_edge_list!(
-                    eis,
+                    ei,
                     nodes_number,
                     (edge_type, weight),
                     (weight),
@@ -682,10 +662,10 @@ pub(crate) fn parse_integer_edges(
                 // Return the computed values
                 (edges, None, Some(weights))
             }
-            (Some(eis), false, false, false) => {
+            (Some(ei), false, false, false) => {
                 // Building the edge list
                 let (edges,) = parse_unsorted_integer_edge_list!(
-                    eis,
+                    ei,
                     nodes_number,
                     (edge_type, weight),
                     (),

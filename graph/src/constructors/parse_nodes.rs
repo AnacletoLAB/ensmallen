@@ -142,15 +142,10 @@ pub(crate) fn parse_nodes(
                     .map(|maybe_node_id: Result<NodeT>| {
                         maybe_node_id.map(|node_id| (node_id, node_id))
                     })
-                    .reduce(
-                        || Ok((NodeT::MAX, 0 as NodeT)),
-                        |v1: Result<(NodeT, NodeT)>, v2: Result<(NodeT, NodeT)>| match (v1, v2) {
-                            (Ok((min1, max1)), Ok((min2, max2))) => {
-                                Ok((min1.min(min2), max1.max(max2)))
-                            }
-                            (Ok((min1, max1)), Err(e2)) => Ok((min1, max1)),
-                            (Err(e1), Ok((min2, max2))) => Ok((min2, max2)),
-                            (Err(e1), Err(e2)) => Err(e1),
+                    .try_reduce(
+                        || (NodeT::MAX, 0 as NodeT),
+                        |(min1, max1): (NodeT, NodeT), (min2, max2): (NodeT, NodeT)| {
+                            Ok((min1.min(min2), max1.max(max2)))
                         },
                     )?;
                 (min, max, None)
