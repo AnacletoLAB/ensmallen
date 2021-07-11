@@ -30,7 +30,9 @@ impl Graph {
         );
         let total_edges_number = self.get_directed_edges_number() - self.get_selfloop_number()
             + self.get_nodes_number() as EdgeT;
-
+        
+        // TODO! this method can be made fully sorted parallell by using an offset vector
+        // of the selfloops that need to be added.
         build_graph_from_integers(
             Some(
                 self.par_iter_edge_node_ids_and_edge_type_id(true)
