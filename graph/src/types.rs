@@ -1,6 +1,6 @@
 use std::fmt::Display;
 use std::hash::Hash;
-use std::ops::{Add, Sub, AddAssign};
+use std::ops::{Add, AddAssign, Sub};
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -38,7 +38,9 @@ pub type Result<T> = std::result::Result<T, String>;
 /// This allows us to save memory using indicies of smaller size than u64
 /// and it has no effects on performance because it's optimized away during
 /// compilaton.
-pub trait ToFromUsize: Clone + Display + Ord + Copy + AddAssign + Add + Sub<Output = Self> + Hash {
+pub trait ToFromUsize:
+    Clone + Display + Ord + Copy + AddAssign + Add + Sub<Output = Self> + Hash
+{
     /// create the type from a usize
     fn from_usize(v: usize) -> Self;
     /// create an usize from the type
@@ -64,7 +66,7 @@ macro_rules! macro_impl_to_from_usize {
 
                 #[inline(always)]
                 fn get_max() -> $ty {
-                    $ty::MAX
+                    (0 as $ty).wrapping_sub(1)
                 }
             }
         )*

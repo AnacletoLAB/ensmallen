@@ -191,27 +191,21 @@ macro_rules! parse_unsorted_integer_edge_list {
             // the user has specified that the edge list is already complete
             // hence there is no need to create the inverse edges.
             if $directed || $complete {
-                ei.map(|line| match line {
-                    Ok((_, (src, dst, $($workaround,)*))) => unsafe { Ok((src, dst, $($input_tuple,)*)) },
-                    Err(e) => Err(e)
-                }).collect::<Vec<Result<_>>>()
+                ei.map(|(_, (src, dst, $($workaround,)*))| (src, dst, $($input_tuple,)*)).collect::<Vec<_>>()
             } else {
-                ei.flat_map(|line| match line {
-                    Ok((_, (src, dst, $($workaround,)*))) => unsafe {
-                        if src == dst {
-                            vec![Ok((src, dst, $($input_tuple,)*))]
-                        } else {
-                            vec![
-                                Ok((src, dst, $($input_tuple,)*)),
-                                Ok((dst, src, $($input_tuple,)*)),
-                            ]
-                        }
-                    },
-                    Err(e) => vec![Err(e)]
+                ei.flat_map(|(_, (src, dst, $($workaround,)*))| {
+                    if src == dst {
+                        vec![(src, dst, $($input_tuple,)*)]
+                    } else {
+                        vec![
+                            (src, dst, $($input_tuple,)*),
+                            (dst, src, $($input_tuple,)*),
+                        ]
+                    }
                 })
-                .collect::<Vec<Result<_>>>()
+                .collect::<Vec<_>>()
             }
-        }).collect::<Result<Vec<_>>>()?;
+        }).collect::<Vec<_>>();
         // Build the actual numeric edge lists
         parse_unsorted_edge_list!(
             unsorted_edge_list,
@@ -248,9 +242,7 @@ macro_rules! parse_sorted_integer_edge_list {
             maximum_edges_number
         )?;
         $eis.into_iter().for_each(|ei| {
-            ei.for_each(|line| {
-                // There cannot be results when iterating on a sorted vector.
-                let (i, (src, dst, $($workaround),*)) = line.unwrap();
+            ei.for_each(|(i, (src, dst, $($workaround),*))| {
                 elias_fano_builder.set((offset + i) as u64, encode_edge(src, dst, node_bits));
                 $(
                     $results[offset + i] = $input_tuple;
@@ -314,7 +306,7 @@ fn check_general_edge_constructor_parameters_consistency<I>(
 }
 
 // TODO! trovare un nome
-fn parse_string_edges(
+pub(crate) fn parse_string_edges(
     edges_iterators: Option<
         Vec<
             impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,
@@ -553,24 +545,19 @@ fn parse_string_edges(
 }
 
 // TODO! trovare un nome
-fn parse_integer_edges(
+pub(crate) fn parse_integer_edges(
     edges_iterators: Option<
-        Vec<
-            impl ParallelIterator<Item = Result<(usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>>,
-        >,
+        Vec<impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>>,
     >,
     nodes_number: NodeT,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,
-    has_edge_types: bool,
     has_edge_weights: bool,
     directed: bool,
-    correct: Option<bool>,
     complete: Option<bool>,
     duplicates: Option<bool>,
     sorted: Option<bool>,
     edges_number: Option<EdgeT>,
 ) -> Result<(EliasFano, Option<EdgeTypeVocabulary>, Option<Vec<WeightT>>)> {
-    let correct = correct.unwrap_or(false);
     let complete = complete.unwrap_or(directed);
     let duplicates = duplicates.unwrap_or(true);
     let sorted = sorted.unwrap_or(false);
@@ -580,7 +567,7 @@ fn parse_integer_edges(
         sorted,
         has_edge_types,
         complete,
-        correct,
+        true,
         edges_number,
         edges_iterators,
     )?;

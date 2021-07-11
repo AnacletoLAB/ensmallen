@@ -4,40 +4,51 @@ use std::fmt::Debug;
 use std::ops::Add;
 use std::str::FromStr;
 
-pub(crate) fn parse_types<TypeT: FromStr + ToFromUsize + Sync + Send + Debug + Add<Output=TypeT>>(
-    types_iterator: Option<impl ParallelIterator<Item = Result<String>>>,
+pub(crate) fn parse_types<
+    TypeT: FromStr + ToFromUsize + Sync + Send + Debug + Add<Output = TypeT>,
+>(
+    types_iterator: Option<impl ParallelIterator<Item = Result<(usize, String)>>>,
     types_number: Option<TypeT>,
-    numeric_ids: bool,
-    minimum_id: Option<TypeT>,
-    has_node_types: bool,
+    numeric_type_ids: bool,
+    minimum_type_id: Option<TypeT>,
+    has_types: bool,
 ) -> Result<Option<Vocabulary<TypeT>>> {
     // when the graph has no node_types, the resulting vocabulary is None
-    if !has_node_types {
+    if !has_types {
         return Ok(None);
     }
 
-    if !numeric_ids && minimum_id.is_some() {
+    if !numeric_type_ids && minimum_type_id.is_some() {
         return Err(
-            "Giving the minimum id is not meaningfull when numeric_ids is false.".to_string(),
+            "Giving the minimum id is not meaningfull when numeric_type_ids is false.".to_string(),
         );
     }
 
-    match (types_iterator, types_number, numeric_ids, minimum_id) {
+    match (
+        types_iterator,
+        types_number,
+        numeric_type_ids,
+        minimum_type_id,
+    ) {
+        // If the types (either node types or edge types) are not numeric,
+        // we collect them.
         (Some(nti), _, false, None) => Ok(Some(Vocabulary::from_reverse_map(
-            nti.collect::<Result<Vec<String>>>()?,
+            nti.map(|line| line.map(|(_, type_name)| type_name))
+                .collect::<Result<Vec<String>>>()?,
         )?)),
         (Some(nti), None, true, _) => {
             let (min, max) = nti
-                .map(|type_name| match type_name {
-                    Ok(tn) => match tn.parse::<TypeT>() {
+                .map(|line| match line {
+                    Ok((line_number, type_name)) => match type_name.parse::<TypeT>() {
                         Ok(type_id) => Ok(type_id),
                         Err(_) => Err(format!(
                             concat!(
                                 "While parsing the provided node type list, ",
                                 "the node type ID {:?} was found and it is not ",
-                                "possible to convert it to an integer as was requested.",
+                                "possible to convert it to an integer as was requested.\n",
+                                "Specifically, the line with the error is {}."
                             ),
-                            tn
+                            type_name, line_number
                         )),
                     },
                     Err(e) => Err(e),
@@ -54,7 +65,7 @@ pub(crate) fn parse_types<TypeT: FromStr + ToFromUsize + Sync + Send + Debug + A
                         (Err(e1), Err(e2)) => Err(e1),
                     },
                 )?;
-            let minimum_node_ids = minimum_id.unwrap_or(min);
+            let minimum_node_ids = minimum_type_id.unwrap_or(min);
 
             if min < minimum_node_ids {
                 return Err(format!(
@@ -75,7 +86,7 @@ pub(crate) fn parse_types<TypeT: FromStr + ToFromUsize + Sync + Send + Debug + A
             Ok(Some(Vocabulary::from_range(min_val..(min_val + ntn))))
         }
         (None, Some(ntn), true, _) => {
-            let min = minimum_id.unwrap_or(TypeT::from_usize(0));
+            let min = minimum_type_id.unwrap_or(TypeT::from_usize(0));
             Ok(Some(Vocabulary::from_range(min..min)))
         }
         (None, Some(ntn), false, None) => Ok(Some(Vocabulary::with_capacity(TypeT::to_usize(ntn)))),

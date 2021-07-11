@@ -1,9 +1,7 @@
 //! A graph representation optimized for executing random walks on huge graphs.
 use super::*;
-use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
-use roaring::RoaringBitmap;
 
 /// A graph representation optimized for executing random walks on huge graphs.
 ///
@@ -57,61 +55,21 @@ pub struct Graph {
     /// This is saved for speed sake. It's equivalent to (1 << self.node_bits) - 1;
     pub(crate) node_bit_mask: u64,
 
-    /// Optional vector of the weights of every edge.
-    /// `weights[10]` return the weight of the edge with edge_id 10
-    pub(crate) weights: Option<Vec<WeightT>>,
     /// Vocabulary that save the mappings from string to index of every node type
     pub(crate) node_types: Option<NodeTypeVocabulary>,
     // This is the next attribute that will be embedded inside of edges once
     // the first refactoring is done
     /// Vocabulary that save the mappings from string to index of every edge type
     pub(crate) edge_types: Option<EdgeTypeVocabulary>,
+    /// Optional vector of the weights of every edge.
+    /// `weights[10]` return the weight of the edge with edge_id 10
+    pub(crate) weights: Option<Vec<WeightT>>,
     /// Vocabulary that save the mappings from string to index of every node
     pub(crate) nodes: Vocabulary<NodeT>,
-
-    // //////////////////////////////////////////////////////////////////////////
-    // Cached properties
-    // //////////////////////////////////////////////////////////////////////////
     /// if the graph is directed or undirected
     pub(crate) directed: bool,
-    /// Number of nodes that have at least a self-loop.
-    /// This means that if a nodes has multiples self-loops they will be count as one.
-    pub(crate) unique_selfloop_number: NodeT,
-    /// Number of self-loop edges. This counts multiple times eventual multi-graph self-loops.
-    pub(crate) selfloop_number: EdgeT,
-    /// Number of nodes that have at least an edge inbound or outbound.
-    pub(crate) connected_nodes_number: NodeT,
-    /// Number of singleton nodes that have a self-loop
-    pub(crate) singleton_nodes_with_selfloops_number: NodeT,
-    /// How many unique edges the graph has (excluding the multi-graph ones)
-    pub(crate) unique_edges_number: EdgeT,
-    /// Minimum outbound node degree.
-    pub(crate) min_node_degree: NodeT,
-    /// Maximum outbound node degree.
-    pub(crate) max_node_degree: NodeT,
-    // Id of one the nodes with max_node_degree.
-    pub(crate) most_central_node_id: NodeT,
-    /// Minimum edge weight. Is None if weights are not defined.
-    pub(crate) min_edge_weight: Option<WeightT>,
-    /// Maximum edge weight. Is None if weights are not defined.
-    pub(crate) max_edge_weight: Option<WeightT>,
-    /// Minimum weighted node degree. Is None if weights are not defined.
-    pub(crate) min_weighted_node_degree: Option<f64>,
-    /// Maximum weighted node degree. Is None if weights are not defined.
-    pub(crate) max_weighted_node_degree: Option<f64>,
-    // Total edge weights
-    pub(crate) total_weights: Option<f64>,
-    /// Number of nodes with zero weighted node degree.
-    pub(crate) weighted_singleton_nodes_number: Option<NodeT>,
-    /// Whether the node IDs are provided sorted by decreasing outbound node degree.
-    pub(crate) nodes_are_sorted_by_decreasing_outbound_node_degree: bool,
-    /// Whether the node IDs are provided sorted by increasing outbound node degree.
-    pub(crate) nodes_are_sorted_by_increasing_outbound_node_degree: bool,
     /// Graph name
     pub(crate) name: String,
-    pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
-    pub(crate) singleton_nodes_with_selfloops: Option<RoaringBitmap>,
-    pub(crate) unique_sources: Option<EliasFano>,
 
     // /////////////////////////////////////////////////////////////////////////
     // Elias-Fano Caching related attributes
@@ -128,66 +86,28 @@ pub struct Graph {
 impl Graph {
     pub(crate) fn new<S: Into<String>>(
         directed: bool,
-        unique_selfloop_number: NodeT,
-        selfloop_number: EdgeT,
-        connected_nodes_number: NodeT,
-        singleton_nodes_with_selfloops_number: NodeT,
-        unique_edges_number: EdgeT,
-        edges: EliasFano,
-        unique_sources: Option<EliasFano>,
         nodes: Vocabulary<NodeT>,
-        node_bit_mask: EdgeT,
-        node_bits: u8,
-        edge_types: Option<EdgeTypeVocabulary>,
-        name: S,
-        weights: Option<Vec<WeightT>>,
-        min_edge_weight: Option<WeightT>,
-        max_edge_weight: Option<WeightT>,
         node_types: Option<NodeTypeVocabulary>,
-        connected_nodes: Option<BitVec<Lsb0, u8>>,
-        singleton_nodes_with_selfloops: Option<RoaringBitmap>,
-        min_node_degree: NodeT,
-        max_node_degree: NodeT,
-        most_central_node_id: NodeT,
-        min_weighted_node_degree: Option<f64>,
-        max_weighted_node_degree: Option<f64>,
-        total_weights: Option<f64>,
-        weighted_singleton_nodes_number: Option<NodeT>,
-        nodes_are_sorted_by_decreasing_outbound_node_degree: bool,
-        nodes_are_sorted_by_increasing_outbound_node_degree: bool,
+        edges: EliasFano,
+        edge_types: Option<EdgeTypeVocabulary>,
+        weights: Option<Vec<WeightT>>,
+        name: S,
     ) -> Graph {
+        let node_bits = get_node_bits(nodes.len() as NodeT);
+        let node_bit_mask = (1 << node_bits) - 1;
         Graph {
             directed,
-            unique_selfloop_number,
-            selfloop_number,
-            connected_nodes_number,
-            singleton_nodes_with_selfloops_number,
-            unique_edges_number,
             edges,
-            unique_sources,
-            node_bit_mask,
             node_bits,
+            node_bit_mask,
             weights,
-            min_edge_weight,
-            max_edge_weight,
-            min_node_degree,
-            max_node_degree,
-            most_central_node_id,
-            node_types: node_types.map(|nts| nts.set_numeric_ids(false)),
-            edge_types: edge_types.map(|ets| ets.set_numeric_ids(false)),
-            nodes: nodes.set_numeric_ids(false),
+            node_types,
+            edge_types,
+            nodes,
             sources: None,
             destinations: None,
             cumulative_node_degrees: None,
             name: name.into(),
-            connected_nodes,
-            singleton_nodes_with_selfloops,
-            min_weighted_node_degree,
-            max_weighted_node_degree,
-            total_weights,
-            weighted_singleton_nodes_number,
-            nodes_are_sorted_by_decreasing_outbound_node_degree,
-            nodes_are_sorted_by_increasing_outbound_node_degree,
         }
     }
 

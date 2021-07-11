@@ -4,8 +4,10 @@ use std::sync::atomic::Ordering::Relaxed;
 
 use super::*;
 
-fn parse_nodes(
-    nodes_iterator: Option<impl ParallelIterator<Item = Result<(String, Option<Vec<String>>)>>>,
+pub(crate) fn parse_nodes(
+    nodes_iterator: Option<
+        impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+    >,
     nodes_number: Option<NodeT>,
     node_types_vocabulary: Option<Vocabulary<NodeTypeT>>,
     node_list_is_correct: bool,
@@ -74,12 +76,13 @@ fn parse_nodes(
                     // We need to use the unzip utility because in this context we do not
                     // know the number of the nodes and we need to use a ParallellIterator,
                     // note that it is NOT an IndexedParallellIterator.
-                    let (nodes_names, node_types_ids) =
-                        ni.collect::<Result<(Vec<String>, Vec<Option<Vec<NodeTypeT>>>)>>()?;
+                    let (nodes_names, node_types_ids) = ni
+                        .map(|line| line.map(|(_, node_and_node_type)| node_and_node_type))
+                        .collect::<Result<(Vec<String>, Vec<Option<Vec<NodeTypeT>>>)>>()?;
                     (nodes_names, Some(node_types_ids))
                 } else {
                     (
-                        ni.map(|x| x.map(|(name, _)| name))
+                        ni.map(|x| x.map(|(_, (name, _))| name))
                             .collect::<Result<Vec<String>>>()?,
                         None,
                     )
@@ -95,17 +98,18 @@ fn parse_nodes(
                 let max = AtomicU32::new(0);
                 let node_type_ids = ni
                     .map(|line| match line {
-                        Ok((node_name, node_type_ids)) => {
+                        Ok((line_number, (node_name, node_type_ids))) => {
                             let node_id = match node_name.parse::<NodeT>() {
                                 Ok(node_id) => Ok(node_id),
                                 Err(_) => Err(format!(
                                     concat!(
                                         "While parsing the provided node list, ",
                                         "the node ID {:?} was found and it is not ",
-                                        "possible to convert it to an integer as was requested.",
+                                        "possible to convert it to an integer as was requested.\n",
+                                        "Specifically the line with the error is {}."
                                     ),
-                                    node_name
-                                ))
+                                    node_name, line_number
+                                )),
                             }?;
                             min.fetch_min(node_id, Relaxed);
                             max.fetch_max(node_id, Relaxed);
@@ -121,28 +125,34 @@ fn parse_nodes(
                 // the minimum and the maximum value.
                 let (min, max): (NodeT, NodeT) = ni
                     .map(|line| match line {
-                        Ok((node_name, _)) => match node_name.parse::<NodeT>() {
+                        Ok((line_number, (node_name, _))) => match node_name.parse::<NodeT>() {
                             Ok(node_id) => Ok(node_id),
                             Err(_) => Err(format!(
                                 concat!(
                                     "While parsing the provided node list, ",
                                     "the node ID {:?} was found and it is not ",
-                                    "possible to convert it to an integer as was requested.",
+                                    "possible to convert it to an integer as was requested.\n",
+                                    "Specifically the line with the error is {}."
                                 ),
-                                node_name
+                                node_name, line_number
                             )),
                         },
                         Err(e) => Err(e),
                     })
-                    .map(|maybe_node_id: Result<NodeT>| maybe_node_id.map(|node_id| (node_id, node_id)))
-                    .reduce(|| Ok((NodeT::MAX, 0)), |v1, v2| match (v1, v2) {
-                        (Ok((min1, max1)), Ok((min2, max2))) => {
-                            Ok((min1.min(min2), max1.max(max2)))
-                        }
-                        (Ok((min1, max1)), Err(e2)) => Ok((min1, max1)),
-                        (Err(e1), Ok((min2, max2))) => Ok((min2, max2)),
-                        (Err(e1), Err(e2)) => Err(e1)
-                    })?;
+                    .map(|maybe_node_id: Result<NodeT>| {
+                        maybe_node_id.map(|node_id| (node_id, node_id))
+                    })
+                    .reduce(
+                        || Ok((NodeT::MAX, 0 as NodeT)),
+                        |v1: Result<(NodeT, NodeT)>, v2: Result<(NodeT, NodeT)>| match (v1, v2) {
+                            (Ok((min1, max1)), Ok((min2, max2))) => {
+                                Ok((min1.min(min2), max1.max(max2)))
+                            }
+                            (Ok((min1, max1)), Err(e2)) => Ok((min1, max1)),
+                            (Err(e1), Ok((min2, max2))) => Ok((min2, max2)),
+                            (Err(e1), Err(e2)) => Err(e1),
+                        },
+                    )?;
                 (min, max, None)
             };
             let minimum_node_ids = minimum_node_ids.unwrap_or(min);
@@ -175,6 +185,7 @@ fn parse_nodes(
 
     Ok((
         nodes_vocabulary,
-        node_types_ids.map(|ntis| NodeTypeVocabulary::from_structs(ntis, node_type_parser.into_inner())),
+        node_types_ids
+            .map(|ntis| NodeTypeVocabulary::from_structs(ntis, node_type_parser.into_inner())),
     ))
 }

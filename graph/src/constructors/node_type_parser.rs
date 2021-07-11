@@ -5,95 +5,108 @@ impl_struct_func!(NodeTypeParser Vocabulary<NodeTypeT>);
 impl NodeTypeParser {
     pub fn ignore<N>(
         &mut self,
-        value: Result<(N, Option<Vec<String>>)>,
-    ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
-        Ok((value?.0, None))
+        value: Result<(usize, (N, Option<Vec<String>>))>,
+    ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
+        let (line_number, (node_name, _)) = value?;
+        Ok((line_number, (node_name, None)))
     }
 
     pub fn parse_strings<N>(
         &mut self,
-        value: Result<(N, Option<Vec<String>>)>,
-    ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
-        let (node_name, node_type_names) = value?;
+        value: Result<(usize, (N, Option<Vec<String>>))>,
+    ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
+        let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_mutable_write();
         Ok((
-            node_name,
-            node_type_names.map_or(Ok::<_, String>(None), |ntns| {
-                Ok(Some(
-                    ntns.into_iter()
-                        .map(|ntn| Ok(vocabulary.0.insert(ntn)?.0))
-                        .collect::<Result<Vec<NodeTypeT>>>()?,
-                ))
-            })?,
+            line_number,
+            (
+                node_name,
+                node_type_names.map_or(Ok::<_, String>(None), |ntns| {
+                    Ok(Some(
+                        ntns.into_iter()
+                            .map(|ntn| Ok(vocabulary.0.insert(ntn)?.0))
+                            .collect::<Result<Vec<NodeTypeT>>>()?,
+                    ))
+                })?,
+            ),
         ))
     }
 
     pub fn parse_strings_unchecked<N>(
         &mut self,
-        value: Result<(N, Option<Vec<String>>)>,
-    ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
-        let (node_name, node_type_names) = value?;
+        value: Result<(usize, (N, Option<Vec<String>>))>,
+    ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
+        let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_mutable_write();
         Ok((
-            node_name,
-            node_type_names.map(|ntns| {
-                ntns.into_iter()
-                    .map(|ntn| unsafe { vocabulary.0.unchecked_insert(ntn) })
-                    .collect::<Vec<NodeTypeT>>()
-            }),
+            line_number,
+            (
+                node_name,
+                node_type_names.map(|ntns| {
+                    ntns.into_iter()
+                        .map(|ntn| unsafe { vocabulary.0.unchecked_insert(ntn) })
+                        .collect::<Vec<NodeTypeT>>()
+                }),
+            ),
         ))
     }
 
     pub fn get<N>(
         &mut self,
-        value: Result<(N, Option<Vec<String>>)>,
-    ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
-        let (node_name, node_type_names) = value?;
+        value: Result<(usize, (N, Option<Vec<String>>))>,
+    ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
+        let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_immutable();
         Ok((
-            node_name,
-            node_type_names.map_or(Ok::<_, String>(None), |ntns| {
-                Ok(Some(
-                    ntns.into_iter()
-                        .map(|node_type_name| match vocabulary.get(&node_type_name) {
-                            Some(node_type_id) => Ok(node_type_id),
-                            None => Err(format!(
-                                concat!(
-                                    "Found an unknown node type while reading the node list.\n",
-                                    "Specifically the unknown node type is {:?}.\n",
-                                    "The list of the known node types is {:#4?}"
-                                ),
-                                node_type_name,
-                                vocabulary.keys()
-                            )),
-                        })
-                        .collect::<Result<Vec<NodeTypeT>>>()?,
-                ))
-            })?,
+            line_number,
+            (
+                node_name,
+                node_type_names.map_or(Ok::<_, String>(None), |ntns| {
+                    Ok(Some(
+                        ntns.into_iter()
+                            .map(|node_type_name| match vocabulary.get(&node_type_name) {
+                                Some(node_type_id) => Ok(node_type_id),
+                                None => Err(format!(
+                                    concat!(
+                                        "Found an unknown node type while reading the node list.\n",
+                                        "Specifically the unknown node type is {:?}.\n",
+                                        "The list of the known node types is {:#4?}"
+                                    ),
+                                    node_type_name,
+                                    vocabulary.keys()
+                                )),
+                            })
+                            .collect::<Result<Vec<NodeTypeT>>>()?,
+                    ))
+                })?,
+            ),
         ))
     }
 
     pub fn get_unchecked<N>(
         &mut self,
-        value: Result<(N, Option<Vec<String>>)>,
-    ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
-        let (node_name, node_type_names) = value?;
+        value: Result<(usize, (N, Option<Vec<String>>))>,
+    ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
+        let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_immutable();
         Ok((
-            node_name,
-            node_type_names.map(|ntns| {
-                ntns.into_iter()
-                    .map(|ntn| unsafe { vocabulary.get(&ntn).unwrap_unchecked() })
-                    .collect::<Vec<NodeTypeT>>()
-            }),
+            line_number,
+            (
+                node_name,
+                node_type_names.map(|ntns| {
+                    ntns.into_iter()
+                        .map(|ntn| unsafe { vocabulary.get(&ntn).unwrap_unchecked() })
+                        .collect::<Vec<NodeTypeT>>()
+                }),
+            ),
         ))
     }
 
     pub fn to_numeric<N>(
         &mut self,
-        value: Result<(N, Option<Vec<String>>)>,
-    ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
-        let (node_name, node_type_names) = value?;
+        value: Result<(usize, (N, Option<Vec<String>>))>,
+    ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
+        let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_immutable();
         let node_type_ids = node_type_names.map_or(Ok::<_, String>(None), |ntns| {
             Ok(Some(
@@ -125,20 +138,20 @@ impl NodeTypeParser {
                     .collect::<Result<Vec<NodeTypeT>>>()?,
             ))
         })?;
-        Ok((node_name, node_type_ids))
+        Ok((line_number, (node_name, node_type_ids)))
     }
 
     pub fn to_numeric_unchecked<N>(
         &mut self,
-        value: Result<(N, Option<Vec<String>>)>,
-    ) -> Result<(N, Option<Vec<NodeTypeT>>)> {
-        let (node_name, node_type_names) = value?;
+        value: Result<(usize, (N, Option<Vec<String>>))>,
+    ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
+        let (line_number, (node_name, node_type_names)) = value?;
         let vocabulary = self.get_immutable();
         let node_type_ids = node_type_names.map(|ntns| unsafe {
             ntns.into_iter()
                 .map(|node_type_name| node_type_name.parse::<NodeTypeT>().unwrap_unchecked())
                 .collect::<Vec<NodeTypeT>>()
         });
-        Ok((node_name, node_type_ids))
+        Ok((line_number, (node_name, node_type_ids)))
     }
 }
