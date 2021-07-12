@@ -1,9 +1,8 @@
 use crate::constructors::build_graph_from_integers;
-use crate::constructors::build_graph_from_strings;
+use crate::constructors::build_graph_from_strings_without_type_iterators;
 
 use super::*;
 use indicatif::ParallelProgressIterator;
-use rayon::iter::Empty;
 use rayon::iter::ParallelIterator;
 
 impl Graph {
@@ -245,11 +244,7 @@ impl Graph {
                 self.get_name(),
             ),
             (true, _) => {
-                build_graph_from_strings(
-                    None::<Empty<_>>,
-                    None,
-                    false,
-                    None,
+                build_graph_from_strings_without_type_iterators(
                     self.has_node_types(),
                     Some(
                         self.par_iter_node_names_and_node_type_names()
@@ -263,10 +258,6 @@ impl Graph {
                     None,
                     true,
                     false,
-                    false,
-                    None,
-                    None::<Empty<_>>,
-                    None,
                     false,
                     None,
                     self.has_edge_types(),

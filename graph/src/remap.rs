@@ -1,9 +1,11 @@
-use crate::constructors::{build_graph_from_integers, build_graph_from_strings};
+use crate::constructors::{
+    build_graph_from_integers, build_graph_from_strings_without_type_iterators,
+};
 
 use super::*;
 use indicatif::ParallelProgressIterator;
 use itertools::Itertools;
-use rayon::iter::{Empty, IntoParallelIterator, ParallelIterator};
+use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
 impl Graph {
     /// Return whether nodes are remappable to those of the given graph.
@@ -63,11 +65,7 @@ impl Graph {
             self.get_nodes_number() as usize,
         );
 
-        build_graph_from_strings(
-            None::<Empty<_>>,
-            None,
-            false,
-            None,
+        build_graph_from_strings_without_type_iterators(
             self.has_node_types(),
             Some(
                 node_ids
@@ -86,10 +84,6 @@ impl Graph {
             Some(self.get_nodes_number()),
             true,
             false,
-            false,
-            None,
-            None::<Empty<_>>,
-            None,
             false,
             None,
             self.has_edge_types(),

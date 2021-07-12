@@ -432,7 +432,7 @@ impl Graph {
     /// iterator over None values as node types.
     pub unsafe fn par_iter_unchecked_node_ids_and_node_type_ids(
         &self,
-    ) -> impl ParallelIterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
+    ) -> impl IndexedParallelIterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_ {
         self.par_iter_node_ids().map(move |node_id| {
             (
                 node_id,
@@ -460,7 +460,7 @@ impl Graph {
     /// Return parallell iterator on the node of the graph as Strings.
     pub fn par_iter_node_names_and_node_type_names(
         &self,
-    ) -> impl ParallelIterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
+    ) -> impl IndexedParallelIterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
     {
         unsafe {
             self.par_iter_unchecked_node_ids_and_node_type_ids().map(
@@ -755,7 +755,7 @@ impl Graph {
     /// The result is (edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name)
     pub fn par_iter_directed_edge_node_names_and_edge_type_name(
         &self,
-    ) -> impl ParallelIterator<
+    ) -> impl IndexedParallelIterator<
         Item = (
             EdgeT,
             NodeT,
@@ -854,7 +854,7 @@ impl Graph {
     /// Return iterator on the directed edges of the graph with the string name.
     pub fn par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight(
         &self,
-    ) -> impl ParallelIterator<
+    ) -> impl IndexedParallelIterator<
         Item = (
             EdgeT,
             NodeT,

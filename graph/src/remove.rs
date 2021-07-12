@@ -1,6 +1,9 @@
+use crate::constructors::build_graph_from_strings_without_type_iterators;
+
 use super::*;
 use counter::Counter;
-use indicatif::ProgressIterator;
+use indicatif::{ParallelProgressIterator, ProgressIterator};
+use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
 use std::collections::HashSet;
 
@@ -88,20 +91,14 @@ impl Graph {
                 });
         }
 
-        let pb = get_loading_bar(
+        let pb_edges = get_loading_bar(
             verbose,
-            &format!(
-                "Building edge list with only required components {}",
-                &self.name
-            ),
+            "Fitering components from edge list",
             self.get_directed_edges_number() as usize,
         );
         let pb_nodes = get_loading_bar(
             verbose,
-            &format!(
-                "Building node list with only required components {}",
-                &self.name
-            ),
+            "Filtering components from node list",
             self.get_nodes_number() as usize,
         );
 
@@ -109,49 +106,64 @@ impl Graph {
             .iter()
             .map(|component_id| *counter.get(&component_id).unwrap())
             .min();
-
-        Graph::from_string_unsorted(
-            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
-                .progress_with(pb)
-                .filter_map(
-                    |(_, src, src_name, _, dst_name, _, edge_type_name, weight)| {
-                        // we just check src because dst is trivially in the same component as src
-                        match keep_components.contains(components_vector[src as usize]) {
-                            true => Some(Ok((src_name, dst_name, edge_type_name, weight))),
-                            false => None,
-                        }
-                    },
-                ),
+        // TODO if a vector of offsets of removed edges is kept, it is possible
+        // to build the filtered version in parallell sorted without memory peaks.
+        build_graph_from_strings_without_type_iterators(
+            self.has_node_types(),
             Some(
-                self.iter_node_names_and_node_type_names()
+                self.par_iter_node_names_and_node_type_names()
                     .progress_with(pb_nodes)
                     .filter_map(|(node_id, node_name, _, node_type_names)| {
                         match keep_components.contains(components_vector[node_id as usize]) {
-                            true => Some(Ok((node_name, node_type_names))),
+                            // We put as row 0 as it will not be dense because of the filter
+                            // It may be possible to get it to be dense with the proper offsets
+                            true => Some(Ok((0, (node_name, node_type_names)))),
                             false => None,
                         }
                     }),
             ),
-            self.directed,
+            // Since we remove components, we do not know how many
+            // nodes we will end up with.
+            // TODO: precompute the number of nodes that are expected to remain.
+            None,
             true,
-            self.get_name(),
-            false,
-            true,
-            true,
-            true, // Approximation of expected nodes number.
             false,
             false,
-            false,
-            false,
-            self.has_node_types(),
+            None,
             self.has_edge_types(),
+            Some(
+                self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
+                    .progress_with(pb_edges)
+                    .filter_map(
+                        |(_, src, src_name, _, dst_name, _, edge_type_name, weight)| {
+                            // we just check src because dst is trivially in the same component as src
+                            match keep_components.contains(components_vector[src as usize]) {
+                                true => Some(Ok((
+                                    0,
+                                    (
+                                        src_name,
+                                        dst_name,
+                                        edge_type_name,
+                                        weight.unwrap_or(WeightT::NAN),
+                                    ),
+                                ))),
+                                false => None,
+                            }
+                        },
+                    ),
+            ),
             self.has_edge_weights(),
-            false,
-            min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
-            self.has_singleton_nodes_with_selfloops()
-                && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
-            self.has_trap_nodes(),
-            verbose,
+            self.is_directed(),
+            Some(true),
+            Some(true),
+            Some(false),
+            // TODO: as aforementioned in the previous todos, it is possible to get this to work
+            // as sorted with the proper offsets precomputed.
+            Some(false),
+            None,
+            Some(false),
+            Some(false),
+            self.get_name(),
         )
     }
 }
