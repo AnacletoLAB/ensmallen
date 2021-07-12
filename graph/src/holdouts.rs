@@ -1,3 +1,5 @@
+use crate::constructors::build_graph_from_integers;
+
 use super::*;
 use counter::Counter;
 use indicatif::ParallelProgressIterator;
@@ -221,28 +223,21 @@ impl Graph {
 
         pb1.finish();
 
-        Graph::from_integer_unsorted(
-            negative_edges_hashset.into_par_iter().flat_map(|edge| {
+        build_graph_from_integers(
+            Some(negative_edges_hashset.into_par_iter().map(|edge| {
                 let (src, dst) = self.decode_edge(edge);
-                if !self.is_directed() && src != dst {
-                    vec![Ok((src, dst, None, None)), Ok((dst, src, None, None))]
-                } else {
-                    vec![Ok((src, dst, None, None))]
-                }
-            }),
+                (0, (src, dst, None, WeightT::NAN))
+            })),
             self.nodes.clone(),
             self.node_types.clone(),
             None,
-            self.directed,
-            format!("Negative {}", self.name.clone()),
             false,
-            false,
-            false,
-            false,
-            true,
-            self.has_selfloops(),
-            true,
-            verbose,
+            self.is_directed(),
+            Some(false),
+            Some(false),
+            Some(false),
+            None,
+            format!("Negative {}", self.get_name()),
         )
     }
 
@@ -395,55 +390,55 @@ impl Graph {
         );
 
         Ok((
-            Graph::from_integer_sorted(
-                (0..self.get_directed_edges_number())
-                    .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
-                    .progress_with(pb_train)
-                    .map(|edge_id| unsafe {
-                        Ok(self
+            build_graph_from_integers(
+                Some(
+                    (0..self.get_directed_edges_number())
+                        .into_par_iter()
+                        .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
+                        .progress_with(pb_train)
+                        .map(|edge_id| unsafe {
+                            let (src, dst, edge_type, weight) = self
                             .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
                                 edge_id,
-                            ))
-                    }),
-                self.get_directed_edges_number() as usize - valid_edges_bitmap.len() as usize,
+                            );
+                            (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                        }),
+                ),
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-                self.directed,
-                true,
-                format!("{} training", self.name.clone()),
-                true,
-                self.has_edge_types(),
                 self.has_edge_weights(),
-                false,
-                train_graph_might_contain_singletons,
-                train_graph_might_contain_singletons_with_selfloops,
-                true,
+                self.is_directed(),
+                Some(true),
+                Some(false),
+                Some(false),
+                Some(self.get_directed_edges_number() - valid_edges_bitmap.len() as EdgeT),
+                format!("{} train", self.get_name()),
             )?,
-            Graph::from_integer_sorted(
-                valid_edges_bitmap
-                    .iter()
-                    .progress_with(pb_valid)
-                    .map(|edge_id| unsafe {
-                        Ok(self
+            build_graph_from_integers(
+                Some(
+                    (0..self.get_directed_edges_number())
+                        .into_par_iter()
+                        .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
+                        .progress_with(pb_valid)
+                        .map(|edge_id| unsafe {
+                            let (src, dst, edge_type, weight) = self
                             .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
                                 edge_id,
-                            ))
-                    }),
-                valid_edges_bitmap.len() as usize,
+                            );
+                            (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                        }),
+                ),
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-                self.directed,
-                true,
-                format!("{} testing", self.name.clone()),
-                true,
-                self.has_edge_types(),
                 self.has_edge_weights(),
-                false,
-                true,
-                self.has_selfloops(),
-                true,
+                self.is_directed(),
+                Some(true),
+                Some(false),
+                Some(false),
+                Some(valid_edges_bitmap.len() as EdgeT),
+                format!("{} test", self.get_name()),
             )?,
         ))
     }
@@ -593,7 +588,7 @@ impl Graph {
             self.must_have_edge_types()?;
         }
         let total_edges_number = if include_all_edge_types {
-            self.unique_edges_number
+            self.get_unique_edges_number()
         } else {
             self.get_directed_edges_number()
         };
@@ -751,12 +746,12 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_structs(
-            train_node_types,
+        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(train_node_types),
             self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
         );
-        test_graph.node_types = NodeTypeVocabulary::from_structs(
-            test_node_types,
+        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(test_node_types),
             self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
         );
 
@@ -990,46 +985,26 @@ impl Graph {
 
         pb1.finish();
 
-        let edges_bitmap: RoaringTreemap = unique_nodes
-            .iter()
-            .progress_with(pb2)
-            .flat_map(|src| unsafe {
-                let (min_edge_id, max_edge_id) =
-                    self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
-                (min_edge_id..max_edge_id)
-                    .filter(|edge_id| {
-                        unique_nodes
-                            .contains(self.get_unchecked_destination_node_id_from_edge_id(*edge_id))
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .filter(|&(_, src, dst, _, _)| {
+                        unique_nodes.contains(src) && unique_nodes.contains(dst)
                     })
-                    .collect::<Vec<EdgeT>>()
-            })
-            .collect();
-
-        Graph::from_integer_sorted(
-            edges_bitmap
-                .iter()
-                .progress_with(pb3)
-                .map(|edge_id| unsafe {
-                    Ok(
-                        self.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
-                            edge_id,
-                        ),
-                    )
-                }),
-            edges_bitmap.len() as usize,
+                    .map(|(_, src, dst, edge_type, weight)| {
+                        (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.directed,
-            true,
-            format!("{} subgraph", self.name.clone()),
-            false,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
-            true,
-            self.has_selfloops(),
-            true,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            None,
+            format!("{} subgraph", self.get_name()),
         )
     }
 

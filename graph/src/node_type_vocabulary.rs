@@ -35,21 +35,6 @@ impl PartialEq for NodeTypeVocabulary {
     }
 }
 
-impl Default for NodeTypeVocabulary {
-    fn default() -> NodeTypeVocabulary {
-        NodeTypeVocabulary {
-            ids: Vec::new(),
-            vocabulary: Vocabulary::default(),
-            counts: Vec::new(),
-            min_count: 0,
-            max_count: 0,
-            max_multilabel_count: 0,
-            unknown_count: NodeT::from_usize(0),
-            multilabel: false,
-        }
-    }
-}
-
 impl NodeTypeVocabulary {
     pub fn from_structs(
         ids: Vec<Option<Vec<NodeTypeT>>>,
@@ -73,7 +58,7 @@ impl NodeTypeVocabulary {
     }
 
     pub fn from_option_structs(
-        ids: Option<Vec<Option<NodeTypeT>>>,
+        ids: Option<Vec<Option<Vec<NodeTypeT>>>>,
         vocabulary: Option<Vocabulary<NodeTypeT>>,
     ) -> Option<NodeTypeVocabulary> {
         if let (Some(ids), Some(vocabulary)) = (ids, vocabulary) {
@@ -102,14 +87,6 @@ impl NodeTypeVocabulary {
     fn update_min_max_count(&mut self) {
         self.min_count = self.counts.iter().cloned().min().unwrap_or(0);
         self.max_count = self.counts.iter().cloned().max().unwrap_or(0);
-    }
-
-    /// Computes the reverse terms mapping.
-    ///
-    /// # Raises
-    /// * If the terms mapping is found to be not dense.
-    pub fn build_reverse_mapping(&mut self) -> Result<()> {
-        self.vocabulary.build_reverse_mapping()
     }
 
     /// Returns ids of given values inserted.
@@ -275,7 +252,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `key`: &str - the key whose Id is to be retrieved.
-    pub fn get(&self, key: &str) -> Option<&NodeTypeT> {
+    pub fn get(&self, key: &str) -> Option<NodeTypeT> {
         self.vocabulary.get(key)
     }
 
@@ -287,16 +264,6 @@ impl NodeTypeVocabulary {
     /// Return length of the vocabulary.    
     pub fn len(&self) -> usize {
         self.counts.len()
-    }
-
-    /// Set whether to load IDs as numeric.
-    ///
-    /// # Arguments
-    /// * numeric_ids: bool - Whether to load the IDs as numeric
-    ///
-    pub fn set_numeric_ids(mut self, numeric_ids: bool) -> NodeTypeVocabulary {
-        self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
-        self
     }
 
     /// Remove a node type from the vocabulary
