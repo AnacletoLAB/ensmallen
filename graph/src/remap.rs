@@ -1,7 +1,9 @@
+use crate::constructors::{build_graph_from_integers, build_graph_from_strings};
+
 use super::*;
-use indicatif::{ParallelProgressIterator, ProgressIterator};
+use indicatif::ParallelProgressIterator;
 use itertools::Itertools;
-use rayon::iter::ParallelIterator;
+use rayon::iter::{Empty, IntoParallelIterator, ParallelIterator};
 
 impl Graph {
     /// Return whether nodes are remappable to those of the given graph.
@@ -61,42 +63,63 @@ impl Graph {
             self.get_nodes_number() as usize,
         );
 
-        Graph::from_string_unsorted(
-            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
-                .progress_with(pb_edges)
-                .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                    Ok((src_name, dst_name, edge_type_name, weight))
-                }),
+        build_graph_from_strings(
+            None::<Empty<_>>,
+            None,
+            false,
+            None,
+            self.has_node_types(),
             Some(
                 node_ids
-                    .iter()
+                    .into_par_iter()
                     .progress_with(pb_nodes)
                     .map(|node_id| unsafe {
                         Ok((
-                            self.get_unchecked_node_name_from_node_id(*node_id),
-                            self.get_unchecked_node_type_names_from_node_id(*node_id),
+                            node_id as usize,
+                            (
+                                self.get_unchecked_node_name_from_node_id(node_id),
+                                self.get_unchecked_node_type_names_from_node_id(node_id),
+                            ),
                         ))
                     }),
             ),
-            self.is_directed(),
-            true,
-            self.get_name(),
-            false,
-            true,
-            false,
+            Some(self.get_nodes_number()),
             true,
             false,
             false,
+            None,
+            None::<Empty<_>>,
+            None,
             false,
-            false,
-            self.has_node_types(),
+            None,
             self.has_edge_types(),
+            Some(
+                self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
+                    .progress_with(pb_edges)
+                    .map(
+                        |(edge_id, _, src_name, _, dst_name, _, edge_type_name, weight)| {
+                            Ok((
+                                edge_id as usize,
+                                (
+                                    src_name,
+                                    dst_name,
+                                    edge_type_name,
+                                    weight.unwrap_or(WeightT::NAN),
+                                ),
+                            ))
+                        },
+                    ),
+            ),
             self.has_edge_weights(),
-            false,
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
-            self.has_trap_nodes(),
-            verbose,
+            self.is_directed(),
+            Some(true),
+            Some(true),
+            Some(false),
+            Some(true),
+            Some(self.get_directed_edges_number()),
+            Some(false),
+            Some(false),
+            self.get_name(),
         )
         .unwrap()
     }
@@ -207,34 +230,40 @@ impl Graph {
             return Err("The two graphs nodes sets are not remappable one-another.".to_owned());
         }
 
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
-                .progress_with(pb)
-                .map(
-                    |(_, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {
-                        Ok((
-                            other.get_unchecked_node_id_from_node_name(&src_name),
-                            other.get_unchecked_node_id_from_node_name(&dst_name),
-                            edge_type.and_then(|et| {
-                                self.get_unchecked_edge_type_id_from_edge_type_name(et.as_str())
-                            }),
-                            weight,
-                        ))
-                    },
-                ),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
+                    .progress_with(pb)
+                    .map(
+                        |(edge_id, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {
+                            (
+                                edge_id as usize,
+                                (
+                                    other.get_unchecked_node_id_from_node_name(&src_name),
+                                    other.get_unchecked_node_id_from_node_name(&dst_name),
+                                    edge_type.and_then(|et| {
+                                        self.get_unchecked_edge_type_id_from_edge_type_name(
+                                            et.as_str(),
+                                        )
+                                    }),
+                                    weight.unwrap_or(WeightT::NAN),
+                                ),
+                            )
+                        },
+                    ),
+            ),
             other.nodes.clone(),
             other.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.is_directed(),
-            self.name.clone(),
-            false,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
-            self.has_trap_nodes(),
-            verbose,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            // Because of the remapping the resulting edge list
+            // may not be sorted.
+            Some(false),
+            Some(self.get_directed_edges_number()),
+            self.get_name(),
         )
     }
 }
