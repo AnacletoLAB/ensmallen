@@ -1,6 +1,8 @@
 use indicatif::ParallelProgressIterator;
 use rayon::iter::ParallelIterator;
 
+use crate::constructors::build_graph_from_integers;
+
 use super::*;
 
 /// # Conversion of the graph.
@@ -37,29 +39,29 @@ impl Graph {
             "Building upper triangular matrix",
             self.get_directed_edges_number() as usize,
         );
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .progress_with(pb)
-                .filter_map(|(_, src, dst, edge_type, weight)| {
-                    if dst > src {
-                        Some(Ok((src, dst, edge_type, weight)))
-                    } else {
-                        None
-                    }
-                }),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .progress_with(pb)
+                    .filter_map(|(_, src, dst, edge_type, weight)| {
+                        if dst > src {
+                            Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
+                        } else {
+                            None
+                        }
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            true,
-            self.get_name(),
-            true,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
             true,
-            true,
-            true,
-            verbose,
+            Some(true),
+            Some(false),
+            Some(false),
+            // TODO: possibly the edges number can be precomputed.
+            None,
+            self.get_name(),
         )
         .unwrap()
     }
@@ -79,29 +81,29 @@ impl Graph {
             "Building lower triangular matrix",
             self.get_directed_edges_number() as usize,
         );
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .progress_with(pb)
-                .filter_map(|(_, src, dst, edge_type, weight)| {
-                    if src > dst {
-                        Some(Ok((src, dst, edge_type, weight)))
-                    } else {
-                        None
-                    }
-                }),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .progress_with(pb)
+                    .filter_map(|(_, src, dst, edge_type, weight)| {
+                        if src > dst {
+                            Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
+                        } else {
+                            None
+                        }
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            true,
-            self.get_name(),
-            true,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
             true,
-            true,
-            true,
-            verbose,
+            Some(true),
+            Some(false),
+            Some(false),
+            // TODO: possibly the edges number can be precomputed.
+            None,
+            self.get_name(),
         )
         .unwrap()
     }
@@ -121,29 +123,29 @@ impl Graph {
             "Building the main diagonal matrix",
             self.get_directed_edges_number() as usize,
         );
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .progress_with(pb)
-                .filter_map(|(_, src, dst, edge_type, weight)| {
-                    if src == dst {
-                        Some(Ok((src, dst, edge_type, weight)))
-                    } else {
-                        None
-                    }
-                }),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .progress_with(pb)
+                    .filter_map(|(_, src, dst, edge_type, weight)| {
+                        if src == dst {
+                            Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
+                        } else {
+                            None
+                        }
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.is_directed(),
-            self.get_name(),
-            true,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
-            true,
-            true,
-            true,
-            verbose,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            // TODO: possibly the edges number can be precomputed.
+            None,
+            self.get_name(),
         )
         .unwrap()
     }
@@ -164,29 +166,29 @@ impl Graph {
             self.get_directed_edges_number() as usize,
         );
         let nodes_number = self.get_nodes_number();
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .progress_with(pb)
-                .filter_map(|(_, src, dst, edge_type, weight)| {
-                    if src == nodes_number - dst {
-                        Some(Ok((src, dst, edge_type, weight)))
-                    } else {
-                        None
-                    }
-                }),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .progress_with(pb)
+                    .filter_map(|(_, src, dst, edge_type, weight)| {
+                        if src == nodes_number - dst {
+                            Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
+                        } else {
+                            None
+                        }
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.is_directed(),
-            self.get_name(),
-            true,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
-            true,
-            true,
-            true,
-            verbose,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            // TODO: possibly the edges number can be precomputed.
+            None,
+            self.get_name(),
         )
         .unwrap()
     }
@@ -207,29 +209,29 @@ impl Graph {
             self.get_directed_edges_number() as usize,
         );
         let nodes_number = self.get_nodes_number();
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .progress_with(pb)
-                .filter_map(|(_, src, dst, edge_type, weight)| {
-                    if src == dst || src == nodes_number - dst {
-                        Some(Ok((src, dst, edge_type, weight)))
-                    } else {
-                        None
-                    }
-                }),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .progress_with(pb)
+                    .filter_map(|(_, src, dst, edge_type, weight)| {
+                        if src == dst || src == nodes_number - dst {
+                            Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
+                        } else {
+                            None
+                        }
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.is_directed(),
-            self.get_name(),
-            true,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
-            true,
-            true,
-            true,
-            verbose,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            // TODO: possibly the edges number can be precomputed.
+            None,
+            self.get_name(),
         )
         .unwrap()
     }
@@ -245,29 +247,29 @@ impl Graph {
             "Building the arrowhead matrix",
             self.get_directed_edges_number() as usize,
         );
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .progress_with(pb)
-                .filter_map(|(_, src, dst, edge_type, weight)| {
-                    if src == 1 || dst == 1 || src == dst {
-                        Some(Ok((src, dst, edge_type, weight)))
-                    } else {
-                        None
-                    }
-                }),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .progress_with(pb)
+                    .filter_map(|(_, src, dst, edge_type, weight)| {
+                        if src == 1 || dst == 1 || src == dst {
+                            Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
+                        } else {
+                            None
+                        }
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.is_directed(),
-            self.get_name(),
-            true,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
-            true,
-            true,
-            true,
-            verbose,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            // TODO: possibly the edges number can be precomputed.
+            None,
+            self.get_name(),
         )
         .unwrap()
     }
@@ -286,23 +288,24 @@ impl Graph {
             "Building the transposed matrix",
             self.get_directed_edges_number() as usize,
         );
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                .progress_with(pb)
-                .map(|(_, src, dst, edge_type, weight)| Ok((dst, src, edge_type, weight))),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .progress_with(pb)
+                    .map(|(_, src, dst, edge_type, weight)| {
+                        (0, (dst, src, edge_type, weight.unwrap_or(WeightT::NAN)))
+                    }),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            true,
-            self.get_name(),
-            true,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
-            true,
-            verbose,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            Some(self.get_directed_edges_number()),
+            self.get_name(),
         )
         .unwrap()
     }
@@ -322,34 +325,33 @@ impl Graph {
             "Building the complementary graph",
             self.get_nodes_number() as usize,
         );
-        Graph::from_integer_unsorted(
-            self.par_iter_node_ids()
-                .progress_with(pb)
-                .map(|src| {
-                    self.iter_node_ids()
-                        .filter_map(|dst| {
-                            if self.has_edge_from_node_ids(src, dst) {
-                                None
-                            } else {
-                                Some(Ok((src, dst, None, None)))
-                            }
-                        })
-                        .collect::<Vec<_>>()
-                })
-                .flatten(),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_node_ids()
+                    .progress_with(pb)
+                    .map(|src| {
+                        self.iter_node_ids()
+                            .filter_map(|dst| {
+                                if self.has_edge_from_node_ids(src, dst) {
+                                    None
+                                } else {
+                                    Some((0, (src, dst, None, WeightT::NAN)))
+                                }
+                            })
+                            .collect::<Vec<_>>()
+                    })
+                    .flatten(),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.has_edge_weights(),
             self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            Some((self.get_nodes_number() as EdgeT).pow(2) - self.get_directed_edges_number()),
             self.get_name(),
-            true,
-            false,
-            false,
-            false,
-            true,
-            true,
-            true,
-            verbose,
         )
         .unwrap()
     }
