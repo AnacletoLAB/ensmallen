@@ -50,6 +50,8 @@ mod edge_file_reader;
 pub use self::edge_file_reader::EdgeFileReader;
 mod edge_file_writer;
 pub use self::edge_file_writer::EdgeFileWriter;
+mod type_file_reader;
+pub use self::type_file_reader::TypeFileReader;
 mod compression;
 mod from_csv;
 pub(crate) use self::compression::*;
