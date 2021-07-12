@@ -460,8 +460,9 @@ impl Graph {
     /// Return parallell iterator on the node of the graph as Strings.
     pub fn par_iter_node_names_and_node_type_names(
         &self,
-    ) -> impl IndexedParallelIterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_
-    {
+    ) -> impl IndexedParallelIterator<
+        Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>),
+    > + '_ {
         unsafe {
             self.par_iter_unchecked_node_ids_and_node_type_ids().map(
                 move |(node_id, node_types)| {
@@ -508,6 +509,30 @@ impl Graph {
                 }),
         )
     }
+
+    /// Return iterator on the edges of the graph.
+    pub fn iter_directed_edge_node_ids(
+        &self,
+    ) -> Box<dyn Iterator<Item = (EdgeT, NodeT, NodeT)> + '_> {
+        if self.sources.is_some() && self.destinations.is_some() {
+            return Box::new(
+                (0..self.get_directed_edges_number()).filter_map(move |edge_id| {
+                    let (src, dst) = unsafe { self.get_unchecked_node_ids_from_edge_id(edge_id) };
+                    Some((edge_id, src, dst))
+                }),
+            );
+        }
+        Box::new(
+            self.edges
+                .iter()
+                .enumerate()
+                .filter_map(move |(edge_id, edge)| {
+                    let (src, dst) = self.decode_edge(edge);
+                    Some((edge_id as EdgeT, src, dst))
+                }),
+        )
+    }
+
     /// Return iterator on the edges of the graph with the string name.
     ///
     /// # Arguments
@@ -632,6 +657,21 @@ impl Graph {
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
         self.iter_edge_node_ids(directed)
+            .map(move |(edge_id, src, dst)| unsafe {
+                (
+                    edge_id,
+                    src,
+                    dst,
+                    self.get_unchecked_edge_type_id_from_edge_id(edge_id),
+                )
+            })
+    }
+
+    /// Return iterator on the directed edge node IDs of the graph and their edge type ID
+    pub fn iter_directed_edge_node_ids_and_edge_type_id(
+        &self,
+    ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_ {
+        self.iter_directed_edge_node_ids()
             .map(move |(edge_id, src, dst)| unsafe {
                 (
                     edge_id,
@@ -967,6 +1007,23 @@ impl Graph {
         directed: bool,
     ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_ {
         self.iter_edge_node_ids_and_edge_type_id(directed).map(
+            move |(edge_id, src, dst, edge_type)| unsafe {
+                (
+                    edge_id,
+                    src,
+                    dst,
+                    edge_type,
+                    self.get_unchecked_edge_weight_from_edge_id(edge_id),
+                )
+            },
+        )
+    }
+
+    /// Return iterator on the directed edges of the graph including node IDs, edge type and edge weight.
+    pub fn iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight(
+        &self,
+    ) -> impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>, Option<WeightT>)> + '_ {
+        self.iter_directed_edge_node_ids_and_edge_type_id().map(
             move |(edge_id, src, dst, edge_type)| unsafe {
                 (
                     edge_id,
