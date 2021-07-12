@@ -52,7 +52,7 @@ impl Graph {
     /// # Safety
     /// If the given node name does not exists in the considered graph the method will panic.
     pub unsafe fn get_unchecked_node_id_from_node_name(&self, node_name: &str) -> NodeT {
-        *self.nodes.get(node_name).unwrap()
+        self.nodes.get(node_name).unwrap()
     }
 
     /// Return edge type ID corresponding to the given edge type name.
@@ -68,7 +68,7 @@ impl Graph {
     ) -> Option<EdgeTypeT> {
         self.edge_types
             .as_ref()
-            .and_then(|ets| ets.get(edge_type_name).copied())
+            .and_then(|ets| ets.get(edge_type_name))
     }
 
     /// Return edge type ID corresponding to the given edge type name
@@ -1075,7 +1075,7 @@ impl Graph {
     /// * When the given node name does not exists in the current graph.
     pub fn get_node_id_from_node_name(&self, node_name: &str) -> Result<NodeT> {
         match self.nodes.get(node_name) {
-            Some(node_id) => Ok(*node_id),
+            Some(node_id) => Ok(node_id),
             None => Err(format!(
                 "Given node name {} is not available in current graph.",
                 node_name
@@ -1218,7 +1218,7 @@ impl Graph {
             (None, _) => Err("Current graph does not have edge types.".to_owned()),
             (Some(_), None) => Ok(None),
             (Some(ets), Some(etn)) => match ets.get(etn) {
-                Some(edge_type_id) => Ok(Some(*edge_type_id)),
+                Some(edge_type_id) => Ok(Some(edge_type_id)),
                 None => Err(format!(
                     "Given edge type name {} is not available in current graph.",
                     etn
@@ -1272,7 +1272,7 @@ impl Graph {
                         )
                     )
                     },
-                    |node_type_id| Ok(*node_type_id),
+                    |node_type_id| Ok(node_type_id),
                 )
             })
             .unwrap()
@@ -1458,7 +1458,7 @@ impl Graph {
         dst_name: &str,
     ) -> Result<EdgeT> {
         match (self.nodes.get(src_name), self.nodes.get(dst_name)) {
-            (Some(src), Some(dst)) => self.get_edge_id_from_node_ids(*src, *dst).ok(),
+            (Some(src), Some(dst)) => self.get_edge_id_from_node_ids(src, dst).ok(),
             _ => None,
         }
         .ok_or_else(|| {
@@ -1491,8 +1491,8 @@ impl Graph {
         match (self.nodes.get(src_name), self.nodes.get(dst_name)) {
             (Some(src), Some(dst)) => self
                 .get_edge_id_from_node_ids_and_edge_type_id(
-                    *src,
-                    *dst,
+                    src,
+                    dst,
                     self.get_edge_type_id_from_edge_type_name(edge_type_name)?,
                 )
                 .ok(),
@@ -1546,7 +1546,7 @@ impl Graph {
                     .get_node_type_id_from_node_type_name(node_type_name)
                     .map(Some),
             })
-            .collect::<Result<Vec<Option<NodeTypeT>>, String>>()
+            .collect::<Result<Vec<Option<NodeTypeT>>>>()
     }
 
     /// Return translated node types from string to internal node ID.

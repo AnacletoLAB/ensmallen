@@ -30,7 +30,7 @@ impl Graph {
 
     /// Return parallel iterator on the node names of the graph.
     pub fn par_iter_node_names(&self) -> impl IndexedParallelIterator<Item = String> + '_ {
-        self.nodes.reverse_map.par_iter().cloned()
+        self.nodes.par_iter_keys()
     }
 
     /// Return iterator on the unique node type IDs of the graph.
@@ -56,7 +56,7 @@ impl Graph {
     /// Return iterator on the unique node type names of the graph.
     pub fn iter_unique_node_type_names(&self) -> Result<impl Iterator<Item = String> + '_> {
         self.must_have_node_types()
-            .map(|node_types| node_types.vocabulary.reverse_map.iter().cloned())
+            .map(|node_types| node_types.vocabulary.iter_keys())
     }
 
     /// Return iterator on the unique node type names and their counts of the graph.
@@ -100,7 +100,7 @@ impl Graph {
     /// Return iterator on the unique edge type names of the graph.
     pub fn iter_unique_edge_type_names(&self) -> Result<impl Iterator<Item = String> + '_> {
         self.must_have_edge_types()
-            .map(|edge_types| edge_types.vocabulary.reverse_map.iter().cloned())
+            .map(|edge_types| edge_types.vocabulary.iter_keys())
     }
 
     /// Return iterator on the unweighted node degrees of the graph.

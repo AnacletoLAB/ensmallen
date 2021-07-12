@@ -28,7 +28,7 @@ impl Graph {
             "Building Laplacian selfloops",
             self.get_nodes_number() as usize,
         );
-        let total_edges_number = self.get_directed_edges_number() - self.get_selfloop_number()
+        let total_edges_number = self.get_directed_edges_number() - self.get_selfloops_number()
             + self.get_nodes_number() as EdgeT;
         
         // TODO! this method can be made fully sorted parallell by using an offset vector

@@ -171,7 +171,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_selfloops(&self) -> bool {
-        self.selfloop_number > 0
+        self.get_selfloops_number() > 0
     }
 
     /// Returns boolean representing if nodes which are nor singletons nor

@@ -1,10 +1,12 @@
 use super::types::*;
+use rayon::iter::ParallelIterator;
+use rayon::iter::{IndexedParallelIterator, IntoParallelIterator};
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
 use std::ops::Range;
 
 #[derive(Debug, Clone, PartialEq)] // Arbitrary
-pub enum Vocabulary<IndexT: ToFromUsize> {
+pub enum Vocabulary<IndexT: ToFromUsize + Sync> {
     // If the values are arbitrary and we cannot make any assumptions
     // about them
     String {
@@ -21,11 +23,28 @@ pub enum Vocabulary<IndexT: ToFromUsize> {
 }
 
 /// # Constructors
-impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
+impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
     pub fn new() -> Vocabulary<IndexT> {
         Vocabulary::String {
             map: HashMap::new(),
             reverse_map: Vec::new(),
+        }
+    }
+
+    // TODO! properly extend Iterator
+    pub fn iter(&self) -> Box<dyn Iterator<Item = (String, IndexT)> + '_> {
+        match self {
+            Vocabulary::String { reverse_map, .. } => Box::new(
+                reverse_map
+                    .iter()
+                    .enumerate()
+                    .map(|(value, key)| (key.clone(), IndexT::from_usize(value))),
+            ),
+            Vocabulary::Numeric { range, .. } => Box::new(
+                range
+                    .enumerate()
+                    .map(|(value, key)| (format!("{}", key), IndexT::from_usize(value))),
+            ),
         }
     }
 
@@ -84,7 +103,26 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
     }
 }
 
-impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
+impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
+
+
+    // TODO! properly extend Iterator
+    pub fn iter_keys(&self) -> Box<dyn Iterator<Item = String> + '_> {
+        match self {
+            Vocabulary::String { reverse_map, .. } => {
+                Box::new(reverse_map.iter().map(|key| key.clone()))
+            }
+            Vocabulary::Numeric { range, .. } => Box::new(range.map(|key| format!("{}", key))),
+        }
+    }
+
+    // TODO! properly extend Iterator
+    pub fn par_iter_keys(&self) -> impl IndexedParallelIterator<Item = String> + '_ {
+        (0..self.len())
+            .into_par_iter()
+            .map(move |index| self.unchecked_translate(IndexT::from_usize(index)))
+    }
+
     fn normalize_value(&self, value: &str) -> Result<(String, IndexT)> {
         Ok(match self {
             Vocabulary::Numeric { .. } => {
@@ -303,6 +341,16 @@ impl<IndexT: ToFromUsize> Vocabulary<IndexT> {
         match self {
             Vocabulary::String { map, reverse_map } => reverse_map.clone(),
             Vocabulary::Numeric { range, .. } => range.map(|i| format!("{}", i)).collect::<_>(),
+        }
+    }
+
+    /// Return vector of keys of the map.
+    pub fn map(&self) -> HashMap<String, IndexT> {
+        match self {
+            Vocabulary::String { map, reverse_map } => map.clone(),
+            Vocabulary::Numeric { range, .. } => range
+                .map(|i| (format!("{}", i), IndexT::from_usize(i)))
+                .collect::<HashMap<String, IndexT>>(),
         }
     }
 

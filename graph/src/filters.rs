@@ -214,7 +214,7 @@ impl Graph {
                 edges_number -= self.get_unique_selfloop_number() as EdgeT;
             }
         } else if filter_selfloops {
-            edges_number -= self.get_selfloop_number();
+            edges_number -= self.get_selfloops_number();
         }
 
         match (has_node_filters, has_edge_filters) {

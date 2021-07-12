@@ -389,19 +389,29 @@ impl Graph {
             (self.get_directed_edges_number() - valid_edges_bitmap.len()) as usize,
         );
 
+        let validation_edge_ids = (0..self.get_directed_edges_number())
+            .into_par_iter()
+            .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
+            .collect::<Vec<_>>();
+
+        let train_edge_ids = (0..self.get_directed_edges_number())
+            .into_par_iter()
+            .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
+            .collect::<Vec<_>>();
+
         Ok((
             build_graph_from_integers(
                 Some(
-                    (0..self.get_directed_edges_number())
+                    train_edge_ids
                         .into_par_iter()
-                        .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
                         .progress_with(pb_train)
-                        .map(|edge_id| unsafe {
+                        .enumerate()
+                        .map(|(i, edge_id)| unsafe {
                             let (src, dst, edge_type, weight) = self
                             .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
                                 edge_id,
                             );
-                            (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                            (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
                         }),
                 ),
                 self.nodes.clone(),
@@ -411,22 +421,22 @@ impl Graph {
                 self.is_directed(),
                 Some(true),
                 Some(false),
-                Some(false),
+                Some(true),
                 Some(self.get_directed_edges_number() - valid_edges_bitmap.len() as EdgeT),
                 format!("{} train", self.get_name()),
             )?,
             build_graph_from_integers(
                 Some(
-                    (0..self.get_directed_edges_number())
+                    validation_edge_ids
                         .into_par_iter()
-                        .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
+                        .enumerate()
                         .progress_with(pb_valid)
-                        .map(|edge_id| unsafe {
+                        .map(|(i, edge_id)| unsafe {
                             let (src, dst, edge_type, weight) = self
                             .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
                                 edge_id,
                             );
-                            (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                            (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
                         }),
                 ),
                 self.nodes.clone(),
@@ -436,7 +446,7 @@ impl Graph {
                 self.is_directed(),
                 Some(true),
                 Some(false),
-                Some(false),
+                Some(true),
                 Some(valid_edges_bitmap.len() as EdgeT),
                 format!("{} test", self.get_name()),
             )?,
@@ -985,14 +995,23 @@ impl Graph {
 
         pb1.finish();
 
+        let selected_edge_ids = self
+            .par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+            .filter(|&(_, src, dst, _, _)| unique_nodes.contains(src) && unique_nodes.contains(dst))
+            .map(|(edge_id, _, _, _, _)| edge_id)
+            .collect::<Vec<_>>();
+
         build_graph_from_integers(
             Some(
-                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                    .filter(|&(_, src, dst, _, _)| {
-                        unique_nodes.contains(src) && unique_nodes.contains(dst)
-                    })
-                    .map(|(_, src, dst, edge_type, weight)| {
-                        (0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                selected_edge_ids
+                    .into_par_iter()
+                    .enumerate()
+                    .map(|(i, edge_id)| unsafe {
+                        let (src, dst, edge_type, weight) = self
+                            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+                                edge_id,
+                            );
+                        (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
                     }),
             ),
             self.nodes.clone(),
@@ -1002,7 +1021,7 @@ impl Graph {
             self.is_directed(),
             Some(true),
             Some(false),
-            Some(false),
+            Some(true),
             None,
             format!("{} subgraph", self.get_name()),
         )
