@@ -2,7 +2,6 @@
 use super::*;
 use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
-use std::cell::UnsafeCell;
 
 /// A graph representation optimized for executing random walks on huge graphs.
 ///
@@ -83,10 +82,8 @@ pub struct Graph {
     pub(crate) cumulative_node_degrees: Option<Vec<EdgeT>>,
 
     // /////////////////////////////////////////////////////////////////////////
-    pub(crate) cache: UnsafeCell<PropertyCache>,
+    pub(crate) cache: ClonableUnsafeCell<PropertyCache>,
 }
-
-unsafe impl Sync for Graph {}
 
 /// # Graph utility methods
 impl Graph {
@@ -114,6 +111,7 @@ impl Graph {
             destinations: None,
             cumulative_node_degrees: None,
             name: name.into(),
+            cache: ClonableUnsafeCell::default(),
         }
     }
 
