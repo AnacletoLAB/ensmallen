@@ -26,7 +26,7 @@ impl Graph {
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
     pub unsafe fn get_unchecked_weighted_minimum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_weighted_minimum_node_degree() as f64).pow(2)
+        (self.get_weighted_minimum_node_degree().unwrap() as f64).pow(2)
     }
 
     /// Returns the maximum weighted preferential attachment score.
@@ -34,7 +34,7 @@ impl Graph {
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
     pub unsafe fn get_unchecked_weighted_maximum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_weighted_maximum_node_degree() as f64).pow(2)
+        (self.get_weighted_maximum_node_degree().unwrap() as f64).pow(2)
     }
 
     /// Returns the unweighted preferential attachment from the given node IDs.
@@ -53,10 +53,9 @@ impl Graph {
         destination_node_id: NodeT,
         normalize: bool,
     ) -> f64 {
-        let mut preferential_attachment_score = self
-            .get_unchecked_node_degree_from_node_id(source_node_id)
-            as f64
-            * self.get_unchecked_node_degree_from_node_id(destination_node_id) as f64;
+        let mut preferential_attachment_score =
+            self.get_unchecked_node_degree_from_node_id(source_node_id) as f64
+                * self.get_unchecked_node_degree_from_node_id(destination_node_id) as f64;
         if normalize {
             let min_preferential_attachment_score =
                 self.get_unchecked_minimum_preferential_attachment();
