@@ -187,6 +187,36 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
     )
 }
 
+/// Return new graph object built from string iterators.
+///
+/// # Arguments
+/// `directed`: bool - Whether the graph is meant to be loaded as directed or undirected.
+/// `name: S - The name of the graph.
+///
+pub(crate) fn build_empty_graph<S: Into<String>>(directed: bool, name: S) -> Result<Graph> {
+    build_graph_from_strings_without_type_iterators(
+        false,
+        None::<Empty<_>>,
+        None,
+        false,
+        false,
+        false,
+        None,
+        false,
+        None::<Empty<_>>,
+        false,
+        directed,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        name,
+    )
+}
+
 /// Return new graph object built from integer iterators.
 ///
 /// # Arguments
