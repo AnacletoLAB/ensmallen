@@ -160,7 +160,7 @@ impl Graph {
     /// Note that this includes also the singleton with self-loops and
     /// the trap nodes within this iterator. Only true singleton nodes,
     /// that is, nodes without any edge (both inbound and outbound) are
-    /// included.
+    /// excluded.
     ///
     /// Since the following requires to be boxed, we cannot create the
     /// parallel version of this iterator.
@@ -187,13 +187,17 @@ impl Graph {
     }
 
     /// Return iterator on the singleton with selfloops node IDs of the graph.
-    pub fn iter_singleton_nodes_with_selfloops_node_ids(
+    pub fn iter_singleton_nodes_with_selfloops_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.iter_node_ids()
+            .filter(move |&node_id| self.is_singleton_with_selfloops_from_node_id(node_id))
+    }
+
+    /// Return parallell iterator on the singleton with selfloops node IDs of the graph.
+    pub fn par_iter_singleton_nodes_with_selfloops_node_ids(
         &self,
-    ) -> Box<dyn Iterator<Item = NodeT> + '_> {
-        match self.singleton_nodes_with_selfloops.as_ref() {
-            Some(nsns) => Box::new(nsns.iter()),
-            _ => Box::new(::std::iter::empty()),
-        }
+    ) -> impl ParallelIterator<Item = NodeT> + '_ {
+        self.par_iter_node_ids()
+            .filter(move |&node_id| self.is_singleton_with_selfloops_from_node_id(node_id))
     }
 
     /// Return iterator on the singleton with selfloops node names of the graph.
@@ -1086,11 +1090,17 @@ impl Graph {
     }
 
     /// Return iterator on the unique sources of the graph.
-    pub fn iter_unique_source_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
-        if let Some(x) = &self.unique_sources {
-            return Box::new(x.iter().map(|source| source as NodeT));
-        }
-        Box::new(self.iter_node_ids())
+    pub fn iter_unique_source_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.iter_node_ids().filter(move |&node_id| unsafe {
+            self.get_unchecked_node_degree_from_node_id(node_id) > 0
+        })
+    }
+
+    /// Return parallell iterator on the unique sources of the graph.
+    pub fn par_iter_unique_source_node_ids(&self) -> impl ParallelIterator<Item = NodeT> + '_ {
+        self.par_iter_node_ids().filter(move |&node_id| unsafe {
+            self.get_unchecked_node_degree_from_node_id(node_id) > 0
+        })
     }
 
     /// Returns iterator over edge IDs of the edges with unknown edge types
