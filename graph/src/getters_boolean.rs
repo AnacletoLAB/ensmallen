@@ -1,4 +1,5 @@
 use super::*;
+use rayon::iter::ParallelIterator;
 
 /// # Boolean Getters
 /// The naming convention we follow is:
@@ -347,8 +348,23 @@ impl Graph {
     /// is able to better approximate a complete Softmax by sampling
     /// the output labels using a Zipfian distribution, which is what
     /// most graphs follow.
+    ///
+    /// TODO! add cache!
     pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
-        self.nodes_are_sorted_by_decreasing_outbound_node_degree
+        self.par_iter_node_ids().all(|node_id| unsafe {
+            // If this is the first node, we just
+            // return true.
+            if node_id == 0 {
+                return true;
+            }
+            // For the subsequent nodes we check two by two.
+            // Since this is done in parallell, it should be
+            // still be relatively efficient even though
+            // the same thing in sequential could be done
+            // via a simple scan.
+            self.get_unchecked_node_degree_from_node_id(node_id)
+                <= self.get_unchecked_node_degree_from_node_id(node_id - 1)
+        })
     }
 
     /// Returns whether the node IDs are sorted by increasing outbound node degree.
@@ -360,7 +376,22 @@ impl Graph {
     /// is able to better approximate a complete Softmax by sampling
     /// the output labels using a Zipfian distribution, which is what
     /// most graphs follow.
+    ///
+    /// TODO! add cache!
     pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
-        self.nodes_are_sorted_by_increasing_outbound_node_degree
+        self.par_iter_node_ids().all(|node_id| unsafe {
+            // If this is the first node, we just
+            // return true.
+            if node_id == 0 {
+                return true;
+            }
+            // For the subsequent nodes we check two by two.
+            // Since this is done in parallell, it should be
+            // still be relatively efficient even though
+            // the same thing in sequential could be done
+            // via a simple scan.
+            self.get_unchecked_node_degree_from_node_id(node_id)
+                >= self.get_unchecked_node_degree_from_node_id(node_id - 1)
+        })
     }
 }
