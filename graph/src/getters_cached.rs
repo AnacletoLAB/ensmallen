@@ -17,7 +17,7 @@ impl Graph {
                 );
                 (Ok(min), Ok(max), Ok(total))
             }
-            Err(e) => (Err(e.clone()), Err(e), Err(e)),
+            Err(e) => (Err(e.clone()), Err(e.clone()), Err(e)),
         };
 
         cache.min_edge_weight = Some(min);

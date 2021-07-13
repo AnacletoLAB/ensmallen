@@ -8,7 +8,7 @@ pub(crate) struct ClonableUnsafeCell<T> {
 
 impl<T: Debug> Debug for ClonableUnsafeCell<T> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        unsafe{*self.value.get()}.fmt(f)
+        self.value.get().fmt(f)
     }
 }
 
@@ -21,7 +21,7 @@ impl<T: Default> Default for ClonableUnsafeCell<T> {
 impl<T: Clone> Clone for ClonableUnsafeCell<T> {
     fn clone(&self) -> Self {
         ClonableUnsafeCell{
-            value: UnsafeCell::new(unsafe{*self.value.get()}.clone())
+            value: UnsafeCell::new(unsafe{(*self.value.get()).clone()})
         }
     }
 }

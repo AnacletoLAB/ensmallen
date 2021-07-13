@@ -47,7 +47,7 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
                     .map(|(value, key)| (key.clone(), IndexT::from_usize(value))),
             ),
             Vocabulary::Numeric { range, .. } => Box::new(
-                range
+                range.clone()
                     .enumerate()
                     .map(|(value, key)| (format!("{}", key), IndexT::from_usize(value))),
             ),
@@ -84,15 +84,18 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
             let duplicates = reverse_map
                 .into_iter()
                 .scan(None, |last_object, object| {
-                    let result = if (*last_object)
-                        .as_ref()
-                        .map_or(false, |&last_object| last_object == object)
-                    {
+
+                    let equal_to_last_edge = last_object.as_ref()
+                    .map_or(false, |last_object| *last_object == object);
+
+                    let result: Option<String> = if equal_to_last_edge{
                         None
                     } else {
-                        Some(object)
+                        Some(object.to_string())
                     };
-                    (*last_object).insert(object);
+
+                    *last_object = Some(object.to_string());
+
                     result
                 })
                 .collect::<Vec<String>>();
@@ -118,7 +121,7 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
             Vocabulary::String { reverse_map, .. } => {
                 Box::new(reverse_map.iter().map(|key| key.clone()))
             }
-            Vocabulary::Numeric { range, .. } => Box::new(range.map(|key| format!("{}", key))),
+            Vocabulary::Numeric { range, .. } => Box::new(range.clone().map(|key| format!("{}", key))),
         }
     }
 
@@ -345,16 +348,16 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
     /// Return vector of keys of the map.
     pub fn keys(&self) -> Vec<String> {
         match self {
-            Vocabulary::String { map, reverse_map } => reverse_map.clone(),
-            Vocabulary::Numeric { range, .. } => range.map(|i| format!("{}", i)).collect::<_>(),
+            Vocabulary::String { reverse_map, ..} => reverse_map.clone(),
+            Vocabulary::Numeric { range, ..} => range.clone().map(|i| format!("{}", i)).collect::<_>(),
         }
     }
 
     /// Return vector of keys of the map.
     pub fn map(&self) -> HashMap<String, IndexT> {
         match self {
-            Vocabulary::String { map, reverse_map } => map.clone(),
-            Vocabulary::Numeric { range, .. } => range
+            Vocabulary::String { map, ..} => map.clone(),
+            Vocabulary::Numeric { range, .. } => range.clone()
                 .map(|i| (format!("{}", i), IndexT::from_usize(i)))
                 .collect::<HashMap<String, IndexT>>(),
         }
@@ -407,10 +410,10 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
     /// in the current vocabulary.
     pub unsafe fn unchecked_remove_values(
         &mut self,
-        type_ids_to_remove: Vec<IndexT>,
+        mut type_ids_to_remove: Vec<IndexT>,
     ) -> Vec<Option<usize>> {
         let result = match self {
-            Vocabulary::Numeric { range, count } => {
+            Vocabulary::Numeric { range, ..} => {
                 type_ids_to_remove.sort();
 
                 // scan from the left to remove all the extremants ids

@@ -355,7 +355,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
         );
         assert_eq!(
             singleton_nodes_with_selfloops.len(),
-            graph.get_singleton_nodes_with_selfloops_number() as usize
+            *graph.get_singleton_nodes_with_selfloops_number() as usize
         );
         assert!(
             singleton_nodes_with_selfloops.iter().all(|node_id| unsafe {
@@ -607,7 +607,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
 
     if graph.has_edge_weights() {
         assert!(
-            (graph.get_weighted_maximum_node_degree()?
+            ((graph.get_weighted_maximum_node_degree().clone())?
                 - graph
                     .iter_weighted_node_degrees()?
                     .max_by(|a, b| a.partial_cmp(b).unwrap())
@@ -620,7 +620,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
                 "where the node degrees list is {:?}.\n",
                 "Additionally the number of weighted singleton nodes is {:?}."
             ),
-            graph.get_weighted_maximum_node_degree()?,
+            (graph.get_weighted_maximum_node_degree().clone())?,
             graph
                 .iter_weighted_node_degrees()?
                 .max_by(|a, b| a.partial_cmp(b).unwrap())
@@ -629,7 +629,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             graph.get_weighted_singleton_nodes_number()
         );
         assert!(
-            (graph.get_weighted_minimum_node_degree()?
+            ((graph.get_weighted_minimum_node_degree().clone())?
                 - graph
                     .iter_weighted_node_degrees()?
                     .min_by(|a, b| a.partial_cmp(b).unwrap())
@@ -637,7 +637,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             .abs()
                 < f64::EPSILON,
             "The cached weighted minimum degree ({:?}) does not match the one computed from the node degrees ({:?}).",
-            graph.get_weighted_minimum_node_degree()?,
+            (graph.get_weighted_minimum_node_degree().clone())?,
             graph
                     .iter_weighted_node_degrees()?
                     .min_by(|a, b| a.partial_cmp(b).unwrap())
@@ -965,8 +965,8 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
             ),
             node_degree_centralities,
             graph.get_weighted_node_degrees(),
-            graph.get_weighted_minimum_node_degree().unwrap(),
-            graph.get_weighted_maximum_node_degree().unwrap(),
+            graph.get_weighted_minimum_node_degree().clone().unwrap(),
+            graph.get_weighted_maximum_node_degree().clone().unwrap(),
         );
     }
 
@@ -1678,7 +1678,7 @@ pub fn test_subgraph_generation(graph: &mut Graph, verbose: Option<bool>) -> Res
     let expected_nodes = graph.get_connected_nodes_number() / 10;
     let subgraph = graph.random_subgraph(expected_nodes, None, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
-    assert!(subgraph.get_connected_nodes_number() <= expected_nodes + 1);
+    assert!(*subgraph.get_connected_nodes_number() <= expected_nodes + 1);
     Ok(())
 }
 
