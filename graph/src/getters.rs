@@ -605,9 +605,24 @@ impl Graph {
             .map(|iter_unique_node_type_names| iter_unique_node_type_names.collect())
     }
 
+    #[cache_property(unique_directed_edges_number)]
     /// Return number of the unique edges in the graph.
     pub fn get_unique_directed_edges_number(&self) -> EdgeT {
-        self.unique_edges_number
+        self.par_iter_node_ids()
+            .map(|node_id| unsafe {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .scan(None, |state, dst| {
+                        if let Some(prev) = state {
+                            if *prev == dst {
+                                return None;
+                            }
+                        }
+                        (*state).insert(dst);
+                        Some(*state)
+                    })
+                    .count() as EdgeT
+            })
+            .sum()
     }
 
     /// Return the nodes mapping.
