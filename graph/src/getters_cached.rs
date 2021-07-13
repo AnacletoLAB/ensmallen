@@ -224,4 +224,31 @@ impl Graph {
         /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_selfloops_number());
         /// ```
     );
+
+    /// Compute the bitvector and the number of nodes which have incoming edges.
+    fn compute_connected_nodes(&self) {
+        let bitvec = ConcurrentBitVec::with_capacity(self.get_nodes_number() as usize);
+
+        // Compute in parallel the bitvector of all the nodes that have incoming edges
+        self.par_iter_node_ids().for_each(|node_id| {
+            unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)}.for_each(
+                |dst_id| bitvec.set(dst_id as usize)
+            );
+        });
+
+        let mut cache = unsafe { &mut (*self.cache.get()) };
+        cache.connected_nodes_number = Some(bitvec.count_ones() as NodeT);
+    }
+
+    cached_property!(get_connected_nodes_number, NodeT, compute_connected_nodes, connected_nodes_number,  
+        /// Returns number of not singleton nodes within the graph.
+        ///
+        /// # Example
+        ///```rust
+        /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+        /// println!("The graph contains {} not singleton nodes", graph.get_connected_nodes_number());
+        /// ```
+    );
+
+
 }

@@ -115,17 +115,6 @@ impl Graph {
             .collect()
     }
 
-    /// Returns number of not singleton nodes within the graph.
-    ///
-    /// # Example
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The graph contains {} not singleton nodes", graph.get_connected_nodes_number());
-    /// ```
-    pub fn get_connected_nodes_number(&self) -> NodeT {
-        self.connected_nodes_number
-    }
-
     /// Returns density of the graph.
     ///
     /// # Example

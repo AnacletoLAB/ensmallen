@@ -1,11 +1,15 @@
 use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::ThreadPool;
-use std::cell::UnsafeCell;
-use std::fmt::Debug;
 
+mod argmax_argmin;
+pub use argmax_argmin::*;
 
+mod clonable_unsafe_cell;
+pub use clonable_unsafe_cell::*;
 
+mod concurrent_bitvec;
+pub use concurrent_bitvec::*;
 
 #[macro_export]
 /// Take a vector and make it a None if its empty, Some(vector) otherwise
@@ -187,63 +191,3 @@ pub fn parse_weight(weight: String) -> Result<WeightT> {
         .parse::<WeightT>()
         .map_err(|_| format!("Cannot parse weight {} as a float.", weight))
 }
-
-pub trait ArgMax<T> {
-    fn argmax(&self) -> Option<(usize, T)>;
-}
-
-impl<T: PartialOrd + Copy> ArgMax<T> for Vec<T> {
-    fn argmax(&self) -> Option<(usize, T)> {
-        self.iter()
-            .enumerate()
-            .fold(None, |current_max, (i, &value)| {
-                current_max.map_or(Some((i, value)), |(j, current_max_value)| {
-                    Some(if value > current_max_value {
-                        (i, value)
-                    } else {
-                        (j, current_max_value)
-                    })
-                })
-            })
-    }
-}
-
-
-/// A Clonable unsafe cell
-pub(crate) struct ClonableUnsafeCell<T> {
-    value: UnsafeCell<T>
-}
-
-impl<T: Debug> Debug for ClonableUnsafeCell<T> {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        unsafe{*self.value.get()}.fmt(f)
-    }
-}
-
-impl<T: Default> Default for ClonableUnsafeCell<T> {
-    fn default() -> Self {
-        ClonableUnsafeCell::new(T::default())
-    }
-}
-
-impl<T: Clone> Clone for ClonableUnsafeCell<T> {
-    fn clone(&self) -> Self {
-        ClonableUnsafeCell{
-            value: UnsafeCell::new(unsafe{*self.value.get()}.clone())
-        }
-    }
-}
-
-impl<T> ClonableUnsafeCell<T> {
-    pub unsafe fn get(&self) -> *mut T {
-        self.value.get()
-    }
-
-    pub fn new(value: T) -> Self {
-        ClonableUnsafeCell{
-            value: UnsafeCell::new(value)
-        }
-    }
-}
-
-unsafe impl<T> Sync for ClonableUnsafeCell<T> {}
