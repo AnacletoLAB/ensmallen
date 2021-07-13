@@ -92,7 +92,6 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
         edges_iterator,
         nodes,
         edge_types_vocabulary,
-        has_edge_types,
         has_edge_weights,
         directed,
         correct,
@@ -193,7 +192,7 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
 /// `directed`: bool - Whether the graph is meant to be loaded as directed or undirected.
 /// `name: S - The name of the graph.
 ///
-pub(crate) fn build_empty_graph<S: Into<String>>(directed: bool, name: S) -> Result<Graph> {
+pub fn build_empty_graph<S: Into<String>>(directed: bool, name: S) -> Result<Graph> {
     build_graph_from_strings_without_type_iterators(
         false,
         None::<Empty<_>>,

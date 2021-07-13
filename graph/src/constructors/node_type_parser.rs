@@ -146,7 +146,6 @@ impl NodeTypeParser {
         value: Result<(usize, (N, Option<Vec<String>>))>,
     ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
         let (line_number, (node_name, node_type_names)) = value?;
-        let vocabulary = self.get_immutable();
         let node_type_ids = node_type_names.map(|ntns| unsafe {
             ntns.into_iter()
                 .map(|node_type_name| node_type_name.parse::<NodeTypeT>().unwrap_unchecked())

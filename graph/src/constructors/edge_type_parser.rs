@@ -137,21 +137,18 @@ impl EdgeTypeParser {
         value: Result<(usize, (T, T, Option<String>, W))>,
     ) -> Result<(usize, (T, T, Option<EdgeTypeT>, W))> {
         let (line_number, (src, dst, edge_type_name, weight)) = value?;
-        let vocabulary = self.get_immutable();
-        unsafe {
-            Ok((
-                line_number,
-                (
-                    src,
-                    dst,
-                    Some(
-                        unsafe { edge_type_name.unwrap_unchecked() }
-                            .parse::<EdgeTypeT>()
-                            .unwrap_unchecked(),
-                    ),
-                    weight,
+        Ok((
+            line_number,
+            (
+                src,
+                dst,
+                Some(
+                    unsafe { edge_type_name.unwrap_unchecked() 
+                        .parse::<EdgeTypeT>()
+                        .unwrap_unchecked()},
                 ),
-            ))
-        }
+                weight,
+            ),
+        ))
     }
 }

@@ -55,7 +55,7 @@ pub(crate) fn parse_nodes(
         (_, _, true, true) => NodeTypeParser::to_numeric_unchecked,
         (_, _, false, true) => NodeTypeParser::to_numeric,
     };
-    let mut node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new());
+    let node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new());
 
     let mut node_type_parser = NodeTypeParser::new(node_types_vocabulary);
     let nodes_iterator =
@@ -162,13 +162,13 @@ pub(crate) fn parse_nodes(
                 ));
             }
 
-            Ok((Vocabulary::from_range(min.min(minimum_node_ids)..max), None))
+            Ok((Vocabulary::from_range(min.min(minimum_node_ids)..max), node_types_ids))
         }
         (None, Some(ntn), true, None) => Ok((Vocabulary::from_range(0..ntn), None)),
         (None, Some(ntn), true, Some(min_val)) => {
             Ok((Vocabulary::from_range(min_val..min_val + ntn), None))
         }
-        (None, Some(ntn), true, _) => {
+        (None, None, true, _) => {
             let min = minimum_node_ids.unwrap_or(0);
             Ok((Vocabulary::from_range(min..min), None))
         }

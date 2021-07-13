@@ -61,9 +61,9 @@ pub(crate) fn parse_types<
                         (Ok((min1, max1)), Ok((min2, max2))) => {
                             Ok((min1.min(min2), max1.max(max2)))
                         }
-                        (Ok((min1, max1)), Err(e2)) => Ok((min1, max1)),
-                        (Err(e1), Ok((min2, max2))) => Ok((min2, max2)),
-                        (Err(e1), Err(e2)) => Err(e1),
+                        (Ok((min1, max1)), Err(_)) => Ok((min1, max1)),
+                        (Err(_), Ok((min2, max2))) => Ok((min2, max2)),
+                        (Err(e1), Err(_)) => Err(e1),
                     },
                 )?;
             let minimum_node_ids = minimum_type_id.unwrap_or(min);
@@ -86,7 +86,7 @@ pub(crate) fn parse_types<
         (None, Some(ntn), true, Some(min_val)) => {
             Ok(Some(Vocabulary::from_range(min_val..(min_val + ntn))))
         }
-        (None, Some(ntn), true, _) => {
+        (None, None, true, _) => {
             let min = minimum_type_id.unwrap_or(TypeT::from_usize(0));
             Ok(Some(Vocabulary::from_range(min..min)))
         }

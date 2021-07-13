@@ -107,28 +107,28 @@ macro_rules! parse_type {
     }};
 }
 
-// TODO! improve error messages
-macro_rules! parse_literal {
-    ($iter:expr, $ident_name:literal) => {{
-        let maybe_ident = $iter.next().expect(&format!(
-            "Missing {} argument in cached_property!",
-            $ident_name
-        ));
-        match maybe_ident {
-            TokenTree::Literal(literal) => literal
-                .to_string()
-                .trim_start_matches("\"")
-                .trim_end_matches("\"")
-                .to_string(),
-            _ => {
-                panic!(
-                    "The {} argument of the cached_property macro must be a literal",
-                    $ident_name
-                );
-            }
-        }
-    }};
-}
+// // TODO! improve error messages
+// macro_rules! parse_literal {
+//     ($iter:expr, $ident_name:literal) => {{
+//         let maybe_ident = $iter.next().expect(&format!(
+//             "Missing {} argument in cached_property!",
+//             $ident_name
+//         ));
+//         match maybe_ident {
+//             TokenTree::Literal(literal) => literal
+//                 .to_string()
+//                 .trim_start_matches("\"")
+//                 .trim_end_matches("\"")
+//                 .to_string(),
+//             _ => {
+//                 panic!(
+//                     "The {} argument of the cached_property macro must be a literal",
+//                     $ident_name
+//                 );
+//             }
+//         }
+//     }};
+// }
 
 // TODO! improve error messages
 /// Parses values of type "self.struct.field"
@@ -242,7 +242,6 @@ pub fn cached_property(items: TokenStream) -> TokenStream {
     let method_name = parse_ident!(iter, "method_name");
     parse_comma!(iter);
     let return_type = parse_type!(iter, "return_type");
-    println!("type: {}", return_type);
     parse_comma!(iter);
     let function_to_call = parse_ident!(iter, "function_to_call");
     parse_comma!(iter);

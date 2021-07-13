@@ -133,7 +133,7 @@ impl Graph {
         let min_edge_weight = min_edge_weight.unwrap_or(WeightT::NEG_INFINITY);
         let max_edge_weight = max_edge_weight.unwrap_or(WeightT::INFINITY);
 
-        let mut edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
+        let edge_filter = |(edge_id, src, dst, edge_type_id, weight): &(
             EdgeT,
             NodeT,
             NodeT,

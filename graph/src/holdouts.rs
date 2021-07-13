@@ -300,8 +300,6 @@ impl Graph {
         include_all_edge_types: bool,
         user_condition_for_validation_edges: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: Option<bool>,
-        train_graph_might_contain_singletons: bool,
-        train_graph_might_contain_singletons_with_selfloops: bool,
     ) -> Result<(Graph, Graph)> {
         let verbose = verbose.unwrap_or(false);
         let random_state = random_state.unwrap_or(0xbadf00d);
@@ -558,9 +556,7 @@ impl Graph {
                 // And the edge type of the edge ID is within the provided edge type
                 !is_in_tree && !singleton_selfloop && correct_edge_type
             },
-            verbose,
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
+            verbose
         )
     }
 
@@ -641,10 +637,6 @@ impl Graph {
                 true
             },
             verbose,
-            // Singletons may be generated during the holdouts process
-            true,
-            // Singletons with selfloops may be generated during the holdouts process only when there are selfloops in the graph
-            self.has_selfloops(),
         )
     }
 
@@ -1139,8 +1131,6 @@ impl Graph {
             false,
             |edge_id, _, _, _| chunk.contains(edge_id),
             verbose,
-            true,
-            self.has_selfloops(),
         )
     }
 }

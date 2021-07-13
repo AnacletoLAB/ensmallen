@@ -226,7 +226,7 @@ impl<T, R, S, J: ?Sized> OrOps<T, R, S> for J where J: ParallelIterator<Item = T
 #[macro_export]
 macro_rules! impl_struct_func {
     ($struct_name:ident $context_type:ty) => {
-        use std::sync::{RwLock, RwLockReadGuard, RwLockWriteGuard};
+        use std::sync::{RwLock, RwLockWriteGuard};
 
         pub(crate) struct $struct_name {
             context: $context_type,
@@ -250,10 +250,10 @@ macro_rules! impl_struct_func {
                 &self.context
             }
 
-            #[inline]
-            fn get_mutable_read(&mut self) -> (&mut $context_type, RwLockReadGuard<'_, ()>) {
-                (&mut self.context, self.lock.read().unwrap())
-            }
+            // #[inline]
+            // fn get_mutable_read(&mut self) -> (&mut $context_type, RwLockReadGuard<'_, ()>) {
+            //     (&mut self.context, self.lock.read().unwrap())
+            // }
 
             #[inline]
             fn get_mutable_write(&mut self) -> (&mut $context_type, RwLockWriteGuard<'_, ()>) {
