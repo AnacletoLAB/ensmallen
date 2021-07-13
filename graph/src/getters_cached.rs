@@ -87,4 +87,31 @@ impl Graph {
     /// defined.
     ///
     );
+
+    /// Compute the maximum and minimum weighted node degree and cache it
+    fn compute_max_and_min_weighted_node_degree(&self) {
+        let mut cache = unsafe { &mut (*self.cache.get()) };
+
+        let (min, max) = match self.par_iter_weighted_node_degrees() {
+            Ok(iter) => {
+                let (min, max) = iter.map(|w| (w, w)).reduce(
+                    || (f64::NAN, f64::NAN),
+                    |(min_a, max_a), (min_b, max_b)| (min_a.min(min_b), max_a.max(max_b)),
+                );
+                (Ok(min), Ok(max))
+            }
+            Err(e) => (Err(e.clone()), Err(e)),
+        };
+
+        cache.min_weighted_node_degree = Some(min);
+        cache.max_weighted_node_degree = Some(max);
+    }
+
+    cached_property!(get_maximum_weighted_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, max_weighted_node_degree,
+    /// Return the maximum weighted node degree.
+    );
+
+    cached_property!(get_minimum_weighted_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, min_weighted_node_degree,
+    /// Return the minimum weighted node degree.
+    );
 }

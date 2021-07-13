@@ -352,10 +352,14 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_most_central_node_id()});
+    /// println!("The node with maximum node degree of the graph is {}.", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
     pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
-        self.most_central_node_id
+        self.par_iter_node_degrees()
+            .enumerate()
+            .max_by(|(_, a), (_, b)| a.cmp(b))
+            .unwrap()
+            .0 as NodeT
     }
 
     /// Returns maximum node degree of the graph.
@@ -584,6 +588,7 @@ impl Graph {
         Ok(self.weights.clone().unwrap())
     }
 
+    #[cache_property(total_weights)]
     /// Return total edge weights, if graph has weights.
     ///
     /// # Example
@@ -600,7 +605,7 @@ impl Graph {
     /// * If the graph does not contain edge weights.
     pub fn get_total_edge_weights(&self) -> Result<f64> {
         self.must_have_edge_weights()
-            .map(|_| self.total_weights.unwrap())
+            .map(|weights| weights.iter().map(|&w| w as f64).sum())
     }
 
     /// Return the node types of the graph nodes.
