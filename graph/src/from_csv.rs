@@ -25,17 +25,17 @@ impl Graph {
         node_type_file_reader = node_type_file_reader.map(|ntfr| ntfr.set_graph_name(name.clone().into()));
         edge_type_file_reader = edge_type_file_reader.map(|etfr| etfr.set_graph_name(name.clone().into()));
         build_graph_from_strings(
-            node_type_file_reader.map_or(Ok::<_, String>(None), |nt| Ok(Some(nt.read_lines()?)))?,
-            node_type_file_reader.and_then(|ntf| ntf.types_number),
-            node_type_file_reader.map(|ntf| ntf.numeric_type_ids),
-            node_type_file_reader.and_then(|ntf| ntf.minimum_type_id),
+            node_type_file_reader.as_ref().map_or(Ok::<_, String>(None), |nt| Ok(Some(nt.read_lines()?)))?,
+            node_type_file_reader.as_ref().and_then(|ntf| ntf.types_number.clone()),
+            node_type_file_reader.as_ref().map(|ntf| ntf.numeric_type_ids.clone()),
+            node_type_file_reader.as_ref().and_then(|ntf| ntf.minimum_type_id.clone()),
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.has_node_types()),
             node_file_reader
                 .as_ref()
                 .map_or(Ok::<_, String>(None), |nfr| Ok(Some(nfr.read_lines()?)))?,
-            node_file_reader.and_then(|ntf| ntf.nodes_number),
+            node_file_reader.as_ref().and_then(|ntf| ntf.nodes_number.clone()),
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.reader.csv_is_correct),
@@ -48,14 +48,14 @@ impl Graph {
             node_file_reader
                 .as_ref()
                 .and_then(|nfr| nfr.minimum_node_id),
-            edge_type_file_reader.map_or(Ok::<_, String>(None), |etr| Ok(Some(etr.read_lines()?)))?,
-            edge_type_file_reader.and_then(|etr| etr.types_number),
-            edge_type_file_reader.map(|etr| etr.numeric_type_ids),
-            edge_type_file_reader.and_then(|etr| etr.minimum_type_id),
+            edge_type_file_reader.as_ref().map_or(Ok::<_, String>(None), |etr| Ok(Some(etr.read_lines()?)))?,
+            edge_type_file_reader.as_ref().and_then(|etr| etr.types_number.clone()),
+            edge_type_file_reader.as_ref().map(|etr| etr.numeric_type_ids.clone()),
+            edge_type_file_reader.as_ref().and_then(|etr| etr.minimum_type_id.clone()),
             node_file_reader
                 .as_ref()
                 .map_or(false, |nfr| nfr.has_node_types()),
-            edge_file_reader.map_or(Ok::<_, String>(None), |efr| Ok(Some(efr.read_lines()?)))?,
+            edge_file_reader.as_ref().map_or(Ok::<_, String>(None), |efr| Ok(Some(efr.read_lines()?)))?,
             edge_file_reader
                 .as_ref()
                 .map_or(false, |efr| efr.has_edge_weights()),
@@ -67,10 +67,10 @@ impl Graph {
             edge_file_reader
                 .as_ref()
                 .and_then(|efr| efr.reader.may_have_duplicates),
-            edge_file_reader.as_ref().and_then(|efr| efr.sorted),
-            edge_file_reader.and_then(|etr| etr.edges_number),
-            edge_file_reader.map(|etr| etr.numeric_node_ids),
-            edge_file_reader.map(|etr| etr.numeric_edge_type_ids),
+            edge_file_reader.as_ref().and_then(|efr| efr.sorted.clone()),
+            edge_file_reader.as_ref().and_then(|etr| etr.edges_number.clone()),
+            edge_file_reader.as_ref().map(|etr| etr.numeric_node_ids.clone()),
+            edge_file_reader.as_ref().map(|etr| etr.numeric_edge_type_ids.clone()),
             name.into(),
         )
     }

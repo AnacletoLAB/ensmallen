@@ -101,19 +101,19 @@ impl Graph {
         if self.has_edge_weights() {
             report.insert(
                 "minimum_weighted_node_degree",
-                self.get_weighted_minimum_node_degree().unwrap().to_string(),
+                self.get_weighted_minimum_node_degree().clone().unwrap().to_string(),
             );
             report.insert(
                 "maximum_weighted_node_degree",
-                self.get_weighted_maximum_node_degree().unwrap().to_string(),
+                self.get_weighted_maximum_node_degree().clone().unwrap().to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
-                self.get_weighted_node_degrees_mean().unwrap().to_string(),
+                self.get_weighted_node_degrees_mean().clone().unwrap().to_string(),
             );
             report.insert(
                 "total_edge_weights",
-                self.get_total_edge_weights().unwrap().to_string(),
+                self.get_total_edge_weights().clone().unwrap().to_string(),
             );
         }
         report.insert("has_node_types", self.has_node_types().to_string());
@@ -831,11 +831,11 @@ impl Graph {
                 "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>\n",
                 "<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>\n"
             ),
-            minimum_edge_weight= self.get_mininum_edge_weight().unwrap(),
-            maximum_edge_weight= self.get_maximum_edge_weight().unwrap(),
-            total_edge_weight=self.get_total_edge_weights().unwrap(),
-            weighted_minimum_node_degree = self.get_weighted_minimum_node_degree().unwrap(),
-            weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().unwrap(),
+            minimum_edge_weight= self.get_mininum_edge_weight().clone().unwrap(),
+            maximum_edge_weight= self.get_maximum_edge_weight().clone().unwrap(),
+            total_edge_weight=self.get_total_edge_weights().clone().unwrap(),
+            weighted_minimum_node_degree = self.get_weighted_minimum_node_degree().clone().unwrap(),
+            weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().clone().unwrap(),
             weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
             weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
             weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(

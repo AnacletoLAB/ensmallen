@@ -7,7 +7,7 @@ impl EdgeTypeParser {
         &mut self,
         value: Result<(usize, (T, T, Option<String>, W))>,
     ) -> Result<(usize, (T, T, Option<EdgeTypeT>, W))> {
-        let (line_number, (src, dst, edge_type_name, weight)) = value?;
+        let (line_number, (src, dst, _edge_type_name, weight)) = value?;
         Ok((line_number, (src, dst, None, weight)))
     }
 
@@ -108,7 +108,7 @@ impl EdgeTypeParser {
     ) -> Result<(usize, (T, T, Option<EdgeTypeT>, W))> {
         let (line_number, (src, dst, edge_type_name, weight)) = value?;
         let vocabulary = self.get_immutable();
-        let edge_type_id = match unsafe { edge_type_name.unwrap_unchecked() }.parse::<EdgeTypeT>() {
+        let edge_type_id = match unsafe { edge_type_name.clone().unwrap_unchecked() }.parse::<EdgeTypeT>() {
             Ok(edge_type_id) => Ok::<_, String>(edge_type_id),
             Err(_) => Err::<_, String>(format!(
                 concat!(

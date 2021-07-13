@@ -105,7 +105,7 @@ impl Graph {
 
     #[cache_property(unique_sources)]
     /// Returns Elias-Fano data structure with the source nodes.
-    pub fn get_unique_sources(&self) -> EliasFano {
+    pub fn get_unique_sources(&self) -> &EliasFano {
         let unique_source_nodes_number = self.get_nodes_number()
             - self.get_singleton_nodes_number()
             - self.get_trap_nodes_number();
@@ -193,7 +193,7 @@ impl Graph {
     /// println!("The mean node degree of the graph is  {}", graph.get_weighted_node_degrees_mean().unwrap());
     /// ```
     pub fn get_weighted_node_degrees_mean(&self) -> Result<f64> {
-        Ok((*self.get_total_edge_weights())? / self.get_nodes_number() as f64)
+        Ok(self.get_total_edge_weights().clone()? / self.get_nodes_number() as f64)
     }
 
     /// Returns number of undirected edges of the graph.
@@ -243,7 +243,7 @@ impl Graph {
     /// ```
     pub fn get_unique_edges_number(&self) -> EdgeT {
         match self.directed {
-            true => self.get_unique_directed_edges_number(),
+            true => *self.get_unique_directed_edges_number(),
             false => self.get_unique_undirected_edges_number(),
         }
     }
@@ -303,7 +303,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The node with maximum node degree of the graph is {}.", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
-    pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
+    pub unsafe fn get_unchecked_most_central_node_id(&self) -> &NodeT {
         self.par_iter_node_degrees()
             .enumerate()
             .max_by(|(_, a), (_, b)| a.cmp(b))
@@ -320,7 +320,7 @@ impl Graph {
     /// ```
     pub fn get_most_central_node_id(&self) -> Result<NodeT> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_most_central_node_id() as NodeT })
+            .map(|_| unsafe { *self.get_unchecked_most_central_node_id() as NodeT })
     }
 
     /// Returns minimum node degree of the graph.
@@ -397,7 +397,7 @@ impl Graph {
     /// println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
     /// ```
     ///
-    pub fn get_trap_nodes_number(&self) -> NodeT {
+    pub fn get_trap_nodes_number(&self) -> &NodeT {
         self.par_iter_directed_destination_node_ids()
             .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) == 0 })
             .count() as NodeT
@@ -616,7 +616,7 @@ impl Graph {
 
     #[cache_property(unique_directed_edges_number)]
     /// Return number of the unique edges in the graph.
-    pub fn get_unique_directed_edges_number(&self) -> EdgeT {
+    pub fn get_unique_directed_edges_number(&self) -> &EdgeT {
         self.par_iter_node_ids()
             .map(|node_id| unsafe {
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)

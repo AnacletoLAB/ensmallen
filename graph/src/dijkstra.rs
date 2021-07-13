@@ -1114,7 +1114,7 @@ impl Graph {
     ///
     /// This basically creates a "cross" that spans the graph.
     fn get_four_sweep(&self) -> Result<(NodeT, NodeT)> {
-        let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
+        let most_central_node_id = unsafe { *self.get_unchecked_most_central_node_id() };
         let first_candidate_most_eccentric_node_id = unsafe {
             self.get_unchecked_breath_first_search_from_node_ids(
                 most_central_node_id,
@@ -1172,7 +1172,7 @@ impl Graph {
             )
         }
 
-        let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
+        let most_central_node_id = unsafe { *self.get_unchecked_most_central_node_id() };
         if unsafe { self.is_unchecked_disconnected_from_node_id(most_central_node_id) } {
             return Ok(0.0);
         }

@@ -82,7 +82,7 @@ impl<IndexT: ToFromUsize + Sync> Hash for Vocabulary<IndexT> {
         // The hashmap is not hashable, so we convert it to a
         // sorted array of tuples.
 
-        let mut vector: Vec<(&String, &IndexT)> = self.map().iter().collect();
+        let mut vector: Vec<(String, IndexT)> = self.map().into_iter().collect::<Vec<_>>();
         vector.sort();
         vector.hash(state);
 

@@ -392,7 +392,7 @@ pub fn cache_property(attr: TokenStream, items: TokenStream) -> TokenStream {
         /// caches the result of the function by saving it on first call in the
         /// attribute `{where_the_value_is_cached}`.
         {outer} {{ 
-            let maybe_result =  unsafe{{(*self.cache.get()).{where_the_value_is_cached}}};
+            let maybe_result =  unsafe{{(*self.cache.get()).{where_the_value_is_cached}.as_ref()}};
 
             match maybe_result {{
                 Some(res) => res,
@@ -401,7 +401,7 @@ pub fn cache_property(attr: TokenStream, items: TokenStream) -> TokenStream {
                         {inner}
                     }};
                     unsafe{{(*self.cache.get()).{where_the_value_is_cached} = Some(result)}};
-                    result
+                    unsafe{{(*self.cache.get()).{where_the_value_is_cached}.as_ref().unwrap()}}
                 }}
             }}
         }}"#,

@@ -9,7 +9,7 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
     pub fn sort_by_increasing_outbound_node_degree(&self, verbose: Option<bool>) -> Graph {
-        if self.has_nodes_sorted_by_increasing_outbound_node_degree() {
+        if *self.has_nodes_sorted_by_increasing_outbound_node_degree() {
             return self.clone();
         }
         let sorted_node_ids_permutation = permutation::sort(self.get_node_degrees());
@@ -24,7 +24,7 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
     pub fn sort_by_decreasing_outbound_node_degree(&self, verbose: Option<bool>) -> Graph {
-        if self.has_nodes_sorted_by_decreasing_outbound_node_degree() {
+        if *self.has_nodes_sorted_by_decreasing_outbound_node_degree() {
             return self.clone();
         }
         let sorted_node_ids_permutation =
