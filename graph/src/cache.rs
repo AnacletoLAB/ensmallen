@@ -11,7 +11,8 @@ pub(crate) struct PropertyCache {
     pub(crate) most_central_node_id: Option<NodeT>,
     pub(crate) max_weighted_node_degree: Option<Result<f64>>,
     pub(crate) min_weighted_node_degree: Option<Result<f64>>,
-    pub(crate) total_weights: Option<Result<f64>>
+    pub(crate) total_weights: Option<Result<f64>>,
+    pub(crate) trap_nodes_number: Option<NodeT>,
 }
 
 impl Default for PropertyCache {
@@ -25,7 +26,9 @@ impl Default for PropertyCache {
             nodes_sorted_by_decreasing_outbound_node_degree: None,
             most_central_node_id: None,
             max_weighted_node_degree: None,
-            min_weighted_node_degree: None
+            min_weighted_node_degree: None,
+            total_weights: None,
+            trap_nodes_number: None,
         }
     }
 }

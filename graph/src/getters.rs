@@ -465,6 +465,7 @@ impl Graph {
         self.name.clone()
     }
 
+    #[cache_property(trap_nodes_number)]
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
     /// This also includes nodes with only a self-loops, therefore singletons with
     /// only a self-loops are not considered traps because you could make a walk on them.
@@ -475,9 +476,10 @@ impl Graph {
     /// println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
     /// ```
     ///
-    pub fn get_trap_nodes_number(&self) -> EdgeT {
-        (self.get_connected_nodes_number() + self.get_singleton_nodes_with_selfloops_number()
-            - self.get_unique_source_nodes_number()) as EdgeT
+    pub fn get_trap_nodes_number(&self) -> NodeT {
+        self.par_iter_directed_destination_node_ids()
+            .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) == 0 })
+            .count() as NodeT
     }
 
     /// Return vector of the non-unique source nodes.
@@ -1179,9 +1181,7 @@ impl Graph {
     /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_unique_source_nodes_number());
     /// ```
     pub fn get_unique_source_nodes_number(&self) -> NodeT {
-        self.unique_sources
-            .as_ref()
-            .map_or(self.get_nodes_number(), |x| x.len() as NodeT)
+        self.get_nodes_number() - self.get_singleton_nodes_number() - self.get_trap_nodes_number()
     }
 
     /// Returns edge type IDs counts hashmap.
