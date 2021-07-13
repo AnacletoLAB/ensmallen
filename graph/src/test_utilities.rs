@@ -1,5 +1,4 @@
 //! Test functions used both for testing and fuzzing.
-use crate::constructors::build_graph_from_integers;
 
 use super::*;
 use itertools::Itertools;
@@ -110,14 +109,14 @@ pub fn load_ppi(
         })
         .set_max_rows_number(Some(100000))
         .set_default_weight(if load_weights { Some(5.0) } else { None })
-        .set_skip_selfloops(Some(skip_selfloops))
         .clone();
 
-    let ppi = Graph::from_unsorted_csv(
-        edges_reader,
+    let ppi = Graph::from_csv(
+        Some(edges_reader),
         nodes_reader,
+        None,
+        None,
         directed,
-        false,
         graph_name.clone(),
     )
     .unwrap();
@@ -156,18 +155,24 @@ pub fn load_cora() -> Graph {
         .unwrap()
         .set_edge_types_column(Some("edge_type"))
         .unwrap();
-    let nodes_reader = Some(
-        NodeFileReader::new("tests/data/cora/nodes.tsv")
-            .unwrap()
-            .set_separator(Some("\t"))
-            .unwrap()
-            .set_nodes_column(Some("id"))
-            .unwrap()
-            .set_verbose(Some(false))
-            .set_node_types_column(Some("node_type"))
-            .unwrap(),
-    );
-    Graph::from_unsorted_csv(edges_reader, nodes_reader, false, false, graph_name.clone()).unwrap()
+    let nodes_reader = NodeFileReader::new("tests/data/cora/nodes.tsv")
+        .unwrap()
+        .set_separator(Some("\t"))
+        .unwrap()
+        .set_nodes_column(Some("id"))
+        .unwrap()
+        .set_verbose(Some(false))
+        .set_node_types_column(Some("node_type"))
+        .unwrap();
+    Graph::from_csv(
+        Some(edges_reader),
+        Some(nodes_reader),
+        None,
+        None,
+        false,
+        graph_name.clone(),
+    )
+    .unwrap()
 }
 
 /// Return WalksParameters to execute a first order walk.
@@ -504,10 +509,6 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
 
     if !graph.is_directed() && graph.get_minimum_node_degree()? == 0 {
         assert!(graph.has_singleton_nodes());
-    }
-
-    if graph.has_singleton_nodes() {
-        assert!(graph.unique_sources.is_some());
     }
 
     if !graph.has_disconnected_nodes() && !graph.has_trap_nodes() {

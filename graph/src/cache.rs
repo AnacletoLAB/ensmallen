@@ -1,3 +1,5 @@
+use elias_fano_rust::EliasFano;
+
 use super::*;
 
 #[derive(Debug, Clone)]
@@ -18,6 +20,7 @@ pub(crate) struct PropertyCache {
     pub(crate) selfloops_number_unique: Option<NodeT>,
     pub(crate) singleton_nodes_with_selfloops_number: Option<NodeT>,
     pub(crate) unique_directed_edges_number: Option<EdgeT>,
+    pub(crate) unique_sources: Option<EliasFano>
 }
 
 impl Default for PropertyCache {
@@ -39,6 +42,7 @@ impl Default for PropertyCache {
             selfloops_number_unique: None,
             singleton_nodes_with_selfloops_number: None,
             unique_directed_edges_number: None,
+            unique_sources: None
         }
     }
 }
