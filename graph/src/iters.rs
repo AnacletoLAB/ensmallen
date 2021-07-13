@@ -355,6 +355,20 @@ impl Graph {
             .map(move |(_, _, dst)| dst)
     }
 
+    /// Return iterator on the (non unique) directed destination nodes of the graph.
+    pub fn iter_directed_destination_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.iter_directed_edge_node_ids()
+            .map(move |(_, _, dst)| dst)
+    }
+
+    /// Return parallel iterator on the (non unique) directed destination nodes of the graph.
+    pub fn par_iter_directed_destination_node_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
+        self.par_iter_directed_edge_node_ids()
+            .map(move |(_, _, dst)| dst)
+    }
+
     /// Return iterator on the node IDs and ther node type IDs.
     pub fn iter_node_ids_and_node_type_ids(
         &self,

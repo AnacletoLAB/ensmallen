@@ -292,16 +292,6 @@ impl Graph {
         Ok(weighted_degrees[(self.get_nodes_number() / 2) as usize])
     }
 
-    /// Returns maximum unweighted node degree of the graph.
-    ///
-    /// # Safety
-    /// The method will return an undefined value (0) when the graph
-    /// does not contain nodes. In those cases the value is not properly
-    /// defined.
-    pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
-        self.max_node_degree
-    }
-
     /// Returns maximum weighted node degree of the graph.
     ///
     /// # Safety
@@ -353,6 +343,7 @@ impl Graph {
             .map(|_| unsafe { self.get_unchecked_maximum_node_degree() })
     }
 
+    #[cache_property(most_central_node_id)]
     /// Returns maximum node degree of the graph.
     ///
     /// # Safety
@@ -361,11 +352,16 @@ impl Graph {
     /// # Example
     ///```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The maximum node degree of the graph is  {}", unsafe{graph.get_unchecked_most_central_node_id()});
+    /// println!("The node with maximum node degree of the graph is {}.", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
     pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
-        self.most_central_node_id
+        self.par_iter_node_degrees()
+            .enumerate()
+            .max_by(|(_, a), (_, b)| a.cmp(b))
+            .unwrap()
+            .0 as NodeT
     }
+
     /// Returns maximum node degree of the graph.
     ///
     /// # Example
@@ -376,16 +372,6 @@ impl Graph {
     pub fn get_most_central_node_id(&self) -> Result<NodeT> {
         self.must_have_nodes()
             .map(|_| unsafe { self.get_unchecked_most_central_node_id() as NodeT })
-    }
-
-    /// Returns minimum node degree of the graph.
-    ///
-    /// # Safety
-    /// The method will return an undefined value (NodeT::MAX) when the graph
-    /// does not contain nodes. In those cases the value is not properly
-    /// defined.
-    pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
-        self.min_node_degree
     }
 
     /// Returns minimum weighted node degree of the graph.
@@ -457,6 +443,7 @@ impl Graph {
         self.name.clone()
     }
 
+    #[cache_property(trap_nodes_number)]
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
     /// This also includes nodes with only a self-loops, therefore singletons with
     /// only a self-loops are not considered traps because you could make a walk on them.
@@ -467,9 +454,10 @@ impl Graph {
     /// println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
     /// ```
     ///
-    pub fn get_trap_nodes_number(&self) -> EdgeT {
-        (self.get_connected_nodes_number() + self.get_singleton_nodes_with_selfloops_number()
-            - self.get_unique_source_nodes_number()) as EdgeT
+    pub fn get_trap_nodes_number(&self) -> NodeT {
+        self.par_iter_directed_destination_node_ids()
+            .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) == 0 })
+            .count() as NodeT
     }
 
     /// Return vector of the non-unique source nodes.
@@ -579,7 +567,6 @@ impl Graph {
         self.must_have_edge_weights()?;
         Ok(self.weights.clone().unwrap())
     }
-
 
     /// Return the node types of the graph nodes.
     ///
@@ -1152,9 +1139,7 @@ impl Graph {
     /// println!("The number of sources of the graph (not trap nodes) is {}", graph.get_unique_source_nodes_number());
     /// ```
     pub fn get_unique_source_nodes_number(&self) -> NodeT {
-        self.unique_sources
-            .as_ref()
-            .map_or(self.get_nodes_number(), |x| x.len() as NodeT)
+        self.get_nodes_number() - self.get_singleton_nodes_number() - self.get_trap_nodes_number()
     }
 
     /// Returns edge type IDs counts hashmap.
