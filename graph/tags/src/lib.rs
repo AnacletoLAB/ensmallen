@@ -249,7 +249,7 @@ pub fn cached_property(items: TokenStream) -> TokenStream {
  /// This method is automatically generated using the `cached_property!` macro
  /// which on first call will execute the method `{function_to_call}` and then
  /// it will get the result from the cache at position `{where_the_value_is_cached}`.
- pub fn {method_name}(&self) -> {return_type} {{ 
+ pub {is_unsafe} fn {method_name}(&self) -> {return_type} {{ 
      
      let maybe_result = unsafe{{ (*self.cache.get()).{where_the_value_is_cached}.as_ref() }};
 
@@ -262,6 +262,10 @@ pub fn cached_property(items: TokenStream) -> TokenStream {
      }}
  }}"#,
     doc=doc,
+    is_unsafe=match method_name.contains("unchecked") {
+        true => "unsafe",
+        false => "",
+    },
     method_name=method_name,
     return_type=return_type,
     function_to_call=function_to_call,

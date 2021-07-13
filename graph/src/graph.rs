@@ -111,6 +111,7 @@ impl Graph {
             destinations: None,
             cumulative_node_degrees: None,
             name: name.into(),
+            cache: ClonableUnsafeCell::default(),
         }
     }
 
