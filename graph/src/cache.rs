@@ -4,6 +4,7 @@ use super::*;
 pub(crate) struct PropertyCache {
     pub(crate) min_edge_weight: Option<Result<WeightT>>,
     pub(crate) max_edge_weight: Option<Result<WeightT>>,
+    pub(crate) total_edge_weight: Option<Result<WeightT>>,
     pub(crate) min_node_degree: Option<NodeT>,
     pub(crate) max_node_degree: Option<NodeT>,
     pub(crate) nodes_sorted_by_increasing_outbound_node_degree: Option<bool>,
@@ -22,6 +23,7 @@ impl Default for PropertyCache {
         PropertyCache {
             min_edge_weight: None,
             max_edge_weight: None,
+            total_edge_weight: None,
             min_node_degree: None,
             max_node_degree: None,
             nodes_sorted_by_increasing_outbound_node_degree: None,

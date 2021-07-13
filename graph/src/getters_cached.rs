@@ -6,20 +6,38 @@ impl Graph {
     fn compute_max_and_min_edge_weight(&self) {
         let mut cache = unsafe { &mut (*self.cache.get()) };
 
-        let (min, max) = match self.par_iter_edge_weights() {
+        let (min, max, total) = match self.par_iter_edge_weights() {
             Ok(iter) => {
-                let (min, max) = iter.map(|w| (w, w)).reduce(
-                    || (WeightT::NAN, WeightT::NAN),
-                    |(min_a, max_a), (min_b, max_b)| (min_a.min(min_b), max_a.max(max_b)),
+                let (min, max, total) = iter.map(|w| (w, w, w)).reduce(
+                    || (WeightT::NAN, WeightT::NAN, 0.0),
+                    |(min_a, max_a, total_a), (min_b, max_b, total_b)| (min_a.min(min_b), max_a.max(max_b), total_a + total_b),
                 );
-                (Ok(min), Ok(max))
+                (Ok(min), Ok(max), Ok(total))
             }
-            Err(e) => (Err(e.clone()), Err(e)),
+            Err(e) => (Err(e.clone()), Err(e), Err(e)),
         };
 
         cache.min_edge_weight = Some(min);
         cache.max_edge_weight = Some(max);
+        cache.total_edge_weight = Some(total);
     }
+
+    cached_property!(get_total_edge_weights, Result<WeightT>, compute_max_and_min_edge_weight, min_edge_weight,
+    /// Return total edge weights, if graph has weights.
+    ///
+    /// # Example
+    /// To get the total edge weights you can use:
+    /// ```rust
+    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
+    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
+    /// assert!(graph_with_weights.get_total_edge_weights().is_ok());
+    /// assert!(graph_without_weights.get_total_edge_weights().is_err());
+    /// println!("The graph total edge weights is {:?}.", graph_with_weights.get_total_edge_weights());
+    /// ```
+    ///
+    /// # Raises
+    /// * If the graph does not contain edge weights.
+        );
 
     cached_property!(get_mininum_edge_weight, Result<WeightT>, compute_max_and_min_edge_weight, min_edge_weight,
     /// Return the minimum weight, if graph has weights.
@@ -54,6 +72,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain edge weights.
     );
+
 
     /// Compute the maximum and minimum node degree and cache it
     fn compute_max_and_min_node_degree(&self) {

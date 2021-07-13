@@ -22,6 +22,12 @@ pub enum Vocabulary<IndexT: ToFromUsize + Sync> {
     },
 }
 
+impl<IndexT: ToFromUsize + Sync> Default for Vocabulary<IndexT> {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 /// # Constructors
 impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
     pub fn new() -> Vocabulary<IndexT> {
