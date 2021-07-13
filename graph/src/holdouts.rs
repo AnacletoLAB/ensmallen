@@ -933,7 +933,7 @@ impl Graph {
         }
         let verbose = verbose.unwrap_or(false);
         let random_state = random_state.unwrap_or(0xbadf00d);
-        let connected_nodes_number = self.get_connected_nodes_number();
+        let connected_nodes_number = *self.get_connected_nodes_number();
         if nodes_number > connected_nodes_number {
             return Err(format!(
                 concat!(

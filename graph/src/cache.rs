@@ -19,6 +19,7 @@ pub(crate) struct PropertyCache {
     pub(crate) singleton_nodes_with_selfloops_number: Option<NodeT>,
     pub(crate) connected_nodes_number: Option<NodeT>,
     pub(crate) unique_directed_edges_number: Option<EdgeT>,
+    pub(crate) connected_nodes: Option<ConcurrentBitVec>,
 }
 
 impl Default for PropertyCache {
@@ -40,6 +41,7 @@ impl Default for PropertyCache {
             selfloops_number_unique: None,
             singleton_nodes_with_selfloops_number: None,
             connected_nodes_number: None,
+            connected_nodes: None,
             unique_directed_edges_number: None,
         }
     }

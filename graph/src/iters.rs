@@ -165,19 +165,13 @@ impl Graph {
     /// Since the following requires to be boxed, we cannot create the
     /// parallel version of this iterator.
     ///
-    pub fn iter_connected_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
-        match self.connected_nodes.as_ref() {
-            Some(nsns) => Box::new(nsns.iter_ones().map(|node_id| node_id as NodeT)),
-            _ => Box::new(self.iter_node_ids()),
-        }
+    pub fn iter_connected_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.get_connected_nodes().iter_ones().map(|node_id| node_id as NodeT)
     }
 
     /// Return iterator on the singleton nodes IDs of the graph.
-    pub fn iter_singleton_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
-        match self.connected_nodes.as_ref() {
-            Some(nsns) => Box::new(nsns.iter_zeros().map(|node_id| node_id as NodeT)),
-            _ => Box::new(::std::iter::empty()),
-        }
+    pub fn iter_singleton_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
+        self.get_connected_nodes().iter_zeros().map(|node_id| node_id as NodeT)
     }
 
     /// Return iterator on the singleton nodes names of the graph.

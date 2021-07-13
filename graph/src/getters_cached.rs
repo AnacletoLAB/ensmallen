@@ -256,6 +256,7 @@ impl Graph {
 
         let mut cache = unsafe { &mut (*self.cache.get()) };
         cache.connected_nodes_number = Some(bitvec.count_ones() as NodeT);
+        cache.connected_nodes = Some(bitvec);
     }
 
     cached_property!(get_connected_nodes_number, NodeT, compute_connected_nodes, connected_nodes_number,  
@@ -267,6 +268,18 @@ impl Graph {
         /// println!("The graph contains {} not singleton nodes", graph.get_connected_nodes_number());
         /// ```
     );
+
+    cached_property!(get_connected_nodes, ConcurrentBitVec, compute_connected_nodes, connected_nodes,  
+        /// Returns a bitvector of the non singleton nodes within the graph.
+        ///
+        /// # Example
+        ///```rust
+        /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+        /// println!("The graph contains {} not singleton nodes", graph.get_connected_nodes_number());
+        /// ```
+    );
+
+
 
 
 }
