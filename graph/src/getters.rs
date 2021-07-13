@@ -621,44 +621,6 @@ impl Graph {
             .map(|_| self.total_weights.unwrap())
     }
 
-    /// Return the minimum weight, if graph has weights.
-    ///
-    /// # Example
-    /// To get the minimum edge weight you can use:
-    /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
-    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
-    /// assert!(graph_with_weights.get_mininum_edge_weight().is_ok());
-    /// assert!(graph_without_weights.get_mininum_edge_weight().is_err());
-    /// println!("The graph minimum weight is {:?}.", graph_with_weights.get_mininum_edge_weight());
-    /// ```
-    ///
-    /// # Raises
-    /// * If the graph does not contain edge weights.
-    pub fn get_mininum_edge_weight(&self) -> Result<WeightT> {
-        self.must_have_edge_weights()
-            .map(|_| self.min_edge_weight.unwrap())
-    }
-
-    /// Return the maximum weight, if graph has weights.
-    ///
-    /// # Example
-    /// To get the maximum edge weight you can use:
-    /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
-    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
-    /// assert!(graph_with_weights.get_maximum_edge_weight().is_ok());
-    /// assert!(graph_without_weights.get_maximum_edge_weight().is_err());
-    /// println!("The graph maximum weight is {:?}.", graph_with_weights.get_maximum_edge_weight());
-    /// ```
-    ///
-    /// # Raises
-    /// * If the graph does not contain edge weights.
-    pub fn get_maximum_edge_weight(&self) -> Result<WeightT> {
-        self.must_have_edge_weights()
-            .map(|_| self.max_edge_weight.unwrap())
-    }
-
     /// Return the node types of the graph nodes.
     ///
     /// # Example

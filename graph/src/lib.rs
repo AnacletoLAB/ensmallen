@@ -138,5 +138,11 @@ use vec_rand::splitmix64;
 
 use tags::*;
 
+mod cache;
+pub use cache::*;
+
+mod getters_cached;
+pub use getters_cached::*;
+
 mod visualizations;
 pub use visualizations::*;

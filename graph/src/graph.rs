@@ -2,6 +2,7 @@
 use super::*;
 use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
+use std::cell::UnsafeCell;
 
 /// A graph representation optimized for executing random walks on huge graphs.
 ///
@@ -80,6 +81,9 @@ pub struct Graph {
     pub(crate) sources: Option<Vec<NodeT>>,
     /// Vector of cumulative_node_degrees to execute fast walks if required.
     pub(crate) cumulative_node_degrees: Option<Vec<EdgeT>>,
+
+    // /////////////////////////////////////////////////////////////////////////
+    pub(crate) cache: UnsafeCell<PropertyCache>,
 }
 
 /// # Graph utility methods

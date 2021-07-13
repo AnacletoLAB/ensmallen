@@ -65,6 +65,48 @@ macro_rules! parse_ident {
 }
 
 // TODO! improve error messages
+macro_rules! parse_type {
+    ($iter:expr, $ident_name:literal) => {{
+        let mut name = parse_ident!($iter, $ident_name);
+        match $iter.peek() {
+            None => panic!("missign arguments after return type in cached_property macro"),
+            Some(TokenTree::Punct(punct)) => {
+                if punct.as_char() == '<' {
+                    let mut counter = 0;
+                    while let Some(token) = $iter.next() {
+                        match token {
+                            TokenTree::Punct(punct) => {
+                                if punct.as_char() == '<' {
+                                    counter += 1;
+                                }
+                                if punct.as_char() == '>' {
+                                    counter -= 1;
+                                }
+                                name.push(punct.as_char());
+                            }
+                            x @ _ => {
+                                name.push_str(&x.to_string());
+                            }
+                        }
+                        name.push(' ');
+
+                        if counter == 0 {
+                            break;
+                        }
+                    }
+
+                    if counter != 0 {
+                        panic!("The angular brackets of the type are unbalanced!!.");
+                    }
+                }
+            }
+            _ => {}
+        }
+        name
+    }};
+}
+
+// TODO! improve error messages
 macro_rules! parse_literal {
     ($iter:expr, $ident_name:literal) => {{
         let maybe_ident = $iter.next()
@@ -139,7 +181,7 @@ macro_rules! parse_struct_field{
 /// 
 /// struct PropertiesCache {
 ///     result1: Option<u64>,
-///     result2: Option<u64>,
+///     result2: Option<Result<u64, String>>,
 ///     result3: Option<u64>,
 /// }
 /// 
@@ -152,11 +194,17 @@ macro_rules! parse_struct_field{
 ///         println!("Computing"); 
 ///         let mut cache = unsafe{&mut (*self.cache.get())};
 ///         cache.result1 = Some(1);
-///         cache.result2 = Some(2);
+///         cache.result2 = Some(Ok(2));
 ///     }
 /// 
-///     cached_property!(get_result1, u64, compute, result1, "get the first result");
-///     cached_property!(get_result2, u64, compute, result2, "get the second result");
+///     cached_property!(get_result1, u64, compute, result1,
+/// /// get the first result
+/// /// this is a test method
+///     );
+///     cached_property!(get_result2, Result<u64, String>, compute, result2, 
+/// /// get the second result
+/// /// this is a test method
+/// );
 ///     
 ///     /// Value
 ///     #[cache_property(result3)]
@@ -172,7 +220,7 @@ macro_rules! parse_struct_field{
 ///     println!("{}", t.get_result1());
 ///     
 ///     println!("{}", t.get_result1());
-///     println!("{}", t.get_result2());
+///     println!("{:?}", t.get_result2());
 /// 
 ///     println!("{}", t.get_result3());
 ///     
@@ -180,21 +228,22 @@ macro_rules! parse_struct_field{
 /// }
 /// ```
 pub fn cached_property(items: TokenStream) -> TokenStream {
-    let mut iter = items.into_iter();
+    let mut iter = items.into_iter().peekable();
     
     let method_name = parse_ident!(iter, "method_name");    
     parse_comma!(iter);
-    let return_type = parse_ident!(iter, "return_type");
+    let return_type = parse_type!(iter, "return_type");
+    println!("type: {}", return_type);
     parse_comma!(iter);
     let function_to_call = parse_ident!(iter, "function_to_call");
     parse_comma!(iter);
     let where_the_value_is_cached = parse_ident!(iter, "where_the_value_is_cached");
     parse_comma!(iter);
-    let doc = parse_literal!(iter, "doc");
+    let doc = iter.map(|x| x.to_string()).collect::<Vec<_>>().join("\n");
 
     format!(
  r#"
- /// {doc}
+ {doc}
  ///
  /// ## Caching details
  /// This method is automatically generated using the `cached_property!` macro
@@ -202,12 +251,12 @@ pub fn cached_property(items: TokenStream) -> TokenStream {
  /// it will get the result from the cache at position `{where_the_value_is_cached}`.
  pub fn {method_name}(&self) -> {return_type} {{ 
      
-     let maybe_result = unsafe{{ (*self.cache.get()).{where_the_value_is_cached} }};
+     let maybe_result = unsafe{{ (*self.cache.get()).{where_the_value_is_cached}.as_ref() }};
 
      match maybe_result {{
          None => {{
              self.{function_to_call}();
-             unsafe{{ (*self.cache.get()).{where_the_value_is_cached} }}.unwrap()
+             unsafe{{ (*self.cache.get()).{where_the_value_is_cached}.as_ref() }}.unwrap().clone()
          }},
          Some(v) => v.clone(),
      }}
@@ -234,7 +283,7 @@ pub fn cached_property(items: TokenStream) -> TokenStream {
 /// 
 /// struct PropertiesCache {
 ///     result1: Option<u64>,
-///     result2: Option<u64>,
+///     result2: Option<Result<u64, String>>,
 ///     result3: Option<u64>,
 /// }
 /// 
@@ -247,11 +296,17 @@ pub fn cached_property(items: TokenStream) -> TokenStream {
 ///         println!("Computing"); 
 ///         let mut cache = unsafe{&mut (*self.cache.get())};
 ///         cache.result1 = Some(1);
-///         cache.result2 = Some(2);
+///         cache.result2 = Some(Ok(2));
 ///     }
 /// 
-///     cached_property!(get_result1, u64, compute, result1, "get the first result");
-///     cached_property!(get_result2, u64, compute, result2, "get the second result");
+///     cached_property!(get_result1, u64, compute, result1,
+/// /// get the first result
+/// /// this is a test method
+///     );
+///     cached_property!(get_result2, Result<u64, String>, compute, result2, 
+/// /// get the second result
+/// /// this is a test method
+/// );
 ///     
 ///     /// Value
 ///     #[cache_property(result3)]
@@ -267,7 +322,7 @@ pub fn cached_property(items: TokenStream) -> TokenStream {
 ///     println!("{}", t.get_result1());
 ///     
 ///     println!("{}", t.get_result1());
-///     println!("{}", t.get_result2());
+///     println!("{:?}", t.get_result2());
 /// 
 ///     println!("{}", t.get_result3());
 ///     
@@ -276,7 +331,7 @@ pub fn cached_property(items: TokenStream) -> TokenStream {
 /// ```
 pub fn cache_property(attr: TokenStream, items: TokenStream) -> TokenStream {    
     let where_the_value_is_cached = attr.to_string();
-    let mut iter = items.clone().into_iter();
+    let mut iter = items.into_iter().peekable();
 
     let mut prologue = String::new();
     loop {
