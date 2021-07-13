@@ -1,4 +1,5 @@
 use super::*;
+use num_traits::Zero;
 use rayon::iter::ParallelIterator;
 
 impl Graph {
@@ -112,27 +113,41 @@ impl Graph {
     fn compute_max_and_min_weighted_node_degree(&self) {
         let mut cache = unsafe { &mut (*self.cache.get()) };
 
-        let (min, max) = match self.par_iter_weighted_node_degrees() {
-            Ok(iter) => {
-                let (min, max) = iter.map(|w| (w, w)).reduce(
-                    || (f64::NAN, f64::NAN),
-                    |(min_a, max_a), (min_b, max_b)| (min_a.min(min_b), max_a.max(max_b)),
-                );
-                (Ok(min), Ok(max))
-            }
-            Err(e) => (Err(e.clone()), Err(e)),
-        };
+        let (min, max, weighted_singleton_nodes_number) =
+            match self.par_iter_weighted_node_degrees() {
+                Ok(iter) => {
+                    let (min, max, weighted_singletons) =
+                        iter.map(|w| (w, w, w.is_zero() as NodeT)).reduce(
+                            || (f64::NAN, f64::NAN, 0),
+                            |(min_a, max_a, weighted_singleton_a),
+                             (min_b, max_b, weighted_singleton_b)| {
+                                (
+                                    min_a.min(min_b),
+                                    max_a.max(max_b),
+                                    weighted_singleton_a + weighted_singleton_b,
+                                )
+                            },
+                        );
+                    (Ok(min), Ok(max), Ok(weighted_singletons))
+                }
+                Err(e) => (Err(e.clone()), Err(e.clone()), Err(e)),
+            };
 
         cache.min_weighted_node_degree = Some(min);
         cache.max_weighted_node_degree = Some(max);
+        cache.weighted_singleton_nodes_number = Some(weighted_singleton_nodes_number);
     }
 
     cached_property!(get_weighted_maximum_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, max_weighted_node_degree,
     /// Return the maximum weighted node degree.
     );
 
-    cached_property!(get_weighted_mininum_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, min_weighted_node_degree,
+    cached_property!(get_weighted_minimum_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, min_weighted_node_degree,
     /// Return the minimum weighted node degree.
+    );
+
+    cached_property!(get_weighted_singleton_nodes_number, Result<NodeT>, compute_max_and_min_weighted_node_degree, weighted_singleton_nodes_number,
+    /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero.
     );
 
     /// Compute how many selfloops and how many **uniques** selfloops the graph contains.

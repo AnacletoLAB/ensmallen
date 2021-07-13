@@ -43,19 +43,6 @@ impl Graph {
             - self.get_singleton_nodes_with_selfloops_number()
     }
 
-    /// Return number of weighted singleton nodes within the graph.
-    ///
-    /// This number represents the number of nodes that have weighted node
-    /// degree equal to 0, which may happen when the graph contains edges
-    /// with negative edge weights.
-    ///
-    /// # Raises
-    /// * If the graph does not contain edge weights.
-    pub fn get_weighted_singleton_nodes_number(&self) -> Result<NodeT> {
-        self.must_have_edge_weights()?;
-        Ok(self.weighted_singleton_nodes_number.unwrap())
-    }
-
     /// Returns number of disconnected nodes within the graph.
     /// A Disconnected node is a node which is nor a singleton nor a singleton
     /// with selfloops.
