@@ -86,6 +86,8 @@ pub struct Graph {
     pub(crate) cache: UnsafeCell<PropertyCache>,
 }
 
+unsafe impl Sync for Graph {}
+
 /// # Graph utility methods
 impl Graph {
     pub(crate) fn new<S: Into<String>>(
