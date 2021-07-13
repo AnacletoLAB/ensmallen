@@ -9,10 +9,11 @@ pub(crate) fn parse_types<
 >(
     types_iterator: Option<impl ParallelIterator<Item = Result<(usize, String)>>>,
     types_number: Option<TypeT>,
-    numeric_type_ids: bool,
+    numeric_type_ids: Option<bool>,
     minimum_type_id: Option<TypeT>,
     has_types: bool,
 ) -> Result<Option<Vocabulary<TypeT>>> {
+    let numeric_type_ids = numeric_type_ids.unwrap_or(false);
     // when the graph has no node_types, the resulting vocabulary is None
     if !has_types {
         return Ok(None);

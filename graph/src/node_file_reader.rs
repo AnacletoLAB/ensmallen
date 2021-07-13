@@ -21,6 +21,8 @@ pub struct NodeFileReader {
     pub(crate) nodes_column_number: Option<usize>,
     pub(crate) node_types_separator: Option<String>,
     pub(crate) node_types_column_number: Option<usize>,
+    pub(crate) nodes_number: Option<NodeT>,
+    pub(crate) minimum_node_id: Option<NodeT>,
     pub(crate) numeric_node_ids: bool,
     pub(crate) numeric_node_type_ids: bool,
     pub(crate) skip_node_types_if_unavailable: bool,
@@ -41,6 +43,8 @@ impl NodeFileReader {
             nodes_column_number: None,
             node_types_separator: None,
             node_types_column_number: None,
+            nodes_number: None,
+            minimum_node_id: None,
             numeric_node_ids: false,
             numeric_node_type_ids: false,
             skip_node_types_if_unavailable: false,
@@ -171,10 +175,7 @@ impl NodeFileReader {
     ///
     /// * comment_symbol: Option<String> - if the reader should ignore or not duplicated edges.
     ///
-    pub fn set_comment_symbol(
-        mut self,
-        comment_symbol: Option<String>,
-    ) -> Result<NodeFileReader> {
+    pub fn set_comment_symbol(mut self, comment_symbol: Option<String>) -> Result<NodeFileReader> {
         if let Some(cs) = comment_symbol {
             if cs.is_empty() {
                 return Err("The given comment symbol is empty.".to_string());
@@ -357,6 +358,32 @@ impl NodeFileReader {
         self.default_node_type.is_some() || self.node_types_column_number.is_some()
     }
 
+    /// Set the total number of expected nodes.
+    ///
+    /// # Arguments
+    /// * nodes_number: Option<usize> - The number of nodes expected to be loaded.
+    ///
+    pub fn set_nodes_number(
+        mut self,
+        nodes_number: Option<NodeT>,
+    ) -> NodeFileReader {
+        self.nodes_number = nodes_number;
+        self
+    }
+    
+    /// Set the minimum node ID.
+    ///
+    /// # Arguments
+    /// * minimum_node_id: Option<usize> - The minimum node ID to expect when loading numeric node IDs.
+    ///
+    pub fn set_minimum_node_id(
+        mut self,
+        minimum_node_id: Option<NodeT>,
+    ) -> NodeFileReader {
+        self.minimum_node_id = minimum_node_id;
+        self
+    }
+
     /// Return iterator of the lines of the node file.
     pub fn read_lines(
         &self,
@@ -394,50 +421,45 @@ impl NodeFileReader {
             }
         }
 
-        Ok(self
-            .reader
-            .read_lines()?
-            .map(move |line| match line {
-                Ok((line_number, row_values)) => {
-                    let node_name = match self.nodes_column_number {
-                        Some(column_number) => match row_values[column_number].to_owned() {
-                            Some(node_name) => node_name,
-                            None => {
-                                return Err(
-                                    format!(
-                                        concat!(
-                                            "While reading the provided node list, ",
-                                            "one of the provided node IDs is empty or None.\n",
-                                            "The number of the line with the error is {}."
-                                        ),
-                                        line_number
-                                    )
-                                )
-                            }
-                        },
-                        None => line_number.to_string(),
-                    };
-                    let maybe_node_types_string = match self.node_types_column_number {
-                        Some(column_number) => match row_values[column_number].to_owned() {
-                            Some(node_type) => Some(node_type),
-                            None => self.default_node_type.clone(),
-                        },
+        Ok(self.reader.read_lines()?.map(move |line| match line {
+            Ok((line_number, row_values)) => {
+                let node_name = match self.nodes_column_number {
+                    Some(column_number) => match row_values[column_number].to_owned() {
+                        Some(node_name) => node_name,
+                        None => {
+                            return Err(format!(
+                                concat!(
+                                    "While reading the provided node list, ",
+                                    "one of the provided node IDs is empty or None.\n",
+                                    "The number of the line with the error is {}."
+                                ),
+                                line_number
+                            ))
+                        }
+                    },
+                    None => line_number.to_string(),
+                };
+                let maybe_node_types_string = match self.node_types_column_number {
+                    Some(column_number) => match row_values[column_number].to_owned() {
+                        Some(node_type) => Some(node_type),
                         None => self.default_node_type.clone(),
-                    };
+                    },
+                    None => self.default_node_type.clone(),
+                };
 
-                    // Split given node types using the provided node type separator.
-                    let node_types = match maybe_node_types_string {
-                        Some(string) => match &self.node_types_separator {
-                            Some(sep) => Some(string.split(sep).map(String::from).collect()),
-                            None => Some(vec![string]),
-                        },
-                        None => None,
-                    };
+                // Split given node types using the provided node type separator.
+                let node_types = match maybe_node_types_string {
+                    Some(string) => match &self.node_types_separator {
+                        Some(sep) => Some(string.split(sep).map(String::from).collect()),
+                        None => Some(vec![string]),
+                    },
+                    None => None,
+                };
 
-                    // Return tuple with string and list of node types
-                    Ok((line_number, (node_name, node_types)))
-                }
-                Err(e) => Err(e),
-            }))
+                // Return tuple with string and list of node types
+                Ok((line_number, (node_name, node_types)))
+            }
+            Err(e) => Err(e),
+        }))
     }
 }

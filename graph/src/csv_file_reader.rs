@@ -42,6 +42,9 @@ pub struct CSVFileReader {
 
     /// The name of graph that is being loaded.
     pub(crate) graph_name: String,
+
+    /// Whether the CSV may contain or not duplicate entries
+    pub(crate) may_have_duplicates: Option<bool>
 }
 
 /// # Builder methods
@@ -69,6 +72,7 @@ impl CSVFileReader {
                 comment_symbol: None,
                 list_name,
                 graph_name: "Graph".to_string(),
+                may_have_duplicates: None
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }

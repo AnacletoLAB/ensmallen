@@ -6,7 +6,7 @@ use rayon::{iter::Empty, prelude::*};
 /// # Arguments
 /// `node_types_iterator`: Option<impl ParallelIterator<Item = Result<(usize, String)>>> - Iterator over the provided node types list.
 /// `node_types_number`: Option<NodeTypeT> - The node types number, if known. It makes loading them faster.
-/// `numeric_node_type_ids`: bool - Whether the provided node types are to be loaded as numeric.
+/// `numeric_node_type_ids`: Option<bool> - Whether the provided node types are to be loaded as numeric.
 /// `minimum_node_type_id`: Option<NodeTypeT> - The minimum node type ID, if they are numeric.
 /// `has_node_types`: bool - Whether the graph is expected to have node types.
 /// `nodes_iterator`: Option<impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>> - Iterator over the provided node list.
@@ -17,7 +17,7 @@ use rayon::{iter::Empty, prelude::*};
 /// `minimum_node_ids`: Option<NodeT> - The minimum node ID, if they are numeric.
 /// `edge_types_iterator`: Option<impl ParallelIterator<Item = Result<(usize, String)>>> - Iterator over the provided edge type list.
 /// `edge_types_number`: Option<EdgeTypeT> - The edge types number, if known. It makes loading them faster.
-/// `numeric_edge_type_ids`: bool - Whether the provided edge type IDs are to be loaded as numeric.
+/// `numeric_edge_type_ids`: Option<bool> - Whether the provided edge type IDs are to be loaded as numeric.
 /// `minimum_edge_type_id`: Option<EdgeTypeT> - The minimum edge type ID, if the are numeric.
 /// `has_edge_types`: bool - Whether the graph has edge types.
 /// `edges_iterator`: Option<impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,> - Iterator over the provided edge list.
@@ -35,7 +35,7 @@ use rayon::{iter::Empty, prelude::*};
 pub(crate) fn build_graph_from_strings<S: Into<String>>(
     node_types_iterator: Option<impl ParallelIterator<Item = Result<(usize, String)>>>,
     node_types_number: Option<NodeTypeT>,
-    numeric_node_type_ids: bool,
+    numeric_node_type_ids: Option<bool>,
     minimum_node_type_id: Option<NodeTypeT>,
     has_node_types: bool,
     nodes_iterator: Option<
@@ -48,7 +48,7 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
     minimum_node_ids: Option<NodeT>,
     edge_types_iterator: Option<impl ParallelIterator<Item = Result<(usize, String)>>>,
     edge_types_number: Option<EdgeTypeT>,
-    numeric_edge_type_ids: bool,
+    numeric_edge_type_ids: Option<bool>,
     minimum_edge_type_id: Option<EdgeTypeT>,
     has_edge_types: bool,
     edges_iterator: Option<
@@ -159,7 +159,7 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
     build_graph_from_strings(
         None::<Empty<_>>,
         None,
-        false,
+        None,
         None,
         has_node_types,
         nodes_iterator,
@@ -170,7 +170,7 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
         minimum_node_ids,
         None::<Empty<_>>,
         None,
-        false,
+        None,
         None,
         has_edge_types,
         edges_iterator,
