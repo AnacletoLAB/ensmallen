@@ -78,17 +78,6 @@ impl Graph {
         self.iter_singleton_node_names().collect()
     }
 
-    /// Returns number of singleton nodes with self-loops within the graph.
-    ///
-    /// # Example
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_selfloops_number());
-    /// ```
-    pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
-        self.singleton_nodes_with_selfloops_number
-    }
-
     /// Returns vector of singleton_with_selfloops node IDs of the graph.
     ///
     /// # Example
