@@ -19,6 +19,7 @@ pub(crate) struct PropertyCache {
     pub(crate) selfloops_number: Option<EdgeT>,
     pub(crate) selfloops_number_unique: Option<NodeT>,
     pub(crate) singleton_nodes_with_selfloops_number: Option<NodeT>,
+    pub(crate) connected_nodes_number: Option<NodeT>,
     pub(crate) unique_directed_edges_number: Option<EdgeT>,
     pub(crate) unique_sources: Option<EliasFano>
 }
@@ -41,6 +42,7 @@ impl Default for PropertyCache {
             selfloops_number: None,
             selfloops_number_unique: None,
             singleton_nodes_with_selfloops_number: None,
+            connected_nodes_number: None,
             unique_directed_edges_number: None,
             unique_sources: None
         }
