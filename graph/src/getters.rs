@@ -416,28 +416,6 @@ impl Graph {
             .unwrap())
     }
 
-    /// Returns number of self-loops, including also those in eventual multi-edges.
-    ///
-    /// # Example
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The number of self-loops in the graph is  {}", graph.get_selfloops_number());
-    /// ```
-    pub fn get_selfloops_number(&self) -> EdgeT {
-        self.selfloop_number
-    }
-
-    /// Returns number of unique self-loops, excluding those in eventual multi-edges.
-    ///
-    /// # Example
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_selfloop_number());
-    /// ```
-    pub fn get_unique_selfloop_number(&self) -> NodeT {
-        self.unique_selfloop_number
-    }
-
     /// Returns rate of self-loops.
     ///
     /// # Example

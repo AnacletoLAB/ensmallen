@@ -13,6 +13,8 @@ pub(crate) struct PropertyCache {
     pub(crate) min_weighted_node_degree: Option<Result<f64>>,
     pub(crate) total_weights: Option<Result<f64>>,
     pub(crate) trap_nodes_number: Option<NodeT>,
+    pub(crate) selfloops_number: Option<EdgeT>,
+    pub(crate) selfloops_number_unique: Option<NodeT>,
 }
 
 impl Default for PropertyCache {
@@ -29,6 +31,8 @@ impl Default for PropertyCache {
             min_weighted_node_degree: None,
             total_weights: None,
             trap_nodes_number: None,
+            selfloops_number: None,
+            selfloops_number_unique: None,
         }
     }
 }
