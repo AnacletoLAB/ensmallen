@@ -769,7 +769,7 @@ impl Graph {
                                 .collect::<Vec<_>>()
                                 .as_ref()
                         ),
-                        additional_singleton_nodes_with_selfloop = if singleton_nodes_with_selfloops_number > 5 {
+                        additional_singleton_nodes_with_selfloop = if *singleton_nodes_with_selfloops_number > 5 {
                             format!(
                                 ", plus other {singleton_nodes_with_selfloops_number} singleton nodes with selfloops",
                                 singleton_nodes_with_selfloops_number = singleton_nodes_with_selfloops_number - 5

@@ -10,7 +10,7 @@ impl Graph {
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
     pub unsafe fn get_unchecked_minimum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_minimum_node_degree() as f64).pow(2)
+        (*self.get_unchecked_minimum_node_degree() as f64).pow(2)
     }
 
     /// Returns the maximum unweighted preferential attachment score.
@@ -18,7 +18,7 @@ impl Graph {
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
     pub unsafe fn get_unchecked_maximum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_maximum_node_degree() as f64).pow(2)
+        (*self.get_unchecked_maximum_node_degree() as f64).pow(2)
     }
 
     /// Returns the minumum weighted preferential attachment score.

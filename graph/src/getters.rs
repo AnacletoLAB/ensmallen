@@ -103,17 +103,6 @@ impl Graph {
             .collect()
     }
 
-    /// Returns number of not singleton nodes within the graph.
-    ///
-    /// # Example
-    ///```rust
-    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// println!("The graph contains {} not singleton nodes", graph.get_connected_nodes_number());
-    /// ```
-    pub fn get_connected_nodes_number(&self) -> NodeT {
-        self.connected_nodes_number
-    }
-
     #[cache_property(unique_sources)]
     /// Returns Elias-Fano data structure with the source nodes.
     pub fn get_unique_sources(&self) -> EliasFano {
@@ -204,7 +193,7 @@ impl Graph {
     /// println!("The mean node degree of the graph is  {}", graph.get_weighted_node_degrees_mean().unwrap());
     /// ```
     pub fn get_weighted_node_degrees_mean(&self) -> Result<f64> {
-        Ok(self.get_total_edge_weights()? / self.get_nodes_number() as f64)
+        Ok((*self.get_total_edge_weights())? / self.get_nodes_number() as f64)
     }
 
     /// Returns number of undirected edges of the graph.
@@ -227,8 +216,8 @@ impl Graph {
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
     /// ```
     pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
-        (self.get_unique_edges_number() - self.get_unique_selfloop_number() as EdgeT) / 2
-            + self.get_unique_selfloop_number() as EdgeT
+        (self.get_unique_edges_number() - *self.get_unique_selfloop_number() as EdgeT) / 2
+            + *self.get_unique_selfloop_number() as EdgeT
     }
 
     /// Returns number of edges of the graph.
@@ -300,7 +289,7 @@ impl Graph {
     /// * If the graph does not contain any node (is an empty graph).
     pub fn get_maximum_node_degree(&self) -> Result<NodeT> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_maximum_node_degree() })
+            .map(|_| unsafe { *self.get_unchecked_maximum_node_degree() })
     }
 
     #[cache_property(most_central_node_id)]
@@ -346,7 +335,7 @@ impl Graph {
     /// * If the graph does not contain any node (is an empty graph).
     pub fn get_minimum_node_degree(&self) -> Result<NodeT> {
         self.must_have_nodes()
-            .map(|_| unsafe { self.get_unchecked_minimum_node_degree() })
+            .map(|_| unsafe { *self.get_unchecked_minimum_node_degree() })
     }
 
     /// Returns mode node degree of the graph.
@@ -381,7 +370,7 @@ impl Graph {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(self.get_selfloops_number() as f64 / self.get_directed_edges_number() as f64)
+        Ok(*self.get_selfloops_number() as f64 / self.get_directed_edges_number() as f64)
     }
     /// Return name of the graph.
     ///

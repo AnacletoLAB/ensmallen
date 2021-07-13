@@ -14,7 +14,7 @@ impl Graph {
     pub fn iter_degree_centrality(&self) -> Result<impl Iterator<Item = f64> + '_> {
         self.must_have_edges()?;
 
-        let max_degree = unsafe { self.get_unchecked_maximum_node_degree() as f64 };
+        let max_degree = unsafe { *self.get_unchecked_maximum_node_degree() as f64 };
         Ok(self
             .iter_node_degrees()
             .map(move |degree| degree as f64 / max_degree))
@@ -27,7 +27,7 @@ impl Graph {
         self.must_have_edges()?;
         self.must_have_positive_edge_weights()?;
 
-        let weighted_max_degree = self.get_weighted_maximum_node_degree()? as f64;
+        let weighted_max_degree = self.get_weighted_maximum_node_degree().clone()? as f64;
         Ok(self
             .par_iter_weighted_node_degrees()?
             .map(move |degree| degree as f64 / weighted_max_degree))

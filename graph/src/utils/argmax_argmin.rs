@@ -1,10 +1,10 @@
 
-pub trait ArgMax_ArgMin<T> {
+pub trait ArgMaxArgMin<T> {
     fn argmax(&self) -> Option<(usize, T)>;
     fn argmin(&self) -> Option<(usize, T)>;
 }
 
-impl<T: PartialOrd + Copy> ArgMax_ArgMin<T> for Vec<T> {
+impl<T: PartialOrd + Copy> ArgMaxArgMin<T> for Vec<T> {
     fn argmax(&self) -> Option<(usize, T)> {
         self.iter()
             .enumerate()

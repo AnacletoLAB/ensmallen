@@ -15,9 +15,7 @@ impl Graph {
     /// # Safety
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_singleton_from_node_id(&self, node_id: NodeT) -> bool {
-        self.connected_nodes
-            .as_ref()
-            .map_or(false, |nsns| !nsns[node_id as usize])
+        !self.get_connected_nodes().get(node_id as usize)
     }
 
     /// Returns boolean representing if given node is a singleton or a singleton with selfloop.
@@ -270,10 +268,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.get_unchecked_node_degree_from_node_id(node_id) == 0
-            && self
-                .connected_nodes
-                .as_ref()
-                .map_or(true, |nsns| nsns[node_id as usize])
+            && self.get_connected_nodes().get(node_id as usize)
     }
 
     /// Returns boolean representing if given node is a trap.

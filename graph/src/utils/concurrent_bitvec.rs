@@ -42,6 +42,15 @@ impl ConcurrentBitVec {
         self.bitmap[word_id].fetch_and(!(1 << (index & 7)), Ordering::SeqCst);
     }
 
+    /// Get the value of the `index`-th bit
+    pub fn get(&self, index: usize) -> bool {
+        let word_id = index >> 3;
+        (
+            self.bitmap[word_id].load(Ordering::SeqCst) 
+            & (1 << (index & 7))
+        ) == 1
+    }
+
     /// Returns an iterator over the indices of all the bits set to 1.
     pub fn iter_ones(&self) -> ConcurrentBitVecOnesIterator {
         ConcurrentBitVecOnesIterator::new(self)

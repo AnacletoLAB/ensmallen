@@ -102,7 +102,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool> {
-        Ok(self.get_mininum_edge_weight()? > 0.0 && self.get_maximum_edge_weight()? <= 1.0)
+        Ok((*self.get_mininum_edge_weight())? > 0.0 && (*self.get_maximum_edge_weight())? <= 1.0)
     }
 
     /// Returns whether a graph has one or more weighted singleton nodes.
@@ -112,7 +112,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain edge weights.
     pub fn has_weighted_singleton_nodes(&self) -> Result<bool> {
-        Ok(self.get_weighted_singleton_nodes_number()? > 0)
+        Ok((*self.get_weighted_singleton_nodes_number())? > 0)
     }
 
     /// Returns whether the graph has constant weights.
@@ -125,7 +125,7 @@ impl Graph {
     /// * If the graph does not contain edge weights.
     pub fn has_constant_edge_weights(&self) -> Result<bool> {
         Ok(
-            (self.get_maximum_edge_weight()? - self.get_mininum_edge_weight()?).abs()
+            ((*self.get_maximum_edge_weight())? - (*self.get_mininum_edge_weight())?).abs()
                 < WeightT::EPSILON,
         )
     }
@@ -172,7 +172,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_selfloops(&self) -> bool {
-        self.get_selfloops_number() > 0
+        *self.get_selfloops_number() > 0
     }
 
     /// Returns boolean representing if nodes which are nor singletons nor
@@ -204,7 +204,7 @@ impl Graph {
 
     /// Returns boolean representing if graph has singletons.
     pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
-        self.get_singleton_nodes_with_selfloops_number() > 0
+        *self.get_singleton_nodes_with_selfloops_number() > 0
     }
 
     /// Returns whether the graph is connected.
