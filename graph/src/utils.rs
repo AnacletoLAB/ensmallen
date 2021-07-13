@@ -204,3 +204,22 @@ impl<T: PartialOrd + Copy> ArgMax<T> for Vec<T> {
             })
     }
 }
+
+
+pub(crate) struct ClonableUnsafeCell<T> {
+    value: UnsafeCell<T>
+}
+
+impl<T> Clone for ClonableUnsafeCell<T> {
+    fn clone(&self) -> Self {
+        ClonableUnsafeCell{
+            value: UnsafeCell::new(unsafe{self.value.get()}.clone())
+        }
+    }
+}
+
+impl<T> ClonableUnsafeCell<T> {
+    pub unsafe fn get(&self) -> *mut Self {
+        self.value.get()
+    }
+}
