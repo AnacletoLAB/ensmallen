@@ -580,24 +580,6 @@ impl Graph {
         Ok(self.weights.clone().unwrap())
     }
 
-    /// Return total edge weights, if graph has weights.
-    ///
-    /// # Example
-    /// To get the total edge weights you can use:
-    /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, true, false, false);
-    /// # let graph_without_weights = graph::test_utilities::load_ppi(false, false, false, true, false, false);
-    /// assert!(graph_with_weights.get_total_edge_weights().is_ok());
-    /// assert!(graph_without_weights.get_total_edge_weights().is_err());
-    /// println!("The graph total edge weights is {:?}.", graph_with_weights.get_total_edge_weights());
-    /// ```
-    ///
-    /// # Raises
-    /// * If the graph does not contain edge weights.
-    pub fn get_total_edge_weights(&self) -> Result<f64> {
-        self.must_have_edge_weights()
-            .map(|_| self.total_weights.unwrap())
-    }
 
     /// Return the node types of the graph nodes.
     ///
