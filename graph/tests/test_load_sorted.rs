@@ -13,15 +13,17 @@ fn test_load_sorted() {
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
+        .set_complete(Some(true))
+        .set_sorted(Some(true))
+        .set_edges_number(Some(6108))
         .set_header(Some(false));
 
-    let mut g = Graph::from_sorted_csv(
-        edges_reader,
+    let mut g = Graph::from_csv(
+        Some(edges_reader),
+        None,
+        None,
         None,
         false,
-        false,
-        6108,
-        242,
         graph_name.clone(),
     )
     .unwrap();

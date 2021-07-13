@@ -15,13 +15,12 @@ fn test_components_size() {
         .set_numeric_node_ids(Some(true))
         .set_header(Some(false));
 
-    let g = Graph::from_sorted_csv(
-        edges_reader,
+    let g = Graph::from_csv(
+        Some(edges_reader),
+        None,
+        None,
         None,
         false,
-        false,
-        6,
-        6,
         graph_name.clone(),
     )
     .unwrap();

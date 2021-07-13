@@ -67,6 +67,7 @@ mod dijkstra;
 pub use self::dijkstra::*;
 
 mod constructors;
+pub use constructors::*;
 
 pub mod utils;
 pub(crate) use self::utils::*;
