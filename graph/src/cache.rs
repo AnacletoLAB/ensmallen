@@ -12,11 +12,13 @@ pub(crate) struct PropertyCache {
     pub(crate) most_central_node_id: Option<NodeT>,
     pub(crate) max_weighted_node_degree: Option<Result<f64>>,
     pub(crate) min_weighted_node_degree: Option<Result<f64>>,
+    pub(crate) weighted_singleton_nodes_number: Option<Result<NodeT>>,
     pub(crate) trap_nodes_number: Option<NodeT>,
     pub(crate) selfloops_number: Option<EdgeT>,
     pub(crate) selfloops_number_unique: Option<NodeT>,
     pub(crate) singleton_nodes_with_selfloops_number: Option<NodeT>,
     pub(crate) connected_nodes_number: Option<NodeT>,
+    pub(crate) unique_directed_edges_number: Option<EdgeT>,
 }
 
 impl Default for PropertyCache {
@@ -32,11 +34,13 @@ impl Default for PropertyCache {
             most_central_node_id: None,
             max_weighted_node_degree: None,
             min_weighted_node_degree: None,
+            weighted_singleton_nodes_number: None,
             trap_nodes_number: None,
             selfloops_number: None,
             selfloops_number_unique: None,
             singleton_nodes_with_selfloops_number: None,
             connected_nodes_number: None,
+            unique_directed_edges_number: None,
         }
     }
 }

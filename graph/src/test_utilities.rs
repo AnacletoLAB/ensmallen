@@ -1,4 +1,6 @@
 //! Test functions used both for testing and fuzzing.
+use crate::constructors::build_graph_from_integers;
+
 use super::*;
 use itertools::Itertools;
 use log::warn;
@@ -139,28 +141,6 @@ pub fn load_ppi(
     ppi
 }
 
-/// Load an empty graph instance
-pub fn load_empty_graph(directed: bool) -> Graph {
-    Graph::from_integer_sorted(
-        std::iter::empty(),
-        0,
-        Vocabulary::default(),
-        None,
-        None,
-        directed,
-        false,
-        "Empty graph",
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-    )
-    .unwrap()
-}
-
 #[allow(clippy::redundant_clone)]
 /// This is our default graph we use on tests with node types.
 pub fn load_cora() -> Graph {
@@ -240,11 +220,7 @@ fn validate_vocabularies(graph: &Graph) {
 }
 
 /// Executes the default test suite for holdouts.
-pub fn default_holdout_test_suite(
-    graph: &Graph,
-    train: &Graph,
-    test: &Graph,
-) -> Result<()> {
+pub fn default_holdout_test_suite(graph: &Graph, train: &Graph, test: &Graph) -> Result<()> {
     for g in &[graph, train, test] {
         validate_vocabularies(g);
     }
@@ -377,9 +353,9 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             graph.get_singleton_nodes_with_selfloops_number() as usize
         );
         assert!(
-            singleton_nodes_with_selfloops
-                .iter()
-                .all(|node_id| graph.is_singleton_with_selfloops_from_node_id(*node_id)),
+            singleton_nodes_with_selfloops.iter().all(|node_id| unsafe {
+                graph.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)
+            }),
             concat!(
                 "The singleton with self-loops are defined as the set of nodes that ",
                 "exclusively have self-loop edges.\n",
@@ -619,11 +595,6 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     }
 
     assert_eq!(
-        graph.singleton_nodes_with_selfloops.is_some(),
-        graph.has_singleton_nodes_with_selfloops(),
-    );
-
-    assert_eq!(
         graph.get_minimum_node_degree()?,
         graph.iter_node_degrees().min().unwrap(),
         concat!(
@@ -657,7 +628,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             graph.get_weighted_singleton_nodes_number()
         );
         assert!(
-            (graph.get_weighted_mininum_node_degree()?
+            (graph.get_weighted_minimum_node_degree()?
                 - graph
                     .iter_weighted_node_degrees()?
                     .min_by(|a, b| a.partial_cmp(b).unwrap())
@@ -665,21 +636,13 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             .abs()
                 < f64::EPSILON,
             "The cached weighted minimum degree ({:?}) does not match the one computed from the node degrees ({:?}).",
-            graph.get_weighted_mininum_node_degree()?,
+            graph.get_weighted_minimum_node_degree()?,
             graph
                     .iter_weighted_node_degrees()?
                     .min_by(|a, b| a.partial_cmp(b).unwrap())
                     .unwrap()
         );
     }
-
-    assert_eq!(
-        graph
-            .singleton_nodes_with_selfloops
-            .as_ref()
-            .map_or(0, |x| x.len() as NodeT),
-        graph.get_singleton_nodes_with_selfloops_number(),
-    );
 
     for singleton_node_id in graph.iter_singleton_node_ids() {
         assert!(unsafe { graph.get_unchecked_node_degree_from_node_id(singleton_node_id) } == 0);
@@ -1001,7 +964,7 @@ pub fn test_node_centralities(graph: &mut Graph, verbose: Option<bool>) -> Resul
             ),
             node_degree_centralities,
             graph.get_weighted_node_degrees(),
-            graph.get_weighted_mininum_node_degree().unwrap(),
+            graph.get_weighted_minimum_node_degree().unwrap(),
             graph.get_weighted_maximum_node_degree().unwrap(),
         );
     }
@@ -1677,10 +1640,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     Ok(())
 }
 
-pub fn test_negative_edges_generation(
-    graph: &mut Graph,
-    verbose: Option<bool>,
-) -> Result<()> {
+pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     for only_from_same_component in &[true, false] {
         let negatives = graph.sample_negatives(
             graph.get_edges_number(),
@@ -2351,30 +2311,6 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
         graph,
         get_random_walk_normalized_laplacian_transformed_graph,
         verbose
-    );
-    test_mut_graph!(
-        graph,
-        get_weighted_laplacian_transformed_graph,
-        verbose,
-        result
-    );
-    test_mut_graph!(
-        graph,
-        get_weighted_symmetric_normalized_transformed_graph,
-        verbose,
-        result
-    );
-    test_mut_graph!(
-        graph,
-        get_weighted_symmetric_normalized_laplacian_transformed_graph,
-        verbose,
-        result
-    );
-    test_mut_graph!(
-        graph,
-        get_weighted_random_walk_normalized_laplacian_transformed_graph,
-        verbose,
-        result
     );
     test_mut_graph!(graph, to_upper_triangular, verbose);
     test_mut_graph!(graph, to_lower_triangular, verbose);

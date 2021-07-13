@@ -1,4 +1,5 @@
 use super::*;
+use num_traits::Zero;
 use rayon::iter::ParallelIterator;
 
 impl Graph {
@@ -112,32 +113,45 @@ impl Graph {
     fn compute_max_and_min_weighted_node_degree(&self) {
         let mut cache = unsafe { &mut (*self.cache.get()) };
 
-        let (min, max) = match self.par_iter_weighted_node_degrees() {
-            Ok(iter) => {
-                let (min, max) = iter.map(|w| (w, w)).reduce(
-                    || (f64::NAN, f64::NAN),
-                    |(min_a, max_a), (min_b, max_b)| (min_a.min(min_b), max_a.max(max_b)),
-                );
-                (Ok(min), Ok(max))
-            }
-            Err(e) => (Err(e.clone()), Err(e)),
-        };
+        let (min, max, weighted_singleton_nodes_number) =
+            match self.par_iter_weighted_node_degrees() {
+                Ok(iter) => {
+                    let (min, max, weighted_singletons) =
+                        iter.map(|w| (w, w, w.is_zero() as NodeT)).reduce(
+                            || (f64::NAN, f64::NAN, 0),
+                            |(min_a, max_a, weighted_singleton_a),
+                             (min_b, max_b, weighted_singleton_b)| {
+                                (
+                                    min_a.min(min_b),
+                                    max_a.max(max_b),
+                                    weighted_singleton_a + weighted_singleton_b,
+                                )
+                            },
+                        );
+                    (Ok(min), Ok(max), Ok(weighted_singletons))
+                }
+                Err(e) => (Err(e.clone()), Err(e.clone()), Err(e)),
+            };
 
         cache.min_weighted_node_degree = Some(min);
         cache.max_weighted_node_degree = Some(max);
+        cache.weighted_singleton_nodes_number = Some(weighted_singleton_nodes_number);
     }
 
     cached_property!(get_weighted_maximum_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, max_weighted_node_degree,
     /// Return the maximum weighted node degree.
     );
 
-    cached_property!(get_weighted_mininum_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, min_weighted_node_degree,
+    cached_property!(get_weighted_minimum_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, min_weighted_node_degree,
     /// Return the minimum weighted node degree.
+    );
+
+    cached_property!(get_weighted_singleton_nodes_number, Result<NodeT>, compute_max_and_min_weighted_node_degree, weighted_singleton_nodes_number,
+    /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero.
     );
 
     /// Compute how many selfloops and how many **uniques** selfloops  and how many singletons with selfloops the graph contains.
     fn compute_selfloops_number(&self) {
-
         /// Struct with the info we want to collect
         /// This is just a nice way to handle reduces
         struct Info {
@@ -148,7 +162,7 @@ impl Graph {
 
         impl Default for Info {
             fn default() -> Self {
-                Info{
+                Info {
                     selfloops_number_unique: 0,
                     selfloops_number: 0,
                     singleton_nodes_with_selfloops_number: 0,
@@ -160,10 +174,13 @@ impl Graph {
             type Output = Self;
 
             fn add(self, rhs: Self) -> Self::Output {
-                Info{
-                    selfloops_number_unique: self.selfloops_number_unique + rhs.selfloops_number_unique,
+                Info {
+                    selfloops_number_unique: self.selfloops_number_unique
+                        + rhs.selfloops_number_unique,
                     selfloops_number: self.selfloops_number + rhs.selfloops_number,
-                    singleton_nodes_with_selfloops_number: self.singleton_nodes_with_selfloops_number + rhs.singleton_nodes_with_selfloops_number,
+                    singleton_nodes_with_selfloops_number: self
+                        .singleton_nodes_with_selfloops_number
+                        + rhs.singleton_nodes_with_selfloops_number,
                 }
             }
         }
@@ -173,26 +190,27 @@ impl Graph {
             .map(|node_id| {
                 let (selfloops_number, degree) =
                     unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
-                        .map(|x| (if x == node_id {1} else {0}, 1))
-                        .reduce(
-                            |(a1, b1), (a2, b2)| (a1 + a2, b1 + b2),
-                        ).unwrap_or((0, 0));
+                        .map(|x| (if x == node_id { 1 } else { 0 }, 1))
+                        .reduce(|(a1, b1), (a2, b2)| (a1 + a2, b1 + b2))
+                        .unwrap_or((0, 0));
 
-                Info{
+                Info {
                     selfloops_number: selfloops_number as EdgeT,
                     selfloops_number_unique: (if selfloops_number > 0 { 1 } else { 0 }) as NodeT,
-                    singleton_nodes_with_selfloops_number: (if selfloops_number == degree { 1 } else { 0 }) as NodeT,
+                    singleton_nodes_with_selfloops_number: (if selfloops_number == degree {
+                        1
+                    } else {
+                        0
+                    }) as NodeT,
                 }
             })
-            .reduce(
-                Info::default,
-                |a, b| a + b,
-            );
+            .reduce(Info::default, |a, b| a + b);
 
         let mut cache = unsafe { &mut (*self.cache.get()) };
         cache.selfloops_number = Some(info.selfloops_number);
         cache.selfloops_number_unique = Some(info.selfloops_number_unique);
-        cache.singleton_nodes_with_selfloops_number = Some(info.singleton_nodes_with_selfloops_number);
+        cache.singleton_nodes_with_selfloops_number =
+            Some(info.singleton_nodes_with_selfloops_number);
     }
 
     cached_property!(get_selfloops_number, EdgeT, compute_selfloops_number, selfloops_number,
@@ -215,7 +233,7 @@ impl Graph {
         /// ```
     );
 
-    cached_property!(get_singleton_nodes_with_selfloops_number, NodeT, compute_selfloops_number, singleton_nodes_with_selfloops_number,  
+    cached_property!(get_singleton_nodes_with_selfloops_number, NodeT, compute_selfloops_number, singleton_nodes_with_selfloops_number,
         /// Returns number of singleton nodes with self-loops within the graph.
         ///
         /// # Example

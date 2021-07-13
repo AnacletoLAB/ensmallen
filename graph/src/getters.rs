@@ -43,19 +43,6 @@ impl Graph {
             - self.get_singleton_nodes_with_selfloops_number()
     }
 
-    /// Return number of weighted singleton nodes within the graph.
-    ///
-    /// This number represents the number of nodes that have weighted node
-    /// degree equal to 0, which may happen when the graph contains edges
-    /// with negative edge weights.
-    ///
-    /// # Raises
-    /// * If the graph does not contain edge weights.
-    pub fn get_weighted_singleton_nodes_number(&self) -> Result<NodeT> {
-        self.must_have_edge_weights()?;
-        Ok(self.weighted_singleton_nodes_number.unwrap())
-    }
-
     /// Returns number of disconnected nodes within the graph.
     /// A Disconnected node is a node which is nor a singleton nor a singleton
     /// with selfloops.
@@ -607,9 +594,24 @@ impl Graph {
             .map(|iter_unique_node_type_names| iter_unique_node_type_names.collect())
     }
 
+    #[cache_property(unique_directed_edges_number)]
     /// Return number of the unique edges in the graph.
     pub fn get_unique_directed_edges_number(&self) -> EdgeT {
-        self.unique_edges_number
+        self.par_iter_node_ids()
+            .map(|node_id| unsafe {
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .scan(None, |state, dst| {
+                        if let Some(prev) = state {
+                            if *prev == dst {
+                                return None;
+                            }
+                        }
+                        (*state).insert(dst);
+                        Some(*state)
+                    })
+                    .count() as EdgeT
+            })
+            .sum()
     }
 
     /// Return the nodes mapping.
