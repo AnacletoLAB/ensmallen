@@ -16,6 +16,7 @@ pub(crate) struct PropertyCache {
     pub(crate) trap_nodes_number: Option<NodeT>,
     pub(crate) selfloops_number: Option<EdgeT>,
     pub(crate) selfloops_number_unique: Option<NodeT>,
+    pub(crate) singleton_nodes_with_selfloops_number: Option<NodeT>,
 }
 
 impl Default for PropertyCache {
@@ -35,6 +36,7 @@ impl Default for PropertyCache {
             trap_nodes_number: None,
             selfloops_number: None,
             selfloops_number_unique: None,
+            singleton_nodes_with_selfloops_number: None,
         }
     }
 }
