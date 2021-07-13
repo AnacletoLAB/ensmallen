@@ -231,7 +231,7 @@ impl Graph {
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
     /// ```
     pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
-        (self.unique_edges_number - self.get_unique_selfloop_number() as EdgeT) / 2
+        (self.get_unique_edges_number() - self.get_unique_selfloop_number() as EdgeT) / 2
             + self.get_unique_selfloop_number() as EdgeT
     }
 
@@ -292,42 +292,6 @@ impl Graph {
         Ok(weighted_degrees[(self.get_nodes_number() / 2) as usize])
     }
 
-    /// Returns maximum weighted node degree of the graph.
-    ///
-    /// # Safety
-    /// This method will cause a panic on graphs without
-    /// edge weights.
-    pub unsafe fn get_unchecked_weighted_maximum_node_degree(&self) -> f64 {
-        self.max_weighted_node_degree.unwrap()
-    }
-
-    /// Returns maximum weighted node degree of the graph.
-    ///
-    /// # Raises
-    /// * If the current graph does not contain edge weights.
-    pub fn get_weighted_maximum_node_degree(&self) -> Result<f64> {
-        self.must_have_edge_weights()?;
-        Ok(unsafe { self.get_unchecked_weighted_maximum_node_degree() })
-    }
-
-    /// Returns minimum weighted node degree of the graph.
-    ///
-    /// # Safety
-    /// This method will cause a panic on graphs without
-    /// edge weights.
-    pub unsafe fn get_unchecked_weighted_minimum_node_degree(&self) -> f64 {
-        self.max_weighted_node_degree.unwrap()
-    }
-
-    /// Returns minimum weighted node degree of the graph.
-    ///
-    /// # Raises
-    /// * If the current graph does not contain edge weights.
-    pub fn get_weighted_minimum_node_degree(&self) -> Result<f64> {
-        self.must_have_edge_weights()?;
-        Ok(unsafe { self.get_unchecked_weighted_minimum_node_degree() })
-    }
-
     /// Returns maximum node degree of the graph.
     ///
     /// # Example
@@ -372,12 +336,6 @@ impl Graph {
     pub fn get_most_central_node_id(&self) -> Result<NodeT> {
         self.must_have_nodes()
             .map(|_| unsafe { self.get_unchecked_most_central_node_id() as NodeT })
-    }
-
-    /// Returns minimum weighted node degree of the graph.
-    pub fn get_weighted_mininum_node_degree(&self) -> Result<f64> {
-        self.must_have_edge_weights()?;
-        Ok(self.min_weighted_node_degree.unwrap())
     }
 
     /// Returns minimum node degree of the graph.

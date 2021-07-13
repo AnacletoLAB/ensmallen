@@ -107,11 +107,11 @@ impl Graph {
         cache.max_weighted_node_degree = Some(max);
     }
 
-    cached_property!(get_maximum_weighted_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, max_weighted_node_degree,
+    cached_property!(get_weighted_maximum_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, max_weighted_node_degree,
     /// Return the maximum weighted node degree.
     );
 
-    cached_property!(get_minimum_weighted_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, min_weighted_node_degree,
+    cached_property!(get_weighted_minimum_node_degree, Result<f64>, compute_max_and_min_weighted_node_degree, min_weighted_node_degree,
     /// Return the minimum weighted node degree.
     );
 
