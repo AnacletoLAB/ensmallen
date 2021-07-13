@@ -1,5 +1,6 @@
 use super::*;
 use counter::Counter;
+use elias_fano_rust::EliasFano;
 use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
@@ -100,6 +101,36 @@ impl Graph {
     pub fn get_singleton_with_selfloops_node_names(&self) -> Vec<String> {
         self.iter_singleton_nodes_with_selfloops_node_names()
             .collect()
+    }
+
+    /// Returns number of not singleton nodes within the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The graph contains {} not singleton nodes", graph.get_connected_nodes_number());
+    /// ```
+    pub fn get_connected_nodes_number(&self) -> NodeT {
+        self.connected_nodes_number
+    }
+
+    #[cache_property(unique_sources)]
+    /// Returns Elias-Fano data structure with the source nodes.
+    pub fn get_unique_sources(&self) -> EliasFano {
+        let unique_source_nodes_number = self.get_nodes_number()
+            - self.get_singleton_nodes_number()
+            - self.get_trap_nodes_number();
+        let mut elias_fano_unique_sources = EliasFano::new(
+            self.get_nodes_number() as u64,
+            unique_source_nodes_number as usize,
+        )
+        .unwrap();
+        self.iter_node_ids()
+            .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) > 0 })
+            .for_each(|node_id| {
+                elias_fano_unique_sources.push(node_id as u64);
+            });
+        elias_fano_unique_sources
     }
 
     /// Returns density of the graph.

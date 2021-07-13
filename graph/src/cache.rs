@@ -1,3 +1,5 @@
+use elias_fano_rust::EliasFano;
+
 use super::*;
 
 #[derive(Debug, Clone)]
@@ -20,6 +22,7 @@ pub(crate) struct PropertyCache {
     pub(crate) connected_nodes_number: Option<NodeT>,
     pub(crate) unique_directed_edges_number: Option<EdgeT>,
     pub(crate) connected_nodes: Option<ConcurrentBitVec>,
+    pub(crate) unique_sources: Option<EliasFano>
 }
 
 impl Default for PropertyCache {
@@ -43,6 +46,7 @@ impl Default for PropertyCache {
             connected_nodes_number: None,
             connected_nodes: None,
             unique_directed_edges_number: None,
+            unique_sources: None
         }
     }
 }
