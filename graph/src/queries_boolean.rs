@@ -29,7 +29,7 @@ impl Graph {
     /// If the given node ID does not exists in the graph this method will panic.
     pub unsafe fn is_unchecked_disconnected_from_node_id(&self, node_id: NodeT) -> bool {
         self.is_unchecked_singleton_from_node_id(node_id)
-            || self.is_singleton_with_selfloops_from_node_id(node_id)
+            || self.is_unchecked_singleton_with_selfloops_from_node_id(node_id)
     }
 
     /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
@@ -55,10 +55,24 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_id`: NodeT - The node to be checked for.
-    pub fn is_singleton_with_selfloops_from_node_id(&self, node_id: NodeT) -> bool {
-        self.singleton_nodes_with_selfloops
-            .as_ref()
-            .map_or(false, |snsls| snsls.contains(node_id))
+    pub unsafe fn is_unchecked_singleton_with_selfloops_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> bool {
+        self.has_singleton_nodes_with_selfloops()
+            && self
+                .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .all(|dst| node_id == dst)
+    }
+
+    /// Returns boolean representing if given node is a singleton with self-loops.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - The node to be checked for.
+    pub unsafe fn is_singleton_with_selfloops_from_node_id(&self, node_id: NodeT) -> Result<bool> {
+        self.validate_node_id(node_id).map(|node_id| unsafe {
+            self.is_unchecked_singleton_with_selfloops_from_node_id(node_id)
+        })
     }
 
     /// Returns boolean representing if given node is a singleton.

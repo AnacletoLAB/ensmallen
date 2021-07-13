@@ -548,7 +548,8 @@ impl Graph {
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
-                let singleton_selfloop = self.is_singleton_with_selfloops_from_node_id(src);
+                let singleton_selfloop =
+                    unsafe { self.is_unchecked_singleton_with_selfloops_from_node_id(src) };
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));

@@ -154,7 +154,7 @@ impl Graph {
             // If selfloops need to be filtered out.
             (!filter_selfloops || src != dst) &&
             // If singleton nodes with selfloops need to be filtered out
-            (!filter_singleton_nodes_with_selfloop || src != dst || !self.is_singleton_with_selfloops_from_node_id(*src)) &&
+            (!filter_singleton_nodes_with_selfloop || src != dst || unsafe{!self.is_unchecked_singleton_with_selfloops_from_node_id(*src)}) &&
             // If the allow edge types set was provided
             edge_node_ids_to_keep.as_ref().map_or(true, |edge_node_ids| edge_node_ids.contains(&(*src, *dst)) || !self.is_directed() && edge_node_ids.contains(&(*dst, *src))) &&
             // If the deny edge types set was provided
@@ -201,9 +201,9 @@ impl Graph {
                 && !(filter_singleton_nodes && unsafe{self.is_unchecked_singleton_from_node_id(*node_id)})
                 && !(filter_singleton_nodes
                     && filter_selfloops
-                    && self.is_singleton_with_selfloops_from_node_id(*node_id)) &&
+                    && unsafe{self.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)}) &&
                 // If singleton nodes with selfloops need to be filtered out
-                (!filter_singleton_nodes_with_selfloop || !self.is_singleton_with_selfloops_from_node_id(*node_id))
+                (!filter_singleton_nodes_with_selfloop || unsafe{!self.is_unchecked_singleton_with_selfloops_from_node_id(*node_id)})
         };
 
         let mut edges_number = self.get_directed_edges_number();

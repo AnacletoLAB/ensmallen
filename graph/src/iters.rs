@@ -188,16 +188,18 @@ impl Graph {
 
     /// Return iterator on the singleton with selfloops node IDs of the graph.
     pub fn iter_singleton_nodes_with_selfloops_node_ids(&self) -> impl Iterator<Item = NodeT> + '_ {
-        self.iter_node_ids()
-            .filter(move |&node_id| self.is_singleton_with_selfloops_from_node_id(node_id))
+        self.iter_node_ids().filter(move |&node_id| unsafe {
+            self.is_unchecked_singleton_with_selfloops_from_node_id(node_id)
+        })
     }
 
     /// Return parallell iterator on the singleton with selfloops node IDs of the graph.
     pub fn par_iter_singleton_nodes_with_selfloops_node_ids(
         &self,
     ) -> impl ParallelIterator<Item = NodeT> + '_ {
-        self.par_iter_node_ids()
-            .filter(move |&node_id| self.is_singleton_with_selfloops_from_node_id(node_id))
+        self.par_iter_node_ids().filter(move |&node_id| unsafe {
+            self.is_unchecked_singleton_with_selfloops_from_node_id(node_id)
+        })
     }
 
     /// Return iterator on the singleton with selfloops node names of the graph.

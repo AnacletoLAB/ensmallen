@@ -683,8 +683,8 @@ impl Graph {
 
                         // find the first not explored node (this is guardanteed to be in a new component)
                         if self.has_disconnected_nodes()
-                            && (unsafe{self.is_unchecked_singleton_from_node_id(src)}
-                                || self.is_singleton_with_selfloops_from_node_id(src))
+                            && (unsafe{self.is_unchecked_singleton_from_node_id(src)
+                                || self.is_unchecked_singleton_with_selfloops_from_node_id(src)})
                         {
                             // We set singletons as self-loops for now.
                             unsafe {
