@@ -24,10 +24,7 @@ impl Graph {
     /// # Raises
     /// * If the graph does not have edges.
     /// * If the graph is a multigraph.
-    pub fn set_inplace_all_edge_types<S: Into<String>>(
-        &mut self,
-        edge_type: S,
-    ) -> Result<&Graph> {
+    pub fn set_inplace_all_edge_types<S: Into<String>>(&mut self, edge_type: S) -> Result<&Graph> {
         // If the graph does not have edges, it does not make sense to
         // try and set the edge types.
         self.must_have_edges()?;
@@ -49,9 +46,7 @@ impl Graph {
             )
             .to_string()
         })?;
-        let mut vocabulary = Vocabulary::default();
-        vocabulary.insert(edge_type.into())?;
-        vocabulary.build_reverse_mapping()?;
+        let mut vocabulary = Vocabulary::from_reverse_map(vec![edge_type.into()])?;
         let edge_types = EdgeTypeVocabulary::from_structs(
             vec![Some(0); self.get_directed_edges_number() as usize],
             vocabulary,
@@ -81,14 +76,9 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_type`: S - The node type to assing to all the nodes.
-    pub fn set_inplace_all_node_types<S: Into<String>>(
-        &mut self,
-        node_type: S,
-    ) -> Result<&Graph> {
+    pub fn set_inplace_all_node_types<S: Into<String>>(&mut self, node_type: S) -> Result<&Graph> {
         self.must_have_nodes()?;
-        let mut vocabulary = Vocabulary::default();
-        vocabulary.insert(node_type.into())?;
-        vocabulary.build_reverse_mapping()?;
+        let mut vocabulary = Vocabulary::from_reverse_map(vec![node_type.into()])?;
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); self.get_nodes_number() as usize],
             vocabulary,
@@ -298,10 +288,7 @@ impl Graph {
     /// * If the graph does not have node types.
     /// * If the given node type name does not exists in the graph.
     ///
-    pub fn remove_inplace_node_type_name(
-        &mut self,
-        node_type_name: &str,
-    ) -> Result<&Graph> {
+    pub fn remove_inplace_node_type_name(&mut self, node_type_name: &str) -> Result<&Graph> {
         let node_type_id = self.get_node_type_id_from_node_type_name(node_type_name)?;
         self.remove_inplace_node_type_ids(vec![node_type_id])?;
         Ok(self)
@@ -369,10 +356,7 @@ impl Graph {
     /// * If the graph does not have edge types.
     /// * If the given edge type name does not exists in the graph.
     ///
-    pub fn remove_inplace_edge_type_name(
-        &mut self,
-        edge_type_name: &str,
-    ) -> Result<&mut Graph> {
+    pub fn remove_inplace_edge_type_name(&mut self, edge_type_name: &str) -> Result<&mut Graph> {
         let edge_type_id = self
             .get_edge_type_id_from_edge_type_name(Some(edge_type_name))?
             .unwrap();
