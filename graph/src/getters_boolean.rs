@@ -339,6 +339,7 @@ impl Graph {
         self.get_parallel_edges_number() > 0
     }
 
+    #[cache_property(nodes_sorted_by_decreasing_outbound_node_degree)]
     /// Returns whether the node IDs are sorted by decreasing outbound node degree.
     ///
     /// # Implications
@@ -348,8 +349,6 @@ impl Graph {
     /// is able to better approximate a complete Softmax by sampling
     /// the output labels using a Zipfian distribution, which is what
     /// most graphs follow.
-    ///
-    /// TODO! add cache!
     pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
         self.par_iter_node_ids().all(|node_id| unsafe {
             // If this is the first node, we just

@@ -292,16 +292,6 @@ impl Graph {
         Ok(weighted_degrees[(self.get_nodes_number() / 2) as usize])
     }
 
-    /// Returns maximum unweighted node degree of the graph.
-    ///
-    /// # Safety
-    /// The method will return an undefined value (0) when the graph
-    /// does not contain nodes. In those cases the value is not properly
-    /// defined.
-    pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
-        self.max_node_degree
-    }
-
     /// Returns maximum weighted node degree of the graph.
     ///
     /// # Safety
@@ -353,6 +343,7 @@ impl Graph {
             .map(|_| unsafe { self.get_unchecked_maximum_node_degree() })
     }
 
+    #[cache_property(most_central_node_id)]
     /// Returns maximum node degree of the graph.
     ///
     /// # Safety
@@ -366,6 +357,7 @@ impl Graph {
     pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
         self.most_central_node_id
     }
+
     /// Returns maximum node degree of the graph.
     ///
     /// # Example
@@ -376,16 +368,6 @@ impl Graph {
     pub fn get_most_central_node_id(&self) -> Result<NodeT> {
         self.must_have_nodes()
             .map(|_| unsafe { self.get_unchecked_most_central_node_id() as NodeT })
-    }
-
-    /// Returns minimum node degree of the graph.
-    ///
-    /// # Safety
-    /// The method will return an undefined value (NodeT::MAX) when the graph
-    /// does not contain nodes. In those cases the value is not properly
-    /// defined.
-    pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
-        self.min_node_degree
     }
 
     /// Returns minimum weighted node degree of the graph.
