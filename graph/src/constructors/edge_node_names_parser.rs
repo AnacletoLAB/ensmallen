@@ -98,52 +98,15 @@ impl EdgeNodeNamesParser {
         value: Result<(usize, (String, String, E, W))>,
     ) -> Result<(usize, (NodeT, NodeT, E, W))> {
         let (line_number, (src_name, dst_name, edge_type_name, weight)) = value?;
-        let vocabulary = self.get_immutable();
-        let src_node_id = match src_name.parse::<NodeT>() {
-            Ok(src) => Ok(src),
-            Err(_) => Err(format!(
-                concat!(
-                    "The given source node name {:?} ",
-                    "cannot be parsed to an integer value."
-                ),
-                src_name
-            )),
-        }?;
-        let dst_node_id = match dst_name.parse::<NodeT>() {
-            Ok(dst) => Ok(dst),
-            Err(_) => Err(format!(
-                concat!(
-                    "The given destination node name {:?} ",
-                    "cannot be parsed to an integer value."
-                ),
-                dst_name
-            )),
-        }?;
-        if vocabulary.len() as NodeT <= src_node_id {
-            return Err(format!(
-                concat!(
-                    "The given source node name {:?} ",
-                    "has a value greater than the number ",
-                    "of provided nodes {}."
-                ),
-                src_node_id,
-                vocabulary.len()
-            ));
-        }
-        if vocabulary.len() as NodeT <= dst_node_id {
-            return Err(format!(
-                concat!(
-                    "The given destination node name {:?} ",
-                    "has a value greater than the number ",
-                    "of provided nodes {}."
-                ),
-                dst_node_id,
-                vocabulary.len()
-            ));
-        }
+        let vocabulary = self.get_mutable_write();
         Ok((
             line_number,
-            (src_node_id, dst_node_id, edge_type_name, weight),
+            (
+                vocabulary.0.insert(src_name)?.0,
+                vocabulary.0.insert(dst_name)?.0,
+                edge_type_name,
+                weight,
+            ),
         ))
     }
 

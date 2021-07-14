@@ -343,7 +343,7 @@ impl EdgeFileReader {
     /// # Arguments
     /// * may_have_duplicates: Option<bool> - Whether there may be duplicates in the provided edge list.
     ///
-    pub(crate) fn set_may_have_duplicates(
+    pub fn set_may_have_duplicates(
         mut self,
         may_have_duplicates: Option<bool>,
     ) -> EdgeFileReader {
@@ -610,7 +610,7 @@ impl EdgeFileReader {
                 Ok((_, (source_node_name, destination_node_name, _, _))) => {
                     !self.skip_selfloops || source_node_name != destination_node_name
                 }
-                Err(e) => true,
+                Err(_) => true,
             }))
     }
 }

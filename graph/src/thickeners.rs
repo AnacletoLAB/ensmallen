@@ -103,8 +103,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(
-                self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
-                    .map(|(_, src_node_id, dst_node_id, edge_type, weight)| {
+                self.par_iter_directed_edge_node_ids_and_edge_type_id()
+                    .map(|(_, src_node_id, dst_node_id, edge_type)| {
                         (0, (src_node_id, dst_node_id, edge_type, WeightT::NAN))
                     })
                     .chain(

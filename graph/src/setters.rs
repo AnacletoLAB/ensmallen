@@ -46,7 +46,7 @@ impl Graph {
             )
             .to_string()
         })?;
-        let mut vocabulary = Vocabulary::from_reverse_map(vec![edge_type.into()])?;
+        let vocabulary = Vocabulary::from_reverse_map(vec![edge_type.into()])?;
         let edge_types = EdgeTypeVocabulary::from_structs(
             vec![Some(0); self.get_directed_edges_number() as usize],
             vocabulary,
@@ -78,7 +78,7 @@ impl Graph {
     /// * `node_type`: S - The node type to assing to all the nodes.
     pub fn set_inplace_all_node_types<S: Into<String>>(&mut self, node_type: S) -> Result<&Graph> {
         self.must_have_nodes()?;
-        let mut vocabulary = Vocabulary::from_reverse_map(vec![node_type.into()])?;
+        let vocabulary = Vocabulary::from_reverse_map(vec![node_type.into()])?;
         let node_types = NodeTypeVocabulary::from_structs(
             vec![Some(vec![0]); self.get_nodes_number() as usize],
             vocabulary,
