@@ -1,5 +1,6 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
+use indicatif::ProgressIterator;
 use num_traits::Zero;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
@@ -1212,28 +1213,50 @@ impl Graph {
         // Since this vector is generally expected to be quite small,
         // we proceed with a non-parallell approach to avoid spinning up
         // threads for no good reason.
-        node_ids_and_distances.sort_by(|(a, _), &(b, _)| b.cmp(a));
+        node_ids_and_distances.sort_by(|(_, a), &(_, b)| b.cmp(a));
+
+        // Fold it into groups
+        let mut current_distance = node_ids_and_distances[0].1;
+        let mut distance_groups: Vec<(NodeT, Vec<NodeT>)> = vec![(current_distance, Vec::new())];
+        for (node_id, distance) in node_ids_and_distances {
+            if current_distance == distance {
+                distance_groups.last_mut().unwrap().1.push(node_id);
+            } else {
+                current_distance = distance;
+                distance_groups.push((distance, vec![node_id]));
+            }
+        }
 
         // Put tentative diameter into an AtomicU32
         let tentative_diameter = AtomicU32::new(tentative_diameter);
 
         let pb = get_loading_bar(
-            verbose.unwrap_or(true) && node_ids_and_distances.len() > 1,
-            "Computing diameter",
-            node_ids_and_distances.len(),
+            verbose.unwrap_or(true) && distance_groups.len() > 1,
+            "Computing diameter groups",
+            distance_groups.len(),
         );
 
         // for each possible node of the outer crown compute the maximum path
         // from there, this way we can find the exact diameter
-        node_ids_and_distances
-            .into_par_iter()
+        distance_groups
+            .into_iter()
             .progress_with(pb)
-            .for_each(|(distance, node_id)| unsafe {
+            .for_each(|(distance, node_ids)| unsafe {
                 // If we have not yet reached the bound
                 if tentative_diameter.load(Ordering::Relaxed) < distance * 2 {
+                    let pb2 = get_loading_bar(
+                        verbose.unwrap_or(true) && node_ids.len() > 1,
+                        &format!("Computing diameter of nodes at distance {}", distance),
+                        node_ids.len(),
+                    );
                     // We compute the new candidate diameter.
                     tentative_diameter.fetch_max(
-                        self.get_unchecked_eccentricity_from_node_id(node_id),
+                        node_ids
+                            .into_par_iter()
+                            .progress_with(pb2)
+                            .map(|node_id| self.get_unchecked_eccentricity_from_node_id(node_id))
+                            .max()
+                            .unwrap(),
                         Ordering::Relaxed,
                     );
                 }

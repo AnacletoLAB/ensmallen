@@ -1,5 +1,6 @@
 use super::*;
 use elias_fano_rust::{ConcurrentEliasFanoBuilder, EliasFano};
+use num_traits::Zero;
 use rayon::prelude::*;
 use std::cmp::Ordering;
 
@@ -80,10 +81,6 @@ macro_rules! parse_unsorted_string_edge_list {
     ) => {{
         // Create the edge type parser
         let mut edge_type_parser = EdgeTypeParser::new($edge_types_vocabulary);
-        // Creating directly the edge list, as the value are SWORN
-        // to be sorted and correct and complete.
-        // Get the number of nodes and edges.
-        let nodes_number = $nodes.len();
         // Create the node parser
         let mut node_parser = EdgeNodeNamesParser::new($nodes);
         // If the provided edge list is either
@@ -114,6 +111,8 @@ macro_rules! parse_unsorted_string_edge_list {
         }?;
         // Assigning to variable as patch
         let duplicates = $duplicates;
+        // Recovering the nodes
+        let nodes = node_parser.into_inner();
         // Build the actual numeric edge lists
         let (
             edges,
@@ -122,17 +121,22 @@ macro_rules! parse_unsorted_string_edge_list {
             ),*
         ) = parse_unsorted_edge_list!(
             unsorted_edge_list,
-            nodes_number,
+            nodes.len(),
             ($($input_tuple),*),
             ($($results),*),
             ($($default),*),
             duplicates,
         );
 
+        let mut edge_types_vocabulary = edge_type_parser.into_inner();
+        if edge_types_vocabulary.is_empty() {
+            edge_types_vocabulary.build()?;
+        }
+
         (
             edges,
-            node_parser.into_inner(),
-            edge_type_parser.into_inner(),
+            nodes,
+            edge_types_vocabulary,
             $(
                 $results
             ),*
@@ -185,11 +189,16 @@ macro_rules! parse_sorted_string_edge_list {
 
         // Finalizing the edges structure constructor
         let edges = elias_fano_builder.build()?;
+
+        let mut edge_types_vocabulary = edge_type_parser.into_inner();
+        if edge_types_vocabulary.is_empty() {
+            edge_types_vocabulary.build()?;
+        }
         // Return the computed values
         (
             edges,
             node_parser.into_inner(),
-            edge_type_parser.into_inner(),
+            edge_types_vocabulary,
             $(
                 $results.value.into_inner()
             ),*
@@ -291,18 +300,30 @@ fn check_general_edge_constructor_parameters_consistency<I>(
     complete: bool,
     correct: bool,
     edges_number: Option<EdgeT>,
+    nodes_number: NodeT,
     edges_iterator: &Option<I>,
 ) -> Result<()> {
     if sorted && edges_number.is_none() {
         return Err(concat!(
             "It is not possible to build a sorted edge list ",
-            "without knowing at least a rough estimate of the ",
-            "number of edges in the edge list.\n",
-            "This estimate must be at least within a ",
-            "binary exponentiation range, that is between ",
-            "2^{n} and 2^{n+1}."
+            "without knowing the ",
+            "number of edges in the edge list.",
         )
         .to_string());
+    }
+
+    if nodes_number.is_zero()
+        && edges_number
+            .as_ref()
+            .map_or(false, |&edges_number| edges_number > 0)
+    {
+        return Err(format!(
+            concat!(
+                "This graph was parametrized in an impossible way: ",
+                "a non zero number of edges {:?} and a zero nodes {:?}."
+            ),
+            edges_number, nodes_number
+        ));
     }
 
     if sorted && !complete {
@@ -368,6 +389,7 @@ pub(crate) fn parse_string_edges(
         complete,
         correct,
         edges_number,
+        nodes.len() as NodeT,
         &edges_iterator,
     )?;
 
@@ -446,8 +468,8 @@ pub(crate) fn parse_string_edges(
                 edges,
                 nodes,
                 edge_types_vocabulary,
-                Some(edge_type_ids),
-                Some(weights),
+                optionify!(edge_type_ids),
+                optionify!(weights),
             )
         }
         (Some(ei), true, false, true) => {
@@ -458,13 +480,19 @@ pub(crate) fn parse_string_edges(
                 edge_types_vocabulary,
                 edge_types_method,
                 edges_number.unwrap(),
-                (edge_type, weight),
+                (_edge_type, weight),
                 (weight),
                 (weights),
                 (WeightT::NAN),
             );
             // Return the computed values
-            (edges, nodes, edge_types_vocabulary, None, Some(weights))
+            (
+                edges,
+                nodes,
+                edge_types_vocabulary,
+                None,
+                optionify!(weights),
+            )
         }
         (Some(ei), true, true, false) => {
             let (edges, nodes, edge_types_vocabulary, edge_type_ids) = parse_sorted_string_edge_list!(
@@ -474,7 +502,7 @@ pub(crate) fn parse_string_edges(
                 edge_types_vocabulary,
                 edge_types_method,
                 edges_number.unwrap(),
-                (edge_type, weight),
+                (edge_type, _weight),
                 (edge_type),
                 (edge_types),
                 (None),
@@ -484,7 +512,7 @@ pub(crate) fn parse_string_edges(
                 edges,
                 nodes,
                 edge_types_vocabulary,
-                Some(edge_type_ids),
+                optionify!(edge_type_ids),
                 None,
             )
         }
@@ -496,7 +524,7 @@ pub(crate) fn parse_string_edges(
                 edge_types_vocabulary,
                 edge_types_method,
                 edges_number.unwrap(),
-                (edge_type, weight),
+                (_edge_type, _weight),
                 (),
                 (),
                 (),
@@ -525,8 +553,8 @@ pub(crate) fn parse_string_edges(
                 edges,
                 nodes,
                 edge_types_vocabulary,
-                Some(edge_type_ids),
-                Some(weights),
+                optionify!(edge_type_ids),
+                optionify!(weights),
             )
         }
         (Some(ei), false, true, false) => {
@@ -537,7 +565,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
-                (edge_type, weight),
+                (edge_type, _weight),
                 (edge_type),
                 (edge_types),
                 (None),
@@ -550,7 +578,7 @@ pub(crate) fn parse_string_edges(
                 edges,
                 nodes,
                 edge_types_vocabulary,
-                Some(edge_type_ids),
+                optionify!(edge_type_ids),
                 None,
             )
         }
@@ -562,7 +590,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
-                (edge_type, weight),
+                (_edge_type, weight),
                 (weight),
                 (weights),
                 (WeightT::NAN),
@@ -571,7 +599,13 @@ pub(crate) fn parse_string_edges(
                 duplicates,
             );
             // Return the computed values
-            (edges, nodes, edge_types_vocabulary, None, Some(weights))
+            (
+                edges,
+                nodes,
+                edge_types_vocabulary,
+                None,
+                optionify!(weights),
+            )
         }
         (Some(ei), false, false, false) => {
             // Building the edge list
@@ -581,7 +615,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
-                (edge_type, weight),
+                (_edge_type, _weight),
                 (),
                 (),
                 (),
@@ -627,6 +661,7 @@ pub(crate) fn parse_integer_edges(
         complete,
         true,
         edges_number,
+        nodes_number,
         &edges_iterator,
     )?;
 
@@ -651,40 +686,40 @@ pub(crate) fn parse_integer_edges(
                     (None, WeightT::NAN),
                 );
                 // Return the computed values
-                (edges, Some(edge_type_ids), Some(weights))
+                (edges, optionify!(edge_type_ids), optionify!(weights))
             }
             (Some(ei), true, false, true) => {
                 let (edges, weights) = parse_sorted_integer_edge_list!(
                     ei,
                     nodes_number,
                     edges_number.unwrap(),
-                    (edge_type, weight),
+                    (_edge_type, weight),
                     (weight),
                     (weights),
                     (WeightT::NAN),
                 );
                 // Return the computed values
-                (edges, None, Some(weights))
+                (edges, None, optionify!(weights))
             }
             (Some(ei), true, true, false) => {
                 let (edges, edge_type_ids) = parse_sorted_integer_edge_list!(
                     ei,
                     nodes_number,
                     edges_number.unwrap(),
-                    (edge_type, weight),
+                    (edge_type, _weight),
                     (edge_type),
                     (edge_types),
                     (None),
                 );
                 // Return the computed values
-                (edges, Some(edge_type_ids), None)
+                (edges, optionify!(edge_type_ids), None)
             }
             (Some(ei), true, false, false) => {
                 let (edges,) = parse_sorted_integer_edge_list!(
                     ei,
                     nodes_number,
                     edges_number.unwrap(),
-                    (edge_type, weight),
+                    (_edge_type, _weight),
                     (),
                     (),
                     (),
@@ -706,14 +741,14 @@ pub(crate) fn parse_integer_edges(
                     duplicates,
                 );
                 // Return the computed values
-                (edges, Some(edge_type_ids), Some(weights))
+                (edges, optionify!(edge_type_ids), optionify!(weights))
             }
             (Some(ei), false, true, false) => {
                 // Building the edge list
                 let (edges, edge_type_ids) = parse_unsorted_integer_edge_list!(
                     ei,
                     nodes_number,
-                    (edge_type, weight),
+                    (edge_type, _weight),
                     (edge_type),
                     (edge_types),
                     (None),
@@ -722,14 +757,14 @@ pub(crate) fn parse_integer_edges(
                     duplicates,
                 );
                 // Return the computed values
-                (edges, Some(edge_type_ids), None)
+                (edges, optionify!(edge_type_ids), None)
             }
             (Some(ei), false, false, true) => {
                 // Building the edge list
                 let (edges, weights) = parse_unsorted_integer_edge_list!(
                     ei,
                     nodes_number,
-                    (edge_type, weight),
+                    (_edge_type, weight),
                     (weight),
                     (weights),
                     (WeightT::NAN),
@@ -738,14 +773,14 @@ pub(crate) fn parse_integer_edges(
                     duplicates,
                 );
                 // Return the computed values
-                (edges, None, Some(weights))
+                (edges, None, optionify!(weights))
             }
             (Some(ei), false, false, false) => {
                 // Building the edge list
                 let (edges,) = parse_unsorted_integer_edge_list!(
                     ei,
                     nodes_number,
-                    (edge_type, weight),
+                    (_edge_type, _weight),
                     (),
                     (),
                     (),

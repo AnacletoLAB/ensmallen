@@ -1,5 +1,5 @@
 extern crate graph;
-use graph::{EdgeFileReader, Graph};
+use graph::{EdgeFileReader, Graph, utils::get_loading_bar};
 use std::collections::HashMap;
 
 #[test]
@@ -26,7 +26,10 @@ fn test_components_size() {
     .unwrap();
 
     // THIS IS NOT DETERMINISTIC
-    for _ in 0..10_000 {
+    let n = 10_000;
+    let pb = get_loading_bar(true, "Executing connected components test", n);
+    for _ in 0..n {
+        pb.inc(1);
         let (components, _components_number, smallest, biggest) =
             g.connected_components(None).unwrap();
         assert!(

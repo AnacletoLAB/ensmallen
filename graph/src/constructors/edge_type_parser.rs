@@ -22,12 +22,9 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                Some(
-                    vocabulary
-                        .0
-                        .insert(unsafe { edge_type_name.unwrap_unchecked() })?
-                        .0,
-                ),
+                edge_type_name.map_or(Ok::<_, String>(None), |etn| {
+                    Ok(Some(vocabulary.0.insert(etn)?.0))
+                })?,
                 weight,
             ),
         ))
@@ -45,11 +42,7 @@ impl EdgeTypeParser {
                 (
                     src,
                     dst,
-                    Some(
-                        vocabulary
-                            .0
-                            .unchecked_insert(edge_type_name.unwrap_unchecked()),
-                    ),
+                    edge_type_name.map(|etn| vocabulary.0.unchecked_insert(etn)),
                     weight,
                 ),
             ))
@@ -62,7 +55,7 @@ impl EdgeTypeParser {
     ) -> Result<(usize, (T, T, Option<EdgeTypeT>, W))> {
         let (line_number, (src, dst, edge_type_name, weight)) = value?;
         let vocabulary = self.get_immutable();
-        let edge_type_name = unsafe { &edge_type_name.unwrap_unchecked() };
+        let edge_type_name = { &edge_type_name.unwrap() };
         Ok((
             line_number,
             (
@@ -96,7 +89,7 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                vocabulary.get(&unsafe { edge_type_name.unwrap_unchecked() }),
+                vocabulary.get(&{ edge_type_name.unwrap() }),
                 weight,
             ),
         ))
@@ -108,7 +101,7 @@ impl EdgeTypeParser {
     ) -> Result<(usize, (T, T, Option<EdgeTypeT>, W))> {
         let (line_number, (src, dst, edge_type_name, weight)) = value?;
         let vocabulary = self.get_immutable();
-        let edge_type_id = match unsafe { edge_type_name.clone().unwrap_unchecked() }.parse::<EdgeTypeT>() {
+        let edge_type_id = match { edge_type_name.clone().unwrap() }.parse::<EdgeTypeT>() {
             Ok(edge_type_id) => Ok::<_, String>(edge_type_id),
             Err(_) => Err::<_, String>(format!(
                 concat!(
@@ -142,11 +135,7 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                Some(
-                    unsafe { edge_type_name.unwrap_unchecked() 
-                        .parse::<EdgeTypeT>()
-                        .unwrap_unchecked()},
-                ),
+                Some(edge_type_name.unwrap().parse::<EdgeTypeT>().unwrap()),
                 weight,
             ),
         ))

@@ -252,7 +252,7 @@ impl Graph {
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
                     .progress_with(pb)
                     .filter_map(|(_, src, dst, edge_type, weight)| {
-                        if src == 1 || dst == 1 || src == dst {
+                        if src == 0 || dst == 0 || src == dst {
                             Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
                         } else {
                             None

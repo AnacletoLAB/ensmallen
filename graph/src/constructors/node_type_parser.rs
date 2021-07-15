@@ -95,7 +95,7 @@ impl NodeTypeParser {
                 node_name,
                 node_type_names.map(|ntns| {
                     ntns.into_iter()
-                        .map(|ntn| unsafe { vocabulary.get(&ntn).unwrap_unchecked() })
+                        .map(|ntn| vocabulary.get(&ntn).unwrap())
                         .collect::<Vec<NodeTypeT>>()
                 }),
             ),
@@ -146,9 +146,9 @@ impl NodeTypeParser {
         value: Result<(usize, (N, Option<Vec<String>>))>,
     ) -> Result<(usize, (N, Option<Vec<NodeTypeT>>))> {
         let (line_number, (node_name, node_type_names)) = value?;
-        let node_type_ids = node_type_names.map(|ntns| unsafe {
+        let node_type_ids = node_type_names.map(|ntns| {
             ntns.into_iter()
-                .map(|node_type_name| node_type_name.parse::<NodeTypeT>().unwrap_unchecked())
+                .map(|node_type_name| node_type_name.parse::<NodeTypeT>().unwrap())
                 .collect::<Vec<NodeTypeT>>()
         });
         Ok((line_number, (node_name, node_type_ids)))

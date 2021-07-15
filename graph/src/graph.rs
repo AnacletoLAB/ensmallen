@@ -1,5 +1,8 @@
 //! A graph representation optimized for executing random walks on huge graphs.
+use std::sync::atomic::AtomicU8;
+
 use super::*;
+use bitvec::prelude::*;
 use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
 
@@ -80,6 +83,14 @@ pub struct Graph {
     pub(crate) sources: Option<Vec<NodeT>>,
     /// Vector of cumulative_node_degrees to execute fast walks if required.
     pub(crate) cumulative_node_degrees: Option<Vec<EdgeT>>,
+    /// Option of Elias-Fano of unique sources.
+    /// When it is None it means that ALL nodes are sources.
+    pub(crate) unique_sources: Option<EliasFano>,
+    /// Option of bitvec containing connected nodes.
+    /// When it is None it means that ALL nodes are connected, i.e. not singleton or singletons with selfloops.
+    pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
+    /// Number of connected nodes in the graph.
+    pub(crate) connected_nodes_number: NodeT,
 
     // /////////////////////////////////////////////////////////////////////////
     pub(crate) cache: ClonableUnsafeCell<PropertyCache>,
@@ -96,9 +107,10 @@ impl Graph {
         weights: Option<Vec<WeightT>>,
         name: S,
     ) -> Graph {
-        let node_bits = get_node_bits(nodes.len() as NodeT);
+        let nodes_number = nodes.len();
+        let node_bits = get_node_bits(nodes_number as NodeT);
         let node_bit_mask = (1 << node_bits) - 1;
-        Graph {
+        let mut graph = Graph {
             directed,
             edges,
             node_bits,
@@ -112,7 +124,62 @@ impl Graph {
             cumulative_node_degrees: None,
             name: name.into(),
             cache: ClonableUnsafeCell::default(),
+            unique_sources: None,
+            connected_nodes: None,
+            connected_nodes_number: nodes_number as NodeT,
+        };
+        let connected_nodes = graph.get_connected_nodes();
+        let connected_nodes_number = connected_nodes.count_ones() as NodeT;
+        // If there are less connected nodes than the number of nodes
+        // in the graph, it means that there must be some singleton or singleton with selfloops.
+        if connected_nodes_number < graph.get_nodes_number() {
+            graph.connected_nodes = Some(connected_nodes);
+            graph.connected_nodes_number = connected_nodes_number;
+            graph.unique_sources = Some(graph.get_unique_sources());
         }
+        graph
+    }
+
+    /// Returns Elias-Fano data structure with the source nodes.
+    fn get_unique_sources(&self) -> EliasFano {
+        let unique_source_nodes_number = self.get_nodes_number()
+            - self.get_singleton_nodes_number()
+            - self.get_trap_nodes_number();
+        let mut elias_fano_unique_sources = EliasFano::new(
+            self.get_nodes_number() as u64,
+            unique_source_nodes_number as usize,
+        )
+        .unwrap();
+        self.iter_node_ids()
+            .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) > 0 })
+            .for_each(|node_id| {
+                elias_fano_unique_sources.unchecked_push(node_id as u64);
+            });
+        elias_fano_unique_sources
+    }
+
+    /// Return bitvector containing nodes as true when they have incoming nodes.
+    fn get_connected_nodes(&self) -> BitVec<Lsb0, u8> {
+        let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_nodes_number() as usize];
+        let thread_shared_connected_nodes = ThreadDataRaceAware {
+            value: std::cell::UnsafeCell::new(&mut connected_nodes),
+        };
+        // Compute in parallel the bitvector of all the nodes that have incoming edges
+        self.par_iter_node_ids().for_each(|node_id| unsafe {
+            let connected_nodes = thread_shared_connected_nodes.value.get();
+            let mut is_connected = false;
+            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                .filter(|&dst_id| node_id != dst_id)
+                .for_each(|dst_id| {
+                    is_connected = true;
+                    *(*connected_nodes).get_unchecked_mut(dst_id as usize) = true;
+                });
+            if is_connected {
+                *(*connected_nodes).get_unchecked_mut(node_id as usize) = true;
+            }
+        });
+
+        unsafe { std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(connected_nodes) }
     }
 
     /// Return whether given graph has any edge overlapping with current graph.

@@ -439,12 +439,11 @@ impl Graph {
     /// # Safety
     /// If the given source node ID does not exist in the current graph the method will panic.
     pub unsafe fn get_unchecked_unique_source_node_id(&self, source_id: NodeT) -> NodeT {
-        // If there are no singletons or trap nodes in the graph
-        if !self.has_singleton_nodes() && !self.has_trap_nodes() {
-            source_id
-        } else {
-            self.get_unique_sources().unchecked_select(source_id as u64) as NodeT
-        }
+        self.unique_sources
+            .as_ref()
+            .map_or(source_id, |unique_sources| {
+                unique_sources.unchecked_select(source_id as u64) as NodeT
+            })
     }
 
     /// Return the src, dst, edge type of a given edge ID.

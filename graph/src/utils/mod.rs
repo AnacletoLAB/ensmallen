@@ -6,10 +6,7 @@ mod argmax_argmin;
 pub use argmax_argmin::*;
 
 mod clonable_unsafe_cell;
-pub use clonable_unsafe_cell::*;
-
-mod concurrent_bitvec;
-pub use concurrent_bitvec::*;
+pub(crate) use clonable_unsafe_cell::*;
 
 #[macro_export]
 /// Take a vector and make it a None if its empty, Some(vector) otherwise

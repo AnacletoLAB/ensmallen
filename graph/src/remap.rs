@@ -91,9 +91,9 @@ impl Graph {
                 self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
                     .progress_with(pb_edges)
                     .map(
-                        |(edge_id, _, src_name, _, dst_name, _, edge_type_name, weight)| {
+                        |(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
                             Ok((
-                                edge_id as usize,
+                                0,
                                 (
                                     src_name,
                                     dst_name,
@@ -109,10 +109,10 @@ impl Graph {
             Some(true),
             Some(true),
             Some(false),
-            Some(true),
+            Some(false),
             Some(self.get_directed_edges_number()),
-            Some(false),
-            Some(false),
+            None,
+            None,
             self.get_name(),
         )
         .unwrap()

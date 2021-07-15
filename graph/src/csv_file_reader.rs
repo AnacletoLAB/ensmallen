@@ -186,8 +186,11 @@ impl CSVFileReader {
                                 line_number, self.separator, number_of_elements_per_line
                             ));
                         }
-                        // TODO! Investigate how to avoid this clone!
-                        elements[i] = Some(term.to_string());
+                        elements[i] = if term.is_empty(){
+                            None
+                        } else {
+                            Some(term.to_owned())
+                        };
                     }
                     Ok((line_number, elements))
                 }

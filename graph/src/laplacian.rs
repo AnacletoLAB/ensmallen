@@ -1,4 +1,5 @@
 use indicatif::ParallelProgressIterator;
+use num_traits::Zero;
 use rayon::iter::ParallelIterator;
 
 use crate::constructors::build_graph_from_integers;
@@ -10,11 +11,15 @@ impl Graph {
     /// Returns unweighted laplacian transformation of the graph.
     ///
     /// # Arguments
+    /// * `get_edge_weight`: fn(&Graph, NodeT, NodeT) -> WeightT - The closure providing the value for the normal edge weight.
+    /// * `get_selfloop_edge_weight`: fn(&Graph, NodeT) -> WeightT - The closure providing the value for the normal selfloop weight.
+    /// * `directed`: bool - Whether to create the graph as directed and undirected.
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph. By default, true.
     fn get_transformed_graph(
         &self,
-        edge_value: fn(&Graph, NodeT, NodeT) -> WeightT,
-        selfloop_value: fn(&Graph, NodeT) -> WeightT,
+        get_edge_weight: fn(&Graph, NodeT, NodeT) -> WeightT,
+        get_selfloop_edge_weight: fn(&Graph, NodeT) -> WeightT,
+        directed: bool,
         verbose: Option<bool>,
     ) -> Graph {
         let verbose = verbose.unwrap_or(true);
@@ -46,9 +51,9 @@ impl Graph {
                                 dst,
                                 edge_type,
                                 if src == dst {
-                                    selfloop_value(&self, src)
+                                    get_selfloop_edge_weight(&self, src)
                                 } else {
-                                    edge_value(&self, src, dst)
+                                    get_edge_weight(&self, src, dst)
                                 },
                             ),
                         )
@@ -57,12 +62,16 @@ impl Graph {
                         self.par_iter_node_ids()
                             .progress_with(selfloop_progress_bar)
                             .filter(|&node_id| !self.has_selfloop_from_node_id(node_id))
-                            .map(|node_id| {
-                                (
+                            .filter_map(|node_id| {
+                                let weight = get_selfloop_edge_weight(&self, node_id);
+                                if weight.is_zero() {
+                                    return None;
+                                }
+                                Some((
                                     // The number of the edge is irrelevant because we cannot load this as sorted.
                                     0,
-                                    (node_id, node_id, None, selfloop_value(&self, node_id)),
-                                )
+                                    (node_id, node_id, None, weight),
+                                ))
                             }),
                     ),
             ),
@@ -70,7 +79,7 @@ impl Graph {
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             true,
-            self.is_directed(),
+            directed,
             Some(true),
             Some(false),
             Some(false),
@@ -90,6 +99,7 @@ impl Graph {
             |graph, node_id| unsafe {
                 graph.get_unchecked_node_degree_from_node_id(node_id) as WeightT
             },
+            self.is_directed(),
             verbose,
         )
     }
@@ -107,6 +117,7 @@ impl Graph {
                 -1.0 / unsafe { graph.get_unchecked_node_degree_from_node_id(src) as WeightT }
             },
             |_, _| 1.0,
+            true,
             verbose,
         )
     }
@@ -133,6 +144,7 @@ impl Graph {
                 }
             },
             |_, _| 1.0,
+            self.is_directed(),
             verbose,
         ))
     }
@@ -159,6 +171,7 @@ impl Graph {
                 }
             },
             |_, _| 1.0,
+            self.is_directed(),
             verbose,
         ))
     }
