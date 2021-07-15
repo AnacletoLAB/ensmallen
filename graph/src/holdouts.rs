@@ -397,6 +397,9 @@ impl Graph {
             .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
             .collect::<Vec<_>>();
 
+        let train_edges_number = train_edge_ids.len();
+        let validation_edges_number = validation_edge_ids.len();
+
         Ok((
             build_graph_from_integers(
                 Some(
@@ -420,7 +423,7 @@ impl Graph {
                 Some(true),
                 Some(false),
                 Some(true),
-                Some(self.get_directed_edges_number() - valid_edges_bitmap.len() as EdgeT),
+                Some(train_edges_number as EdgeT),
                 format!("{} train", self.get_name()),
             )?,
             build_graph_from_integers(
@@ -445,7 +448,7 @@ impl Graph {
                 Some(true),
                 Some(false),
                 Some(true),
-                Some(valid_edges_bitmap.len() as EdgeT),
+                Some(validation_edges_number as EdgeT),
                 format!("{} test", self.get_name()),
             )?,
         ))
@@ -994,6 +997,8 @@ impl Graph {
             .map(|(edge_id, _, _, _, _)| edge_id)
             .collect::<Vec<_>>();
 
+        let selected_edges_number = selected_edge_ids.len() as EdgeT;
+
         let pb3 = get_loading_bar(verbose, "Building subgraph", selected_edge_ids.len());
 
         build_graph_from_integers(
@@ -1018,7 +1023,7 @@ impl Graph {
             Some(true),
             Some(false),
             Some(true),
-            None,
+            Some(selected_edges_number),
             format!("{} subgraph", self.get_name()),
         )
     }

@@ -1,19 +1,5 @@
 //! Ensmallen its an efficient graph manipulation library.
 //!
-//! # Example:
-//!
-//! ```rust
-//! use graph::{EdgeFileReader, Graph};
-//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv",).unwrap()
-//!     .set_separator(Some(",")).unwrap()
-//!     .set_verbose(Some(false))
-//!     .set_numeric_node_ids(Some(true))
-//!     .set_header(Some(false));
-//!  
-//! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6, 6, "Graph").unwrap();
-//!
-//!
-//! ```
 //! # Definitions
 //! * `edge`: an arch between to nodes
 //! * `selfloop`: An edge which source and destination are equal

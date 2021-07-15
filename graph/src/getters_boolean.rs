@@ -23,7 +23,7 @@ impl Graph {
     /// To check if the graph has nodes you can use:
     /// ```rust
     /// # let graph_with_nodes = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// # let empty_graph = graph::test_utilities::load_empty_graph(false);
+    /// # let empty_graph = graph::test_utilities::load_empty_graph(false, "Empty graph");
     /// assert!(graph_with_nodes.has_nodes());
     /// assert!(!empty_graph.has_nodes());
     /// ```
@@ -38,7 +38,7 @@ impl Graph {
     /// To check if the current graph has edges you can use:
     /// ```rust
     /// # let graph_with_edges = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// # let empty_graph = graph::test_utilities::load_empty_graph(false);
+    /// # let empty_graph = graph::build_empty_graph(false, "Empty graph").unwrap();
     /// assert!(graph_with_edges.has_edges());
     /// assert!(!empty_graph.has_edges());
     /// ```
@@ -92,15 +92,6 @@ impl Graph {
     }
 
     /// Returns whether graph has weights that can represent probabilities.
-    ///
-    /// # Example
-    /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(true, true, true, false, false, false);
-    /// assert!(!graph_with_weights.has_edge_weights_representing_probabilities().unwrap());
-    /// let normalized = graph_with_weights.get_weighted_symmetric_normalized_transformed_graph(Some(false)).unwrap();
-    /// assert!(normalized.has_edge_weights_representing_probabilities().unwrap());
-    /// ```
-    ///
     pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool> {
         Ok(self.get_mininum_edge_weight().clone()? > 0.0 && self.get_maximum_edge_weight().clone()? <= 1.0)
     }

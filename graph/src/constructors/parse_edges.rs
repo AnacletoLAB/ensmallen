@@ -112,7 +112,10 @@ macro_rules! parse_unsorted_string_edge_list {
         // Assigning to variable as patch
         let duplicates = $duplicates;
         // Recovering the nodes
-        let nodes = node_parser.into_inner();
+        let mut nodes = node_parser.into_inner();
+        if nodes.is_empty() {
+            nodes.build()?;
+        }
         // Build the actual numeric edge lists
         let (
             edges,
@@ -189,7 +192,10 @@ macro_rules! parse_sorted_string_edge_list {
 
         // Finalizing the edges structure constructor
         let edges = elias_fano_builder.build()?;
-
+        let mut nodes = node_parser.into_inner();
+        if nodes.is_empty() {
+            nodes.build()?;
+        }
         let mut edge_types_vocabulary = edge_type_parser.into_inner();
         if edge_types_vocabulary.is_empty() {
             edge_types_vocabulary.build()?;
@@ -197,7 +203,7 @@ macro_rules! parse_sorted_string_edge_list {
         // Return the computed values
         (
             edges,
-            node_parser.into_inner(),
+            nodes,
             edge_types_vocabulary,
             $(
                 $results.value.into_inner()

@@ -343,10 +343,7 @@ impl EdgeFileReader {
     /// # Arguments
     /// * may_have_duplicates: Option<bool> - Whether there may be duplicates in the provided edge list.
     ///
-    pub fn set_may_have_duplicates(
-        mut self,
-        may_have_duplicates: Option<bool>,
-    ) -> EdgeFileReader {
+    pub fn set_may_have_duplicates(mut self, may_have_duplicates: Option<bool>) -> EdgeFileReader {
         self.reader.may_have_duplicates = may_have_duplicates;
         self
     }
@@ -481,6 +478,18 @@ impl EdgeFileReader {
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> EdgeFileReader {
         if let Some(v) = rows_to_skip {
             self.reader.rows_to_skip = v;
+        }
+        self
+    }
+
+    /// Whether to skip the selfloops.
+    ///
+    /// # Arguments
+    /// * skip_selfloops: Option<bool> - Whether to skip the selfloops.
+    ///
+    pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
+        if let Some(ss) = skip_selfloops {
+            self.skip_selfloops = ss;
         }
         self
     }

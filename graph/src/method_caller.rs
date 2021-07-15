@@ -4,55 +4,6 @@
 //! This is a way to be able to call different functions that acts on the same state
 //! during a parallel iteration. It's conceptually similar to a parallel scan.
 //!
-//! ```rust
-//!
-//!     // implemnet the sturct with context usize
-//!    impl_struct_func!(Funzioni usize);
-//!
-//!    // Implement the methods we want to be abel to call
-//!    // these must use the following primitives to access the context:
-//!    // self.get_mutable_write, self.get_mutable_read, self.get_immutable
-//!    // get_mutable_read and get_immutable are conceptually identical but
-//!    // get_immutable is ~40 times faster, but can be called IFF you have a
-//!    // guarantee that no-one is ever writing to the context.
-//!    impl Funzioni {
-//!        pub fn parse(&mut self, value: usize) -> u8 {
-//!            let c = self.get_mutable_write();
-//!
-//!            *c = c.wrapping_add(1);
-//!            (value.wrapping_add(*c)) as _
-//!        }
-//!
-//!        pub fn check(&mut self, value: usize) -> u8 {
-//!            let c = *self.get_immutable();
-//!            (value.wrapping_add(c)) as _
-//!        }
-//!    }
-//!
-//!    fn main() {
-//!        for x in vec![true, false] {
-//!
-//!            let mut f = Funzioni::new(100);
-//!
-//!            let method_f = if x {
-//!                Funzioni::parse
-//!            } else {
-//!                Funzioni::check
-//!            };
-//!
-//!
-//!            let res: u8 = (0..100_000_000)
-//!                .into_par_iter()
-//!                .map(|x| x as usize)
-//!                .method_caller(method_f, &mut f)
-//!                .sum();
-//!
-//!            println!("{:?}", res);
-//!            println!("{:?}", f.context);
-//!            println!("");
-//!        }
-//!    }
-//! ```
 
 use rayon::iter::plumbing::*;
 use rayon::prelude::*;

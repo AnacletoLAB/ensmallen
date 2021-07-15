@@ -1076,7 +1076,7 @@ impl Graph {
 
     /// Return number of edges that have multigraph syblings.
     pub fn get_parallel_edges_number(&self) -> EdgeT {
-        self.get_directed_edges_number() - self.get_unique_edges_number()
+        self.get_directed_edges_number() - self.get_unique_directed_edges_number()
     }
 
     /// Return vector with node cumulative_node_degrees, that is the comulative node degree.

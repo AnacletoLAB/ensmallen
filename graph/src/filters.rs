@@ -148,7 +148,7 @@ impl Graph {
                     true
                 } else {
                     let (last_src, last_dst) = unsafe {self.get_unchecked_node_ids_from_edge_id(edge_id-1)};
-                    last_src == *src && last_dst == *dst
+                    last_src != *src || last_dst != *dst
                 }
             }) &&
             // If selfloops need to be filtered out.

@@ -442,16 +442,6 @@ impl Graph {
     #[no_binding]
     /// Raises an error if the graph does not have weights.
     ///
-    /// # Example
-    /// In order to validate a graph instance, you can use:
-    ///
-    /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(true, true, true, false, false, false);
-    /// let normalized = graph_with_weights.get_weighted_symmetric_normalized_transformed_graph(Some(false)).unwrap();
-    /// assert!(graph_with_weights.must_have_edge_weights_representing_probabilities().is_err());
-    /// assert!(normalized.must_have_edge_weights_representing_probabilities().is_ok());
-    /// ```
-    ///
     /// # Raises
     /// * If the graph does not have edge weights.
     pub fn must_have_edge_weights_representing_probabilities(
@@ -511,7 +501,7 @@ impl Graph {
     ///
     /// ```rust
     /// # let graph_with_edges = graph::test_utilities::load_ppi(false, false, true, true, false, false);
-    /// # let graph_without_edges = graph::test_utilities::load_empty_graph(false);
+    /// # let graph_without_edges = graph::build_empty_graph(false, "Empty graph").unwrap();
     /// assert!(graph_with_edges.must_have_edges().is_ok());
     /// assert!(graph_without_edges.must_have_edges().is_err());
     /// ```
@@ -532,7 +522,7 @@ impl Graph {
     ///
     /// ```rust
     /// # let graph_with_nodes = graph::test_utilities::load_ppi(false, false, true, true, false, false);
-    /// # let graph_without_nodes = graph::test_utilities::load_empty_graph(false);
+    /// # let graph_without_nodes = graph::build_empty_graph(false, "Empty graph").unwrap();
     /// assert!(graph_with_nodes.must_have_nodes().is_ok());
     /// assert!(graph_without_nodes.must_have_nodes().is_err());
     /// ```

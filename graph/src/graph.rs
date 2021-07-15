@@ -7,45 +7,6 @@ use elias_fano_rust::EliasFano;
 use rayon::prelude::*;
 
 /// A graph representation optimized for executing random walks on huge graphs.
-///
-/// This class should be initialized using the two constructors:
-/// `graph::Graph::new_directed` or `graph::Graph::new_undirected`
-///
-/// # Example
-/// Load the graph Cora:
-/// ```rust
-/// use graph::*;
-///
-/// // Create the edge file reader
-/// let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv").unwrap()
-///     .set_separator(Some("\t")).unwrap()
-///     .set_verbose(Some(false))
-///     .set_sources_column(Some("subject")).unwrap()
-///     .set_destinations_column(Some("object")).unwrap()
-///     .set_default_weight(Some(1.0))
-///     .set_edge_types_column(Some("edge_type")).unwrap();
-///
-/// // Create the node file reader
-/// let nodes_reader = Some(
-///     NodeFileReader::new("tests/data/cora/nodes.tsv").unwrap()
-///         .set_separator(Some("\t")).unwrap()
-///         .set_nodes_column(Some("id")).unwrap()
-///         .set_verbose(Some(false))
-///         .set_node_types_column(Some("node_type")).unwrap(),
-/// );
-///
-/// // Load the graph
-/// let mut cora = Graph::from_unsorted_csv(
-///     edges_reader,
-///     nodes_reader,
-///     false,          // if the graph is Directed
-///     false,          // if the edge list is Directed
-///     "Cora".to_string()
-///    ).unwrap();
-///
-/// // Enable Speed-ups but it uses more memory.
-/// cora.enable(Some(true), Some(true), Some(true)).unwrap();
-/// ```
 #[derive(Clone, Debug)]
 pub struct Graph {
     /// The main datastructure where all the edges are saved

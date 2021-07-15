@@ -109,6 +109,7 @@ pub fn load_ppi(
             None
         })
         .unwrap()
+        .set_skip_selfloops(Some(skip_selfloops))
         .set_default_edge_type(if load_edge_types {
             Some("Kebab".to_string())
         } else {
@@ -141,20 +142,20 @@ pub fn load_ppi(
         load_edge_types,
     );
     assert_eq!(ppi.has_edge_weights(), load_weights);
-    // assert_eq!(
-    //     ppi.has_selfloops(),
-    //     !skip_selfloops,
-    //     concat!(
-    //         "I was expecting the graph self-loops status to be {} ",
-    //         "since we have given parameter skip_selfloops equal to {}, ",
-    //         "but actually is {}.\n",
-    //         "The graph report is: \n {:?}"
-    //     ),
-    //     !skip_selfloops,
-    //     skip_selfloops,
-    //     ppi.has_selfloops(),
-    //     ppi.textual_report()
-    // );
+    assert_eq!(
+        ppi.has_selfloops(),
+        !skip_selfloops,
+        concat!(
+            "I was expecting the graph self-loops status to be {} ",
+            "since we have given parameter skip_selfloops equal to {}, ",
+            "but actually is {}.\n",
+            "The graph report is: \n {:?}"
+        ),
+        !skip_selfloops,
+        skip_selfloops,
+        ppi.has_selfloops(),
+        ppi.textual_report()
+    );
     ppi
 }
 
