@@ -203,12 +203,27 @@ fn gen_binding(method: &Function) -> String {
     // build the doc
     let doc = translate_doc(method.doc.clone());
 
+    let is_static = match method.args.0.get(0) {
+        Some(arg) => {
+            match arg.arg_type {
+                Type::SelfType => false,
+                _ => true,
+            }
+        },
+        None => true,
+    };
+
     // parse the arguments
     let mut is_self_ref = false;
     let mut is_self_mut = false;
     let mut args = String::new();
     let mut args_names = String::new();
-    let mut args_signatures = vec!["$self".to_string()];
+    let mut args_signatures = if is_static {
+        vec![]
+    } else {
+        vec!["$self".to_string()]
+    };
+
     for arg in &method.args.0 {
         match &arg.arg_type {
             Type::SelfType => {
@@ -254,7 +269,12 @@ fn gen_binding(method: &Function) -> String {
 
     // build the call
     let mut body = format!(
-        "self.graph.{name}({args_names})",
+        "{prefix}{name}({args_names})",
+        prefix = if is_static {
+            "Graph::"
+        } else {
+            "self.graph."
+        },
         name = method.name,
         args_names = &args_names[..args_names.len().saturating_sub(2)],
     );
@@ -302,6 +322,11 @@ fn gen_binding(method: &Function) -> String {
                             if r_type == "Result<&Graph>" {
                                 body = format!("Ok(pe!({})?.to_owned())", body);
                             }
+
+                            " -> PyResult<EnsmallenGraph> ".to_string()
+                        }
+                        (false, false) => {
+                            body = format!("Ok(EnsmallenGraph{{graph: pe!({})?}})", body);
 
                             " -> PyResult<EnsmallenGraph> ".to_string()
                         }
@@ -411,6 +436,7 @@ fn gen_binding(method: &Function) -> String {
     // build the binding
     format!(
         r#"
+    {is_static_method}
     #[automatically_generated_binding]
     {text_signature}
 {doc}
@@ -418,6 +444,11 @@ fn gen_binding(method: &Function) -> String {
         {body}
     }}
         "#,
+        is_static_method= if is_static {
+            "#[staticmethod]"
+        } else {
+            ""
+        },
         doc = doc,
         text_signature = text_signature,
         name = method.name,
@@ -447,7 +478,6 @@ fn main() {
                 // !method_names.contains(&method.name) &&
                 !method.name.starts_with("iter")
                     && !method.name.starts_with("par_iter")
-                    && !method.name.starts_with("from")
                     && method.visibility == Visibility::Public
                     && !method.attributes.iter().any(|x| x == "no_binding")
                     && !method.attributes.iter().any(|x| x == "manual_binding")
@@ -621,6 +651,7 @@ fn parse_macros(macro_calls: Vec<MacroCall>) -> Vec<Function> {
                     },
                     arg_type: Type::parse_lossy_str("&self"),
                 }]);
+                item.is_unsafe = item.name.contains("unchecked");
                 result.push(item);
             }
             // Macro not handled so it's ignored`
