@@ -30,14 +30,14 @@ impl Graph {
         );
         let total_edges_number = self.get_directed_edges_number() - self.get_selfloops_number()
             + self.get_nodes_number() as EdgeT;
-        
+
         // TODO! this method can be made fully sorted parallell by using an offset vector
         // of the selfloops that need to be added.
         build_graph_from_integers(
             Some(
                 self.par_iter_edge_node_ids_and_edge_type_id(true)
                     .progress_with(edges_progress_bar)
-                    .map(|(_, src, dst, edge_type)| unsafe {
+                    .map(|(_, src, dst, edge_type)| {
                         (
                             // The number of the edge is irrelevant because we cannot load this as sorted.
                             0,
@@ -57,7 +57,7 @@ impl Graph {
                         self.par_iter_node_ids()
                             .progress_with(selfloop_progress_bar)
                             .filter(|&node_id| !self.has_selfloop_from_node_id(node_id))
-                            .map(|node_id| unsafe {
+                            .map(|node_id| {
                                 (
                                     // The number of the edge is irrelevant because we cannot load this as sorted.
                                     0,
@@ -86,7 +86,7 @@ impl Graph {
     /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph. By default, true.
     pub fn get_laplacian_transformed_graph(&self, verbose: Option<bool>) -> Graph {
         self.get_transformed_graph(
-            |graph, src, dst| -1.0,
+            |_, _, _| -1.0,
             |graph, node_id| unsafe {
                 graph.get_unchecked_node_degree_from_node_id(node_id) as WeightT
             },
@@ -103,10 +103,10 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Graph {
         self.get_transformed_graph(
-            |graph, src, dst| {
+            |graph, src, _| {
                 -1.0 / unsafe { graph.get_unchecked_node_degree_from_node_id(src) as WeightT }
             },
-            |graph, node_id| 1.0,
+            |_, _| 1.0,
             verbose,
         )
     }
@@ -132,7 +132,7 @@ impl Graph {
                         .sqrt() as WeightT
                 }
             },
-            |graph, node_id| 1.0,
+            |_, _| 1.0,
             verbose,
         ))
     }
@@ -158,7 +158,7 @@ impl Graph {
                         .sqrt() as WeightT
                 }
             },
-            |graph, node_id| 1.0,
+            |_, _| 1.0,
             verbose,
         ))
     }

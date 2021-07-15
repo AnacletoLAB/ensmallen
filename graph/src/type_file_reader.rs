@@ -248,7 +248,6 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
     pub fn read_lines(
         &self,
     ) -> Result<impl ParallelIterator<Item = Result<(usize, String)>> + '_> {
-        let expected_elements = self.reader.get_elements_per_line()?;
         Ok(self
             .reader
             .read_lines()?

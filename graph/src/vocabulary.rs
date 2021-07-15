@@ -172,10 +172,10 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
     /// * `value`: String - The value to be inserted.
     pub unsafe fn unchecked_insert(&mut self, value: String) -> IndexT {
         match self {
-            Vocabulary::String { map, reverse_map } => {
+            Vocabulary::String { map, .. } => {
                 let current_length = map.len();
                 *map.entry(value)
-                    .or_insert_with_key(|value| IndexT::from_usize(current_length))
+                    .or_insert_with_key(|_| IndexT::from_usize(current_length))
             }
 
             Vocabulary::Numeric { range, count } => {
@@ -205,7 +205,7 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
         let (normalized_value, index) = self.normalize_value(value)?;
 
         match self {
-            Vocabulary::String { map, reverse_map } => Ok(match map.entry(normalized_value) {
+            Vocabulary::String { map, .. } => Ok(match map.entry(normalized_value) {
                 Entry::Occupied(extracted_index) => (*extracted_index.get(), true),
                 Entry::Vacant(vacant_entry) => (*vacant_entry.insert(index), false),
             }),
