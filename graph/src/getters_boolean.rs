@@ -60,7 +60,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_trap_nodes(&self) -> bool {
-        *self.get_trap_nodes_number() > 0
+        self.get_trap_nodes_number() > 0
     }
 
     /// Returns boolean representing if graph is directed.
@@ -172,7 +172,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_selfloops(&self) -> bool {
-        *self.get_selfloops_number() > 0
+        self.get_selfloops_number() > 0
     }
 
     /// Returns boolean representing if nodes which are nor singletons nor
@@ -204,7 +204,7 @@ impl Graph {
 
     /// Returns boolean representing if graph has singletons.
     pub fn has_singleton_nodes_with_selfloops(&self) -> bool {
-        *self.get_singleton_nodes_with_selfloops_number() > 0
+        self.get_singleton_nodes_with_selfloops_number() > 0
     }
 
     /// Returns whether the graph is connected.
@@ -349,7 +349,7 @@ impl Graph {
     /// is able to better approximate a complete Softmax by sampling
     /// the output labels using a Zipfian distribution, which is what
     /// most graphs follow.
-    pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> &bool {
+    pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
         self.par_iter_node_ids().all(|node_id| unsafe {
             // If this is the first node, we just
             // return true.
@@ -376,7 +376,7 @@ impl Graph {
     /// is able to better approximate a complete Softmax by sampling
     /// the output labels using a Zipfian distribution, which is what
     /// most graphs follow.
-    pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> &bool {
+    pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
         self.par_iter_node_ids().all(|node_id| unsafe {
             // If this is the first node, we just
             // return true.

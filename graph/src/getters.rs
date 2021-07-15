@@ -49,7 +49,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The graph contains {} singleton nodes with selfloops.", graph.get_singleton_nodes_with_selfloops_number());
     /// ```
-    pub fn get_singleton_nodes_with_selfloops_number(&self) -> &NodeT {
+    pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
         self.par_iter_singleton_nodes_with_selfloops_node_ids()
             .count() as NodeT
     }
@@ -220,8 +220,8 @@ impl Graph {
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
     /// ```
     pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
-        (self.get_unique_directed_edges_number() - *self.get_unique_selfloops_number() as EdgeT) / 2
-            + *self.get_unique_selfloops_number() as EdgeT
+        (self.get_unique_directed_edges_number() - self.get_unique_selfloops_number() as EdgeT) / 2
+            + self.get_unique_selfloops_number() as EdgeT
     }
 
     /// Returns number of edges of the graph.
@@ -247,7 +247,7 @@ impl Graph {
     /// ```
     pub fn get_unique_edges_number(&self) -> EdgeT {
         match self.directed {
-            true => *self.get_unique_directed_edges_number(),
+            true => self.get_unique_directed_edges_number(),
             false => self.get_unique_undirected_edges_number(),
         }
     }
@@ -291,7 +291,7 @@ impl Graph {
     /// * If the graph does not contain any node (is an empty graph).
     pub fn get_maximum_node_degree(&self) -> Result<NodeT> {
         self.must_have_nodes()
-            .map(|_| unsafe { *self.get_unchecked_maximum_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_maximum_node_degree() })
     }
 
     #[cache_property(most_central_node_id)]
@@ -305,7 +305,7 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// println!("The node with maximum node degree of the graph is {}.", unsafe{graph.get_unchecked_most_central_node_id()});
     /// ```
-    pub unsafe fn get_unchecked_most_central_node_id(&self) -> &NodeT {
+    pub unsafe fn get_unchecked_most_central_node_id(&self) -> NodeT {
         self.par_iter_node_degrees()
             .enumerate()
             .max_by(|(_, degree_a), (_, degree_b)| degree_a.cmp(degree_b))
@@ -322,7 +322,7 @@ impl Graph {
     /// ```
     pub fn get_most_central_node_id(&self) -> Result<NodeT> {
         self.must_have_nodes()
-            .map(|_| unsafe { *self.get_unchecked_most_central_node_id() as NodeT })
+            .map(|_| unsafe { self.get_unchecked_most_central_node_id() as NodeT })
     }
 
     /// Returns minimum node degree of the graph.
@@ -337,7 +337,7 @@ impl Graph {
     /// * If the graph does not contain any node (is an empty graph).
     pub fn get_minimum_node_degree(&self) -> Result<NodeT> {
         self.must_have_nodes()
-            .map(|_| unsafe { *self.get_unchecked_minimum_node_degree() })
+            .map(|_| unsafe { self.get_unchecked_minimum_node_degree() })
     }
 
     /// Returns mode node degree of the graph.
@@ -372,7 +372,7 @@ impl Graph {
         if !self.has_edges() {
             return Err("The self-loops rate is not defined for graphs without edges.".to_string());
         }
-        Ok(*self.get_selfloops_number() as f64 / self.get_directed_edges_number() as f64)
+        Ok(self.get_selfloops_number() as f64 / self.get_directed_edges_number() as f64)
     }
     /// Return name of the graph.
     ///
@@ -399,7 +399,7 @@ impl Graph {
     /// println!("There are {} trap nodes in the current graph.", graph.get_trap_nodes_number());
     /// ```
     ///
-    pub fn get_trap_nodes_number(&self) -> &NodeT {
+    pub fn get_trap_nodes_number(&self) -> NodeT {
         self.iter_connected_node_ids()
             .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) == 0 })
             .count() as NodeT
@@ -618,7 +618,7 @@ impl Graph {
 
     #[cache_property(unique_directed_edges_number)]
     /// Return number of the unique edges in the graph.
-    pub fn get_unique_directed_edges_number(&self) -> &EdgeT {
+    pub fn get_unique_directed_edges_number(&self) -> EdgeT {
         self.par_iter_node_ids()
             .map(|node_id| unsafe {
                 self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)

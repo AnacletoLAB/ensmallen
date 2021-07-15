@@ -211,7 +211,7 @@ impl Graph {
         if filter_parallel_edges {
             edges_number -= self.get_parallel_edges_number();
             if filter_selfloops {
-                edges_number -= *self.get_unique_selfloops_number() as EdgeT;
+                edges_number -= self.get_unique_selfloops_number() as EdgeT;
             }
         } else if filter_selfloops {
             edges_number -= self.get_selfloops_number();

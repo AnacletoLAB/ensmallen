@@ -27,7 +27,7 @@ pub fn skip_file(path: &str) -> bool {
 }
 
 pub fn get_library_sources() -> Vec<Module> {
-    let src_files: Vec<String> = WalkDir::new("../graph/src/getters_cached.rs")
+    let src_files: Vec<String> = WalkDir::new("../graph/src/")
         .into_iter()
         .filter_map(|entry| {
                 let value = entry.unwrap();

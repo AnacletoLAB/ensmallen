@@ -611,6 +611,12 @@ fn parse_macros(macro_calls: Vec<MacroCall>) -> Vec<Function> {
                 }
                 item.doc = doc;
                 item.visibility = Visibility::Public;
+                item.attributes = macro_call.attributes;
+                item.args = Args(vec![Arg{
+                    name: "self".to_string(),
+                    arg_modifier: TypeModifiers::default(),
+                    arg_type: Type::parse_lossy_str("&self"),
+                }]);
                 result.push(item);
             }
             // Macro not handled so it's ignored`
