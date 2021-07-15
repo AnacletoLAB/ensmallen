@@ -23,7 +23,7 @@ fn test_regression_1() -> Result<(), String> {
         .set_skip_edge_types_if_unavailable(Some(false))
         .set_edge_types_column_number(Some(2))?;
 
-    let mut graph = Graph::from_csv(
+    let mut graph = Graph::from_file_readers(
         Some(edges_reader),
         None,
         None, // Directed

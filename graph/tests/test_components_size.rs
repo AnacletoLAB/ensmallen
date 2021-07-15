@@ -15,7 +15,7 @@ fn test_components_size() {
         .set_numeric_node_ids(Some(true))
         .set_header(Some(false));
 
-    let g = Graph::from_csv(
+    let g = Graph::from_file_readers(
         Some(edges_reader),
         None,
         None,

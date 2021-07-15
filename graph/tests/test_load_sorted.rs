@@ -23,7 +23,7 @@ fn test_load_sorted() {
         .unwrap()
         .set_nodes_number(Some(242));
 
-    let mut g = Graph::from_csv(
+    let mut g = Graph::from_file_readers(
         Some(edges_reader),
         Some(nodes_reader),
         None,

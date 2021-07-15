@@ -60,7 +60,6 @@ pub fn load_ppi(
             NodeFileReader::new(Some("tests/data/ppi/nodes.tsv".to_string()))
                 .unwrap()
                 .set_verbose(Some(false))
-                .unwrap()
                 .set_node_types_column_number(Some(1))
                 .unwrap()
                 .set_nodes_column_number(Some(0))
@@ -181,7 +180,6 @@ pub fn load_cora() -> Graph {
         .set_nodes_column(Some("id"))
         .unwrap()
         .set_verbose(Some(false))
-        .unwrap()
         .set_node_types_column(Some("node_type"))
         .unwrap();
     Graph::from_file_readers(

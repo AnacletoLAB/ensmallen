@@ -91,6 +91,7 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
             self.must_have_reader()?;
             let expected_elements = self
                 .reader
+                .as_ref()
                 .map(|reader| reader.get_elements_per_line())
                 .unwrap()?;
             if column >= expected_elements {
