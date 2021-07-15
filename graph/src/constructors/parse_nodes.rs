@@ -92,7 +92,6 @@ pub(crate) fn parse_nodes(
                 node_type_vocabulary.build()?;
             }
 
-            println!("{:?}", nodes_names);
             Ok::<_, String>((
                 Vocabulary::from_reverse_map(nodes_names)?,
                 node_types_ids,

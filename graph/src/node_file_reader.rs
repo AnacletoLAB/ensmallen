@@ -26,7 +26,6 @@ pub struct NodeFileReader {
     pub(crate) numeric_node_ids: bool,
     pub(crate) numeric_node_type_ids: bool,
     pub(crate) skip_node_types_if_unavailable: bool,
-    pub(crate) might_contain_singletons: bool,
 }
 
 impl NodeFileReader {
@@ -51,7 +50,6 @@ impl NodeFileReader {
             numeric_node_ids: !has_path,
             numeric_node_type_ids: false,
             skip_node_types_if_unavailable: false,
-            might_contain_singletons: true,
         })
     }
 
@@ -190,22 +188,6 @@ impl NodeFileReader {
     ) -> Result<NodeFileReader> {
         if let Some(skip) = skip_node_types_if_unavailable {
             self.skip_node_types_if_unavailable = skip;
-        }
-        Ok(self)
-    }
-
-    /// Set whether you pinky promise that this graph has singletons or not.
-    ///
-    /// # Arguments
-    ///
-    /// * `might_contain_singletons`: Option<bool> - Whether this graph has singletons.
-    ///
-    pub fn set_might_contain_singleton_nodes(
-        mut self,
-        might_contain_singletons: Option<bool>,
-    ) -> Result<NodeFileReader> {
-        if let Some(skip) = might_contain_singletons {
-            self.might_contain_singletons = skip;
         }
         Ok(self)
     }

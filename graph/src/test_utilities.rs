@@ -119,7 +119,7 @@ pub fn load_ppi(
         .set_default_weight(if load_weights { Some(5.0) } else { None })
         .clone();
 
-    let ppi = Graph::from_csv(
+    let ppi = Graph::from_file_readers(
         Some(edges_reader),
         nodes_reader,
         None,
@@ -184,7 +184,7 @@ pub fn load_cora() -> Graph {
         .unwrap()
         .set_node_types_column(Some("node_type"))
         .unwrap();
-    Graph::from_csv(
+    Graph::from_file_readers(
         Some(edges_reader),
         Some(nodes_reader),
         None,

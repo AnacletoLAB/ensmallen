@@ -323,6 +323,7 @@ impl EdgeFileReader {
     /// # Arguments
     /// * default_weight: Option<WeightT> - The default_weight to use when default_weight is missing.
     ///
+    /// TODO!: Validate the provided weight!
     pub fn set_default_weight(mut self, default_weight: Option<WeightT>) -> EdgeFileReader {
         self.default_weight = default_weight;
         self
