@@ -30,7 +30,9 @@ impl Graph {
         build_graph_from_strings(
             node_type_file_reader
                 .as_ref()
-                .map_or(Ok::<_, String>(None), |nt| Ok(Some(nt.read_lines()?)))?,
+                .map_or(Ok::<_, String>(None), |nfr| {
+                    Ok(nfr.read_lines().transpose()?)
+                })?,
             node_type_file_reader
                 .as_ref()
                 .and_then(|ntf| ntf.types_number.clone()),
@@ -67,7 +69,9 @@ impl Graph {
                 .and_then(|nfr| nfr.minimum_node_id),
             edge_type_file_reader
                 .as_ref()
-                .map_or(Ok::<_, String>(None), |etr| Ok(Some(etr.read_lines()?)))?,
+                .map_or(Ok::<_, String>(None), |etfr| {
+                    Ok(etfr.read_lines().transpose()?)
+                })?,
             edge_type_file_reader
                 .as_ref()
                 .and_then(|etr| etr.types_number.clone()),
@@ -113,6 +117,18 @@ impl Graph {
     /// TODO! Add docstrings
     /// TODO! Add parameters for node type list and edge type list
     pub fn from_csv<S: Clone + Into<String>>(
+        node_type_path: Option<String>,
+        node_type_column_number: Option<usize>,
+        node_type_column: Option<String>,
+        node_types_number: Option<NodeTypeT>,
+        numeric_node_type_ids: Option<bool>,
+        minimum_node_type_id: Option<NodeTypeT>,
+        node_type_list_separator: Option<String>,
+        node_type_list_header: Option<bool>,
+        node_type_list_rows_to_skip: Option<usize>,
+        node_type_list_is_correct: Option<bool>,
+        node_type_list_max_rows_number: Option<EdgeT>,
+        node_type_list_comment_symbol: Option<String>,
         node_path: Option<String>,
         node_list_separator: Option<String>,
         node_list_header: Option<bool>,
@@ -129,8 +145,20 @@ impl Graph {
         nodes_number: Option<NodeT>,
         minimum_node_id: Option<NodeT>,
         numeric_node_ids: Option<bool>,
-        numeric_node_type_ids: Option<bool>,
+        node_list_numeric_node_type_ids: Option<bool>,
         skip_node_types_if_unavailable: Option<bool>,
+        edge_type_path: Option<String>,
+        edge_type_column_number: Option<usize>,
+        edge_type_column: Option<String>,
+        edge_types_number: Option<NodeTypeT>,
+        numeric_edge_type_ids: Option<bool>,
+        minimum_edge_type_id: Option<NodeTypeT>,
+        edge_type_list_separator: Option<String>,
+        edge_type_list_header: Option<bool>,
+        edge_type_list_rows_to_skip: Option<usize>,
+        edge_type_list_is_correct: Option<bool>,
+        edge_type_list_max_rows_number: Option<EdgeT>,
+        edge_type_list_comment_symbol: Option<String>,
         edge_path: Option<String>,
         edge_list_separator: Option<String>,
         edge_list_header: Option<bool>,
@@ -161,7 +189,49 @@ impl Graph {
         directed: bool,
         name: S,
     ) -> Result<Graph> {
-        let node_file_reader = if node_path.is_some() || nodes_column.is_some() {
+        let node_type_file_reader: Option<TypeFileReader<NodeTypeT>> =
+            if node_type_path.is_some() || node_types_number.is_some() {
+                Some(
+                    TypeFileReader::new(node_type_path)?
+                        .set_separator(node_type_list_separator)?
+                        .set_comment_symbol(node_type_list_comment_symbol)?
+                        .set_header(node_type_list_header)?
+                        .set_max_rows_number(node_type_list_max_rows_number)?
+                        .set_rows_to_skip(node_type_list_rows_to_skip)?
+                        .set_type_column_number(node_types_column_number)?
+                        .set_type_column(node_types_column)?
+                        .set_minimum_type_id(minimum_node_type_id)
+                        .set_numeric_type_ids(numeric_node_type_ids)
+                        .set_csv_is_correct(node_type_list_is_correct)?
+                        .set_types_number(node_types_number)
+                        .set_verbose(verbose),
+                )
+            } else {
+                None
+            };
+
+            let edge_type_file_reader: Option<TypeFileReader<EdgeTypeT>> =
+            if edge_type_path.is_some() || edge_types_number.is_some() {
+                Some(
+                    TypeFileReader::new(edge_type_path)?
+                        .set_separator(edge_type_list_separator)?
+                        .set_comment_symbol(edge_type_list_comment_symbol)?
+                        .set_header(edge_type_list_header)?
+                        .set_max_rows_number(edge_type_list_max_rows_number)?
+                        .set_rows_to_skip(edge_type_list_rows_to_skip)?
+                        .set_type_column_number(edge_types_column_number)?
+                        .set_type_column(edge_types_column)?
+                        .set_minimum_type_id(minimum_edge_type_id)
+                        .set_numeric_type_ids(numeric_edge_type_ids)
+                        .set_csv_is_correct(edge_type_list_is_correct)?
+                        .set_types_number(edge_types_number)
+                        .set_verbose(verbose),
+                )
+            } else {
+                None
+            };
+
+        let node_file_reader = if node_path.is_some() || nodes_number.is_some() {
             Some(
                 NodeFileReader::new(node_path)?
                     .set_separator(node_list_separator)?
@@ -178,10 +248,10 @@ impl Graph {
                     .set_skip_node_types_if_unavailable(skip_node_types_if_unavailable)?
                     .set_default_node_type(default_node_type)
                     .set_numeric_node_ids(numeric_node_ids)
-                    .set_numeric_node_type_ids(numeric_node_type_ids)?
+                    .set_numeric_node_type_ids(node_list_numeric_node_type_ids)?
                     .set_csv_is_correct(node_list_is_correct)?
                     .set_nodes_number(nodes_number)
-                    .set_verbose(verbose)?,
+                    .set_verbose(verbose),
             )
         } else {
             None
@@ -222,8 +292,8 @@ impl Graph {
         Graph::from_file_readers(
             edge_file_reader,
             node_file_reader,
-            None,
-            None,
+            node_type_file_reader,
+            edge_type_file_reader,
             directed,
             name,
         )

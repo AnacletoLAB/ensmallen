@@ -247,12 +247,11 @@ impl NodeFileReader {
     ///
     /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
-    pub fn set_verbose(mut self, verbose: Option<bool>) -> Result<NodeFileReader> {
+    pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileReader {
         if let Some(v) = verbose {
-            self.must_have_reader()?;
             self.reader.as_mut().map(|reader| reader.verbose = v);
         }
-        Ok(self)
+        self
     }
 
     /// Set the numeric_id.
