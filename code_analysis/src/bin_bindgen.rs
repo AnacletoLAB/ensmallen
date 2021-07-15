@@ -287,9 +287,9 @@ fn gen_binding(method: &Function) -> String {
                         }
                     }
                 }
-                x if x == "Result<Graph, _>"
-                    || x == "Result<&Graph, _>"
-                    || x == "Result<& mut Graph, _>" =>
+                x if x == "Result<Graph>"
+                    || x == "Result<&Graph>"
+                    || x == "Result<& mut Graph>" =>
                 {
                     match (is_self_ref, is_self_mut) {
                         (true, true) => {
@@ -299,7 +299,7 @@ fn gen_binding(method: &Function) -> String {
                         (true, false) => {
                             body = format!("Ok(EnsmallenGraph{{graph: pe!({})?}})", body);
 
-                            if r_type == "Result<&Graph, _>" {
+                            if r_type == "Result<&Graph>" {
                                 body = format!("Ok(pe!({})?.to_owned())", body);
                             }
 
@@ -314,7 +314,7 @@ fn gen_binding(method: &Function) -> String {
                     body = format!("let (g1, g2) = {}; (EnsmallenGraph{{graph: g1}}, EnsmallenGraph{{graph: g2}})", body);
                     " -> (EnsmallenGraph, EnsmallenGraph) ".to_string()
                 }
-                x if x == "Result<(Graph, Graph), _>" => {
+                x if x == "Result<(Graph, Graph)>" => {
                     body = format!("let (g1, g2) = pe!({})?; Ok((EnsmallenGraph{{graph: g1}}, EnsmallenGraph{{graph: g2}}))", body);
                     " -> PyResult<(EnsmallenGraph, EnsmallenGraph)> ".to_string()
                 }
@@ -351,7 +351,7 @@ fn gen_binding(method: &Function) -> String {
                         Type::parse_lossy_string(format!("Py<PyArray2<{}>>", inner_type))
                     )
                 }
-                x if x == "Result<Vec<Primitive>, _>" => {
+                x if x == "Result<Vec<Primitive>>" => {
                     let inner_type = r_type[0][0].to_string();
                     body = format!(
                         concat!(
@@ -367,7 +367,7 @@ fn gen_binding(method: &Function) -> String {
                     )
                 }
                 x if !method.attributes.iter().any(|x| x == "no_numpy_binding")
-                    && x == "Result<Vec<Vec<Primitive>>, _>" =>
+                    && x == "Result<Vec<Vec<Primitive>>>" =>
                 {
                     let inner_type = r_type[0][0][0].to_string();
                     body = format!(
@@ -383,7 +383,7 @@ fn gen_binding(method: &Function) -> String {
                         Type::parse_lossy_string(format!("PyResult<Py<PyArray2<{}>>>", inner_type))
                     )
                 }
-                x if x == "Result<_, _>" => {
+                x if x == "Result<_>" => {
                     body = format!("pe!({})", body);
 
                     let r_type = match r_type {
@@ -614,7 +614,11 @@ fn parse_macros(macro_calls: Vec<MacroCall>) -> Vec<Function> {
                 item.attributes = macro_call.attributes;
                 item.args = Args(vec![Arg{
                     name: "self".to_string(),
-                    arg_modifier: TypeModifiers::default(),
+                    arg_modifier: TypeModifiers{
+                        reference: true,
+                        mutable: false,
+                        ..Default::default()
+                    },
                     arg_type: Type::parse_lossy_str("&self"),
                 }]);
                 result.push(item);
