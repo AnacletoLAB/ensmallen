@@ -389,12 +389,12 @@ impl Graph {
 
         let validation_edge_ids = (0..self.get_directed_edges_number())
             .into_par_iter()
-            .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
+            .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
             .collect::<Vec<_>>();
 
         let train_edge_ids = (0..self.get_directed_edges_number())
             .into_par_iter()
-            .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
+            .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
             .collect::<Vec<_>>();
 
         let train_edges_number = train_edge_ids.len();

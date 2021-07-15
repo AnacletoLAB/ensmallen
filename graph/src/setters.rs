@@ -465,9 +465,7 @@ impl Graph {
     /// * If the graph does not have edge types.
     ///
     pub fn remove_edge_types(&self, verbose: Option<bool>) -> Result<Graph> {
-        println!("{}", self.get_parallel_edges_number());
         let mut graph = self.drop_parallel_edges(verbose);
-        println!("{}", graph.get_parallel_edges_number());
         assert!(!graph.is_multigraph());
         graph.remove_inplace_edge_types()?;
         Ok(graph)
