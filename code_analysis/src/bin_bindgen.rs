@@ -433,10 +433,15 @@ fn main() {
 
     let modules = get_library_sources();
     for module in modules {
-        for imp in module.impls {
+        for mut imp in module.impls {
             if imp.struct_name != "Graph" {
                 continue;
             }
+
+            // Parse methods generation macros and expand them to actual
+            // methods
+            imp.methods.extend(parse_macros(imp.macro_calls));
+
             for method in imp.methods {
                 if
                 // !method_names.contains(&method.name) &&
@@ -557,4 +562,60 @@ fn split_words(method_name: &str) -> Vec<String> {
     }
 
     result.into_iter().filter(|x| !x.is_empty()).collect()
+}
+
+
+/// Expand the macro calls to the generated methods
+///
+/// This curently handle the following macros:
+/// * `cached_property`
+fn parse_macros(macro_calls: Vec<MacroCall>) -> Vec<Function> {
+    let mut result = Vec::new();
+    for macro_call in macro_calls {
+        match macro_call.name.as_str() {
+            "cached_property" => {
+                let mut item = Function::default();
+
+                let mut data = macro_call.content.as_bytes();
+                item.name = parse!(data, Identifier).into();
+
+                // skip the comma
+                data = skip_whitespace(&data[1..]);
+
+                item.return_type = Some(parse!(data, Type));
+                // skip the comma
+                data = skip_whitespace(&data[1..]);
+
+                let _caching_method = parse!(data, Identifier);
+                // skip the comma
+                data = skip_whitespace(&data[1..]);
+
+                let _caching_attribute = parse!(data, Identifier);
+                // skip the comma
+                data = skip_whitespace(&data[1..]);
+
+                // parse the documentations
+                let doc_lines = String::from_utf8(data.to_vec()).unwrap();
+                let mut doc = String::new();
+                for doc_line in doc_lines.split("\n") {
+                    // remove extra white space
+                    match doc_line.trim().strip_prefix("///") {
+                        None => {
+                            // maybe panic?
+                        }
+                        Some(doc_line) => {
+                            doc.push_str(doc_line.trim());
+                            doc.push('\n');
+                        }
+                    }
+                }
+                item.doc = doc;
+                item.visibility = Visibility::Public;
+                result.push(item);
+            }
+            // Macro not handled so it's ignored`
+            _ => {}
+        };
+    }
+    result
 }

@@ -13,6 +13,21 @@ pub struct Function{
     pub is_unsafe: bool,
 }
 
+impl Default for Function{
+    fn default() -> Self {
+        Function {
+            doc: String::new(),
+            attributes: Vec::new(),
+            name: String::new(),
+            visibility: Visibility::Private,
+            generics: Generics::default(),
+            args: Args::default(),
+            return_type: None,
+            body: String::new(),
+            is_unsafe: false,
+        }
+    }
+}
 
 impl Function {
     /// Returns if the current function has any arguments

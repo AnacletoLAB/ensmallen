@@ -6,6 +6,7 @@ pub struct Impl {
     pub doc: String,
     pub struct_name: Type,
     pub impl_trait: Option<Type>,
+    pub macro_calls: Vec<MacroCall>,
     pub methods: Vec<Function>,
     pub type_defs: Vec<TypeDefinition>,
     pub generics: Generics,
@@ -49,6 +50,7 @@ impl Parse for Impl {
         // body
         let (data, mut impl_content) = get_next_matching(data, b'{', b'}');
 
+        let mut macro_calls = Vec::new();
         let mut methods = Vec::new();
         let mut type_defs = Vec::new();
         let mut doc = String::new();
@@ -60,6 +62,7 @@ impl Parse for Impl {
                 break;
             }
 
+            maybe_parse!(impl_content, doc, attrs, MacroCall,  macro_calls);
             if Function::can_parse(impl_content) {
                 let mut method = parse!(impl_content, Function);
                 // TODO!: add attributes and doc
@@ -106,6 +109,7 @@ impl Parse for Impl {
                 doc: String::new(),
                 struct_name: struct_type,
                 impl_trait: impl_trait,
+                macro_calls: macro_calls,
                 methods: methods,
                 type_defs: type_defs,
                 generics: generics,

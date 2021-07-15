@@ -153,6 +153,24 @@ pub fn trim_str(mut data: String) -> String {
     data
 }
 
+#[macro_export]
+/// standard parsing of statements
+macro_rules! maybe_parse {
+    ($data:expr, $doc:ident, $attrs:expr, $type:ty, $res_vector:expr) => {
+        if <$type>::can_parse($data) {
+            let (tmp_data, mut val) = <$type>::parse(skip_whitespace($data));
+            $data = skip_whitespace(tmp_data);
+            val.doc = $doc;
+            $doc = String::new();
+            val.attributes = $attrs;
+            $attrs = Vec::new();
+            $res_vector.push(val);
+            continue;
+        }
+    };
+}
+
+
 #[cfg(test)]
 mod test {
     use super::*;
