@@ -169,7 +169,7 @@ impl CSVFileReader {
             // Reading only the requested amount of lines.
             .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
             .enumerate()
-            .progress_with(pb)
+            //.progress_with(pb)
             .par_bridge()
             // Handling NaN values and padding them to the number of rows
             .map(move |(line_number, line)| match line {
