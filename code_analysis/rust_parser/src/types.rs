@@ -218,7 +218,7 @@ impl Parse for Type {
                 Type::TupleType(result)
             },
             // Fn type
-            x if x.starts_with(b"Fn") => {
+            x if x.starts_with(b"Fn") || x.starts_with(b"fn") => {
                 // TODO! Save which variant it is
                 if x.starts_with(b"FnMut") {
                     data = skip_whitespace(&data[5..]);

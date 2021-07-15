@@ -389,7 +389,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
         );
         assert_eq!(
             singleton_nodes_with_selfloops.len(),
-            *graph.get_singleton_nodes_with_selfloops_number() as usize
+            graph.get_singleton_nodes_with_selfloops_number() as usize
         );
         assert!(
             singleton_nodes_with_selfloops.iter().all(|node_id| unsafe {
@@ -430,7 +430,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
 
     assert_eq!(
         graph.iter_node_degrees().is_sorted(),
-        *graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
+        graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
         concat!(
             "The cached value for the method ",
             "has_nodes_sorted_by_increasing_outbound_node_degree ",
@@ -445,7 +445,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     degrees.reverse();
     assert_eq!(
         degrees.is_sorted(),
-        *graph.has_nodes_sorted_by_decreasing_outbound_node_degree(),
+        graph.has_nodes_sorted_by_decreasing_outbound_node_degree(),
         concat!(
             "The cached value for the method ",
             "has_nodes_sorted_by_decreasing_outbound_node_degree ",
@@ -470,8 +470,8 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
         graph.get_maximum_node_degree(),
     ) {
         assert_eq!(
-            *graph.has_nodes_sorted_by_decreasing_outbound_node_degree()
-                && *graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
+            graph.has_nodes_sorted_by_decreasing_outbound_node_degree()
+                && graph.has_nodes_sorted_by_increasing_outbound_node_degree(),
             min_degree == max_degree,
             concat!(
                 "When the the nodes are sorted both by decreasing and increasing node degree ",

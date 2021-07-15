@@ -5,7 +5,7 @@ use std::collections::HashMap;
 pub(crate) fn build_csv_file_reader(
     edge_path: String,
     py_kwargs: Option<&PyDict>,
-) -> Result<(EdgeFileReader, Option<NodeFileReader>, String, bool), String> {
+) -> Result<(EdgeFileReader, Option<NodeFileReader>, String, bool)> {
     let py = pyo3::Python::acquire_gil();
     let kwargs = normalize_kwargs!(py_kwargs, py.python());
 
@@ -256,7 +256,7 @@ impl EnsmallenGraph {
         &self,
         walk_length: u64,
         kwargs: &PyDict,
-    ) -> Result<WalksParameters, String> {
+    ) -> Result<WalksParameters> {
         Ok(WalksParameters::new(walk_length)?
             .set_change_edge_type_weight(extract_value_rust_result!(
                 kwargs,
