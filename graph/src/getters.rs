@@ -1,6 +1,5 @@
 use super::*;
 use counter::Counter;
-use elias_fano_rust::EliasFano;
 use log::info;
 use rayon::prelude::*;
 use std::collections::HashMap;
@@ -29,6 +28,30 @@ impl Graph {
                 self.connected_components(verbose).unwrap();
             (components_number, min_component_size, max_component_size)
         }
+    }
+
+    /// Returns number of connected nodes in the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The graph contains {} connected nodes", graph.get_connected_nodes_number());
+    /// ```
+    pub fn get_connected_nodes_number(&self) -> NodeT {
+        self.connected_nodes_number
+    }
+
+    #[cache_property(singleton_nodes_with_selfloops_number)]
+    /// Returns number of singleton nodes with selfloops within the graph.
+    ///
+    /// # Example
+    ///```rust
+    /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
+    /// println!("The graph contains {} singleton nodes with selfloops.", graph.get_singleton_nodes_with_selfloops_number());
+    /// ```
+    pub fn get_singleton_nodes_with_selfloops_number(&self) -> &NodeT {
+        self.par_iter_singleton_nodes_with_selfloops_node_ids()
+            .count() as NodeT
     }
 
     /// Returns number of singleton nodes within the graph.
@@ -101,25 +124,6 @@ impl Graph {
     pub fn get_singleton_with_selfloops_node_names(&self) -> Vec<String> {
         self.iter_singleton_nodes_with_selfloops_node_names()
             .collect()
-    }
-
-    #[cache_property(unique_sources)]
-    /// Returns Elias-Fano data structure with the source nodes.
-    pub fn get_unique_sources(&self) -> &EliasFano {
-        let unique_source_nodes_number = self.get_nodes_number()
-            - self.get_singleton_nodes_number()
-            - self.get_trap_nodes_number();
-        let mut elias_fano_unique_sources = EliasFano::new(
-            self.get_nodes_number() as u64,
-            unique_source_nodes_number as usize,
-        )
-        .unwrap();
-        self.iter_node_ids()
-            .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) > 0 })
-            .for_each(|node_id| {
-                elias_fano_unique_sources.push(node_id as u64);
-            });
-        elias_fano_unique_sources
     }
 
     /// Returns density of the graph.
@@ -216,8 +220,8 @@ impl Graph {
     /// println!("The number of unique undirected edges of the graph is  {}", graph.get_unique_undirected_edges_number());
     /// ```
     pub fn get_unique_undirected_edges_number(&self) -> EdgeT {
-        (self.get_unique_edges_number() - *self.get_unique_selfloop_number() as EdgeT) / 2
-            + *self.get_unique_selfloop_number() as EdgeT
+        (self.get_unique_directed_edges_number() - *self.get_unique_selfloops_number() as EdgeT) / 2
+            + *self.get_unique_selfloops_number() as EdgeT
     }
 
     /// Returns number of edges of the graph.
@@ -270,8 +274,6 @@ impl Graph {
     /// println!("The weighted median node degree of the graph is  {}", graph.get_weighted_node_degrees_median().unwrap());
     /// ```
     pub fn get_weighted_node_degrees_median(&self) -> Result<f64> {
-        self.must_have_nodes()?;
-        self.must_have_edge_weights()?;
         let mut weighted_degrees = self.get_weighted_node_degrees()?;
         weighted_degrees.par_sort_unstable_by(|a, b| a.partial_cmp(b).unwrap());
         Ok(weighted_degrees[(self.get_nodes_number() / 2) as usize])
@@ -306,7 +308,7 @@ impl Graph {
     pub unsafe fn get_unchecked_most_central_node_id(&self) -> &NodeT {
         self.par_iter_node_degrees()
             .enumerate()
-            .max_by(|(_, a), (_, b)| a.cmp(b))
+            .max_by(|(_, degree_a), (_, degree_b)| degree_a.cmp(degree_b))
             .unwrap()
             .0 as NodeT
     }
@@ -398,7 +400,7 @@ impl Graph {
     /// ```
     ///
     pub fn get_trap_nodes_number(&self) -> &NodeT {
-        self.par_iter_directed_destination_node_ids()
+        self.iter_connected_node_ids()
             .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) == 0 })
             .count() as NodeT
     }

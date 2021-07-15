@@ -3,10 +3,11 @@ use rayon::iter::ParallelIterator;
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator};
 use std::collections::hash_map::Entry;
 use std::collections::HashMap;
+use std::fmt::Debug;
 use std::ops::Range;
 
 #[derive(Debug, Clone, PartialEq)] // Arbitrary
-pub enum Vocabulary<IndexT: ToFromUsize + Sync> {
+pub enum Vocabulary<IndexT: ToFromUsize + Sync + Debug> {
     // If the values are arbitrary and we cannot make any assumptions
     // about them
     String {
@@ -22,14 +23,14 @@ pub enum Vocabulary<IndexT: ToFromUsize + Sync> {
     },
 }
 
-impl<IndexT: ToFromUsize + Sync> Default for Vocabulary<IndexT> {
+impl<IndexT: ToFromUsize + Sync + Debug> Default for Vocabulary<IndexT> {
     fn default() -> Self {
         Self::new()
     }
 }
 
 /// # Constructors
-impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
+impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     pub fn new() -> Vocabulary<IndexT> {
         Vocabulary::String {
             map: HashMap::new(),
@@ -47,7 +48,8 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
                     .map(|(value, key)| (key.clone(), IndexT::from_usize(value))),
             ),
             Vocabulary::Numeric { range, .. } => Box::new(
-                range.clone()
+                range
+                    .clone()
                     .enumerate()
                     .map(|(value, key)| (format!("{}", key), IndexT::from_usize(value))),
             ),
@@ -84,11 +86,11 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
             let duplicates = reverse_map
                 .into_iter()
                 .scan(None, |last_object, object| {
+                    let equal_to_last_edge = last_object
+                        .as_ref()
+                        .map_or(false, |last_object| *last_object == object);
 
-                    let equal_to_last_edge = last_object.as_ref()
-                    .map_or(false, |last_object| *last_object == object);
-
-                    let result: Option<String> = if equal_to_last_edge{
+                    let result: Option<String> = if equal_to_last_edge {
                         None
                     } else {
                         Some(object.to_string())
@@ -112,16 +114,16 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
     }
 }
 
-impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
-
-
+impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     // TODO! properly extend Iterator
     pub fn iter_keys(&self) -> Box<dyn Iterator<Item = String> + '_> {
         match self {
             Vocabulary::String { reverse_map, .. } => {
                 Box::new(reverse_map.iter().map(|key| key.clone()))
             }
-            Vocabulary::Numeric { range, .. } => Box::new(range.clone().map(|key| format!("{}", key))),
+            Vocabulary::Numeric { range, .. } => {
+                Box::new(range.clone().map(|key| format!("{}", key)))
+            }
         }
     }
 
@@ -179,7 +181,7 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
             }
 
             Vocabulary::Numeric { range, count } => {
-                let value = value.parse::<usize>().unwrap_unchecked();
+                let value = value.parse::<usize>().unwrap();
                 range.end = std::cmp::max(range.end, value);
                 *count += 1;
                 IndexT::from_usize(value - range.start)
@@ -196,10 +198,14 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
         let value = value.as_ref();
 
         if value.is_empty() {
-            return Err(
-                "The given value is empty, we cannot insert an empty value into the vocabulary"
-                    .to_string(),
-            );
+            return Err(format!(
+                concat!(
+                    "The given value is empty, ",
+                    "we cannot insert an empty value into the vocabulary.\n",
+                    "Currently the vocabulary contains: {:?}."
+                ),
+                self
+            ));
         }
 
         let (normalized_value, index) = self.normalize_value(value)?;
@@ -210,7 +216,7 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
                 Entry::Vacant(vacant_entry) => (*vacant_entry.insert(index), false),
             }),
             Vocabulary::Numeric { range, count } => {
-                let value = unsafe { value.parse::<usize>().unwrap_unchecked() };
+                let value = { value.parse::<usize>().unwrap() };
                 if value < range.start {
                     return Err(
                         "The given numeric id is smaller than the minimum given on construction."
@@ -285,7 +291,10 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
     /// Returns whether the value is empty or not.
     pub fn is_empty(&self) -> bool {
         match self {
-            Vocabulary::String { map, .. } => map.is_empty(),
+            Vocabulary::String {
+                map: _,
+                reverse_map,
+            } => reverse_map.is_empty(),
             Vocabulary::Numeric { range, .. } => range.is_empty(),
         }
     }
@@ -335,7 +344,11 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
         match self {
             Vocabulary::String { map, .. } => map.get(key).map(|x| *x),
             Vocabulary::Numeric { range, .. } => {
-                let id = unsafe { key.parse::<usize>().unwrap_unchecked() };
+                let id = key.parse::<usize>();
+                if id.is_err() {
+                    return None;
+                }
+                let id = id.unwrap();
                 if range.contains(&id) {
                     Some(IndexT::from_usize(id))
                 } else {
@@ -348,16 +361,19 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
     /// Return vector of keys of the map.
     pub fn keys(&self) -> Vec<String> {
         match self {
-            Vocabulary::String { reverse_map, ..} => reverse_map.clone(),
-            Vocabulary::Numeric { range, ..} => range.clone().map(|i| format!("{}", i)).collect::<_>(),
+            Vocabulary::String { reverse_map, .. } => reverse_map.clone(),
+            Vocabulary::Numeric { range, .. } => {
+                range.clone().map(|i| format!("{}", i)).collect::<_>()
+            }
         }
     }
 
     /// Return vector of keys of the map.
     pub fn map(&self) -> HashMap<String, IndexT> {
         match self {
-            Vocabulary::String { map, ..} => map.clone(),
-            Vocabulary::Numeric { range, .. } => range.clone()
+            Vocabulary::String { map, .. } => map.clone(),
+            Vocabulary::Numeric { range, .. } => range
+                .clone()
                 .map(|i| (format!("{}", i), IndexT::from_usize(i)))
                 .collect::<HashMap<String, IndexT>>(),
         }
@@ -371,9 +387,7 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
     pub fn contains_key(&self, key: &str) -> bool {
         match self {
             Vocabulary::String { map, .. } => map.contains_key(key),
-            Vocabulary::Numeric { range, .. } => {
-                range.contains(&unsafe { key.parse::<usize>().unwrap_unchecked() })
-            }
+            Vocabulary::Numeric { range, .. } => range.contains(&{ key.parse::<usize>().unwrap() }),
         }
     }
 
@@ -413,7 +427,7 @@ impl<IndexT: ToFromUsize + Sync> Vocabulary<IndexT> {
         mut type_ids_to_remove: Vec<IndexT>,
     ) -> Vec<Option<usize>> {
         let result = match self {
-            Vocabulary::Numeric { range, ..} => {
+            Vocabulary::Numeric { range, .. } => {
                 type_ids_to_remove.sort();
 
                 // scan from the left to remove all the extremants ids

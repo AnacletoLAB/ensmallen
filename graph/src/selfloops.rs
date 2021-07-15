@@ -1,6 +1,7 @@
 use crate::constructors::build_graph_from_integers;
 
 use super::*;
+use indicatif::ParallelProgressIterator;
 use rayon::iter::ParallelIterator;
 
 /// # Selfloops.
@@ -39,22 +40,35 @@ impl Graph {
         let total_edges_number = self.get_directed_edges_number() - self.get_selfloops_number()
             + self.get_nodes_number() as EdgeT;
 
+        let pb_edges = get_loading_bar(
+            verbose,
+            "Copying edges",
+            self.get_directed_edges_number() as usize,
+        );
+        let pb_selfloops = get_loading_bar(
+            verbose,
+            "Creating new required selfloops",
+            (self.get_nodes_number() - self.get_unique_selfloops_number()) as usize,
+        );
+
         build_graph_from_integers(
             Some(
-                self.par_iter_edge_node_ids_and_edge_type_id_and_edge_weight(true)
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
                     .map(|(_, src, dst, edge_type_id, weight)| {
                         (0, (src, dst, edge_type_id, weight.unwrap_or(WeightT::NAN)))
                     })
+                    .progress_with(pb_edges)
                     .chain(
                         self.par_iter_node_ids()
                             .filter(|&node_id| !self.has_selfloop_from_node_id(node_id))
-                            .map(|node_id| (0, (node_id, node_id, edge_type_id, weight))),
+                            .map(|node_id| (0, (node_id, node_id, edge_type_id, weight)))
+                            .progress_with(pb_selfloops),
                     ),
             ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            true,
+            self.has_edge_weights(),
             self.is_directed(),
             Some(true),
             Some(false),

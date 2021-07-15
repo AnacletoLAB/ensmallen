@@ -157,7 +157,6 @@ impl Graph {
         struct Info {
             selfloops_number_unique: NodeT,
             selfloops_number: EdgeT,
-            singleton_nodes_with_selfloops_number: NodeT,
         }
 
         impl Default for Info {
@@ -165,7 +164,6 @@ impl Graph {
                 Info {
                     selfloops_number_unique: 0,
                     selfloops_number: 0,
-                    singleton_nodes_with_selfloops_number: 0,
                 }
             }
         }
@@ -178,9 +176,6 @@ impl Graph {
                     selfloops_number_unique: self.selfloops_number_unique
                         + rhs.selfloops_number_unique,
                     selfloops_number: self.selfloops_number + rhs.selfloops_number,
-                    singleton_nodes_with_selfloops_number: self
-                        .singleton_nodes_with_selfloops_number
-                        + rhs.singleton_nodes_with_selfloops_number,
                 }
             }
         }
@@ -188,20 +183,14 @@ impl Graph {
         let info = self
             .par_iter_node_ids()
             .map(|node_id| {
-                let (selfloops_number, degree) =
+                let selfloops_number =
                     unsafe { self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id) }
-                        .map(|x| (if x == node_id { 1 } else { 0 }, 1))
-                        .reduce(|(a1, b1), (a2, b2)| (a1 + a2, b1 + b2))
-                        .unwrap_or((0, 0));
+                        .filter(|&dst| dst == node_id)
+                        .count();
 
                 Info {
                     selfloops_number: selfloops_number as EdgeT,
-                    selfloops_number_unique: (if selfloops_number > 0 { 1 } else { 0 }) as NodeT,
-                    singleton_nodes_with_selfloops_number: (if selfloops_number == degree {
-                        1
-                    } else {
-                        0
-                    }) as NodeT,
+                    selfloops_number_unique: (selfloops_number > 0) as NodeT,
                 }
             })
             .reduce(Info::default, |a, b| a + b);
@@ -209,8 +198,6 @@ impl Graph {
         let mut cache = unsafe { &mut (*self.cache.get()) };
         cache.selfloops_number = Some(info.selfloops_number);
         cache.selfloops_number_unique = Some(info.selfloops_number_unique);
-        cache.singleton_nodes_with_selfloops_number =
-            Some(info.singleton_nodes_with_selfloops_number);
     }
 
     cached_property!(get_selfloops_number, EdgeT, compute_selfloops_number, selfloops_number,
@@ -223,63 +210,13 @@ impl Graph {
         /// ```
     );
 
-    cached_property!(get_unique_selfloop_number, NodeT, compute_selfloops_number, selfloops_number_unique,
+    cached_property!(get_unique_selfloops_number, NodeT, compute_selfloops_number, selfloops_number_unique,
         /// Returns number of unique self-loops, excluding those in eventual multi-edges.
         ///
         /// # Example
         ///```rust
         /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-        /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_selfloop_number());
+        /// println!("The number of unique self-loops in the graph is  {}", graph.get_unique_selfloops_number());
         /// ```
     );
-
-    cached_property!(get_singleton_nodes_with_selfloops_number, NodeT, compute_selfloops_number, singleton_nodes_with_selfloops_number,
-        /// Returns number of singleton nodes with self-loops within the graph.
-        ///
-        /// # Example
-        ///```rust
-        /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-        /// println!("The graph contains {} singleton nodes with self-loops", graph.get_singleton_nodes_with_selfloops_number());
-        /// ```
-    );
-
-    /// Compute the bitvector and the number of nodes which have incoming edges.
-    fn compute_connected_nodes(&self) {
-        let bitvec = ConcurrentBitVec::with_capacity(self.get_nodes_number() as usize);
-
-        // Compute in parallel the bitvector of all the nodes that have incoming edges
-        self.par_iter_node_ids().for_each(|node_id| {
-            unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)}.for_each(
-                |dst_id| bitvec.set(dst_id as usize)
-            );
-        });
-
-        let mut cache = unsafe { &mut (*self.cache.get()) };
-        cache.connected_nodes_number = Some(bitvec.count_ones() as NodeT);
-        cache.connected_nodes = Some(bitvec);
-    }
-
-    cached_property!(get_connected_nodes_number, NodeT, compute_connected_nodes, connected_nodes_number,  
-        /// Returns number of not singleton nodes within the graph.
-        ///
-        /// # Example
-        ///```rust
-        /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-        /// println!("The graph contains {} not singleton nodes", graph.get_connected_nodes_number());
-        /// ```
-    );
-
-    cached_property!(get_connected_nodes, ConcurrentBitVec, compute_connected_nodes, connected_nodes,  
-        /// Returns a bitvector of the non singleton nodes within the graph.
-        ///
-        /// # Example
-        ///```rust
-        /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-        /// println!("The graph contains {} not singleton nodes", graph.get_connected_nodes_number());
-        /// ```
-    );
-
-
-
-
 }

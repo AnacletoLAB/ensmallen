@@ -211,7 +211,7 @@ impl Graph {
         if filter_parallel_edges {
             edges_number -= self.get_parallel_edges_number();
             if filter_selfloops {
-                edges_number -= *self.get_unique_selfloop_number() as EdgeT;
+                edges_number -= *self.get_unique_selfloops_number() as EdgeT;
             }
         } else if filter_selfloops {
             edges_number -= self.get_selfloops_number();
@@ -293,8 +293,8 @@ impl Graph {
                     // it may be possible, in some cases, to get this value by
                     // further expanding this filtering method.
                     None,
-                    Some(true),
-                    Some(false),
+                    None,
+                    None,
                     self.get_name(),
                 )
             }

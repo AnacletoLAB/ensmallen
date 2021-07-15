@@ -213,7 +213,7 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
-            if sampling_round > 50000 {
+            if sampling_round > 100000 {
                 panic!("Deadlock in sampling negatives!");
             }
 
@@ -556,7 +556,7 @@ impl Graph {
                 // And the edge type of the edge ID is within the provided edge type
                 !is_in_tree && !singleton_selfloop && correct_edge_type
             },
-            verbose
+            verbose,
         )
     }
 
@@ -925,7 +925,7 @@ impl Graph {
         }
         let verbose = verbose.unwrap_or(false);
         let random_state = random_state.unwrap_or(0xbadf00d);
-        let connected_nodes_number = *self.get_connected_nodes_number();
+        let connected_nodes_number = self.get_connected_nodes_number();
         if nodes_number > connected_nodes_number {
             return Err(format!(
                 concat!(
@@ -938,10 +938,9 @@ impl Graph {
 
         // Creating the loading bars
         let pb1 = get_loading_bar(verbose, "Sampling nodes subset", nodes_number as usize);
-        let pb2 = get_loading_bar(verbose, "Computing subgraph edges", nodes_number as usize);
-        let pb3 = get_loading_bar(
+        let pb2 = get_loading_bar(
             verbose,
-            "Building subgraph",
+            "Computing subgraph edges",
             self.get_directed_edges_number() as usize,
         );
 
@@ -990,9 +989,12 @@ impl Graph {
 
         let selected_edge_ids = self
             .par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+            .progress_with(pb2)
             .filter(|&(_, src, dst, _, _)| unique_nodes.contains(src) && unique_nodes.contains(dst))
             .map(|(edge_id, _, _, _, _)| edge_id)
             .collect::<Vec<_>>();
+
+        let pb3 = get_loading_bar(verbose, "Building subgraph", selected_edge_ids.len());
 
         build_graph_from_integers(
             Some(
@@ -1005,7 +1007,8 @@ impl Graph {
                                 edge_id,
                             );
                         (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
-                    }),
+                    })
+                    .progress_with(pb3),
             ),
             self.nodes.clone(),
             self.node_types.clone(),

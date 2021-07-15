@@ -85,8 +85,8 @@ impl EdgeNodeNamesParser {
         Ok((
             line_number,
             (
-                unsafe { vocabulary.get(&src_name).unwrap_unchecked() },
-                unsafe { vocabulary.get(&dst_name).unwrap_unchecked() },
+                vocabulary.get(&src_name).unwrap(),
+                vocabulary.get(&dst_name).unwrap(),
                 edge_type_name,
                 weight,
             ),
@@ -115,16 +115,14 @@ impl EdgeNodeNamesParser {
         value: Result<(usize, (String, String, E, W))>,
     ) -> Result<(usize, (NodeT, NodeT, E, W))> {
         let (line_number, (src_name, dst_name, edge_type_name, weight)) = value?;
-        unsafe {
-            Ok((
-                line_number,
-                (
-                    src_name.parse::<NodeT>().unwrap_unchecked(),
-                    dst_name.parse::<NodeT>().unwrap_unchecked(),
-                    edge_type_name,
-                    weight,
-                ),
-            ))
-        }
+        Ok((
+            line_number,
+            (
+                src_name.parse::<NodeT>().unwrap(),
+                dst_name.parse::<NodeT>().unwrap(),
+                edge_type_name,
+                weight,
+            ),
+        ))
     }
 }

@@ -61,7 +61,7 @@ pub(crate) fn parse_nodes(
     let nodes_iterator =
         nodes_iterator.map(|ni| ni.method_caller(node_types_method, &mut node_type_parser));
 
-    let (nodes_vocabulary, node_types_ids) = match (
+    let (nodes_vocabulary, node_types_ids, node_types_vocabulary) = match (
         nodes_iterator,
         nodes_number,
         numeric_node_ids,
@@ -87,7 +87,15 @@ pub(crate) fn parse_nodes(
                         None,
                     )
                 };
-            Ok::<_, String>((Vocabulary::from_reverse_map(nodes_names)?, node_types_ids))
+            let mut node_type_vocabulary = node_type_parser.into_inner();
+            if node_type_vocabulary.is_empty() {
+                node_type_vocabulary.build()?;
+            }
+            Ok::<_, String>((
+                Vocabulary::from_reverse_map(nodes_names)?,
+                node_types_ids,
+                Some(node_type_vocabulary),
+            ))
         }
         // When the node iterator was provided, and the nodes number is not known
         // and the node IDs are expected to be numeric.
@@ -118,7 +126,11 @@ pub(crate) fn parse_nodes(
                         Err(e) => Err(e),
                     })
                     .collect::<Result<Vec<Option<Vec<NodeTypeT>>>>>()?;
-                (min.into_inner(), max.into_inner(), Some(node_type_ids))
+                (
+                    min.into_inner(),
+                    max.into_inner(),
+                    optionify!(node_type_ids),
+                )
             } else {
                 // Alternatively we can focus exclusively on the
                 // node IDs, which being numeric boil down to collecting
@@ -162,25 +174,33 @@ pub(crate) fn parse_nodes(
                 ));
             }
 
-            Ok((Vocabulary::from_range(min.min(minimum_node_ids)..max), node_types_ids))
+            let mut node_type_vocabulary = node_type_parser.into_inner();
+            if node_type_vocabulary.is_empty() {
+                node_type_vocabulary.build()?;
+            }
+
+            Ok((
+                Vocabulary::from_range(min.min(minimum_node_ids)..max),
+                node_types_ids,
+                Some(node_type_vocabulary),
+            ))
         }
-        (None, Some(ntn), true, None) => Ok((Vocabulary::from_range(0..ntn), None)),
+        (None, Some(ntn), true, None) => Ok((Vocabulary::from_range(0..ntn), None, None)),
         (None, Some(ntn), true, Some(min_val)) => {
-            Ok((Vocabulary::from_range(min_val..min_val + ntn), None))
+            Ok((Vocabulary::from_range(min_val..min_val + ntn), None, None))
         }
         (None, None, true, _) => {
             let min = minimum_node_ids.unwrap_or(0);
-            Ok((Vocabulary::from_range(min..min), None))
+            Ok((Vocabulary::from_range(min..min), None, None))
         }
-        (None, Some(ntn), false, None) => Ok((Vocabulary::with_capacity(ntn as usize), None)),
-        (None, None, false, None) => Ok((Vocabulary::new(), None)),
+        (None, Some(ntn), false, None) => Ok((Vocabulary::with_capacity(ntn as usize), None, None)),
+        (None, None, false, None) => Ok((Vocabulary::new(), None, None)),
         // TODO! imporve error
         _ => unreachable!("All other cases must be explictily handled."),
     }?;
 
     Ok((
         nodes_vocabulary,
-        node_types_ids
-            .map(|ntis| NodeTypeVocabulary::from_structs(ntis, node_type_parser.into_inner())),
+        NodeTypeVocabulary::from_option_structs(node_types_ids, node_types_vocabulary),
     ))
 }

@@ -101,11 +101,7 @@ impl Graph {
             "Filtering components from node list",
             self.get_nodes_number() as usize,
         );
-
-        let min_component_size = keep_components
-            .iter()
-            .map(|component_id| *counter.get(&component_id).unwrap())
-            .min();
+        
         // TODO if a vector of offsets of removed edges is kept, it is possible
         // to build the filtered version in parallell sorted without memory peaks.
         build_graph_from_strings_without_type_iterators(
@@ -161,8 +157,8 @@ impl Graph {
             // as sorted with the proper offsets precomputed.
             Some(false),
             None,
-            Some(false),
-            Some(false),
+            None,
+            None,
             self.get_name(),
         )
     }

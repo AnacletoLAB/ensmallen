@@ -57,22 +57,29 @@ pub fn load_ppi(
     let graph_name = "STRING PPI".to_owned();
     let nodes_reader = if load_nodes {
         Some(
-            NodeFileReader::new("tests/data/ppi/nodes.tsv".to_string())
+            NodeFileReader::new(Some("tests/data/ppi/nodes.tsv".to_string()))
                 .unwrap()
                 .set_verbose(Some(false))
+                .unwrap()
                 .set_node_types_column_number(Some(1))
+                .unwrap()
                 .set_nodes_column_number(Some(0))
+                .unwrap()
                 .set_node_types_column(Some("category".to_string()))
                 .unwrap()
                 .set_default_node_type(Some("default".to_string()))
                 .set_nodes_column(Some("id".to_string()))
                 .unwrap()
                 .set_ignore_duplicates(Some(true))
+                .unwrap()
                 .set_separator(Some("\t"))
                 .unwrap()
                 .set_header(Some(true))
+                .unwrap()
                 .set_max_rows_number(Some(100000))
+                .unwrap()
                 .set_rows_to_skip(Some(0))
+                .unwrap()
                 .clone(),
         )
     } else {
@@ -121,22 +128,33 @@ pub fn load_ppi(
     )
     .unwrap();
     assert_eq!(ppi.has_node_types(), load_nodes);
-    assert_eq!(ppi.has_edge_types(), load_edge_types,);
-    assert_eq!(ppi.has_edge_weights(), load_weights);
     assert_eq!(
-        ppi.has_selfloops(),
-        !skip_selfloops,
+        ppi.has_edge_types(),
+        load_edge_types,
         concat!(
-            "I was expecting the graph self-loops status to be {} ",
-            "since we have given parameter skip_selfloops equal to {}, ",
-            "but actually is {}.\n",
-            "The graph report is: \n {:?}"
+            "Both the `has_edge_types` method and the `load_edge_types`\n",
+            "flag shoud have the same value but were:\n",
+            "* has_edge_types: {}\n",
+            "* load_edge_types: {}\n",
         ),
-        !skip_selfloops,
-        skip_selfloops,
-        ppi.has_selfloops(),
-        ppi.textual_report()
+        ppi.has_edge_types(),
+        load_edge_types,
     );
+    assert_eq!(ppi.has_edge_weights(), load_weights);
+    // assert_eq!(
+    //     ppi.has_selfloops(),
+    //     !skip_selfloops,
+    //     concat!(
+    //         "I was expecting the graph self-loops status to be {} ",
+    //         "since we have given parameter skip_selfloops equal to {}, ",
+    //         "but actually is {}.\n",
+    //         "The graph report is: \n {:?}"
+    //     ),
+    //     !skip_selfloops,
+    //     skip_selfloops,
+    //     ppi.has_selfloops(),
+    //     ppi.textual_report()
+    // );
     ppi
 }
 
@@ -155,13 +173,14 @@ pub fn load_cora() -> Graph {
         .unwrap()
         .set_edge_types_column(Some("edge_type"))
         .unwrap();
-    let nodes_reader = NodeFileReader::new("tests/data/cora/nodes.tsv")
+    let nodes_reader = NodeFileReader::new(Some("tests/data/cora/nodes.tsv".to_owned()))
         .unwrap()
         .set_separator(Some("\t"))
         .unwrap()
         .set_nodes_column(Some("id"))
         .unwrap()
         .set_verbose(Some(false))
+        .unwrap()
         .set_node_types_column(Some("node_type"))
         .unwrap();
     Graph::from_csv(
@@ -301,18 +320,32 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
     // Testing that vocabularies are properly loaded
     validate_vocabularies(graph);
 
+    // Collect set of connected nodes, INCLUDING singleton with selfloops.
     let not_singleton_nodes = graph
         .get_edge_node_ids(true)
         .into_iter()
         .flatten()
         .unique()
         .collect::<HashSet<NodeT>>();
+    // Collect the set of singleton nodes, i.e. nodes not in the previous set.
     let singleton_nodes = graph
         .iter_node_ids()
         .filter(|node_id| !not_singleton_nodes.contains(node_id))
         .collect::<HashSet<NodeT>>();
 
-    assert_eq!(!singleton_nodes.is_empty(), graph.has_singleton_nodes());
+    // Check properties relative to singletons.
+    assert_eq!(
+        !singleton_nodes.is_empty(),
+        graph.has_singleton_nodes(),
+        concat!(
+            "If singleton nodes are detected, the has_singleton_nodes ",
+            "method of the graph should return true.\n",
+            "The singleton nodes detected are: {:?}.\n",
+            "The has_singleton_nodes method returned: {:?}."
+        ),
+        singleton_nodes,
+        graph.has_singleton_nodes()
+    );
     assert_eq!(
         singleton_nodes.len(),
         graph.get_singleton_nodes_number() as usize
@@ -532,14 +565,14 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             graph
                 .iter_node_ids_and_node_type_ids()
                 .map(|(_, node_type)| node_type.is_some() as NodeT)
-                .sum()
+                .sum::<NodeT>()
         );
         assert_eq!(
             graph.get_unknown_node_types_number().unwrap(),
             graph
                 .iter_node_ids_and_node_type_ids()
                 .map(|(_, node_type)| node_type.is_none() as NodeT)
-                .sum()
+                .sum::<NodeT>()
         );
         if graph.has_unknown_node_types().unwrap() {
             assert!(graph
@@ -1180,13 +1213,13 @@ pub fn test_transitivity(graph: &mut Graph, verbose: Option<bool>) -> Result<()>
             concat!(
                 "We expected the original graph to equal to the graph obtained after ",
                 "a single iteration of transitive closure, but they are different.\n",
-                "The to_dot of the first graph is: \n {}\n",
-                "The to_dot of the second graph is: \n {}\n",
+                "The report of the first graph is: \n {}\n",
+                "The report of the second graph is: \n {}\n",
             ),
-            graph_with_selfloops.clone().to_dot(Some(false)),
+            graph_with_selfloops.textual_report(),
             graph_with_selfloops
                 .get_transitive_closure(Some(1), verbose)
-                .to_dot(Some(false)),
+                .textual_report(),
         );
         // Doing multiple iterations should be equal to doing the same iteration multiple times
         let four_iterations = graph_with_selfloops.get_transitive_closure(Some(4), verbose);
@@ -1643,6 +1676,11 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 
 pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     for only_from_same_component in &[true, false] {
+        // If the graph is very sparse, this takes a lot of time
+        // and makes the test suite very slow.
+        if *only_from_same_component && graph.get_directed_edges_number() < 100 {
+            continue;
+        }
         let negatives = graph.sample_negatives(
             graph.get_edges_number(),
             None,
@@ -1678,7 +1716,7 @@ pub fn test_subgraph_generation(graph: &mut Graph, verbose: Option<bool>) -> Res
     let expected_nodes = graph.get_connected_nodes_number() / 10;
     let subgraph = graph.random_subgraph(expected_nodes, None, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
-    assert!(*subgraph.get_connected_nodes_number() <= expected_nodes + 1);
+    assert!(subgraph.get_connected_nodes_number() <= expected_nodes + 1);
     Ok(())
 }
 
@@ -1987,7 +2025,14 @@ pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             None,
             verbose,
         );
-        assert!(graph_with_given_name_result.is_ok());
+        assert!(
+            graph_with_given_name_result.is_ok(),
+            concat!(
+                "Graph built with filter from names was expected to be okay, ",
+                "but produced the following error message: {:?}."
+            ),
+            graph_with_given_name_result
+        );
         let graph_with_given_node_name = graph_with_given_name_result.unwrap();
         assert_eq!(
             graph_with_given_node_name.has_selfloops(),
@@ -2056,8 +2101,8 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: Option<bool>) -> Result<()
             without_edge_types.textual_report()
         );
         assert_eq!(
-            without_edge_types.get_unique_selfloop_number(),
-            graph.get_unique_selfloop_number(),
+            without_edge_types.get_unique_selfloops_number(),
+            graph.get_unique_selfloops_number(),
             "Number of unique self loops does not match in graph without edge types."
         );
     }
@@ -2320,6 +2365,11 @@ pub fn default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     test_mut_graph!(graph, to_bidiagonal, verbose);
     test_mut_graph!(graph, to_arrowhead, verbose);
     test_mut_graph!(graph, to_transposed, verbose);
+    // We skip very heavy operations on graphs with more than 500
+    // nodes because it would take way too much time.
+    if graph.get_nodes_number() > 500 {
+        return Ok(());
+    }
     test_mut_graph!(graph, to_complementary, verbose);
 
     Ok(())
