@@ -1,5 +1,5 @@
 use super::*;
-use indicatif::ParallelProgressIterator;
+use indicatif::{ParallelProgressIterator, ProgressIterator};
 use itertools::Itertools;
 use rayon::iter::{ParallelBridge, ParallelIterator};
 use std::{fs::File, io::prelude::*, io::BufReader};
@@ -169,8 +169,8 @@ impl CSVFileReader {
             // Reading only the requested amount of lines.
             .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
             .enumerate()
-            .par_bridge()
             .progress_with(pb)
+            .par_bridge()
             // Handling NaN values and padding them to the number of rows
             .map(move |(line_number, line)| match line {
                 Ok(line) => {
