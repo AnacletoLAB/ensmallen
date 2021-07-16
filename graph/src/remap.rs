@@ -226,8 +226,8 @@ impl Graph {
 
         build_graph_from_integers(
             Some(
-                self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
-                    //.progress_with(pb)
+                self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
+                    .progress_with(pb)
                     .map(
                         |(edge_id, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {
                             (
