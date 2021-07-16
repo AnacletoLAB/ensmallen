@@ -1,9 +1,8 @@
-use crate::constructors::{
-    build_graph_from_integers, build_graph_from_strings_without_type_iterators,
-};
+use crate::constructors::build_graph_from_integers;
 
 use super::*;
 use itertools::Itertools;
+use permutation::Permutation;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
 impl Graph {
@@ -38,6 +37,57 @@ impl Graph {
     /// Returns graph remapped using given node IDs ordering.
     ///
     /// # Arguments
+    /// * `permutation`: Permutation - The new order of the nodes.
+    ///
+    /// # Safety
+    /// This method will cause a panic if the node IDs are either:
+    /// * Not unique
+    /// * Not available for each of the node IDs of the graph.
+    pub unsafe fn remap_unchecked_from_permutation(&self, permutation: Permutation) -> Graph {
+        let new_nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::from_reverse_map(
+            self.par_iter_node_ids()
+                .map(|node_id| unsafe {
+                    self.get_unchecked_node_name_from_node_id(
+                        permutation.apply_idx(node_id as usize) as NodeT,
+                    )
+                })
+                .collect(),
+        )
+        .unwrap();
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
+                    .map(
+                        |(_, src_node_id, _, dst_node_id, _, edge_type_id, _, weight)| {
+                            (
+                                0,
+                                (
+                                    permutation.apply_idx(src_node_id as usize) as NodeT,
+                                    permutation.apply_idx(dst_node_id as usize) as NodeT,
+                                    edge_type_id,
+                                    weight.unwrap_or(WeightT::NAN),
+                                ),
+                            )
+                        },
+                    ),
+            ),
+            new_nodes_vocabulary,
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+            self.has_edge_weights(),
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            Some(self.get_directed_edges_number()),
+            self.get_name(),
+        )
+        .unwrap()
+    }
+
+    /// Returns graph remapped using given node IDs ordering.
+    ///
+    /// # Arguments
     /// * `node_ids`: Vec<NodeT> - The node Ids to remap the graph to.
     ///
     /// # Safety
@@ -45,46 +95,41 @@ impl Graph {
     /// * Not unique
     /// * Not available for each of the node IDs of the graph.
     pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
-        build_graph_from_strings_without_type_iterators(
-            self.has_node_types(),
-            Some(node_ids.into_par_iter().map(|node_id| unsafe {
-                Ok((
-                    node_id as usize,
-                    (
-                        self.get_unchecked_node_name_from_node_id(node_id),
-                        self.get_unchecked_node_type_names_from_node_id(node_id),
-                    ),
-                ))
-            })),
-            Some(self.get_nodes_number()),
-            true,
-            false,
-            false,
-            None,
-            self.has_edge_types(),
+        let new_nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::from_reverse_map(
+            node_ids
+                .into_par_iter()
+                .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
+                .collect(),
+        )
+        .unwrap();
+        let new_node_positions = self
+            .par_iter_node_names()
+            .map(|node_name| new_nodes_vocabulary.get(&node_name).unwrap())
+            .collect::<Vec<NodeT>>();
+        build_graph_from_integers(
             Some(
-                self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
-                    .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                        Ok((
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .map(|(_, src_name_id, dst_name_id, edge_type_id, weight)| {
+                        (
                             0,
                             (
-                                src_name,
-                                dst_name,
-                                edge_type_name,
+                                new_node_positions[src_name_id as usize],
+                                new_node_positions[dst_name_id as usize],
+                                edge_type_id,
                                 weight.unwrap_or(WeightT::NAN),
                             ),
-                        ))
+                        )
                     }),
             ),
+            new_nodes_vocabulary,
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
             self.is_directed(),
-            Some(true),
             Some(true),
             Some(false),
             Some(false),
             Some(self.get_directed_edges_number()),
-            None,
-            None,
             self.get_name(),
         )
         .unwrap()
