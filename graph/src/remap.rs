@@ -90,19 +90,17 @@ impl Graph {
             Some(
                 self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
                     .progress_with(pb_edges)
-                    .map(
-                        |(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                            Ok((
-                                0,
-                                (
-                                    src_name,
-                                    dst_name,
-                                    edge_type_name,
-                                    weight.unwrap_or(WeightT::NAN),
-                                ),
-                            ))
-                        },
-                    ),
+                    .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
+                        Ok((
+                            0,
+                            (
+                                src_name,
+                                dst_name,
+                                edge_type_name,
+                                weight.unwrap_or(WeightT::NAN),
+                            ),
+                        ))
+                    }),
             ),
             self.has_edge_weights(),
             self.is_directed(),
