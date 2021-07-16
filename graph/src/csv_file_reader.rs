@@ -282,7 +282,6 @@ impl CSVFileReader {
                         vec![None; columns_of_interest_and_position.len()];
                     let mut j = 0;
                     line.split(&separator)
-                        .into_iter()
                         .enumerate()
                         // We skip to the first value of interest
                         .skip(min_column_of_interest)
