@@ -83,7 +83,8 @@ impl CSVFileReader {
         let file = File::open(&self.path);
         file.map_or_else(
             |_| Err(format!("Cannot open the file at {}", self.path)),
-            |file| Ok(BufReader::new(file)),
+            // We use a buffer reader with 8MBs
+            |file| Ok(BufReader::with_capacity(8 * 1024 * 1024, file)),
         )
     }
 
