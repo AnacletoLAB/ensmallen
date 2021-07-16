@@ -233,13 +233,20 @@ impl CSVFileReader {
              line: Result<String>,
              separator: &str,
              _: &[(usize, usize)],
+             _: usize,
              _: usize| {
                 line.map(|line: String| {
                     (
                         line_number,
                         line.split(separator)
                             .into_iter()
-                            .map(|element| Some(element.to_owned()))
+                            .map(|element| {
+                                if element.is_empty() {
+                                    None
+                                } else {
+                                    Some(element.to_owned())
+                                }
+                            })
                             .collect::<Vec<Option<String>>>(),
                     )
                 })
@@ -251,7 +258,8 @@ impl CSVFileReader {
              line: Result<String>,
              separator: &str,
              columns_of_interest_and_position: &[(usize, usize)],
-             min_column_of_interest: usize| {
+             min_column_of_interest: usize,
+             max_column_of_interest: usize| {
                 line.map(|line: String| {
                     let mut elements: Vec<Option<String>> =
                         vec![None; columns_of_interest_and_position.len()];
@@ -261,6 +269,11 @@ impl CSVFileReader {
                         .enumerate()
                         // We skip to the first value of interest
                         .skip(min_column_of_interest)
+                        // We take at most a number of elements equal to
+                        // the delta between the minimum column and maximum column.
+                        // This way we can avoid having to check for out of bounds
+                        // afterwards in the for each loop.
+                        .take(1 + max_column_of_interest - min_column_of_interest)
                         // Empty values are left as None
                         .filter(|&(_, element)| !element.is_empty())
                         .for_each(|(i, element)| {
@@ -290,6 +303,7 @@ impl CSVFileReader {
                     &self.separator,
                     &columns_of_interest_and_position,
                     min_column_of_interest,
+                    max_column_of_interest,
                 )
             }))
     }

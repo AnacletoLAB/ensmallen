@@ -48,12 +48,12 @@ tags = {path="./tags/"}
 [profile.release]
 opt-level = 3
 lto = "fat"
-overflow-checks = true     # Disable integer overflow checks.
-debug = true             # Include debug info.
+overflow-checks = true   # Disable integer overflow checks.
+debug = false            # Include debug info.
 debug-assertions = true  # Enables debug assertions.
 
 [profile.test]
-overflow-checks = true     # Disable integer overflow checks.
-debug = true             # Include debug info.
+overflow-checks = true   # Disable integer overflow checks.
+debug = false            # Include debug info.
 debug-assertions = true  # Enables debug assertions.
 opt-level = 3
