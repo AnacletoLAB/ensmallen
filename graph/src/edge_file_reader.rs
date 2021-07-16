@@ -525,43 +525,56 @@ impl EdgeFileReader {
         self
     }
 
-    /// Parse a single line (vecotr of strings already splitted)
+    /// Parse a single line (vector of strings already splitted and fitered)
+    ///
     /// # Arguments
-    /// * vals: Vec<String> - Vector of the values of the line to be parsed
-    fn parse_edge_line(&self, vals: Vec<Option<String>>) -> Result<StringQuadruple> {
-        // extract the values
-        let maybe_source_node_name = vals[self.sources_column_number].clone();
-        let maybe_destination_node_name = vals[self.destinations_column_number].clone();
-        if maybe_source_node_name.is_none() || maybe_destination_node_name.is_none() {
-            return Err("Either the source or destination node ID are undefined.".to_string());
+    /// * `elements_in_line`: Vec<String> - Vector of the values of the line to be parsed
+    fn parse_edge_line(
+        &self,
+        mut elements_in_line: Vec<Option<String>>,
+    ) -> Result<StringQuadruple> {
+        // extract the values in reverse order
+
+        // First we start with the last, i.e. the weights
+        let maybe_weight = if self.weights_column_number.is_some() {
+            elements_in_line
+                .pop()
+                // We can unwrap because the check always happens in the CSV reader
+                .unwrap()
+                .map_or(Ok::<_, String>(self.default_weight), |candidate_weight| {
+                    Ok(Some(parse_weight(candidate_weight)?))
+                })?
+        } else {
+            self.default_weight
+        };
+        // Next we handle the edge types
+        let maybe_edge_types_string = if self.edge_types_column_number.is_some() {
+            elements_in_line
+                .pop()
+                // We can unwrap because the check always happens in the CSV reader
+                .unwrap()
+                .or_else(|| self.default_edge_type.clone())
+        } else {
+            self.default_edge_type.clone()
+        };
+
+        // Next the destination nodes
+        let maybe_source_node_name = elements_in_line.pop().unwrap();
+        // and the source node
+        let maybe_destination_node_name = elements_in_line.pop().unwrap();
+        // We check that these values are actually provided
+        if maybe_destination_node_name.is_none() {
+            return Err("The destination node is undefined.".to_owned());
+        }
+        if maybe_source_node_name.is_none() {
+            return Err("The source node is undefined.".to_owned());
         }
 
-        let source_node_name = maybe_source_node_name.unwrap();
-        let destination_node_name = maybe_destination_node_name.unwrap();
-
-        // Handle the extraction of the edge types.
-        let maybe_edge_types_string = match self.edge_types_column_number {
-            Some(column) => match vals[column].to_owned() {
-                Some(edge_type) => Some(edge_type),
-                None => self.default_edge_type.clone(),
-            },
-            None => self.default_edge_type.clone(),
-        };
-
-        // Handle the extraction of the weights.
-        let maybe_weight_string = match self.weights_column_number {
-            Some(column) => match vals[column].to_owned() {
-                Some(w) => Some(parse_weight(w)?),
-                None => self.default_weight,
-            },
-            None => self.default_weight,
-        };
-
         Ok((
-            source_node_name,
-            destination_node_name,
+            maybe_source_node_name.unwrap(),
+            maybe_destination_node_name.unwrap(),
             maybe_edge_types_string,
-            maybe_weight_string.unwrap_or(WeightT::NAN),
+            maybe_weight.unwrap_or(WeightT::NAN),
         ))
     }
 
@@ -611,7 +624,17 @@ impl EdgeFileReader {
         }
         Ok(self
             .reader
-            .read_lines()?
+            .read_lines(
+                [
+                    Some(self.sources_column_number),
+                    Some(self.destinations_column_number),
+                    self.edge_types_column_number,
+                    self.weights_column_number,
+                ]
+                .iter()
+                .filter_map(|&e| e)
+                .collect(),
+            )?
             .map(move |line| match line {
                 Ok((line_number, vals)) => Ok((line_number, self.parse_edge_line(vals)?)),
                 Err(e) => Err(e),

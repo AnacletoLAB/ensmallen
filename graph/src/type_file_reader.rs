@@ -284,12 +284,16 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
         Ok(self)
     }
 
-    /// Parse a single line (vecotr of strings already splitted)
+    /// Parse a single line (vector of strings already splitted)
     /// # Arguments
-    /// * vals: Vec<String> - Vector of the values of the line to be parsed
-    fn parse_type_line(&self, vals: Vec<Option<String>>) -> Result<String> {
+    /// * `line_number`: Number of the line.
+    /// * `elements_in_line`: Vec<Option<String>> - Vector of the values of the line to be parsed
+    fn parse_type_line(&self, line_number:usize, mut elements_in_line: Vec<Option<String>>) -> Result<String> {
         // extract the type name
-        Ok(vals[self.type_column_number].to_owned().unwrap())
+        elements_in_line.pop().unwrap().map_or_else(
+            || Err(format!("The type at line {} is empty.", line_number)),
+            |type_name|Ok(type_name)
+        )
     }
 
     /// Return iterator of rows of the edge file.
@@ -297,10 +301,12 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
         &self,
     ) -> Option<Result<impl ParallelIterator<Item = Result<(usize, String)>> + '_>> {
         self.reader.as_ref().map(|reader| {
-            Ok(reader.read_lines()?.map(move |line| match line {
-                Ok((line_number, vals)) => Ok((line_number, self.parse_type_line(vals)?)),
-                Err(e) => Err(e),
-            }))
+            Ok(reader
+                .read_lines(vec![self.type_column_number])?
+                .map(move |line| match line {
+                    Ok((line_number, vals)) => Ok((line_number, self.parse_type_line(line_number, vals)?)),
+                    Err(e) => Err(e),
+                }))
         })
     }
 }

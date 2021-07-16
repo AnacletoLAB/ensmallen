@@ -423,6 +423,57 @@ impl NodeFileReader {
         self
     }
 
+    /// Parse a single line (vector of strings already splitted and fitered)
+    ///
+    /// # Arguments
+    /// * `line_number`: usize - Line number in the node list.
+    /// * `elements_in_line`: Vec<String> - Vector of the values of the line to be parsed
+    fn parse_node_line(
+        &self,
+        line_number: usize,
+        mut elements_in_line: Vec<Option<String>>,
+    ) -> Result<(String, Option<Vec<String>>)> {
+        // extract the values in reverse order
+        // We start with the node types
+        let maybe_node_types_string = if self.node_types_column_number.is_some() {
+            elements_in_line
+                .pop()
+                .unwrap()
+                .or_else(|| self.default_node_type.clone())
+        } else {
+            self.default_node_type.clone()
+        };
+
+        // Split given node types using the provided node type separator.
+        let node_types =
+            maybe_node_types_string.map(|node_types_string| match &self.node_types_separator {
+                Some(sep) => node_types_string.split(sep).map(String::from).collect(),
+                None => vec![node_types_string],
+            });
+
+        // Then we proceed with the node name
+        let node_name = if self.nodes_column_number.is_some() {
+            match elements_in_line.pop().unwrap() {
+                Some(node_name) => node_name,
+                None => {
+                    return Err(format!(
+                        concat!(
+                            "While reading the provided node list, ",
+                            "one of the provided node IDs is empty or None.\n",
+                            "The number of the line with the error is {}."
+                        ),
+                        line_number
+                    ))
+                }
+            }
+        } else {
+            line_number.to_string()
+        };
+
+        // Return tuple with string and list of node types
+        Ok((node_name, node_types))
+    }
+
     /// Return iterator of the lines of the node file.
     pub fn read_lines(
         &self,
@@ -462,46 +513,20 @@ impl NodeFileReader {
                 }
             }
 
-            Ok(reader.read_lines()?.map(move |line| match line {
-                Ok((line_number, row_values)) => {
-                    let node_name = match self.nodes_column_number {
-                        Some(column_number) => match row_values[column_number].to_owned() {
-                            Some(node_name) => node_name,
-                            None => {
-                                return Err(format!(
-                                    concat!(
-                                        "While reading the provided node list, ",
-                                        "one of the provided node IDs is empty or None.\n",
-                                        "The number of the line with the error is {}."
-                                    ),
-                                    line_number
-                                ))
-                            }
-                        },
-                        None => line_number.to_string(),
-                    };
-                    let maybe_node_types_string = match self.node_types_column_number {
-                        Some(column_number) => match row_values[column_number].to_owned() {
-                            Some(node_type) => Some(node_type),
-                            None => self.default_node_type.clone(),
-                        },
-                        None => self.default_node_type.clone(),
-                    };
-
-                    // Split given node types using the provided node type separator.
-                    let node_types = match maybe_node_types_string {
-                        Some(string) => match &self.node_types_separator {
-                            Some(sep) => Some(string.split(sep).map(String::from).collect()),
-                            None => Some(vec![string]),
-                        },
-                        None => None,
-                    };
-
-                    // Return tuple with string and list of node types
-                    Ok((line_number, (node_name, node_types)))
-                }
-                Err(e) => Err(e),
-            }))
+            Ok(reader
+                .read_lines(
+                    [self.nodes_column_number, self.node_types_column_number]
+                        .iter()
+                        .filter_map(|&e| e)
+                        .collect(),
+                )?
+                .map(move |line| match line {
+                    Ok((line_number, elements_in_line)) => Ok((
+                        line_number,
+                        self.parse_node_line(line_number, elements_in_line)?,
+                    )),
+                    Err(e) => Err(e),
+                }))
         })
     }
 }

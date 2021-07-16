@@ -1,6 +1,7 @@
 use super::*;
-use indicatif::{ParallelProgressIterator, ProgressIterator};
+use indicatif::ProgressIterator;
 use itertools::Itertools;
+use num_traits::Zero;
 use rayon::iter::{ParallelBridge, ParallelIterator};
 use std::{fs::File, io::prelude::*, io::BufReader};
 
@@ -44,7 +45,7 @@ pub struct CSVFileReader {
     pub(crate) graph_name: String,
 
     /// Whether the CSV may contain or not duplicate entries
-    pub(crate) may_have_duplicates: Option<bool>
+    pub(crate) may_have_duplicates: Option<bool>,
 }
 
 /// # Builder methods
@@ -72,7 +73,7 @@ impl CSVFileReader {
                 comment_symbol: None,
                 list_name,
                 graph_name: "Graph".to_string(),
-                may_have_duplicates: None
+                may_have_duplicates: None,
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
@@ -156,45 +157,140 @@ impl CSVFileReader {
     /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(
         &self,
+        columns_of_interest: Vec<usize>,
     ) -> Result<impl ParallelIterator<Item = Result<(usize, Vec<Option<String>>)>> + '_> {
+        // We create the loading bar
+        // We already tested removing this and it does not appear to be a bottleneck.
         let pb = get_loading_bar(
             self.verbose,
             format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
             if self.verbose { self.count_rows()? } else { 0 },
         );
 
+        // We check if the provided columns of interest
+        let number_of_column_of_interest = columns_of_interest.len();
+        if number_of_column_of_interest.is_zero() {
+            return Err("The number of columns of interest provided was zero.".to_string());
+        }
+        if columns_of_interest.iter().cloned().unique().count() != number_of_column_of_interest {
+            return Err("A duplicate column of interest was provided.".to_string());
+        }
+
+        // We check if the values are already sorted
+        let columns_of_interest_are_sorted = columns_of_interest.is_sorted();
+
+        // We zip the original position to the columns of interest
+        // so to know where to map the extracted value.
+        let mut columns_of_interest_and_position = columns_of_interest
+            .into_iter()
+            .enumerate()
+            .collect::<Vec<(usize, usize)>>();
+
+        // If necessary we sort these column of interest.
+        if !columns_of_interest_are_sorted {
+            columns_of_interest_and_position
+                .sort_by(|(_, column_a), (_, column_b)| column_a.cmp(column_b));
+        }
+
+        // We get the minimum and maximum column of interest
+        let min_column_of_interest = columns_of_interest_and_position.first().unwrap().1;
+        let max_column_of_interest = columns_of_interest_and_position.last().unwrap().1;
+
+        // Retrieve the number of elements that are expected to be in each line.
         let number_of_elements_per_line = self.get_elements_per_line()?;
+
+        // We check that the maximum column of interest is not higher than the
+        // number of elements in the lines.
+        if max_column_of_interest >= number_of_elements_per_line {
+            return Err(format!(
+                concat!(
+                    "The maximum column number of interest provided ({}) ",
+                    "is higher or equal to the number of elements ",
+                    "in the CSV lines ({})."
+                ),
+                max_column_of_interest, number_of_elements_per_line
+            ));
+        }
+
+        // If the number of values between minimum and maximum is equal to the
+        // number of columns of interest it means that these values are a dense range.
+        let column_of_interest_are_dense_range =
+            max_column_of_interest - min_column_of_interest == number_of_column_of_interest;
+        // Check if the number of values in the CSV lines match exactly the number
+        // of requested values.
+        let all_elements_are_of_interest =
+            number_of_elements_per_line == number_of_column_of_interest;
+
+        let parse_line = if column_of_interest_are_dense_range
+            && self.csv_is_correct
+            && columns_of_interest_are_sorted
+            && all_elements_are_of_interest
+        {
+            // If all the elements are requested and the are requested in the order
+            // they are provided in from the CSV, then we can simply collect the
+            // values split on the separator.
+            |line_number: usize,
+             line: Result<String>,
+             separator: &str,
+             _: &[(usize, usize)],
+             _: usize| {
+                line.map(|line: String| {
+                    (
+                        line_number,
+                        line.split(separator)
+                            .into_iter()
+                            .map(|element| Some(element.to_owned()))
+                            .collect::<Vec<Option<String>>>(),
+                    )
+                })
+            }
+        } else {
+            // If either not all the elements are requested
+            // or generally it becomes necessary to remap the values
+            |line_number: usize,
+             line: Result<String>,
+             separator: &str,
+             columns_of_interest_and_position: &[(usize, usize)],
+             min_column_of_interest: usize| {
+                line.map(|line: String| {
+                    let mut elements: Vec<Option<String>> =
+                        vec![None; columns_of_interest_and_position.len()];
+                    let mut j = 0;
+                    line.split(&separator)
+                        .into_iter()
+                        .enumerate()
+                        // We skip to the first value of interest
+                        .skip(min_column_of_interest)
+                        // Empty values are left as None
+                        .filter(|&(_, element)| !element.is_empty())
+                        .for_each(|(i, element)| {
+                            if i == columns_of_interest_and_position[j].1 {
+                                elements[columns_of_interest_and_position[j].0] =
+                                    Some(element.to_owned());
+                                j += 1;
+                            }
+                        });
+                    (line_number, elements)
+                })
+            }
+        };
+
         Ok(self
             .get_lines_iterator(true)?
             // Reading only the requested amount of lines.
             .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
             .enumerate()
-            //.progress_with(pb)
+            .progress_with(pb)
             .par_bridge()
             // Handling NaN values and padding them to the number of rows
-            .map(move |(line_number, line)| match line {
-                Ok(line) => {
-                    let mut elements: Vec<Option<String>> = vec![None; number_of_elements_per_line];
-                    for (i, term) in line.split(&self.separator).enumerate() {
-                        if i >= number_of_elements_per_line {
-                            return Err(format!(
-                                concat!(
-                                    "Line number {} contains more elements ",
-                                    "separated by the provided separator {:?} ",
-                                    "the expected number of elements {}."
-                                ),
-                                line_number, self.separator, number_of_elements_per_line
-                            ));
-                        }
-                        elements[i] = if term.is_empty(){
-                            None
-                        } else {
-                            Some(term.to_owned())
-                        };
-                    }
-                    Ok((line_number, elements))
-                }
-                Err(e) => Err(e),
+            .map(move |(line_number, line)| {
+                parse_line(
+                    line_number,
+                    line,
+                    &self.separator,
+                    &columns_of_interest_and_position,
+                    min_column_of_interest,
+                )
             }))
     }
 
