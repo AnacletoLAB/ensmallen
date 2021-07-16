@@ -291,9 +291,8 @@ impl CSVFileReader {
                         // afterwards in the for each loop.
                         .take(1 + max_column_of_interest - min_column_of_interest)
                         // Empty values are left as None
-                        .filter(|&(_, element)| !element.is_empty())
                         .for_each(|(i, element)| {
-                            if i == columns_of_interest_and_position[j].1 {
+                            if !element.is_empty() && i == columns_of_interest_and_position[j].1 {
                                 elements[columns_of_interest_and_position[j].0] =
                                     Some(element.to_owned());
                                 j += 1;
