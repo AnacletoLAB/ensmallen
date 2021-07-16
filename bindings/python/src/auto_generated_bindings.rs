@@ -3,89 +3,54 @@ use super::*;
 #[pymethods]
 impl EnsmallenGraph {
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns unweighted laplacian transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph. By default, true.
-    ///
-    pub fn get_laplacian_transformed_graph(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    #[text_signature = "($self)"]
+    /// Returns unweighted laplacian transformation of the graph
+    pub fn get_laplacian_transformed_graph(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.get_laplacian_transformed_graph(verbose),
+            graph: self.graph.get_laplacian_transformed_graph(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns unweighted random walk normalized laplacian transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn get_random_walk_normalized_laplacian_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> EnsmallenGraph {
+    #[text_signature = "($self)"]
+    /// Returns unweighted random walk normalized laplacian transformation of the graph
+    pub fn get_random_walk_normalized_laplacian_transformed_graph(&self) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self
                 .graph
-                .get_random_walk_normalized_laplacian_transformed_graph(verbose),
+                .get_random_walk_normalized_laplacian_transformed_graph(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns unweighted symmetric normalized laplacian transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
     ///
     /// Raises
     /// -------
     /// ValueError
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
-    pub fn get_symmetric_normalized_laplacian_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
+    pub fn get_symmetric_normalized_laplacian_transformed_graph(&self) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self
                 .graph
-                .get_symmetric_normalized_laplacian_transformed_graph(verbose))?,
+                .get_symmetric_normalized_laplacian_transformed_graph())?,
         })
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns unweighted symmetric normalized transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
     ///
     /// Raises
     /// -------
     /// ValueError
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
-    pub fn get_symmetric_normalized_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
+    pub fn get_symmetric_normalized_transformed_graph(&self) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self
-                .graph
-                .get_symmetric_normalized_transformed_graph(verbose))?,
+            graph: pe!(self.graph.get_symmetric_normalized_transformed_graph())?,
         })
     }
 
@@ -4199,122 +4164,74 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the directed graph from the upper triangular adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_upper_triangular(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_upper_triangular(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_upper_triangular(verbose),
+            graph: self.graph.to_upper_triangular(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the directed graph from the lower triangular adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_lower_triangular(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_lower_triangular(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_lower_triangular(verbose),
+            graph: self.graph.to_lower_triangular(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the main diagonal adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_main_diagonal(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_main_diagonal(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_main_diagonal(verbose),
+            graph: self.graph.to_main_diagonal(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the anti-diagonal adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_anti_diagonal(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_anti_diagonal(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_anti_diagonal(verbose),
+            graph: self.graph.to_anti_diagonal(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the bidiagonal adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_bidiagonal(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_bidiagonal(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_bidiagonal(verbose),
+            graph: self.graph.to_bidiagonal(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the arrowhead adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_arrowhead(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_arrowhead(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_arrowhead(verbose),
+            graph: self.graph.to_arrowhead(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the transposed adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_transposed(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_transposed(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_transposed(verbose),
+            graph: self.graph.to_transposed(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the complementary graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_complementary(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_complementary(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_complementary(verbose),
+            graph: self.graph.to_complementary(),
         }
     }
 

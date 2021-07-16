@@ -374,19 +374,6 @@ impl Graph {
                 actual_validation_edges_number=actual_validation_edges_number,
             ));
         }
-
-        // Creating the loading bar for the building of both the training and validation.
-        let pb_valid = get_loading_bar(
-            verbose,
-            "Building the validation graph",
-            valid_edges_bitmap.len() as usize,
-        );
-        let pb_train = get_loading_bar(
-            verbose,
-            "Building the train graph",
-            (self.get_directed_edges_number() - valid_edges_bitmap.len()) as usize,
-        );
-
         let validation_edge_ids = (0..self.get_directed_edges_number())
             .into_par_iter()
             .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
@@ -405,7 +392,6 @@ impl Graph {
                 Some(
                     train_edge_ids
                         .into_par_iter()
-                        .progress_with(pb_train)
                         .enumerate()
                         .map(|(i, edge_id)| unsafe {
                             let (src, dst, edge_type, weight) = self
@@ -431,7 +417,6 @@ impl Graph {
                     validation_edge_ids
                         .into_par_iter()
                         .enumerate()
-                        .progress_with(pb_valid)
                         .map(|(i, edge_id)| unsafe {
                             let (src, dst, edge_type, weight) = self
                             .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(

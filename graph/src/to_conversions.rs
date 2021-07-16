@@ -1,4 +1,3 @@
-use indicatif::ParallelProgressIterator;
 use rayon::iter::ParallelIterator;
 
 use crate::constructors::build_graph_from_integers;
@@ -30,19 +29,10 @@ impl Graph {
     /// Filtering a graph to the upper triangular matrix means that the
     /// resulting graph will exclusively have edges so that `dst > src`.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn to_upper_triangular(&self, verbose: Option<bool>) -> Graph {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Building upper triangular matrix",
-            self.get_directed_edges_number() as usize,
-        );
+    pub fn to_upper_triangular(&self) -> Graph {
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                    .progress_with(pb)
                     .filter_map(|(_, src, dst, edge_type, weight)| {
                         if dst > src {
                             Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
@@ -72,19 +62,10 @@ impl Graph {
     /// Filtering a graph to the lower triangular matrix means that the
     /// resulting graph will exclusively have edges so that `src > dst`.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn to_lower_triangular(&self, verbose: Option<bool>) -> Graph {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Building lower triangular matrix",
-            self.get_directed_edges_number() as usize,
-        );
+    pub fn to_lower_triangular(&self) -> Graph {
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                    .progress_with(pb)
                     .filter_map(|(_, src, dst, edge_type, weight)| {
                         if src > dst {
                             Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
@@ -114,19 +95,10 @@ impl Graph {
     /// The resulting graph will only contain the selfloops present in the
     /// original graph.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn to_main_diagonal(&self, verbose: Option<bool>) -> Graph {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Building the main diagonal matrix",
-            self.get_directed_edges_number() as usize,
-        );
+    pub fn to_main_diagonal(&self) -> Graph {
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                    .progress_with(pb)
                     .filter_map(|(_, src, dst, edge_type, weight)| {
                         if src == dst {
                             Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
@@ -156,20 +128,11 @@ impl Graph {
     /// The resulting graph will include only the edges present on the
     /// anti-diagonal of the graph.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn to_anti_diagonal(&self, verbose: Option<bool>) -> Graph {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Building the anti-diagonal matrix",
-            self.get_directed_edges_number() as usize,
-        );
+    pub fn to_anti_diagonal(&self) -> Graph {
         let nodes_number = self.get_nodes_number();
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                    .progress_with(pb)
                     .filter_map(|(_, src, dst, edge_type, weight)| {
                         if src == nodes_number - dst {
                             Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
@@ -199,20 +162,11 @@ impl Graph {
     /// The resulting graph will include only the edges present on either
     /// the diagonal or anti-diagonal matrix.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn to_bidiagonal(&self, verbose: Option<bool>) -> Graph {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Building the bidiagonal matrix",
-            self.get_directed_edges_number() as usize,
-        );
+    pub fn to_bidiagonal(&self) -> Graph {
         let nodes_number = self.get_nodes_number();
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                    .progress_with(pb)
                     .filter_map(|(_, src, dst, edge_type, weight)| {
                         if src == dst || src == nodes_number - dst {
                             Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
@@ -238,19 +192,10 @@ impl Graph {
 
     /// Return the graph from the arrowhead adjacency matrix.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn to_arrowhead(&self, verbose: Option<bool>) -> Graph {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Building the arrowhead matrix",
-            self.get_directed_edges_number() as usize,
-        );
+    pub fn to_arrowhead(&self) -> Graph {
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                    .progress_with(pb)
                     .filter_map(|(_, src, dst, edge_type, weight)| {
                         if src == 0 || dst == 0 || src == dst {
                             Some((0, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN))))
@@ -276,22 +221,13 @@ impl Graph {
 
     /// Return the graph from the transposed adjacency matrix.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn to_transposed(&self, verbose: Option<bool>) -> Graph {
+    pub fn to_transposed(&self) -> Graph {
         if !self.is_directed() {
             return self.clone();
         }
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Building the transposed matrix",
-            self.get_directed_edges_number() as usize,
-        );
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                    .progress_with(pb)
                     .map(|(_, src, dst, edge_type, weight)| {
                         (0, (dst, src, edge_type, weight.unwrap_or(WeightT::NAN)))
                     }),
@@ -316,19 +252,10 @@ impl Graph {
     /// Note that the resulting graph may require a significant amount
     /// of memory.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn to_complementary(&self, verbose: Option<bool>) -> Graph {
-        let verbose = verbose.unwrap_or(true);
-        let pb = get_loading_bar(
-            verbose,
-            "Building the complementary graph",
-            self.get_nodes_number() as usize,
-        );
+    pub fn to_complementary(&self) -> Graph {
         build_graph_from_integers(
             Some(
                 self.par_iter_node_ids()
-                    .progress_with(pb)
                     .map(|src| {
                         self.iter_node_ids()
                             .filter_map(|dst| {
