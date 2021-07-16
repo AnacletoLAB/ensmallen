@@ -3,7 +3,6 @@ use crate::constructors::{
 };
 
 use super::*;
-use indicatif::ParallelProgressIterator;
 use itertools::Itertools;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
@@ -40,47 +39,23 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_ids`: Vec<NodeT> - The node Ids to remap the graph to.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
     /// # Safety
     /// This method will cause a panic if the node IDs are either:
     /// * Not unique
     /// * Not available for each of the node IDs of the graph.
-    pub unsafe fn remap_unchecked_from_node_ids(
-        &self,
-        node_ids: Vec<NodeT>,
-        verbose: Option<bool>,
-    ) -> Graph {
-        let verbose = verbose.unwrap_or(true);
-
-        let pb_edges = get_loading_bar(
-            verbose,
-            "Building sorted edges with node IDs in increasing outbound node degree",
-            self.get_directed_edges_number() as usize,
-        );
-
-        let pb_nodes = get_loading_bar(
-            verbose,
-            "Building node IDs {} with increasing outbound node degree",
-            self.get_nodes_number() as usize,
-        );
-
+    pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
         build_graph_from_strings_without_type_iterators(
             self.has_node_types(),
-            Some(
-                node_ids
-                    .into_par_iter()
-                    .progress_with(pb_nodes)
-                    .map(|node_id| unsafe {
-                        Ok((
-                            node_id as usize,
-                            (
-                                self.get_unchecked_node_name_from_node_id(node_id),
-                                self.get_unchecked_node_type_names_from_node_id(node_id),
-                            ),
-                        ))
-                    }),
-            ),
+            Some(node_ids.into_par_iter().map(|node_id| unsafe {
+                Ok((
+                    node_id as usize,
+                    (
+                        self.get_unchecked_node_name_from_node_id(node_id),
+                        self.get_unchecked_node_type_names_from_node_id(node_id),
+                    ),
+                ))
+            })),
             Some(self.get_nodes_number()),
             true,
             false,
@@ -89,7 +64,6 @@ impl Graph {
             self.has_edge_types(),
             Some(
                 self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
-                    .progress_with(pb_edges)
                     .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
                         Ok((
                             0,
@@ -120,16 +94,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_ids`: Vec<NodeT> - The node Ids to remap the graph to.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
     /// # Raises
     /// * If the given node IDs are not unique.
     /// * If the given node IDs are not available for all the values in the graph.
-    pub fn remap_from_node_ids(
-        &self,
-        node_ids: Vec<NodeT>,
-        verbose: Option<bool>,
-    ) -> Result<Graph> {
+    pub fn remap_from_node_ids(&self, node_ids: Vec<NodeT>) -> Result<Graph> {
         if node_ids.len() != self.get_nodes_number() as usize {
             return Err(format!(
                 concat!(
@@ -170,29 +139,23 @@ impl Graph {
                 node_ids.len() - without_duplicates_len
             ));
         }
-        Ok(unsafe { self.remap_unchecked_from_node_ids(node_ids, verbose) })
+        Ok(unsafe { self.remap_unchecked_from_node_ids(node_ids) })
     }
 
     /// Returns graph remapped using given node names ordering.
     ///
     /// # Arguments
     /// * `node_names`: Vec<&str> - The node names to remap the graph to.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
     /// # Raises
     /// * If the given node names are not unique.
     /// * If the given node names are not available for all the values in the graph.
-    pub fn remap_from_node_names(
-        &self,
-        node_names: Vec<&str>,
-        verbose: Option<bool>,
-    ) -> Result<Graph> {
+    pub fn remap_from_node_names(&self, node_names: Vec<&str>) -> Result<Graph> {
         self.remap_from_node_ids(
             node_names
                 .into_iter()
                 .map(|node_name| self.get_node_id_from_node_name(node_name))
                 .collect::<Result<Vec<NodeT>>>()?,
-            verbose,
         )
     }
 
@@ -201,7 +164,6 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The graph to remap towards.
-    /// * `verbose`: Option<bool> - Whether to show a loding bar.
     ///
     /// # Example
     /// A graph is always remappable to itself:
@@ -210,14 +172,7 @@ impl Graph {
     /// assert_eq!(graph, graph.remap_from_graph(&graph, None).unwrap());
     /// ```
     ///
-    pub fn remap_from_graph(&self, other: &Graph, verbose: Option<bool>) -> Result<Graph> {
-        let verbose = verbose.unwrap_or(false);
-        let pb = get_loading_bar(
-            verbose,
-            format!("Building remapped {}", self.name).as_ref(),
-            self.get_directed_edges_number() as usize,
-        );
-
+    pub fn remap_from_graph(&self, other: &Graph) -> Result<Graph> {
         if !self.are_nodes_remappable(other) {
             return Err("The two graphs nodes sets are not remappable one-another.".to_owned());
         }
@@ -225,7 +180,6 @@ impl Graph {
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
-                    .progress_with(pb)
                     .map(
                         |(edge_id, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {
                             (

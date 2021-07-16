@@ -1325,10 +1325,10 @@ pub fn test_selfloops(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     Ok(())
 }
 
-pub fn test_sorting(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
-    let sorted_increasing = graph.sort_by_increasing_outbound_node_degree(verbose);
+pub fn test_sorting(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
+    let sorted_increasing = graph.sort_by_increasing_outbound_node_degree();
     assert!(sorted_increasing.has_nodes_sorted_by_increasing_outbound_node_degree());
-    let sorted_decreasing = graph.sort_by_decreasing_outbound_node_degree(verbose);
+    let sorted_decreasing = graph.sort_by_decreasing_outbound_node_degree();
     assert!(sorted_decreasing.has_nodes_sorted_by_decreasing_outbound_node_degree());
 
     Ok(())
@@ -2170,13 +2170,13 @@ pub fn test_clone_and_setters(graph: &mut Graph, verbose: Option<bool>) -> Resul
     Ok(())
 }
 
-pub fn test_graph_remapping(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
+pub fn test_graph_remapping(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     assert!(
         graph.are_nodes_remappable(&graph),
         "Graph always should be remappable to itself."
     );
     assert!(
-        graph.remap_from_graph(&graph, verbose).is_ok(),
+        graph.remap_from_graph(&graph).is_ok(),
         "Graph always should be remappable to itself."
     );
     Ok(())

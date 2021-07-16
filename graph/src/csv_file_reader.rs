@@ -1,6 +1,12 @@
 use super::*;
 use indicatif::ProgressIterator;
 use itertools::Itertools;
+
+#[cfg(target_os = "linux")]
+use nix::fcntl::*;
+#[cfg(target_os = "linux")]
+use std::os::unix::io::AsRawFd;
+
 use num_traits::Zero;
 use rayon::iter::{ParallelBridge, ParallelIterator};
 use std::{fs::File, io::prelude::*, io::BufReader};
@@ -81,11 +87,21 @@ impl CSVFileReader {
 
     fn get_buffer_reader(&self) -> Result<BufReader<File>> {
         let file = File::open(&self.path);
-        file.map_or_else(
-            |_| Err(format!("Cannot open the file at {}", self.path)),
-            // We use a buffer reader with 8MBs
-            |file| Ok(BufReader::with_capacity(8 * 1024 * 1024, file)),
-        )
+
+        if file.is_err() {
+            return Err(format!("Cannot open the file at {}", self.path));
+        }
+
+        let file = file.unwrap();
+
+        #[cfg(target_os = "linux")]
+        let errno = posix_fadvise(
+            file.as_raw_fd(),
+            0,
+            0,
+            PosixFadviseAdvice::POSIX_FADV_SEQUENTIAL,
+        )?;
+        Ok(BufReader::with_capacity(8 * 1024 * 1024, file))
     }
 
     /// Read the whole file and return how many rows it has.

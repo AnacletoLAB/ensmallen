@@ -45,6 +45,9 @@ vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
 elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "develop"}
 tags = {path="./tags/"}
 
+[target.'cfg(unix)'.dependencies]
+nix = "0.22.0"
+
 [profile.release]
 opt-level = 3
 lto = "fat"
