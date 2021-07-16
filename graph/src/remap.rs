@@ -2,7 +2,6 @@ use crate::constructors::build_graph_from_integers;
 
 use super::*;
 use itertools::Itertools;
-use permutation::Permutation;
 use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
 impl Graph {
@@ -32,57 +31,6 @@ impl Graph {
             .all(|(_, node_name, _, node_type)| {
                 other.has_node_name_and_node_type_name(&node_name, node_type)
             })
-    }
-
-    /// Returns graph remapped using given node IDs ordering.
-    ///
-    /// # Arguments
-    /// * `permutation`: Permutation - The new order of the nodes.
-    ///
-    /// # Safety
-    /// This method will cause a panic if the node IDs are either:
-    /// * Not unique
-    /// * Not available for each of the node IDs of the graph.
-    pub unsafe fn remap_unchecked_from_permutation(&self, permutation: Permutation) -> Graph {
-        let new_nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::from_reverse_map(
-            self.par_iter_node_ids()
-                .map(|node_id| unsafe {
-                    self.get_unchecked_node_name_from_node_id(
-                        permutation.apply_idx(node_id as usize) as NodeT,
-                    )
-                })
-                .collect(),
-        )
-        .unwrap();
-        build_graph_from_integers(
-            Some(
-                self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
-                    .map(
-                        |(_, src_node_id, _, dst_node_id, _, edge_type_id, _, weight)| {
-                            (
-                                0,
-                                (
-                                    permutation.apply_idx(src_node_id as usize) as NodeT,
-                                    permutation.apply_idx(dst_node_id as usize) as NodeT,
-                                    edge_type_id,
-                                    weight.unwrap_or(WeightT::NAN),
-                                ),
-                            )
-                        },
-                    ),
-            ),
-            new_nodes_vocabulary,
-            self.node_types.clone(),
-            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.has_edge_weights(),
-            self.is_directed(),
-            Some(true),
-            Some(false),
-            Some(false),
-            Some(self.get_directed_edges_number()),
-            self.get_name(),
-        )
-        .unwrap()
     }
 
     /// Returns graph remapped using given node IDs ordering.

@@ -1,4 +1,7 @@
-use permutation::permutation;
+use rayon::iter::IndexedParallelIterator;
+use rayon::iter::IntoParallelIterator;
+use rayon::iter::ParallelIterator;
+use rayon::slice::ParallelSliceMut;
 
 use super::*;
 
@@ -9,7 +12,20 @@ impl Graph {
         if self.has_nodes_sorted_by_increasing_outbound_node_degree() {
             return self.clone();
         }
-        unsafe { self.remap_unchecked_from_permutation(permutation::sort(self.get_node_degrees())) }
+        let mut node_ids_and_node_degrees =
+            vec![(0 as usize, 0 as NodeT); self.get_nodes_number() as usize];
+        self.par_iter_node_degrees()
+            .enumerate()
+            .collect_into_vec(&mut node_ids_and_node_degrees);
+        node_ids_and_node_degrees.par_sort_unstable_by(|(_, node_degree_a), (_, node_degree_b)| {
+            node_degree_a.cmp(node_degree_b)
+        });
+        let mut new_node_ids = vec![0 as NodeT; self.get_nodes_number() as usize];
+        node_ids_and_node_degrees
+            .into_par_iter()
+            .map(|(node_id, _)| node_id as NodeT)
+            .collect_into_vec(&mut new_node_ids);
+        unsafe { self.remap_unchecked_from_node_ids(new_node_ids) }
     }
 
     /// Returns graph with node IDs sorted by decreasing outbound node degree.
@@ -17,11 +33,19 @@ impl Graph {
         if self.has_nodes_sorted_by_decreasing_outbound_node_degree() {
             return self.clone();
         }
-        unsafe {
-            self.remap_unchecked_from_permutation(permutation::sort_by(
-                self.get_node_degrees(),
-                |a, b| b.cmp(a),
-            ))
-        }
+        let mut node_ids_and_node_degrees =
+            vec![(0 as usize, 0 as NodeT); self.get_nodes_number() as usize];
+        self.par_iter_node_degrees()
+            .enumerate()
+            .collect_into_vec(&mut node_ids_and_node_degrees);
+        node_ids_and_node_degrees.par_sort_unstable_by(|(_, node_degree_a), (_, node_degree_b)| {
+            node_degree_b.cmp(node_degree_a)
+        });
+        let mut new_node_ids = vec![0 as NodeT; self.get_nodes_number() as usize];
+        node_ids_and_node_degrees
+            .into_par_iter()
+            .map(|(node_id, _)| node_id as NodeT)
+            .collect_into_vec(&mut new_node_ids);
+        unsafe { self.remap_unchecked_from_node_ids(new_node_ids) }
     }
 }
