@@ -95,12 +95,12 @@ impl CSVFileReader {
         let file = file.unwrap();
 
         #[cfg(target_os = "linux")]
-        let errno = posix_fadvise(
+        let _ = posix_fadvise(
             file.as_raw_fd(),
             0,
             0,
             PosixFadviseAdvice::POSIX_FADV_SEQUENTIAL,
-        )?;
+        );
         Ok(BufReader::with_capacity(8 * 1024 * 1024, file))
     }
 
