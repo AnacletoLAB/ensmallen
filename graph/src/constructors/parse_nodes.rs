@@ -66,10 +66,73 @@ pub(crate) fn parse_nodes(
         nodes_number,
         numeric_node_ids,
         minimum_node_ids,
+        node_list_is_correct,
     ) {
         // When the nodes iterator was provided, and the node IDs are expected
         // NOT to be numeric and a minimum node ID is therefore meaningless.
-        (Some(ni), _, false, None) => {
+        // Note that this is the use case when the node list is ASSUMED TO BE CORRECT
+        // and the total number of nodes is known and provided.
+        (Some(ni), Some(nodes_number), false, None, true) => {
+            let (nodes_names, node_types_ids): (Vec<String>, Option<Vec<Option<Vec<NodeTypeT>>>>) =
+                if has_node_types {
+                    // If there are node types we need to collect them.
+                    // We cannot use the unzip utility because in this context
+                    // since we need to use a ParallellIterator,
+                    // note that it is NOT an IndexedParallellIterator.
+                    // Since we know the number of nodes and the node list
+                    // is provided as correct, it is possible to pre-allocate the vectors
+                    // and populate them with a foreach.
+                    let nodes_names = ThreadDataRaceAware {
+                        value: std::cell::UnsafeCell::new(vec![
+                            "".to_owned();
+                            nodes_number as usize
+                        ]),
+                    };
+                    let node_types_ids = ThreadDataRaceAware {
+                        value: std::cell::UnsafeCell::new(vec![None; nodes_number as usize]),
+                    };
+                    ni.for_each(|line| unsafe {
+                        // We can unwrap because the user tells us that this is surely
+                        // a correct node list.
+                        let (line_number, (node_name, node_type_ids)) = line.unwrap();
+                        (*nodes_names.value.get())[line_number] = node_name;
+                        (*node_types_ids.value.get())[line_number] = node_type_ids;
+                    });
+                    (
+                        nodes_names.value.into_inner(),
+                        Some(node_types_ids.value.into_inner()),
+                    )
+                } else {
+                    let nodes_names = ThreadDataRaceAware {
+                        value: std::cell::UnsafeCell::new(vec![
+                            "".to_owned();
+                            nodes_number as usize
+                        ]),
+                    };
+                    ni.for_each(|line| unsafe {
+                        // We can unwrap because the user tells us that this is surely
+                        // a correct node list.
+                        let (line_number, (node_name, _)) = line.unwrap();
+                        (*nodes_names.value.get())[line_number] = node_name;
+                    });
+                    (nodes_names.value.into_inner(), None)
+                };
+            let mut node_type_vocabulary = node_type_parser.into_inner();
+            if node_type_vocabulary.is_empty() {
+                node_type_vocabulary.build()?;
+            }
+
+            Ok::<_, String>((
+                Vocabulary::from_reverse_map(nodes_names)?,
+                node_types_ids,
+                Some(node_type_vocabulary),
+            ))
+        }
+        // When the nodes iterator was provided, and the node IDs are expected
+        // NOT to be numeric and a minimum node ID is therefore meaningless.
+        // Note that this is the use case when it is not known if the node list is
+        // correct and how many nodes are inside it.
+        (Some(ni), _, false, None, _) => {
             let (nodes_names, node_types_ids): (Vec<String>, Option<Vec<Option<Vec<NodeTypeT>>>>) =
                 if has_node_types {
                     // If there are node types we need to collect them.
@@ -100,7 +163,7 @@ pub(crate) fn parse_nodes(
         }
         // When the node iterator was provided, and the nodes number is not known
         // and the node IDs are expected to be numeric.
-        (Some(ni), None, true, _) => {
+        (Some(ni), None, true, _, _) => {
             // In case the node types are expected to exist.
             let (min, max, node_types_ids) = if has_node_types {
                 let min = AtomicU32::new(NodeT::MAX);
@@ -186,16 +249,18 @@ pub(crate) fn parse_nodes(
                 Some(node_type_vocabulary),
             ))
         }
-        (None, Some(ntn), true, None) => Ok((Vocabulary::from_range(0..ntn), None, None)),
-        (None, Some(ntn), true, Some(min_val)) => {
+        (None, Some(ntn), true, None, _) => Ok((Vocabulary::from_range(0..ntn), None, None)),
+        (None, Some(ntn), true, Some(min_val), _) => {
             Ok((Vocabulary::from_range(min_val..min_val + ntn), None, None))
         }
-        (None, None, true, _) => {
+        (None, None, true, _, _) => {
             let min = minimum_node_ids.unwrap_or(0);
             Ok((Vocabulary::from_range(min..min), None, None))
         }
-        (None, Some(ntn), false, None) => Ok((Vocabulary::with_capacity(ntn as usize), None, None)),
-        (None, None, false, None) => Ok((Vocabulary::new(), None, None)),
+        (None, Some(ntn), false, None, _) => {
+            Ok((Vocabulary::with_capacity(ntn as usize), None, None))
+        }
+        (None, None, false, None, _) => Ok((Vocabulary::new(), None, None)),
         // TODO! imporve error
         _ => unreachable!("All other cases must be explictily handled."),
     }?;
