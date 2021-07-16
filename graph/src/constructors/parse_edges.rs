@@ -154,6 +154,7 @@ macro_rules! parse_sorted_string_edge_list {
         $node_method:expr,
         $edge_types_vocabulary:expr,
         $edge_types_method:expr,
+        $nodes_number:expr,
         $edges_number:expr,
         ($($workaround:ident),*),
         ($($input_tuple:ident),*),
@@ -162,10 +163,6 @@ macro_rules! parse_sorted_string_edge_list {
     ) => {{
         // Create the edge type parser
         let mut edge_type_parser = EdgeTypeParser::new($edge_types_vocabulary);
-        // Creating directly the edge list, as the value are SWORN
-        // to be sorted and correct and complete.
-        // Get the number of nodes and edges.
-        let nodes_number = $nodes.len();
         // Create the node parser
         let mut node_parser = EdgeNodeNamesParser::new($nodes);
         // First we create the weights and edge types vectors
@@ -175,8 +172,8 @@ macro_rules! parse_sorted_string_edge_list {
             };
         )*
         // We also create the builder for the elias fano
-        let node_bits = get_node_bits(nodes_number as NodeT);
-        let maximum_edges_number = encode_max_edge(nodes_number as NodeT, node_bits);
+        let node_bits = get_node_bits($nodes_number as NodeT);
+        let maximum_edges_number = encode_max_edge($nodes_number as NodeT, node_bits);
         let elias_fano_builder = ConcurrentEliasFanoBuilder::new(
             $edges_number as u64,
             maximum_edges_number
@@ -372,6 +369,7 @@ pub(crate) fn parse_string_edges(
     complete: Option<bool>,
     duplicates: Option<bool>,
     sorted: Option<bool>,
+    nodes_number: Option<NodeT>,
     edges_number: Option<EdgeT>,
     numeric_edge_list_node_ids: Option<bool>,
     numeric_edge_list_edge_type_ids: Option<bool>,
@@ -463,6 +461,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                nodes_number.unwrap(),
                 edges_number.unwrap(),
                 (edge_type, weight),
                 (edge_type, weight),
@@ -485,6 +484,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                nodes_number.unwrap(),
                 edges_number.unwrap(),
                 (_edge_type, weight),
                 (weight),
@@ -507,6 +507,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                nodes_number.unwrap(),
                 edges_number.unwrap(),
                 (edge_type, _weight),
                 (edge_type),
@@ -529,6 +530,7 @@ pub(crate) fn parse_string_edges(
                 node_method,
                 edge_types_vocabulary,
                 edge_types_method,
+                nodes_number.unwrap(),
                 edges_number.unwrap(),
                 (_edge_type, _weight),
                 (),

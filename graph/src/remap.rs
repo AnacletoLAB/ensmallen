@@ -162,7 +162,7 @@ impl Graph {
     /// A graph is always remappable to itself:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// assert_eq!(graph, graph.remap_from_graph(&graph, None).unwrap());
+    /// assert_eq!(graph, graph.remap_from_graph(&graph).unwrap());
     /// ```
     ///
     pub fn remap_from_graph(&self, other: &Graph) -> Result<Graph> {

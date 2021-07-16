@@ -77,6 +77,9 @@ pub fn load_ppi(
                 .unwrap()
                 .set_max_rows_number(Some(100000))
                 .unwrap()
+                .set_csv_is_correct(Some(true))
+                .unwrap()
+                .set_nodes_number(Some(37163))
                 .set_rows_to_skip(Some(0))
                 .unwrap()
                 .clone(),
@@ -109,6 +112,7 @@ pub fn load_ppi(
         })
         .unwrap()
         .set_skip_selfloops(Some(skip_selfloops))
+        .set_csv_is_correct(Some(true))
         .set_default_edge_type(if load_edge_types {
             Some("Kebab".to_string())
         } else {

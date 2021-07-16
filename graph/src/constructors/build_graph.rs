@@ -41,7 +41,7 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
     nodes_iterator: Option<
         impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
     >,
-    nodes_number: Option<NodeT>,
+    mut nodes_number: Option<NodeT>,
     node_list_is_correct: bool,
     numeric_node_ids: bool,
     numeric_node_list_node_type_ids: bool,
@@ -72,6 +72,7 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
         minimum_node_type_id,
         has_node_types,
     )?;
+    let nodes_iterator_was_provided = nodes_iterator.is_some();
     let (nodes, node_types) = parse_nodes(
         nodes_iterator,
         nodes_number,
@@ -81,6 +82,11 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
         numeric_node_list_node_type_ids,
         minimum_node_ids,
     )?;
+    // If the number of nodes was not known
+    // and a nodes iterator was provided, we can fill the gap.
+    if nodes_number.is_none() && nodes_iterator_was_provided {
+        nodes_number.replace(nodes.len() as NodeT);
+    }
     let edge_types_vocabulary = parse_types(
         edge_types_iterator,
         edge_types_number,
@@ -98,6 +104,7 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
         complete,
         duplicates,
         sorted,
+        nodes_number,
         edges_number,
         numeric_edge_list_node_ids,
         numeric_edge_list_edge_type_ids,

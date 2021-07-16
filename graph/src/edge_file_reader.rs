@@ -559,9 +559,9 @@ impl EdgeFileReader {
         };
 
         // Next the destination nodes
-        let maybe_source_node_name = elements_in_line.pop().unwrap();
-        // and the source node
         let maybe_destination_node_name = elements_in_line.pop().unwrap();
+        // and the source node
+        let maybe_source_node_name = elements_in_line.pop().unwrap();
         // We check that these values are actually provided
         if maybe_destination_node_name.is_none() {
             return Err("The destination node is undefined.".to_owned());

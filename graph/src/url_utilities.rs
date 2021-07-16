@@ -1459,7 +1459,7 @@ pub fn is_valid_biolink_from_object(node_name: &str) -> bool {
     .is_ok()
 }
 
-/// Returns URL from given JAX node name.
+/// Returns URL from given biolink node name.
 ///
 /// # Arguments
 /// * `object_name`: &str - Object name to build pattern for.

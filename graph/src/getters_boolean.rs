@@ -23,7 +23,7 @@ impl Graph {
     /// To check if the graph has nodes you can use:
     /// ```rust
     /// # let graph_with_nodes = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// # let empty_graph = graph::test_utilities::load_empty_graph(false, "Empty graph");
+    /// # let empty_graph = graph::build_empty_graph(false, "Empty graph").unwrap();
     /// assert!(graph_with_nodes.has_nodes());
     /// assert!(!empty_graph.has_nodes());
     /// ```

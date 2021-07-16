@@ -33,5 +33,7 @@ fn test_load_sorted() {
     )
     .unwrap();
 
+    println!("{:?}", g.textual_report());
+
     let _ = graph::test_utilities::default_test_suite(&mut g, Some(true));
 }

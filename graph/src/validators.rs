@@ -464,7 +464,7 @@ impl Graph {
     ///
     /// ```rust
     /// # let graph_with_weights = graph::test_utilities::load_ppi(false, false, true, false, false, false);
-    /// # let graph_with_negative_weights = graph_with_weights.get_laplacian_transformed_graph(Some(false));
+    /// # let graph_with_negative_weights = graph_with_weights.get_laplacian_transformed_graph();
     /// assert!(graph_with_weights.must_have_positive_edge_weights().is_ok());
     /// assert!(graph_with_negative_weights.must_have_positive_edge_weights().is_err());
     /// ```
