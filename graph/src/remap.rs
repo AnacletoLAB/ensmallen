@@ -51,31 +51,36 @@ impl Graph {
         node_ids: Vec<NodeT>,
         verbose: Option<bool>,
     ) -> Graph {
-        // let verbose = verbose.unwrap_or(true);
+        let verbose = verbose.unwrap_or(true);
 
-        // let pb_edges = get_loading_bar(
-        //     verbose,
-        //     "Building sorted edges with node IDs in increasing outbound node degree",
-        //     self.get_directed_edges_number() as usize,
-        // );
+        let pb_edges = get_loading_bar(
+            verbose,
+            "Building sorted edges with node IDs in increasing outbound node degree",
+            self.get_directed_edges_number() as usize,
+        );
 
-        // let pb_nodes = get_loading_bar(
-        //     verbose,
-        //     "Building node IDs {} with increasing outbound node degree",
-        //     self.get_nodes_number() as usize,
-        // );
+        let pb_nodes = get_loading_bar(
+            verbose,
+            "Building node IDs {} with increasing outbound node degree",
+            self.get_nodes_number() as usize,
+        );
 
         build_graph_from_strings_without_type_iterators(
             self.has_node_types(),
-            Some(node_ids.into_par_iter().map(|node_id| unsafe {
-                Ok((
-                    node_id as usize,
-                    (
-                        self.get_unchecked_node_name_from_node_id(node_id),
-                        self.get_unchecked_node_type_names_from_node_id(node_id),
-                    ),
-                ))
-            })),
+            Some(
+                node_ids
+                    .into_par_iter()
+                    .progress_with(pb_nodes)
+                    .map(|node_id| unsafe {
+                        Ok((
+                            node_id as usize,
+                            (
+                                self.get_unchecked_node_name_from_node_id(node_id),
+                                self.get_unchecked_node_type_names_from_node_id(node_id),
+                            ),
+                        ))
+                    }),
+            ),
             Some(self.get_nodes_number()),
             true,
             false,
@@ -84,17 +89,20 @@ impl Graph {
             self.has_edge_types(),
             Some(
                 self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
-                    .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                        Ok((
-                            0,
-                            (
-                                src_name,
-                                dst_name,
-                                edge_type_name,
-                                weight.unwrap_or(WeightT::NAN),
-                            ),
-                        ))
-                    }),
+                    .progress_with(pb_edges)
+                    .map(
+                        |(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
+                            Ok((
+                                0,
+                                (
+                                    src_name,
+                                    dst_name,
+                                    edge_type_name,
+                                    weight.unwrap_or(WeightT::NAN),
+                                ),
+                            ))
+                        },
+                    ),
             ),
             self.has_edge_weights(),
             self.is_directed(),
