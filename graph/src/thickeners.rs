@@ -153,10 +153,10 @@ impl Graph {
                                 }
                             })
                             .enumerate()
-                            .map(|(source_node_id, new_neighbours)| {
+                            .flat_map(|(source_node_id, new_neighbours)| {
                                 new_neighbours
                                     .into_iter()
-                                    .map(move |destination_node_id| {
+                                    .flat_map(move |destination_node_id| {
                                         if !self.is_directed() {
                                             vec![
                                                 (
@@ -190,10 +190,8 @@ impl Graph {
                                             )]
                                         }
                                     })
-                                    .flatten()
                                     .collect::<Vec<_>>()
                             })
-                            .flatten(),
                     ),
             ),
             self.nodes.clone(),

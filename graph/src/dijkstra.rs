@@ -170,6 +170,8 @@ impl Graph {
     ///
     /// # Safety
     /// If any of the given node IDs does not exist in the graph the method will panic.
+    ///
+    /// TODO! Explore chains accelerations!
     pub unsafe fn get_unchecked_breath_first_search_from_node_ids(
         &self,
         src_node_id: NodeT,
@@ -221,7 +223,7 @@ impl Graph {
                         return;
                     }
                     // If the node was not previously visited
-                    if distances[neighbour_node_id as usize] == NOT_PRESENT {
+                    if distances[neighbour_node_id as usize] > new_neighbour_distance {
                         // Set it's distance
                         distances[neighbour_node_id as usize] = new_neighbour_distance;
 
@@ -1206,6 +1208,12 @@ impl Graph {
             .into_par_iter_node_ids_and_finite_distances()
             .filter(|&(_, distance)| tentative_diameter < distance * 2)
             .collect::<Vec<(NodeT, NodeT)>>();
+
+        // If all the test cases are empty, it means
+        // that our tentative diameter is already the actual diameter.
+        if node_ids_and_distances.is_empty() {
+            return Ok(tentative_diameter as f64);
+        }
 
         // sort the nodes by distance, so that we will start checking from the
         // most distant ones which are the most probable to be an extreme of the
