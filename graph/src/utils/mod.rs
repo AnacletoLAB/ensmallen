@@ -2,6 +2,9 @@ use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::ThreadPool;
 
+mod parallel_lines_reader;
+pub use parallel_lines_reader::ParallelLines;
+
 mod argmax_argmin;
 pub use argmax_argmin::*;
 
