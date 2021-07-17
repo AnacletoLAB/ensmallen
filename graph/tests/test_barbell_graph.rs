@@ -5,9 +5,9 @@ use graph::*;
 fn test_barbell_graph() -> Result<()> {
     let mut barbell_graph = Graph::generate_barbell_graph(
         None,
-        Some(100),
-        Some(100),
-        Some(100),
+        Some(100), // 9900 edges
+        Some(100), // 198 edges
+        Some(100), // 9900 edges
         None,
         None,
         None,
