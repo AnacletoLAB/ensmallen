@@ -1,7 +1,7 @@
-use rayon::iter::plumbing::{UnindexedProducer, Producer, bridge, bridge_unindexed};
+use rayon::iter::plumbing::{UnindexedProducer, bridge_unindexed};
 use rayon::prelude::*;
 use std::fs::File;
-use std::io::{self, prelude::*, BufReader, SeekFrom};
+use std::io::{prelude::*, BufReader, SeekFrom};
 
 const READER_CAPACITY: usize = 8 * 1024 * 1024;
 const LINE_LENGTH_EXTIMATE: usize = 256;
