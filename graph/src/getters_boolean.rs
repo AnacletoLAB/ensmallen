@@ -1,4 +1,5 @@
 use super::*;
+use rayon::iter::ParallelIterator;
 
 /// # Boolean Getters
 /// The naming convention we follow is:
@@ -22,7 +23,7 @@ impl Graph {
     /// To check if the graph has nodes you can use:
     /// ```rust
     /// # let graph_with_nodes = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// # let empty_graph = graph::test_utilities::load_empty_graph(false);
+    /// # let empty_graph = graph::build_empty_graph(false, "Empty graph").unwrap();
     /// assert!(graph_with_nodes.has_nodes());
     /// assert!(!empty_graph.has_nodes());
     /// ```
@@ -37,7 +38,7 @@ impl Graph {
     /// To check if the current graph has edges you can use:
     /// ```rust
     /// # let graph_with_edges = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// # let empty_graph = graph::test_utilities::load_empty_graph(false);
+    /// # let empty_graph = graph::build_empty_graph(false, "Empty graph").unwrap();
     /// assert!(graph_with_edges.has_edges());
     /// assert!(!empty_graph.has_edges());
     /// ```
@@ -91,17 +92,8 @@ impl Graph {
     }
 
     /// Returns whether graph has weights that can represent probabilities.
-    ///
-    /// # Example
-    /// ```rust
-    /// # let graph_with_weights = graph::test_utilities::load_ppi(true, true, true, false, false, false);
-    /// assert!(!graph_with_weights.has_edge_weights_representing_probabilities().unwrap());
-    /// let normalized = graph_with_weights.get_weighted_symmetric_normalized_transformed_graph(Some(false)).unwrap();
-    /// assert!(normalized.has_edge_weights_representing_probabilities().unwrap());
-    /// ```
-    ///
-    pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool, String> {
-        Ok(self.get_mininum_edge_weight()? > 0.0 && self.get_maximum_edge_weight()? <= 1.0)
+    pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool> {
+        Ok(self.get_mininum_edge_weight().clone()? > 0.0 && self.get_maximum_edge_weight().clone()? <= 1.0)
     }
 
     /// Returns whether a graph has one or more weighted singleton nodes.
@@ -110,8 +102,8 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn has_weighted_singleton_nodes(&self) -> Result<bool, String> {
-        Ok(self.get_weighted_singleton_nodes_number()? > 0)
+    pub fn has_weighted_singleton_nodes(&self) -> Result<bool> {
+        Ok(self.get_weighted_singleton_nodes_number().clone()? > 0)
     }
 
     /// Returns whether the graph has constant weights.
@@ -122,9 +114,9 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain edge weights.
-    pub fn has_constant_edge_weights(&self) -> Result<bool, String> {
+    pub fn has_constant_edge_weights(&self) -> Result<bool> {
         Ok(
-            (self.get_maximum_edge_weight()? - self.get_mininum_edge_weight()?).abs()
+            (self.get_maximum_edge_weight().clone()? - self.get_mininum_edge_weight().clone()?).abs()
                 < WeightT::EPSILON,
         )
     }
@@ -141,8 +133,8 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not contain weights.
-    pub fn has_negative_edge_weights(&self) -> Result<bool, String> {
-        self.get_mininum_edge_weight()
+    pub fn has_negative_edge_weights(&self) -> Result<bool> {
+        self.get_mininum_edge_weight().clone()
             .map(|min_edge_weight| min_edge_weight < 0.0)
     }
 
@@ -171,7 +163,7 @@ impl Graph {
     /// ```
     ///
     pub fn has_selfloops(&self) -> bool {
-        self.selfloop_number > 0
+        self.get_selfloops_number() > 0
     }
 
     /// Returns boolean representing if nodes which are nor singletons nor
@@ -226,7 +218,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_multilabel_node_types(&self) -> Result<bool, String> {
+    pub fn has_multilabel_node_types(&self) -> Result<bool> {
         self.must_have_node_types()
             .map(|node_types| node_types.is_multilabel())
     }
@@ -235,7 +227,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_unknown_node_types(&self) -> Result<bool, String> {
+    pub fn has_unknown_node_types(&self) -> Result<bool> {
         Ok(self.get_unknown_node_types_number()? > 0)
     }
 
@@ -243,7 +235,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_known_node_types(&self) -> Result<bool, String> {
+    pub fn has_known_node_types(&self) -> Result<bool> {
         Ok(self.get_known_node_types_number()? > 0)
     }
 
@@ -251,7 +243,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_unknown_edge_types(&self) -> Result<bool, String> {
+    pub fn has_unknown_edge_types(&self) -> Result<bool> {
         Ok(self.get_unknown_edge_types_number()? > 0)
     }
 
@@ -259,7 +251,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn has_known_edge_types(&self) -> Result<bool, String> {
+    pub fn has_known_edge_types(&self) -> Result<bool> {
         Ok(self.get_known_edge_types_number()? > 0)
     }
 
@@ -267,7 +259,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_homogeneous_node_types(&self) -> Result<bool, String> {
+    pub fn has_homogeneous_node_types(&self) -> Result<bool> {
         Ok(self.get_node_types_number()? == 1)
     }
 
@@ -275,7 +267,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn has_homogeneous_edge_types(&self) -> Result<bool, String> {
+    pub fn has_homogeneous_edge_types(&self) -> Result<bool> {
         Ok(self.get_edge_types_number()? == 1)
     }
 
@@ -283,7 +275,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_singleton_node_types(&self) -> Result<bool, String> {
+    pub fn has_singleton_node_types(&self) -> Result<bool> {
         Ok(self.get_minimum_node_types_number()? == 1)
     }
 
@@ -301,7 +293,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have node types.
-    pub fn has_node_types_oddities(&self) -> Result<bool, String> {
+    pub fn has_node_types_oddities(&self) -> Result<bool> {
         Ok([
             self.has_singleton_node_types()?,
             self.has_homogeneous_node_types()?,
@@ -315,7 +307,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn has_singleton_edge_types(&self) -> Result<bool, String> {
+    pub fn has_singleton_edge_types(&self) -> Result<bool> {
         Ok(self.get_minimum_edge_types_number()? == 1)
     }
 
@@ -323,7 +315,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge types.
-    pub fn has_edge_types_oddities(&self) -> Result<bool, String> {
+    pub fn has_edge_types_oddities(&self) -> Result<bool> {
         Ok([
             self.has_singleton_edge_types()?,
             self.has_homogeneous_edge_types()?,
@@ -338,6 +330,7 @@ impl Graph {
         self.get_parallel_edges_number() > 0
     }
 
+    #[cache_property(nodes_sorted_by_decreasing_outbound_node_degree)]
     /// Returns whether the node IDs are sorted by decreasing outbound node degree.
     ///
     /// # Implications
@@ -348,9 +341,23 @@ impl Graph {
     /// the output labels using a Zipfian distribution, which is what
     /// most graphs follow.
     pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
-        self.nodes_are_sorted_by_decreasing_outbound_node_degree
+        self.par_iter_node_ids().all(|node_id| unsafe {
+            // If this is the first node, we just
+            // return true.
+            if node_id == 0 {
+                return true;
+            }
+            // For the subsequent nodes we check two by two.
+            // Since this is done in parallell, it should be
+            // still be relatively efficient even though
+            // the same thing in sequential could be done
+            // via a simple scan.
+            self.get_unchecked_node_degree_from_node_id(node_id)
+                <= self.get_unchecked_node_degree_from_node_id(node_id - 1)
+        })
     }
 
+    #[cache_property(nodes_sorted_by_increasing_outbound_node_degree)]
     /// Returns whether the node IDs are sorted by increasing outbound node degree.
     ///
     /// # Implications
@@ -361,6 +368,19 @@ impl Graph {
     /// the output labels using a Zipfian distribution, which is what
     /// most graphs follow.
     pub fn has_nodes_sorted_by_increasing_outbound_node_degree(&self) -> bool {
-        self.nodes_are_sorted_by_increasing_outbound_node_degree
+        self.par_iter_node_ids().all(|node_id| unsafe {
+            // If this is the first node, we just
+            // return true.
+            if node_id == 0 {
+                return true;
+            }
+            // For the subsequent nodes we check two by two.
+            // Since this is done in parallell, it should be
+            // still be relatively efficient even though
+            // the same thing in sequential could be done
+            // via a simple scan.
+            self.get_unchecked_node_degree_from_node_id(node_id)
+                >= self.get_unchecked_node_degree_from_node_id(node_id - 1)
+        })
     }
 }

@@ -18,14 +18,14 @@ impl Graph {
         &self,
         node_names: Option<Vec<String>>,
         node_types: Option<Vec<Option<String>>>,
-    ) -> Result<Option<RoaringBitmap>, String> {
+    ) -> Result<Option<RoaringBitmap>> {
         let mut node_ids = RoaringBitmap::new();
 
         if let Some(ns) = node_names {
             node_ids.extend(
                 ns.iter()
                     .map(|node_name| self.get_node_id_from_node_name(node_name))
-                    .collect::<Result<Vec<NodeT>, String>>()?,
+                    .collect::<Result<Vec<NodeT>>>()?,
             );
         }
 

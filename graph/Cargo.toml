@@ -42,18 +42,21 @@ indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
-elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "master"}
+elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "develop"}
 tags = {path="./tags/"}
+
+[target.'cfg(unix)'.dependencies]
+nix = "0.22.0"
 
 [profile.release]
 opt-level = 3
 lto = "fat"
-overflow-checks = true     # Disable integer overflow checks.
-debug = true             # Include debug info.
+overflow-checks = true   # Disable integer overflow checks.
+debug = false            # Include debug info.
 debug-assertions = true  # Enables debug assertions.
 
 [profile.test]
-overflow-checks = true     # Disable integer overflow checks.
-debug = true             # Include debug info.
+overflow-checks = true   # Disable integer overflow checks.
+debug = false            # Include debug info.
 debug-assertions = true  # Enables debug assertions.
 opt-level = 3

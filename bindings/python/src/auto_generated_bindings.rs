@@ -3,203 +3,60 @@ use super::*;
 #[pymethods]
 impl EnsmallenGraph {
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns unweighted laplacian transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn get_laplacian_transformed_graph(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    #[text_signature = "($self)"]
+    /// Returns unweighted laplacian transformation of the graph
+    pub fn get_laplacian_transformed_graph(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.get_laplacian_transformed_graph(verbose),
+            graph: self.graph.get_laplacian_transformed_graph(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns unweighted random walk normalized laplacian transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn get_random_walk_normalized_laplacian_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> EnsmallenGraph {
+    #[text_signature = "($self)"]
+    /// Returns unweighted random walk normalized laplacian transformation of the graph
+    pub fn get_random_walk_normalized_laplacian_transformed_graph(&self) -> EnsmallenGraph {
         EnsmallenGraph {
             graph: self
                 .graph
-                .get_random_walk_normalized_laplacian_transformed_graph(verbose),
+                .get_random_walk_normalized_laplacian_transformed_graph(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns unweighted symmetric normalized laplacian transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
     ///
     /// Raises
     /// -------
     /// ValueError
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
-    pub fn get_symmetric_normalized_laplacian_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
+    pub fn get_symmetric_normalized_laplacian_transformed_graph(&self) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self
                 .graph
-                .get_symmetric_normalized_laplacian_transformed_graph(verbose))?,
+                .get_symmetric_normalized_laplacian_transformed_graph())?,
         })
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns unweighted symmetric normalized transformation of the graph.
     ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    ///
     /// Raises
     /// -------
     /// ValueError
     ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
     ///
-    pub fn get_symmetric_normalized_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
+    pub fn get_symmetric_normalized_transformed_graph(&self) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self
-                .graph
-                .get_symmetric_normalized_transformed_graph(verbose))?,
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns weighted laplacian transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph is not weighted it is not possible to compute the weighted laplacian transformation.
-    ///
-    pub fn get_weighted_laplacian_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(self.graph.get_weighted_laplacian_transformed_graph(verbose))?,
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns unweighted symmetric normalized laplacian transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
-    /// ValueError
-    ///     If the graph is not weighted it is not possible to compute the weighted laplacian transformation.
-    ///
-    pub fn get_weighted_symmetric_normalized_laplacian_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(self
-                .graph
-                .get_weighted_symmetric_normalized_laplacian_transformed_graph(verbose))?,
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns weighted symmetric normalized transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     The graph must be undirected, as we do not currently support this transformation for directed graphs.
-    /// ValueError
-    ///     If the graph is not weighted it is not possible to compute the weighted laplacian transformation.
-    ///
-    pub fn get_weighted_symmetric_normalized_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(self
-                .graph
-                .get_weighted_symmetric_normalized_transformed_graph(verbose))?,
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns weighted random walk normalized laplacian transformation of the graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph is not weighted it is not possible to compute the weighted laplacian transformation.
-    /// ValueError
-    ///     If the graph contains nodes with zero weighted degree.
-    ///
-    pub fn get_weighted_random_walk_normalized_laplacian_transformed_graph(
-        &self,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(self
-                .graph
-                .get_weighted_random_walk_normalized_laplacian_transformed_graph(verbose))?,
+            graph: pe!(self.graph.get_symmetric_normalized_transformed_graph())?,
         })
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
-    /// Returns boolean representing if given node is a singleton.
+    /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
     ///
     /// Parameters
     /// ----------
@@ -210,8 +67,8 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If the given node ID does not exists in the graph this method will panic.
-    pub unsafe fn is_unchecked_singleton_from_node_id(&self, node_id: NodeT) -> bool {
-        self.graph.is_unchecked_singleton_from_node_id(node_id)
+    pub unsafe fn is_unchecked_connected_from_node_id(&self, node_id: NodeT) -> bool {
+        self.graph.is_unchecked_connected_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -233,7 +90,7 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self, node_id)"]
-    /// Returns boolean representing if given node is not a singleton nor a singleton with selfloop.
+    /// Returns boolean representing if given node is a singleton.
     ///
     /// Parameters
     /// ----------
@@ -244,8 +101,8 @@ impl EnsmallenGraph {
     /// Safety
     /// ------
     /// If the given node ID does not exists in the graph this method will panic.
-    pub unsafe fn is_unchecked_connected_from_node_id(&self, node_id: NodeT) -> bool {
-        self.graph.is_unchecked_connected_from_node_id(node_id)
+    pub unsafe fn is_unchecked_singleton_from_node_id(&self, node_id: NodeT) -> bool {
+        self.graph.is_unchecked_singleton_from_node_id(node_id)
     }
 
     #[automatically_generated_binding]
@@ -270,8 +127,25 @@ impl EnsmallenGraph {
     /// node_id: int,
     ///     The node to be checked for.
     ///
-    pub fn is_singleton_with_selfloops_from_node_id(&self, node_id: NodeT) -> bool {
-        self.graph.is_singleton_with_selfloops_from_node_id(node_id)
+    pub unsafe fn is_unchecked_singleton_with_selfloops_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> bool {
+        self.graph
+            .is_unchecked_singleton_with_selfloops_from_node_id(node_id)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_id)"]
+    /// Returns boolean representing if given node is a singleton with self-loops.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int,
+    ///     The node to be checked for.
+    ///
+    pub fn is_singleton_with_selfloops_from_node_id(&self, node_id: NodeT) -> PyResult<bool> {
+        pe!(self.graph.is_singleton_with_selfloops_from_node_id(node_id))
     }
 
     #[automatically_generated_binding]
@@ -524,32 +398,20 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns graph with node IDs sorted by increasing outbound node degree.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn sort_by_increasing_outbound_node_degree(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    #[text_signature = "($self)"]
+    /// Returns graph with node IDs sorted by increasing outbound node degree
+    pub fn sort_by_increasing_outbound_node_degree(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.sort_by_increasing_outbound_node_degree(verbose),
+            graph: self.graph.sort_by_increasing_outbound_node_degree(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns graph with node IDs sorted by decreasing outbound node degree.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn sort_by_decreasing_outbound_node_degree(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    #[text_signature = "($self)"]
+    /// Returns graph with node IDs sorted by decreasing outbound node degree
+    pub fn sort_by_decreasing_outbound_node_degree(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.sort_by_decreasing_outbound_node_degree(verbose),
+            graph: self.graph.sort_by_decreasing_outbound_node_degree(),
         }
     }
 
@@ -1211,6 +1073,106 @@ impl EnsmallenGraph {
     ///
     pub fn must_have_nodes(&self) -> PyResult<()> {
         pe!(self.graph.must_have_nodes())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return total edge weights, if graph has weights.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain edge weights.
+    ///
+    pub fn get_total_edge_weights(&self) -> PyResult<f64> {
+        pe!(self.graph.get_total_edge_weights())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the minimum weight, if graph has weights.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain edge weights.
+    ///
+    pub fn get_mininum_edge_weight(&self) -> PyResult<WeightT> {
+        pe!(self.graph.get_mininum_edge_weight())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the maximum weight, if graph has weights.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not contain edge weights.
+    ///
+    pub fn get_maximum_edge_weight(&self) -> PyResult<WeightT> {
+        pe!(self.graph.get_maximum_edge_weight())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the maximum node degree.
+    ///
+    /// Safety
+    /// ------
+    /// The method will return an undefined value (0) when the graph
+    /// does not contain nodes. In those cases the value is not properly
+    /// defined.
+    pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_maximum_node_degree()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the minimum node degree.
+    ///
+    /// Safety
+    /// ------
+    /// The method will return an undefined value (0) when the graph
+    /// does not contain nodes. In those cases the value is not properly
+    /// defined.
+    pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
+        self.graph.get_unchecked_minimum_node_degree()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the maximum weighted node degree
+    pub fn get_weighted_maximum_node_degree(&self) -> PyResult<f64> {
+        pe!(self.graph.get_weighted_maximum_node_degree())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the minimum weighted node degree
+    pub fn get_weighted_minimum_node_degree(&self) -> PyResult<f64> {
+        pe!(self.graph.get_weighted_minimum_node_degree())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return the number of weighted singleton nodes, i.e. nodes with weighted node degree equal to zero
+    pub fn get_weighted_singleton_nodes_number(&self) -> PyResult<NodeT> {
+        pe!(self.graph.get_weighted_singleton_nodes_number())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns number of self-loops, including also those in eventual multi-edges.
+    pub fn get_selfloops_number(&self) -> EdgeT {
+        self.graph.get_selfloops_number()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns number of unique self-loops, excluding those in eventual multi-edges.
+    pub fn get_unique_selfloops_number(&self) -> NodeT {
+        self.graph.get_unique_selfloops_number()
     }
 
     #[automatically_generated_binding]
@@ -1914,15 +1876,13 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids, verbose)"]
+    #[text_signature = "($self, node_ids)"]
     /// Returns graph remapped using given node IDs ordering.
     ///
     /// Parameters
     /// ----------
     /// node_ids: List[int],
     ///     The node Ids to remap the graph to.
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
     ///
     ///
     /// Safety
@@ -1930,26 +1890,20 @@ impl EnsmallenGraph {
     /// This method will cause a panic if the node IDs are either:
     ///  * Not unique
     ///  * Not available for each of the node IDs of the graph.
-    pub unsafe fn remap_unchecked_from_node_ids(
-        &self,
-        node_ids: Vec<NodeT>,
-        verbose: Option<bool>,
-    ) -> EnsmallenGraph {
+    pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.remap_unchecked_from_node_ids(node_ids, verbose),
+            graph: self.graph.remap_unchecked_from_node_ids(node_ids),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids, verbose)"]
+    #[text_signature = "($self, node_ids)"]
     /// Returns graph remapped using given node IDs ordering.
     ///
     /// Parameters
     /// ----------
     /// node_ids: List[int],
     ///     The node Ids to remap the graph to.
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
     ///
     ///
     /// Raises
@@ -1959,26 +1913,20 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given node IDs are not available for all the values in the graph.
     ///
-    pub fn remap_from_node_ids(
-        &self,
-        node_ids: Vec<NodeT>,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
+    pub fn remap_from_node_ids(&self, node_ids: Vec<NodeT>) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self.graph.remap_from_node_ids(node_ids, verbose))?,
+            graph: pe!(self.graph.remap_from_node_ids(node_ids))?,
         })
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_names, verbose)"]
+    #[text_signature = "($self, node_names)"]
     /// Returns graph remapped using given node names ordering.
     ///
     /// Parameters
     /// ----------
     /// node_names: List[str],
     ///     The node names to remap the graph to.
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
     ///
     ///
     /// Raises
@@ -1988,34 +1936,24 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the given node names are not available for all the values in the graph.
     ///
-    pub fn remap_from_node_names(
-        &self,
-        node_names: Vec<&str>,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
+    pub fn remap_from_node_names(&self, node_names: Vec<&str>) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self.graph.remap_from_node_names(node_names, verbose))?,
+            graph: pe!(self.graph.remap_from_node_names(node_names))?,
         })
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, other, verbose)"]
+    #[text_signature = "($self, other)"]
     /// Return graph remapped towards nodes of the given graph.
     ///
     /// Parameters
     /// ----------
     /// other: EnsmallenGraph,
     ///     The graph to remap towards.
-    /// verbose: Optional[bool],
-    ///     Whether to show a loding bar.
     ///
-    pub fn remap_from_graph(
-        &self,
-        other: &EnsmallenGraph,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
+    pub fn remap_from_graph(&self, other: &EnsmallenGraph) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self.graph.remap_from_graph(&other.graph, verbose))?,
+            graph: pe!(self.graph.remap_from_graph(&other.graph))?,
         })
     }
 
@@ -3062,26 +3000,23 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns number of singleton nodes within the graph.
-    pub fn get_singleton_nodes_number(&self) -> NodeT {
-        self.graph.get_singleton_nodes_number()
+    /// Returns number of connected nodes in the graph.
+    pub fn get_connected_nodes_number(&self) -> NodeT {
+        self.graph.get_connected_nodes_number()
     }
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Return number of weighted singleton nodes within the graph.
-    ///
-    /// This number represents the number of nodes that have weighted node
-    /// degree equal to 0, which may happen when the graph contains edges
-    /// with negative edge weights.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain edge weights.
-    ///
-    pub fn get_weighted_singleton_nodes_number(&self) -> PyResult<NodeT> {
-        pe!(self.graph.get_weighted_singleton_nodes_number())
+    /// Returns number of singleton nodes with selfloops within the graph.
+    pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
+        self.graph.get_singleton_nodes_with_selfloops_number()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns number of singleton nodes within the graph.
+    pub fn get_singleton_nodes_number(&self) -> NodeT {
+        self.graph.get_singleton_nodes_number()
     }
 
     #[automatically_generated_binding]
@@ -3110,13 +3045,6 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns number of singleton nodes with self-loops within the graph.
-    pub fn get_singleton_nodes_with_selfloops_number(&self) -> NodeT {
-        self.graph.get_singleton_nodes_with_selfloops_number()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
     /// Returns vector of singleton_with_selfloops node IDs of the graph.
     pub fn get_singleton_with_selfloops_node_ids(&self) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
@@ -3132,13 +3060,6 @@ impl EnsmallenGraph {
     /// Returns vector of singleton_with_selfloops node names of the graph.
     pub fn get_singleton_with_selfloops_node_names(&self) -> Vec<String> {
         self.graph.get_singleton_with_selfloops_node_names()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns number of not singleton nodes within the graph.
-    pub fn get_connected_nodes_number(&self) -> NodeT {
-        self.graph.get_connected_nodes_number()
     }
 
     #[automatically_generated_binding]
@@ -3215,69 +3136,6 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns maximum unweighted node degree of the graph.
-    ///
-    /// Safety
-    /// ------
-    /// The method will return an undefined value (0) when the graph
-    ///  does not contain nodes. In those cases the value is not properly
-    ///  defined.
-    pub unsafe fn get_unchecked_maximum_node_degree(&self) -> NodeT {
-        self.graph.get_unchecked_maximum_node_degree()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns maximum weighted node degree of the graph.
-    ///
-    /// Safety
-    /// ------
-    /// This method will cause a panic on graphs without
-    ///  edge weights.
-    pub unsafe fn get_unchecked_weighted_maximum_node_degree(&self) -> f64 {
-        self.graph.get_unchecked_weighted_maximum_node_degree()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns maximum weighted node degree of the graph.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the current graph does not contain edge weights.
-    ///
-    pub fn get_weighted_maximum_node_degree(&self) -> PyResult<f64> {
-        pe!(self.graph.get_weighted_maximum_node_degree())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns minimum weighted node degree of the graph.
-    ///
-    /// Safety
-    /// ------
-    /// This method will cause a panic on graphs without
-    ///  edge weights.
-    pub unsafe fn get_unchecked_weighted_minimum_node_degree(&self) -> f64 {
-        self.graph.get_unchecked_weighted_minimum_node_degree()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns minimum weighted node degree of the graph.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the current graph does not contain edge weights.
-    ///
-    pub fn get_weighted_minimum_node_degree(&self) -> PyResult<f64> {
-        pe!(self.graph.get_weighted_minimum_node_degree())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
     /// Returns maximum node degree of the graph.
     ///
     /// Raises
@@ -3311,26 +3169,6 @@ impl EnsmallenGraph {
     #[text_signature = "($self)"]
     /// Returns minimum node degree of the graph.
     ///
-    /// Safety
-    /// ------
-    /// The method will return an undefined value (NodeT::MAX) when the graph
-    ///  does not contain nodes. In those cases the value is not properly
-    ///  defined.
-    pub unsafe fn get_unchecked_minimum_node_degree(&self) -> NodeT {
-        self.graph.get_unchecked_minimum_node_degree()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns minimum weighted node degree of the graph
-    pub fn get_weighted_mininum_node_degree(&self) -> PyResult<f64> {
-        pe!(self.graph.get_weighted_mininum_node_degree())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns minimum node degree of the graph.
-    ///
     /// Raises
     /// -------
     /// ValueError
@@ -3345,20 +3183,6 @@ impl EnsmallenGraph {
     /// Returns mode node degree of the graph.
     pub fn get_node_degrees_mode(&self) -> PyResult<NodeT> {
         pe!(self.graph.get_node_degrees_mode())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns number of self-loops, including also those in eventual multi-edges.
-    pub fn get_selfloop_number(&self) -> EdgeT {
-        self.graph.get_selfloop_number()
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Returns number of unique self-loops, excluding those in eventual multi-edges.
-    pub fn get_unique_selfloop_number(&self) -> NodeT {
-        self.graph.get_unique_selfloop_number()
     }
 
     #[automatically_generated_binding]
@@ -3380,7 +3204,7 @@ impl EnsmallenGraph {
     /// Return the number of traps (nodes without any outgoing edges that are not singletons)
     /// This also includes nodes with only a self-loops, therefore singletons with
     /// only a self-loops are not considered traps because you could make a walk on them.
-    pub fn get_trap_nodes_number(&self) -> EdgeT {
+    pub fn get_trap_nodes_number(&self) -> NodeT {
         self.graph.get_trap_nodes_number()
     }
 
@@ -3496,45 +3320,6 @@ impl EnsmallenGraph {
             pe!(self.graph.get_edge_weights())?,
             WeightT
         ))
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return total edge weights, if graph has weights.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain edge weights.
-    ///
-    pub fn get_total_edge_weights(&self) -> PyResult<f64> {
-        pe!(self.graph.get_total_edge_weights())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the minimum weight, if graph has weights.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain edge weights.
-    ///
-    pub fn get_mininum_edge_weight(&self) -> PyResult<WeightT> {
-        pe!(self.graph.get_mininum_edge_weight())
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self)"]
-    /// Return the maximum weight, if graph has weights.
-    ///
-    /// Raises
-    /// -------
-    /// ValueError
-    ///     If the graph does not contain edge weights.
-    ///
-    pub fn get_maximum_edge_weight(&self) -> PyResult<WeightT> {
-        pe!(self.graph.get_maximum_edge_weight())
     }
 
     #[automatically_generated_binding]
@@ -4379,122 +4164,74 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the directed graph from the upper triangular adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_upper_triangular(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_upper_triangular(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_upper_triangular(verbose),
+            graph: self.graph.to_upper_triangular(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the directed graph from the lower triangular adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_lower_triangular(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_lower_triangular(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_lower_triangular(verbose),
+            graph: self.graph.to_lower_triangular(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the main diagonal adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_main_diagonal(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_main_diagonal(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_main_diagonal(verbose),
+            graph: self.graph.to_main_diagonal(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the anti-diagonal adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_anti_diagonal(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_anti_diagonal(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_anti_diagonal(verbose),
+            graph: self.graph.to_anti_diagonal(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the bidiagonal adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_bidiagonal(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_bidiagonal(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_bidiagonal(verbose),
+            graph: self.graph.to_bidiagonal(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the arrowhead adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_arrowhead(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_arrowhead(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_arrowhead(verbose),
+            graph: self.graph.to_arrowhead(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the graph from the transposed adjacency matrix.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_transposed(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_transposed(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_transposed(verbose),
+            graph: self.graph.to_transposed(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Return the complementary graph.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn to_complementary(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn to_complementary(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.to_complementary(verbose),
+            graph: self.graph.to_complementary(),
         }
     }
 
@@ -5269,7 +5006,7 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
-    /// Returns whether graph has weights that can represent probabilities.
+    /// Returns whether graph has weights that can represent probabilities
     pub fn has_edge_weights_representing_probabilities(&self) -> PyResult<bool> {
         pe!(self.graph.has_edge_weights_representing_probabilities())
     }
@@ -8111,5 +7848,162 @@ impl EnsmallenGraph {
             ),
             f64
         )
+    }
+
+    #[staticmethod]
+    #[automatically_generated_binding]
+    #[text_signature = "(node_type_path, node_types_column_number, node_types_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_separator, node_type_list_header, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, node_path, node_list_separator, node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, edge_type_path, edge_types_column_number, edge_types_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, edge_path, edge_list_separator, edge_list_header, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_selfloops, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, verbose, directed, name)"]
+    /// Return graph renderized from given CSVs or TSVs-like files.
+    ///
+    /// TODO! Add docstrings
+    /// TODO! Add parameters for node type list and edge type lis
+    pub fn from_csv(
+        node_type_path: Option<String>,
+        node_types_column_number: Option<usize>,
+        node_types_column: Option<String>,
+        node_types_number: Option<NodeTypeT>,
+        numeric_node_type_ids: Option<bool>,
+        minimum_node_type_id: Option<NodeTypeT>,
+        node_type_list_separator: Option<String>,
+        node_type_list_header: Option<bool>,
+        node_type_list_rows_to_skip: Option<usize>,
+        node_type_list_is_correct: Option<bool>,
+        node_type_list_max_rows_number: Option<EdgeT>,
+        node_type_list_comment_symbol: Option<String>,
+        node_path: Option<String>,
+        node_list_separator: Option<String>,
+        node_list_header: Option<bool>,
+        node_list_rows_to_skip: Option<usize>,
+        node_list_is_correct: Option<bool>,
+        node_list_max_rows_number: Option<EdgeT>,
+        node_list_comment_symbol: Option<String>,
+        default_node_type: Option<String>,
+        nodes_column_number: Option<usize>,
+        nodes_column: Option<String>,
+        node_types_separator: Option<String>,
+        node_list_node_types_column_number: Option<usize>,
+        node_list_node_types_column: Option<String>,
+        nodes_number: Option<NodeT>,
+        minimum_node_id: Option<NodeT>,
+        numeric_node_ids: Option<bool>,
+        node_list_numeric_node_type_ids: Option<bool>,
+        skip_node_types_if_unavailable: Option<bool>,
+        edge_type_path: Option<String>,
+        edge_types_column_number: Option<usize>,
+        edge_types_column: Option<String>,
+        edge_types_number: Option<NodeTypeT>,
+        numeric_edge_type_ids: Option<bool>,
+        minimum_edge_type_id: Option<NodeTypeT>,
+        edge_type_list_separator: Option<String>,
+        edge_type_list_header: Option<bool>,
+        edge_type_list_rows_to_skip: Option<usize>,
+        edge_type_list_is_correct: Option<bool>,
+        edge_type_list_max_rows_number: Option<EdgeT>,
+        edge_type_list_comment_symbol: Option<String>,
+        edge_path: Option<String>,
+        edge_list_separator: Option<String>,
+        edge_list_header: Option<bool>,
+        edge_list_rows_to_skip: Option<usize>,
+        sources_column_number: Option<usize>,
+        sources_column: Option<String>,
+        destinations_column_number: Option<usize>,
+        destinations_column: Option<String>,
+        edge_list_edge_types_column_number: Option<usize>,
+        edge_list_edge_types_column: Option<String>,
+        default_edge_type: Option<String>,
+        weights_column_number: Option<usize>,
+        weights_column: Option<String>,
+        default_weight: Option<WeightT>,
+        skip_selfloops: Option<bool>,
+        edge_list_numeric_edge_type_ids: Option<bool>,
+        edge_list_numeric_node_ids: Option<bool>,
+        skip_weights_if_unavailable: Option<bool>,
+        skip_edge_types_if_unavailable: Option<bool>,
+        edge_list_is_complete: Option<bool>,
+        edge_list_may_contain_duplicates: Option<bool>,
+        edge_list_is_sorted: Option<bool>,
+        edge_list_is_correct: Option<bool>,
+        edge_list_max_rows_number: Option<EdgeT>,
+        edge_list_comment_symbol: Option<String>,
+        edges_number: Option<EdgeT>,
+        verbose: Option<bool>,
+        directed: bool,
+        name: String,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(Graph::from_csv(
+                node_type_path,
+                node_types_column_number,
+                node_types_column,
+                node_types_number,
+                numeric_node_type_ids,
+                minimum_node_type_id,
+                node_type_list_separator,
+                node_type_list_header,
+                node_type_list_rows_to_skip,
+                node_type_list_is_correct,
+                node_type_list_max_rows_number,
+                node_type_list_comment_symbol,
+                node_path,
+                node_list_separator,
+                node_list_header,
+                node_list_rows_to_skip,
+                node_list_is_correct,
+                node_list_max_rows_number,
+                node_list_comment_symbol,
+                default_node_type,
+                nodes_column_number,
+                nodes_column,
+                node_types_separator,
+                node_list_node_types_column_number,
+                node_list_node_types_column,
+                nodes_number,
+                minimum_node_id,
+                numeric_node_ids,
+                node_list_numeric_node_type_ids,
+                skip_node_types_if_unavailable,
+                edge_type_path,
+                edge_types_column_number,
+                edge_types_column,
+                edge_types_number,
+                numeric_edge_type_ids,
+                minimum_edge_type_id,
+                edge_type_list_separator,
+                edge_type_list_header,
+                edge_type_list_rows_to_skip,
+                edge_type_list_is_correct,
+                edge_type_list_max_rows_number,
+                edge_type_list_comment_symbol,
+                edge_path,
+                edge_list_separator,
+                edge_list_header,
+                edge_list_rows_to_skip,
+                sources_column_number,
+                sources_column,
+                destinations_column_number,
+                destinations_column,
+                edge_list_edge_types_column_number,
+                edge_list_edge_types_column,
+                default_edge_type,
+                weights_column_number,
+                weights_column,
+                default_weight,
+                skip_selfloops,
+                edge_list_numeric_edge_type_ids,
+                edge_list_numeric_node_ids,
+                skip_weights_if_unavailable,
+                skip_edge_types_if_unavailable,
+                edge_list_is_complete,
+                edge_list_may_contain_duplicates,
+                edge_list_is_sorted,
+                edge_list_is_correct,
+                edge_list_max_rows_number,
+                edge_list_comment_symbol,
+                edges_number,
+                verbose,
+                directed,
+                name
+            ))?,
+        })
     }
 }

@@ -138,7 +138,7 @@ impl NodeFileWriter {
     /// # Arguments
     ///
     /// * `graph`: &Graph, reference to graph to use.
-    pub fn dump(&self, graph: &Graph) -> Result<(), String> {
+    pub fn dump(&self, graph: &Graph) -> Result<()> {
         // build the header
         let mut header = vec![(self.nodes_column.clone(), self.nodes_column_number)];
 

@@ -1,5 +1,6 @@
 use super::*;
 use indicatif::ParallelProgressIterator;
+use indicatif::ProgressIterator;
 use num_traits::Zero;
 use rayon::iter::IndexedParallelIterator;
 use rayon::iter::IntoParallelIterator;
@@ -60,7 +61,7 @@ impl ShortestPathsResultBFS {
         &self,
         mut dst_node_id: NodeT,
         k: NodeT,
-    ) -> Result<NodeT, String> {
+    ) -> Result<NodeT> {
         if !self.has_path_to_node_id(dst_node_id) {
             return Err("There is no path to the given destination node.".to_string());
         }
@@ -83,7 +84,7 @@ impl ShortestPathsResultBFS {
         Err("Predecessors were not requested and therefore not computed.".to_string())
     }
 
-    pub(crate) fn get_median_point(&self, dst_node_id: NodeT) -> Result<NodeT, String> {
+    pub(crate) fn get_median_point(&self, dst_node_id: NodeT) -> Result<NodeT> {
         if !self.has_path_to_node_id(dst_node_id) {
             return Err("There is no path to the given destination node.".to_string());
         }
@@ -266,7 +267,7 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<NodeT>, String> {
+    ) -> Result<Vec<NodeT>> {
         if src_node_id == dst_node_id {
             return Err("The minimum path on a selfloop is not defined.".to_string());
         }
@@ -309,7 +310,7 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<String>, String> {
+    ) -> Result<Vec<String>> {
         Ok(self
             .get_unchecked_minimum_path_node_ids_from_node_ids(
                 src_node_id,
@@ -335,7 +336,7 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<NodeT>, String> {
+    ) -> Result<Vec<NodeT>> {
         Ok(unsafe {
             self.get_unchecked_minimum_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
@@ -359,7 +360,7 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<NodeT>, String> {
+    ) -> Result<Vec<NodeT>> {
         Ok(unsafe {
             self.get_unchecked_minimum_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
@@ -383,7 +384,7 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         maximal_depth: Option<NodeT>,
-    ) -> Result<Vec<String>, String> {
+    ) -> Result<Vec<String>> {
         Ok(unsafe {
             self.get_unchecked_minimum_path_node_names_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
@@ -470,7 +471,7 @@ impl Graph {
         src_node_id: NodeT,
         dst_node_id: NodeT,
         k: usize,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
+    ) -> Result<Vec<Vec<NodeT>>> {
         Ok(unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.validate_node_id(src_node_id)?,
@@ -500,7 +501,7 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
+    ) -> Result<Vec<Vec<NodeT>>> {
         Ok(unsafe {
             self.get_unchecked_k_shortest_path_node_ids_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
@@ -530,7 +531,7 @@ impl Graph {
         src_node_name: &str,
         dst_node_name: &str,
         k: usize,
-    ) -> Result<Vec<Vec<String>>, String> {
+    ) -> Result<Vec<Vec<String>>> {
         self.get_k_shortest_path_node_ids_from_node_names(src_node_name, dst_node_name, k)
             .map(|paths| {
                 paths
@@ -595,7 +596,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given node ID does not exist in the graph.
-    pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<NodeT, String> {
+    pub fn get_eccentricity_from_node_id(&self, node_id: NodeT) -> Result<NodeT> {
         self.validate_node_id(node_id)
             .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
     }
@@ -614,7 +615,7 @@ impl Graph {
         &self,
         node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         if let Some(uewap) = use_edge_weights_as_probabilities {
             if uewap {
                 self.must_have_edge_weights_representing_probabilities()?;
@@ -636,7 +637,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the given node name does not exist in the current graph instance.
-    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> Result<NodeT, String> {
+    pub fn get_eccentricity_from_node_name(&self, node_name: &str) -> Result<NodeT> {
         self.get_node_id_from_node_name(node_name)
             .map(|node_id| unsafe { self.get_unchecked_eccentricity_from_node_id(node_id) })
     }
@@ -655,7 +656,7 @@ impl Graph {
         &self,
         node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         if let Some(uewap) = use_edge_weights_as_probabilities {
             if uewap {
                 self.must_have_edge_weights_representing_probabilities()?;
@@ -936,7 +937,7 @@ impl Graph {
         dst_node_id: NodeT,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<(f64, Vec<NodeT>), String> {
+    ) -> Result<(f64, Vec<NodeT>)> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
             if uewp {
@@ -969,7 +970,7 @@ impl Graph {
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<(f64, Vec<NodeT>), String> {
+    ) -> Result<(f64, Vec<NodeT>)> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
             if uewp {
@@ -1002,7 +1003,7 @@ impl Graph {
         dst_node_name: &str,
         use_edge_weights_as_probabilities: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<(f64, Vec<String>), String> {
+    ) -> Result<(f64, Vec<String>)> {
         self.must_have_positive_edge_weights()?;
         if let Some(uewp) = use_edge_weights_as_probabilities {
             if uewp {
@@ -1036,7 +1037,7 @@ impl Graph {
         dst_node_id: Option<NodeT>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<ShortestPathsResultBFS, String> {
+    ) -> Result<ShortestPathsResultBFS> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         unsafe {
@@ -1074,7 +1075,7 @@ impl Graph {
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<ShortestPathsDjkstra, String> {
+    ) -> Result<ShortestPathsDjkstra> {
         // Check if the given root exists in the graph
         self.validate_node_id(src_node_id)?;
         self.must_have_positive_edge_weights()?;
@@ -1115,7 +1116,7 @@ impl Graph {
     ///     of the diameter lowerbound.
     ///
     /// This basically creates a "cross" that spans the graph.
-    fn get_four_sweep(&self) -> Result<(NodeT, NodeT), String> {
+    fn get_four_sweep(&self) -> Result<(NodeT, NodeT)> {
         let most_central_node_id = unsafe { self.get_unchecked_most_central_node_id() };
         let first_candidate_most_eccentric_node_id = unsafe {
             self.get_unchecked_breath_first_search_from_node_ids(
@@ -1167,7 +1168,7 @@ impl Graph {
     ///
     /// # Referencences
     /// This method is based on the algorithm described in ["On computing the diameter of real-world undirected graphs" by Crescenzi et al](https://who.rocq.inria.fr/Laurent.Viennot/road/papers/ifub.pdf).
-    fn get_ifub(&self, verbose: Option<bool>) -> Result<f64, String> {
+    fn get_ifub(&self, verbose: Option<bool>) -> Result<f64> {
         if self.is_directed() {
             panic!(
                 "This method is not defined YET for directed graphs! We will add it in the future!"
@@ -1208,34 +1209,62 @@ impl Graph {
             .filter(|&(_, distance)| tentative_diameter < distance * 2)
             .collect::<Vec<(NodeT, NodeT)>>();
 
+        // If all the test cases are empty, it means
+        // that our tentative diameter is already the actual diameter.
+        if node_ids_and_distances.is_empty() {
+            return Ok(tentative_diameter as f64);
+        }
+
         // sort the nodes by distance, so that we will start checking from the
         // most distant ones which are the most probable to be an extreme of the
         // diameter.
         // Since this vector is generally expected to be quite small,
         // we proceed with a non-parallell approach to avoid spinning up
         // threads for no good reason.
-        node_ids_and_distances.sort_by(|(a, _), &(b, _)| b.cmp(a));
+        node_ids_and_distances.sort_by(|(_, a), &(_, b)| b.cmp(a));
+
+        // Fold it into groups
+        let mut current_distance = node_ids_and_distances[0].1;
+        let mut distance_groups: Vec<(NodeT, Vec<NodeT>)> = vec![(current_distance, Vec::new())];
+        for (node_id, distance) in node_ids_and_distances {
+            if current_distance == distance {
+                distance_groups.last_mut().unwrap().1.push(node_id);
+            } else {
+                current_distance = distance;
+                distance_groups.push((distance, vec![node_id]));
+            }
+        }
 
         // Put tentative diameter into an AtomicU32
         let tentative_diameter = AtomicU32::new(tentative_diameter);
 
         let pb = get_loading_bar(
-            verbose.unwrap_or(true) && node_ids_and_distances.len() > 1,
-            "Computing diameter",
-            node_ids_and_distances.len(),
+            verbose.unwrap_or(true) && distance_groups.len() > 1,
+            "Computing diameter groups",
+            distance_groups.len(),
         );
 
         // for each possible node of the outer crown compute the maximum path
         // from there, this way we can find the exact diameter
-        node_ids_and_distances
-            .into_par_iter()
+        distance_groups
+            .into_iter()
             .progress_with(pb)
-            .for_each(|(distance, node_id)| unsafe {
+            .for_each(|(distance, node_ids)| unsafe {
                 // If we have not yet reached the bound
                 if tentative_diameter.load(Ordering::Relaxed) < distance * 2 {
+                    let pb2 = get_loading_bar(
+                        verbose.unwrap_or(true) && node_ids.len() > 1,
+                        &format!("Computing diameter of nodes at distance {}", distance),
+                        node_ids.len(),
+                    );
                     // We compute the new candidate diameter.
                     tentative_diameter.fetch_max(
-                        self.get_unchecked_eccentricity_from_node_id(node_id),
+                        node_ids
+                            .into_par_iter()
+                            .progress_with(pb2)
+                            .map(|node_id| self.get_unchecked_eccentricity_from_node_id(node_id))
+                            .max()
+                            .unwrap(),
                         Ordering::Relaxed,
                     );
                 }
@@ -1261,7 +1290,7 @@ impl Graph {
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_nodes()?;
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
@@ -1300,7 +1329,7 @@ impl Graph {
         &self,
         ignore_infinity: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_nodes()?;
         let ignore_infinity = ignore_infinity.unwrap_or(false);
         let verbose = verbose.unwrap_or(true);
@@ -1342,7 +1371,7 @@ impl Graph {
         ignore_infinity: Option<bool>,
         use_edge_weights_as_probabilities: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_nodes()?;
         self.must_have_positive_edge_weights()?;
         let use_edge_weights_as_probabilities = use_edge_weights_as_probabilities.unwrap_or(false);
@@ -1405,7 +1434,7 @@ impl Graph {
         dst_node_name: Option<&str>,
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
-    ) -> Result<ShortestPathsResultBFS, String> {
+    ) -> Result<ShortestPathsResultBFS> {
         unsafe {
             Ok(self.get_unchecked_breath_first_search_from_node_ids(
                 self.get_node_id_from_node_name(src_node_name)?,
@@ -1441,7 +1470,7 @@ impl Graph {
         compute_predecessors: Option<bool>,
         maximal_depth: Option<NodeT>,
         use_edge_weights_as_probabilities: Option<bool>,
-    ) -> Result<ShortestPathsDjkstra, String> {
+    ) -> Result<ShortestPathsDjkstra> {
         self.get_dijkstra_from_node_ids(
             self.get_node_id_from_node_name(src_node_name)?,
             maybe_dst_node_name.map_or(Ok::<_, String>(None), |dst_node_name| {
@@ -1452,7 +1481,7 @@ impl Graph {
                     dst_node_names
                         .into_iter()
                         .map(|node_name| self.get_node_id_from_node_name(node_name))
-                        .collect::<Result<_, _>>()?,
+                        .collect::<Result<_>>()?,
                 ))
             })?,
             compute_predecessors,

@@ -12,7 +12,7 @@ impl Graph {
         vector_sources: Option<bool>,
         vector_destinations: Option<bool>,
         vector_cumulative_node_degrees: Option<bool>,
-    ) -> Result<(), String> {
+    ) -> Result<()> {
         let vector_sources = vector_sources.unwrap_or(false);
         let vector_destinations = vector_destinations.unwrap_or(true);
         let vector_cumulative_node_degrees = vector_cumulative_node_degrees.unwrap_or(true);

@@ -11,7 +11,6 @@ use tags::*;
 mod macros;
 pub(crate) use crate::macros::*;
 mod edge_file_writer;
-mod from_csv;
 mod hash;
 mod node_file_writer;
 mod preprocessing;

@@ -1,19 +1,5 @@
 //! Ensmallen its an efficient graph manipulation library.
 //!
-//! # Example:
-//!
-//! ```rust
-//! use graph::{EdgeFileReader, Graph};
-//! let edges_reader = EdgeFileReader::new("tests/data/test_components.csv",).unwrap()
-//!     .set_separator(Some(",")).unwrap()
-//!     .set_verbose(Some(false))
-//!     .set_numeric_node_ids(Some(true))
-//!     .set_header(Some(false));
-//!  
-//! let g = Graph::from_sorted_csv(edges_reader, None, false, false, 6, 6, "Graph").unwrap();
-//!
-//!
-//! ```
 //! # Definitions
 //! * `edge`: an arch between to nodes
 //! * `selfloop`: An edge which source and destination are equal
@@ -26,6 +12,9 @@
 #![feature(map_first_last)]
 #![type_length_limit = "3764086"]
 #![feature(option_result_unwrap_unchecked)]
+
+mod method_caller;
+pub(crate) use method_caller::*;
 
 mod vocabulary;
 pub use self::vocabulary::Vocabulary;
@@ -47,6 +36,8 @@ mod edge_file_reader;
 pub use self::edge_file_reader::EdgeFileReader;
 mod edge_file_writer;
 pub use self::edge_file_writer::EdgeFileWriter;
+mod type_file_reader;
+pub use self::type_file_reader::TypeFileReader;
 mod compression;
 mod from_csv;
 pub(crate) use self::compression::*;
@@ -62,6 +53,7 @@ mod dijkstra;
 pub use self::dijkstra::*;
 
 mod constructors;
+pub use constructors::*;
 
 pub mod utils;
 pub(crate) use self::utils::*;
@@ -133,6 +125,12 @@ pub use dijkstra_queue::*;
 use vec_rand::splitmix64;
 
 use tags::*;
+
+mod cache;
+use cache::*;
+
+mod getters_cached;
+pub use getters_cached::*;
 
 mod visualizations;
 pub use visualizations::*;

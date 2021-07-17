@@ -193,7 +193,7 @@ impl Graph {
         &self,
         src: NodeT,
         dst: NodeT,
-    ) -> Result<impl Iterator<Item = EdgeT>, String> {
+    ) -> Result<impl Iterator<Item = EdgeT>> {
         let (min_edge_id, max_edge_id) = self.get_minmax_edge_ids_from_node_ids(src, dst)?;
         Ok(min_edge_id..max_edge_id)
     }
@@ -211,7 +211,7 @@ impl Graph {
         &self,
         edge_type_id: Option<EdgeTypeT>,
         directed: bool,
-    ) -> Result<impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_, String> {
+    ) -> Result<impl Iterator<Item = (EdgeT, NodeT, NodeT, Option<EdgeTypeT>)> + '_> {
         self.validate_edge_type_id(edge_type_id)
             .map(|edge_type_id| {
                 self.iter_edge_node_ids_and_edge_type_id(directed)
@@ -230,7 +230,7 @@ impl Graph {
     pub fn iter_node_ids_and_node_type_ids_from_node_type_id(
         &self,
         node_type_id: Option<NodeTypeT>,
-    ) -> Result<impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_, String> {
+    ) -> Result<impl Iterator<Item = (NodeT, Option<Vec<NodeTypeT>>)> + '_> {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {
                 self.iter_node_ids_and_node_type_ids().filter(
@@ -254,10 +254,8 @@ impl Graph {
     pub fn iter_node_names_and_node_type_names_from_node_type_id(
         &self,
         node_type_id: Option<NodeTypeT>,
-    ) -> Result<
-        impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_,
-        String,
-    > {
+    ) -> Result<impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_> 
+    {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {
                 self.iter_node_names_and_node_type_names().filter(
@@ -294,9 +292,8 @@ impl Graph {
                     Option<EdgeTypeT>,
                     Option<String>,
                 ),
-            > + '_,
-        String,
-    > {
+            > + '_> 
+        {
         self.validate_edge_type_id(edge_type_id)
             .map(|edge_type_id| {
                 self.iter_edge_node_names_and_edge_type_name(directed)

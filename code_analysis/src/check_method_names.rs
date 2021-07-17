@@ -9,7 +9,13 @@ lazy_static! {
 }
 
 // The method names must have the keywords at the end of the method, in the right order
-pub const METHOD_KEYWORD_REGEX_STR: &'static str = r#".+(_weighted)?(_unchecked)?"#;
+pub const KEYWORDS: &'static [&'static str] = &[
+    "unweighted",
+    "weighted",
+    "unchecked",
+    "naive",
+];
+pub const METHOD_KEYWORD_REGEX_STR: &'static str = r#".+(_weighted)?(_unchecked)?(_naive)?"#;
 lazy_static! {
     static ref METHOD_KEYWORD_REGEX: Regex = Regex::new(METHOD_KEYWORD_REGEX_STR).unwrap();
 }
@@ -70,28 +76,18 @@ impl Checker {
             );
         }
 
-        // unchecked must be at the end of the method name
-        if method.name.contains("unchecked") && !METHOD_KEYWORD_REGEX.is_match(&method.name) {
-            self.log(
-                Error::WrongKeywordPositionInMethodName{
-                    method_name: method.name.clone(),
-                    keyword: "unchecked".to_string(),
-                }
-            );
-            return;
+        for keyword in KEYWORDS {
+            // unchecked must be at the end of the method name
+            if method.name.contains(keyword) && !METHOD_KEYWORD_REGEX.is_match(&method.name) {
+                self.log(
+                    Error::WrongKeywordPositionInMethodName{
+                        method_name: method.name.clone(),
+                        keyword: keyword.to_string(),
+                    }
+                );
+                return;
+            }
         }
-
-        // weighted must be at the end of the method name
-        if method.name.contains("weighted") && !METHOD_KEYWORD_REGEX.is_match(&method.name) {
-            self.log(
-                Error::WrongKeywordPositionInMethodName{
-                    method_name: method.name.clone(),
-                    keyword: "weighted".to_string(),
-                }
-            );
-            return;
-        }
-
         // if il metodo contiene unknown deve esistere anche known eccetto se con #[no_known]
         if method.name.contains("unknown") 
             && !self.method_names.contains(&method.name.replace("unknown", "known")) 

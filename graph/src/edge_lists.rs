@@ -20,7 +20,7 @@ impl Graph {
         second_nodes_set: Option<HashSet<String>>,
         first_node_types_set: Option<HashSet<String>>,
         second_node_types_set: Option<HashSet<String>>,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
+    ) -> Result<Vec<Vec<NodeT>>> {
         let removed_existing_edges_unwrapped = removed_existing_edges.unwrap_or(true);
         let (first_nodes, second_nodes): (Vec<NodeT>, Vec<NodeT>) = [
             (first_nodes_set, first_node_types_set),
@@ -101,7 +101,7 @@ impl Graph {
         second_nodes_set: Option<HashSet<String>>,
         first_node_types_set: Option<HashSet<String>>,
         second_node_types_set: Option<HashSet<String>>,
-    ) -> Result<Vec<Vec<String>>, String> {
+    ) -> Result<Vec<Vec<String>>> {
         Ok(self
             .get_bipartite_edges(
                 removed_existing_edges,
@@ -133,7 +133,7 @@ impl Graph {
         removed_existing_edges: Option<bool>,
         star_points_nodes_set: Option<HashSet<String>>,
         star_points_node_types_set: Option<HashSet<String>>,
-    ) -> Result<Vec<Vec<NodeT>>, String> {
+    ) -> Result<Vec<Vec<NodeT>>> {
         self.get_bipartite_edges(
             removed_existing_edges,
             Some(vec![central_node].into_iter().collect::<HashSet<String>>()),
@@ -156,7 +156,7 @@ impl Graph {
         removed_existing_edges: Option<bool>,
         star_points_nodes_set: Option<HashSet<String>>,
         star_points_node_types_set: Option<HashSet<String>>,
-    ) -> Result<Vec<Vec<String>>, String> {
+    ) -> Result<Vec<Vec<String>>> {
         self.get_bipartite_edge_names(
             removed_existing_edges,
             Some(vec![central_node].into_iter().collect::<HashSet<String>>()),

@@ -1,6 +1,7 @@
 use super::*;
 use std::fs;
-use std::fs::read_dir;
+use walkdir::WalkDir;
+
 
 /// List of the files we will skip in the analysis
 /// becasue they have features we don't have implmented yet
@@ -11,6 +12,8 @@ const BLACKLIST: &'static [&'static str] = &[
     "lib.rs",   // mods
     "core.c",   // it is C
     "test_utilities.rs",
+    "mod.rs",
+    "method_caller.rs",
 ];
 
 pub fn skip_file(path: &str) -> bool {
@@ -24,11 +27,16 @@ pub fn skip_file(path: &str) -> bool {
 }
 
 pub fn get_library_sources() -> Vec<Module> {
-    let src_files: Vec<String> = read_dir("../graph/src")
-        .unwrap()
-        .map(|path| 
-            path.unwrap().path().into_os_string()
-                .into_string().unwrap().to_string()
+    let src_files: Vec<String> = WalkDir::new("../graph/src/")
+        .into_iter()
+        .filter_map(|entry| {
+                let value = entry.unwrap();
+                if value.file_type().is_dir() {
+                    None
+                } else {
+                    Some(value.path().to_str().unwrap().to_string())
+                }
+            }
         )
         .filter(|path| !skip_file(&path))
         .collect();

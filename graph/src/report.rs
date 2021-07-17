@@ -66,15 +66,11 @@ impl Graph {
             report.insert("density", self.get_density().unwrap().to_string());
             report.insert(
                 "minimum_node_degree",
-                self.get_minimum_node_degree()
-                    .unwrap()
-                    .to_string(),
+                self.get_minimum_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "maximum_node_degree",
-                self.get_maximum_node_degree()
-                    .unwrap()
-                    .to_string(),
+                self.get_maximum_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
@@ -85,10 +81,7 @@ impl Graph {
             "directed_edges_number",
             self.get_directed_edges_number().to_string(),
         );
-        report.insert(
-            "selfloops_number",
-            self.get_selfloop_number().to_string(),
-        );
+        report.insert("selfloops_number", self.get_selfloops_number().to_string());
         report.insert(
             "singleton_nodes_with_selfloops_number",
             self.get_singleton_nodes_with_selfloops_number().to_string(),
@@ -108,19 +101,19 @@ impl Graph {
         if self.has_edge_weights() {
             report.insert(
                 "minimum_weighted_node_degree",
-                self.get_weighted_mininum_node_degree().unwrap().to_string(),
+                self.get_weighted_minimum_node_degree().clone().unwrap().to_string(),
             );
             report.insert(
                 "maximum_weighted_node_degree",
-                self.get_weighted_maximum_node_degree().unwrap().to_string(),
+                self.get_weighted_maximum_node_degree().clone().unwrap().to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
-                self.get_weighted_node_degrees_mean().unwrap().to_string(),
+                self.get_weighted_node_degrees_mean().clone().unwrap().to_string(),
             );
             report.insert(
                 "total_edge_weights",
-                self.get_total_edge_weights().unwrap().to_string(),
+                self.get_total_edge_weights().clone().unwrap().to_string(),
             );
         }
         report.insert("has_node_types", self.has_node_types().to_string());
@@ -213,11 +206,7 @@ impl Graph {
     ///
     /// * `other`: &Graph - graph to create overlap report with.
     /// * `verbose`: Option<bool> - Whether to shor the loading bars.
-    pub fn overlap_textual_report(
-        &self,
-        other: &Graph,
-        verbose: Option<bool>,
-    ) -> Result<String, String> {
+    pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> Result<String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
@@ -351,7 +340,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Whether to show a loading bar in graph operations.
     ///
-    pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
+    pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String> {
         self.validate_node_id(node_id)?;
         let mut partial_reports: Vec<String> = Vec::new();
         let node_name = unsafe { self.get_unchecked_node_name_from_node_id(node_id) };
@@ -370,7 +359,7 @@ impl Graph {
                         )
                     }
                 }
-            } else if self.is_singleton_with_selfloops_from_node_id(node_id) {
+            } else if unsafe { self.is_unchecked_singleton_with_selfloops_from_node_id(node_id) } {
                 match self.get_singleton_nodes_with_selfloops_number() {
                     1 => format!(
                         concat!(
@@ -419,7 +408,7 @@ impl Graph {
     /// # Arguments
     /// * `node_name`: &str - Whether to show a loading bar in graph operations.
     ///
-    pub fn get_node_report_from_node_name(&self, node_name: &str) -> Result<String, String> {
+    pub fn get_node_report_from_node_name(&self, node_name: &str) -> Result<String> {
         self.get_node_id_from_node_name(node_name)
             .and_then(|node_id| self.get_node_report_from_node_id(node_id))
     }
@@ -482,8 +471,7 @@ impl Graph {
                     // According to the presence of the node type segment
                     // of the description we add the correct join term
                     join_term = if node_type.is_some() { "," } else { " and" },
-                    weighted_degree =
-                        self.get_unchecked_node_degree_from_node_id(node_id)
+                    weighted_degree = self.get_unchecked_node_degree_from_node_id(node_id)
                 )
             });
         }
@@ -843,11 +831,11 @@ impl Graph {
                 "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>\n",
                 "<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>\n"
             ),
-            minimum_edge_weight= self.get_mininum_edge_weight().unwrap(),
-            maximum_edge_weight= self.get_maximum_edge_weight().unwrap(),
-            total_edge_weight=self.get_total_edge_weights().unwrap(),
-            weighted_minimum_node_degree = self.get_weighted_mininum_node_degree().unwrap(),
-            weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().unwrap(),
+            minimum_edge_weight= self.get_mininum_edge_weight().clone().unwrap(),
+            maximum_edge_weight= self.get_maximum_edge_weight().clone().unwrap(),
+            total_edge_weight=self.get_total_edge_weights().clone().unwrap(),
+            weighted_minimum_node_degree = self.get_weighted_minimum_node_degree().clone().unwrap(),
+            weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().clone().unwrap(),
             weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
             weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
             weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(

@@ -26,15 +26,6 @@ pub struct EdgeTypeVocabulary {
 }
 
 impl EdgeTypeVocabulary {
-    pub fn default() -> EdgeTypeVocabulary {
-        EdgeTypeVocabulary {
-            ids: Vec::new(),
-            vocabulary: Vocabulary::default(),
-            counts: Vec::new(),
-            unknown_count: EdgeT::from_usize(0),
-        }
-    }
-
     pub fn from_structs(
         ids: Vec<Option<EdgeTypeT>>,
         vocabulary: Vocabulary<EdgeTypeT>,
@@ -93,7 +84,7 @@ impl EdgeTypeVocabulary {
     /// # Arguments
     ///
     /// * `id`: EdgeTypeT - Id to be translated.
-    pub fn translate(&self, id: EdgeTypeT) -> Result<String, String> {
+    pub fn translate(&self, id: EdgeTypeT) -> Result<String> {
         self.vocabulary.translate(id)
     }
 
@@ -102,7 +93,7 @@ impl EdgeTypeVocabulary {
     /// # Arguments
     ///
     /// * `key`: &str - the key whose Id is to be retrieved.
-    pub fn get(&self, key: &str) -> Option<&EdgeTypeT> {
+    pub fn get(&self, key: &str) -> Option<EdgeTypeT> {
         self.vocabulary.get(key)
     }
 
@@ -114,16 +105,6 @@ impl EdgeTypeVocabulary {
     /// Return length of the vocabulary.    
     pub fn len(&self) -> usize {
         self.counts.len()
-    }
-
-    /// Set whether to load IDs as numeric.
-    ///
-    /// # Arguments
-    /// * numeric_ids: bool - Whether to load the IDs as numeric
-    ///
-    pub fn set_numeric_ids(mut self, numeric_ids: bool) -> EdgeTypeVocabulary {
-        self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
-        self
     }
 
     /// Returns number of unknown edges.

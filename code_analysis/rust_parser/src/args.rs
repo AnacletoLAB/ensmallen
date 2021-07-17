@@ -10,6 +10,12 @@ pub struct Arg{
 #[derive(Debug, Clone, PartialEq)]
 pub struct Args(pub Vec<Arg>);
 
+impl Default for Args {
+    fn default() -> Self {
+        Args(Vec::new())
+    }
+}
+
 impl Parse for Args {
     fn parse(data: &[u8]) -> (&[u8], Self) {
         let (data, mut args_content) = get_next_matching(data, b'(', b')');
@@ -35,7 +41,7 @@ impl Parse for Args {
                 });
                 continue;
             }
-
+            
             args_content = skip_whitespace(args_content);
             assert!(args_content.starts_with(b":"), "Missing column in arg definition at '{}'", String::from_utf8(args_content.to_vec()).unwrap());
             args_content = skip_whitespace(&args_content[1..]);
