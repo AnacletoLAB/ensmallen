@@ -4344,6 +4344,352 @@ impl EnsmallenGraph {
         self.graph.textual_report()
     }
 
+    #[staticmethod]
+    #[automatically_generated_binding]
+    #[text_signature = "(random_state, minimum_node_id, minimum_node_sampling, maximum_node_sampling, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    /// Creates new random connected graph with given sizes and types.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int,
+    ///     The random state to use to reproduce the sampling.
+    /// minimum_node_id: int,
+    ///     The minimum node ID for the connected graph.
+    /// minimum_node_sampling: int,
+    ///     The minimum amount of nodes to sample per node.
+    /// maximum_node_sampling: int,
+    ///     The maximum amount of nodes to sample per node.
+    /// nodes_number: Optional[int],
+    ///     Number of nodes in the chain. By default 10.
+    /// include_selfloops: Optional[bool],
+    ///     Whether to include selfloops.
+    /// node_type: Optional[str],
+    ///     The node type to use for the chain. By default 'chain'.
+    /// edge_type: Optional[str],
+    ///     The node type to use for the chain. By default 'chain'.
+    /// weight: Optional[float],
+    ///     The weight to use for the edges in the chain. By default None.
+    /// directed: Optional[bool],
+    ///     Whether the graph is to built as directed. By default false.
+    /// name: Optional[str],
+    ///     Name of the graph. By default 'Chain'.
+    ///
+    pub fn generate_random_connected_graph(
+        random_state: Option<u64>,
+        minimum_node_id: Option<NodeT>,
+        minimum_node_sampling: Option<NodeT>,
+        maximum_node_sampling: Option<NodeT>,
+        nodes_number: Option<NodeT>,
+        include_selfloops: Option<bool>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
+        weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(Graph::generate_random_connected_graph(
+                random_state,
+                minimum_node_id,
+                minimum_node_sampling,
+                maximum_node_sampling,
+                nodes_number,
+                include_selfloops,
+                node_type,
+                edge_type,
+                weight,
+                directed,
+                name
+            ))?,
+        })
+    }
+
+    #[staticmethod]
+    #[automatically_generated_binding]
+    #[text_signature = "(random_state, minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    /// Creates new random connected graph with given sizes and types.
+    ///
+    /// Parameters
+    /// ----------
+    /// random_state: int,
+    ///     The random state to use to reproduce the sampling.
+    /// minimum_node_id: int,
+    ///     The minimum node ID for the connected graph.
+    /// minimum_node_sampling: int,
+    ///     The minimum amount of nodes to sample per node.
+    /// maximum_node_sampling: int,
+    ///     The maximum amount of nodes to sample per node.
+    /// nodes_number: Optional[int],
+    ///     Number of nodes in the chain. By default 10.
+    /// include_selfloops: Optional[bool],
+    ///     Whether to include selfloops.
+    /// node_type: Optional[str],
+    ///     The node type to use for the chain. By default 'chain'.
+    /// edge_type: Optional[str],
+    ///     The node type to use for the chain. By default 'chain'.
+    /// weight: Optional[float],
+    ///     The weight to use for the edges in the chain. By default None.
+    /// directed: Optional[bool],
+    ///     Whether the graph is to built as directed. By default false.
+    /// name: Optional[str],
+    ///     Name of the graph. By default 'Chain'.
+    ///
+    pub fn generate_random_spanning_tree(
+        random_state: Option<u64>,
+        minimum_node_id: Option<NodeT>,
+        nodes_number: Option<NodeT>,
+        include_selfloops: Option<bool>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
+        weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(Graph::generate_random_spanning_tree(
+                random_state,
+                minimum_node_id,
+                nodes_number,
+                include_selfloops,
+                node_type,
+                edge_type,
+                weight,
+                directed,
+                name
+            ))?,
+        })
+    }
+
+    #[staticmethod]
+    #[automatically_generated_binding]
+    #[text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    /// Creates new circle graph with given sizes and types.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_id: Optional[int],
+    ///     Minimum node ID to start with. May be needed when circleing graphs. By default 0.
+    /// nodes_number: Optional[int],
+    ///     Number of nodes in the circle. By default 10.
+    /// include_selfloops: Optional[bool],
+    ///     Whether to include selfloops.
+    /// node_type: Optional[str],
+    ///     The node type to use for the circle. By default 'circle'.
+    /// edge_type: Optional[str],
+    ///     The node type to use for the circle. By default 'circle'.
+    /// weight: Optional[float],
+    ///     The weight to use for the edges in the circle. By default None.
+    /// directed: Optional[bool],
+    ///     Whether the graph is to built as directed. By default false.
+    /// name: Optional[str],
+    ///     Name of the graph. By default 'Circle'.
+    ///
+    pub fn generate_circle_graph(
+        minimum_node_id: Option<NodeT>,
+        nodes_number: Option<NodeT>,
+        include_selfloops: Option<bool>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
+        weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(Graph::generate_circle_graph(
+                minimum_node_id,
+                nodes_number,
+                include_selfloops,
+                node_type,
+                edge_type,
+                weight,
+                directed,
+                name
+            ))?,
+        })
+    }
+
+    #[staticmethod]
+    #[automatically_generated_binding]
+    #[text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    /// Creates new chain graph with given sizes and types.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_id: Optional[int],
+    ///     Minimum node ID to start with. May be needed when chaining graphs. By default 0.
+    /// nodes_number: Optional[int],
+    ///     Number of nodes in the chain. By default 10.
+    /// include_selfloops: Optional[bool],
+    ///     Whether to include selfloops.
+    /// node_type: Optional[str],
+    ///     The node type to use for the chain. By default 'chain'.
+    /// edge_type: Optional[str],
+    ///     The node type to use for the chain. By default 'chain'.
+    /// weight: Optional[float],
+    ///     The weight to use for the edges in the chain. By default None.
+    /// directed: Optional[bool],
+    ///     Whether the graph is to built as directed. By default false.
+    /// name: Optional[str],
+    ///     Name of the graph. By default 'Chain'.
+    ///
+    pub fn generate_chain_graph(
+        minimum_node_id: Option<NodeT>,
+        nodes_number: Option<NodeT>,
+        include_selfloops: Option<bool>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
+        weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(Graph::generate_chain_graph(
+                minimum_node_id,
+                nodes_number,
+                include_selfloops,
+                node_type,
+                edge_type,
+                weight,
+                directed,
+                name
+            ))?,
+        })
+    }
+
+    #[staticmethod]
+    #[automatically_generated_binding]
+    #[text_signature = "(minimum_node_id, nodes_number, include_selfloops, node_type, edge_type, weight, directed, name)"]
+    /// Creates new complete graph with given sizes and types.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_id: Optional[int],
+    ///     Minimum node ID to start with. May be needed when combining graphs. By default 0.
+    /// nodes_number: Optional[int],
+    ///     Number of nodes in the chain. By default 10.
+    /// include_selfloops: Optional[bool],
+    ///     Whether to include selfloops.
+    /// node_type: Optional[str],
+    ///     The node type to use. By default 'complete'.
+    /// edge_type: Optional[str],
+    ///     The node type to use. By default 'complete'.
+    /// weight: Optional[float],
+    ///     The weight to use for the edges. By default None.
+    /// directed: Optional[bool],
+    ///     Whether the graph is to built as directed. By default false.
+    /// name: Optional[str],
+    ///     Name of the graph. By default 'Complete'.
+    ///
+    pub fn generate_complete_graph(
+        minimum_node_id: Option<NodeT>,
+        nodes_number: Option<NodeT>,
+        include_selfloops: Option<bool>,
+        node_type: Option<&str>,
+        edge_type: Option<&str>,
+        weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(Graph::generate_complete_graph(
+                minimum_node_id,
+                nodes_number,
+                include_selfloops,
+                node_type,
+                edge_type,
+                weight,
+                directed,
+                name
+            ))?,
+        })
+    }
+
+    #[staticmethod]
+    #[automatically_generated_binding]
+    #[text_signature = "(minimum_node_id, left_clique_nodes_number, right_clique_nodes_number, chain_nodes_number, include_selfloops, left_clique_node_type, right_clique_node_type, chain_node_type, left_clique_edge_type, right_clique_edge_type, chain_edge_type, left_clique_weight, right_clique_weight, chain_weight, directed, name)"]
+    /// Creates new barbell graph with given sizes and types.
+    ///
+    /// Parameters
+    /// ----------
+    /// minimum_node_id: Optional[int],
+    ///     Minimum node ID to start with. May be needed when chaining graphs. By default 0.
+    /// left_clique_nodes_number: Optional[int],
+    ///     Number of nodes in the left clique. By default 10.
+    /// right_clique_nodes_number: Optional[int],
+    ///      Number of nodes in the right clique. By default equal to the left clique.
+    /// chain_nodes_number: Optional[int],
+    ///     Number of nodes in the chain. By default 10.
+    /// include_selfloops: Optional[bool],
+    ///     Whether to include selfloops.
+    /// left_clique_node_type: Optional[str],
+    ///     The node type to use for the left clique. By default 'left_clique'.
+    /// right_clique_node_type: Optional[str],
+    ///     The node type to use for the right clique. By default 'right_clique'.
+    /// chain_node_type: Optional[str],
+    ///     The node type to use for the chain. By default 'chain'.
+    /// left_clique_edge_type: Optional[str],
+    ///     The node type to use for the left clique. By default 'left_clique'.
+    /// right_clique_edge_type: Optional[str],
+    ///     The node type to use for the right clique. By default 'right_clique'.
+    /// chain_edge_type: Optional[str],
+    ///     The node type to use for the chain. By default 'chain'.
+    /// left_clique_weight: Optional[float],
+    ///     The weight to use for the edges in the left clique. By default None.
+    /// right_clique_weight: Optional[float],
+    ///     The weight to use for the edges in the right clique. By default None.
+    /// chain_weight: Optional[float],
+    ///     The weight to use for the edges in the chain. By default None.
+    /// directed: Optional[bool],
+    ///     Whether the graph is to built as directed. By default false.
+    /// name: Optional[str],
+    ///     Name of the graph. By default 'Barbell'.
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the edge weights are provided only for a subset.
+    ///
+    pub fn generate_barbell_graph(
+        minimum_node_id: Option<NodeT>,
+        left_clique_nodes_number: Option<NodeT>,
+        right_clique_nodes_number: Option<NodeT>,
+        chain_nodes_number: Option<NodeT>,
+        include_selfloops: Option<bool>,
+        left_clique_node_type: Option<&str>,
+        right_clique_node_type: Option<&str>,
+        chain_node_type: Option<&str>,
+        left_clique_edge_type: Option<&str>,
+        right_clique_edge_type: Option<&str>,
+        chain_edge_type: Option<&str>,
+        left_clique_weight: Option<WeightT>,
+        right_clique_weight: Option<WeightT>,
+        chain_weight: Option<WeightT>,
+        directed: Option<bool>,
+        name: Option<&str>,
+    ) -> PyResult<EnsmallenGraph> {
+        Ok(EnsmallenGraph {
+            graph: pe!(Graph::generate_barbell_graph(
+                minimum_node_id,
+                left_clique_nodes_number,
+                right_clique_nodes_number,
+                chain_nodes_number,
+                include_selfloops,
+                left_clique_node_type,
+                right_clique_node_type,
+                chain_node_type,
+                left_clique_edge_type,
+                right_clique_edge_type,
+                chain_edge_type,
+                left_clique_weight,
+                right_clique_weight,
+                chain_weight,
+                directed,
+                name
+            ))?,
+        })
+    }
+
     #[automatically_generated_binding]
     #[text_signature = "($self, node_name_mapping, node_type_name_mapping, node_type_names_mapping, edge_type_name_mapping, verbose)"]
     /// Replace given node, node type and edge type names.
