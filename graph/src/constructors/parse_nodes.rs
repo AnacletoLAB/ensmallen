@@ -63,7 +63,9 @@ pub(crate) fn parse_nodes(
     let node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new());
 
     let mut node_type_parser = NodeTypeParser::new(node_types_vocabulary);
-    let nodes_iterator = nodes_iterator
+    let nodes_iterator: Option<
+        ItersWrapper<Result<(usize, (String, Option<Vec<NodeTypeT>>))>, _, _>,
+    > = nodes_iterator
         .map(|ni| ni.method_caller(node_types_method, node_types_method, &mut node_type_parser));
 
     let (nodes_vocabulary, node_types_ids, node_types_vocabulary) = match (
