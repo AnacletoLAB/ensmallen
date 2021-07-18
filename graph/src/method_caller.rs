@@ -172,6 +172,49 @@ pub(crate) trait OrOps<T, R, S> {
 
 impl<T, R, S, J: ?Sized> OrOps<T, R, S> for J where J: ParallelIterator<Item = T> {}
 
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+pub(crate) struct SequentialMethodCaller<'a, T, R, S, I> {
+    base: I,
+    method: fn(&mut S, T) -> R,
+    context: &'a mut S,
+}
+
+impl<'a, T, R, S, I: Iterator<Item=T>> Iterator for SequentialMethodCaller<'a, T, R, S, I> {
+    type Item = R;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        match self.base.next() {
+            None => None,
+            Some(val) => {
+                Some((self.method)(self.context, val))
+            }
+        }
+    }
+}
+
+pub(crate) trait IterOrOps<T, R, S> {
+    fn method_caller(
+        self,
+        method: fn(&mut S, T) -> R,
+        context: &mut S,
+    ) -> SequentialMethodCaller<T, R, S, Self>
+    where
+        Self: Iterator<Item = T> + Sized,
+    {
+        SequentialMethodCaller{
+            base: self, 
+            method, 
+            context,
+        }
+    }
+}
+
+impl<T, R, S, J: ?Sized> IterOrOps<T, R, S> for J where J: Iterator<Item = T> {}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 
 #[macro_export]
