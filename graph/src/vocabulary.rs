@@ -1,4 +1,5 @@
 use super::types::*;
+use itertools::Itertools;
 use rayon::iter::ParallelIterator;
 use rayon::iter::{IndexedParallelIterator, IntoParallelIterator};
 use std::collections::hash_map::Entry;
@@ -82,6 +83,9 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
             .collect::<HashMap<String, IndexT>>();
 
         if map.len() != reverse_map.len() {
+            let reverse_map_length = reverse_map.len();
+            let map_length = map.len();
+            let expected_duplicates_number = reverse_map.len() - map.len();
             reverse_map.sort_unstable();
             let duplicates = reverse_map
                 .into_iter()
@@ -91,22 +95,27 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
                         .map_or(false, |last_object| *last_object == object);
 
                     let result: Option<String> = if equal_to_last_edge {
-                        None
-                    } else {
                         Some(object.to_string())
+                    } else {
+                        None
                     };
 
                     *last_object = Some(object.to_string());
 
                     result
                 })
+                .unique()
                 .collect::<Vec<String>>();
             return Err(format!(
                 concat!(
                     "Duplicated values found while building the vocabulary!\n",
-                    "Specifically the duplicated values are:\n{:#4?}."
+                    "Specifically the duplicated values are:\n{:?}.\n",
+                    "The number of duplicates found is {}, as the length of the reverse map is {} and the length of the map is {}."
                 ),
-                duplicates
+                duplicates,
+                expected_duplicates_number,
+                reverse_map_length,
+                map_length
             ));
         }
 

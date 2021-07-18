@@ -398,6 +398,21 @@ impl NodeFileReader {
         Ok(self)
     }
 
+    /// Set whether to load the node list in sequential or in parallel.
+    ///
+    /// # Arguments
+    /// * parallel: Option<bool> - Whether to load the node list in sequential or parallel.
+    ///
+    pub fn set_parallel(mut self, parallel: Option<bool>) -> Result<NodeFileReader> {
+        if let Some(parallel) = parallel {
+            self.must_have_reader()?;
+            self.reader
+                .as_mut()
+                .map(|reader| reader.parallel = parallel);
+        }
+        Ok(self)
+    }
+
     /// Return boolean representing if the node types exist.
     pub fn has_node_types(&self) -> bool {
         self.default_node_type.is_some() || self.node_types_column_number.is_some()
@@ -478,7 +493,13 @@ impl NodeFileReader {
     pub fn read_lines(
         &self,
     ) -> Option<
-        Result<impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>> + '_>,
+        Result<
+            ItersWrapper<
+                Result<(usize, (String, Option<Vec<String>>))>,
+                impl Iterator<Item = Result<(usize, (String, Option<Vec<String>>))>> + '_,
+                impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>> + '_,
+            >,
+        >,
     > {
         self.reader.as_ref().map(|reader| {
             // Validating that at least a column was given.

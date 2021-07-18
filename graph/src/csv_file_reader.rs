@@ -8,7 +8,7 @@ use nix::fcntl::*;
 use std::os::unix::io::AsRawFd;
 
 use num_traits::Zero;
-use rayon::iter::{ParallelBridge, ParallelIterator};
+use rayon::iter::ParallelIterator;
 use std::{fs::File, io::prelude::*, io::BufReader};
 
 use crate::utils::get_loading_bar;
@@ -20,6 +20,8 @@ pub struct CSVFileReader {
     pub(crate) path: String,
 
     /// If the progress bars and logging must be displayed.
+    /// Note that this is ony used when running without parallelism
+    /// because otherwise the bar synchronization ovehead is too massive.
     pub(crate) verbose: bool,
 
     /// The separator to use, usually, this is "\t" for tsv and "," for csv.
@@ -52,6 +54,9 @@ pub struct CSVFileReader {
 
     /// Whether the CSV may contain or not duplicate entries
     pub(crate) may_have_duplicates: Option<bool>,
+
+    /// Whether to read the file sequentially or in parallel
+    pub(crate) parallel: bool,
 }
 
 /// # Builder methods
@@ -80,6 +85,7 @@ impl CSVFileReader {
                 list_name,
                 graph_name: "Graph".to_string(),
                 may_have_duplicates: None,
+                parallel: true,
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
@@ -114,7 +120,7 @@ impl CSVFileReader {
 
     /// Return list of components of the header.
     pub fn get_header(&self) -> Result<Vec<String>> {
-        if let Some(first_line) = self.get_lines_iterator(false)?.next() {
+        if let Some((_, first_line)) = self.get_sequential_lines_iterator(false, false)?.next() {
             Ok(first_line?
                 .split(&self.separator)
                 .map(|s| s.to_string())
@@ -127,7 +133,7 @@ impl CSVFileReader {
     pub fn get_parallell_lines_iterator(
         &self,
         skip_header: bool,
-    ) -> Result<impl ParallelIterator<Item = Result<String>> + '_> {
+    ) -> Result<impl ParallelIterator<Item = (usize, Result<String>)> + '_> {
         let rows_to_skip = match skip_header {
             true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {
                 Some(v) => Ok(v),
@@ -152,14 +158,22 @@ impl CSVFileReader {
                 (Ok(line), _) => !line.is_empty(),
                 _ => true
             })
+            // TODO! PROVIDE THE ACTUAL LINES!
+            .map(|line| (0, line))
             //.skip(rows_to_skip)
         )
     }
 
-    pub fn get_lines_iterator(
+    /// Returns a sequential lines iterator.
+    ///
+    /// # Arguments
+    /// * `skip_header`: bool - Whether to skip the header.
+    /// * `verbose`: bool - Whether to show the loading bar.
+    fn get_sequential_lines_iterator(
         &self,
         skip_header: bool,
-    ) -> Result<impl Iterator<Item = Result<String>> + '_> {
+        verbose: bool,
+    ) -> Result<impl Iterator<Item = (usize, Result<String>)> + '_> {
         let rows_to_skip = match skip_header {
             true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {
                 Some(v) => Ok(v),
@@ -171,8 +185,18 @@ impl CSVFileReader {
             }?,
             false => self.rows_to_skip as u64,
         } as usize;
+
+        // We create the loading bar
+        // We already tested removing this and it does not appear to be a bottleneck.
+        let pb = get_loading_bar(
+            verbose,
+            format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
+            if verbose { self.count_rows()? } else { 0 },
+        );
+
         Ok(self.get_buffer_reader()?
             .lines()
+            .progress_with(pb)
             .map(|line| match line {
                 Ok(l)=>Ok(l),
                 Err(_)=>Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()),
@@ -181,14 +205,39 @@ impl CSVFileReader {
                 Some(cs) => !line.starts_with(cs),
                 _ => true,
             })
-            .skip(rows_to_skip))
+            .skip(rows_to_skip)
+            .enumerate()
+        )
+    }
+
+    /// Returns a sequential lines iterator.
+    ///
+    /// # Arguments
+    /// * `skip_header`: bool - Whether to skip the header.
+    /// * `verbose`: bool - Whether to show the loading bar.
+    fn get_lines_iterator(
+        &self,
+        skip_header: bool,
+        verbose: bool,
+    ) -> Result<
+        ItersWrapper<
+            (usize, Result<String>),
+            impl Iterator<Item = (usize, Result<String>)> + '_,
+            impl ParallelIterator<Item = (usize, Result<String>)> + '_,
+        >,
+    > {
+        Ok(if self.parallel {
+            ItersWrapper::Parallel(self.get_parallell_lines_iterator(skip_header)?)
+        } else {
+            ItersWrapper::Sequential(self.get_sequential_lines_iterator(skip_header, verbose)?)
+        })
     }
 
     /// Return elements of the first line not to be skipped.
     pub fn get_elements_per_line(&self) -> Result<usize> {
-        let first_line = self.get_lines_iterator(true)?.next();
+        let first_line = self.get_sequential_lines_iterator(true, false)?.next();
         match first_line {
-            Some(fl) => {
+            Some((_, fl)) => {
                 match fl {
                     Ok(f) => {
                         Ok(f.matches(&self.separator).count() + 1)
@@ -207,15 +256,13 @@ impl CSVFileReader {
     pub(crate) fn read_lines(
         &self,
         columns_of_interest: Vec<usize>,
-    ) -> Result<impl ParallelIterator<Item = Result<(usize, Vec<Option<String>>)>> + '_> {
-        // We create the loading bar
-        // We already tested removing this and it does not appear to be a bottleneck.
-        let pb = get_loading_bar(
-            self.verbose,
-            format!("Reading {}'s {}", self.graph_name, self.list_name).as_ref(),
-            if self.verbose { self.count_rows()? } else { 0 },
-        );
-
+    ) -> Result<
+        ItersWrapper<
+            Result<(usize, Vec<Option<String>>)>,
+            impl Iterator<Item = Result<(usize, Vec<Option<String>>)>> + '_,
+            impl ParallelIterator<Item = Result<(usize, Vec<Option<String>>)>> + '_,
+        >,
+    > {
         // We check if the provided columns of interest
         let number_of_column_of_interest = columns_of_interest.len();
         if number_of_column_of_interest.is_zero() {
@@ -336,13 +383,12 @@ impl CSVFileReader {
         };
 
         Ok(self
-            .get_parallell_lines_iterator(true)?
+            .get_lines_iterator(true, self.verbose)?
             // Reading only the requested amount of lines.
             //.take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
             //.enumerate()
             //.progress_with(pb)
             //.par_bridge()
-            .map(|line| (0, line))
             // Handling NaN values and padding them to the number of rows
             .map(move |(line_number, line)| {
                 parse_line(

@@ -278,6 +278,18 @@ impl EdgeFileReader {
         self
     }
 
+    /// Set whether to load the current graph using the parallel reader or sequential reader.
+    ///
+    /// # Arguments
+    /// * parallel: Option<bool> - Whether to read the edge list using a parallel or sequential reader.
+    ///
+    pub fn set_parallel(mut self, parallel: Option<bool>) -> EdgeFileReader {
+        if let Some(parallel) = parallel {
+            self.reader.parallel = parallel;
+        }
+        self
+    }
+
     /// Set whether the current edge list is sorted.
     ///
     /// # Arguments
@@ -581,7 +593,13 @@ impl EdgeFileReader {
     /// Return iterator of rows of the edge file.
     pub fn read_lines(
         &self,
-    ) -> Result<impl ParallelIterator<Item = Result<(usize, StringQuadruple)>> + '_> {
+    ) -> Result<
+        ItersWrapper<
+            Result<(usize, StringQuadruple)>,
+            impl Iterator<Item = Result<(usize, StringQuadruple)>> + '_,
+            impl ParallelIterator<Item = Result<(usize, StringQuadruple)>> + '_,
+        >,
+    > {
         if self.destinations_column_number == self.sources_column_number {
             return Err("The destinations column is the same as the sources one.".to_string());
         }

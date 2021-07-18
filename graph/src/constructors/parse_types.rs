@@ -7,7 +7,13 @@ use std::str::FromStr;
 pub(crate) fn parse_types<
     TypeT: FromStr + ToFromUsize + Sync + Send + Debug + Add<Output = TypeT>,
 >(
-    types_iterator: Option<impl ParallelIterator<Item = Result<(usize, String)>>>,
+    types_iterator: Option<
+        ItersWrapper<
+            Result<(usize, String)>,
+            impl Iterator<Item = Result<(usize, String)>>,
+            impl ParallelIterator<Item = Result<(usize, String)>>,
+        >,
+    >,
     types_number: Option<TypeT>,
     numeric_type_ids: Option<bool>,
     minimum_type_id: Option<TypeT>,

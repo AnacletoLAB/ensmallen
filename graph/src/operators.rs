@@ -31,10 +31,9 @@ fn generic_string_operator(
     // one: left hand side of the operator
     // deny_graph: right hand edges "deny list"
     // must_have_graph: right hand edges "must have list
-    let edges_iterator =
-        graphs
-            .into_par_iter()
-            .flat_map_iter(|(one, deny_graph, must_have_graph)| {
+    let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
+        ItersWrapper::Parallel(graphs.into_par_iter().flat_map_iter(
+            |(one, deny_graph, must_have_graph)| {
                 one.iter_edge_node_names_and_edge_type_name_and_edge_weight(main.directed)
                     .filter(move |(_, _, src_name, _, dst_name, _, edge_type_name, _)| {
                         // If the secondary graph is given
@@ -72,28 +71,31 @@ fn generic_string_operator(
                             ),
                         ))
                     })
-            });
+            },
+        ));
 
     // Chaining node types in a way that merges the information between
     // two node type sets where one of the two has some unknown node types
-    let nodes_iterator = main
-        .par_iter_node_names_and_node_type_names()
-        .map(|(_, node_name, _, node_type_names)| {
-            let node_type_names = match node_type_names {
-                Some(ntns) => Some(ntns),
-                None => other
-                    .get_node_id_from_node_name(&node_name)
-                    .ok()
-                    .and_then(|node_id| other.get_node_type_names_from_node_id(node_id).unwrap()),
-            };
-            Ok((0, (node_name, node_type_names)))
-        })
-        .chain(other.par_iter_node_names_and_node_type_names().filter_map(
-            |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
-                true => None,
-                false => Some(Ok((0, (node_name, node_type_names)))),
-            },
-        ));
+    let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
+        ItersWrapper::Parallel(
+            main.par_iter_node_names_and_node_type_names()
+                .map(|(_, node_name, _, node_type_names)| {
+                    let node_type_names =
+                        match node_type_names {
+                            Some(ntns) => Some(ntns),
+                            None => other.get_node_id_from_node_name(&node_name).ok().and_then(
+                                |node_id| other.get_node_type_names_from_node_id(node_id).unwrap(),
+                            ),
+                        };
+                    Ok((0, (node_name, node_type_names)))
+                })
+                .chain(other.par_iter_node_names_and_node_type_names().filter_map(
+                    |(_, node_name, _, node_type_names)| match main.has_node_name(&node_name) {
+                        true => None,
+                        false => Some(Ok((0, (node_name, node_type_names)))),
+                    },
+                )),
+        );
 
     build_graph_from_strings_without_type_iterators(
         main.has_node_types(),

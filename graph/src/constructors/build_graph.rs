@@ -1,5 +1,5 @@
 use super::*;
-use rayon::{iter::Empty, prelude::*};
+use rayon::prelude::*;
 
 /// Return new graph object built from string iterators.
 ///
@@ -33,26 +33,46 @@ use rayon::{iter::Empty, prelude::*};
 /// `name: S - The name of the graph.
 ///
 pub(crate) fn build_graph_from_strings<S: Into<String>>(
-    node_types_iterator: Option<impl ParallelIterator<Item = Result<(usize, String)>>>,
+    node_types_iterator: Option<
+        ItersWrapper<
+            Result<(usize, String)>,
+            impl Iterator<Item = Result<(usize, String)>>,
+            impl ParallelIterator<Item = Result<(usize, String)>>,
+        >,
+    >,
     node_types_number: Option<NodeTypeT>,
     numeric_node_type_ids: Option<bool>,
     minimum_node_type_id: Option<NodeTypeT>,
     has_node_types: bool,
     nodes_iterator: Option<
-        impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+        ItersWrapper<
+            Result<(usize, (String, Option<Vec<String>>))>,
+            impl Iterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+            impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+        >,
     >,
     mut nodes_number: Option<NodeT>,
     node_list_is_correct: bool,
     numeric_node_ids: bool,
     numeric_node_list_node_type_ids: bool,
     minimum_node_ids: Option<NodeT>,
-    edge_types_iterator: Option<impl ParallelIterator<Item = Result<(usize, String)>>>,
+    edge_types_iterator: Option<
+        ItersWrapper<
+            Result<(usize, String)>,
+            impl Iterator<Item = Result<(usize, String)>>,
+            impl ParallelIterator<Item = Result<(usize, String)>>,
+        >,
+    >,
     edge_types_number: Option<EdgeTypeT>,
     numeric_edge_type_ids: Option<bool>,
     minimum_edge_type_id: Option<EdgeTypeT>,
     has_edge_types: bool,
     edges_iterator: Option<
-        impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,
+        ItersWrapper<
+            Result<(usize, StringQuadruple)>,
+            impl Iterator<Item = Result<(usize, StringQuadruple)>>,
+            impl ParallelIterator<Item = Result<(usize, StringQuadruple)>>,
+        >,
     >,
     has_edge_weights: bool,
     directed: bool,
@@ -140,7 +160,11 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
 pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
     has_node_types: bool,
     nodes_iterator: Option<
-        impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+        ItersWrapper<
+            Result<(usize, (String, Option<Vec<String>>))>,
+            impl Iterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+            impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+        >,
     >,
     nodes_number: Option<NodeT>,
     node_list_is_correct: bool,
@@ -149,7 +173,11 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
     minimum_node_ids: Option<NodeT>,
     has_edge_types: bool,
     edges_iterator: Option<
-        impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,
+        ItersWrapper<
+            Result<(usize, StringQuadruple)>,
+            impl Iterator<Item = Result<(usize, StringQuadruple)>>,
+            impl ParallelIterator<Item = Result<(usize, StringQuadruple)>>,
+        >,
     >,
     has_edge_weights: bool,
     directed: bool,
@@ -163,7 +191,7 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
     name: S,
 ) -> Result<Graph> {
     build_graph_from_strings(
-        None::<Empty<_>>,
+        None::<ItersWrapper<_, std::iter::Empty<_>, rayon::iter::Empty<_>>>,
         None,
         None,
         None,
@@ -174,7 +202,7 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
         numeric_node_ids,
         numeric_node_list_node_type_ids,
         minimum_node_ids,
-        None::<Empty<_>>,
+        None::<ItersWrapper<_, std::iter::Empty<_>, rayon::iter::Empty<_>>>,
         None,
         None,
         None,
@@ -202,14 +230,14 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
 pub fn build_empty_graph<S: Into<String>>(directed: bool, name: S) -> Result<Graph> {
     build_graph_from_strings_without_type_iterators(
         false,
-        None::<Empty<_>>,
+        None::<ItersWrapper<_, std::iter::Empty<_>, rayon::iter::Empty<_>>>,
         None,
         false,
         false,
         false,
         None,
         false,
-        None::<Empty<_>>,
+        None::<ItersWrapper<_, std::iter::Empty<_>, rayon::iter::Empty<_>>>,
         false,
         directed,
         None,

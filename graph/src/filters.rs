@@ -244,27 +244,29 @@ impl Graph {
                 self.get_name(),
             ),
             (true, _) => {
-                build_graph_from_strings_without_type_iterators(
-                    self.has_node_types(),
-                    Some(
+                let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
+                    ItersWrapper::Parallel(
                         self.par_iter_node_names_and_node_type_names()
                             .progress_with(pb_nodes)
                             .filter(node_filter)
-                            .map(|(_, node_name, _, node_types)| Ok((0 as usize, (node_name, node_types)))),
-                    ),
-                    // The number of nodes is unknown because of the filter
-                    // it may be possible, in some cases, to get this value by
-                    // further expanding this filtering method.
-                    None,
-                    true,
-                    false,
-                    false,
-                    None,
-                    self.has_edge_types(),
-                    Some(self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
+                            .map(|(_, node_name, _, node_types)| {
+                                Ok((0 as usize, (node_name, node_types)))
+                            }),
+                    );
+                let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
+                    self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
                         .progress_with(pb_edges)
                         .filter(
-                            |(edge_id, src, src_name, dst, dst_name, edge_type, _, weight)| unsafe {
+                            |(
+                                edge_id,
+                                src,
+                                src_name,
+                                dst,
+                                dst_name,
+                                edge_type,
+                                _,
+                                weight,
+                            )| unsafe {
                                 edge_filter(&(*edge_id, *src, *dst, *edge_type, *weight))
                                     && node_filter(&(
                                         *src,
@@ -281,8 +283,30 @@ impl Graph {
                             },
                         )
                         .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                            Ok((0 as usize, (src_name, dst_name, edge_type_name, weight.unwrap_or(WeightT::NAN))))
-                        })),
+                            Ok((
+                                0 as usize,
+                                (
+                                    src_name,
+                                    dst_name,
+                                    edge_type_name,
+                                    weight.unwrap_or(WeightT::NAN),
+                                ),
+                            ))
+                        }),
+                );
+                build_graph_from_strings_without_type_iterators(
+                    self.has_node_types(),
+                    Some(nodes_iterator),
+                    // The number of nodes is unknown because of the filter
+                    // it may be possible, in some cases, to get this value by
+                    // further expanding this filtering method.
+                    None,
+                    true,
+                    false,
+                    false,
+                    None,
+                    self.has_edge_types(),
+                    Some(edges_iterator),
                     self.has_edge_weights(),
                     self.is_directed(),
                     Some(true),

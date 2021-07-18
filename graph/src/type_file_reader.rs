@@ -284,27 +284,56 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
         Ok(self)
     }
 
+    /// Set whether to load the type list in sequential or in parallel.
+    ///
+    /// # Arguments
+    /// * parallel: Option<bool> - Whether to load the type list in sequential or parallel.
+    ///
+    pub fn set_parallel(mut self, parallel: Option<bool>) -> Result<TypeFileReader<T>> {
+        if let Some(parallel) = parallel {
+            self.must_have_reader()?;
+            self.reader
+                .as_mut()
+                .map(|reader| reader.parallel = parallel);
+        }
+        Ok(self)
+    }
+
     /// Parse a single line (vector of strings already splitted)
     /// # Arguments
     /// * `line_number`: Number of the line.
     /// * `elements_in_line`: Vec<Option<String>> - Vector of the values of the line to be parsed
-    fn parse_type_line(&self, line_number:usize, mut elements_in_line: Vec<Option<String>>) -> Result<String> {
+    fn parse_type_line(
+        &self,
+        line_number: usize,
+        mut elements_in_line: Vec<Option<String>>,
+    ) -> Result<String> {
         // extract the type name
         elements_in_line.pop().unwrap().map_or_else(
             || Err(format!("The type at line {} is empty.", line_number)),
-            |type_name|Ok(type_name)
+            |type_name| Ok(type_name),
         )
     }
 
     /// Return iterator of rows of the edge file.
     pub fn read_lines(
         &self,
-    ) -> Option<Result<impl ParallelIterator<Item = Result<(usize, String)>> + '_>> {
+    ) -> Option<
+        Result<
+            ItersWrapper<
+                Result<(usize, String)>,
+                impl Iterator<Item = Result<(usize, String)>> + '_,
+                impl ParallelIterator<Item = Result<(usize, String)>> + '_,
+            >,
+        >,
+    > {
         self.reader.as_ref().map(|reader| {
             Ok(reader
                 .read_lines(vec![self.type_column_number])?
                 .map(move |line| match line {
-                    Ok((line_number, vals)) => Ok((line_number, self.parse_type_line(line_number, vals)?)),
+                    Ok((line_number, vals)) => {
+                        Ok((line_number, self.parse_type_line(line_number, vals)?))
+                    }
                     Err(e) => Err(e),
                 }))
         })

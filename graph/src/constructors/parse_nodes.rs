@@ -6,7 +6,11 @@ use super::*;
 
 pub(crate) fn parse_nodes(
     nodes_iterator: Option<
-        impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+        ItersWrapper<
+            Result<(usize, (String, Option<Vec<String>>))>,
+            impl Iterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+            impl ParallelIterator<Item = Result<(usize, (String, Option<Vec<String>>))>>,
+        >,
     >,
     nodes_number: Option<NodeT>,
     node_types_vocabulary: Option<Vocabulary<NodeTypeT>>,
@@ -39,6 +43,7 @@ pub(crate) fn parse_nodes(
         .to_string());
     }
 
+    // TODO! make optimized methods for the sequential iterator version
     let node_types_method = match (
         has_node_types,
         node_types_vocabulary
@@ -58,8 +63,8 @@ pub(crate) fn parse_nodes(
     let node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new());
 
     let mut node_type_parser = NodeTypeParser::new(node_types_vocabulary);
-    let nodes_iterator =
-        nodes_iterator.map(|ni| ni.method_caller(node_types_method, &mut node_type_parser));
+    let nodes_iterator = nodes_iterator
+        .map(|ni| ni.method_caller(node_types_method, node_types_method, &mut node_type_parser));
 
     let (nodes_vocabulary, node_types_ids, node_types_vocabulary) = match (
         nodes_iterator,

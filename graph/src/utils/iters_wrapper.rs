@@ -2,7 +2,7 @@ use super::*;
 use rayon::prelude::*;
 use std::iter::FromIterator;
 
-/// Struct that we use to threat sequential and parallel iterators in an 
+/// Struct that we use to threat sequential and parallel iterators in an
 /// homogeneus way.
 ///
 /// # Example
@@ -14,100 +14,110 @@ use std::iter::FromIterator;
 /// } else {
 ///     ItersWrapper::Parallel((0..100).into_par_iter().map(|x| x + 1))
 /// };
-/// 
+///
 /// println!("{:?}", iter.map(|x: i32| -> i32 {v + x * 2}).collect::<Vec<_>>());
 /// ```
-pub enum ItersWrapper<
-    Item,
-    I:Iterator<Item=Item>, 
-    P:ParallelIterator<Item=Item>,
->{
+pub enum ItersWrapper<Item, I: Iterator<Item = Item>, P: ParallelIterator<Item = Item>> {
     Sequential(I),
     Parallel(P),
 }
 
-impl<Item, I, P> ItersWrapper<Item, I, P> 
+impl<Item, I, P> ItersWrapper<Item, I, P>
 where
     Item: Send,
-    I: Iterator<Item=Item>,
-    P: ParallelIterator<Item=Item>,
+    I: Iterator<Item = Item>,
+    P: ParallelIterator<Item = Item>,
 {
     pub fn map<F, R>(self, op: F) -> ItersWrapper<R, std::iter::Map<I, F>, rayon::iter::Map<P, F>>
     where
         R: Send,
-        F: Fn(Item) -> R  + Sync + Send
-        {
-            match self {
-                Self::Parallel(p) => ItersWrapper::Parallel(p.map(op)),
-                Self::Sequential(i) => ItersWrapper::Sequential(i.map(op)),
-            }
+        F: Fn(Item) -> R + Sync + Send,
+    {
+        match self {
+            Self::Parallel(p) => ItersWrapper::Parallel(p.map(op)),
+            Self::Sequential(i) => ItersWrapper::Sequential(i.map(op)),
+        }
     }
 
-    pub fn method_caller<'a, R, S>(self, sequential_op: fn(&mut S, Item) -> R, parallel_op: fn(&mut S, Item) -> R, context: &'a mut S) -> ItersWrapper<R, SequentialMethodCaller<'a, Item, R, S, I>, MethodCaller<Item, R, S, P>>
+    pub fn method_caller<'a, R, S>(
+        self,
+        sequential_op: fn(&mut S, Item) -> R,
+        parallel_op: fn(&mut S, Item) -> R,
+        context: &'a mut S,
+    ) -> ItersWrapper<R, SequentialMethodCaller<'a, Item, R, S, I>, MethodCaller<Item, R, S, P>>
     where
         R: Send,
-        {
-            match self {
-                Self::Parallel(p) => ItersWrapper::Parallel(MethodCaller::new(p, parallel_op, context as *const S as usize)),
-                Self::Sequential(i) => ItersWrapper::Sequential(SequentialMethodCaller::new(i, sequential_op, context)),
+    {
+        match self {
+            Self::Parallel(p) => ItersWrapper::Parallel(MethodCaller::new(
+                p,
+                parallel_op,
+                context as *const S as usize,
+            )),
+            Self::Sequential(i) => {
+                ItersWrapper::Sequential(SequentialMethodCaller::new(i, sequential_op, context))
             }
+        }
     }
 
-    pub fn filter<F>(self, op: F) -> ItersWrapper<Item, std::iter::Filter<I, F>, rayon::iter::Filter<P, F>>
+    pub fn filter<F>(
+        self,
+        op: F,
+    ) -> ItersWrapper<Item, std::iter::Filter<I, F>, rayon::iter::Filter<P, F>>
     where
-        F: Fn(&Item) -> bool + Sync + Send
-        {
-            match self {
-                Self::Parallel(p) => ItersWrapper::Parallel(p.filter(op)),
-                Self::Sequential(i) => ItersWrapper::Sequential(i.filter(op)),
-            }
+        F: Fn(&Item) -> bool + Sync + Send,
+    {
+        match self {
+            Self::Parallel(p) => ItersWrapper::Parallel(p.filter(op)),
+            Self::Sequential(i) => ItersWrapper::Sequential(i.filter(op)),
+        }
     }
 
     pub fn for_each<F>(self, op: F)
     where
-        F: Fn(Item) + Sync + Send
-        {
-            match self {
-                Self::Parallel(p) => p.for_each(op),
-                Self::Sequential(i) => i.for_each(op),
-            }
+        F: Fn(Item) + Sync + Send,
+    {
+        match self {
+            Self::Parallel(p) => p.for_each(op),
+            Self::Sequential(i) => i.for_each(op),
+        }
     }
 
-    pub fn reduce<ID, F>(self,identity: ID, op: F) -> Item
+    pub fn reduce<ID, F>(self, identity: ID, op: F) -> Item
     where
         F: Fn(Item, Item) -> Item + Sync + Send,
         ID: Fn() -> Item + Sync + Send,
-        {
-            match self {
-                Self::Parallel(p) => p.reduce(identity, op),
-                Self::Sequential(i) => i.chain(vec![identity()].into_iter()).reduce(op).unwrap(),
-            }
+    {
+        match self {
+            Self::Parallel(p) => p.reduce(identity, op),
+            Self::Sequential(i) => i.chain(vec![identity()].into_iter()).reduce(op).unwrap(),
+        }
     }
 
     pub fn all<F>(self, op: F) -> bool
     where
         F: Fn(Item) -> bool + Sync + Send,
-        {
-            match self {
-                Self::Parallel(p) => p.all(op),
-                Self::Sequential(mut i) => i.all(op),
-            }
+    {
+        match self {
+            Self::Parallel(p) => p.all(op),
+            Self::Sequential(mut i) => i.all(op),
+        }
     }
 
     pub fn any<F>(self, op: F) -> bool
     where
         F: Fn(Item) -> bool + Sync + Send,
-        {
-            match self {
-                Self::Parallel(p) => p.any(op),
-                Self::Sequential(mut i) => i.any(op),
-            }
+    {
+        match self {
+            Self::Parallel(p) => p.any(op),
+            Self::Sequential(mut i) => i.any(op),
+        }
     }
 
     pub fn collect<B: FromIterator<Item> + FromParallelIterator<Item>>(self) -> B {
-            match self {
-                Self::Parallel(p) => p.collect::<B>(),
-                Self::Sequential(i) => i.collect::<B>(),
-            }
-    } 
+        match self {
+            Self::Parallel(p) => p.collect::<B>(),
+            Self::Sequential(i) => i.collect::<B>(),
+        }
+    }
 }

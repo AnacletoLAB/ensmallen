@@ -89,12 +89,12 @@ macro_rules! parse_unsorted_string_edge_list {
         // the user has specified that the edge list is already complete
         // hence there is no need to create the inverse edges.
         let mut unsorted_edge_list = if $directed || $complete {
-            $ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).map(|line| match line {
+            $ei.method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).map(|line| match line {
                 Ok((_, (src, dst, $($workaround,)*))) => { Ok((src, dst, $($input_tuple,)*)) },
                 Err(e) => Err(e)
             }).collect::<Result<Vec<_>>>()
         } else {
-            $ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).flat_map(|line| match line {
+            $ei.method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).flat_map(|line| match line {
                 Ok((_, (src, dst, $($workaround,)*))) => {
                     if src == dst {
                         vec![Ok((src, dst, $($input_tuple,)*))]
@@ -178,7 +178,7 @@ macro_rules! parse_sorted_string_edge_list {
             $edges_number as u64,
             maximum_edges_number
         )?;
-        $ei.method_caller($edge_types_method, &mut edge_type_parser).method_caller($node_method, &mut node_parser).for_each(|line| {
+        $ei.method_caller($edge_types_method, $edge_types_method, &mut edge_type_parser).method_caller($node_method, $node_method, &mut node_parser).for_each(|line| {
             // There cannot be results when iterating on a sorted vector.
             let (i, (src, dst, $($workaround),*)) = line.unwrap();
             elias_fano_builder.set(i as u64, encode_edge(src, dst, node_bits));
@@ -359,7 +359,11 @@ fn check_general_edge_constructor_parameters_consistency<I>(
 // TODO! trovare un nome
 pub(crate) fn parse_string_edges(
     edges_iterator: Option<
-        impl ParallelIterator<Item = Result<(usize, (String, String, Option<String>, WeightT))>>,
+        ItersWrapper<
+            Result<(usize, StringQuadruple)>,
+            impl Iterator<Item = Result<(usize, StringQuadruple)>>,
+            impl ParallelIterator<Item = Result<(usize, StringQuadruple)>>,
+        >,
     >,
     nodes: Vocabulary<NodeT>,
     edge_types_vocabulary: Option<Vocabulary<EdgeTypeT>>,

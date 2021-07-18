@@ -2,7 +2,7 @@ use crate::constructors::build_graph_from_strings_without_type_iterators;
 
 use super::*;
 use counter::Counter;
-use indicatif::{ParallelProgressIterator, ProgressIterator};
+use indicatif::ProgressIterator;
 use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
 use std::collections::HashSet;
@@ -91,33 +91,44 @@ impl Graph {
                 });
         }
 
-        let pb_edges = get_loading_bar(
-            verbose,
-            "Fitering components from edge list",
-            self.get_directed_edges_number() as usize,
+        let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
+            ItersWrapper::Parallel(self.par_iter_node_names_and_node_type_names().filter_map(
+                |(node_id, node_name, _, node_type_names)| {
+                    match keep_components.contains(components_vector[node_id as usize]) {
+                        // We put as row 0 as it will not be dense because of the filter
+                        // It may be possible to get it to be dense with the proper offsets
+                        true => Some(Ok((0, (node_name, node_type_names)))),
+                        false => None,
+                    }
+                },
+            ));
+
+        let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
+            self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
+                .filter_map(
+                    |(_, src, src_name, _, dst_name, _, edge_type_name, weight)| {
+                        // we just check src because dst is trivially in the same component as src
+                        match keep_components.contains(components_vector[src as usize]) {
+                            true => Some(Ok((
+                                0,
+                                (
+                                    src_name,
+                                    dst_name,
+                                    edge_type_name,
+                                    weight.unwrap_or(WeightT::NAN),
+                                ),
+                            ))),
+                            false => None,
+                        }
+                    },
+                ),
         );
-        let pb_nodes = get_loading_bar(
-            verbose,
-            "Filtering components from node list",
-            self.get_nodes_number() as usize,
-        );
-        
+
         // TODO if a vector of offsets of removed edges is kept, it is possible
         // to build the filtered version in parallell sorted without memory peaks.
         build_graph_from_strings_without_type_iterators(
             self.has_node_types(),
-            Some(
-                self.par_iter_node_names_and_node_type_names()
-                    .progress_with(pb_nodes)
-                    .filter_map(|(node_id, node_name, _, node_type_names)| {
-                        match keep_components.contains(components_vector[node_id as usize]) {
-                            // We put as row 0 as it will not be dense because of the filter
-                            // It may be possible to get it to be dense with the proper offsets
-                            true => Some(Ok((0, (node_name, node_type_names)))),
-                            false => None,
-                        }
-                    }),
-            ),
+            Some(nodes_iterator),
             // Since we remove components, we do not know how many
             // nodes we will end up with.
             // TODO: precompute the number of nodes that are expected to remain.
@@ -127,27 +138,7 @@ impl Graph {
             false,
             None,
             self.has_edge_types(),
-            Some(
-                self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
-                    .progress_with(pb_edges)
-                    .filter_map(
-                        |(_, src, src_name, _, dst_name, _, edge_type_name, weight)| {
-                            // we just check src because dst is trivially in the same component as src
-                            match keep_components.contains(components_vector[src as usize]) {
-                                true => Some(Ok((
-                                    0,
-                                    (
-                                        src_name,
-                                        dst_name,
-                                        edge_type_name,
-                                        weight.unwrap_or(WeightT::NAN),
-                                    ),
-                                ))),
-                                false => None,
-                            }
-                        },
-                    ),
-            ),
+            Some(edges_iterator),
             self.has_edge_weights(),
             self.is_directed(),
             Some(true),
