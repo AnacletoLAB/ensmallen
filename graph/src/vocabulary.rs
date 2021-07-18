@@ -403,7 +403,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     pub fn is_sorted_by_lexicographic_order(&self) -> bool {
         match self {
             Vocabulary::String { reverse_map, .. } => reverse_map.is_sorted(),
-            Vocabulary::Numeric { .. } => false,
+            Vocabulary::Numeric { .. } => self.len() < 10,
         }
     }
 
