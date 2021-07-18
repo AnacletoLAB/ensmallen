@@ -129,6 +129,7 @@ impl Graph {
         node_type_list_is_correct: Option<bool>,
         node_type_list_max_rows_number: Option<EdgeT>,
         node_type_list_comment_symbol: Option<String>,
+        load_node_type_list_in_parallel: Option<bool>,
         node_path: Option<String>,
         node_list_separator: Option<String>,
         node_list_header: Option<bool>,
@@ -147,6 +148,7 @@ impl Graph {
         numeric_node_ids: Option<bool>,
         node_list_numeric_node_type_ids: Option<bool>,
         skip_node_types_if_unavailable: Option<bool>,
+        load_node_list_in_parallel: Option<bool>,
         edge_type_path: Option<String>,
         edge_types_column_number: Option<usize>,
         edge_types_column: Option<String>,
@@ -159,6 +161,7 @@ impl Graph {
         edge_type_list_is_correct: Option<bool>,
         edge_type_list_max_rows_number: Option<EdgeT>,
         edge_type_list_comment_symbol: Option<String>,
+        load_edge_type_list_in_parallel: Option<bool>,
         edge_path: Option<String>,
         edge_list_separator: Option<String>,
         edge_list_header: Option<bool>,
@@ -185,6 +188,7 @@ impl Graph {
         edge_list_max_rows_number: Option<EdgeT>,
         edge_list_comment_symbol: Option<String>,
         edges_number: Option<EdgeT>,
+        load_edge_list_in_parallel: Option<bool>,
         verbose: Option<bool>,
         directed: bool,
         name: S,
@@ -204,6 +208,7 @@ impl Graph {
                         .set_numeric_type_ids(numeric_node_type_ids)
                         .set_csv_is_correct(node_type_list_is_correct)?
                         .set_types_number(node_types_number)
+                        .set_parallel(load_node_type_list_in_parallel)?
                         .set_verbose(verbose),
                 )
             } else {
@@ -225,6 +230,7 @@ impl Graph {
                         .set_numeric_type_ids(numeric_edge_type_ids)
                         .set_csv_is_correct(edge_type_list_is_correct)?
                         .set_types_number(edge_types_number)
+                        .set_parallel(load_edge_type_list_in_parallel)?
                         .set_verbose(verbose),
                 )
             } else {
@@ -251,6 +257,7 @@ impl Graph {
                     .set_numeric_node_type_ids(node_list_numeric_node_type_ids)?
                     .set_csv_is_correct(node_list_is_correct)?
                     .set_nodes_number(nodes_number)
+                    .set_parallel(load_node_list_in_parallel)?
                     .set_verbose(verbose),
             )
         } else {
@@ -285,6 +292,7 @@ impl Graph {
                     .set_may_have_duplicates(edge_list_may_contain_duplicates)
                     .set_csv_is_correct(edge_list_is_correct)
                     .set_edges_number(edges_number)
+                    .set_parallel(load_edge_list_in_parallel)
                     .set_verbose(verbose),
             ))
         })?;

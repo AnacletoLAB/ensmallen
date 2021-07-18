@@ -416,6 +416,41 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
     }
 
+    pub fn replace_inplace(&mut self, original: String, replace: String) -> Result<()> {
+        if !self.contains_key(&original) {
+            return Err(format!(
+                concat!(
+                    "The key provided as value to replace {} does not exist ",
+                    "in the current graph vocabulary."
+                ),
+                original
+            ));
+        }
+        if self.contains_key(&replace) {
+            return Err(format!(
+                concat!(
+                    "The key provided as value to replace the key {} with, ",
+                    "{}, is already present in the current graph vocabulary."
+                ),
+                original, replace
+            ));
+        }
+        let id = self.get(&original).unwrap();
+        match self {
+            Vocabulary::String { map, reverse_map } => {
+                map.remove(&original);
+                map.insert(replace.clone(), id);
+                reverse_map[IndexT::to_usize(id)] = replace;
+            }
+            Vocabulary::Numeric { .. } => {
+                self.to_string_vocabulary();
+                self.replace_inplace(original, replace)?;
+            }
+        };
+
+        Ok(())
+    }
+
     /// Convert the current vocabulary to a string one.
     pub fn to_string_vocabulary(&mut self) {
         match self {

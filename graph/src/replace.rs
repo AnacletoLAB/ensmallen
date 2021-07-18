@@ -1,9 +1,5 @@
-use crate::constructors::build_graph_from_strings_without_type_iterators;
-
 use super::*;
-use itertools::Itertools;
 use log::warn;
-use rayon::iter::ParallelIterator;
 use std::collections::HashMap;
 
 /// # Replace.
@@ -13,26 +9,17 @@ impl Graph {
     /// # Arguments
     /// * `node_name_mapping`: Option<HashMap<String, String>> - The node names to replace.
     /// * `node_type_name_mapping`: Option<HashMap<String, String>> - The node type names to replace.
-    /// * `node_type_names_mapping`: Option<HashMap<Option<Vec<String>>, Option<Vec<String>>>> - The node type names (as vectors) to replace.
-    /// * `edge_type_name_mapping`: Option<HashMap<Option<String>, Option<String>>> - The edge type names to replace.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
+    /// * `edge_type_name_mapping`: Option<HashMap<String, String>> - The edge type names to replace.
     ///
     /// # Raises
     /// * If the given node names mapping would lead to nodes duplication.
+    ///
     pub fn replace(
         &self,
         node_name_mapping: Option<HashMap<String, String>>,
         node_type_name_mapping: Option<HashMap<String, String>>,
-        node_type_names_mapping: Option<HashMap<Option<Vec<String>>, Option<Vec<String>>>>,
-        edge_type_name_mapping: Option<HashMap<Option<String>, Option<String>>>,
-        verbose: Option<bool>,
+        edge_type_name_mapping: Option<HashMap<String, String>>,
     ) -> Result<Graph> {
-        let verbose = verbose.unwrap_or(false);
-        if node_type_names_mapping.is_some() && node_type_name_mapping.is_some() {
-            return Err(
-                "Using at once node_type_name_mapping and node_type_names_mapping is not supported.".to_string()
-            );
-        }
         if let Some(nns) = &node_name_mapping {
             for (original_node_name, new_node_name) in nns.iter() {
                 if *original_node_name == *new_node_name {
@@ -59,144 +46,27 @@ impl Graph {
             }
         }
 
-        let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
-            ItersWrapper::Parallel(self.par_iter_node_names_and_node_type_names().map(
-                |(node_id, node_name, _, node_types)| {
-                    Ok((
-                        node_id as usize,
-                        (
-                            node_name_mapping
-                                .as_ref()
-                                .map_or(&node_name, |nns| nns.get(&node_name).unwrap_or(&node_name))
-                                .clone(),
-                            match (
-                                &node_type_name_mapping,
-                                &node_type_names_mapping,
-                                node_types,
-                            ) {
-                                (Some(ntn_mapping), None, Some(nts)) => Some(
-                                    nts.into_iter()
-                                        .map(|node_type_name| {
-                                            ntn_mapping
-                                                .get(&node_type_name)
-                                                .map_or(node_type_name, |new_value| {
-                                                    new_value.clone()
-                                                })
-                                        })
-                                        .unique()
-                                        .collect(),
-                                ),
-                                (None, Some(ntns_mapping), node_types) => {
-                                    ntns_mapping.get(&node_types).unwrap_or(&node_types).clone()
-                                }
-                                (_, _, node_types) => node_types,
-                            },
-                        ),
-                    ))
-                },
-            ));
-
-        let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
-            self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
-                .map(
-                    |(edge_id, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                        Ok((
-                            edge_id as usize,
-                            (
-                                node_name_mapping
-                                    .as_ref()
-                                    .map_or(&src_name, |nns| {
-                                        nns.get(&src_name).unwrap_or(&src_name)
-                                    })
-                                    .clone(),
-                                node_name_mapping
-                                    .as_ref()
-                                    .map_or(&dst_name, |nns| {
-                                        nns.get(&dst_name).unwrap_or(&dst_name)
-                                    })
-                                    .clone(),
-                                edge_type_name_mapping
-                                    .as_ref()
-                                    .map_or(&edge_type_name, |etns| {
-                                        etns.get(&edge_type_name).unwrap_or(&edge_type_name)
-                                    })
-                                    .clone(),
-                                weight.unwrap_or(WeightT::NAN),
-                            ),
-                        ))
-                    },
-                ),
-        );
-
-        // TODO! this method may be rewritten more efficiently
-        // by also using the node and edge type iterators.
-        build_graph_from_strings_without_type_iterators(
-            self.has_node_types(),
-            Some(nodes_iterator),
-            Some(self.get_nodes_number()),
-            true,
-            false,
-            false,
-            None,
-            self.has_edge_types(),
-            Some(edges_iterator),
-            self.has_edge_weights(),
-            self.is_directed(),
-            Some(true),
-            Some(true),
-            Some(false),
-            Some(false),
-            Some(self.get_directed_edges_number()),
-            None,
-            None,
-            self.get_name(),
-        )
-    }
-
-    /// Replace unknown node types with given node type.
-    ///
-    /// # Arguments
-    /// * `node_type_names`: Vec<String> - The node types to replace the unknown with.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn replace_unknown_node_types_with_node_type_name(
-        &self,
-        node_type_names: Vec<String>,
-        verbose: Option<bool>,
-    ) -> Result<Graph> {
-        if node_type_names
-            .iter()
-            .any(|node_type_name| node_type_name.is_empty())
+        let mut new_graph = self.clone();
+        if let Some(node_name_mapping) = node_name_mapping {
+            for (key, value) in node_name_mapping.into_iter() {
+                new_graph.nodes.replace_inplace(key, value)?;
+            }
+        }
+        if let (Some(node_types), Some(node_type_name_mapping)) =
+            (new_graph.node_types.as_mut(), node_type_name_mapping)
         {
-            return Err("One or more of the given node types are empty!".to_string());
+            for (key, value) in node_type_name_mapping.into_iter() {
+                node_types.vocabulary.replace_inplace(key, value)?;
+            }
         }
-        self.replace(
-            None,
-            None,
-            Some([(None, Some(node_type_names))].iter().cloned().collect()),
-            None,
-            verbose,
-        )
-    }
+        if let (Some(edge_types), Some(edge_type_name_mapping)) =
+            (new_graph.edge_types.as_mut(), edge_type_name_mapping)
+        {
+            for (key, value) in edge_type_name_mapping.into_iter() {
+                edge_types.vocabulary.replace_inplace(key, value)?;
+            }
+        }
 
-    /// Replace unknown edge types with given edge type name.
-    ///
-    /// # Arguments
-    /// * `edge_type_name`: String - The edge type name to replace the unknown with.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn replace_unknown_edge_types_with_edge_type_name(
-        &self,
-        edge_type_name: String,
-        verbose: Option<bool>,
-    ) -> Result<Graph> {
-        if edge_type_name.is_empty() {
-            return Err("The given edge type is empty!".to_string());
-        }
-        self.replace(
-            None,
-            None,
-            None,
-            Some([(None, Some(edge_type_name))].iter().cloned().collect()),
-            verbose,
-        )
+        Ok(new_graph)
     }
 }

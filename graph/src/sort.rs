@@ -60,7 +60,7 @@ impl Graph {
             .enumerate()
             .collect_into_vec(&mut node_ids_and_node_names);
         node_ids_and_node_names.par_sort_unstable_by(|(_, node_name_a), (_, node_name_b)| {
-            node_name_b.cmp(node_name_a)
+            node_name_a.cmp(node_name_b)
         });
         let mut new_node_ids = vec![0 as NodeT; self.get_nodes_number() as usize];
         node_ids_and_node_names

@@ -80,7 +80,7 @@ pub(crate) fn parse_nodes(
         // Note that this is the use case when the node list is ASSUMED TO BE CORRECT
         // and the total number of nodes is known and provided.
         (Some(ni), Some(nodes_number), false, None, true) => {
-            let (nodes_names, node_types_ids): (Vec<String>, Option<Vec<Option<Vec<NodeTypeT>>>>) =
+            let (node_names, node_types_ids): (Vec<String>, Option<Vec<Option<Vec<NodeTypeT>>>>) =
                 if has_node_types {
                     // If there are node types we need to collect them.
                     // We cannot use the unzip utility because in this context
@@ -89,7 +89,7 @@ pub(crate) fn parse_nodes(
                     // Since we know the number of nodes and the node list
                     // is provided as correct, it is possible to pre-allocate the vectors
                     // and populate them with a foreach.
-                    let nodes_names = ThreadDataRaceAware {
+                    let node_names = ThreadDataRaceAware {
                         value: std::cell::UnsafeCell::new(vec![
                             "".to_owned();
                             nodes_number as usize
@@ -102,15 +102,15 @@ pub(crate) fn parse_nodes(
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.
                         let (line_number, (node_name, node_type_ids)) = line.unwrap();
-                        (*nodes_names.value.get())[line_number] = node_name;
+                        (*node_names.value.get())[line_number] = node_name;
                         (*node_types_ids.value.get())[line_number] = node_type_ids;
                     });
                     (
-                        nodes_names.value.into_inner(),
+                        node_names.value.into_inner(),
                         Some(node_types_ids.value.into_inner()),
                     )
                 } else {
-                    let nodes_names = ThreadDataRaceAware {
+                    let node_names = ThreadDataRaceAware {
                         value: std::cell::UnsafeCell::new(vec![
                             "".to_owned();
                             nodes_number as usize
@@ -120,9 +120,9 @@ pub(crate) fn parse_nodes(
                         // We can unwrap because the user tells us that this is surely
                         // a correct node list.
                         let (line_number, (node_name, _)) = line.unwrap();
-                        (*nodes_names.value.get())[line_number] = node_name;
+                        (*node_names.value.get())[line_number] = node_name;
                     });
-                    (nodes_names.value.into_inner(), None)
+                    (node_names.value.into_inner(), None)
                 };
             let mut node_type_vocabulary = node_type_parser.into_inner();
             if node_type_vocabulary.is_empty() {
@@ -130,7 +130,7 @@ pub(crate) fn parse_nodes(
             }
 
             Ok::<_, String>((
-                Vocabulary::from_reverse_map(nodes_names)?,
+                Vocabulary::from_reverse_map(node_names)?,
                 node_types_ids,
                 Some(node_type_vocabulary),
             ))
@@ -140,16 +140,30 @@ pub(crate) fn parse_nodes(
         // Note that this is the use case when it is not known if the node list is
         // correct and how many nodes are inside it.
         (Some(ni), _, false, None, _) => {
-            let (nodes_names, node_types_ids): (Vec<String>, Option<Vec<Option<Vec<NodeTypeT>>>>) =
+            let (node_names, node_types_ids): (Vec<String>, Option<Vec<Option<Vec<NodeTypeT>>>>) =
                 if has_node_types {
                     // If there are node types we need to collect them.
                     // We need to use the unzip utility because in this context we do not
                     // know the number of the nodes and we need to use a ParallellIterator,
                     // note that it is NOT an IndexedParallellIterator.
-                    let (nodes_names, node_types_ids) = ni
+                    let (node_names, node_types_ids) = match ni
                         .map(|line| line.map(|(_, node_and_node_type)| node_and_node_type))
-                        .collect::<Result<(Vec<String>, Vec<Option<Vec<NodeTypeT>>>)>>()?;
-                    (nodes_names, Some(node_types_ids))
+                    {
+                        ItersWrapper::Parallel(ni_par) => ni_par
+                            .collect::<Result<(Vec<String>, Vec<Option<Vec<NodeTypeT>>>)>>()?,
+                        ItersWrapper::Sequential(ni_seq) => {
+                            let mut node_names = Vec::new();
+                            let mut node_types_ids = Vec::new();
+                            for line in ni_seq {
+                                let (node_name, node_type_ids) = line?;
+                                node_names.push(node_name);
+                                node_types_ids.push(node_type_ids);
+                            }
+                            (node_names, node_types_ids)
+                        }
+                    };
+
+                    (node_names, Some(node_types_ids))
                 } else {
                     (
                         ni.map(|x| x.map(|(_, (name, _))| name))
@@ -163,7 +177,7 @@ pub(crate) fn parse_nodes(
             }
 
             Ok::<_, String>((
-                Vocabulary::from_reverse_map(nodes_names)?,
+                Vocabulary::from_reverse_map(node_names)?,
                 node_types_ids,
                 Some(node_type_vocabulary),
             ))
@@ -225,10 +239,16 @@ pub(crate) fn parse_nodes(
                     .map(|maybe_node_id: Result<NodeT>| {
                         maybe_node_id.map(|node_id| (node_id, node_id))
                     })
-                    .try_reduce(
-                        || (NodeT::MAX, 0 as NodeT),
-                        |(min1, max1): (NodeT, NodeT), (min2, max2): (NodeT, NodeT)| {
-                            Ok((min1.min(min2), max1.max(max2)))
+                    .reduce(
+                        || Ok((NodeT::MAX, 0 as NodeT)),
+                        |line1: Result<(NodeT, NodeT)>, line2: Result<(NodeT, NodeT)>| match (
+                            line1, line2,
+                        ) {
+                            (Ok((min1, max1)), Ok((min2, max2))) => {
+                                Ok((min1.min(min2), max1.max(max2)))
+                            }
+                            (Err(e), _) => Err(e),
+                            (_, Err(e)) => Err(e),
                         },
                     )?;
                 (min, max, None)

@@ -1333,6 +1333,8 @@ pub fn test_sorting(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     assert!(sorted_increasing.has_nodes_sorted_by_increasing_outbound_node_degree());
     let sorted_decreasing = graph.sort_by_decreasing_outbound_node_degree();
     assert!(sorted_decreasing.has_nodes_sorted_by_decreasing_outbound_node_degree());
+    let sorted_lexicographical = graph.sort_by_node_lexicographic_order();
+    assert!(sorted_lexicographical.has_nodes_sorted_by_lexicographic_order());
 
     Ok(())
 }
@@ -1872,7 +1874,7 @@ pub fn test_edgelist_generation(graph: &mut Graph, _verbose: Option<bool>) -> Re
     Ok(())
 }
 
-pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
+pub fn test_nodelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     for use_stratification in [true, false] {
         if graph.get_known_node_types_number()? < 2
             || (use_stratification
@@ -1887,9 +1889,6 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Resu
         let (train, test) = graph.node_label_holdout(0.8, Some(use_stratification), Some(42))?;
         assert!(train.has_unknown_node_types()?);
         assert!(test.has_unknown_node_types()?);
-        assert!(!test
-            .replace_unknown_node_types_with_node_type_name(vec!["HALLO!".to_string()], verbose)?
-            .has_unknown_node_types()?);
         let remerged = &mut (&train | &test)?;
         assert_eq!(remerged.node_types, graph.node_types);
         assert!(
@@ -1916,7 +1915,7 @@ pub fn test_nodelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Resu
     Ok(())
 }
 
-pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
+pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     for use_stratification in [true, false].iter() {
         if *use_stratification && graph.has_singleton_edge_types()?
             || graph.get_directed_edges_number() - graph.get_unknown_edge_types_number()? < 2
@@ -1930,9 +1929,6 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, verbose: Option<bool>) -> Resu
         let (train, test) = graph.edge_label_holdout(0.8, Some(*use_stratification), None)?;
         assert!(train.has_unknown_edge_types()?);
         assert!(test.has_unknown_edge_types()?);
-        assert!(!test
-            .replace_unknown_edge_types_with_edge_type_name("HALLO!".to_string(), verbose)?
-            .has_unknown_edge_types()?);
         assert!(
             train.edge_types.as_ref().map_or(false, |train_nts| {
                 test.edge_types.as_ref().map_or(false, |test_nts| {
