@@ -5,6 +5,9 @@ use rayon::ThreadPool;
 mod parallel_lines_reader;
 pub use parallel_lines_reader::ParallelLines;
 
+mod iters_wrapper;
+pub use iters_wrapper::ItersWrapper;
+
 mod argmax_argmin;
 pub use argmax_argmin::*;
 
