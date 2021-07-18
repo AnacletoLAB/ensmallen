@@ -124,6 +124,38 @@ impl CSVFileReader {
         }
     }
 
+    pub fn get_parallell_lines_iterator(
+        &self,
+        skip_header: bool,
+    ) -> Result<impl ParallelIterator<Item = Result<String>> + '_> {
+        let rows_to_skip = match skip_header {
+            true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {
+                Some(v) => Ok(v),
+                None => Err(concat!(
+                    "This overflow was caused because rows to skip = 2**64 - 1",
+                    "and header is set to true which causes to skip one extra line.",
+                    "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
+                )),
+            }?,
+            false => self.rows_to_skip as u64,
+        } as usize;
+        let mut parallell_buffer = ParallelLines::new(&self.path)?;
+        parallell_buffer.skip_rows(rows_to_skip);
+        Ok(
+            parallell_buffer
+            .map(|line| match line {
+                Ok(l)=>Ok(l),
+                Err(_)=>Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()),
+            })
+            .filter(move |line| match (line, &self.comment_symbol) {
+                (Ok(line), Some(cs)) => !line.is_empty() && !line.starts_with(cs),
+                (Ok(line), _) => !line.is_empty(),
+                _ => true
+            })
+            //.skip(rows_to_skip)
+        )
+    }
+
     pub fn get_lines_iterator(
         &self,
         skip_header: bool,
@@ -304,12 +336,13 @@ impl CSVFileReader {
         };
 
         Ok(self
-            .get_lines_iterator(true)?
+            .get_parallell_lines_iterator(true)?
             // Reading only the requested amount of lines.
-            .take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
-            .enumerate()
-            .progress_with(pb)
-            .par_bridge()
+            //.take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
+            //.enumerate()
+            //.progress_with(pb)
+            //.par_bridge()
+            .map(|line| (0, line))
             // Handling NaN values and padding them to the number of rows
             .map(move |(line_number, line)| {
                 parse_line(
