@@ -1,3 +1,4 @@
+use super::*;
 use rayon::prelude::*;
 use std::iter::FromIterator;
 
@@ -39,6 +40,16 @@ where
             match self {
                 Self::Parallel(p) => ItersWrapper::Parallel(p.map(op)),
                 Self::Sequential(i) => ItersWrapper::Sequential(i.map(op)),
+            }
+    }
+
+    pub fn method_caller<'a, R, S>(self, sequential_op: fn(&mut S, Item) -> R, parallel_op: fn(&mut S, Item) -> R, context: &'a mut S) -> ItersWrapper<R, SequentialMethodCaller<'a, Item, R, S, I>, MethodCaller<Item, R, S, P>>
+    where
+        R: Send,
+        {
+            match self {
+                Self::Parallel(p) => ItersWrapper::Parallel(MethodCaller::new(p, parallel_op, context as *const S as usize)),
+                Self::Sequential(i) => ItersWrapper::Sequential(SequentialMethodCaller::new(i, sequential_op, context)),
             }
     }
 

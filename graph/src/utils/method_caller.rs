@@ -11,14 +11,14 @@ use std::iter::Iterator;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-pub(crate) struct MethodCaller<T, R, S, I: ParallelIterator<Item = T>> {
+pub struct MethodCaller<T, R, S, I: ParallelIterator<Item = T>> {
     base: I,
     method: fn(&mut S, T) -> R,
     context: usize,
 }
 
 impl<T, R, S, I: ParallelIterator<Item = T>> MethodCaller<T, R, S, I> {
-    fn new(base: I, method: fn(&mut S, T) -> R, context: usize) -> MethodCaller<T, R, S, I> {
+    pub fn new(base: I, method: fn(&mut S, T) -> R, context: usize) -> MethodCaller<T, R, S, I> {
         MethodCaller {
             base,
             method,
@@ -157,7 +157,7 @@ where
 
 ////////////////////////////////////////////////////////////////////////////////
 
-pub(crate) trait OrOps<T, R, S> {
+pub trait MethodCallerTraitParallel<T, R, S> {
     fn method_caller(
         self,
         method: fn(&mut S, T) -> R,
@@ -170,16 +170,27 @@ pub(crate) trait OrOps<T, R, S> {
     }
 }
 
-impl<T, R, S, J: ?Sized> OrOps<T, R, S> for J where J: ParallelIterator<Item = T> {}
+impl<T, R, S, J: ?Sized> MethodCallerTraitParallel<T, R, S> for J where J: ParallelIterator<Item = T> {}
 
 
 ////////////////////////////////////////////////////////////////////////////////
 
 
-pub(crate) struct SequentialMethodCaller<'a, T, R, S, I> {
+pub struct SequentialMethodCaller<'a, T, R, S, I> {
     base: I,
     method: fn(&mut S, T) -> R,
     context: &'a mut S,
+}
+
+
+impl<'a, T, R, S, I: Iterator<Item = T>> SequentialMethodCaller<'a, T, R, S, I> {
+    pub fn new(base: I, method: fn(&mut S, T) -> R, context: &'a mut S) -> SequentialMethodCaller<'a, T, R, S, I> {
+        SequentialMethodCaller {
+            base,
+            method,
+            context,
+        }
+    }
 }
 
 impl<'a, T, R, S, I: Iterator<Item=T>> Iterator for SequentialMethodCaller<'a, T, R, S, I> {
@@ -195,7 +206,7 @@ impl<'a, T, R, S, I: Iterator<Item=T>> Iterator for SequentialMethodCaller<'a, T
     }
 }
 
-pub(crate) trait IterOrOps<T, R, S> {
+pub trait MethodCallerTraitSequential<T, R, S> {
     fn method_caller(
         self,
         method: fn(&mut S, T) -> R,
@@ -212,7 +223,7 @@ pub(crate) trait IterOrOps<T, R, S> {
     }
 }
 
-impl<T, R, S, J: ?Sized> IterOrOps<T, R, S> for J where J: Iterator<Item = T> {}
+impl<T, R, S, J: ?Sized> MethodCallerTraitSequential<T, R, S> for J where J: Iterator<Item = T> {}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -222,7 +233,7 @@ macro_rules! impl_struct_func {
     ($struct_name:ident $context_type:ty) => {
         use std::sync::{RwLock, RwLockWriteGuard};
 
-        pub(crate) struct $struct_name {
+        pub struct $struct_name {
             context: $context_type,
             lock: RwLock<()>,
         }

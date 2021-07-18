@@ -2,6 +2,9 @@ use super::*;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::ThreadPool;
 
+mod method_caller;
+pub use method_caller::*;
+
 mod parallel_lines_reader;
 pub use parallel_lines_reader::ParallelLines;
 
