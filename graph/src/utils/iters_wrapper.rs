@@ -128,6 +128,31 @@ where
             Self::Sequential(mut i) => i.any(op),
         }
     }
+    
+
+    pub fn try_reduce<ID, F, E>(self,identity: ID, op: F) -> std::result::Result<Item, E>
+    where
+        E: Send,
+        F: Fn(Item, Item) -> std::result::Result<Item, E> + Sync + Send,
+        ID: Fn() -> Item + Sync + Send,
+        {
+            match self {
+                Self::Parallel(p) => p.map(|x| Ok(x)).reduce(|| Ok(identity()), |a, b| {
+                   match (a, b) {
+                       (Ok(sub_a), Ok(sub_b)) => op(sub_a, sub_b),
+                       (Err(e), _) => Err(e),
+                       (_, Err(e)) => Err(e),
+                   }
+                }),
+                Self::Sequential(i) => i.map(|x| Ok(x)).reduce(|a, b| {
+                    match (a, b) {
+                        (Ok(sub_a), Ok(sub_b)) => op(sub_a, sub_b),
+                        (Err(e), _) => Err(e),
+                        (_, Err(e)) => Err(e),
+                    }
+                 }).unwrap_or(Ok(identity())),
+            }
+    }
 
     pub fn collect<B: FromIterator<Item> + FromParallelIterator<Item>>(self) -> B {
         match self {
