@@ -39,13 +39,14 @@ where
         }
     }
 
-    pub fn flat_map<F, R>(
+    pub fn flat_map<F, R, U>(
         self,
         op: F,
-    ) -> ItersWrapper<R, std::iter::FlatMap<I, R, F>, rayon::iter::FlatMap<P, F>>
+    ) -> ItersWrapper<R, std::iter::FlatMap<I, U, F>, rayon::iter::FlatMap<P, F>>
     where
-        R: Send + IntoParallelIterator + IntoIterator,
-        F: Fn(Item) -> R + Sync + Send,
+        R: Send,
+        U: IntoParallelIterator<Item=R> + IntoIterator<Item=R>,
+        F: Fn(Item) -> U + Sync + Send,
     {
         match self {
             Self::Parallel(p) => ItersWrapper::Parallel(p.flat_map(op)),
