@@ -158,7 +158,7 @@ impl Graph {
     /// ```rust
     /// let string_ppi_with_selfloops = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// assert!(string_ppi_with_selfloops.has_selfloops());
-    /// let string_ppi_without_selfloops = graph::test_utilities::load_ppi(true, false, true, true, false, true);
+    /// let string_ppi_without_selfloops = string_ppi_with_selfloops.drop_selfloops();
     /// assert!(!string_ppi_without_selfloops.has_selfloops());
     /// ```
     ///
@@ -173,7 +173,7 @@ impl Graph {
     /// ```rust
     /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// assert!(graph_with_singletons.has_disconnected_nodes());
-    /// let graph_without_singletons = graph_with_singletons.drop_singleton_nodes(Some(false));
+    /// let graph_without_singletons = graph_with_singletons.drop_singleton_nodes();
     /// assert!(!graph_without_singletons.has_disconnected_nodes());
     /// ```
     pub fn has_disconnected_nodes(&self) -> bool {
@@ -186,7 +186,7 @@ impl Graph {
     /// ```rust
     /// # let graph_with_singletons = graph::test_utilities::load_ppi(true, true, true, false, false, false);
     /// assert!(graph_with_singletons.has_singleton_nodes());
-    /// let graph_without_singletons = graph_with_singletons.drop_singleton_nodes(Some(false));
+    /// let graph_without_singletons = graph_with_singletons.drop_singleton_nodes();
     /// assert!(!graph_without_singletons.has_singleton_nodes());
     /// ```
     pub fn has_singleton_nodes(&self) -> bool {

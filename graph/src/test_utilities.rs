@@ -52,7 +52,7 @@ pub fn load_ppi(
     load_weights: bool,
     directed: bool,
     verbose: bool,
-    skip_selfloops: bool,
+    parallel: bool,
 ) -> Graph {
     let graph_name = "STRING PPI".to_owned();
     let nodes_reader = if load_nodes {
@@ -80,6 +80,8 @@ pub fn load_ppi(
                 .set_csv_is_correct(Some(true))
                 .unwrap()
                 .set_nodes_number(Some(37163))
+                .set_parallel(Some(parallel))
+                .unwrap()
                 .set_rows_to_skip(Some(0))
                 .unwrap()
                 .clone(),
@@ -99,6 +101,7 @@ pub fn load_ppi(
         .unwrap()
         .set_destinations_column(Some("object".to_string()))
         .unwrap()
+        .set_parallel(Some(parallel))
         .set_weights_column(if load_weights {
             Some("weight".to_string())
         } else {
@@ -111,7 +114,6 @@ pub fn load_ppi(
             None
         })
         .unwrap()
-        .set_skip_selfloops(Some(skip_selfloops))
         .set_csv_is_correct(Some(true))
         .set_default_edge_type(if load_edge_types {
             Some("Kebab".to_string())
@@ -120,6 +122,7 @@ pub fn load_ppi(
         })
         .set_max_rows_number(Some(100000))
         .set_default_weight(if load_weights { Some(5.0) } else { None })
+        .unwrap()
         .clone();
 
     let ppi = Graph::from_file_readers(
@@ -145,20 +148,6 @@ pub fn load_ppi(
         load_edge_types,
     );
     assert_eq!(ppi.has_edge_weights(), load_weights);
-    assert_eq!(
-        ppi.has_selfloops(),
-        !skip_selfloops,
-        concat!(
-            "I was expecting the graph self-loops status to be {} ",
-            "since we have given parameter skip_selfloops equal to {}, ",
-            "but actually is {}.\n",
-            "The graph report is: \n {:?}"
-        ),
-        !skip_selfloops,
-        skip_selfloops,
-        ppi.has_selfloops(),
-        ppi.textual_report()
-    );
     ppi
 }
 
@@ -1208,7 +1197,7 @@ pub fn test_transitivity(graph: &mut Graph, verbose: Option<bool>) -> Result<()>
             graph.get_transitive_closure(Some(0), verbose)
         );
         // We define the first iteration of transitive closure as the graph itself
-        let graph_with_selfloops = graph.add_selfloops(None, None, verbose).unwrap();
+        let graph_with_selfloops = graph.add_selfloops(None, None).unwrap();
         assert_eq!(
             graph_with_selfloops,
             graph_with_selfloops.get_transitive_closure(Some(1), verbose),
@@ -1304,9 +1293,9 @@ pub fn test_all_paths(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
 }
 
 pub fn test_selfloops(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
-    assert!(!graph.drop_selfloops(verbose).has_selfloops());
+    assert!(!graph.drop_selfloops().has_selfloops());
     assert_eq!(
-        graph.add_selfloops(None, Some(1.0), verbose).is_ok(),
+        graph.add_selfloops(None, Some(1.0)).is_ok(),
         graph.has_edge_weights()
     );
     let mut graph_with_selfloops = graph
@@ -1317,7 +1306,6 @@ pub fn test_selfloops(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
             } else {
                 None
             },
-            verbose,
         )
         .unwrap();
     for node_id in graph.iter_node_ids() {
@@ -1527,7 +1515,7 @@ pub fn test_edge_holdouts(graph: &Graph, verbose: Option<bool>) -> Result<()> {
 
 pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     if graph.get_connected_components_number(verbose).0 > 1 {
-        let without_selfloops = graph.drop_selfloops(verbose);
+        let without_selfloops = graph.drop_selfloops();
 
         assert_eq!(
             graph.get_connected_components_number(verbose),
@@ -1578,7 +1566,7 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
             None,
             verbose,
         )?;
-        let without_selfloops = test.drop_selfloops(verbose);
+        let without_selfloops = test.drop_selfloops();
         assert_eq!(
             without_selfloops.get_connected_components_number(verbose).0,
             1,
@@ -1945,11 +1933,11 @@ pub fn test_edgelabel_holdouts(graph: &mut Graph, _verbose: Option<bool>) -> Res
     Ok(())
 }
 
-pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<()> {
+pub fn test_graph_filter(graph: &Graph, _verbose: Option<bool>) -> Result<()> {
     let unfiltered = graph
         .filter_from_ids(
             None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-            None, None, None, None, verbose,
+            None, None, None, None,
         )
         .unwrap();
     assert_eq!(&unfiltered, graph);
@@ -1971,7 +1959,6 @@ pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
-            verbose,
         )
         .is_err());
     for node_name in graph.iter_node_names().take(10) {
@@ -1993,7 +1980,6 @@ pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
-            verbose,
         );
         assert!(graph_without_given_name_result.is_ok());
         let graph_without_given_id = graph_without_given_name_result.unwrap();
@@ -2021,7 +2007,6 @@ pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
-            verbose,
         );
         assert!(
             graph_with_given_name_result.is_ok(),
@@ -2063,7 +2048,6 @@ pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<()> {
             None,
             None,
             None,
-            verbose,
         );
         assert!(graph_without_given_node_type_name_result.is_ok());
         let graph_without_given_node_type_name = graph_without_given_node_type_name_result.unwrap();
@@ -2077,8 +2061,8 @@ pub fn test_graph_filter(graph: &Graph, verbose: Option<bool>) -> Result<()> {
     Ok(())
 }
 
-pub fn test_graph_removes(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
-    let without_edge_types = graph.remove_edge_types(verbose)?;
+pub fn test_graph_removes(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
+    let without_edge_types = graph.remove_edge_types()?;
     validate_vocabularies(&without_edge_types);
     assert!(!without_edge_types.has_edge_types());
     assert_eq!(
@@ -2136,9 +2120,9 @@ pub fn test_graph_removes(graph: &mut Graph, verbose: Option<bool>) -> Result<()
     Ok(())
 }
 
-pub fn test_clone_and_setters(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
+pub fn test_clone_and_setters(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     let mut clone = graph.clone();
-    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES", verbose)?;
+    clone = clone.set_all_edge_types("TEST_SET_ALL_EDGE_TYPES")?;
     assert!(!clone.is_multigraph());
     clone = clone.set_all_node_types("TEST_SET_ALL_NODE_TYPES")?;
 

@@ -160,7 +160,6 @@ impl CSVFileReader {
             })
             // TODO! PROVIDE THE ACTUAL LINES!
             .map(|line| (0, line))
-            //.skip(rows_to_skip)
         )
     }
 

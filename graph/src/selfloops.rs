@@ -1,7 +1,6 @@
 use crate::constructors::build_graph_from_integers;
 
 use super::*;
-use indicatif::ParallelProgressIterator;
 use rayon::iter::ParallelIterator;
 
 /// # Selfloops.
@@ -11,7 +10,6 @@ impl Graph {
     /// # Arguments
     /// `edge_type_name`: Option<&str> - The edge type to use for the selfloops.
     /// `weight`: Option<WeightT> - The weight to use for the new selfloops edges.
-    /// `verbose`: Option<bool> - Whether to show loading bars while building the graph.
     ///
     /// # Raises
     /// * If the edge type for the new singletons is provided but the graph does not have edge types.
@@ -21,9 +19,7 @@ impl Graph {
         &self,
         edge_type_name: Option<&str>,
         weight: Option<WeightT>,
-        verbose: Option<bool>,
     ) -> Result<Graph> {
-        let verbose = verbose.unwrap_or(true);
         let edge_type_id = if edge_type_name.is_some() {
             self.get_edge_type_id_from_edge_type_name(edge_type_name)?
         } else {
@@ -40,29 +36,16 @@ impl Graph {
         let total_edges_number = self.get_directed_edges_number() - self.get_selfloops_number()
             + self.get_nodes_number() as EdgeT;
 
-        let pb_edges = get_loading_bar(
-            verbose,
-            "Copying edges",
-            self.get_directed_edges_number() as usize,
-        );
-        let pb_selfloops = get_loading_bar(
-            verbose,
-            "Creating new required selfloops",
-            (self.get_nodes_number() - self.get_unique_selfloops_number()) as usize,
-        );
-
         build_graph_from_integers(
             Some(
                 self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
                     .map(|(_, src, dst, edge_type_id, weight)| {
                         (0, (src, dst, edge_type_id, weight.unwrap_or(WeightT::NAN)))
                     })
-                    .progress_with(pb_edges)
                     .chain(
                         self.par_iter_node_ids()
                             .filter(|&node_id| !self.has_selfloop_from_node_id(node_id))
-                            .map(|node_id| (0, (node_id, node_id, edge_type_id, weight)))
-                            .progress_with(pb_selfloops),
+                            .map(|node_id| (0, (node_id, node_id, edge_type_id, weight))),
                     ),
             ),
             self.nodes.clone(),

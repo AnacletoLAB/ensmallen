@@ -1273,7 +1273,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type, verbose)"]
+    #[text_signature = "($self, edge_type)"]
     /// Replace all edge types (if present) and set all the edge to edge_type.
     ///
     /// This DOES NOT happen inplace, but created a new instance of the graph.
@@ -1282,16 +1282,10 @@ impl EnsmallenGraph {
     /// ----------
     /// edge_type: str,
     ///     The edge type to assing to all the edges.
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar in the case of a multigraph.
     ///
-    pub fn set_all_edge_types(
-        &self,
-        edge_type: String,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
+    pub fn set_all_edge_types(&self, edge_type: String) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self.graph.set_all_edge_types(edge_type, verbose))?,
+            graph: pe!(self.graph.set_all_edge_types(edge_type))?,
         })
     }
 
@@ -1661,25 +1655,19 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Remove edge types from the graph.
     ///
     /// Note that the modification does not happen inplace.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar in the case of a multigraph.
-    ///
     ///
     /// Raises
     /// -------
     /// ValueError
     ///     If the graph does not have edge types.
     ///
-    pub fn remove_edge_types(&self, verbose: Option<bool>) -> PyResult<EnsmallenGraph> {
+    pub fn remove_edge_types(&self) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self.graph.remove_edge_types(verbose))?,
+            graph: pe!(self.graph.remove_edge_types())?,
         })
     }
 
@@ -4734,7 +4722,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_ids_to_keep, node_ids_to_filter, node_type_ids_to_keep, node_type_ids_to_filter, node_type_id_to_keep, node_type_id_to_filter, edge_ids_to_keep, edge_ids_to_filter, edge_node_ids_to_keep, edge_node_ids_to_filter, edge_type_ids_to_keep, edge_type_ids_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges, verbose)"]
+    #[text_signature = "($self, node_ids_to_keep, node_ids_to_filter, node_type_ids_to_keep, node_type_ids_to_filter, node_type_id_to_keep, node_type_id_to_filter, edge_ids_to_keep, edge_ids_to_filter, edge_node_ids_to_keep, edge_node_ids_to_filter, edge_type_ids_to_keep, edge_type_ids_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// Parameters
@@ -4798,7 +4786,6 @@ impl EnsmallenGraph {
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
-        verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.filter_from_ids(
@@ -4819,14 +4806,13 @@ impl EnsmallenGraph {
                 filter_singleton_nodes,
                 filter_singleton_nodes_with_selfloop,
                 filter_selfloops,
-                filter_parallel_edges,
-                verbose
+                filter_parallel_edges
             ))?,
         })
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_names_to_keep, node_names_to_filter, node_type_names_to_keep, node_type_names_to_filter, node_type_name_to_keep, node_type_name_to_filter, edge_node_names_to_keep, edge_node_names_to_filter, edge_type_names_to_keep, edge_type_names_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges, verbose)"]
+    #[text_signature = "($self, node_names_to_keep, node_names_to_filter, node_type_names_to_keep, node_type_names_to_filter, node_type_name_to_keep, node_type_name_to_filter, edge_node_names_to_keep, edge_node_names_to_filter, edge_type_names_to_keep, edge_type_names_to_filter, min_edge_weight, max_edge_weight, filter_singleton_nodes, filter_singleton_nodes_with_selfloop, filter_selfloops, filter_parallel_edges)"]
     /// Returns a **NEW** Graph that does not have the required attributes.
     ///
     /// Parameters
@@ -4884,7 +4870,6 @@ impl EnsmallenGraph {
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
-        verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.filter_from_names(
@@ -4903,126 +4888,83 @@ impl EnsmallenGraph {
                 filter_singleton_nodes,
                 filter_singleton_nodes_with_selfloop,
                 filter_selfloops,
-                filter_parallel_edges,
-                verbose
+                filter_parallel_edges
             ))?,
         })
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without unknown node types and relative nodes.
     ///
     /// Note that this method will remove ALL nodes labeled with unknown node
     /// type!
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn drop_unknown_node_types(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn drop_unknown_node_types(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.drop_unknown_node_types(verbose),
+            graph: self.graph.drop_unknown_node_types(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without unknown edge types and relative edges.
     ///
     /// Note that this method will remove ALL edges labeled with unknown edge
     /// type!
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn drop_unknown_edge_types(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn drop_unknown_edge_types(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.drop_unknown_edge_types(verbose),
+            graph: self.graph.drop_unknown_edge_types(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without singleton nodes.
     ///
     /// A node is singleton when does not have neither incoming or outgoing edges.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn drop_singleton_nodes(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn drop_singleton_nodes(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.drop_singleton_nodes(verbose),
+            graph: self.graph.drop_singleton_nodes(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without singleton nodes with selfloops.
     ///
     /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn drop_singleton_nodes_with_selfloops(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn drop_singleton_nodes_with_selfloops(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.drop_singleton_nodes_with_selfloops(verbose),
+            graph: self.graph.drop_singleton_nodes_with_selfloops(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without disconnected nodes.
     ///
     /// A disconnected node is a node with no connection to any other node.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn drop_disconnected_nodes(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn drop_disconnected_nodes(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.drop_disconnected_nodes(verbose),
+            graph: self.graph.drop_disconnected_nodes(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
+    #[text_signature = "($self)"]
     /// Returns new graph without selfloops.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn drop_selfloops(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    pub fn drop_selfloops(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.drop_selfloops(verbose),
+            graph: self.graph.drop_selfloops(),
         }
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, verbose)"]
-    /// Returns new graph without parallel edges.
-    ///
-    /// Parameters
-    /// ----------
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar while building the graph.
-    ///
-    pub fn drop_parallel_edges(&self, verbose: Option<bool>) -> EnsmallenGraph {
+    #[text_signature = "($self)"]
+    /// Returns new graph without parallel edges
+    pub fn drop_parallel_edges(&self) -> EnsmallenGraph {
         EnsmallenGraph {
-            graph: self.graph.drop_parallel_edges(verbose),
+            graph: self.graph.drop_parallel_edges(),
         }
     }
 
@@ -7195,7 +7137,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name, weight, verbose)"]
+    #[text_signature = "($self, edge_type_name, weight)"]
     /// Returns new graph with added in missing self-loops with given edge type and weight.
     ///
     /// Parameters
@@ -7215,10 +7157,9 @@ impl EnsmallenGraph {
         &self,
         edge_type_name: Option<&str>,
         weight: Option<WeightT>,
-        verbose: Option<bool>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
-            graph: pe!(self.graph.add_selfloops(edge_type_name, weight, verbose))?,
+            graph: pe!(self.graph.add_selfloops(edge_type_name, weight))?,
         })
     }
 
@@ -8160,7 +8101,7 @@ impl EnsmallenGraph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(node_type_path, node_types_column_number, node_types_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_separator, node_type_list_header, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_selfloops, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, directed, name)"]
+    #[text_signature = "(node_type_path, node_types_column_number, node_types_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_separator, node_type_list_header, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, directed, name)"]
     /// Return graph renderized from given CSVs or TSVs-like files.
     ///
     /// TODO! Add docstrings
@@ -8225,7 +8166,6 @@ impl EnsmallenGraph {
         weights_column_number: Option<usize>,
         weights_column: Option<String>,
         default_weight: Option<WeightT>,
-        skip_selfloops: Option<bool>,
         edge_list_numeric_edge_type_ids: Option<bool>,
         edge_list_numeric_node_ids: Option<bool>,
         skip_weights_if_unavailable: Option<bool>,
@@ -8303,7 +8243,6 @@ impl EnsmallenGraph {
                 weights_column_number,
                 weights_column,
                 default_weight,
-                skip_selfloops,
                 edge_list_numeric_edge_type_ids,
                 edge_list_numeric_node_ids,
                 skip_weights_if_unavailable,

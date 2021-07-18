@@ -176,7 +176,6 @@ impl Graph {
         weights_column_number: Option<usize>,
         weights_column: Option<String>,
         default_weight: Option<WeightT>,
-        skip_selfloops: Option<bool>,
         edge_list_numeric_edge_type_ids: Option<bool>,
         edge_list_numeric_node_ids: Option<bool>,
         skip_weights_if_unavailable: Option<bool>,
@@ -283,8 +282,7 @@ impl Graph {
                     .set_weights_column_number(weights_column_number)?
                     .set_weights_column(weights_column)?
                     .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
-                    .set_default_weight(default_weight)
-                    .set_skip_selfloops(skip_selfloops)
+                    .set_default_weight(default_weight)?
                     .set_numeric_node_ids(edge_list_numeric_node_ids)
                     .set_numeric_edge_type_ids(edge_list_numeric_edge_type_ids)
                     .set_complete(edge_list_is_complete)

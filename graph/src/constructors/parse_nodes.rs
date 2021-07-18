@@ -43,7 +43,6 @@ pub(crate) fn parse_nodes(
         .to_string());
     }
 
-    // TODO! make optimized methods for the sequential iterator version
     let node_types_method = match (
         has_node_types,
         node_types_vocabulary

@@ -2,7 +2,6 @@ use crate::constructors::build_graph_from_integers;
 use crate::constructors::build_graph_from_strings_without_type_iterators;
 
 use super::*;
-use indicatif::ParallelProgressIterator;
 use rayon::iter::ParallelIterator;
 
 impl Graph {
@@ -62,7 +61,6 @@ impl Graph {
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
-        verbose: Option<bool>,
     ) -> Result<Graph> {
         if !self.is_directed() && (edge_ids_to_keep.is_some() || edge_ids_to_filter.is_some()) {
             return Err(concat!(
@@ -79,26 +77,6 @@ impl Graph {
             filter_singleton_nodes_with_selfloop.unwrap_or(false);
         let filter_selfloops = filter_selfloops.unwrap_or(false);
         let filter_parallel_edges = filter_parallel_edges.unwrap_or(false);
-        let verbose = verbose.unwrap_or(true);
-        let pb_edges = get_loading_bar(
-            verbose,
-            format!(
-                "Building edges of graph {} without required attributes",
-                self.name
-            )
-            .as_ref(),
-            self.get_directed_edges_number() as usize,
-        );
-
-        let pb_nodes = get_loading_bar(
-            verbose,
-            format!(
-                "Building nodes of graph {} without required attributes",
-                self.name
-            )
-            .as_ref(),
-            self.get_nodes_number() as usize,
-        );
 
         let has_node_filters = self.has_nodes()
             && [
@@ -222,7 +200,6 @@ impl Graph {
             (false, true) => build_graph_from_integers(
                 Some(
                     self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
-                        .progress_with(pb_edges)
                         .filter(edge_filter)
                         .map(|(_, src, dst, edge_type, weight)| {
                             // We use 0 as index because this edge list
@@ -247,7 +224,6 @@ impl Graph {
                 let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
                     ItersWrapper::Parallel(
                         self.par_iter_node_names_and_node_type_names()
-                            .progress_with(pb_nodes)
                             .filter(node_filter)
                             .map(|(_, node_name, _, node_types)| {
                                 Ok((0 as usize, (node_name, node_types)))
@@ -255,7 +231,6 @@ impl Graph {
                     );
                 let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
                     self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
-                        .progress_with(pb_edges)
                         .filter(
                             |(
                                 edge_id,
@@ -377,7 +352,6 @@ impl Graph {
         filter_singleton_nodes_with_selfloop: Option<bool>,
         filter_selfloops: Option<bool>,
         filter_parallel_edges: Option<bool>,
-        verbose: Option<bool>,
     ) -> Result<Graph> {
         self.filter_from_ids(
             node_names_to_keep.map_or(Ok::<_, String>(None), |nntk| {
@@ -422,7 +396,6 @@ impl Graph {
             filter_singleton_nodes_with_selfloop,
             filter_selfloops,
             filter_parallel_edges,
-            verbose,
         )
     }
 
@@ -431,9 +404,7 @@ impl Graph {
     /// Note that this method will remove ALL nodes labeled with unknown node
     /// type!
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_unknown_node_types(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_unknown_node_types(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -453,7 +424,6 @@ impl Graph {
             None,
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
@@ -463,9 +433,7 @@ impl Graph {
     /// Note that this method will remove ALL edges labeled with unknown edge
     /// type!
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_unknown_edge_types(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_unknown_edge_types(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -485,7 +453,6 @@ impl Graph {
             None,
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
@@ -494,9 +461,7 @@ impl Graph {
     ///
     /// A node is singleton when does not have neither incoming or outgoing edges.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_singleton_nodes(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_singleton_nodes(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -516,7 +481,6 @@ impl Graph {
             None,
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
@@ -525,9 +489,7 @@ impl Graph {
     ///
     /// A node is singleton with selfloop when does not have neither incoming or outgoing edges.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_singleton_nodes_with_selfloops(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_singleton_nodes_with_selfloops(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -547,7 +509,6 @@ impl Graph {
             Some(true),
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
@@ -556,9 +517,7 @@ impl Graph {
     ///
     /// A disconnected node is a node with no connection to any other node.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_disconnected_nodes(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_disconnected_nodes(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -578,16 +537,13 @@ impl Graph {
             Some(true),
             None,
             None,
-            verbose,
         )
         .unwrap()
     }
 
     /// Returns new graph without selfloops.
     ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_selfloops(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_selfloops(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -607,16 +563,12 @@ impl Graph {
             None,
             Some(true),
             None,
-            verbose,
         )
         .unwrap()
     }
 
     /// Returns new graph without parallel edges.
-    ///
-    /// # Arguments
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
-    pub fn drop_parallel_edges(&self, verbose: Option<bool>) -> Graph {
+    pub fn drop_parallel_edges(&self) -> Graph {
         self.filter_from_ids(
             None,
             None,
@@ -636,7 +588,6 @@ impl Graph {
             None,
             None,
             Some(true),
-            verbose,
         )
         .unwrap()
     }

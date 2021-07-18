@@ -15,6 +15,7 @@ fn test_load_sorted() {
         .set_numeric_node_ids(Some(true))
         .set_complete(Some(true))
         .set_sorted(Some(true))
+        .set_parallel(Some(false))
         .set_csv_is_correct(Some(true))
         .set_edges_number(Some(3054))
         .set_header(Some(false));
