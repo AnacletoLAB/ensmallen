@@ -399,6 +399,14 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         }
     }
 
+    // Return whether the keys are sorted by lexicographical order.
+    pub fn is_sorted_by_lexicographic_order(&self) -> bool {
+        match self {
+            Vocabulary::String { reverse_map, .. } => reverse_map.is_sorted(),
+            Vocabulary::Numeric { .. } => false,
+        }
+    }
+
     /// Convert the current vocabulary to a string one.
     pub fn to_string_vocabulary(&mut self) {
         match self {

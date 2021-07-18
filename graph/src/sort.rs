@@ -48,4 +48,25 @@ impl Graph {
             .collect_into_vec(&mut new_node_ids);
         unsafe { self.remap_unchecked_from_node_ids(new_node_ids) }
     }
+
+    /// Returns graph with node IDs sorted by lexicographic order.
+    pub fn sort_by_node_lexicographic_order(&self) -> Graph {
+        if self.has_nodes_sorted_by_lexicographic_order() {
+            return self.clone();
+        }
+        let mut node_ids_and_node_names =
+            vec![(0 as usize, "".to_owned()); self.get_nodes_number() as usize];
+        self.par_iter_node_names()
+            .enumerate()
+            .collect_into_vec(&mut node_ids_and_node_names);
+        node_ids_and_node_names.par_sort_unstable_by(|(_, node_name_a), (_, node_name_b)| {
+            node_name_b.cmp(node_name_a)
+        });
+        let mut new_node_ids = vec![0 as NodeT; self.get_nodes_number() as usize];
+        node_ids_and_node_names
+            .into_par_iter()
+            .map(|(node_id, _)| node_id as NodeT)
+            .collect_into_vec(&mut new_node_ids);
+        unsafe { self.remap_unchecked_from_node_ids(new_node_ids) }
+    }
 }
