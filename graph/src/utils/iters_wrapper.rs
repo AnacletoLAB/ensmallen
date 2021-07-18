@@ -17,24 +17,24 @@ use std::iter::FromIterator;
 /// println!("{:?}", iter.map(|x: i32| -> i32 {v + x * 2}).collect::<Vec<_>>());
 /// ```
 pub enum ItersWrapper<
-    T,
-    I:Iterator<Item=T>, 
-    P:ParallelIterator<Item=T>,
+    Item,
+    I:Iterator<Item=Item>, 
+    P:ParallelIterator<Item=Item>,
 >{
     Sequential(I),
     Parallel(P),
 }
 
-impl<T, I, P> ItersWrapper<T, I, P> 
+impl<Item, I, P> ItersWrapper<Item, I, P> 
 where
-    T: Send,
-    I: Iterator<Item=T>,
-    P: ParallelIterator<Item=T>,
+    Item: Send,
+    I: Iterator<Item=Item>,
+    P: ParallelIterator<Item=Item>,
 {
     pub fn map<F, R>(self, op: F) -> ItersWrapper<R, std::iter::Map<I, F>, rayon::iter::Map<P, F>>
     where
         R: Send,
-        F: Fn(T) -> R  + Sync + Send
+        F: Fn(Item) -> R  + Sync + Send
         {
             match self {
                 Self::Parallel(p) => ItersWrapper::Parallel(p.map(op)),
@@ -42,9 +42,9 @@ where
             }
     }
 
-    pub fn filter<F>(self, op: F) -> ItersWrapper<T, std::iter::Filter<I, F>, rayon::iter::Filter<P, F>>
+    pub fn filter<F>(self, op: F) -> ItersWrapper<Item, std::iter::Filter<I, F>, rayon::iter::Filter<P, F>>
     where
-        F: Fn(&T) -> bool + Sync + Send
+        F: Fn(&Item) -> bool + Sync + Send
         {
             match self {
                 Self::Parallel(p) => ItersWrapper::Parallel(p.filter(op)),
@@ -54,7 +54,7 @@ where
 
     pub fn for_each<F>(self, op: F)
     where
-        F: Fn(T) + Sync + Send
+        F: Fn(Item) + Sync + Send
         {
             match self {
                 Self::Parallel(p) => p.for_each(op),
@@ -62,10 +62,10 @@ where
             }
     }
 
-    pub fn reduce<ID, F>(self,identity: ID, op: F) -> T
+    pub fn reduce<ID, F>(self,identity: ID, op: F) -> Item
     where
-        F: Fn(T, T) -> T + Sync + Send,
-        ID: Fn() -> T + Sync + Send,
+        F: Fn(Item, Item) -> Item + Sync + Send,
+        ID: Fn() -> Item + Sync + Send,
         {
             match self {
                 Self::Parallel(p) => p.reduce(identity, op),
@@ -75,7 +75,7 @@ where
 
     pub fn all<F>(self, op: F) -> bool
     where
-        F: Fn(T) -> bool + Sync + Send,
+        F: Fn(Item) -> bool + Sync + Send,
         {
             match self {
                 Self::Parallel(p) => p.all(op),
@@ -85,7 +85,7 @@ where
 
     pub fn any<F>(self, op: F) -> bool
     where
-        F: Fn(T) -> bool + Sync + Send,
+        F: Fn(Item) -> bool + Sync + Send,
         {
             match self {
                 Self::Parallel(p) => p.any(op),
@@ -93,7 +93,7 @@ where
             }
     }
 
-    pub fn collect<B: FromIterator<T> + FromParallelIterator<T>>(self) -> B {
+    pub fn collect<B: FromIterator<Item> + FromParallelIterator<Item>>(self) -> B {
             match self {
                 Self::Parallel(p) => p.collect::<B>(),
                 Self::Sequential(i) => i.collect::<B>(),
