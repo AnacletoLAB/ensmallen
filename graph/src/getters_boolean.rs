@@ -357,6 +357,19 @@ impl Graph {
         })
     }
 
+    #[cache_property(nodes_sorted_by_lexicographic_order)]
+    /// Returns whether the node IDs are sorted by decreasing outbound node degree.
+    ///
+    /// # Implications
+    /// The implications of having a graph with node IDs sorted by the
+    /// lexicographic order are multiple.
+    /// For instance, it makes it possible in some node keys distributions
+    /// such as the names of websites to use this ordering for
+    /// succinct data structures such as BVGraph.
+    pub fn has_nodes_sorted_by_lexicographic_order(&self) -> bool {
+        self.nodes.is_sorted_by_lexicographic_order()
+    }
+
     #[cache_property(nodes_sorted_by_increasing_outbound_node_degree)]
     /// Returns whether the node IDs are sorted by increasing outbound node degree.
     ///

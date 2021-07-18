@@ -14,6 +14,7 @@ const BLACKLIST: &'static [&'static str] = &[
     "test_utilities.rs",
     "mod.rs",
     "method_caller.rs",
+    "parallel_lines_reader.rs"
 ];
 
 pub fn skip_file(path: &str) -> bool {

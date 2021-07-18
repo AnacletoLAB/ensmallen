@@ -256,7 +256,7 @@ impl Graph {
         build_graph_from_integers(
             Some(
                 self.par_iter_node_ids()
-                    .map(|src| {
+                    .flat_map(|src| {
                         self.iter_node_ids()
                             .filter_map(|dst| {
                                 if self.has_edge_from_node_ids(src, dst) {
@@ -266,8 +266,7 @@ impl Graph {
                                 }
                             })
                             .collect::<Vec<_>>()
-                    })
-                    .flatten(),
+                    }),
             ),
             self.nodes.clone(),
             self.node_types.clone(),
