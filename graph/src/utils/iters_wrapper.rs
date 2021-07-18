@@ -39,6 +39,20 @@ where
         }
     }
 
+    pub fn flat_map<F, R>(
+        self,
+        op: F,
+    ) -> ItersWrapper<R, std::iter::FlatMap<I, R, F>, rayon::iter::FlatMap<P, F>>
+    where
+        R: Send + IntoParallelIterator + IntoIterator,
+        F: Fn(Item) -> R + Sync + Send,
+    {
+        match self {
+            Self::Parallel(p) => ItersWrapper::Parallel(p.flat_map(op)),
+            Self::Sequential(i) => ItersWrapper::Sequential(i.flat_map(op)),
+        }
+    }
+
     pub fn method_caller<'a, R, S>(
         self,
         sequential_op: fn(&mut S, Item) -> R,
