@@ -417,6 +417,15 @@ impl EnsmallenGraph {
 
     #[automatically_generated_binding]
     #[text_signature = "($self)"]
+    /// Returns graph with node IDs sorted by lexicographic order
+    pub fn sort_by_node_lexicographic_order(&self) -> EnsmallenGraph {
+        EnsmallenGraph {
+            graph: self.graph.sort_by_node_lexicographic_order(),
+        }
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
     /// Returns binary dense adjacency matrix.
     ///
     /// Beware of using this method on big graphs!
@@ -4691,7 +4700,7 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
-    #[text_signature = "($self, node_name_mapping, node_type_name_mapping, node_type_names_mapping, edge_type_name_mapping, verbose)"]
+    #[text_signature = "($self, node_name_mapping, node_type_name_mapping, edge_type_name_mapping)"]
     /// Replace given node, node type and edge type names.
     ///
     /// Parameters
@@ -4700,12 +4709,8 @@ impl EnsmallenGraph {
     ///     The node names to replace.
     /// node_type_name_mapping: Optional[Dict[str, str]],
     ///     The node type names to replace.
-    /// node_type_names_mapping: Optional[Dict[Optional[List[str]], Optional[List[str]]]],
-    ///     The node type names (as vectors) to replace.
-    /// edge_type_name_mapping: Optional[Dict[Optional[str], Optional[str]]],
+    /// edge_type_name_mapping: Optional[Dict[str, str]],
     ///     The edge type names to replace.
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
     ///
     ///
     /// Raises
@@ -4717,64 +4722,14 @@ impl EnsmallenGraph {
         &self,
         node_name_mapping: Option<HashMap<String, String>>,
         node_type_name_mapping: Option<HashMap<String, String>>,
-        node_type_names_mapping: Option<HashMap<Option<Vec<String>>, Option<Vec<String>>>>,
-        edge_type_name_mapping: Option<HashMap<Option<String>, Option<String>>>,
-        verbose: Option<bool>,
+        edge_type_name_mapping: Option<HashMap<String, String>>,
     ) -> PyResult<EnsmallenGraph> {
         Ok(EnsmallenGraph {
             graph: pe!(self.graph.replace(
                 node_name_mapping,
                 node_type_name_mapping,
-                node_type_names_mapping,
-                edge_type_name_mapping,
-                verbose
+                edge_type_name_mapping
             ))?,
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, node_type_names, verbose)"]
-    /// Replace unknown node types with given node type.
-    ///
-    /// Parameters
-    /// ----------
-    /// node_type_names: List[str],
-    ///     The node types to replace the unknown with.
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn replace_unknown_node_types_with_node_type_name(
-        &self,
-        node_type_names: Vec<String>,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(self
-                .graph
-                .replace_unknown_node_types_with_node_type_name(node_type_names, verbose))?,
-        })
-    }
-
-    #[automatically_generated_binding]
-    #[text_signature = "($self, edge_type_name, verbose)"]
-    /// Replace unknown edge types with given edge type name.
-    ///
-    /// Parameters
-    /// ----------
-    /// edge_type_name: str,
-    ///     The edge type name to replace the unknown with.
-    /// verbose: Optional[bool],
-    ///     Whether to show a loading bar.
-    ///
-    pub fn replace_unknown_edge_types_with_edge_type_name(
-        &self,
-        edge_type_name: String,
-        verbose: Option<bool>,
-    ) -> PyResult<EnsmallenGraph> {
-        Ok(EnsmallenGraph {
-            graph: pe!(self
-                .graph
-                .replace_unknown_edge_types_with_edge_type_name(edge_type_name, verbose))?,
         })
     }
 
@@ -5617,6 +5572,13 @@ impl EnsmallenGraph {
     pub fn has_nodes_sorted_by_decreasing_outbound_node_degree(&self) -> bool {
         self.graph
             .has_nodes_sorted_by_decreasing_outbound_node_degree()
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Returns whether the node IDs are sorted by decreasing outbound node degree.
+    pub fn has_nodes_sorted_by_lexicographic_order(&self) -> bool {
+        self.graph.has_nodes_sorted_by_lexicographic_order()
     }
 
     #[automatically_generated_binding]
@@ -8198,7 +8160,7 @@ impl EnsmallenGraph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(node_type_path, node_types_column_number, node_types_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_separator, node_type_list_header, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, node_path, node_list_separator, node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, edge_type_path, edge_types_column_number, edge_types_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, edge_path, edge_list_separator, edge_list_header, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_selfloops, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, verbose, directed, name)"]
+    #[text_signature = "(node_type_path, node_types_column_number, node_types_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_separator, node_type_list_header, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, skip_selfloops, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, directed, name)"]
     /// Return graph renderized from given CSVs or TSVs-like files.
     ///
     /// TODO! Add docstrings
@@ -8216,6 +8178,7 @@ impl EnsmallenGraph {
         node_type_list_is_correct: Option<bool>,
         node_type_list_max_rows_number: Option<EdgeT>,
         node_type_list_comment_symbol: Option<String>,
+        load_node_type_list_in_parallel: Option<bool>,
         node_path: Option<String>,
         node_list_separator: Option<String>,
         node_list_header: Option<bool>,
@@ -8234,6 +8197,7 @@ impl EnsmallenGraph {
         numeric_node_ids: Option<bool>,
         node_list_numeric_node_type_ids: Option<bool>,
         skip_node_types_if_unavailable: Option<bool>,
+        load_node_list_in_parallel: Option<bool>,
         edge_type_path: Option<String>,
         edge_types_column_number: Option<usize>,
         edge_types_column: Option<String>,
@@ -8246,6 +8210,7 @@ impl EnsmallenGraph {
         edge_type_list_is_correct: Option<bool>,
         edge_type_list_max_rows_number: Option<EdgeT>,
         edge_type_list_comment_symbol: Option<String>,
+        load_edge_type_list_in_parallel: Option<bool>,
         edge_path: Option<String>,
         edge_list_separator: Option<String>,
         edge_list_header: Option<bool>,
@@ -8272,6 +8237,7 @@ impl EnsmallenGraph {
         edge_list_max_rows_number: Option<EdgeT>,
         edge_list_comment_symbol: Option<String>,
         edges_number: Option<EdgeT>,
+        load_edge_list_in_parallel: Option<bool>,
         verbose: Option<bool>,
         directed: bool,
         name: String,
@@ -8290,6 +8256,7 @@ impl EnsmallenGraph {
                 node_type_list_is_correct,
                 node_type_list_max_rows_number,
                 node_type_list_comment_symbol,
+                load_node_type_list_in_parallel,
                 node_path,
                 node_list_separator,
                 node_list_header,
@@ -8308,6 +8275,7 @@ impl EnsmallenGraph {
                 numeric_node_ids,
                 node_list_numeric_node_type_ids,
                 skip_node_types_if_unavailable,
+                load_node_list_in_parallel,
                 edge_type_path,
                 edge_types_column_number,
                 edge_types_column,
@@ -8320,6 +8288,7 @@ impl EnsmallenGraph {
                 edge_type_list_is_correct,
                 edge_type_list_max_rows_number,
                 edge_type_list_comment_symbol,
+                load_edge_type_list_in_parallel,
                 edge_path,
                 edge_list_separator,
                 edge_list_header,
@@ -8346,6 +8315,7 @@ impl EnsmallenGraph {
                 edge_list_max_rows_number,
                 edge_list_comment_symbol,
                 edges_number,
+                load_edge_list_in_parallel,
                 verbose,
                 directed,
                 name
