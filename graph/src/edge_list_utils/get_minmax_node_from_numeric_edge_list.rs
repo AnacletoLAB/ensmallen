@@ -1,14 +1,37 @@
 use crate::{EdgeFileReader, EdgeT, Result};
 
 /// Return minimum and maximum node number from given numeric edge list.
+///
+/// # Arguments
+/// * `path`: &str - The path from where to load the edge list.
+/// * `separator`: Option<String> - The separator for the rows in the edge list.
+/// * `header`: Option<bool> - Whether the edge list has an header.
+/// * `sources_column`: Option<String> - The column name to use for the source nodes.
+/// * `sources_column_number`: Option<usize> - The column number to use for the source nodes.
+/// * `destinations_column`: Option<String> - The column name to use for the destination nodes.
+/// * `destinations_column_number`: Option<usize> - The column number to use for the destination nodes.
+/// * `comment_symbol`: Option<String> - The comment symbol to use for the lines to skip.
+/// * `max_rows_number`: Option<EdgeT> - The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
+/// * `rows_to_skip`: Option<usize> - Number of rows to skip in the edge list.
+/// * `edges_number`: Option<EdgeT> - Number of edges in the edge list.
+/// * `load_edge_list_in_parallel`: Option<bool> - Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
+/// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
+/// * `skip_weights_if_unavailable`: Option<bool> - Whether to automatically skip the weights if they are not available.
+/// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
+/// * `name`: Option<String> - The name of the graph to display in the loading bar.
+///
+/// # Raises
+/// * If there are problems with the edge list file.
+/// * If the elements in the edge list are not numeric.
+/// * If the edge list is empty.
 pub fn get_minmax_node_from_numeric_edge_list(
     path: &str,
     separator: Option<String>,
     header: Option<bool>,
-    sources_column_number: Option<usize>,
     sources_column: Option<String>,
-    destinations_column_number: Option<usize>,
+    sources_column_number: Option<usize>,
     destinations_column: Option<String>,
+    destinations_column_number: Option<usize>,
     comment_symbol: Option<String>,
     max_rows_number: Option<EdgeT>,
     rows_to_skip: Option<usize>,

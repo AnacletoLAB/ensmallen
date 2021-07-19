@@ -57,10 +57,10 @@ pub fn convert_edge_list_to_numeric(
     target_edge_list_path: &str,
     target_edge_list_separator: Option<String>,
     target_edge_list_header: Option<bool>,
-    target_edge_list_sources_column_number: Option<usize>,
     target_edge_list_sources_column: Option<String>,
-    target_edge_list_destinations_column_number: Option<usize>,
+    target_edge_list_sources_column_number: Option<usize>,
     target_edge_list_destinations_column: Option<String>,
+    target_edge_list_destinations_column_number: Option<usize>,
     target_edge_list_edge_type_column: Option<String>,
     target_edge_list_edge_type_column_number: Option<usize>,
     target_edge_list_weights_column: Option<String>,
@@ -155,15 +155,50 @@ pub fn convert_edge_list_to_numeric(
 ///
 /// TODO! add option to store the node vocabulary.
 ///
+/// # Arguments
+/// * `maximum_node_id`: Option<EdgeT> - The maximum node ID present in this graph. If available, optimal memory allocation will be used.
+/// * `original_edge_list_path`: &str - The path from where to load the original edge list.
+/// * `original_edge_list_separator`: Option<String> - Separator to use for the original edge list.
+/// * `original_edge_list_header`: Option<bool> - Whether the original edge list has an header.
+/// * `original_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
+/// * `original_edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the original edges list.
+/// * `original_edge_list_destinations_column`: Option<String> - The column name to use to load the destinations in the original edges list.
+/// * `original_edge_list_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the original edges list.
+/// * `original_edge_list_edge_type_column`: Option<String> - The column name to use for the edge types in the original edges list.
+/// * `original_edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the original edges list.
+/// * `original_edge_list_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
+/// * `original_edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
+/// * `target_edge_list_path`: &str - The path from where to load the target edge list.
+/// * `target_edge_list_separator`: Option<String> - Separator to use for the target edge list.
+/// * `target_edge_list_header`: Option<bool> - Whether the target edge list has an header.
+/// * `target_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the target edges list.
+/// * `target_edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the target edges list.
+/// * `target_edge_list_destinations_column`: Option<String> - The column name to use to load the destinations in the target edges list.
+/// * `target_edge_list_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the target edges list.
+/// * `target_edge_list_edge_type_column`: Option<String> - The column name to use for the edge types in the target edges list.
+/// * `target_edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the target edges list.
+/// * `target_edge_list_weights_column`: Option<String> - The column name to use for the weights in the target edges list.
+/// * `target_edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the target edges list.
+/// * `comment_symbol`: Option<String> - The comment symbol to use within the original edge list.
+/// * `default_edge_type`: Option<String> - The default edge type to use within the original edge list.
+/// * `default_weight`: Option<WeightT> - The default weight to use within the original edge list.
+/// * `max_rows_number`: Option<EdgeT> - The amount of rows to load from the original edge list.
+/// * `rows_to_skip`: Option<usize> - The amount of rows to skip from the original edge list.
+/// * `edges_number`: Option<usize> - The expected number of edges. It will be used for the loading bar.
+/// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
+/// * `skip_weights_if_unavailable`: Option<bool> - Whether to automatically skip the weights if they are not available.
+/// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
+/// * `name`: Option<String> - The name of the graph to display in the loading bar.
+///
 pub fn convert_sparse_numeric_edge_list_to_numeric(
     maximum_node_id: Option<EdgeT>,
     original_edge_list_path: &str,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
-    original_edge_list_sources_column_number: Option<usize>,
     original_edge_list_sources_column: Option<String>,
-    original_edge_list_destinations_column_number: Option<usize>,
+    original_edge_list_sources_column_number: Option<usize>,
     original_edge_list_destinations_column: Option<String>,
+    original_edge_list_destinations_column_number: Option<usize>,
     original_edge_list_edge_type_column: Option<String>,
     original_edge_list_edge_type_column_number: Option<usize>,
     original_edge_list_weights_column: Option<String>,
@@ -171,10 +206,10 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
     target_edge_list_path: &str,
     target_edge_list_separator: Option<String>,
     target_edge_list_header: Option<bool>,
-    target_edge_list_sources_column_number: Option<usize>,
     target_edge_list_sources_column: Option<String>,
-    target_edge_list_destinations_column_number: Option<usize>,
+    target_edge_list_sources_column_number: Option<usize>,
     target_edge_list_destinations_column: Option<String>,
+    target_edge_list_destinations_column_number: Option<usize>,
     target_edge_list_edge_type_column: Option<String>,
     target_edge_list_edge_type_column_number: Option<usize>,
     target_edge_list_weights_column: Option<String>,
