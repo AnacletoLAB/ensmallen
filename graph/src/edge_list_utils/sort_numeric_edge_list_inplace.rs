@@ -40,19 +40,20 @@ pub fn sort_numeric_edge_list_inplace(
         .set_rows_to_skip(rows_to_skip)
         .set_header(header);
 
-    let head_command_status = std::process::Command::new("head")
-        .args(&[
-            format!("-n {}", file_reader.get_total_lines_to_skip(true)?).as_ref(),
-            path,
-        ])
+    let tail_command_status = std::process::Command::new("bash")
+        .args(&[format!(
+            "-c \"tail -n +{rows_to_skip} {path}\"",
+            rows_to_skip = file_reader.get_total_lines_to_skip(true)?,
+            path = path
+        )])
         .stdout(std::process::Stdio::piped())
         .spawn();
 
     // We check if the operation went fine.
-    let head_command = match head_command_status {
+    let tail_command = match tail_command_status {
         Ok(command) => Ok(command),
         Err(_) => Err(concat!(
-            "Could not execute head to skip headers ",
+            "Could not execute tail to skip headers ",
             "before sorting inplace on the provided edge list."
         )
         .to_owned()),
@@ -88,7 +89,7 @@ pub fn sort_numeric_edge_list_inplace(
             // We want to sort the file inplace
             format!("--output={}", path).as_ref(),
         ])
-        .stdin(head_command.stdout.unwrap())
+        .stdin(tail_command.stdout.unwrap())
         .status();
 
     // We check if the operation went fine.
