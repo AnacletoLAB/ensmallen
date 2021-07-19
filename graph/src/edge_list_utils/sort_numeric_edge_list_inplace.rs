@@ -40,12 +40,11 @@ pub fn sort_numeric_edge_list_inplace(
         .set_rows_to_skip(rows_to_skip)
         .set_header(header);
 
-    let tail_command_status = std::process::Command::new("bash")
-        .args(&[format!(
-            "-c \"tail -n +{rows_to_skip} {path}\"",
-            rows_to_skip = file_reader.get_total_lines_to_skip(true)? + 1,
-            path = path
-        )])
+    let tail_command_status = std::process::Command::new("tail")
+        .args(&[
+            format!("-n +{}", file_reader.get_total_lines_to_skip(true)? + 1,).as_ref(),
+            path,
+        ])
         .stdout(std::process::Stdio::piped())
         .spawn();
 
