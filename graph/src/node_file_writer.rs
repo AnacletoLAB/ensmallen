@@ -152,7 +152,7 @@ impl NodeFileWriter {
         let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
 
         self.writer.write_lines(
-            graph.get_nodes_number() as usize,
+            Some(graph.get_nodes_number() as usize),
             compose_lines(number_of_columns, header),
             (0..graph.get_nodes_number()).map(|node_id| {
                 let mut line = vec![(

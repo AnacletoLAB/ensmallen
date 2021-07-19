@@ -37,15 +37,16 @@ impl CSVFileWriter {
     ///
     /// # Arguments
     ///
-    /// * `lines_number`: u64 - Number of lines to expect to write out.
+    /// * `lines_number`: Option<usize> - Number of lines to expect to write out.
     /// * `header`: Vec<String> - The header to write out, if so required.
     /// * `values`: impl Iterator<Item = Vec<String>> - Iterator of rows to write out.
     pub(crate) fn write_lines(
         &self,
-        lines_number: usize,
+        lines_number: Option<usize>,
         header: Vec<String>,
         values: impl Iterator<Item = Vec<String>>,
     ) -> Result<()> {
+        let lines_number = lines_number.unwrap_or(0);
         let pb = get_loading_bar(self.verbose, "Writing to file", lines_number);
 
         let file = match File::create(self.path.clone()) {

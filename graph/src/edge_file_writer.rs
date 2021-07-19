@@ -9,19 +9,19 @@ pub struct EdgeFileWriter {
     pub(crate) sources_column_number: usize,
     pub(crate) destinations_column: String,
     pub(crate) destinations_column_number: usize,
-    pub(crate) edge_types_column: String,
-    pub(crate) edge_types_column_number: usize,
-    pub(crate) weights_column: String,
-    pub(crate) weights_column_number: usize,
+    pub(crate) edge_types_column: Option<String>,
+    pub(crate) edge_types_column_number: Option<usize>,
+    pub(crate) weights_column: Option<String>,
+    pub(crate) weights_column_number: Option<usize>,
     pub(crate) numeric_node_ids: bool,
     pub(crate) directed: Option<bool>,
+    number_of_columns: usize,
 }
 
 impl EdgeFileWriter {
     /// Return new EdgeFileWriter object.
     ///
     /// # Arguments
-    ///
     /// * path: String - Path where to store/load the file.
     ///
     pub fn new<S: Into<String>>(path: S) -> EdgeFileWriter {
@@ -31,19 +31,19 @@ impl EdgeFileWriter {
             sources_column_number: 0,
             destinations_column: "object".to_string(),
             destinations_column_number: 1,
-            edge_types_column: "label".to_string(),
-            edge_types_column_number: 2,
-            weights_column: "weight".to_string(),
-            weights_column_number: 3,
+            edge_types_column: None,
+            edge_types_column_number: None,
+            weights_column: None,
+            weights_column_number: None,
             numeric_node_ids: false,
             directed: None,
+            number_of_columns: 2,
         }
     }
 
     /// Set the column of the source nodes.
     ///
     /// # Arguments
-    ///
     /// * sources_column: Option<String> - The source nodes column to use for the file.
     ///
     pub fn set_sources_column<S: Into<String>>(
@@ -59,7 +59,6 @@ impl EdgeFileWriter {
     /// Set the column of the source nodes.
     ///
     /// # Arguments
-    ///
     /// * sources_column_number: Option<String> - The source nodes column to use for the file.
     ///
     pub fn set_sources_column_number(
@@ -68,6 +67,7 @@ impl EdgeFileWriter {
     ) -> EdgeFileWriter {
         if let Some(column_number) = sources_column_number {
             self.sources_column_number = column_number;
+            self.number_of_columns = self.number_of_columns.max(column_number + 1);
         }
         self
     }
@@ -75,7 +75,6 @@ impl EdgeFileWriter {
     /// Set the column of the nodes.
     ///
     /// # Arguments
-    ///
     /// * destinations_column: Option<String> - The node types column to use for the file.
     ///
     pub fn set_destinations_column<S: Into<String>>(
@@ -91,7 +90,6 @@ impl EdgeFileWriter {
     /// Set the column of the nodes.
     ///
     /// # Arguments
-    ///
     /// * destinations_column_number: Option<String> - The node types column to use for the file.
     ///
     pub fn set_destinations_column_number(
@@ -100,70 +98,59 @@ impl EdgeFileWriter {
     ) -> EdgeFileWriter {
         if let Some(column_number) = destinations_column_number {
             self.destinations_column_number = column_number;
+            self.number_of_columns = self.number_of_columns.max(column_number + 1);
         }
         self
     }
 
-    /// Set the column of the nodes.
+    /// Set the column of the edge types.
     ///
     /// # Arguments
+    /// * edge_types_column: Option<String> - The edge types column to use for the file.
     ///
-    /// * edge_types_column: Option<String> - The node types column to use for the file.
-    ///
-    pub fn set_edge_types_column<S: Into<String>>(
-        mut self,
-        edge_type_column: Option<S>,
-    ) -> EdgeFileWriter {
-        if let Some(column) = edge_type_column {
-            self.edge_types_column = column.into();
-        }
+    pub fn set_edge_types_column(mut self, edge_type_column: Option<String>) -> EdgeFileWriter {
+        self.edge_types_column = edge_type_column;
         self
     }
 
-    /// Set the column of the nodes.
+    /// Set the column number of the edge types.
     ///
     /// # Arguments
-    ///
     /// * edge_types_column_number: Option<usize> - The node types column to use for the file.
     ///
     pub fn set_edge_types_column_number(
         mut self,
-        edge_type_column_number: Option<usize>,
+        edge_types_column_number: Option<usize>,
     ) -> EdgeFileWriter {
-        if let Some(column_number) = edge_type_column_number {
-            self.edge_types_column_number = column_number;
+        if let Some(column_number) = edge_types_column_number {
+            self.edge_types_column_number = Some(column_number);
+            self.number_of_columns = self.number_of_columns.max(column_number + 1);
         }
         self
     }
 
-    /// Set the column of the nodes.
+    /// Set the column of the weights.
     ///
     /// # Arguments
+    /// * weights_column: Option<String> - The weight column to use for the file.
     ///
-    /// * weights_column: Option<String> - The node types column to use for the file.
-    ///
-    pub fn set_weights_column<S: Into<String>>(
-        mut self,
-        weights_column: Option<S>,
-    ) -> EdgeFileWriter {
-        if let Some(column) = weights_column {
-            self.weights_column = column.into();
-        }
+    pub fn set_weights_column(mut self, weights_column: Option<String>) -> EdgeFileWriter {
+        self.weights_column = weights_column;
         self
     }
 
-    /// Set the column of the nodes.
+    /// Set the column number of the weights.
     ///
     /// # Arguments
-    ///
-    /// * weights_column_number: Option<usize> - The node types column to use for the file.
+    /// * weights_column_number: Option<usize> - The weight column to use for the file.
     ///
     pub fn set_weights_column_number(
         mut self,
         weights_column_number: Option<usize>,
     ) -> EdgeFileWriter {
         if let Some(column_number) = weights_column_number {
-            self.weights_column_number = column_number;
+            self.weights_column_number = Some(column_number);
+            self.number_of_columns = self.number_of_columns.max(column_number + 1);
         }
         self
     }
@@ -171,7 +158,6 @@ impl EdgeFileWriter {
     /// Set the verbose.
     ///
     /// # Arguments
-    ///
     /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileWriter {
@@ -184,7 +170,6 @@ impl EdgeFileWriter {
     /// Set the numeric_id.
     ///
     /// # Arguments
-    ///
     /// * numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileWriter {
@@ -197,7 +182,6 @@ impl EdgeFileWriter {
     /// Set the separator.
     ///
     /// # Arguments
-    ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
     pub fn set_separator<S: Into<String>>(mut self, separator: Option<S>) -> EdgeFileWriter {
@@ -210,7 +194,6 @@ impl EdgeFileWriter {
     /// Set the header.
     ///
     /// # Arguments
-    ///
     /// * header: Option<bool> - Whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileWriter {
@@ -223,7 +206,6 @@ impl EdgeFileWriter {
     /// Set the directed.
     ///
     /// # Arguments
-    ///
     /// * `directed`: Option<bool> - Whether to write out the graph as directed or not.
     ///
     pub fn set_directed(mut self, directed: Option<bool>) -> EdgeFileWriter {
@@ -231,13 +213,52 @@ impl EdgeFileWriter {
         self
     }
 
-    /// Write edge file.
-    ///  
-    /// # Arguments
-    ///
-    /// * `graph`: &Graph - the graph to write out.
-    pub fn dump(&self, graph: &Graph) -> Result<()> {
-        let directed: bool = self.directed.unwrap_or_else(|| graph.is_directed());
+    /// Parses provided line into a vector of strings writable by the CSVFileWriter.
+    fn parse_line(
+        &self,
+        src: NodeT,
+        src_name: String,
+        dst: NodeT,
+        dst_name: String,
+        _edge_type: Option<EdgeTypeT>,
+        edge_type_name: Option<String>,
+        weight: Option<WeightT>,
+    ) -> Vec<String> {
+        let mut line = vec![
+            (
+                match self.numeric_node_ids {
+                    true => src.to_string(),
+                    false => src_name,
+                },
+                self.sources_column_number,
+            ),
+            (
+                match self.numeric_node_ids {
+                    true => dst.to_string(),
+                    false => dst_name,
+                },
+                self.destinations_column_number,
+            ),
+        ];
+
+        if let Some(column_number) = &self.edge_types_column_number {
+            line.push((
+                edge_type_name.map_or("".to_string(), |etn| etn),
+                *column_number,
+            ));
+        }
+
+        if let Some(column_number) = &self.weights_column_number {
+            line.push((
+                weight.map_or("".to_string(), |w| w.to_string()),
+                *column_number,
+            ));
+        }
+
+        compose_lines(self.number_of_columns, line)
+    }
+
+    fn build_header(&self) -> Vec<(String, usize)> {
         // build the header
         let mut header = vec![
             (self.sources_column.clone(), self.sources_column_number),
@@ -247,55 +268,69 @@ impl EdgeFileWriter {
             ),
         ];
 
-        if graph.has_edge_types() {
-            header.push((
-                self.edge_types_column.clone(),
-                self.edge_types_column_number,
-            ));
+        if let (Some(edge_types_column), Some(edge_types_column_number)) =
+            (&self.edge_types_column, self.edge_types_column_number)
+        {
+            header.push((edge_types_column.clone(), edge_types_column_number));
         }
 
-        if graph.has_edge_weights() {
-            header.push((self.weights_column.clone(), self.weights_column_number));
+        if let (Some(weights_column), Some(weights_column_number)) =
+            (&self.weights_column, self.weights_column_number)
+        {
+            header.push((weights_column.clone(), weights_column_number));
         }
 
-        let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
+        header
+    }
 
+    /// Write edge list iterator to file.
+    ///  
+    /// # Arguments
+    /// * `iterator`: impl Iterator<Item=_> - The iterator with the edge list to write to file.
+    pub fn dump_iterator(
+        &self,
+        lines_number: Option<usize>,
+        iterator: impl Iterator<
+            Item = (
+                EdgeT,
+                NodeT,
+                String,
+                NodeT,
+                String,
+                Option<EdgeTypeT>,
+                Option<String>,
+                Option<WeightT>,
+            ),
+        >,
+    ) -> Result<()> {
         self.writer.write_lines(
-            graph.get_directed_edges_number() as usize,
-            compose_lines(number_of_columns, header),
-            graph
-                .iter_edge_node_ids_and_edge_type_id_and_edge_weight(directed)
-                .map(|(_, src, dst, edge_type, weight)| {
-                    let mut line = vec![
-                        (
-                            match self.numeric_node_ids {
-                                true => src.to_string(),
-                                false => graph.nodes.unchecked_translate(src),
-                            },
-                            self.sources_column_number,
-                        ),
-                        (
-                            match self.numeric_node_ids {
-                                true => dst.to_string(),
-                                false => graph.nodes.unchecked_translate(dst),
-                            },
-                            self.destinations_column_number,
-                        ),
-                    ];
+            lines_number,
+            compose_lines(self.number_of_columns, self.build_header()),
+            iterator.map(
+                |(_, src, src_name, dst, dst_name, edge_type, edge_type_name, weight)| {
+                    self.parse_line(
+                        src,
+                        src_name,
+                        dst,
+                        dst_name,
+                        edge_type,
+                        edge_type_name,
+                        weight,
+                    )
+                },
+            ),
+        )
+    }
 
-                    if let Some(ets) = &graph.edge_types {
-                        line.push((
-                            edge_type.map_or("".to_string(), |et| ets.unchecked_translate(et)),
-                            self.edge_types_column_number,
-                        ));
-                    }
-
-                    if let Some(w) = weight {
-                        line.push((w.to_string(), self.weights_column_number));
-                    }
-
-                    compose_lines(number_of_columns, line)
-                }),
+    /// Write edge file from graph.
+    ///  
+    /// # Arguments
+    /// * `graph`: &Graph - the graph to write out.
+    pub fn dump_graph(&self, graph: &Graph) -> Result<()> {
+        let directed: bool = self.directed.unwrap_or_else(|| graph.is_directed());
+        self.dump_iterator(
+            Some(graph.get_directed_edges_number() as usize),
+            graph.iter_edge_node_names_and_edge_type_name_and_edge_weight(directed),
         )
     }
 }
