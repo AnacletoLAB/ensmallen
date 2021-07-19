@@ -2,7 +2,6 @@ use numpy::{PyArray, PyArray1, PyArray2};
 use pyo3::exceptions::{PyAttributeError, PyTypeError, PyValueError};
 use pyo3::prelude::*;
 use pyo3::types::PyDict;
-use pyo3::wrap_pymodule;
 use std::collections::{HashMap, HashSet};
 
 use graph::*;
@@ -28,11 +27,3 @@ mod operators;
 mod auto_generated_bindings;
 mod method_names_list;
 pub use method_names_list::*;
-
-#[pymodule]
-fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_class::<EnsmallenGraph>()?;
-    m.add_wrapped(wrap_pymodule!(preprocessing))?;
-    env_logger::init();
-    Ok(())
-}

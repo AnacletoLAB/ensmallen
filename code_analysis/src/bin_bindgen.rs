@@ -122,11 +122,11 @@ fn translate_type(value: Type) -> String {
                 result
             }
             _ => {
-                panic!("Cannot translate '{:?}' as a python unknown type", value);
+                panic!("Cannot translate '{:?}' as a python unknown type", value.to_string());
             }
         },
         _ => {
-            panic!("Cannot translate '{:?}' as a python type", value);
+            panic!("Cannot translate '{:?}' as a python type", value.to_string());
         }
     }
 }
@@ -199,7 +199,7 @@ fn translate_doc(doc: String) -> String {
         .join("\n")
 }
 
-fn gen_binding(method: &Function) -> String {
+fn gen_binding(method: &Function, is_method: bool) -> String {
     // build the doc
     let doc = translate_doc(method.doc.clone());
 
@@ -266,14 +266,14 @@ fn gen_binding(method: &Function) -> String {
     }
 
     let text_signature = format!("#[text_signature = \"({})\"]", args_signatures.join(", "));
-
     // build the call
     let mut body = format!(
         "{prefix}{name}({args_names})",
-        prefix = if is_static {
-            "Graph::"
-        } else {
-            "self.graph."
+        prefix = match (is_method, is_static) {
+            (true, true) => "Graph::",
+            (true, false) => "self.graph.",
+            (false, true) => "graph::",
+            (false, false) => unreachable!("A function cannot accept self! It would be a method!"),
         },
         name = method.name,
         args_names = &args_names[..args_names.len().saturating_sub(2)],
@@ -436,7 +436,7 @@ fn gen_binding(method: &Function) -> String {
     // build the binding
     format!(
         r#"
-    {is_static_method}
+    {type_annotation}
     #[automatically_generated_binding]
     {text_signature}
 {doc}
@@ -444,10 +444,11 @@ fn gen_binding(method: &Function) -> String {
         {body}
     }}
         "#,
-        is_static_method= if is_static {
-            "#[staticmethod]"
-        } else {
-            ""
+        type_annotation= match (is_method, is_static) {
+            (true, true) => "#[staticmethod]",
+            (true, false) => "", //"#[classmethod]", for some reason if we add this crash!!
+            (false, true) => "#[pyfunction]",
+            (false, false) => unreachable!("it cant be both a function and take self as argument!"),
         },
         doc = doc,
         text_signature = text_signature,
@@ -460,10 +461,26 @@ fn gen_binding(method: &Function) -> String {
 }
 
 fn main() {
-    let mut bindings = vec![];
+    let mut method_bindings = vec![];
+    let mut function_bindings = vec![];
+    let mut function_bindings_names = vec![];
 
     let modules = get_library_sources();
     for module in modules {
+
+        for func in module.functions {
+            if func.visibility == Visibility::Public 
+                && !func.attributes.iter().any(|x| x == "no_binding")
+                && !func.attributes.iter().any(|x| x == "manual_binding")
+            {
+                println!("FUnc name: {}", func.name);
+                let binding = gen_binding(&func, false);
+                println!("{}", binding);
+                function_bindings.push(binding);
+                function_bindings_names.push(func.name.clone());
+            }
+        }
+
         for mut imp in module.impls {
             if imp.struct_name != "Graph" {
                 continue;
@@ -482,9 +499,9 @@ fn main() {
                     && !method.attributes.iter().any(|x| x == "no_binding")
                     && !method.attributes.iter().any(|x| x == "manual_binding")
                 {
-                    let binding = gen_binding(&method);
+                    let binding = gen_binding(&method, true);
                     println!("{}", binding);
-                    bindings.push(binding);
+                    method_bindings.push(binding);
                 }
             }
         }
@@ -492,12 +509,26 @@ fn main() {
 
     let file_content = format!(
         r#"use super::*;
+use pyo3::{{wrap_pyfunction, wrap_pymodule}};
+
+#[pymodule]
+fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {{
+    m.add_class::<EnsmallenGraph>()?;
+    m.add_wrapped(wrap_pymodule!(preprocessing))?;
+    {function_bindings_wrapping}
+    env_logger::init();
+    Ok(())
+}}
+
+{function_bindings}
 
 #[pymethods]
 impl EnsmallenGraph {{
-{}
+{method_bindings}
 }}"#,
-        bindings.join("")
+    function_bindings_wrapping=function_bindings_names.iter().map(|name| format!("m.add_wrapped(wrap_pyfunction!({name}))?;", name=name)).collect::<Vec<_>>().join("\n"),
+    function_bindings=function_bindings.join(""),
+    method_bindings=method_bindings.join(""),
     );
 
     fs::write(
