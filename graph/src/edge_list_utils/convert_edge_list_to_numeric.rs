@@ -233,12 +233,12 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
                 |(line_number, (src_name, dst_name, edge_type, weight))| unsafe {
                     if src_name != last_numeric_src_name{
                         last_numeric_src_id = to_numeric_node_name(&src_name);
-                        last_numeric_src_name = src_name;
+                        last_numeric_src_name = src_name.clone();
                     }
                     (
                         line_number as u64,
                         last_numeric_src_id,
-                        last_numeric_src_name,
+                        src_name,
                         to_numeric_node_name(&dst_name),
                         dst_name,
                         edge_type.map(|edge_type| edge_types.unchecked_insert(edge_type)),
