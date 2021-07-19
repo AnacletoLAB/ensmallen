@@ -50,7 +50,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(
         get_edge_type_source_html_url_from_edge_type_name
     ))?;
-    m.add_wrapped(wrap_pyfunction!(convert_edge_list_to_numeric_node_ids))?;
+    m.add_wrapped(wrap_pyfunction!(convert_edge_list_to_numeric))?;
     m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
     env_logger::init();
     Ok(())
@@ -548,9 +548,9 @@ pub fn get_edge_type_source_html_url_from_edge_type_name(edge_type_name: &str) -
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column_number, original_edge_list_sources_column, original_edge_list_destinations_column_number, original_edge_list_destinations_column, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+#[text_signature = "(original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column_number, original_edge_list_sources_column, original_edge_list_destinations_column_number, original_edge_list_destinations_column, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
 /// Create a new edge list starting from given one with node IDs densified
-pub fn convert_edge_list_to_numeric_node_ids(
+pub fn convert_edge_list_to_numeric(
     original_edge_list_path: &str,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
@@ -578,12 +578,13 @@ pub fn convert_edge_list_to_numeric_node_ids(
     default_weight: Option<WeightT>,
     max_rows_number: Option<EdgeT>,
     rows_to_skip: Option<usize>,
+    edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<()> {
-    pe!(graph::convert_edge_list_to_numeric_node_ids(
+    pe!(graph::convert_edge_list_to_numeric(
         original_edge_list_path,
         original_edge_list_separator,
         original_edge_list_header,
@@ -611,6 +612,7 @@ pub fn convert_edge_list_to_numeric_node_ids(
         default_weight,
         max_rows_number,
         rows_to_skip,
+        edges_number,
         skip_edge_types_if_unavailable,
         skip_weights_if_unavailable,
         verbose,
