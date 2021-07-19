@@ -1,3 +1,4 @@
+use num_traits::Zero;
 use rayon::iter::ParallelIterator;
 
 use super::*;
@@ -13,7 +14,6 @@ pub struct EdgeFileReader {
     pub(crate) default_edge_type: Option<String>,
     pub(crate) weights_column_number: Option<usize>,
     pub(crate) default_weight: Option<WeightT>,
-    pub(crate) skip_selfloops: bool,
     pub(crate) numeric_edge_type_ids: bool,
     pub(crate) numeric_node_ids: bool,
     pub(crate) skip_weights_if_unavailable: bool,
@@ -38,7 +38,6 @@ impl EdgeFileReader {
             default_edge_type: None,
             weights_column_number: None,
             default_weight: None,
-            skip_selfloops: false,
             numeric_edge_type_ids: false,
             numeric_node_ids: false,
             skip_weights_if_unavailable: false,
@@ -335,10 +334,14 @@ impl EdgeFileReader {
     /// # Arguments
     /// * default_weight: Option<WeightT> - The default_weight to use when default_weight is missing.
     ///
-    /// TODO!: Validate the provided weight!
-    pub fn set_default_weight(mut self, default_weight: Option<WeightT>) -> EdgeFileReader {
-        self.default_weight = default_weight;
-        self
+    pub fn set_default_weight(mut self, default_weight: Option<WeightT>) -> Result<EdgeFileReader> {
+        if let Some(default_weight) = default_weight {
+            if default_weight.is_zero() {
+                return Err("The default weight cannot be zero.".to_string());
+            }
+            self.default_weight = Some(default_weight);
+        }
+        Ok(self)
     }
 
     /// Set the name of the graph to be loaded.
@@ -495,18 +498,6 @@ impl EdgeFileReader {
         self
     }
 
-    /// Whether to skip the selfloops.
-    ///
-    /// # Arguments
-    /// * skip_selfloops: Option<bool> - Whether to skip the selfloops.
-    ///
-    pub fn set_skip_selfloops(mut self, skip_selfloops: Option<bool>) -> EdgeFileReader {
-        if let Some(ss) = skip_selfloops {
-            self.skip_selfloops = ss;
-        }
-        self
-    }
-
     /// Set the maximum number of rows to load from the file
     ///
     /// # Arguments
@@ -656,12 +647,6 @@ impl EdgeFileReader {
             .map(move |line| match line {
                 Ok((line_number, vals)) => Ok((line_number, self.parse_edge_line(vals)?)),
                 Err(e) => Err(e),
-            })
-            .filter(move |edge| match edge {
-                Ok((_, (source_node_name, destination_node_name, _, _))) => {
-                    !self.skip_selfloops || source_node_name != destination_node_name
-                }
-                Err(_) => true,
             }))
     }
 }

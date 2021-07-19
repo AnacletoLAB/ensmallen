@@ -23,7 +23,6 @@ fn test_cora_diameter() -> Result<(), String> {
             None,
             None,
             None,
-            None,
         )
         .unwrap();
     assert_eq!(cora.get_diameter(Some(false), None).unwrap(), f64::INFINITY);
