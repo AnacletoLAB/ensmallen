@@ -113,7 +113,7 @@ pub fn convert_edge_list_to_numeric(
 /// This method will panic if the node IDs are not numeric.
 /// TODO: In the future we may handle this case as a normal error.
 pub fn convert_sparse_numeric_edge_list_to_numeric(
-    nodes_number: Option<EdgeT>,
+    maximum_node_id: Option<EdgeT>,
     original_edge_list_path: &str,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
@@ -148,8 +148,8 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
     name: Option<String>,
 ) -> Result<()> {
     let name = name.unwrap_or("Graph".to_owned());
-    let mut nodes: Vec<NodeT> = if let Some(nodes_number) = nodes_number {
-        vec![NOT_PRESENT; nodes_number as usize]
+    let mut nodes: Vec<NodeT> = if let Some(maximum_node_id) = maximum_node_id {
+        vec![NOT_PRESENT; maximum_node_id as usize]
     } else {
         Vec::new()
     };
@@ -177,6 +177,7 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_header(original_edge_list_header)
         .set_graph_name(name);
+
     let file_writer = EdgeFileWriter::new(target_edge_list_path)
         .set_destinations_column(target_edge_list_destinations_column)
         .set_destinations_column_number(target_edge_list_destinations_column_number)
