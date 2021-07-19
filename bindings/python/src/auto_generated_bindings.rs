@@ -55,6 +55,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
         convert_sparse_numeric_edge_list_to_numeric
     ))?;
     m.add_wrapped(wrap_pyfunction!(get_minmax_node_from_numeric_edge_list))?;
+    m.add_wrapped(wrap_pyfunction!(get_selfloops_number_from_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
     env_logger::init();
     Ok(())
@@ -714,16 +715,16 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column_number, original_edge_list_sources_column, original_edge_list_destinations_column_number, original_edge_list_destinations_column, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+#[text_signature = "(path, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
 /// Return minimum and maximum node number from given numeric edge list
 pub fn get_minmax_node_from_numeric_edge_list(
-    original_edge_list_path: &str,
-    original_edge_list_separator: Option<String>,
-    original_edge_list_header: Option<bool>,
-    original_edge_list_sources_column_number: Option<usize>,
-    original_edge_list_sources_column: Option<String>,
-    original_edge_list_destinations_column_number: Option<usize>,
-    original_edge_list_destinations_column: Option<String>,
+    path: &str,
+    separator: Option<String>,
+    header: Option<bool>,
+    sources_column_number: Option<usize>,
+    sources_column: Option<String>,
+    destinations_column_number: Option<usize>,
+    destinations_column: Option<String>,
     comment_symbol: Option<String>,
     max_rows_number: Option<EdgeT>,
     rows_to_skip: Option<usize>,
@@ -735,13 +736,55 @@ pub fn get_minmax_node_from_numeric_edge_list(
     name: Option<String>,
 ) -> PyResult<(EdgeT, EdgeT)> {
     pe!(graph::get_minmax_node_from_numeric_edge_list(
-        original_edge_list_path,
-        original_edge_list_separator,
-        original_edge_list_header,
-        original_edge_list_sources_column_number,
-        original_edge_list_sources_column,
-        original_edge_list_destinations_column_number,
-        original_edge_list_destinations_column,
+        path,
+        separator,
+        header,
+        sources_column_number,
+        sources_column,
+        destinations_column_number,
+        destinations_column,
+        comment_symbol,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        load_edge_list_in_parallel,
+        skip_edge_types_if_unavailable,
+        skip_weights_if_unavailable,
+        verbose,
+        name
+    ))
+}
+
+#[pyfunction]
+#[automatically_generated_binding]
+#[text_signature = "(path, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+/// Return number of selfloops in the given edge list
+pub fn get_selfloops_number_from_edge_list(
+    path: &str,
+    separator: Option<String>,
+    header: Option<bool>,
+    sources_column_number: Option<usize>,
+    sources_column: Option<String>,
+    destinations_column_number: Option<usize>,
+    destinations_column: Option<String>,
+    comment_symbol: Option<String>,
+    max_rows_number: Option<EdgeT>,
+    rows_to_skip: Option<usize>,
+    edges_number: Option<EdgeT>,
+    load_edge_list_in_parallel: Option<bool>,
+    skip_edge_types_if_unavailable: Option<bool>,
+    skip_weights_if_unavailable: Option<bool>,
+    verbose: Option<bool>,
+    name: Option<String>,
+) -> PyResult<EdgeT> {
+    pe!(graph::get_selfloops_number_from_edge_list(
+        path,
+        separator,
+        header,
+        sources_column_number,
+        sources_column,
+        destinations_column_number,
+        destinations_column,
         comment_symbol,
         max_rows_number,
         rows_to_skip,

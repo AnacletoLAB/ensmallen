@@ -30,7 +30,6 @@ permutation = "0.2.5"
 counter = "0.5.2"
 is_sorted = "0.1.1"
 derive-getters = "0.1.0"
-csv = "1.1.6"
 bitvec = {version="0.22", features=["atomic"]}
 glob = "0.3.0"
 keyed_priority_queue = "0.3.2"

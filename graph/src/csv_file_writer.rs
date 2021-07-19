@@ -1,6 +1,6 @@
 use super::*;
-use csv::{ByteRecord, WriterBuilder};
 use indicatif::ProgressIterator;
+use std::{fs::File, io::prelude::*, io::BufWriter};
 
 /// Structure that saves the common parameters for reading csv files.
 ///
@@ -52,13 +52,17 @@ impl CSVFileWriter {
             lines_number.unwrap_or(0),
         );
 
-        let mut stream = WriterBuilder::new()
-            .delimiter((&self.separator).as_bytes()[0])
-            .from_path(self.path.clone())
-            .unwrap();
+        let file = match File::create(self.path.clone()) {
+            Ok(f) => Ok(f),
+            Err(_) => Err(format!("Cannot open in writing the file {}", self.path)),
+        }?;
+
+        let mut stream = BufWriter::with_capacity(8 * 1024 * 1024, file);
 
         if self.header {
-            match stream.write_byte_record(&ByteRecord::from(&header[..])) {
+            let mut line = header.join(&self.separator);
+            line.push('\n');
+            match stream.write(line.as_bytes()) {
                 Ok(_) => Ok(()),
                 Err(_) => {
                     Err("Cannot write the header. There might have been an I/O error.".to_string())
@@ -66,8 +70,10 @@ impl CSVFileWriter {
             }?;
         }
 
-        for (i, line) in values.progress_with(pb).enumerate() {
-            match stream.write_byte_record(&ByteRecord::from(&line[..])) {
+        for (i, value) in values.progress_with(pb).enumerate() {
+            let mut line = value.join(&self.separator);
+            line.push('\n');
+            match stream.write(line.as_bytes()) {
                 Ok(_) => Ok(()),
                 Err(_) => Err(format!(
                     "Cannot write the {i} line. There might have been an I/O error.",

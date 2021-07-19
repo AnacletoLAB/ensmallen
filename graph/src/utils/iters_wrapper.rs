@@ -28,6 +28,16 @@ where
     I: Iterator<Item = Item>,
     P: ParallelIterator<Item = Item>,
 {
+    pub fn sum<S>(self) -> S
+    where
+        S: Send + std::iter::Sum<Item> + std::iter::Sum<S>,
+    {
+        match self {
+            Self::Parallel(p) => p.sum(),
+            Self::Sequential(i) => i.sum(),
+        }
+    }
+
     pub fn map<F, R>(self, op: F) -> ItersWrapper<R, std::iter::Map<I, F>, rayon::iter::Map<P, F>>
     where
         R: Send,
