@@ -69,15 +69,15 @@ pub fn sort_numeric_edge_list_inplace(
             if let Some(edge_types_column) = file_reader.get_edge_types_column_number() {
                 format!(
                     "--key={},{},{}",
-                    file_reader.get_sources_column_number(),
-                    file_reader.get_destinations_column_number(),
-                    edge_types_column
+                    file_reader.get_sources_column_number() + 1,
+                    file_reader.get_destinations_column_number() + 1,
+                    edge_types_column + 1
                 )
             } else {
                 format!(
                     "--key={},{}",
-                    file_reader.get_sources_column_number(),
-                    file_reader.get_destinations_column_number()
+                    file_reader.get_sources_column_number() + 1,
+                    file_reader.get_destinations_column_number() + 1
                 )
             }
             .as_ref(),
