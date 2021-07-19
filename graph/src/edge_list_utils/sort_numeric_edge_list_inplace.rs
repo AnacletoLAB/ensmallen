@@ -43,7 +43,7 @@ pub fn sort_numeric_edge_list_inplace(
     let tail_command_status = std::process::Command::new("bash")
         .args(&[format!(
             "-c \"tail -n +{rows_to_skip} {path}\"",
-            rows_to_skip = file_reader.get_total_lines_to_skip(true)?,
+            rows_to_skip = file_reader.get_total_lines_to_skip(true)? + 1,
             path = path
         )])
         .stdout(std::process::Stdio::piped())
