@@ -442,7 +442,6 @@ fn gen_binding(method: &Function, is_method: bool) -> String {
 {doc}
     pub {is_unsafe}fn {name}({args}){return_type}{{
         {body}
-    },
     }}
         "#,
         type_annotation= match (is_method, is_static) {
@@ -462,8 +461,8 @@ fn gen_binding(method: &Function, is_method: bool) -> String {
 }
 
 fn main() {
-    let mut methods_bindings = vec![];
-    let mut functions_bindings = vec![];
+    let mut method_bindings = vec![];
+    let mut function_bindings = vec![];
     let mut function_bindings_names = vec![];
 
     let modules = get_library_sources();
@@ -473,7 +472,7 @@ fn main() {
             if func.visibility == Visibility::Public{
                 let binding = gen_binding(&func, false);
                 println!("{}", binding);
-                functions_bindings.push(binding);
+                function_bindings.push(binding);
                 function_bindings_names.push(func.name.clone());
             }
         }
@@ -498,7 +497,7 @@ fn main() {
                 {
                     let binding = gen_binding(&method, true);
                     println!("{}", binding);
-                    methods_bindings.push(binding);
+                    method_bindings.push(binding);
                 }
             }
         }
@@ -506,16 +505,16 @@ fn main() {
 
     let file_content = format!(
         r#"use super::*;
-use pyo3::{wrap_pyfunction, wrap_pymodule};
+use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 
 #[pymodule]
-fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
+fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {{
     m.add_class::<EnsmallenGraph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
     {function_bindings_wrapping}
     env_logger::init();
     Ok(())
-}
+}}
 
 {function_bindings}
 
