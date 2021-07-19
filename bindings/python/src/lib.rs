@@ -28,11 +28,3 @@ mod operators;
 mod auto_generated_bindings;
 mod method_names_list;
 pub use method_names_list::*;
-
-#[pymodule]
-fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_class::<EnsmallenGraph>()?;
-    m.add_wrapped(wrap_pymodule!(preprocessing))?;
-    env_logger::init();
-    Ok(())
-}
