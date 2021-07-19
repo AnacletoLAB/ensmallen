@@ -1,6 +1,9 @@
 use std::intrinsics::unlikely;
 
-use crate::{EdgeFileReader, EdgeFileWriter, EdgeT, EdgeTypeT, NOT_PRESENT, NodeT, Result, Vocabulary, WeightT, utils::ItersWrapper};
+use crate::{
+    utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, EdgeTypeT, NodeT, Result,
+    Vocabulary, WeightT, NOT_PRESENT,
+};
 
 /// Create a new edge list starting from given one with node IDs densified.
 ///
@@ -107,7 +110,6 @@ pub fn convert_edge_list_to_numeric(
     Ok(())
 }
 
-
 /// Create a new edge list starting from given numeric one with node IDs densified.
 ///
 /// This method is meant as a solution to parse very large sparse numeric graphs,
@@ -118,7 +120,7 @@ pub fn convert_edge_list_to_numeric(
 /// TODO: In the future we may handle this case as a normal error.
 ///
 /// TODO! add option to store the node vocabulary.
-/// 
+///
 pub fn convert_sparse_numeric_edge_list_to_numeric(
     maximum_node_id: Option<EdgeT>,
     original_edge_list_path: &str,
@@ -204,8 +206,6 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
         ItersWrapper::Parallel(_) => unreachable!("This is not meant to run in parallel."),
         ItersWrapper::Sequential(i) => i,
     };
-    let mut last_numeric_src_name = "".to_string();
-    let mut last_numeric_src_id = 0;
 
     let mut to_numeric_node_name = |node_name: &str| {
         let numeric_node_name = node_name.parse::<EdgeT>().unwrap() as usize;
@@ -216,9 +216,9 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
         }
         // If the ID for the current source node was not already provided
         // we assign to it the current number of inserted nodes
-        if nodes[numeric_node_name] == NOT_PRESENT{
+        if nodes[numeric_node_name] == NOT_PRESENT {
             nodes[numeric_node_name] = inserted_nodes;
-            inserted_nodes+=1;
+            inserted_nodes += 1;
         };
         // And we return the value
         nodes[numeric_node_name]
@@ -231,13 +231,9 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
             // Processing line
             .map(
                 |(line_number, (src_name, dst_name, edge_type, weight))| unsafe {
-                    if src_name != last_numeric_src_name{
-                        last_numeric_src_id = to_numeric_node_name(&src_name);
-                        last_numeric_src_name = src_name.clone();
-                    }
                     (
                         line_number as u64,
-                        last_numeric_src_id,
+                        to_numeric_node_name(&src_name),
                         src_name,
                         to_numeric_node_name(&dst_name),
                         dst_name,
