@@ -61,7 +61,7 @@ pub fn sort_numeric_edge_list_inplace(
     let sort_command_status = std::process::Command::new("sort")
         .args(&[
             // We specify the separator of the fields
-            format!("--field-separator='{}'", file_reader.get_separator()).as_ref(),
+            format!("--field-separator={}", file_reader.get_separator()).as_ref(),
             // We want to sort over the source and destination columns
             // and also the edge types if they are available, in order
             // to avoid dropping duplicate-like lines that are actually
