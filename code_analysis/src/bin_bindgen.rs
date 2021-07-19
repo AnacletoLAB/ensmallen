@@ -122,11 +122,11 @@ fn translate_type(value: Type) -> String {
                 result
             }
             _ => {
-                panic!("Cannot translate '{:?}' as a python unknown type", value);
+                panic!("Cannot translate '{:?}' as a python unknown type", value.to_string());
             }
         },
         _ => {
-            panic!("Cannot translate '{:?}' as a python type", value);
+            panic!("Cannot translate '{:?}' as a python type", value.to_string());
         }
     }
 }
@@ -272,7 +272,7 @@ fn gen_binding(method: &Function, is_method: bool) -> String {
         prefix = match (is_method, is_static) {
             (true, true) => "Graph::",
             (true, false) => "self.graph.",
-            (false, true) => "",
+            (false, true) => "graph::",
             (false, false) => unreachable!("A function cannot accept self! It would be a method!"),
         },
         name = method.name,
@@ -446,7 +446,7 @@ fn gen_binding(method: &Function, is_method: bool) -> String {
         "#,
         type_annotation= match (is_method, is_static) {
             (true, true) => "#[staticmethod]",
-            (true, false) => "#[classmethod]",
+            (true, false) => "", //"#[classmethod]", for some reason if we add this crash!!
             (false, true) => "#[pyfunction]",
             (false, false) => unreachable!("it cant be both a function and take self as argument!"),
         },
@@ -469,7 +469,11 @@ fn main() {
     for module in modules {
 
         for func in module.functions {
-            if func.visibility == Visibility::Public{
+            if func.visibility == Visibility::Public 
+                && !func.attributes.iter().any(|x| x == "no_binding")
+                && !func.attributes.iter().any(|x| x == "manual_binding")
+            {
+                println!("FUnc name: {}", func.name);
                 let binding = gen_binding(&func, false);
                 println!("{}", binding);
                 function_bindings.push(binding);

@@ -6,6 +6,7 @@ use std::collections::HashMap;
 
 use super::*;
 
+#[manual_binding]
 /// Return vector of hashmaps containing the non-zero frequencies.
 ///
 /// # Arguments
