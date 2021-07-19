@@ -39,6 +39,20 @@ where
         }
     }
 
+    pub fn filter_map<F, R>(
+        self,
+        op: F,
+    ) -> ItersWrapper<R, std::iter::FilterMap<I, F>, rayon::iter::FilterMap<P, F>>
+    where
+        R: Send,
+        F: Fn(Item) -> Option<R> + Sync + Send,
+    {
+        match self {
+            Self::Parallel(p) => ItersWrapper::Parallel(p.filter_map(op)),
+            Self::Sequential(i) => ItersWrapper::Sequential(i.filter_map(op)),
+        }
+    }
+
     pub fn flat_map<F, R, U>(
         self,
         op: F,
@@ -136,6 +150,27 @@ where
         match self {
             Self::Parallel(p) => p.collect::<B>(),
             Self::Sequential(i) => i.collect::<B>(),
+        }
+    }
+}
+
+impl<Item, I, P> ItersWrapper<Item, I, P>
+where
+    Item: Send + Ord,
+    I: Iterator<Item = Item>,
+    P: ParallelIterator<Item = Item>,
+{
+    pub fn max<F>(self) -> Option<Item> {
+        match self {
+            Self::Parallel(p) => p.max(),
+            Self::Sequential(i) => i.max(),
+        }
+    }
+
+    pub fn min<F>(self) -> Option<Item> {
+        match self {
+            Self::Parallel(p) => p.min(),
+            Self::Sequential(i) => i.min(),
         }
     }
 }

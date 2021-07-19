@@ -1,6 +1,8 @@
 use crate::{EdgeFileReader, EdgeFileWriter, EdgeT, EdgeTypeT, NOT_PRESENT, NodeT, Result, Vocabulary, WeightT, utils::ItersWrapper};
 
 /// Create a new edge list starting from given one with node IDs densified.
+///
+/// TODO! add option to store the node vocabulary.
 pub fn convert_edge_list_to_numeric(
     original_edge_list_path: &str,
     original_edge_list_separator: Option<String>,
@@ -112,6 +114,9 @@ pub fn convert_edge_list_to_numeric(
 /// # Safety
 /// This method will panic if the node IDs are not numeric.
 /// TODO: In the future we may handle this case as a normal error.
+///
+/// TODO! add option to store the node vocabulary.
+/// 
 pub fn convert_sparse_numeric_edge_list_to_numeric(
     maximum_node_id: Option<EdgeT>,
     original_edge_list_path: &str,
@@ -210,7 +215,7 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
                     // If the vector of the nodes is not big enough, we need to
                     // expand it up to the required amount.
                     if nodes.len() <= numeric_src_name || nodes.len() <= numeric_dst_name {
-                        nodes.extend((nodes.len()..numeric_src_name.max(numeric_dst_name)).map(|_| NOT_PRESENT));
+                        nodes.extend((nodes.len()..=numeric_src_name.max(numeric_dst_name)).map(|_| NOT_PRESENT));
                     }
                     // If the ID for the current source node was not already provided
                     // we assign to it the current number of inserted nodes
