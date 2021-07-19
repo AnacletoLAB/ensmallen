@@ -46,8 +46,11 @@ impl CSVFileWriter {
         header: Vec<String>,
         values: impl Iterator<Item = Vec<String>>,
     ) -> Result<()> {
-        let lines_number = lines_number.unwrap_or(0);
-        let pb = get_loading_bar(self.verbose, "Writing to file", lines_number);
+        let pb = get_loading_bar(
+            self.verbose && lines_number.is_some(),
+            "Writing to file",
+            lines_number.unwrap_or(0)
+        );
 
         let file = match File::create(self.path.clone()) {
             Ok(f) => Ok(f),

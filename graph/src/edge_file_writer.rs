@@ -14,6 +14,7 @@ pub struct EdgeFileWriter {
     pub(crate) weights_column: Option<String>,
     pub(crate) weights_column_number: Option<usize>,
     pub(crate) numeric_node_ids: bool,
+    pub(crate) numeric_edge_type_ids: bool,
     pub(crate) directed: Option<bool>,
     number_of_columns: usize,
 }
@@ -36,6 +37,7 @@ impl EdgeFileWriter {
             weights_column: None,
             weights_column_number: None,
             numeric_node_ids: false,
+            numeric_edge_type_ids: false,
             directed: None,
             number_of_columns: 2,
         }
@@ -167,14 +169,26 @@ impl EdgeFileWriter {
         self
     }
 
-    /// Set the numeric_id.
+    /// Set whether the node IDs are to be treated as numeric.
     ///
     /// # Arguments
-    /// * numeric_id: Option<bool> - Whether to convert numeric Ids to Node Id.
+    /// * numeric_node_ids: Option<bool> - Whether the node IDs are to be treated as numeric.
     ///
     pub fn set_numeric_node_ids(mut self, numeric_node_ids: Option<bool>) -> EdgeFileWriter {
         if let Some(nni) = numeric_node_ids {
             self.numeric_node_ids = nni;
+        }
+        self
+    }
+
+    /// Set whether the edge type IDs are to be treated as numeric.
+    ///
+    /// # Arguments
+    /// * numernumeric_edge_type_idsic_id: Option<bool> - Whether the edge type IDs are to be treated as numeric.
+    ///
+    pub fn set_numeric_edge_type_ids(mut self, numeric_edge_type_ids: Option<bool>) -> EdgeFileWriter {
+        if let Some(nni) = numeric_edge_type_ids {
+            self.numeric_edge_type_ids = nni;
         }
         self
     }
@@ -220,7 +234,7 @@ impl EdgeFileWriter {
         src_name: String,
         dst: NodeT,
         dst_name: String,
-        _edge_type: Option<EdgeTypeT>,
+        edge_type: Option<EdgeTypeT>,
         edge_type_name: Option<String>,
         weight: Option<WeightT>,
     ) -> Vec<String> {
@@ -243,7 +257,14 @@ impl EdgeFileWriter {
 
         if let Some(column_number) = &self.edge_types_column_number {
             line.push((
-                edge_type_name.map_or("".to_string(), |etn| etn),
+                if let (Some(edge_type), Some(edge_type_name)) = (edge_type, edge_type_name){
+                    match self.numeric_edge_type_ids {
+                        true => edge_type.to_string(),
+                        false => edge_type_name,
+                    }
+                } else {
+                    "".to_string()
+                },
                 *column_number,
             ));
         }

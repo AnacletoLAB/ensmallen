@@ -1,9 +1,7 @@
-use crate::{
-    utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, NodeT, Result, Vocabulary, WeightT,
-};
+use crate::{EdgeFileReader, EdgeFileWriter, EdgeT, EdgeTypeT, NodeT, Result, Vocabulary, WeightT, utils::ItersWrapper};
 
 /// Create a new edge list starting from given one with node IDs densified.
-pub fn convert_edge_list_to_numeric_node_ids(
+pub fn convert_edge_list_to_numeric(
     original_edge_list_path: &str,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
@@ -31,6 +29,7 @@ pub fn convert_edge_list_to_numeric_node_ids(
     default_weight: Option<WeightT>,
     max_rows_number: Option<EdgeT>,
     rows_to_skip: Option<usize>,
+    edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
@@ -38,6 +37,7 @@ pub fn convert_edge_list_to_numeric_node_ids(
 ) -> Result<()> {
     let name = name.unwrap_or("Graph".to_owned());
     let mut nodes: Vocabulary<NodeT> = Vocabulary::new();
+    let mut edge_types: Vocabulary<EdgeTypeT> = Vocabulary::new();
     let file_reader = EdgeFileReader::new(original_edge_list_path)?
         .set_comment_symbol(comment_symbol)?
         .set_separator(original_edge_list_separator)?
@@ -56,7 +56,8 @@ pub fn convert_edge_list_to_numeric_node_ids(
         .set_rows_to_skip(rows_to_skip)
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
-        .set_verbose(verbose)
+        // To avoid a duplicated loading bar.
+        .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_header(original_edge_list_header)
         .set_graph_name(name);
     let file_writer = EdgeFileWriter::new(target_edge_list_path)
@@ -70,6 +71,8 @@ pub fn convert_edge_list_to_numeric_node_ids(
         .set_weights_column_number(target_edge_list_weights_column_number)
         .set_separator(target_edge_list_separator)
         .set_numeric_node_ids(Some(true))
+        .set_numeric_edge_type_ids(Some(true))
+        .set_verbose(verbose)
         .set_header(target_edge_list_header);
     let lines_iterator = file_reader.read_lines()?;
     let lines_iterator = match lines_iterator {
@@ -77,7 +80,7 @@ pub fn convert_edge_list_to_numeric_node_ids(
         ItersWrapper::Sequential(i) => i,
     };
     file_writer.dump_iterator(
-        None,
+        edges_number,
         lines_iterator
             // Removing eventual errors.
             .filter_map(|line| line.ok())
@@ -90,8 +93,8 @@ pub fn convert_edge_list_to_numeric_node_ids(
                         "".to_owned(),
                         nodes.unchecked_insert(dst_name),
                         "".to_owned(),
+                        edge_type.map(|edge_type| edge_types.unchecked_insert(edge_type)),
                         None,
-                        edge_type,
                         if weight.is_nan() { None } else { Some(weight) },
                     )
                 },
