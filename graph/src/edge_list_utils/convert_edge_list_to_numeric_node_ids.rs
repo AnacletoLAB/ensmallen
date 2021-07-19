@@ -40,6 +40,7 @@ pub fn convert_edge_list_to_numeric_node_ids(
     let mut nodes: Vocabulary<NodeT> = Vocabulary::new();
     let file_reader = EdgeFileReader::new(original_edge_list_path)?
         .set_comment_symbol(comment_symbol)?
+        .set_separator(original_edge_list_separator)?
         .set_default_edge_type(default_edge_type)
         .set_default_weight(default_weight)?
         .set_destinations_column(original_edge_list_destinations_column)?
@@ -53,7 +54,6 @@ pub fn convert_edge_list_to_numeric_node_ids(
         .set_max_rows_number(max_rows_number)
         .set_parallel(Some(false))
         .set_rows_to_skip(rows_to_skip)
-        .set_separator(original_edge_list_separator)?
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
         .set_verbose(verbose)
