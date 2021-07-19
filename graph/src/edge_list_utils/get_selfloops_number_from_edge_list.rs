@@ -15,10 +15,9 @@ use crate::{EdgeFileReader, EdgeT, Result};
 /// * `rows_to_skip`: Option<usize> - Number of rows to skip in the edge list.
 /// * `edges_number`: Option<EdgeT> - Number of edges in the edge list.
 /// * `load_edge_list_in_parallel`: Option<bool> - Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
-/// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
-/// * `skip_weights_if_unavailable`: Option<bool> - Whether to automatically skip the weights if they are not available.
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
+///
 pub fn get_selfloops_number_from_edge_list(
     path: &str,
     separator: Option<String>,
@@ -32,8 +31,6 @@ pub fn get_selfloops_number_from_edge_list(
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
-    skip_edge_types_if_unavailable: Option<bool>,
-    skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<EdgeT> {
@@ -49,8 +46,6 @@ pub fn get_selfloops_number_from_edge_list(
         .set_parallel(load_edge_list_in_parallel)
         .set_rows_to_skip(rows_to_skip)
         .set_edges_number(edges_number)
-        .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
-        .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
         .set_verbose(verbose)
         .set_header(header)
         .set_graph_name(name);

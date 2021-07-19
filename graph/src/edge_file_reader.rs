@@ -77,7 +77,7 @@ impl EdgeFileReader {
         Ok(self)
     }
 
-    /// Set the column_number of the nodes.
+    /// Set the sources node column number.
     ///
     /// # Arguments
     /// * sources_column_number: Option<usize> - The sources column number to use for the file.
@@ -102,7 +102,12 @@ impl EdgeFileReader {
         Ok(self)
     }
 
-    /// Set the column of the nodes.
+    /// Return the sources column number.
+    pub fn get_sources_column_number(&self) -> usize {
+        self.sources_column_number
+    }
+
+    /// Set the destination nodes column name.
     ///
     /// # Arguments
     /// * destination_column: Option<String> - The node types column to use for the file.
@@ -128,6 +133,11 @@ impl EdgeFileReader {
             }
         }
         Ok(self)
+    }
+
+    /// Return the destinations column number.
+    pub fn get_destinations_column_number(&self) -> usize {
+        self.destinations_column_number
     }
 
     /// Set the column_number of the nodes.
@@ -209,6 +219,11 @@ impl EdgeFileReader {
             }
         }
         Ok(self)
+    }
+
+    /// Return the edge types column number.
+    pub fn get_edge_types_column_number(&self) -> Option<usize> {
+        self.edge_types_column_number
     }
 
     /// Set the column of the edge weights.
@@ -474,6 +489,11 @@ impl EdgeFileReader {
         Ok(self)
     }
 
+    /// Return the CSV reader separator
+    pub fn get_separator(&self) -> String {
+        self.reader.separator.clone()
+    }
+
     /// Set the header.
     ///
     /// # Arguments
@@ -526,6 +546,14 @@ impl EdgeFileReader {
     pub fn set_edges_number(mut self, edges_number: Option<EdgeT>) -> EdgeFileReader {
         self.edges_number = edges_number;
         self
+    }
+
+    /// Returns the total number of lines to be skipped.
+    ///
+    /// # Arguments
+    /// * `skip_header`: bool - Whether to skip the header.
+    pub fn get_total_lines_to_skip(&self, skip_header: bool) -> Result<usize> {
+        self.reader.get_total_lines_to_skip(skip_header)
     }
 
     /// Parse a single line (vector of strings already splitted and fitered)

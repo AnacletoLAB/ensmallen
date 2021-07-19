@@ -6,3 +6,5 @@ mod get_selfloops_number_from_edge_list;
 pub use get_selfloops_number_from_edge_list::*;
 mod convert_undirected_edge_list_to_directed;
 pub use convert_undirected_edge_list_to_directed::*;
+mod sort_numeric_edge_list_inplace;
+pub use sort_numeric_edge_list_inplace::*;

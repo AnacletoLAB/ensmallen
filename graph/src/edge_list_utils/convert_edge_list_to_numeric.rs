@@ -190,7 +190,7 @@ pub fn convert_edge_list_to_numeric(
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 ///
-pub fn convert_sparse_numeric_edge_list_to_numeric(
+pub fn densify_sparse_numeric_edge_list(
     maximum_node_id: Option<EdgeT>,
     original_edge_list_path: &str,
     original_edge_list_separator: Option<String>,

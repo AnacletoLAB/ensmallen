@@ -51,12 +51,11 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
         get_edge_type_source_html_url_from_edge_type_name
     ))?;
     m.add_wrapped(wrap_pyfunction!(convert_edge_list_to_numeric))?;
-    m.add_wrapped(wrap_pyfunction!(
-        convert_sparse_numeric_edge_list_to_numeric
-    ))?;
+    m.add_wrapped(wrap_pyfunction!(densify_sparse_numeric_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(convert_undirected_edge_list_to_directed))?;
     m.add_wrapped(wrap_pyfunction!(get_minmax_node_from_numeric_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(get_selfloops_number_from_edge_list))?;
+    m.add_wrapped(wrap_pyfunction!(sort_numeric_edge_list_inplace))?;
     m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
     env_logger::init();
     Ok(())
@@ -554,7 +553,7 @@ pub fn get_edge_type_source_html_url_from_edge_type_name(edge_type_name: &str) -
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column_number, original_edge_list_sources_column, original_edge_list_destinations_column_number, original_edge_list_destinations_column, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+#[text_signature = "(original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column_number, original_edge_list_sources_column, original_edge_list_destinations_column_number, original_edge_list_destinations_column, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column, target_edge_list_sources_column_number, target_edge_list_destinations_column, target_edge_list_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
 /// Create a new edge list starting from given one with node IDs densified.
 ///
 /// Parameters
@@ -639,10 +638,10 @@ pub fn convert_edge_list_to_numeric(
     target_edge_list_path: &str,
     target_edge_list_separator: Option<String>,
     target_edge_list_header: Option<bool>,
-    target_edge_list_sources_column_number: Option<usize>,
     target_edge_list_sources_column: Option<String>,
-    target_edge_list_destinations_column_number: Option<usize>,
+    target_edge_list_sources_column_number: Option<usize>,
     target_edge_list_destinations_column: Option<String>,
+    target_edge_list_destinations_column_number: Option<usize>,
     target_edge_list_edge_type_column: Option<String>,
     target_edge_list_edge_type_column_number: Option<usize>,
     target_edge_list_weights_column: Option<String>,
@@ -673,10 +672,10 @@ pub fn convert_edge_list_to_numeric(
         target_edge_list_path,
         target_edge_list_separator,
         target_edge_list_header,
-        target_edge_list_sources_column_number,
         target_edge_list_sources_column,
-        target_edge_list_destinations_column_number,
+        target_edge_list_sources_column_number,
         target_edge_list_destinations_column,
+        target_edge_list_destinations_column_number,
         target_edge_list_edge_type_column,
         target_edge_list_edge_type_column_number,
         target_edge_list_weights_column,
@@ -696,7 +695,7 @@ pub fn convert_edge_list_to_numeric(
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(maximum_node_id, original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column_number, original_edge_list_sources_column, original_edge_list_destinations_column_number, original_edge_list_destinations_column, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+#[text_signature = "(maximum_node_id, original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column, original_edge_list_sources_column_number, original_edge_list_destinations_column, original_edge_list_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column, target_edge_list_sources_column_number, target_edge_list_destinations_column, target_edge_list_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
 /// Create a new edge list starting from given numeric one with node IDs densified.
 ///
 /// This method is meant as a solution to parse very large sparse numeric graphs,
@@ -708,15 +707,85 @@ pub fn convert_edge_list_to_numeric(
 ///  TODO: In the future we may handle this case as a normal error.
 ///
 ///  TODO! add option to store the node vocabulary.
-pub fn convert_sparse_numeric_edge_list_to_numeric(
+///
+/// Parameters
+/// ----------
+/// maximum_node_id: Optional[int],
+///     The maximum node ID present in this graph. If available, optimal memory allocation will be used.
+/// original_edge_list_path: str,
+///     The path from where to load the original edge list.
+/// original_edge_list_separator: Optional[str],
+///     Separator to use for the original edge list.
+/// original_edge_list_header: Optional[bool],
+///     Whether the original edge list has an header.
+/// original_edge_list_sources_column: Optional[str],
+///     The column name to use to load the sources in the original edges list.
+/// original_edge_list_sources_column_number: Optional[int],
+///     The column number to use to load the sources in the original edges list.
+/// original_edge_list_destinations_column: Optional[str],
+///     The column name to use to load the destinations in the original edges list.
+/// original_edge_list_destinations_column_number: Optional[int],
+///     The column number to use to load the destinations in the original edges list.
+/// original_edge_list_edge_type_column: Optional[str],
+///     The column name to use for the edge types in the original edges list.
+/// original_edge_list_edge_type_column_number: Optional[int],
+///     The column number to use for the edge types in the original edges list.
+/// original_edge_list_weights_column: Optional[str],
+///     The column name to use for the weights in the original edges list.
+/// original_edge_list_weights_column_number: Optional[int],
+///     The column number to use for the weights in the original edges list.
+/// target_edge_list_path: str,
+///     The path from where to load the target edge list.
+/// target_edge_list_separator: Optional[str],
+///     Separator to use for the target edge list.
+/// target_edge_list_header: Optional[bool],
+///     Whether the target edge list has an header.
+/// target_edge_list_sources_column: Optional[str],
+///     The column name to use to load the sources in the target edges list.
+/// target_edge_list_sources_column_number: Optional[int],
+///     The column number to use to load the sources in the target edges list.
+/// target_edge_list_destinations_column: Optional[str],
+///     The column name to use to load the destinations in the target edges list.
+/// target_edge_list_destinations_column_number: Optional[int],
+///     The column number to use to load the destinations in the target edges list.
+/// target_edge_list_edge_type_column: Optional[str],
+///     The column name to use for the edge types in the target edges list.
+/// target_edge_list_edge_type_column_number: Optional[int],
+///     The column number to use for the edge types in the target edges list.
+/// target_edge_list_weights_column: Optional[str],
+///     The column name to use for the weights in the target edges list.
+/// target_edge_list_weights_column_number: Optional[int],
+///     The column number to use for the weights in the target edges list.
+/// comment_symbol: Optional[str],
+///     The comment symbol to use within the original edge list.
+/// default_edge_type: Optional[str],
+///     The default edge type to use within the original edge list.
+/// default_weight: Optional[float],
+///     The default weight to use within the original edge list.
+/// max_rows_number: Optional[int],
+///     The amount of rows to load from the original edge list.
+/// rows_to_skip: Optional[int],
+///     The amount of rows to skip from the original edge list.
+/// edges_number: Optional[int],
+///     The expected number of edges. It will be used for the loading bar.
+/// skip_edge_types_if_unavailable: Optional[bool],
+///     Whether to automatically skip the edge types if they are not available.
+/// skip_weights_if_unavailable: Optional[bool],
+///     Whether to automatically skip the weights if they are not available.
+/// verbose: Optional[bool],
+///     Whether to show the loading bar while processing the file.
+/// name: Optional[str],
+///     The name of the graph to display in the loading bar.
+///
+pub fn densify_sparse_numeric_edge_list(
     maximum_node_id: Option<EdgeT>,
     original_edge_list_path: &str,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
-    original_edge_list_sources_column_number: Option<usize>,
     original_edge_list_sources_column: Option<String>,
-    original_edge_list_destinations_column_number: Option<usize>,
+    original_edge_list_sources_column_number: Option<usize>,
     original_edge_list_destinations_column: Option<String>,
+    original_edge_list_destinations_column_number: Option<usize>,
     original_edge_list_edge_type_column: Option<String>,
     original_edge_list_edge_type_column_number: Option<usize>,
     original_edge_list_weights_column: Option<String>,
@@ -724,10 +793,10 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
     target_edge_list_path: &str,
     target_edge_list_separator: Option<String>,
     target_edge_list_header: Option<bool>,
-    target_edge_list_sources_column_number: Option<usize>,
     target_edge_list_sources_column: Option<String>,
-    target_edge_list_destinations_column_number: Option<usize>,
+    target_edge_list_sources_column_number: Option<usize>,
     target_edge_list_destinations_column: Option<String>,
+    target_edge_list_destinations_column_number: Option<usize>,
     target_edge_list_edge_type_column: Option<String>,
     target_edge_list_edge_type_column_number: Option<usize>,
     target_edge_list_weights_column: Option<String>,
@@ -743,15 +812,15 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<()> {
-    pe!(graph::convert_sparse_numeric_edge_list_to_numeric(
+    pe!(graph::densify_sparse_numeric_edge_list(
         maximum_node_id,
         original_edge_list_path,
         original_edge_list_separator,
         original_edge_list_header,
-        original_edge_list_sources_column_number,
         original_edge_list_sources_column,
-        original_edge_list_destinations_column_number,
+        original_edge_list_sources_column_number,
         original_edge_list_destinations_column,
+        original_edge_list_destinations_column_number,
         original_edge_list_edge_type_column,
         original_edge_list_edge_type_column_number,
         original_edge_list_weights_column,
@@ -759,10 +828,10 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
         target_edge_list_path,
         target_edge_list_separator,
         target_edge_list_header,
-        target_edge_list_sources_column_number,
         target_edge_list_sources_column,
-        target_edge_list_destinations_column_number,
+        target_edge_list_sources_column_number,
         target_edge_list_destinations_column,
+        target_edge_list_destinations_column_number,
         target_edge_list_edge_type_column,
         target_edge_list_edge_type_column_number,
         target_edge_list_weights_column,
@@ -924,23 +993,63 @@ pub fn convert_undirected_edge_list_to_directed(
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(path, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
-/// Return minimum and maximum node number from given numeric edge list
+#[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
+/// Return minimum and maximum node number from given numeric edge list.
+///
+/// Parameters
+/// ----------
+/// path: str,
+///     The path from where to load the edge list.
+/// separator: Optional[str],
+///     The separator for the rows in the edge list.
+/// header: Optional[bool],
+///     Whether the edge list has an header.
+/// sources_column: Optional[str],
+///     The column name to use for the source nodes.
+/// sources_column_number: Optional[int],
+///     The column number to use for the source nodes.
+/// destinations_column: Optional[str],
+///     The column name to use for the destination nodes.
+/// destinations_column_number: Optional[int],
+///     The column number to use for the destination nodes.
+/// comment_symbol: Optional[str],
+///     The comment symbol to use for the lines to skip.
+/// max_rows_number: Optional[int],
+///     The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
+/// rows_to_skip: Optional[int],
+///     Number of rows to skip in the edge list.
+/// edges_number: Optional[int],
+///     Number of edges in the edge list.
+/// load_edge_list_in_parallel: Optional[bool],
+///     Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
+/// verbose: Optional[bool],
+///     Whether to show the loading bar while processing the file.
+/// name: Optional[str],
+///     The name of the graph to display in the loading bar.
+///
+///
+/// Raises
+/// -------
+/// ValueError
+///     If there are problems with the edge list file.
+/// ValueError
+///     If the elements in the edge list are not numeric.
+/// ValueError
+///     If the edge list is empty.
+///
 pub fn get_minmax_node_from_numeric_edge_list(
     path: &str,
     separator: Option<String>,
     header: Option<bool>,
-    sources_column_number: Option<usize>,
     sources_column: Option<String>,
-    destinations_column_number: Option<usize>,
+    sources_column_number: Option<usize>,
     destinations_column: Option<String>,
+    destinations_column_number: Option<usize>,
     comment_symbol: Option<String>,
     max_rows_number: Option<EdgeT>,
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
-    skip_edge_types_if_unavailable: Option<bool>,
-    skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<(EdgeT, EdgeT)> {
@@ -948,17 +1057,15 @@ pub fn get_minmax_node_from_numeric_edge_list(
         path,
         separator,
         header,
-        sources_column_number,
         sources_column,
-        destinations_column_number,
+        sources_column_number,
         destinations_column,
+        destinations_column_number,
         comment_symbol,
         max_rows_number,
         rows_to_skip,
         edges_number,
         load_edge_list_in_parallel,
-        skip_edge_types_if_unavailable,
-        skip_weights_if_unavailable,
         verbose,
         name
     ))
@@ -966,23 +1073,53 @@ pub fn get_minmax_node_from_numeric_edge_list(
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(path, separator, header, sources_column_number, sources_column, destinations_column_number, destinations_column, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
-/// Return number of selfloops in the given edge list
+#[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
+/// Return number of selfloops in the given edge list.
+///
+/// Parameters
+/// ----------
+/// path: str,
+///     The path from where to load the edge list.
+/// separator: Optional[str],
+///     The separator for the rows in the edge list.
+/// header: Optional[bool],
+///     Whether the edge list has an header.
+/// sources_column: Optional[str],
+///     The column name to use for the source nodes.
+/// sources_column_number: Optional[int],
+///     The column number to use for the source nodes.
+/// destinations_column: Optional[str],
+///     The column name to use for the destination nodes.
+/// destinations_column_number: Optional[int],
+///     The column number to use for the destination nodes.
+/// comment_symbol: Optional[str],
+///     The comment symbol to use for the lines to skip.
+/// max_rows_number: Optional[int],
+///     The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
+/// rows_to_skip: Optional[int],
+///     Number of rows to skip in the edge list.
+/// edges_number: Optional[int],
+///     Number of edges in the edge list.
+/// load_edge_list_in_parallel: Optional[bool],
+///     Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
+/// verbose: Optional[bool],
+///     Whether to show the loading bar while processing the file.
+/// name: Optional[str],
+///     The name of the graph to display in the loading bar.
+///
 pub fn get_selfloops_number_from_edge_list(
     path: &str,
     separator: Option<String>,
     header: Option<bool>,
-    sources_column_number: Option<usize>,
     sources_column: Option<String>,
-    destinations_column_number: Option<usize>,
+    sources_column_number: Option<usize>,
     destinations_column: Option<String>,
+    destinations_column_number: Option<usize>,
     comment_symbol: Option<String>,
     max_rows_number: Option<EdgeT>,
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
-    skip_edge_types_if_unavailable: Option<bool>,
-    skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> PyResult<EdgeT> {
@@ -990,19 +1127,75 @@ pub fn get_selfloops_number_from_edge_list(
         path,
         separator,
         header,
-        sources_column_number,
         sources_column,
-        destinations_column_number,
+        sources_column_number,
         destinations_column,
+        destinations_column_number,
         comment_symbol,
         max_rows_number,
         rows_to_skip,
         edges_number,
         load_edge_list_in_parallel,
-        skip_edge_types_if_unavailable,
-        skip_weights_if_unavailable,
         verbose,
         name
+    ))
+}
+
+#[pyfunction]
+#[automatically_generated_binding]
+#[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, edge_types_column, edge_types_column_number, rows_to_skip, skip_edge_types_if_unavailable)"]
+/// Sort given numeric edge list in place.
+///
+/// Parameters
+/// ----------
+/// path: str,
+///     The path from where to load the edge list.
+/// separator: Optional[str],
+///     The separator for the rows in the edge list.
+/// header: Optional[bool],
+///     Whether the edge list has an header.
+/// sources_column: Optional[str],
+///     The column name to use for the source nodes.
+/// sources_column_number: Optional[int],
+///     The column number to use for the source nodes.
+/// destinations_column: Optional[str],
+///     The column name to use for the destination nodes.
+/// destinations_column_number: Optional[int],
+///     The column number to use for the destination nodes.
+/// edge_types_column: Optional[str],
+///     The column name to use for the edge types.
+/// edge_types_column_number: Optional[int],
+///     The column number to use for the edge types.
+/// rows_to_skip: Optional[int],
+///     Number of rows to skip in the edge list.
+/// skip_edge_types_if_unavailable: Optional[bool],
+///     Whether to automatically skip the edge types if they are not available.
+///
+pub fn sort_numeric_edge_list_inplace(
+    path: &str,
+    separator: Option<String>,
+    header: Option<bool>,
+    sources_column: Option<String>,
+    sources_column_number: Option<usize>,
+    destinations_column: Option<String>,
+    destinations_column_number: Option<usize>,
+    edge_types_column: Option<String>,
+    edge_types_column_number: Option<usize>,
+    rows_to_skip: Option<usize>,
+    skip_edge_types_if_unavailable: Option<bool>,
+) -> PyResult<()> {
+    pe!(graph::sort_numeric_edge_list_inplace(
+        path,
+        separator,
+        header,
+        sources_column,
+        sources_column_number,
+        destinations_column,
+        destinations_column_number,
+        edge_types_column,
+        edge_types_column_number,
+        rows_to_skip,
+        skip_edge_types_if_unavailable
     ))
 }
 
