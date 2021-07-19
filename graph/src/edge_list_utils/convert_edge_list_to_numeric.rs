@@ -1,3 +1,5 @@
+use std::intrinsics::unlikely;
+
 use crate::{EdgeFileReader, EdgeFileWriter, EdgeT, EdgeTypeT, NOT_PRESENT, NodeT, Result, Vocabulary, WeightT, utils::ItersWrapper};
 
 /// Create a new edge list starting from given one with node IDs densified.
@@ -202,6 +204,25 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
         ItersWrapper::Parallel(_) => unreachable!("This is not meant to run in parallel."),
         ItersWrapper::Sequential(i) => i,
     };
+    let mut last_numeric_src_name = "".to_string();
+    let mut last_numeric_src_id = 0;
+
+    let mut to_numeric_node_name = |node_name: &str| {
+        let numeric_node_name = node_name.parse::<EdgeT>().unwrap() as usize;
+        // If the vector of the nodes is not big enough, we need to
+        // expand it up to the required amount.
+        if unlikely(nodes.len() <= numeric_node_name) {
+            nodes.extend((nodes.len()..=numeric_node_name).map(|_| NOT_PRESENT));
+        }
+        // If the ID for the current source node was not already provided
+        // we assign to it the current number of inserted nodes
+        if nodes[numeric_node_name] == NOT_PRESENT{
+            nodes[numeric_node_name] = inserted_nodes;
+            inserted_nodes+=1;
+        };
+        // And we return the value
+        nodes[numeric_node_name]
+    };
     file_writer.dump_iterator(
         edges_number,
         lines_iterator
@@ -210,30 +231,16 @@ pub fn convert_sparse_numeric_edge_list_to_numeric(
             // Processing line
             .map(
                 |(line_number, (src_name, dst_name, edge_type, weight))| unsafe {
-                    let numeric_src_name = src_name.parse::<EdgeT>().unwrap() as usize;
-                    let numeric_dst_name = dst_name.parse::<EdgeT>().unwrap() as usize;
-                    // If the vector of the nodes is not big enough, we need to
-                    // expand it up to the required amount.
-                    if nodes.len() <= numeric_src_name || nodes.len() <= numeric_dst_name {
-                        nodes.extend((nodes.len()..=numeric_src_name.max(numeric_dst_name)).map(|_| NOT_PRESENT));
+                    if src_name != last_numeric_src_name{
+                        last_numeric_src_id = to_numeric_node_name(&src_name);
+                        last_numeric_src_name = src_name;
                     }
-                    // If the ID for the current source node was not already provided
-                    // we assign to it the current number of inserted nodes
-                    if nodes[numeric_src_name] == NOT_PRESENT{
-                        nodes[numeric_src_name] = inserted_nodes;
-                        inserted_nodes+=1;
-                    };
-                    // We do the same for the destination node.
-                    if nodes[numeric_dst_name] == NOT_PRESENT{
-                        nodes[numeric_dst_name] = inserted_nodes;
-                        inserted_nodes+=1;
-                    };
                     (
                         line_number as u64,
-                        nodes[numeric_src_name],
-                        "".to_owned(),
-                        nodes[numeric_dst_name],
-                        "".to_owned(),
+                        last_numeric_src_id,
+                        last_numeric_src_name,
+                        to_numeric_node_name(&dst_name),
+                        dst_name,
                         edge_type.map(|edge_type| edge_types.unchecked_insert(edge_type)),
                         None,
                         if weight.is_nan() { None } else { Some(weight) },
