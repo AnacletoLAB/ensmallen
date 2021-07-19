@@ -57,7 +57,7 @@ impl CSVFileWriter {
             Err(_) => Err(format!("Cannot open in writing the file {}", self.path)),
         }?;
 
-        let mut stream = BufWriter::new(file);
+        let mut stream = BufWriter::with_capacity(8 * 1024 * 1024, file);
 
         if self.header {
             let mut line = header.join(&self.separator);
