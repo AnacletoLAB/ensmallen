@@ -51,6 +51,9 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
         get_edge_type_source_html_url_from_edge_type_name
     ))?;
     m.add_wrapped(wrap_pyfunction!(convert_edge_list_to_numeric))?;
+    m.add_wrapped(wrap_pyfunction!(
+        convert_sparse_numeric_edge_list_to_numeric
+    ))?;
     m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
     env_logger::init();
     Ok(())
@@ -585,6 +588,90 @@ pub fn convert_edge_list_to_numeric(
     name: Option<String>,
 ) -> PyResult<()> {
     pe!(graph::convert_edge_list_to_numeric(
+        original_edge_list_path,
+        original_edge_list_separator,
+        original_edge_list_header,
+        original_edge_list_sources_column_number,
+        original_edge_list_sources_column,
+        original_edge_list_destinations_column_number,
+        original_edge_list_destinations_column,
+        original_edge_list_edge_type_column,
+        original_edge_list_edge_type_column_number,
+        original_edge_list_weights_column,
+        original_edge_list_weights_column_number,
+        target_edge_list_path,
+        target_edge_list_separator,
+        target_edge_list_header,
+        target_edge_list_sources_column_number,
+        target_edge_list_sources_column,
+        target_edge_list_destinations_column_number,
+        target_edge_list_destinations_column,
+        target_edge_list_edge_type_column,
+        target_edge_list_edge_type_column_number,
+        target_edge_list_weights_column,
+        target_edge_list_weights_column_number,
+        comment_symbol,
+        default_edge_type,
+        default_weight,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        skip_edge_types_if_unavailable,
+        skip_weights_if_unavailable,
+        verbose,
+        name
+    ))
+}
+
+#[pyfunction]
+#[automatically_generated_binding]
+#[text_signature = "(nodes_number, original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column_number, original_edge_list_sources_column, original_edge_list_destinations_column_number, original_edge_list_destinations_column, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column_number, target_edge_list_sources_column, target_edge_list_destinations_column_number, target_edge_list_destinations_column, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+/// Create a new edge list starting from given numeric one with node IDs densified.
+///
+/// This method is meant as a solution to parse very large sparse numeric graphs,
+/// like for instance ClueWeb.
+///
+/// Safety
+/// ------
+/// This method will panic if the node IDs are not numeric.
+///  TODO: In the future we may handle this case as a normal error.
+pub fn convert_sparse_numeric_edge_list_to_numeric(
+    nodes_number: Option<EdgeT>,
+    original_edge_list_path: &str,
+    original_edge_list_separator: Option<String>,
+    original_edge_list_header: Option<bool>,
+    original_edge_list_sources_column_number: Option<usize>,
+    original_edge_list_sources_column: Option<String>,
+    original_edge_list_destinations_column_number: Option<usize>,
+    original_edge_list_destinations_column: Option<String>,
+    original_edge_list_edge_type_column: Option<String>,
+    original_edge_list_edge_type_column_number: Option<usize>,
+    original_edge_list_weights_column: Option<String>,
+    original_edge_list_weights_column_number: Option<usize>,
+    target_edge_list_path: &str,
+    target_edge_list_separator: Option<String>,
+    target_edge_list_header: Option<bool>,
+    target_edge_list_sources_column_number: Option<usize>,
+    target_edge_list_sources_column: Option<String>,
+    target_edge_list_destinations_column_number: Option<usize>,
+    target_edge_list_destinations_column: Option<String>,
+    target_edge_list_edge_type_column: Option<String>,
+    target_edge_list_edge_type_column_number: Option<usize>,
+    target_edge_list_weights_column: Option<String>,
+    target_edge_list_weights_column_number: Option<usize>,
+    comment_symbol: Option<String>,
+    default_edge_type: Option<String>,
+    default_weight: Option<WeightT>,
+    max_rows_number: Option<EdgeT>,
+    rows_to_skip: Option<usize>,
+    edges_number: Option<usize>,
+    skip_edge_types_if_unavailable: Option<bool>,
+    skip_weights_if_unavailable: Option<bool>,
+    verbose: Option<bool>,
+    name: Option<String>,
+) -> PyResult<()> {
+    pe!(graph::convert_sparse_numeric_edge_list_to_numeric(
+        nodes_number,
         original_edge_list_path,
         original_edge_list_separator,
         original_edge_list_header,
