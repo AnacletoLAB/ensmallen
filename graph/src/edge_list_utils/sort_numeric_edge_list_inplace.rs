@@ -86,7 +86,7 @@ pub fn sort_numeric_edge_list_inplace(
             // We want to remove eventual duplicates
             "--unique",
             // We want to sort the file inplace
-            format!("--output {}", path).as_ref(),
+            format!("--output={}", path).as_ref(),
         ])
         .stdin(head_command.stdout.unwrap())
         .status();
