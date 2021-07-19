@@ -12,10 +12,12 @@ use super::*;
 pub struct NodeFileWriter {
     pub(crate) writer: CSVFileWriter,
     pub(crate) nodes_column: String,
-    pub(crate) node_types_column: String,
+    pub(crate) node_types_column: Option<String>,
     pub(crate) nodes_column_number: usize,
-    pub(crate) node_types_column_number: usize,
-    pub(crate) node_types_separator: String,
+    pub(crate) node_types_column_number: Option<usize>,
+    pub(crate) node_types_separator: Option<String>,
+    number_of_columns: usize,
+    columns_are_dense: bool,
 }
 
 impl NodeFileWriter {
@@ -30,10 +32,21 @@ impl NodeFileWriter {
             writer: CSVFileWriter::new(path),
             nodes_column: "id".to_string(),
             nodes_column_number: 0,
-            node_types_column: "category".to_string(),
-            node_types_column_number: 1,
-            node_types_separator: "".to_string(),
+            node_types_column: None,
+            node_types_column_number: None,
+            node_types_separator: None,
+            number_of_columns: 1,
+            columns_are_dense: true,
         }
+    }
+
+    // Return whether the columns are currently dense.
+    fn are_columns_dense(&self) -> bool {
+        self.nodes_column_number == 0
+            && self
+                .node_types_column_number
+                .as_ref()
+                .map_or(true, |&ntcn| ntcn == 1)
     }
 
     /// Set the column of the nodes.
@@ -60,7 +73,7 @@ impl NodeFileWriter {
         nodes_type_column: Option<S>,
     ) -> NodeFileWriter {
         if let Some(column) = nodes_type_column {
-            self.node_types_column = column.into();
+            self.node_types_column = Some(column.into());
         }
         self
     }
@@ -72,8 +85,10 @@ impl NodeFileWriter {
     /// * nodes_column_number: Option<usize> - The nodes column_number to use for the file.
     ///
     pub fn set_nodes_column_number(mut self, nodes_column_number: Option<usize>) -> NodeFileWriter {
-        if let Some(column) = nodes_column_number {
-            self.nodes_column_number = column;
+        if let Some(column_number) = nodes_column_number {
+            self.nodes_column_number = column_number;
+            self.number_of_columns = self.number_of_columns.max(column_number + 1);
+            self.columns_are_dense = self.are_columns_dense();
         }
         self
     }
@@ -88,8 +103,10 @@ impl NodeFileWriter {
         mut self,
         node_types_column_number: Option<usize>,
     ) -> NodeFileWriter {
-        if let Some(v) = node_types_column_number {
-            self.node_types_column_number = v;
+        if let Some(column_number) = node_types_column_number {
+            self.node_types_column_number = Some(column_number);
+            self.number_of_columns = self.number_of_columns.max(column_number + 1);
+            self.columns_are_dense = self.are_columns_dense();
         }
         self
     }
@@ -133,6 +150,21 @@ impl NodeFileWriter {
         self
     }
 
+    fn build_header(&self) -> (Vec<String>, Vec<usize>) {
+        // build the header
+        let mut header_values = vec![self.nodes_column.clone()];
+        let mut header_positions = vec![self.nodes_column_number];
+
+        if let (Some(node_types_column), Some(node_types_column_number)) =
+            (&self.node_types_column, self.node_types_column_number)
+        {
+            header_values.push(node_types_column.clone());
+            header_positions.push(node_types_column_number);
+        }
+
+        (header_values, header_positions)
+    }
+
     /// Write nodes to file.
     ///
     /// # Arguments
@@ -140,37 +172,47 @@ impl NodeFileWriter {
     /// * `graph`: &Graph, reference to graph to use.
     pub fn dump(&self, graph: &Graph) -> Result<()> {
         // build the header
-        let mut header = vec![(self.nodes_column.clone(), self.nodes_column_number)];
-
-        if graph.has_node_types() {
-            header.push((
-                self.node_types_column.clone(),
-                self.node_types_column_number,
-            ));
+        let (header_values, header_positions) = self.build_header();
+        // If the graph has multiple node labels we need a separator to join them.
+        if self.node_types_separator.is_none()
+            && graph.has_node_types()
+            && graph.has_multilabel_node_types().unwrap()
+        {
+            return Err(concat!(
+                "The current graph instance has multilabel node types ",
+                "but no node type separator was provided!"
+            )
+            .to_string());
         }
-
-        let number_of_columns = 1 + header.iter().map(|(_, i)| i).max().unwrap();
-
         self.writer.write_lines(
             Some(graph.get_nodes_number() as usize),
-            compose_lines(number_of_columns, header),
-            (0..graph.get_nodes_number()).map(|node_id| {
-                let mut line = vec![(
-                    graph.nodes.unchecked_translate(node_id),
-                    self.nodes_column_number,
-                )];
+            compose_lines(self.number_of_columns, header_values, header_positions),
+            graph.iter_node_names_and_node_type_names().map(
+                |(_, node_name, _, node_type_names)| {
+                    let mut line = vec![node_name];
+                    let mut positions = vec![];
 
-                if graph.has_node_types() {
-                    line.push((
-                        match graph.get_node_type_names_from_node_id(node_id).unwrap() {
-                            Some(values) => values.join(&self.node_types_separator),
-                            None => "".to_string(),
-                        },
-                        self.node_types_column_number,
-                    ));
-                }
-                compose_lines(number_of_columns, line)
-            }),
+                    if !self.columns_are_dense {
+                        positions.push(self.nodes_column_number);
+                    }
+
+                    if let Some(column_number) = &self.node_types_column_number {
+                        line.push(match (node_type_names, &self.node_types_separator) {
+                            (None, _) => "".to_string(),
+                            (Some(ntns), Some(sep)) => ntns.join(sep),
+                            (Some(mut ntns), None) => ntns.pop().unwrap(),
+                        });
+                        if !self.columns_are_dense {
+                            positions.push(*column_number);
+                        }
+                    }
+                    if self.columns_are_dense {
+                        line
+                    } else {
+                        compose_lines(self.number_of_columns, line, positions)
+                    }
+                },
+            ),
         )
     }
 }

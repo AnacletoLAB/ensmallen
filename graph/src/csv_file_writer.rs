@@ -49,7 +49,7 @@ impl CSVFileWriter {
         let pb = get_loading_bar(
             self.verbose && lines_number.is_some(),
             "Writing to file",
-            lines_number.unwrap_or(0)
+            lines_number.unwrap_or(0),
         );
 
         let file = match File::create(self.path.clone()) {
@@ -94,11 +94,16 @@ impl CSVFileWriter {
 /// # Arguments
 ///
 /// * `number_of_columns`: usize - Total number of columns to renderize.
-/// * `pairs`: Vec<(String, usize)> - Vector of tuples of column names and their position.
-pub(crate) fn compose_lines(number_of_columns: usize, pairs: Vec<(String, usize)>) -> Vec<String> {
-    let mut values = vec!["".to_string(); number_of_columns];
-    for (name, pos) in pairs {
-        values[pos] = name
+/// * `values`: Vec<String> - Vector of column values.
+/// * `positions`: Vec<usize> - Vector of column numbers.
+pub(crate) fn compose_lines(
+    number_of_columns: usize,
+    values: Vec<String>,
+    positions: Vec<usize>,
+) -> Vec<String> {
+    let mut new_values = vec!["".to_string(); number_of_columns];
+    for (name, pos) in values.into_iter().zip(positions.into_iter()) {
+        new_values[pos] = name
     }
-    values
+    new_values
 }
