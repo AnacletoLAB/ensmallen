@@ -1730,7 +1730,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
         .set_verbose(verbose)
         .set_separator(Some("\t"))
         .set_header(Some(true))
-        .set_edge_types_column(Some("edge_types"))
+        .set_edge_types_column(Some("edge_types".to_owned()))
         .set_destinations_column_number(Some(3))
         .set_weights_column(Some("weight".to_string()))
         .set_weights_column_number(Some(2))
@@ -1739,7 +1739,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
         .set_destinations_column(Some("The land of pizza".to_string()))
         .set_destinations_column_number(Some(1));
 
-    edges_writer.dump(&graph)?;
+    edges_writer.dump_graph(&graph)?;
     fs::remove_file(edges_file).unwrap();
 
     Ok(())

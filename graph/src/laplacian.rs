@@ -80,7 +80,7 @@ impl Graph {
             |graph, node_id| unsafe {
                 graph.get_unchecked_node_degree_from_node_id(node_id) as WeightT
             },
-            self.is_directed(),
+            true,
         )
     }
 
@@ -102,8 +102,8 @@ impl Graph {
     pub fn get_symmetric_normalized_laplacian_transformed_graph(&self) -> Result<Graph> {
         self.must_be_undirected()?;
         Ok(self.get_transformed_graph(
-            |graph, src, dst| {
-                -1.0 / unsafe {
+            |graph, src, dst| unsafe {
+                -1.0 / {
                     ((graph.get_unchecked_node_degree_from_node_id(src)
                         * graph.get_unchecked_node_degree_from_node_id(dst))
                         as f64)
@@ -122,13 +122,11 @@ impl Graph {
     pub fn get_symmetric_normalized_transformed_graph(&self) -> Result<Graph> {
         self.must_be_undirected()?;
         Ok(self.get_transformed_graph(
-            |graph, src, dst| {
-                1.0 / unsafe {
-                    ((graph.get_unchecked_node_degree_from_node_id(src)
-                        * graph.get_unchecked_node_degree_from_node_id(dst))
-                        as f64)
-                        .sqrt() as WeightT
-                }
+            |graph, src, dst| unsafe {
+                (1.0 / ((graph.get_unchecked_node_degree_from_node_id(src)
+                    * graph.get_unchecked_node_degree_from_node_id(dst))
+                    as f64)
+                    .sqrt()) as WeightT
             },
             |_, _| 1.0,
             self.is_directed(),

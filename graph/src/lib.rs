@@ -10,6 +10,7 @@
 #![warn(unused_macros)]
 #![feature(is_sorted)]
 #![feature(map_first_last)]
+#![feature(core_intrinsics)]
 #![type_length_limit = "3764086"]
 #![feature(option_result_unwrap_unchecked)]
 #![feature(core_intrinsics)]
@@ -59,6 +60,7 @@ pub(crate) use self::utils::*;
 mod bitmaps;
 mod centrality;
 mod dense;
+mod edge_list_utils;
 mod edge_lists;
 mod edge_metrics;
 mod filters;
@@ -73,23 +75,24 @@ mod modifiers;
 mod operators;
 mod polygons;
 mod preprocessing;
+mod random_graphs;
 mod remap;
 mod remove;
 mod selfloops;
 mod setters;
+mod sort;
 mod tarjan;
-mod url_utilities;
 mod tfidf;
 mod thickeners;
 mod to_conversions;
 mod transitivity;
 mod trees;
-mod random_graphs;
 mod types;
-mod sort;
+mod url_utilities;
 mod vertex_cover;
 mod walks;
 pub mod walks_parameters;
+pub use edge_list_utils::*;
 
 mod report;
 pub use self::report::*;

@@ -28,6 +28,16 @@ where
     I: Iterator<Item = Item>,
     P: ParallelIterator<Item = Item>,
 {
+    pub fn sum<S>(self) -> S
+    where
+        S: Send + std::iter::Sum<Item> + std::iter::Sum<S>,
+    {
+        match self {
+            Self::Parallel(p) => p.sum(),
+            Self::Sequential(i) => i.sum(),
+        }
+    }
+
     pub fn map<F, R>(self, op: F) -> ItersWrapper<R, std::iter::Map<I, F>, rayon::iter::Map<P, F>>
     where
         R: Send,
@@ -36,6 +46,20 @@ where
         match self {
             Self::Parallel(p) => ItersWrapper::Parallel(p.map(op)),
             Self::Sequential(i) => ItersWrapper::Sequential(i.map(op)),
+        }
+    }
+
+    pub fn filter_map<F, R>(
+        self,
+        op: F,
+    ) -> ItersWrapper<R, std::iter::FilterMap<I, F>, rayon::iter::FilterMap<P, F>>
+    where
+        R: Send,
+        F: Fn(Item) -> Option<R> + Sync + Send,
+    {
+        match self {
+            Self::Parallel(p) => ItersWrapper::Parallel(p.filter_map(op)),
+            Self::Sequential(i) => ItersWrapper::Sequential(i.filter_map(op)),
         }
     }
 
@@ -50,6 +74,21 @@ where
     {
         match self {
             Self::Parallel(p) => ItersWrapper::Parallel(p.flat_map(op)),
+            Self::Sequential(i) => ItersWrapper::Sequential(i.flat_map(op)),
+        }
+    }
+
+    pub fn flat_map_iter<F, R, U>(
+        self,
+        op: F,
+    ) -> ItersWrapper<R, std::iter::FlatMap<I, U, F>, rayon::iter::FlatMapIter<P, F>>
+    where
+        R: Send,
+        U: IntoParallelIterator<Item = R> + IntoIterator<Item = R>,
+        F: Fn(Item) -> U + Sync + Send,
+    {
+        match self {
+            Self::Parallel(p) => ItersWrapper::Parallel(p.flat_map_iter(op)),
             Self::Sequential(i) => ItersWrapper::Sequential(i.flat_map(op)),
         }
     }
@@ -136,6 +175,27 @@ where
         match self {
             Self::Parallel(p) => p.collect::<B>(),
             Self::Sequential(i) => i.collect::<B>(),
+        }
+    }
+}
+
+impl<Item, I, P> ItersWrapper<Item, I, P>
+where
+    Item: Send + Ord,
+    I: Iterator<Item = Item>,
+    P: ParallelIterator<Item = Item>,
+{
+    pub fn max<F>(self) -> Option<Item> {
+        match self {
+            Self::Parallel(p) => p.max(),
+            Self::Sequential(i) => i.max(),
+        }
+    }
+
+    pub fn min<F>(self) -> Option<Item> {
+        match self {
+            Self::Parallel(p) => p.min(),
+            Self::Sequential(i) => i.min(),
         }
     }
 }

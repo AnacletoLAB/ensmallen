@@ -37,23 +37,27 @@ impl CSVFileWriter {
     ///
     /// # Arguments
     ///
-    /// * `lines_number`: u64 - Number of lines to expect to write out.
+    /// * `lines_number`: Option<usize> - Number of lines to expect to write out.
     /// * `header`: Vec<String> - The header to write out, if so required.
     /// * `values`: impl Iterator<Item = Vec<String>> - Iterator of rows to write out.
     pub(crate) fn write_lines(
         &self,
-        lines_number: usize,
+        lines_number: Option<usize>,
         header: Vec<String>,
         values: impl Iterator<Item = Vec<String>>,
     ) -> Result<()> {
-        let pb = get_loading_bar(self.verbose, "Writing to file", lines_number);
+        let pb = get_loading_bar(
+            self.verbose && lines_number.is_some(),
+            "Writing to file",
+            lines_number.unwrap_or(0),
+        );
 
         let file = match File::create(self.path.clone()) {
             Ok(f) => Ok(f),
             Err(_) => Err(format!("Cannot open in writing the file {}", self.path)),
         }?;
 
-        let mut stream = BufWriter::new(file);
+        let mut stream = BufWriter::with_capacity(8 * 1024 * 1024, file);
 
         if self.header {
             let mut line = header.join(&self.separator);
@@ -90,11 +94,16 @@ impl CSVFileWriter {
 /// # Arguments
 ///
 /// * `number_of_columns`: usize - Total number of columns to renderize.
-/// * `pairs`: Vec<(String, usize)> - Vector of tuples of column names and their position.
-pub(crate) fn compose_lines(number_of_columns: usize, pairs: Vec<(String, usize)>) -> Vec<String> {
-    let mut values = vec!["".to_string(); number_of_columns];
-    for (name, pos) in pairs {
-        values[pos] = name
+/// * `values`: Vec<String> - Vector of column values.
+/// * `positions`: Vec<usize> - Vector of column numbers.
+pub(crate) fn compose_lines(
+    number_of_columns: usize,
+    values: Vec<String>,
+    positions: Vec<usize>,
+) -> Vec<String> {
+    let mut new_values = vec!["".to_string(); number_of_columns];
+    for (name, pos) in values.into_iter().zip(positions.into_iter()) {
+        new_values[pos] = name
     }
-    values
+    new_values
 }

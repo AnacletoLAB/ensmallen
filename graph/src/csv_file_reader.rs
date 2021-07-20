@@ -163,6 +163,24 @@ impl CSVFileReader {
         )
     }
 
+    /// Returns the total number of lines to be skipped.
+    ///
+    /// # Arguments
+    /// * `skip_header`: bool - Whether to skip the header.
+    pub fn get_total_lines_to_skip(&self, skip_header: bool) -> Result<usize> {
+        Ok(match skip_header {
+            true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {
+                Some(v) => Ok(v),
+                None => Err(concat!(
+                    "This overflow was caused because rows to skip = 2**64 - 1",
+                    "and header is set to true which causes to skip one extra line.",
+                    "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
+                )),
+            }?,
+            false => self.rows_to_skip as u64,
+        } as usize)
+    }
+
     /// Returns a sequential lines iterator.
     ///
     /// # Arguments
@@ -173,17 +191,7 @@ impl CSVFileReader {
         skip_header: bool,
         verbose: bool,
     ) -> Result<impl Iterator<Item = (usize, Result<String>)> + '_> {
-        let rows_to_skip = match skip_header {
-            true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {
-                Some(v) => Ok(v),
-                None => Err(concat!(
-                    "This overflow was caused because rows to skip = 2**64 - 1",
-                    "and header is set to true which causes to skip one extra line.",
-                    "Do you **really** want to skip 18446744073709551615 lines? Bad person. Bad."
-                )),
-            }?,
-            false => self.rows_to_skip as u64,
-        } as usize;
+        let rows_to_skip = self.get_total_lines_to_skip(skip_header)?;
 
         // We create the loading bar
         // We already tested removing this and it does not appear to be a bottleneck.
