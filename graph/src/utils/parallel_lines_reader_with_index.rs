@@ -14,8 +14,7 @@ const READER_CAPACITY: usize = 8 * 1024 * 1024;
 const BUFFER_SIZE: usize = 64;
 const MAXIMUM_NUMBER_OF_PRODUCERS: usize = 12;
 
-fn lines_reader(file: File, producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>) {
-    let reader = BufReader::with_capacity(READER_CAPACITY, file);
+fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>, comment_symbol: Option<String>) {
     let mut cells_to_populate_number: usize = 0;
     let mut write_index: usize = 0;
     let mut producer: Arc<SPSCRingBuffer> = {
@@ -28,6 +27,10 @@ fn lines_reader(file: File, producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>) {
         .map(|line| match line {
             Ok(l) => Ok(l),
             Err(e) => Err(e.to_string()),
+        }).filter(move |line| match (line, comment_symbol) {
+            (Ok(line), Some(cs)) => !line.is_empty() && !line.starts_with(cs),
+            (Ok(line), _) => !line.is_empty(),
+            _ => true
         })
         .enumerate()
     {
@@ -76,7 +79,9 @@ type IterType = (usize, Result<String, String>);
 #[derive(Clone)]
 pub struct ParallelLinesWithIndex<'a> {
     path: &'a str,
+    comment_symbol: Option<String>,
     number_of_lines: Option<usize>,
+    number_of_rows_to_skip: Option<usize>,
 }
 
 impl<'a> ParallelLinesWithIndex<'a>{
@@ -89,7 +94,17 @@ impl<'a> ParallelLinesWithIndex<'a>{
         Ok(ParallelLinesWithIndex {
             path,
             number_of_lines: None,
+            comment_symbol: None,
+            number_of_rows_to_skip: None,
         })
+    }
+
+    pub fn skip_rows(&mut self, number_of_rows_to_skip: usize) {
+        self.number_of_rows_to_skip = Some(number_of_rows_to_skip);
+    }
+
+    pub fn comment_symbol(&mut self, comment_symbol: String) {
+        self.comment_symbol = Some(comment_symbol);
     }
 }
 
@@ -101,11 +116,19 @@ impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
         let file = File::open(self.path.clone()).unwrap();
+        let reader = BufReader::with_capacity(READER_CAPACITY, file);
+
+        if let Some(rts) = self.number_of_rows_to_skip {
+            for _ in 0..rts {
+                let mut _buffer = String::new();
+                reader.read_line(&mut _buffer).unwrap();
+            }
+        }
 
         let buffers = Arc::new(RwLock::new(vec![]));
         let producer = ParalellLinesProducerWithIndex::new(buffers.clone()).unwrap();
 
-        thread::spawn(|| lines_reader(file, buffers));
+        thread::spawn(|| lines_reader(reader, buffers, self.comment_symbol));
         bridge_unindexed(producer, consumer)
     }
 
