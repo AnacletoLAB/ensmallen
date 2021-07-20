@@ -57,7 +57,7 @@ pub fn sort_numeric_edge_list(
 
     let sed_command_status = std::process::Command::new("sed")
         .args(&[
-            format!("1,{}d", file_reader.get_total_lines_to_skip(true)? + 1,).as_ref(),
+            format!("1,{}d", file_reader.get_total_lines_to_skip(true)?,).as_ref(),
             path,
         ])
         .stdout(std::process::Stdio::piped())
@@ -95,6 +95,8 @@ pub fn sort_numeric_edge_list(
         },
         // The values in the keys are numeric
         "--numeric-sort".to_owned(),
+        // We want to remove duplicates
+        "--unique".to_owned(),
         // We want to sort the file inplace
         format!("--output={}", target_path),
     ]
