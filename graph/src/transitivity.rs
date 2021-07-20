@@ -251,7 +251,7 @@ impl Graph {
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             true,
-            self.is_directed(),
+            self.is_directed() || iterations.is_some(),
             Some(true),
             Some(false),
             Some(false),
