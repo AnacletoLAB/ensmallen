@@ -73,34 +73,37 @@ pub fn sort_numeric_edge_list(
         .to_owned()),
     }?;
 
+    let arguments = vec![
+        // We specify the separator of the fields
+        format!("--field-separator={}", file_reader.get_separator()),
+        // We want to sort over the source and destination columns
+        // and also the edge types if they are available, in order
+        // to avoid dropping duplicate-like lines that are actually
+        // edges from a multigraph.
+        format!(
+            "--key={key},{key}",
+            key = file_reader.get_sources_column_number() + 1
+        ),
+        format!(
+            "--key={key},{key}",
+            key = file_reader.get_destinations_column_number() + 1
+        ),
+        if let Some(edge_types_column) = file_reader.get_edge_types_column_number() {
+            format!("--key={key},{key}", key = edge_types_column + 1)
+        } else {
+            "".to_owned()
+        },
+        // The values in the keys are numeric
+        "--numeric-sort".to_owned(),
+        // We want to sort the file inplace
+        format!("--output={}", target_path),
+    ]
+    .into_iter()
+    .filter(|arg| !arg.is_empty())
+    .collect::<Vec<String>>();
+
     let sort_command_status = std::process::Command::new("sort")
-        .args(&[
-            // We specify the separator of the fields
-            format!("--field-separator={}", file_reader.get_separator()).as_ref(),
-            // We want to sort over the source and destination columns
-            // and also the edge types if they are available, in order
-            // to avoid dropping duplicate-like lines that are actually
-            // edges from a multigraph.
-            if let Some(edge_types_column) = file_reader.get_edge_types_column_number() {
-                format!(
-                    "--key={},{},{}",
-                    file_reader.get_sources_column_number() + 1,
-                    file_reader.get_destinations_column_number() + 1,
-                    edge_types_column + 1
-                )
-            } else {
-                format!(
-                    "--key={},{}",
-                    file_reader.get_sources_column_number() + 1,
-                    file_reader.get_destinations_column_number() + 1
-                )
-            }
-            .as_ref(),
-            // The values in the keys are numeric
-            "--numeric-sort",
-            // We want to sort the file inplace
-            format!("--output={}", target_path).as_ref(),
-        ])
+        .args(arguments)
         .stdin(sed_command.stdout.unwrap())
         .status();
 
