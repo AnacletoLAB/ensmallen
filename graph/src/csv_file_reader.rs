@@ -145,7 +145,7 @@ impl CSVFileReader {
             }?,
             false => self.rows_to_skip as u64,
         } as usize;
-        let mut parallell_buffer = ParallelLines::new(&self.path)?;
+        let mut parallell_buffer = ParallelLinesWithIndex::new(&self.path)?;
         parallell_buffer.skip_rows(rows_to_skip);
         Ok(
             parallell_buffer
@@ -167,6 +167,8 @@ impl CSVFileReader {
     ///
     /// # Arguments
     /// * `skip_header`: bool - Whether to skip the header.
+    ///
+    /// TODO! Add lines to skip with comments.
     pub fn get_total_lines_to_skip(&self, skip_header: bool) -> Result<usize> {
         Ok(match skip_header {
             true => match (self.rows_to_skip as u64).checked_add(self.header as u64) {

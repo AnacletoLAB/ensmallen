@@ -1,4 +1,3 @@
-
 use rayon::iter::plumbing::{bridge_unindexed, UnindexedProducer};
 use rayon::prelude::*;
 use std::cell::UnsafeCell;
@@ -14,21 +13,6 @@ use std::time::Duration;
 const READER_CAPACITY: usize = 8 * 1024 * 1024;
 const BUFFER_SIZE: usize = 64;
 const MAXIMUM_NUMBER_OF_PRODUCERS: usize = 12;
-
-macro_rules! debug {
-    ($fmt:literal, $($vals:expr),*) => {
-        if false {
-            println!($fmt, $($vals),*);
-        }
-    };
-}
-
-fn xorshift(mut x: usize) -> usize {
-    x ^= x >> 13;
-    x ^= x << 7;
-    x ^= x >> 17;
-    x
-}
 
 fn lines_reader(file: File, producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>) {
     let reader = BufReader::with_capacity(READER_CAPACITY, file);
@@ -53,18 +37,13 @@ fn lines_reader(file: File, producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>) {
         'inner: while cells_to_populate_number == 0 {
             let producers = producers.read().unwrap();
             let producers_number = producers.len();
-            let seed = xorshift(line_number);
-            for producer_index in (seed..(seed + producers_number))
+            for producer_index in (line_number..(line_number + producers_number))
                 .map(|index| index % producers_number)
             {
                 let (free_cells_number, this_write_index) =
                     producers[producer_index].get_free_cells_number_and_write_index();
 
                 if free_cells_number != 0 {
-                    debug!(
-                        "Found producer number {} to fill which has {} free cells",
-                        producer_index, free_cells_number
-                    );
                     producer = producers[producer_index].clone();
                     cells_to_populate_number = free_cells_number;
                     write_index = this_write_index;
@@ -80,7 +59,6 @@ fn lines_reader(file: File, producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>) {
         // If we have finished populating the cells,
         // we need to update the write index
         if cells_to_populate_number == 0 {
-            debug!("updating write index to {}", write_index);
             producer.set_write_index_to_first_empty_cell(write_index)
         }
     }
@@ -91,21 +69,31 @@ fn lines_reader(file: File, producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>) {
     for producer in producers.iter() {
         producer.stop();
     }
-    debug!(
-        "END: {:?}",
-        producers.iter().map(|x| x.len()).collect::<Vec<_>>()
-    );
 }
 
 type IterType = (usize, Result<String, String>);
 
 #[derive(Clone)]
-pub struct ParalellLinesWithIndex<'a> {
+pub struct ParallelLinesWithIndex<'a> {
     path: &'a str,
     number_of_lines: Option<usize>,
 }
 
-impl<'a> ParallelIterator for ParalellLinesWithIndex<'a> {
+impl<'a> ParallelLinesWithIndex<'a>{
+    pub fn new(path: &'a str) -> Result<ParallelLinesWithIndex<'a>, String> {
+        match File::open(path.clone()) {
+            Ok(_) => Ok(()),
+            Err(_) => Err(format!("Cannot open file {}", path)),
+        }?;
+
+        Ok(ParallelLinesWithIndex {
+            path,
+            number_of_lines: None,
+        })
+    }
+}
+
+impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
     type Item = IterType;
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
@@ -160,11 +148,6 @@ impl SPSCRingBuffer {
 
     pub fn read(&self) -> Option<IterType> {
         let idx = self.read_idx.load(Ordering::SeqCst);
-        debug!(
-            "read: r_idx: {} w_idx: {}",
-            idx,
-            self.write_idx.load(Ordering::SeqCst)
-        );
         while unlikely(idx == self.write_idx.load(Ordering::SeqCst)) {
             if unlikely(self.is_stopped()) {
                 return None;
