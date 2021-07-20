@@ -27,8 +27,8 @@ fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingB
         .map(|line| match line {
             Ok(l) => Ok(l),
             Err(e) => Err(e.to_string()),
-        }).filter(move |line| match (line, comment_symbol) {
-            (Ok(line), Some(cs)) => !line.is_empty() && !line.starts_with(&cs),
+        }).filter(move |line| match (line, &comment_symbol) {
+            (Ok(line), Some(cs)) => !line.is_empty() && !line.starts_with(cs),
             (Ok(line), _) => !line.is_empty(),
             _ => true
         })
@@ -114,7 +114,7 @@ impl ParallelIterator for ParallelLinesWithIndex{
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
-        let reader = BufReader::with_capacity(READER_CAPACITY, self.file);
+        let mut reader = BufReader::with_capacity(READER_CAPACITY, self.file);
 
         if let Some(rts) = self.number_of_rows_to_skip {
             for _ in 0..rts {
