@@ -126,7 +126,8 @@ impl ParallelIterator for ParallelLinesWithIndex{
         let buffers = Arc::new(RwLock::new(vec![]));
         let producer = ParalellLinesProducerWithIndex::new(buffers.clone()).unwrap();
 
-        thread::spawn(|| lines_reader(reader, buffers, self.comment_symbol));
+        let comment_symbol = self.comment_symbol;
+        thread::spawn(|| lines_reader(reader, buffers, comment_symbol));
         bridge_unindexed(producer, consumer)
     }
 
