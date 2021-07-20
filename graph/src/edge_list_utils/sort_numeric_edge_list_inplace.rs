@@ -2,6 +2,11 @@ use crate::{EdgeFileReader, Result};
 
 /// Sort given numeric edge list in place.
 ///
+/// # Implementative details
+/// Note that the header and the rows to skip in general will
+/// be removed from the file before being sorted, hence they will
+/// not appear in the sorted result.
+///
 /// # Arguments
 /// * `path`: &str - The path from where to load the edge list.
 /// * `separator`: Option<String> - The separator for the rows in the edge list.
@@ -28,6 +33,14 @@ pub fn sort_numeric_edge_list_inplace(
     rows_to_skip: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
 ) -> Result<()> {
+
+    if cfg!(target_os = "windows"){
+        return Err(concat!(
+            "This utility is based on the sort command, which is ",
+            "not available on Windows, but only macOS and Linux. ",
+        ).to_string())
+    }
+
     let file_reader = EdgeFileReader::new(path)?
         .set_separator(separator)?
         .set_destinations_column(destinations_column)?
