@@ -8,6 +8,9 @@ pub use method_caller::*;
 mod parallel_lines_reader;
 pub use parallel_lines_reader::ParallelLines;
 
+mod parallel_lines_reader_with_index;
+pub use parallel_lines_reader_with_index::*;
+
 mod iters_wrapper;
 pub use iters_wrapper::ItersWrapper;
 

@@ -12,6 +12,7 @@
 #![feature(map_first_last)]
 #![type_length_limit = "3764086"]
 #![feature(option_result_unwrap_unchecked)]
+#![feature(core_intrinsics)]
 
 mod vocabulary;
 pub use self::vocabulary::Vocabulary;
