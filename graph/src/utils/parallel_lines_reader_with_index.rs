@@ -76,23 +76,22 @@ fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingB
 
 type IterType = (usize, Result<String, String>);
 
-#[derive(Clone)]
-pub struct ParallelLinesWithIndex<'a> {
-    path: &'a str,
+pub struct ParallelLinesWithIndex {
+    file: File,
     comment_symbol: Option<String>,
     number_of_lines: Option<usize>,
     number_of_rows_to_skip: Option<usize>,
 }
 
-impl<'a> ParallelLinesWithIndex<'a>{
-    pub fn new(path: &'a str) -> Result<ParallelLinesWithIndex<'a>, String> {
-        match File::open(path.clone()) {
-            Ok(_) => Ok(()),
+impl ParallelLinesWithIndex{
+    pub fn new(path: &str) -> Result<ParallelLinesWithIndex, String> {
+        let file = match File::open(path.clone()) {
+            Ok(file) => Ok(file),
             Err(_) => Err(format!("Cannot open file {}", path)),
         }?;
 
         Ok(ParallelLinesWithIndex {
-            path,
+            file,
             number_of_lines: None,
             comment_symbol: None,
             number_of_rows_to_skip: None,
@@ -108,15 +107,14 @@ impl<'a> ParallelLinesWithIndex<'a>{
     }
 }
 
-impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
+impl ParallelIterator for ParallelLinesWithIndex{
     type Item = IterType;
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
     {
-        let file = File::open(self.path.clone()).unwrap();
-        let reader = BufReader::with_capacity(READER_CAPACITY, file);
+        let reader = BufReader::with_capacity(READER_CAPACITY, self.file);
 
         if let Some(rts) = self.number_of_rows_to_skip {
             for _ in 0..rts {
