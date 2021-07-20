@@ -1,5 +1,6 @@
 use rayon::iter::plumbing::{bridge_unindexed, UnindexedProducer};
 use rayon::prelude::*;
+use rayon::current_num_threads;
 use std::cell::UnsafeCell;
 use std::convert::TryInto;
 use std::fs::File;
@@ -12,7 +13,6 @@ use std::time::Duration;
 
 const READER_CAPACITY: usize = 8 * 1024 * 1024;
 const BUFFER_SIZE: usize = 64;
-const MAXIMUM_NUMBER_OF_PRODUCERS: usize = 12;
 
 fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>, comment_symbol: Option<String>) {
     let mut cells_to_populate_number: usize = 0;
@@ -235,7 +235,7 @@ impl ParalellLinesProducerWithIndex {
         //debug!("Trying to create a producer");
         {
             let mut producers = buffers_ref.write().unwrap();
-            if producers.len() >= MAXIMUM_NUMBER_OF_PRODUCERS {
+            if producers.len() >= current_num_threads() {
                 //debug!("NVM");
                 return None;
             }
