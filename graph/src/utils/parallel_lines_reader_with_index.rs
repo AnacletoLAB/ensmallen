@@ -28,7 +28,7 @@ fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingB
             Ok(l) => Ok(l),
             Err(e) => Err(e.to_string()),
         }).filter(move |line| match (line, comment_symbol) {
-            (Ok(line), Some(cs)) => !line.is_empty() && !line.starts_with(cs),
+            (Ok(line), Some(cs)) => !line.is_empty() && !line.starts_with(&cs),
             (Ok(line), _) => !line.is_empty(),
             _ => true
         })
@@ -99,12 +99,12 @@ impl<'a> ParallelLinesWithIndex<'a>{
         })
     }
 
-    pub fn skip_rows(&mut self, number_of_rows_to_skip: usize) {
+    pub fn set_skip_rows(&mut self, number_of_rows_to_skip: usize) {
         self.number_of_rows_to_skip = Some(number_of_rows_to_skip);
     }
 
-    pub fn comment_symbol(&mut self, comment_symbol: String) {
-        self.comment_symbol = Some(comment_symbol);
+    pub fn set_comment_symbol(&mut self, comment_symbol: Option<String>) {
+        self.comment_symbol = comment_symbol;
     }
 }
 

@@ -146,21 +146,10 @@ impl CSVFileReader {
             false => self.rows_to_skip as u64,
         } as usize;
         let mut parallell_buffer = ParallelLinesWithIndex::new(&self.path)?;
-        parallell_buffer.skip_rows(rows_to_skip);
-        Ok(
-            parallell_buffer
-            .map(|line| match line {
-                Ok(l)=>Ok(l),
-                Err(_)=>Err("There might have been an I/O error or the line could contains bytes that are not valid UTF-8".to_string()),
-            })
-            .filter(move |line| match (line, &self.comment_symbol) {
-                (Ok(line), Some(cs)) => !line.is_empty() && !line.starts_with(cs),
-                (Ok(line), _) => !line.is_empty(),
-                _ => true
-            })
-            // TODO! PROVIDE THE ACTUAL LINES!
-            .map(|line| (0, line))
-        )
+        parallell_buffer.set_skip_rows(rows_to_skip);
+        parallell_buffer.set_comment_symbol(self.comment_symbol.clone());
+
+        Ok(parallell_buffer)
     }
 
     /// Returns the total number of lines to be skipped.
