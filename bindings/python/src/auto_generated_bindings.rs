@@ -53,6 +53,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(convert_edge_list_to_numeric))?;
     m.add_wrapped(wrap_pyfunction!(densify_sparse_numeric_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(convert_directed_edge_list_to_undirected))?;
+    m.add_wrapped(wrap_pyfunction!(add_edge_id_to_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(filter_duplicates_from_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(convert_undirected_edge_list_to_directed))?;
     m.add_wrapped(wrap_pyfunction!(get_minmax_node_from_numeric_edge_list))?;
@@ -981,6 +982,156 @@ pub fn convert_directed_edge_list_to_undirected(
         target_edge_list_edge_type_column_number,
         target_edge_list_weights_column,
         target_edge_list_weights_column_number,
+        comment_symbol,
+        default_edge_type,
+        default_weight,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        skip_edge_types_if_unavailable,
+        skip_weights_if_unavailable,
+        verbose,
+        name
+    ))
+}
+
+#[pyfunction]
+#[automatically_generated_binding]
+#[text_signature = "(original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_edge_list_sources_column, original_edge_list_sources_column_number, original_edge_list_destinations_column, original_edge_list_destinations_column_number, original_edge_list_edge_type_column, original_edge_list_edge_type_column_number, original_edge_list_weights_column, original_edge_list_weights_column_number, target_edge_list_path, target_edge_list_separator, target_edge_list_header, target_edge_list_sources_column, target_edge_list_sources_column_number, target_edge_list_destinations_column, target_edge_list_destinations_column_number, target_edge_list_edge_type_column, target_edge_list_edge_type_column_number, target_edge_list_weights_column, target_edge_list_weights_column_number, target_edge_list_edge_ids_column, target_edge_list_edge_ids_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
+/// Create a new directed edge list from a given undirected one by duplicating the undirected edges.
+///
+/// Parameters
+/// ----------
+/// original_edge_list_path: str,
+///     The path from where to load the original edge list.
+/// original_edge_list_separator: Optional[str],
+///     Separator to use for the original edge list.
+/// original_edge_list_header: Optional[bool],
+///     Whether the original edge list has an header.
+/// original_edge_list_sources_column: Optional[str],
+///     The column name to use to load the sources in the original edges list.
+/// original_edge_list_sources_column_number: Optional[int],
+///     The column number to use to load the sources in the original edges list.
+/// original_edge_list_destinations_column: Optional[str],
+///     The column name to use to load the destinations in the original edges list.
+/// original_edge_list_destinations_column_number: Optional[int],
+///     The column number to use to load the destinations in the original edges list.
+/// original_edge_list_edge_type_column: Optional[str],
+///     The column name to use for the edge types in the original edges list.
+/// original_edge_list_edge_type_column_number: Optional[int],
+///     The column number to use for the edge types in the original edges list.
+/// original_edge_list_weights_column: Optional[str],
+///     The column name to use for the weights in the original edges list.
+/// original_edge_list_weights_column_number: Optional[int],
+///     The column number to use for the weights in the original edges list.
+/// target_edge_list_path: str,
+///     The path from where to load the target edge list.
+/// target_edge_list_separator: Optional[str],
+///     Separator to use for the target edge list.
+/// target_edge_list_header: Optional[bool],
+///     Whether the target edge list has an header.
+/// target_edge_list_sources_column: Optional[str],
+///     The column name to use to load the sources in the target edges list.
+/// target_edge_list_sources_column_number: Optional[int],
+///     The column number to use to load the sources in the target edges list.
+/// target_edge_list_destinations_column: Optional[str],
+///     The column name to use to load the destinations in the target edges list.
+/// target_edge_list_destinations_column_number: Optional[int],
+///     The column number to use to load the destinations in the target edges list.
+/// target_edge_list_edge_type_column: Optional[str],
+///     The column name to use for the edge types in the target edges list.
+/// target_edge_list_edge_type_column_number: Optional[int],
+///     The column number to use for the edge types in the target edges list.
+/// target_edge_list_weights_column: Optional[str],
+///     The column name to use for the weights in the target edges list.
+/// target_edge_list_weights_column_number: Optional[int],
+///     The column number to use for the weights in the target edges list.
+/// target_edge_list_edge_ids_column: Optional[str],
+///     The column name to use for the edge ids in the target edges list.
+/// target_edge_list_edge_ids_column_number: Optional[int],
+///     The column number to use for the edge ids in the target edges list.
+/// comment_symbol: Optional[str],
+///     The comment symbol to use within the original edge list.
+/// default_edge_type: Optional[str],
+///     The default edge type to use within the original edge list.
+/// default_weight: Optional[float],
+///     The default weight to use within the original edge list.
+/// max_rows_number: Optional[int],
+///     The amount of rows to load from the original edge list.
+/// rows_to_skip: Optional[int],
+///     The amount of rows to skip from the original edge list.
+/// edges_number: Optional[int],
+///     The expected number of edges. It will be used for the loading bar.
+/// skip_edge_types_if_unavailable: Optional[bool],
+///     Whether to automatically skip the edge types if they are not available.
+/// skip_weights_if_unavailable: Optional[bool],
+///     Whether to automatically skip the weights if they are not available.
+/// verbose: Optional[bool],
+///     Whether to show the loading bar while processing the file.
+/// name: Optional[str],
+///     The name of the graph to display in the loading bar.
+///
+pub fn add_edge_id_to_edge_list(
+    original_edge_list_path: &str,
+    original_edge_list_separator: Option<String>,
+    original_edge_list_header: Option<bool>,
+    original_edge_list_sources_column: Option<String>,
+    original_edge_list_sources_column_number: Option<usize>,
+    original_edge_list_destinations_column: Option<String>,
+    original_edge_list_destinations_column_number: Option<usize>,
+    original_edge_list_edge_type_column: Option<String>,
+    original_edge_list_edge_type_column_number: Option<usize>,
+    original_edge_list_weights_column: Option<String>,
+    original_edge_list_weights_column_number: Option<usize>,
+    target_edge_list_path: &str,
+    target_edge_list_separator: Option<String>,
+    target_edge_list_header: Option<bool>,
+    target_edge_list_sources_column: Option<String>,
+    target_edge_list_sources_column_number: Option<usize>,
+    target_edge_list_destinations_column: Option<String>,
+    target_edge_list_destinations_column_number: Option<usize>,
+    target_edge_list_edge_type_column: Option<String>,
+    target_edge_list_edge_type_column_number: Option<usize>,
+    target_edge_list_weights_column: Option<String>,
+    target_edge_list_weights_column_number: Option<usize>,
+    target_edge_list_edge_ids_column: Option<String>,
+    target_edge_list_edge_ids_column_number: Option<usize>,
+    comment_symbol: Option<String>,
+    default_edge_type: Option<String>,
+    default_weight: Option<WeightT>,
+    max_rows_number: Option<EdgeT>,
+    rows_to_skip: Option<usize>,
+    edges_number: Option<usize>,
+    skip_edge_types_if_unavailable: Option<bool>,
+    skip_weights_if_unavailable: Option<bool>,
+    verbose: Option<bool>,
+    name: Option<String>,
+) -> PyResult<()> {
+    pe!(graph::add_edge_id_to_edge_list(
+        original_edge_list_path,
+        original_edge_list_separator,
+        original_edge_list_header,
+        original_edge_list_sources_column,
+        original_edge_list_sources_column_number,
+        original_edge_list_destinations_column,
+        original_edge_list_destinations_column_number,
+        original_edge_list_edge_type_column,
+        original_edge_list_edge_type_column_number,
+        original_edge_list_weights_column,
+        original_edge_list_weights_column_number,
+        target_edge_list_path,
+        target_edge_list_separator,
+        target_edge_list_header,
+        target_edge_list_sources_column,
+        target_edge_list_sources_column_number,
+        target_edge_list_destinations_column,
+        target_edge_list_destinations_column_number,
+        target_edge_list_edge_type_column,
+        target_edge_list_edge_type_column_number,
+        target_edge_list_weights_column,
+        target_edge_list_weights_column_number,
+        target_edge_list_edge_ids_column,
+        target_edge_list_edge_ids_column_number,
         comment_symbol,
         default_edge_type,
         default_weight,
@@ -9663,7 +9814,7 @@ impl EnsmallenGraph {
 
     #[staticmethod]
     #[automatically_generated_binding]
-    #[text_signature = "(node_type_path, node_types_column_number, node_types_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_separator, node_type_list_header, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, directed, name)"]
+    #[text_signature = "(node_type_path, node_types_column_number, node_types_column, node_types_number, numeric_node_type_ids, minimum_node_type_id, node_type_list_separator, node_type_list_header, node_type_list_rows_to_skip, node_type_list_is_correct, node_type_list_max_rows_number, node_type_list_comment_symbol, load_node_type_list_in_parallel, node_path, node_list_separator, node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, nodes_column_number, nodes_column, node_types_separator, node_list_node_types_column_number, node_list_node_types_column, nodes_number, minimum_node_id, numeric_node_ids, node_list_numeric_node_type_ids, skip_node_types_if_unavailable, load_node_list_in_parallel, edge_type_path, edge_types_column_number, edge_types_column, edge_types_number, numeric_edge_type_ids, minimum_edge_type_id, edge_type_list_separator, edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_path, edge_list_separator, edge_list_header, edge_list_rows_to_skip, sources_column_number, sources_column, destinations_column_number, destinations_column, edge_list_edge_types_column_number, edge_list_edge_types_column, default_edge_type, weights_column_number, weights_column, default_weight, edge_ids_column, edge_ids_column_number, edge_list_numeric_edge_type_ids, edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_is_complete, edge_list_may_contain_duplicates, edge_list_is_sorted, edge_list_is_correct, edge_list_max_rows_number, edge_list_comment_symbol, edges_number, load_edge_list_in_parallel, verbose, directed, name)"]
     /// Return graph renderized from given CSVs or TSVs-like files.
     ///
     /// TODO! Add docstrings
@@ -9728,6 +9879,8 @@ impl EnsmallenGraph {
         weights_column_number: Option<usize>,
         weights_column: Option<String>,
         default_weight: Option<WeightT>,
+        edge_ids_column: Option<String>,
+        edge_ids_column_number: Option<usize>,
         edge_list_numeric_edge_type_ids: Option<bool>,
         edge_list_numeric_node_ids: Option<bool>,
         skip_weights_if_unavailable: Option<bool>,
@@ -9805,6 +9958,8 @@ impl EnsmallenGraph {
                 weights_column_number,
                 weights_column,
                 default_weight,
+                edge_ids_column,
+                edge_ids_column_number,
                 edge_list_numeric_edge_type_ids,
                 edge_list_numeric_node_ids,
                 skip_weights_if_unavailable,
