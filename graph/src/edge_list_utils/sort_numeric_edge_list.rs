@@ -97,6 +97,8 @@ pub fn sort_numeric_edge_list(
         "--numeric-sort".to_owned(),
         // We want to remove duplicates
         "--unique".to_owned(),
+        // We want this operation to be executed in parallel
+        "--parallel".to_owned(),
         // We want to sort the file inplace
         format!("--output={}", target_path),
     ]
