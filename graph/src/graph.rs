@@ -1,5 +1,5 @@
 //! A graph representation optimized for executing random walks on huge graphs.
-use std::sync::atomic::AtomicU8;
+use std::{intrinsics::unlikely, sync::atomic::AtomicU8};
 
 use super::*;
 use bitvec::prelude::*;
@@ -121,26 +121,59 @@ impl Graph {
 
     /// Return bitvector containing nodes as true when they have incoming nodes.
     fn get_connected_nodes(&self) -> BitVec<Lsb0, u8> {
-        let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_nodes_number() as usize];
-        let thread_shared_connected_nodes = ThreadDataRaceAware {
-            value: std::cell::UnsafeCell::new(&mut connected_nodes),
-        };
-        // Compute in parallel the bitvector of all the nodes that have incoming edges
-        self.par_iter_node_ids().for_each(|node_id| unsafe {
-            let connected_nodes = thread_shared_connected_nodes.value.get();
-            let mut is_connected = false;
-            self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
-                .filter(|&dst_id| node_id != dst_id)
-                .for_each(|dst_id| {
-                    is_connected = true;
-                    *(*connected_nodes).get_unchecked_mut(dst_id as usize) = true;
-                });
-            if is_connected {
-                *(*connected_nodes).get_unchecked_mut(node_id as usize) = true;
-            }
-        });
+        if self.is_directed() {
+            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_nodes_number() as usize];
+            let thread_shared_connected_nodes = ThreadDataRaceAware {
+                value: std::cell::UnsafeCell::new(&mut connected_nodes),
+            };
+            // Compute in parallel the bitvector of all the nodes that have incoming edges
+            self.par_iter_node_ids().for_each(|node_id| unsafe {
+                let connected_nodes = thread_shared_connected_nodes.value.get();
+                let mut is_connected = false;
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .filter(|&dst_id| node_id != dst_id)
+                    .for_each(|dst_id| {
+                        is_connected = true;
+                        *(*connected_nodes).get_unchecked_mut(dst_id as usize) = true;
+                    });
+                if is_connected {
+                    *(*connected_nodes).get_unchecked_mut(node_id as usize) = true;
+                }
+            });
 
-        unsafe { std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(connected_nodes) }
+            unsafe {
+                std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(connected_nodes)
+            }
+        } else {
+            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 1; self.get_nodes_number() as usize];
+            let thread_shared_connected_nodes = ThreadDataRaceAware {
+                value: std::cell::UnsafeCell::new(&mut connected_nodes),
+            };
+            self.par_iter_node_degrees()
+                .enumerate()
+                .for_each(|(node_id, node_degree)| unsafe {
+                    // If this node is a singleton we mark it as disconnected.
+                    // We use the unlikely directive to tell the compiler that this
+                    // should be a rare occurrence: in a well formed graph
+                    // there should be only a small amount of singletons.
+                    // The same applies also to singletons with selfloops.
+                    if unlikely(
+                        node_degree == 0
+                            || self
+                                .iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                    node_id as NodeT,
+                                )
+                                .all(|dst_id| node_id as NodeT == dst_id),
+                    ) {
+                        let connected_nodes = thread_shared_connected_nodes.value.get();
+                        *(*connected_nodes).get_unchecked_mut(node_id) = false;
+                    }
+                });
+
+            unsafe {
+                std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(connected_nodes)
+            }
+        }
     }
 
     /// Return whether given graph has any edge overlapping with current graph.

@@ -8,6 +8,7 @@ use super::*;
 #[derive(Clone)]
 pub struct EdgeFileReader {
     pub(crate) reader: CSVFileReader,
+    pub(crate) edge_ids_column_number: Option<usize>,
     pub(crate) sources_column_number: usize,
     pub(crate) destinations_column_number: usize,
     pub(crate) edge_types_column_number: Option<usize>,
@@ -32,6 +33,7 @@ impl EdgeFileReader {
     pub fn new<S: Into<String>>(path: S) -> Result<EdgeFileReader> {
         Ok(EdgeFileReader {
             reader: CSVFileReader::new(path, "edge list".to_owned())?,
+            edge_ids_column_number: None,
             sources_column_number: 0,
             destinations_column_number: 1,
             edge_types_column_number: None,
@@ -48,6 +50,60 @@ impl EdgeFileReader {
         })
     }
 
+    /// Set the column of the edge IDs.
+    ///
+    /// # Arguments
+    /// * edge_id_column: Option<String> - The name of the edge id column to use for the file.
+    ///
+    pub fn set_edge_ids_column<S: Into<String>>(
+        mut self,
+        edge_ids_column: Option<S>,
+    ) -> Result<EdgeFileReader> {
+        if let Some(column) = edge_ids_column {
+            let column = column.into();
+            if column.is_empty() {
+                return Err("The given node types column is empty.".to_owned());
+            }
+
+            match self.reader.get_column_number(column) {
+                Ok(ecn) => {
+                    self = self.set_edge_ids_column_number(Some(ecn))?;
+                }
+                Err(e) => {
+                    if !self.skip_edge_types_if_unavailable {
+                        return Err(e);
+                    }
+                }
+            }
+        }
+        Ok(self)
+    }
+
+    /// Set the edge id node column number.
+    ///
+    /// # Arguments
+    /// * `edge_id_column_number`: Option<usize> - The edge id column number to use for the file.
+    ///
+    pub fn set_edge_ids_column_number(
+        mut self,
+        edge_ids_column_number: Option<usize>,
+    ) -> Result<EdgeFileReader> {
+        if let Some(column) = edge_ids_column_number {
+            let expected_elements = self.reader.get_elements_per_line()?;
+            if column >= expected_elements {
+                return Err(format!(
+                    concat!(
+                        "The edge id column number passed was {} but ",
+                        "the first parsable line has {} values."
+                    ),
+                    column, expected_elements
+                ));
+            }
+            self.edge_ids_column_number = Some(column);
+        }
+        Ok(self)
+    }
+
     /// Set the column of the source nodes.
     ///
     /// # Arguments
@@ -60,7 +116,7 @@ impl EdgeFileReader {
         if let Some(column) = sources_column {
             let column = column.into();
             if column.is_empty() {
-                return Err("The given node types column is empty.".to_owned());
+                return Err("The given source nodes column name is empty.".to_owned());
             }
 
             match self.reader.get_column_number(column) {
@@ -559,12 +615,16 @@ impl EdgeFileReader {
     /// Parse a single line (vector of strings already splitted and fitered)
     ///
     /// # Arguments
+    /// * `line_number`: usize, Current line number.
     /// * `elements_in_line`: Vec<String> - Vector of the values of the line to be parsed
     fn parse_edge_line(
         &self,
+        line_number: usize,
         mut elements_in_line: Vec<Option<String>>,
-    ) -> Result<StringQuadruple> {
+    ) -> Result<(usize, StringQuadruple)> {
         // extract the values in reverse order
+
+        println!("{:?}", elements_in_line);
 
         // First we start with the last, i.e. the weights
         let maybe_weight = if self.weights_column_number.is_some() {
@@ -601,11 +661,32 @@ impl EdgeFileReader {
             return Err("The source node is undefined.".to_owned());
         }
 
+        // Finally we check if the edge ID was provided.
+        let line_number = if self.edge_ids_column_number.is_some() {
+            let maybe_edge_id = elements_in_line
+                .pop()
+                // We can unwrap because the check always happens in the CSV reader
+                .unwrap();
+            if maybe_edge_id.is_none() {
+                return Err("The edge id cannot be undefined.".to_owned());
+            }
+            let edge_id = maybe_edge_id.unwrap();
+            match edge_id.parse::<usize>() {
+                Ok(edge_id) => Ok(edge_id),
+                Err(e) => Err(e.to_string()),
+            }?
+        } else {
+            line_number
+        };
+
         Ok((
-            maybe_source_node_name.unwrap(),
-            maybe_destination_node_name.unwrap(),
-            maybe_edge_types_string,
-            maybe_weight.unwrap_or(WeightT::NAN),
+            line_number,
+            (
+                maybe_source_node_name.unwrap(),
+                maybe_destination_node_name.unwrap(),
+                maybe_edge_types_string,
+                maybe_weight.unwrap_or(WeightT::NAN),
+            ),
         ))
     }
 
@@ -619,25 +700,48 @@ impl EdgeFileReader {
             impl ParallelIterator<Item = Result<(usize, StringQuadruple)>> + '_,
         >,
     > {
-        if self.destinations_column_number == self.sources_column_number {
-            return Err("The destinations column is the same as the sources one.".to_string());
-        }
-        if Some(self.destinations_column_number) == self.weights_column_number {
-            return Err("The destinations column is the same as the weights one.".to_string());
-        }
-        if Some(self.sources_column_number) == self.weights_column_number {
-            return Err("The sources column is the same as the weights one.".to_string());
-        }
-        if Some(self.sources_column_number) == self.edge_types_column_number {
-            return Err("The sources column is the same as the edge types one.".to_string());
-        }
-        if Some(self.destinations_column_number) == self.edge_types_column_number {
-            return Err("The destinations column is the same as the edge types one.".to_string());
-        }
-        if self.weights_column_number.is_some()
-            && self.weights_column_number == self.edge_types_column_number
+        if self.sorted.as_ref().map_or(false, |sorted| *sorted)
+            && self.reader.parallel
+            && self.edge_ids_column_number.is_none()
         {
-            return Err("The weights column is the same as the edge types one.".to_string());
+            return Err(concat!(
+                "We do not currently support parallel loading of a sorted ",
+                "edge list unless the edge id column is provided.\n",
+                "The edge ID column is a column with an unique numeric ",
+                "edge ID for all the rows, basically the row's number."
+            )
+            .to_string());
+        }
+        let columns_and_names = [
+            (self.edge_ids_column_number, "edge ids"),
+            (Some(self.sources_column_number), "sources"),
+            (Some(self.destinations_column_number), "destinations"),
+            (self.edge_types_column_number, "edge types"),
+            (self.weights_column_number, "weights"),
+        ];
+
+        for (outer_column_number, outer_column_name) in columns_and_names.iter() {
+            if let Some(outer_column_number) = outer_column_number {
+                for (inner_column_number, inner_column_name) in columns_and_names.iter() {
+                    if outer_column_name == inner_column_name {
+                        continue;
+                    }
+                    if let Some(inner_column_number) = inner_column_number {
+                        if outer_column_number == inner_column_number {
+                            return Err(format!(
+                                concat!(
+                                    "The column number {} provided for column {} ",
+                                    "is the same column number {} provided for column {}."
+                                ),
+                                outer_column_number,
+                                outer_column_name,
+                                inner_column_number,
+                                inner_column_name
+                            ));
+                        }
+                    }
+                }
+            }
         }
 
         let expected_elements = self.reader.get_elements_per_line()?;
@@ -659,10 +763,20 @@ impl EdgeFileReader {
                 self.destinations_column_number, expected_elements
             ));
         }
+
+        println!("{:?}", [
+            self.edge_ids_column_number,
+            Some(self.sources_column_number),
+            Some(self.destinations_column_number),
+            self.edge_types_column_number,
+            self.weights_column_number,
+        ]);
+
         Ok(self
             .reader
             .read_lines(
                 [
+                    self.edge_ids_column_number,
                     Some(self.sources_column_number),
                     Some(self.destinations_column_number),
                     self.edge_types_column_number,
@@ -673,7 +787,7 @@ impl EdgeFileReader {
                 .collect(),
             )?
             .map(move |line| match line {
-                Ok((line_number, vals)) => Ok((line_number, self.parse_edge_line(vals)?)),
+                Ok((line_number, vals)) => self.parse_edge_line(line_number, vals),
                 Err(e) => Err(e),
             }))
     }

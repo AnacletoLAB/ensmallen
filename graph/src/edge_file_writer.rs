@@ -5,6 +5,8 @@ use super::*;
 /// # Attributes
 pub struct EdgeFileWriter {
     pub(crate) writer: CSVFileWriter,
+    pub(crate) edge_ids_column: Option<String>,
+    pub(crate) edge_ids_column_number: Option<usize>,
     pub(crate) sources_column: String,
     pub(crate) sources_column_number: usize,
     pub(crate) destinations_column: String,
@@ -29,6 +31,8 @@ impl EdgeFileWriter {
     pub fn new<S: Into<String>>(path: S) -> EdgeFileWriter {
         EdgeFileWriter {
             writer: CSVFileWriter::new(path),
+            edge_ids_column: None,
+            edge_ids_column_number: None,
             sources_column: "subject".to_string(),
             sources_column_number: 0,
             destinations_column: "object".to_string(),
@@ -49,19 +53,39 @@ impl EdgeFileWriter {
 
     // Return whether the columns are currently dense.
     fn are_columns_dense(&self) -> bool {
-        self.sources_column_number == 0
-            && self.destinations_column_number == 1
-            && self
-                .edge_types_column_number
-                .as_ref()
-                .map_or(true, |&etcn| etcn == 2)
-            && self.weights_column_number.as_ref().map_or(true, |&wcn| {
-                if self.edge_types_column_number.is_some() {
-                    wcn == 3
-                } else {
-                    wcn == 2
-                }
+        let mut offset = 0;
+        if self
+            .edge_ids_column_number
+            .map_or(false, |edge_ids_column_number| edge_ids_column_number != 0)
+        {
+            return false;
+        }
+        if self.edge_ids_column_number.is_some() {
+            offset += 1;
+        }
+        if self.sources_column_number != offset || self.destinations_column_number != 1 + offset {
+            return false;
+        }
+        if self
+            .edge_types_column_number
+            .map_or(false, |edge_ids_column_number| {
+                edge_ids_column_number != 2 + offset
             })
+        {
+            return false;
+        }
+        if self.edge_types_column_number.is_some() {
+            offset += 1;
+        }
+        if self
+            .weights_column_number
+            .map_or(false, |edge_ids_column_number| {
+                edge_ids_column_number != 2 + offset
+            })
+        {
+            return false;
+        }
+        return true;
     }
 
     /// Set the column of the source nodes.
@@ -133,8 +157,8 @@ impl EdgeFileWriter {
     /// # Arguments
     /// * edge_types_column: Option<String> - The edge types column to use for the file.
     ///
-    pub fn set_edge_types_column(mut self, edge_type_column: Option<String>) -> EdgeFileWriter {
-        self.edge_types_column = edge_type_column;
+    pub fn set_edge_types_column(mut self, edge_types_column: Option<String>) -> EdgeFileWriter {
+        self.edge_types_column = edge_types_column;
         self
     }
 
@@ -149,6 +173,33 @@ impl EdgeFileWriter {
     ) -> EdgeFileWriter {
         if let Some(column_number) = edge_types_column_number {
             self.edge_types_column_number = Some(column_number);
+            self.number_of_columns = self.number_of_columns.max(column_number + 1);
+            self.columns_are_dense = self.are_columns_dense();
+        }
+        self
+    }
+
+    /// Set the column of the edge IDs.
+    ///
+    /// # Arguments
+    /// * edge_ids_column: Option<String> - The edge IDs column to use for the file.
+    ///
+    pub fn set_edge_ids_column(mut self, edge_ids_column: Option<String>) -> EdgeFileWriter {
+        self.edge_ids_column = edge_ids_column;
+        self
+    }
+
+    /// Set the column number of the edge IDs.
+    ///
+    /// # Arguments
+    /// * edge_ids_column_number: Option<usize> - The node types column to use for the file.
+    ///
+    pub fn set_edge_ids_column_number(
+        mut self,
+        edge_ids_column_number: Option<usize>,
+    ) -> EdgeFileWriter {
+        if let Some(column_number) = edge_ids_column_number {
+            self.edge_ids_column_number = Some(column_number);
             self.number_of_columns = self.number_of_columns.max(column_number + 1);
             self.columns_are_dense = self.are_columns_dense();
         }
@@ -258,6 +309,7 @@ impl EdgeFileWriter {
     /// Parses provided line into a vector of strings writable by the CSVFileWriter.
     fn parse_line(
         &self,
+        edge_id: EdgeT,
         src: NodeT,
         src_name: String,
         dst: NodeT,
@@ -266,13 +318,24 @@ impl EdgeFileWriter {
         edge_type_name: Option<String>,
         weight: Option<WeightT>,
     ) -> Vec<String> {
-        let mut line = if self.numeric_node_ids {
-            vec![src.to_string(), dst.to_string()]
-        } else {
-            vec![src_name, dst_name]
-        };
+        let mut line = vec![];
 
         let mut positions = vec![];
+
+        if let Some(edge_ids_column_number) = &self.edge_ids_column_number {
+            line.push(edge_id.to_string());
+            if !self.columns_are_dense {
+                positions.push(*edge_ids_column_number);
+            }
+        }
+
+        if self.numeric_node_ids {
+            line.push(src.to_string());
+            line.push(dst.to_string());
+        } else {
+            line.push(src_name.to_string());
+            line.push(dst_name.to_string());
+        };
 
         if !self.columns_are_dense {
             positions.push(self.sources_column_number);
@@ -311,12 +374,21 @@ impl EdgeFileWriter {
 
     fn build_header(&self) -> (Vec<String>, Vec<usize>) {
         // build the header
-        let mut header_values = vec![
-            self.sources_column.clone(),
-            self.destinations_column.clone(),
-        ];
-        let mut header_positions =
-            vec![self.sources_column_number, self.destinations_column_number];
+        let mut header_values = vec![];
+        let mut header_positions = vec![];
+
+        if let (Some(edge_ids_column), Some(edge_ids_column_number)) =
+            (&self.edge_ids_column, self.edge_ids_column_number)
+        {
+            header_values.push(edge_ids_column.clone());
+            header_positions.push(edge_ids_column_number);
+        }
+
+        header_positions.push(self.sources_column_number.clone());
+        header_positions.push(self.destinations_column_number.clone());
+
+        header_values.push(self.sources_column.clone());
+        header_values.push(self.destinations_column.clone());
 
         if let (Some(edge_types_column), Some(edge_types_column_number)) =
             (&self.edge_types_column, self.edge_types_column_number)
@@ -360,8 +432,9 @@ impl EdgeFileWriter {
             lines_number,
             compose_lines(self.number_of_columns, header_values, header_positions),
             iterator.map(
-                |(_, src, src_name, dst, dst_name, edge_type, edge_type_name, weight)| {
+                |(edge_id, src, src_name, dst, dst_name, edge_type, edge_type_name, weight)| {
                     self.parse_line(
+                        edge_id,
                         src,
                         src_name,
                         dst,

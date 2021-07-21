@@ -12,3 +12,5 @@ mod filter_duplicates_from_edge_list;
 pub use filter_duplicates_from_edge_list::*;
 mod convert_directed_edge_list_to_undirected;
 pub use convert_directed_edge_list_to_undirected::*;
+mod add_edge_id_to_edge_list;
+pub use add_edge_id_to_edge_list::*;

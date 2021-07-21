@@ -145,7 +145,7 @@ impl CSVFileReader {
             }?,
             false => self.rows_to_skip as u64,
         } as usize;
-        let mut parallell_buffer = ParallelLinesWithIndex::new(&self.path)?;
+        let mut parallell_buffer = ParallelLines::new(&self.path)?;
         parallell_buffer.set_skip_rows(rows_to_skip);
         parallell_buffer.set_comment_symbol(self.comment_symbol.clone());
 
@@ -382,12 +382,6 @@ impl CSVFileReader {
 
         Ok(self
             .get_lines_iterator(true, self.verbose)?
-            // Reading only the requested amount of lines.
-            //.take(self.max_rows_number.unwrap_or(u64::MAX) as usize)
-            //.enumerate()
-            //.progress_with(pb)
-            //.par_bridge()
-            // Handling NaN values and padding them to the number of rows
             .map(move |(line_number, line)| {
                 parse_line(
                     line_number,
