@@ -1,6 +1,6 @@
+use rayon::current_num_threads;
 use rayon::iter::plumbing::{bridge_unindexed, UnindexedProducer};
 use rayon::prelude::*;
-use rayon::current_num_threads;
 use std::cell::UnsafeCell;
 use std::convert::TryInto;
 use std::fs::File;
@@ -14,9 +14,15 @@ use std::time::Duration;
 const READER_CAPACITY: usize = 8 * 1024 * 1024;
 const BUFFER_SIZE: usize = 64;
 
-fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>, comment_symbol: Option<String>) {
+fn lines_reader(
+    reader: BufReader<File>,
+    producers: Arc<RwLock<Vec<Arc<SPSCRingBuffer>>>>,
+    comment_symbol: Option<String>,
+) {
     let mut cells_to_populate_number: usize = 0;
     let mut write_index: usize = 0;
+    let maximum_producers_number = current_num_threads();
+    let mut locked_producers = None;
     let mut producer: Arc<SPSCRingBuffer> = {
         let producers = producers.read().unwrap();
         producers[0].clone()
@@ -27,10 +33,11 @@ fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingB
         .map(|line| match line {
             Ok(l) => Ok(l),
             Err(e) => Err(e.to_string()),
-        }).filter(move |line| match (line, &comment_symbol) {
+        })
+        .filter(move |line| match (line, &comment_symbol) {
             (Ok(line), Some(cs)) => !line.is_empty() && !line.starts_with(cs),
             (Ok(line), _) => !line.is_empty(),
-            _ => true
+            _ => true,
         })
         .enumerate()
     {
@@ -38,7 +45,7 @@ fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingB
         // we need to lock on the threads and find which
         // thread queue should be filled.
         'inner: while cells_to_populate_number == 0 {
-            let producers = producers.read().unwrap();
+            let producers = locked_producers.get_or_insert(producers.read().unwrap());
             let producers_number = producers.len();
             for producer_index in (line_number..(line_number + producers_number))
                 .map(|index| index % producers_number)
@@ -52,6 +59,11 @@ fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingB
                     write_index = this_write_index;
                     break 'inner;
                 }
+            }
+            // If some producers still may be created, we cannot
+            // keep this lock, otherwise we can just keep it.
+            if producers_number < maximum_producers_number {
+                locked_producers = None;
             }
         }
         producer.write_unchecked(write_index, (line_number, line));
@@ -68,6 +80,9 @@ fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingB
 
     producer.write_idx.store(write_index, Ordering::SeqCst);
 
+    // We free the lock guard.
+    locked_producers = None;
+
     let producers = producers.write().unwrap();
     for producer in producers.iter() {
         producer.stop();
@@ -83,7 +98,7 @@ pub struct ParallelLinesWithIndex {
     number_of_rows_to_skip: Option<usize>,
 }
 
-impl ParallelLinesWithIndex{
+impl ParallelLinesWithIndex {
     pub fn new(path: &str) -> Result<ParallelLinesWithIndex, String> {
         let file = match File::open(path.clone()) {
             Ok(file) => Ok(file),
@@ -107,7 +122,7 @@ impl ParallelLinesWithIndex{
     }
 }
 
-impl ParallelIterator for ParallelLinesWithIndex{
+impl ParallelIterator for ParallelLinesWithIndex {
     type Item = IterType;
 
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
@@ -214,7 +229,6 @@ impl SPSCRingBuffer {
         let cells = unsafe { &mut *self.cells.get() };
         cells[idx] = value;
     }
-
 }
 
 #[derive(Debug)]
