@@ -145,7 +145,7 @@ impl CSVFileReader {
             }?,
             false => self.rows_to_skip as u64,
         } as usize;
-        let mut parallell_buffer = ParallelLines::new(&self.path)?;
+        let mut parallell_buffer = ParallelLinesWithIndex::new(&self.path)?;
         parallell_buffer.set_skip_rows(rows_to_skip);
         parallell_buffer.set_comment_symbol(self.comment_symbol.clone());
 

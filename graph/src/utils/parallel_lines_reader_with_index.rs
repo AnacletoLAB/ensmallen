@@ -81,7 +81,7 @@ fn lines_reader(
     producer.write_idx.store(write_index, Ordering::SeqCst);
 
     // We free the lock guard.
-    locked_producers = None;
+    drop(locked_producers);
 
     let producers = producers.write().unwrap();
     for producer in producers.iter() {

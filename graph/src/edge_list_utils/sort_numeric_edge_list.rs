@@ -55,23 +55,17 @@ pub fn sort_numeric_edge_list(
         .set_rows_to_skip(rows_to_skip)
         .set_header(header);
 
-    let sed_command_status = std::process::Command::new("sed")
-        .args(&[
-            format!("1,{}d", file_reader.get_total_lines_to_skip(true)?,).as_ref(),
-            path,
-        ])
-        .stdout(std::process::Stdio::piped())
-        .spawn();
-
-    // We check if the operation went fine.
-    let sed_command = match sed_command_status {
-        Ok(command) => Ok(command),
-        Err(_) => Err(concat!(
-            "Could not execute sed to skip headers ",
-            "before sorting inplace on the provided edge list."
-        )
-        .to_owned()),
-    }?;
+    if file_reader.get_total_lines_to_skip(true)? > 0{
+        return Err(concat!(
+            "Since the sort mechanism is based on the sort command, ",
+            "and skipping rows would require to pipe the ",
+            "input file into sort and sort treats piped input files ",
+            "as very small files, it would slow down the sorting ",
+            "procedure immensely.\n",
+            "Please, just remove these rows BEFORE executing the ",
+            "sorting procedure."
+        ).to_string());
+    }
 
     let arguments = vec![
         // We specify the separator of the fields
@@ -97,10 +91,10 @@ pub fn sort_numeric_edge_list(
         "--numeric-sort".to_owned(),
         // We want to remove duplicates
         "--unique".to_owned(),
-        // We want this operation to be executed in parallel
-        "--parallel".to_owned(),
-        // We want to sort the file inplace
+        // We want to sort target file
         format!("--output={}", target_path),
+        // The file to read and sort
+        path.to_string()
     ]
     .into_iter()
     .filter(|arg| !arg.is_empty())
@@ -108,7 +102,6 @@ pub fn sort_numeric_edge_list(
 
     let sort_command_status = std::process::Command::new("sort")
         .args(arguments)
-        .stdin(sed_command.stdout.unwrap())
         .status();
 
     // We check if the operation went fine.
