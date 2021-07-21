@@ -624,8 +624,6 @@ impl EdgeFileReader {
     ) -> Result<(usize, StringQuadruple)> {
         // extract the values in reverse order
 
-        println!("{:?}", elements_in_line);
-
         // First we start with the last, i.e. the weights
         let maybe_weight = if self.weights_column_number.is_some() {
             elements_in_line
@@ -763,14 +761,6 @@ impl EdgeFileReader {
                 self.destinations_column_number, expected_elements
             ));
         }
-
-        println!("{:?}", [
-            self.edge_ids_column_number,
-            Some(self.sources_column_number),
-            Some(self.destinations_column_number),
-            self.edge_types_column_number,
-            self.weights_column_number,
-        ]);
 
         Ok(self
             .reader
