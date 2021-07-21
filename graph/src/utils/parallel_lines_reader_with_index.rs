@@ -62,11 +62,11 @@ fn lines_reader(reader: BufReader<File>, producers: Arc<RwLock<Vec<Arc<SPSCRingB
         // If we have finished populating the cells,
         // we need to update the write index
         if cells_to_populate_number == 0 {
-            producer.set_write_index_to_first_empty_cell(write_index)
+            producer.write_idx.store(write_index, Ordering::SeqCst);
         }
     }
 
-    producer.set_write_index_to_first_empty_cell(write_index);
+    producer.write_idx.store(write_index, Ordering::SeqCst);
 
     let producers = producers.write().unwrap();
     for producer in producers.iter() {
@@ -175,7 +175,6 @@ impl SPSCRingBuffer {
                 return None;
             }
             std::thread::sleep(Duration::from_micros(10));
-            // yield_now();
         }
 
         // get the id
@@ -216,9 +215,6 @@ impl SPSCRingBuffer {
         cells[idx] = value;
     }
 
-    pub fn set_write_index_to_first_empty_cell(&self, idx: usize) {
-        self.write_idx.store(idx % BUFFER_SIZE, Ordering::SeqCst);
-    }
 }
 
 #[derive(Debug)]
@@ -237,7 +233,6 @@ impl ParalellLinesProducerWithIndex {
         {
             let mut producers = buffers_ref.write().unwrap();
             if producers.len() >= current_num_threads() {
-                //debug!("NVM");
                 return None;
             }
             //debug!("Created the {}-th producer", producers.len());
