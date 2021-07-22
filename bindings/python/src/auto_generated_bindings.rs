@@ -52,6 +52,7 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
         get_edge_type_source_html_url_from_edge_type_name
     ))?;
     m.add_wrapped(wrap_pyfunction!(add_edge_id_to_edge_list))?;
+    m.add_wrapped(wrap_pyfunction!(is_numeric_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(get_selfloops_number_from_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(sort_numeric_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(sort_numeric_edge_list_inplace))?;
@@ -599,27 +600,27 @@ pub fn get_edge_type_source_html_url_from_edge_type_name(edge_type_name: &str) -
 /// original_edge_list_weights_column_number: Optional[int],
 ///     The column number to use for the weights in the original edges list.
 /// target_edge_list_path: str,
-///     The path from where to load the target edge list.
+///     The path from where to load the target edge list. This cannot be the same as the original edge list.
 /// target_edge_list_separator: Optional[str],
-///     Separator to use for the target edge list.
+///     Separator to use for the target edge list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_header: Optional[bool],
-///     Whether the target edge list has an header.
+///     Whether the target edge list has an header. If None, the one provided from the original edge list will be used.
 /// target_edge_list_sources_column: Optional[str],
-///     The column name to use to load the sources in the target edges list.
+///     The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_sources_column_number: Optional[int],
-///     The column number to use to load the sources in the target edges list.
+///     The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_destinations_column: Optional[str],
-///     The column name to use to load the destinations in the target edges list.
+///     The column name to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_destinations_column_number: Optional[int],
-///     The column number to use to load the destinations in the target edges list.
+///     The column number to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_edge_type_column: Optional[str],
-///     The column name to use for the edge types in the target edges list.
+///     The column name to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_edge_type_column_number: Optional[int],
-///     The column number to use for the edge types in the target edges list.
+///     The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_weights_column: Optional[str],
-///     The column name to use for the weights in the target edges list.
+///     The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_weights_column_number: Optional[int],
-///     The column number to use for the weights in the target edges list.
+///     The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_edge_ids_column: Optional[str],
 ///     The column name to use for the edge ids in the target edges list.
 /// target_edge_list_edge_ids_column_number: Optional[int],
@@ -644,6 +645,14 @@ pub fn get_edge_type_source_html_url_from_edge_type_name(edge_type_name: &str) -
 ///     Whether to show the loading bar while processing the file.
 /// name: Optional[str],
 ///     The name of the graph to display in the loading bar.
+///
+///
+/// Raises
+/// -------
+/// ValueError
+///     If there are problems with opening the original or target file.
+/// ValueError
+///     If the original and target paths are identical.
 ///
 pub fn add_edge_id_to_edge_list(
     original_edge_list_path: &str,
@@ -673,7 +682,7 @@ pub fn add_edge_id_to_edge_list(
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
@@ -755,6 +764,76 @@ pub fn add_edge_id_to_edge_list(
 /// name: Optional[str],
 ///     The name of the graph to display in the loading bar.
 ///
+pub fn is_numeric_edge_list(
+    path: &str,
+    separator: Option<String>,
+    header: Option<bool>,
+    sources_column: Option<String>,
+    sources_column_number: Option<usize>,
+    destinations_column: Option<String>,
+    destinations_column_number: Option<usize>,
+    comment_symbol: Option<String>,
+    max_rows_number: Option<usize>,
+    rows_to_skip: Option<usize>,
+    edges_number: Option<EdgeT>,
+    load_edge_list_in_parallel: Option<bool>,
+    verbose: Option<bool>,
+    name: Option<String>,
+) -> PyResult<EdgeT> {
+    pe!(graph::is_numeric_edge_list(
+        path,
+        separator,
+        header,
+        sources_column,
+        sources_column_number,
+        destinations_column,
+        destinations_column_number,
+        comment_symbol,
+        max_rows_number,
+        rows_to_skip,
+        edges_number,
+        load_edge_list_in_parallel,
+        verbose,
+        name
+    ))
+}
+
+#[pyfunction]
+#[automatically_generated_binding]
+#[text_signature = "(path, separator, header, sources_column, sources_column_number, destinations_column, destinations_column_number, comment_symbol, max_rows_number, rows_to_skip, edges_number, load_edge_list_in_parallel, verbose, name)"]
+/// Return number of selfloops in the given edge list.
+///
+/// Parameters
+/// ----------
+/// path: str,
+///     The path from where to load the edge list.
+/// separator: Optional[str],
+///     The separator for the rows in the edge list.
+/// header: Optional[bool],
+///     Whether the edge list has an header.
+/// sources_column: Optional[str],
+///     The column name to use for the source nodes.
+/// sources_column_number: Optional[int],
+///     The column number to use for the source nodes.
+/// destinations_column: Optional[str],
+///     The column name to use for the destination nodes.
+/// destinations_column_number: Optional[int],
+///     The column number to use for the destination nodes.
+/// comment_symbol: Optional[str],
+///     The comment symbol to use for the lines to skip.
+/// max_rows_number: Optional[int],
+///     The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
+/// rows_to_skip: Optional[int],
+///     Number of rows to skip in the edge list.
+/// edges_number: Optional[int],
+///     Number of edges in the edge list.
+/// load_edge_list_in_parallel: Optional[bool],
+///     Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
+/// verbose: Optional[bool],
+///     Whether to show the loading bar while processing the file.
+/// name: Optional[str],
+///     The name of the graph to display in the loading bar.
+///
 pub fn get_selfloops_number_from_edge_list(
     path: &str,
     separator: Option<String>,
@@ -764,7 +843,7 @@ pub fn get_selfloops_number_from_edge_list(
     destinations_column: Option<String>,
     destinations_column_number: Option<usize>,
     comment_symbol: Option<String>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
@@ -939,27 +1018,27 @@ pub fn sort_numeric_edge_list_inplace(
 /// original_edge_list_weights_column_number: Optional[int],
 ///     The column number to use for the weights in the original edges list.
 /// target_edge_list_path: str,
-///     The path from where to load the target edge list.
+///     The path from where to load the target edge list. This must be different from the original edge list path.
 /// target_edge_list_separator: Optional[str],
-///     Separator to use for the target edge list.
+///     Separator to use for the target edge list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_header: Optional[bool],
-///     Whether the target edge list has an header.
+///     Whether the target edge list has an header. If None, the one provided from the original edge list will be used.
 /// target_edge_list_sources_column: Optional[str],
-///     The column name to use to load the sources in the target edges list.
+///     The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_sources_column_number: Optional[int],
-///     The column number to use to load the sources in the target edges list.
+///     The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_destinations_column: Optional[str],
-///     The column name to use to load the destinations in the target edges list.
+///     The column name to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_destinations_column_number: Optional[int],
-///     The column number to use to load the destinations in the target edges list.
+///     The column number to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_edge_type_column: Optional[str],
-///     The column name to use for the edge types in the target edges list.
+///     The column name to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_edge_type_column_number: Optional[int],
-///     The column number to use for the edge types in the target edges list.
+///     The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_weights_column: Optional[str],
-///     The column name to use for the weights in the target edges list.
+///     The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_weights_column_number: Optional[int],
-///     The column number to use for the weights in the target edges list.
+///     The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
 /// comment_symbol: Optional[str],
 ///     The comment symbol to use within the original edge list.
 /// default_edge_type: Optional[str],
@@ -980,6 +1059,14 @@ pub fn sort_numeric_edge_list_inplace(
 ///     Whether to show the loading bar while processing the file.
 /// name: Optional[str],
 ///     The name of the graph to display in the loading bar.
+///
+///
+/// Raises
+/// -------
+/// ValueError
+///     If there are problems with opening the original or target file.
+/// ValueError
+///     If the original and target paths are identical.
 ///
 pub fn convert_directed_edge_list_to_undirected(
     original_edge_list_path: &str,
@@ -1007,7 +1094,7 @@ pub fn convert_directed_edge_list_to_undirected(
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
@@ -1106,7 +1193,7 @@ pub fn get_minmax_node_from_numeric_edge_list(
     destinations_column: Option<String>,
     destinations_column_number: Option<usize>,
     comment_symbol: Option<String>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
@@ -1229,7 +1316,7 @@ pub fn filter_duplicates_from_edge_list(
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
@@ -1303,27 +1390,27 @@ pub fn filter_duplicates_from_edge_list(
 /// original_edge_list_weights_column_number: Optional[int],
 ///     The column number to use for the weights in the original edges list.
 /// target_edge_list_path: str,
-///     The path from where to load the target edge list.
+///     The path from where to load the target edge list. This must be different from the original edge list path.
 /// target_edge_list_separator: Optional[str],
-///     Separator to use for the target edge list.
+///     Separator to use for the target edge list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_header: Optional[bool],
-///     Whether the target edge list has an header.
+///     Whether the target edge list has an header. If None, the one provided from the original edge list will be used.
 /// target_edge_list_sources_column: Optional[str],
-///     The column name to use to load the sources in the target edges list.
+///     The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_sources_column_number: Optional[int],
-///     The column number to use to load the sources in the target edges list.
+///     The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_destinations_column: Optional[str],
-///     The column name to use to load the destinations in the target edges list.
+///     The column name to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_destinations_column_number: Optional[int],
-///     The column number to use to load the destinations in the target edges list.
+///     The column number to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_edge_type_column: Optional[str],
-///     The column name to use for the edge types in the target edges list.
+///     The column name to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_edge_type_column_number: Optional[int],
-///     The column number to use for the edge types in the target edges list.
+///     The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_weights_column: Optional[str],
-///     The column name to use for the weights in the target edges list.
+///     The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_weights_column_number: Optional[int],
-///     The column number to use for the weights in the target edges list.
+///     The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
 /// comment_symbol: Optional[str],
 ///     The comment symbol to use within the original edge list.
 /// default_edge_type: Optional[str],
@@ -1371,7 +1458,7 @@ pub fn convert_undirected_edge_list_to_directed(
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
@@ -1445,27 +1532,27 @@ pub fn convert_undirected_edge_list_to_directed(
 /// original_edge_list_weights_column_number: Optional[int],
 ///     The column number to use for the weights in the original edges list.
 /// target_edge_list_path: str,
-///     The path from where to load the target edge list.
+///     The path from where to load the target edge list. This must be different from the original edge list path.
 /// target_edge_list_separator: Optional[str],
-///     Separator to use for the target edge list.
+///     Separator to use for the target edge list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_header: Optional[bool],
-///     Whether the target edge list has an header.
+///     Whether the target edge list has an header. If None, the one provided from the original edge list will be used.
 /// target_edge_list_sources_column: Optional[str],
-///     The column name to use to load the sources in the target edges list.
+///     The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_sources_column_number: Optional[int],
-///     The column number to use to load the sources in the target edges list.
+///     The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_destinations_column: Optional[str],
-///     The column name to use to load the destinations in the target edges list.
+///     The column name to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_destinations_column_number: Optional[int],
-///     The column number to use to load the destinations in the target edges list.
+///     The column number to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_edge_type_column: Optional[str],
-///     The column name to use for the edge types in the target edges list.
+///     The column name to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_edge_type_column_number: Optional[int],
-///     The column number to use for the edge types in the target edges list.
+///     The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_weights_column: Optional[str],
-///     The column name to use for the weights in the target edges list.
+///     The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
 /// target_edge_list_weights_column_number: Optional[int],
-///     The column number to use for the weights in the target edges list.
+///     The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
 /// comment_symbol: Optional[str],
 ///     The comment symbol to use within the original edge list.
 /// default_edge_type: Optional[str],
@@ -1486,6 +1573,14 @@ pub fn convert_undirected_edge_list_to_directed(
 ///     Whether to show the loading bar while processing the file.
 /// name: Optional[str],
 ///     The name of the graph to display in the loading bar.
+///
+///
+/// Raises
+/// -------
+/// ValueError
+///     If there are problems with opening the original or target file.
+/// ValueError
+///     If the original and target paths are identical.
 ///
 pub fn convert_edge_list_to_numeric(
     original_edge_list_path: &str,
@@ -1513,7 +1608,7 @@ pub fn convert_edge_list_to_numeric(
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
@@ -1668,7 +1763,7 @@ pub fn densify_sparse_numeric_edge_list(
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
@@ -8934,7 +9029,7 @@ impl EnsmallenGraph {
         node_type_list_header: Option<bool>,
         node_type_list_rows_to_skip: Option<usize>,
         node_type_list_is_correct: Option<bool>,
-        node_type_list_max_rows_number: Option<EdgeT>,
+        node_type_list_max_rows_number: Option<usize>,
         node_type_list_comment_symbol: Option<String>,
         load_node_type_list_in_parallel: Option<bool>,
         node_path: Option<String>,
@@ -8942,7 +9037,7 @@ impl EnsmallenGraph {
         node_list_header: Option<bool>,
         node_list_rows_to_skip: Option<usize>,
         node_list_is_correct: Option<bool>,
-        node_list_max_rows_number: Option<EdgeT>,
+        node_list_max_rows_number: Option<usize>,
         node_list_comment_symbol: Option<String>,
         default_node_type: Option<String>,
         nodes_column_number: Option<usize>,
@@ -8966,7 +9061,7 @@ impl EnsmallenGraph {
         edge_type_list_header: Option<bool>,
         edge_type_list_rows_to_skip: Option<usize>,
         edge_type_list_is_correct: Option<bool>,
-        edge_type_list_max_rows_number: Option<EdgeT>,
+        edge_type_list_max_rows_number: Option<usize>,
         edge_type_list_comment_symbol: Option<String>,
         load_edge_type_list_in_parallel: Option<bool>,
         edge_path: Option<String>,
@@ -8993,7 +9088,7 @@ impl EnsmallenGraph {
         edge_list_may_contain_duplicates: Option<bool>,
         edge_list_is_sorted: Option<bool>,
         edge_list_is_correct: Option<bool>,
-        edge_list_max_rows_number: Option<EdgeT>,
+        edge_list_max_rows_number: Option<usize>,
         edge_list_comment_symbol: Option<String>,
         edges_number: Option<EdgeT>,
         load_edge_list_in_parallel: Option<bool>,
