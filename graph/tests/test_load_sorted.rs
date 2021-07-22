@@ -6,6 +6,7 @@ fn test_load_sorted_sequential() {
     let graph_name = "Macaque".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/macaque.tsv")
         .unwrap()
+        .set_header(Some(false)).unwrap()
         .set_separator(Some("\t"))
         .unwrap()
         .set_verbose(Some(false))
@@ -14,8 +15,7 @@ fn test_load_sorted_sequential() {
         .set_sorted(Some(true))
         .set_parallel(Some(false))
         .set_csv_is_correct(Some(true))
-        .set_edges_number(Some(3054))
-        .set_header(Some(false));
+        .set_edges_number(Some(3054));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()

@@ -338,6 +338,11 @@ impl EdgeFileReader {
         Ok(self)
     }
 
+    /// Return the edge weights column number.
+    pub fn get_weights_column_number(&self) -> Option<usize> {
+        self.weights_column_number
+    }
+
     /// Set whether the current edge list is complete.
     ///
     /// # Arguments
@@ -466,11 +471,11 @@ impl EdgeFileReader {
     /// * comment_symbol: Option<String> - if the reader should ignore or not duplicated edges.
     ///
     pub fn set_comment_symbol(mut self, comment_symbol: Option<String>) -> Result<EdgeFileReader> {
-        if let Some(cs) = comment_symbol {
-            if cs.is_empty() {
+        if let Some(comment_symbol) = comment_symbol {
+            if comment_symbol.is_empty() {
                 return Err("The given comment symbol is empty.".to_string());
             }
-            self.reader.comment_symbol = Some(cs);
+            self.reader.set_comment_symbol(comment_symbol)?;
         }
         Ok(self)
     }
@@ -535,12 +540,14 @@ impl EdgeFileReader {
         mut self,
         separator: Option<S>,
     ) -> Result<EdgeFileReader> {
-        if let Some(sep) = separator {
-            let sep = sep.into();
-            if sep.is_empty() {
+        if let Some(separator) = separator {
+            let separator = separator.into();
+            if separator.is_empty() {
                 return Err("The separator cannot be empty.".to_owned());
             }
-            self.reader.separator = sep;
+            self.reader.set_separator(separator);
+        } else {
+            self.reader.set_separator(self.reader.detect_separator()?);
         }
         Ok(self)
     }
@@ -555,11 +562,16 @@ impl EdgeFileReader {
     /// # Arguments
     /// * header: Option<bool> - Whether to expect an header or not.
     ///
-    pub fn set_header(mut self, header: Option<bool>) -> EdgeFileReader {
-        if let Some(v) = header {
-            self.reader.header = v;
+    pub fn set_header(mut self, header: Option<bool>) -> Result<EdgeFileReader> {
+        if let Some(header) = header {
+            self.reader.set_header(header)?;
         }
-        self
+        Ok(self)
+    }
+
+    /// Return whether the file is set to be read as if it has an header.
+    pub fn has_header(&self) -> bool {
+        self.reader.header
     }
 
     /// Set number of rows to be skipped when starting to read file.
@@ -567,21 +579,23 @@ impl EdgeFileReader {
     /// # Arguments
     /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
     ///
-    pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> EdgeFileReader {
-        if let Some(v) = rows_to_skip {
-            self.reader.rows_to_skip = v;
+    pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> Result<EdgeFileReader> {
+        if let Some(rows_to_skip) = rows_to_skip {
+            self.reader.set_rows_to_skip(rows_to_skip)?;
         }
-        self
+        Ok(self)
     }
 
     /// Set the maximum number of rows to load from the file
     ///
     /// # Arguments
-    /// * max_rows_number: Option<u64> - The edge type to use when edge type is missing.
+    /// * max_rows_number: Option<usize> - The edge type to use when edge type is missing.
     ///
-    pub fn set_max_rows_number(mut self, max_rows_number: Option<u64>) -> EdgeFileReader {
-        self.reader.max_rows_number = max_rows_number;
-        self
+    pub fn set_max_rows_number(mut self, max_rows_number: Option<usize>) -> Result<EdgeFileReader> {
+        if let Some(max_rows_number) = max_rows_number {
+            self.reader.set_max_rows_number(max_rows_number)?;
+        }
+        Ok(self)
     }
 
     /// Return boolean representing if the edge types exist.

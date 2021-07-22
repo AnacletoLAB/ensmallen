@@ -44,6 +44,8 @@ pub fn sort_numeric_edge_list(
     }
 
     let file_reader = EdgeFileReader::new(path)?
+        .set_header(header)?
+        .set_rows_to_skip(rows_to_skip)?
         .set_separator(separator)?
         .set_destinations_column(destinations_column)?
         .set_destinations_column_number(destinations_column_number)?
@@ -51,11 +53,9 @@ pub fn sort_numeric_edge_list(
         .set_sources_column_number(sources_column_number)?
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_edge_types_column(edge_types_column)?
-        .set_edge_types_column_number(edge_types_column_number)?
-        .set_rows_to_skip(rows_to_skip)
-        .set_header(header);
+        .set_edge_types_column_number(edge_types_column_number)?;
 
-    if file_reader.get_total_lines_to_skip(true)? > 0{
+    if file_reader.get_total_lines_to_skip(true)? > 0 {
         return Err(concat!(
             "Since the sort mechanism is based on the sort command, ",
             "and skipping rows would require to pipe the ",
@@ -64,7 +64,8 @@ pub fn sort_numeric_edge_list(
             "procedure immensely.\n",
             "Please, just remove these rows BEFORE executing the ",
             "sorting procedure."
-        ).to_string());
+        )
+        .to_string());
     }
 
     let arguments = vec![
@@ -94,15 +95,13 @@ pub fn sort_numeric_edge_list(
         // We want to sort target file
         format!("--output={}", target_path),
         // The file to read and sort
-        path.to_string()
+        path.to_string(),
     ]
     .into_iter()
     .filter(|arg| !arg.is_empty())
     .collect::<Vec<String>>();
 
-    let sort_command_status = std::process::Command::new("sort")
-        .args(arguments)
-        .status();
+    let sort_command_status = std::process::Command::new("sort").args(arguments).status();
 
     // We check if the operation went fine.
     match sort_command_status {

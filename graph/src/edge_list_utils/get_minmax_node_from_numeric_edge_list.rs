@@ -11,7 +11,7 @@ use crate::{EdgeFileReader, EdgeT, Result};
 /// * `destinations_column`: Option<String> - The column name to use for the destination nodes.
 /// * `destinations_column_number`: Option<usize> - The column number to use for the destination nodes.
 /// * `comment_symbol`: Option<String> - The comment symbol to use for the lines to skip.
-/// * `max_rows_number`: Option<EdgeT> - The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
+/// * `max_rows_number`: Option<usize> - The number of rows to read at most. Note that this parameter is ignored when reading in parallel.
 /// * `rows_to_skip`: Option<usize> - Number of rows to skip in the edge list.
 /// * `edges_number`: Option<EdgeT> - Number of edges in the edge list.
 /// * `load_edge_list_in_parallel`: Option<bool> - Whether to execute the task in parallel or sequential. Generally, parallel is preferable.
@@ -31,7 +31,7 @@ pub fn get_minmax_node_from_numeric_edge_list(
     destinations_column: Option<String>,
     destinations_column_number: Option<usize>,
     comment_symbol: Option<String>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<EdgeT>,
     load_edge_list_in_parallel: Option<bool>,
@@ -41,17 +41,17 @@ pub fn get_minmax_node_from_numeric_edge_list(
     let name = name.unwrap_or("Graph".to_owned());
     let file_reader = EdgeFileReader::new(path)?
         .set_comment_symbol(comment_symbol)?
+        .set_header(header)?
+        .set_max_rows_number(max_rows_number)?
+        .set_rows_to_skip(rows_to_skip)?
         .set_separator(separator)?
         .set_destinations_column(destinations_column)?
         .set_destinations_column_number(destinations_column_number)?
         .set_sources_column(sources_column)?
         .set_sources_column_number(sources_column_number)?
-        .set_max_rows_number(max_rows_number)
         .set_parallel(load_edge_list_in_parallel)
-        .set_rows_to_skip(rows_to_skip)
         .set_edges_number(edges_number)
         .set_verbose(verbose)
-        .set_header(header)
         .set_graph_name(name);
 
     let (min, max) = file_reader

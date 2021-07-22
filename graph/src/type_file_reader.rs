@@ -152,14 +152,14 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
         mut self,
         comment_symbol: Option<String>,
     ) -> Result<TypeFileReader<T>> {
-        if let Some(cs) = comment_symbol {
+        if let Some(comment_symbol) = comment_symbol {
             self.must_have_reader()?;
-            if cs.is_empty() {
+            if comment_symbol.is_empty() {
                 return Err("The given comment symbol is empty.".to_string());
             }
-            self.reader
-                .as_mut()
-                .map(|reader| reader.comment_symbol = Some(cs));
+            if let Some(reader) = self.reader.as_mut(){
+                reader.set_comment_symbol(comment_symbol)?;
+            }
         }
         Ok(self)
     }
@@ -209,19 +209,24 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
     /// Set the separator.
     ///
     /// # Arguments
+    ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
     pub fn set_separator<S: Into<String>>(
         mut self,
         separator: Option<S>,
     ) -> Result<TypeFileReader<T>> {
-        if let Some(sep) = separator {
+        if let Some(separator) = separator {
             self.must_have_reader()?;
-            let sep = sep.into();
-            if sep.is_empty() {
+            let separator = separator.into();
+            if separator.is_empty() {
                 return Err("The separator cannot be empty.".to_owned());
             }
-            self.reader.as_mut().map(|reader| reader.separator = sep);
+            self.reader
+                .as_mut()
+                .map(|reader| reader.set_separator(separator));
+        } else if let Some(reader) = &mut self.reader {
+            reader.set_separator(reader.detect_separator()?);
         }
         Ok(self)
     }
@@ -229,12 +234,49 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
     /// Set the header.
     ///
     /// # Arguments
+    ///
     /// * header: Option<bool> - Whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> Result<TypeFileReader<T>> {
-        if let Some(h) = header {
+        if let Some(header) = header {
             self.must_have_reader()?;
-            self.reader.as_mut().map(|reader| reader.header = h);
+            if let Some(reader) = self.reader.as_mut() {
+                reader.set_header(header)?;
+            }
+        }
+        Ok(self)
+    }
+
+    /// Set number of rows to be skipped when starting to read file.
+    ///
+    /// # Arguments
+    ///
+    /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
+    ///
+    pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> Result<TypeFileReader<T>> {
+        if let Some(rows_to_skip) = rows_to_skip {
+            self.must_have_reader()?;
+            if let Some(reader) = self.reader.as_mut() {
+                reader.set_rows_to_skip(rows_to_skip)?;
+            }
+        }
+        Ok(self)
+    }
+
+    /// Set the maximum number of rows to load from the file
+    ///
+    /// # Arguments
+    /// * max_rows_number: Option<usize> - The edge type to use when edge type is missing.
+    ///
+    pub fn set_max_rows_number(
+        mut self,
+        max_rows_number: Option<usize>,
+    ) -> Result<TypeFileReader<T>> {
+        if let Some(max_rows_number) = max_rows_number {
+            self.must_have_reader()?;
+            if let Some(reader) = self.reader.as_mut() {
+                reader.set_max_rows_number(max_rows_number)?;
+            }
         }
         Ok(self)
     }
@@ -249,39 +291,6 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
             .as_mut()
             .map(|reader| reader.graph_name = graph_name);
         self
-    }
-
-    /// Set number of rows to be skipped when starting to read file.
-    ///
-    /// # Arguments
-    /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
-    ///
-    pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> Result<TypeFileReader<T>> {
-        if let Some(rows_to_skip) = rows_to_skip {
-            self.must_have_reader()?;
-            self.reader
-                .as_mut()
-                .map(|reader| reader.rows_to_skip = rows_to_skip);
-        }
-        Ok(self)
-    }
-
-    /// Set the maximum number of rows to load from the file
-    ///
-    /// # Arguments
-    /// * max_rows_number: Option<u64> - The edge type to use when edge type is missing.
-    ///
-    pub fn set_max_rows_number(
-        mut self,
-        max_rows_number: Option<u64>,
-    ) -> Result<TypeFileReader<T>> {
-        if let Some(max_rows_number) = max_rows_number {
-            self.must_have_reader()?;
-            self.reader
-                .as_mut()
-                .map(|reader| reader.max_rows_number = Some(max_rows_number));
-        }
-        Ok(self)
     }
 
     /// Set whether to load the type list in sequential or in parallel.

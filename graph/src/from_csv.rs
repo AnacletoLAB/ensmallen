@@ -127,7 +127,7 @@ impl Graph {
         node_type_list_header: Option<bool>,
         node_type_list_rows_to_skip: Option<usize>,
         node_type_list_is_correct: Option<bool>,
-        node_type_list_max_rows_number: Option<EdgeT>,
+        node_type_list_max_rows_number: Option<usize>,
         node_type_list_comment_symbol: Option<String>,
         load_node_type_list_in_parallel: Option<bool>,
         node_path: Option<String>,
@@ -135,7 +135,7 @@ impl Graph {
         node_list_header: Option<bool>,
         node_list_rows_to_skip: Option<usize>,
         node_list_is_correct: Option<bool>,
-        node_list_max_rows_number: Option<EdgeT>,
+        node_list_max_rows_number: Option<usize>,
         node_list_comment_symbol: Option<String>,
         default_node_type: Option<String>,
         nodes_column_number: Option<usize>,
@@ -159,7 +159,7 @@ impl Graph {
         edge_type_list_header: Option<bool>,
         edge_type_list_rows_to_skip: Option<usize>,
         edge_type_list_is_correct: Option<bool>,
-        edge_type_list_max_rows_number: Option<EdgeT>,
+        edge_type_list_max_rows_number: Option<usize>,
         edge_type_list_comment_symbol: Option<String>,
         load_edge_type_list_in_parallel: Option<bool>,
         edge_path: Option<String>,
@@ -186,7 +186,7 @@ impl Graph {
         edge_list_may_contain_duplicates: Option<bool>,
         edge_list_is_sorted: Option<bool>,
         edge_list_is_correct: Option<bool>,
-        edge_list_max_rows_number: Option<EdgeT>,
+        edge_list_max_rows_number: Option<usize>,
         edge_list_comment_symbol: Option<String>,
         edges_number: Option<EdgeT>,
         load_edge_list_in_parallel: Option<bool>,
@@ -198,11 +198,11 @@ impl Graph {
             if node_type_path.is_some() || node_types_number.is_some() {
                 Some(
                     TypeFileReader::new(node_type_path)?
-                        .set_separator(node_type_list_separator)?
                         .set_comment_symbol(node_type_list_comment_symbol)?
                         .set_header(node_type_list_header)?
                         .set_max_rows_number(node_type_list_max_rows_number)?
                         .set_rows_to_skip(node_type_list_rows_to_skip)?
+                        .set_separator(node_type_list_separator)?
                         .set_type_column_number(node_types_column_number)?
                         .set_type_column(node_types_column)?
                         .set_minimum_type_id(minimum_node_type_id)
@@ -220,11 +220,11 @@ impl Graph {
             if edge_type_path.is_some() || edge_types_number.is_some() {
                 Some(
                     TypeFileReader::new(edge_type_path)?
-                        .set_separator(edge_type_list_separator)?
                         .set_comment_symbol(edge_type_list_comment_symbol)?
                         .set_header(edge_type_list_header)?
                         .set_max_rows_number(edge_type_list_max_rows_number)?
                         .set_rows_to_skip(edge_type_list_rows_to_skip)?
+                        .set_separator(edge_type_list_separator)?
                         .set_type_column_number(edge_types_column_number)?
                         .set_type_column(edge_types_column)?
                         .set_minimum_type_id(minimum_edge_type_id)
@@ -241,11 +241,11 @@ impl Graph {
         let node_file_reader = if node_path.is_some() || nodes_number.is_some() {
             Some(
                 NodeFileReader::new(node_path)?
-                    .set_separator(node_list_separator)?
                     .set_comment_symbol(node_list_comment_symbol)?
                     .set_header(node_list_header)?
                     .set_max_rows_number(node_list_max_rows_number)?
                     .set_rows_to_skip(node_list_rows_to_skip)?
+                    .set_separator(node_list_separator)?
                     .set_nodes_column_number(nodes_column_number)?
                     .set_nodes_column(nodes_column)?
                     .set_minimum_node_id(minimum_node_id)
@@ -268,11 +268,11 @@ impl Graph {
         let edge_file_reader = edge_path.map_or(Ok::<_, String>(None), |edge_path| {
             Ok(Some(
                 EdgeFileReader::new(edge_path)?
-                    .set_separator(edge_list_separator)?
                     .set_comment_symbol(edge_list_comment_symbol)?
-                    .set_header(edge_list_header)
-                    .set_max_rows_number(edge_list_max_rows_number)
-                    .set_rows_to_skip(edge_list_rows_to_skip)
+                    .set_header(edge_list_header)?
+                    .set_max_rows_number(edge_list_max_rows_number)?
+                    .set_rows_to_skip(edge_list_rows_to_skip)?
+                    .set_separator(edge_list_separator)?
                     .set_sources_column_number(sources_column_number)?
                     .set_sources_column(sources_column)?
                     .set_destinations_column_number(destinations_column_number)?

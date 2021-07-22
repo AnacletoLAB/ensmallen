@@ -18,7 +18,7 @@ use crate::{EdgeFileReader, EdgeT, Result};
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 ///
-pub fn get_selfloops_number_from_edge_list(
+pub fn is_numeric_edge_list(
     path: &str,
     separator: Option<String>,
     header: Option<bool>,
@@ -50,11 +50,13 @@ pub fn get_selfloops_number_from_edge_list(
         .set_verbose(verbose)
         .set_graph_name(name);
 
-    let total_selfloops = file_reader
+    let is_numeric = file_reader
         .read_lines()?
         // Removing eventual errors.
         .filter_map(|line| line.ok())
-        .map(|(_, (src_name, dst_name, _, _))| (src_name == dst_name) as EdgeT)
-        .sum::<EdgeT>();
-    Ok(total_selfloops)
+        .all(|(_, (src_name, dst_name, _, _))| {
+            src_name.parse::<EdgeT>().is_ok() &&
+            dst_name.parse::<EdgeT>().is_ok()
+        });
+    Ok(is_numeric)
 }

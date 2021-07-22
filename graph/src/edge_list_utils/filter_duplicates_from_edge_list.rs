@@ -1,4 +1,4 @@
-use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, WeightT};
+use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT};
 
 /// Create a new edge list from a given one filtering duplicates.
 ///
@@ -28,7 +28,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, 
 /// * `comment_symbol`: Option<String> - The comment symbol to use within the original edge list.
 /// * `default_edge_type`: Option<String> - The default edge type to use within the original edge list.
 /// * `default_weight`: Option<WeightT> - The default weight to use within the original edge list.
-/// * `max_rows_number`: Option<EdgeT> - The amount of rows to load from the original edge list.
+/// * `max_rows_number`: Option<usize> - The amount of rows to load from the original edge list.
 /// * `rows_to_skip`: Option<usize> - The amount of rows to skip from the original edge list.
 /// * `edges_number`: Option<usize> - The expected number of edges. It will be used for the loading bar.
 /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to automatically skip the edge types if they are not available.
@@ -61,7 +61,7 @@ pub fn filter_duplicates_from_edge_list(
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
-    max_rows_number: Option<EdgeT>,
+    max_rows_number: Option<usize>,
     rows_to_skip: Option<usize>,
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
@@ -72,6 +72,9 @@ pub fn filter_duplicates_from_edge_list(
     let name = name.unwrap_or("Graph".to_owned());
     let file_reader = EdgeFileReader::new(original_edge_list_path)?
         .set_comment_symbol(comment_symbol)?
+        .set_header(original_edge_list_header)?
+        .set_max_rows_number(max_rows_number)?
+        .set_rows_to_skip(rows_to_skip)?
         .set_separator(original_edge_list_separator)?
         .set_default_edge_type(default_edge_type)
         .set_default_weight(default_weight)?
@@ -83,14 +86,11 @@ pub fn filter_duplicates_from_edge_list(
         .set_edge_types_column_number(original_edge_list_edge_type_column_number)?
         .set_weights_column(original_edge_list_weights_column)?
         .set_weights_column_number(original_edge_list_weights_column_number)?
-        .set_max_rows_number(max_rows_number)
         .set_parallel(Some(false))
-        .set_rows_to_skip(rows_to_skip)
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
         // To avoid a duplicated loading bar.
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
-        .set_header(original_edge_list_header)
         .set_graph_name(name);
     let file_writer = EdgeFileWriter::new(target_edge_list_path)
         .set_destinations_column(target_edge_list_destinations_column)

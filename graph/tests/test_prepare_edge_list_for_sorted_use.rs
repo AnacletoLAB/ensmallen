@@ -133,6 +133,7 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
     let edges_reader =
         EdgeFileReader::new("tests/data/sorted_undirected_macaque.tsv")
             .unwrap()
+            .set_header(Some(false)).unwrap()
             .set_separator(Some("\t"))
             .unwrap()
             .set_verbose(Some(false))
@@ -141,8 +142,7 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
             .set_sorted(Some(true))
             .set_parallel(Some(false))
             .set_csv_is_correct(Some(true))
-            .set_edges_number(Some(2598))
-            .set_header(Some(false));
+            .set_edges_number(Some(2598));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
@@ -163,6 +163,7 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
     let graph_name = "Macaque".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/sorted_undirected_macaque_with_edge_ids.tsv")
         .unwrap()
+        .set_header(Some(false)).unwrap()
         .set_separator(Some("\t"))
         .unwrap()
         .set_verbose(Some(false))
@@ -174,8 +175,7 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
         .set_sources_column_number(Some(1))?
         .set_destinations_column_number(Some(2))?
         .set_csv_is_correct(Some(true))
-        .set_edges_number(Some(2598))
-        .set_header(Some(false));
+        .set_edges_number(Some(2598));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()

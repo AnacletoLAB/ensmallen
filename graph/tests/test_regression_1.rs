@@ -11,7 +11,9 @@ use graph::{EdgeFileReader, Graph};
 fn test_regression_1() -> Result<(), String> {
     let edges_reader = EdgeFileReader::new("tests/data/regression/1.edges")?
         .set_rows_to_skip(Some(0))
+        .unwrap()
         .set_header(Some(false))
+        .unwrap()
         .set_separator(Some(","))?
         .set_verbose(Some(false))
         .set_sources_column_number(Some(0))?

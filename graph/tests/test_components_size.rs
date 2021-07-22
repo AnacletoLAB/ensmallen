@@ -1,5 +1,5 @@
 extern crate graph;
-use graph::{EdgeFileReader, Graph, utils::get_loading_bar};
+use graph::{utils::get_loading_bar, EdgeFileReader, Graph};
 use std::collections::HashMap;
 
 #[test]
@@ -9,11 +9,12 @@ fn test_components_size() {
     let graph_name = "ComponentSizeTest".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/test_components.csv")
         .unwrap()
+        .set_header(Some(false))
+        .unwrap()
         .set_separator(Some(","))
         .unwrap()
         .set_verbose(Some(false))
-        .set_numeric_node_ids(Some(true))
-        .set_header(Some(false));
+        .set_numeric_node_ids(Some(true));
 
     let g = Graph::from_file_readers(
         Some(edges_reader),

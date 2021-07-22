@@ -8,10 +8,12 @@ use nix::fcntl::*;
 use std::os::unix::io::AsRawFd;
 
 use num_traits::Zero;
-use rayon::iter::ParallelIterator;
-use std::{fs::File, io::prelude::*, io::BufReader};
+use rayon::{iter::ParallelIterator, str};
+use std::{collections::HashMap, fs::File, io::prelude::*, io::BufReader};
 
 use crate::utils::get_loading_bar;
+
+const TYPES_OF_SEPARATORS: &'static [char] = &['\t', ',', ';', ' '];
 
 /// Structure that saves the common parameters for reading csv files.
 #[derive(Clone)]
@@ -27,6 +29,13 @@ pub struct CSVFileReader {
     /// The separator to use, usually, this is "\t" for tsv and "," for csv.
     pub(crate) separator: String,
 
+    /// Boolean to check consistency when calling the builder methods.
+    pub(crate) separator_was_set: bool,
+
+    /// The number of lines to read in order to automatically detect the
+    /// separator to be used.
+    pub(crate) number_of_lines_to_automatically_detect_separator: usize,
+
     /// If the file (will / must) have the header with the titles of the columns
     pub(crate) header: bool,
 
@@ -41,7 +50,7 @@ pub struct CSVFileReader {
     pub(crate) csv_is_correct: bool,
 
     /// Pinky promise that the file is well made.
-    pub(crate) max_rows_number: Option<u64>,
+    pub(crate) max_rows_number: Option<usize>,
 
     /// if the program should stop reading after a certain number of rows.
     pub(crate) comment_symbol: Option<String>,
@@ -72,23 +81,141 @@ impl CSVFileReader {
         let path = path.into();
         // check file existance
         match File::open(&path) {
-            Ok(_) => Ok(CSVFileReader {
-                path,
-                verbose: true,
-                separator: "\t".to_string(),
-                header: true,
-                rows_to_skip: 0,
-                ignore_duplicates: true,
-                csv_is_correct: false,
-                max_rows_number: None,
-                comment_symbol: None,
-                list_name,
-                graph_name: "Graph".to_string(),
-                may_have_duplicates: None,
-                parallel: true,
+            Ok(_) => Ok({
+                CSVFileReader {
+                    path,
+                    verbose: true,
+                    separator: "\t".to_string(),
+                    separator_was_set: false,
+                    number_of_lines_to_automatically_detect_separator: 2000,
+                    header: true,
+                    rows_to_skip: 0,
+                    ignore_duplicates: true,
+                    csv_is_correct: false,
+                    max_rows_number: None,
+                    comment_symbol: None,
+                    list_name,
+                    graph_name: "Graph".to_string(),
+                    may_have_duplicates: None,
+                    parallel: true,
+                }
             }),
             Err(_) => Err(format!("Cannot open the file at {}", path)),
         }
+    }
+
+    /// Set separator to the provided value.
+    ///
+    /// # Arguments
+    /// * `separator`: String - The value to use as separator in the file.
+    pub fn set_separator(&mut self, separator: String) {
+        self.separator = separator;
+        self.separator_was_set = true;
+    }
+
+    /// Set the comment symbol for this file.
+    ///
+    /// # Arguments
+    /// * `comment_symbol`: String - Comment symbol to use for this file.
+    ///
+    /// # Raises
+    /// * If the separator was already set before calling this method.
+    pub fn set_comment_symbol(&mut self, comment_symbol: String) -> Result<()> {
+        self.separator_must_not_already_be_set()?;
+        self.comment_symbol = Some(comment_symbol);
+        Ok(())
+    }
+
+    /// Set the maximum number of rows to be read within this file.
+    ///
+    /// # Arguments
+    /// * `max_rows_number`: usize - Number of lines to be read from this file.
+    ///
+    /// # Raises
+    /// * If the separator was already set before calling this method.
+    pub fn set_max_rows_number(&mut self, max_rows_number: usize) -> Result<()> {
+        self.separator_must_not_already_be_set()?;
+        self.max_rows_number = Some(max_rows_number);
+        Ok(())
+    }
+
+    /// Set the number of lines to skip before starting to read this file.
+    ///
+    /// # Arguments
+    /// * `rows_to_skip`: usize - Number of lines to skip before reading the file.
+    ///
+    /// # Raises
+    /// * If the separator was already set before calling this method.
+    pub fn set_rows_to_skip(&mut self, rows_to_skip: usize) -> Result<()> {
+        self.separator_must_not_already_be_set()?;
+        self.rows_to_skip = rows_to_skip;
+        Ok(())
+    }
+
+    /// Set whether the file is expected to have an header.
+    ///
+    /// # Arguments
+    /// * `header`: bool - Whether this file is expected to have an header.
+    ///
+    /// # Raises
+    /// * If the separator was already set before calling this method.
+    pub fn set_header(&mut self, header: bool) -> Result<()> {
+        self.separator_must_not_already_be_set()?;
+        self.header = header;
+        Ok(())
+    }
+
+    /// Checks if separator was already set and raises an error if it was not.
+    pub fn separator_must_already_be_set(&self) -> Result<()> {
+        if !self.separator_was_set {
+            return Err(concat!(
+                "The separator for this CSV file must be set BEFORE ",
+                "calling this other builder method, otherwise it may ",
+                "lead to an undefined behaviour."
+            )
+            .to_string());
+        }
+        Ok(())
+    }
+
+    /// Checks if separator was already set and raises an error if it was.
+    pub fn separator_must_not_already_be_set(&self) -> Result<()> {
+        if self.separator_was_set {
+            return Err(concat!(
+                "The separator for this CSV file must be set AFTER ",
+                "calling this other builder method, otherwise it may ",
+                "lead to an undefined behaviour."
+            )
+            .to_string());
+        }
+        Ok(())
+    }
+
+    /// Automatically detects which separator to use among a set.
+    ///
+    /// Specifically, the set includes ';', ',', '\t' and empty space.
+    pub fn detect_separator(&self) -> Result<String> {
+        let mut counter: HashMap<char, usize> = TYPES_OF_SEPARATORS
+            .iter()
+            .map(|separator| (*separator, 0))
+            .collect();
+        for (_, line) in self
+            .get_sequential_lines_iterator(true, false)?
+            .take(self.number_of_lines_to_automatically_detect_separator)
+        {
+            let line = line?;
+            line.chars().for_each(|character| {
+                counter.entry(character).and_modify(|entry| {
+                    *entry += 1;
+                });
+            });
+        }
+        Ok(counter
+            .into_iter()
+            .max_by(|(_, left), (_, right)| left.cmp(right))
+            .unwrap()
+            .0
+            .to_string())
     }
 
     fn get_buffer_reader(&self) -> Result<BufReader<File>> {
@@ -111,15 +238,18 @@ impl CSVFileReader {
     }
 
     /// Read the whole file and return how many rows it has.
+    ///
+    /// TODO: make this more efficient!
     pub(crate) fn count_rows(&self) -> Result<usize> {
         Ok(std::cmp::min(
             self.get_buffer_reader()?.lines().count(),
-            self.max_rows_number.unwrap_or(u64::MAX) as usize,
+            self.max_rows_number.unwrap_or(usize::MAX) as usize,
         ))
     }
 
     /// Return list of components of the header.
     pub fn get_header(&self) -> Result<Vec<String>> {
+        self.separator_must_already_be_set()?;
         if let Some((_, first_line)) = self.get_sequential_lines_iterator(false, false)?.next() {
             Ok(first_line?
                 .split(&self.separator)
@@ -233,6 +363,7 @@ impl CSVFileReader {
 
     /// Return elements of the first line not to be skipped.
     pub fn get_elements_per_line(&self) -> Result<usize> {
+        self.separator_must_already_be_set()?;
         let first_line = self.get_sequential_lines_iterator(true, false)?.next();
         match first_line {
             Some((_, fl)) => {
