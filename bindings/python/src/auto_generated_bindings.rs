@@ -3186,6 +3186,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return vector with the sorted directed edge Ids
+    pub fn get_directed_edge_node_ids(&self) -> Py<PyArray2<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_2d!(gil, self.graph.get_directed_edge_node_ids(), NodeT)
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self, directed)"]
     /// Return vector with the sorted edge names.
     ///
@@ -3196,6 +3204,13 @@ impl EnsmallenGraph {
     ///
     pub fn get_edge_node_names(&self, directed: bool) -> Vec<(String, String)> {
         self.graph.get_edge_node_names(directed)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return vector with the sorted directed edge names
+    pub fn get_directed_edge_node_names(&self) -> Vec<(String, String)> {
+        self.graph.get_directed_edge_node_names()
     }
 
     #[automatically_generated_binding]
