@@ -27,6 +27,8 @@ fn test_load_sorted_sequential() {
         None,
         None,
         true,
+        true,
+        true,
         graph_name.clone(),
     )
     .unwrap();

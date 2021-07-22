@@ -403,6 +403,8 @@ impl Graph {
             Some(false),
             Some(false),
             None,
+            false,
+            false,
             name.to_string(),
         )
     }
@@ -474,6 +476,8 @@ impl Graph {
             Some(false),
             Some(false),
             Some(edges_number),
+            false,
+            false,
             name.to_string(),
         )
     }
@@ -540,6 +544,8 @@ impl Graph {
             Some(false),
             Some(true),
             Some(edges_number),
+            false,
+            false,
             name.to_string(),
         )
     }
@@ -606,6 +612,8 @@ impl Graph {
             Some(false),
             Some(true),
             Some(edges_number),
+            false,
+            false,
             name.to_string(),
         )
     }
@@ -672,6 +680,8 @@ impl Graph {
             Some(false),
             Some(true),
             Some(edges_number),
+            false,
+            false,
             name.to_string(),
         )
     }
@@ -820,6 +830,8 @@ impl Graph {
             Some(false),
             Some(true),
             Some(edges_number),
+            false,
+            false,
             name.to_string(),
         )
     }

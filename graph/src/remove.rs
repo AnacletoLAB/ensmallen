@@ -150,6 +150,8 @@ impl Graph {
             None,
             None,
             None,
+            true,
+            self.has_singleton_nodes_with_selfloops(),
             self.get_name(),
         )
     }

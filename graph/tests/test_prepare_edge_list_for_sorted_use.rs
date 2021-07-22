@@ -153,6 +153,8 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
         Some(nodes_reader),
         None,
         None,
+        true,
+        true,
         false,
         graph_name.clone(),
     )
@@ -186,6 +188,8 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
         Some(nodes_reader),
         None,
         None,
+        true,
+        true,
         false,
         graph_name.clone(),
     )

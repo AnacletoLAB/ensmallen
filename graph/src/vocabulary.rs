@@ -31,27 +31,21 @@ pub enum VocabularyMemoryStats {
         reverse_map: usize,
         metadata: usize,
     },
-    Numeric{
+    Numeric {
         metadata: usize,
-    }
+    },
 }
 
 impl VocabularyMemoryStats {
     pub fn total(&self) -> usize {
         use VocabularyMemoryStats::*;
         match self {
-            String{
+            String {
                 map,
                 reverse_map,
                 metadata,
-            } => {
-                map + reverse_map + metadata
-            }
-            Numeric{
-                metadata
-            } => {
-                *metadata
-            }
+            } => map + reverse_map + metadata,
+            Numeric { metadata } => *metadata,
         }
     }
 }
@@ -61,28 +55,28 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         use std::mem::size_of;
 
         match self {
-            Vocabulary::String{
-                map,
-                reverse_map
-            } => {
-                VocabularyMemoryStats::String{
+            Vocabulary::String { map, reverse_map } => {
+                VocabularyMemoryStats::String {
                     // https://github.com/servo/servo/issues/6908
-                    map: (map.capacity() as f64 * 1.1) as usize 
-                    * (size_of::<String>() + size_of::<IndexT>() + size_of::<usize>())
-                    + map.keys().map(|s| size_of::<String>() + s.capacity() * size_of::<char>()).sum::<usize>(),
-                    reverse_map: reverse_map.iter().map(|s| size_of::<String>() + s.capacity() * size_of::<char>()).sum::<usize>(),
+                    map: (map.capacity() as f64 * 1.1) as usize
+                        * (size_of::<String>() + size_of::<IndexT>() + size_of::<usize>())
+                        + map
+                            .keys()
+                            .map(|s| size_of::<String>() + s.capacity() * size_of::<char>())
+                            .sum::<usize>(),
+                    reverse_map: reverse_map
+                        .iter()
+                        .map(|s| size_of::<String>() + s.capacity() * size_of::<char>())
+                        .sum::<usize>(),
                     metadata: size_of::<Vocabulary<IndexT>>(),
                 }
-            },
-            Vocabulary::Numeric{..} => {
-                VocabularyMemoryStats::Numeric{
-                    metadata: size_of::<Vocabulary<IndexT>>(),
-                }
+            }
+            Vocabulary::Numeric { .. } => VocabularyMemoryStats::Numeric {
+                metadata: size_of::<Vocabulary<IndexT>>(),
             },
         }
     }
 }
-
 
 impl<IndexT: ToFromUsize + Sync + Debug> Default for Vocabulary<IndexT> {
     fn default() -> Self {
@@ -96,6 +90,14 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
         Vocabulary::String {
             map: HashMap::new(),
             reverse_map: Vec::new(),
+        }
+    }
+
+    /// Return whether this vocabulary is numeric or string based.
+    pub fn is_numeric(&self) -> bool {
+        match self {
+            Vocabulary::Numeric{..} => true,
+            _ => false,
         }
     }
 

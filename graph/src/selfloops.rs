@@ -57,6 +57,8 @@ impl Graph {
             Some(false),
             Some(false),
             Some(total_edges_number),
+            false,
+            self.has_singleton_nodes_with_selfloops() || self.has_singleton_nodes(),
             self.get_name(),
         )
     }

@@ -157,7 +157,7 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
             if comment_symbol.is_empty() {
                 return Err("The given comment symbol is empty.".to_string());
             }
-            if let Some(reader) = self.reader.as_mut(){
+            if let Some(reader) = self.reader.as_mut() {
                 reader.set_comment_symbol(comment_symbol)?;
             }
         }

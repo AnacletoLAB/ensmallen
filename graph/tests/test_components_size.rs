@@ -21,6 +21,8 @@ fn test_components_size() {
         None,
         None,
         None,
+        true,
+        true,
         false,
         graph_name.clone(),
     )

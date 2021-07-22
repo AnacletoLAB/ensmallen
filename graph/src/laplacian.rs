@@ -68,6 +68,8 @@ impl Graph {
             Some(false),
             Some(false),
             Some(total_edges_number),
+            true,
+            true,
             self.get_name(),
         )
         .unwrap()

@@ -14,3 +14,7 @@ mod convert_directed_edge_list_to_undirected;
 pub use convert_directed_edge_list_to_undirected::*;
 mod add_edge_id_to_edge_list;
 pub use add_edge_id_to_edge_list::*;
+mod are_there_selfloops_in_edge_list;
+pub use are_there_selfloops_in_edge_list::*;
+mod is_numeric_edge_list;
+pub use is_numeric_edge_list::*;

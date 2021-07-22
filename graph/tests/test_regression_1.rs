@@ -28,8 +28,10 @@ fn test_regression_1() -> Result<(), String> {
     let mut graph = Graph::from_file_readers(
         Some(edges_reader),
         None,
-        None, // Directed
-        None, // Directed edge list
+        None, 
+        None, 
+        true,
+        true,
         true,
         "Regression1", // Name of the graph
     )?;

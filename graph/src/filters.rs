@@ -218,6 +218,8 @@ impl Graph {
                 Some(false),
                 Some(false),
                 Some(edges_number),
+                true,
+                self.has_selfloops(),
                 self.get_name(),
             ),
             (true, _) => {
@@ -294,6 +296,8 @@ impl Graph {
                     None,
                     None,
                     None,
+                    true,
+                    self.has_selfloops(),
                     self.get_name(),
                 )
             }

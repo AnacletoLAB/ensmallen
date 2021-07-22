@@ -73,6 +73,8 @@ impl Graph {
             Some(false),
             Some(false),
             None,
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
             self.get_name(),
         )
         .unwrap()
@@ -104,6 +106,15 @@ impl Graph {
                 return self.clone();
             }
         }
+
+        dbg!(
+            self.get_nodes_number(),
+            self.get_edges_number(),
+            self.get_singleton_nodes_number(),
+            self.get_singleton_nodes_with_selfloops_number(),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
+        );
 
         let verbose = verbose.unwrap_or(true);
         let pb = get_loading_bar(
@@ -158,6 +169,8 @@ impl Graph {
             Some(false),
             Some(false),
             None,
+            self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
+            false,
             self.get_name(),
         )
         .unwrap()
@@ -256,6 +269,8 @@ impl Graph {
             Some(false),
             Some(false),
             None,
+            self.has_singleton_nodes() || self.has_singleton_nodes_with_selfloops(),
+            false,
             self.get_name(),
         )
     }

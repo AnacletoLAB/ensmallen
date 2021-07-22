@@ -203,6 +203,8 @@ impl Graph {
             Some(true),
             Some(false),
             None,
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
             self.get_name(),
         )
     }

@@ -284,7 +284,9 @@ impl Graph {
     pub unsafe fn is_unchecked_trap_node_from_node_id(&self, node_id: NodeT) -> bool {
         self.connected_nodes
             .as_ref()
-            .map_or(false, |connected_nodes| connected_nodes[node_id as usize])
+            .map_or(!self.has_singleton_nodes(), |connected_nodes| {
+                connected_nodes[node_id as usize]
+            })
             && self.get_unchecked_node_degree_from_node_id(node_id) == 0
     }
 

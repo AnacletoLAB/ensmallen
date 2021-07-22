@@ -1,6 +1,6 @@
 use crate::{EdgeFileReader, EdgeT, Result};
 
-/// Return number of selfloops in the given edge list.
+/// Return whether there are selfloops in the edge list.
 ///
 /// # Arguments
 /// * `path`: &str - The path from where to load the edge list.
@@ -18,7 +18,7 @@ use crate::{EdgeFileReader, EdgeT, Result};
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 ///
-pub fn is_numeric_edge_list(
+pub fn are_there_selfloops_in_edge_list(
     path: &str,
     separator: Option<String>,
     header: Option<bool>,
@@ -50,13 +50,12 @@ pub fn is_numeric_edge_list(
         .set_verbose(verbose)
         .set_graph_name(name);
 
-    let is_numeric = file_reader
+    let contains_selfloops = file_reader
         .read_lines()?
         // Removing eventual errors.
         .filter_map(|line| line.ok())
-        .all(|(_, (src_name, dst_name, _, _))| {
-            src_name.parse::<EdgeT>().is_ok() &&
-            dst_name.parse::<EdgeT>().is_ok()
+        .any(|(_, (src_name, dst_name, _, _))| {
+            src_name == dst_name
         });
-    Ok(is_numeric)
+    Ok(contains_selfloops)
 }

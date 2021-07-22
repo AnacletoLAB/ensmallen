@@ -78,6 +78,8 @@ impl Graph {
             Some(false),
             Some(false),
             Some(self.get_directed_edges_number()),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
             self.get_name(),
         )
         .unwrap()
@@ -202,6 +204,8 @@ impl Graph {
             // may not be sorted.
             Some(false),
             Some(self.get_directed_edges_number()),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
             self.get_name(),
         )
     }

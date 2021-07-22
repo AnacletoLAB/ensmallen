@@ -12,12 +12,16 @@ impl Graph {
     /// * `node_type_file_reader`: Option<TypeFileReader> - Reader of the node type file.
     /// * `edge_type_file_reader`: Option<TypeFileReader> - Reader of the edge type file.
     /// * `directed`: bool - Whether the graph is to be read as directed or undirected.
+    /// * `may_have_singletons`: bool - Whether the graph may contain singletons.
+    /// * `may_have_singleton_with_selfloops`: bool - Whether the graph may contain singleton with selfloops.
     /// * `name`: S - The name for the graph.
     pub fn from_file_readers<S: Clone + Into<String>>(
         mut edge_file_reader: Option<EdgeFileReader>,
         mut node_file_reader: Option<NodeFileReader>,
         mut node_type_file_reader: Option<TypeFileReader<NodeTypeT>>,
         mut edge_type_file_reader: Option<TypeFileReader<EdgeTypeT>>,
+        may_have_singletons: bool,
+        may_have_singleton_with_selfloops: bool,
         directed: bool,
         name: S,
     ) -> Result<Graph> {
@@ -108,6 +112,8 @@ impl Graph {
             edge_file_reader
                 .as_ref()
                 .map(|etr| etr.numeric_edge_type_ids.clone()),
+            may_have_singletons,
+            may_have_singleton_with_selfloops,
             name.into(),
         )
     }
@@ -116,6 +122,9 @@ impl Graph {
     ///
     /// TODO! Add docstrings
     /// TODO! Add parameters for node type list and edge type list
+    /// * `may_have_singletons`: bool - Whether the graph may contain singletons.
+    /// * `may_have_singleton_with_selfloops`: bool - Whether the graph may contain singleton with selfloops.
+
     pub fn from_csv<S: Clone + Into<String>>(
         node_type_path: Option<String>,
         node_types_column_number: Option<usize>,
@@ -191,6 +200,8 @@ impl Graph {
         edges_number: Option<EdgeT>,
         load_edge_list_in_parallel: Option<bool>,
         verbose: Option<bool>,
+        may_have_singletons: Option<bool>,
+        may_have_singleton_with_selfloops: Option<bool>,
         directed: bool,
         name: S,
     ) -> Result<Graph> {
@@ -304,6 +315,8 @@ impl Graph {
             node_file_reader,
             node_type_file_reader,
             edge_type_file_reader,
+            may_have_singletons.unwrap_or(true),
+            may_have_singleton_with_selfloops.unwrap_or(true),
             directed,
             name,
         )

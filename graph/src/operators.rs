@@ -116,6 +116,8 @@ fn generic_string_operator(
         None,
         None,
         None,
+        true,
+        main.has_selfloops() || other.has_selfloops(),
         build_operator_graph_name(main, other, operator),
     )
 }
@@ -200,6 +202,8 @@ fn generic_integer_operator(
         Some(false),
         Some(false),
         None,
+        true,
+        main.has_selfloops() || other.has_selfloops(),
         build_operator_graph_name(main, other, operator),
     )
     .unwrap()

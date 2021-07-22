@@ -237,6 +237,8 @@ impl Graph {
             Some(false),
             Some(false),
             None,
+            true,
+            self.has_selfloops(),
             format!("Negative {}", self.get_name()),
         )
     }
@@ -410,6 +412,8 @@ impl Graph {
                 Some(false),
                 Some(true),
                 Some(train_edges_number as EdgeT),
+                true,
+                self.has_selfloops(),
                 format!("{} train", self.get_name()),
             )?,
             build_graph_from_integers(
@@ -434,6 +438,8 @@ impl Graph {
                 Some(false),
                 Some(true),
                 Some(validation_edges_number as EdgeT),
+                true,
+                self.has_selfloops(),
                 format!("{} test", self.get_name()),
             )?,
         ))
@@ -1009,6 +1015,8 @@ impl Graph {
             Some(false),
             Some(true),
             Some(selected_edges_number),
+            true,
+                self.has_selfloops(),
             format!("{} subgraph", self.get_name()),
         )
     }

@@ -132,6 +132,8 @@ pub fn load_ppi(
         nodes_reader,
         None,
         None,
+        true,
+        true,
         directed,
         graph_name.clone(),
     )
@@ -182,6 +184,8 @@ pub fn load_cora() -> Graph {
         Some(nodes_reader),
         None,
         None,
+        true,
+        true,
         false,
         graph_name.clone(),
     )
@@ -326,6 +330,21 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
         .iter_node_ids()
         .filter(|node_id| !not_singleton_nodes.contains(node_id))
         .collect::<HashSet<NodeT>>();
+
+    if graph.has_nodes() && !graph.has_edges(){
+        assert!(
+            graph.has_singleton_nodes(),
+            concat!(
+                "This graph has nodes (nodes number: {}) but ",
+                "has no edges (edges number: {}), therefore it ",
+                "should have singletons, but this does not seem ",
+                "to be the case (singletons number {})."
+            ),
+            graph.get_nodes_number(),
+            graph.get_edges_number(),
+            graph.get_singleton_nodes_number()
+        );
+    }
 
     // Check properties relative to singletons.
     assert_eq!(
@@ -2290,7 +2309,6 @@ fn _default_test_suite(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let _ = test_polygons(graph, verbose);
 
     warn!("Testing transitivity.");
-    // TODO! temporarily commented out!
     let _ = test_transitivity(graph, verbose);
 
     warn!("Testing all paths.");

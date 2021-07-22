@@ -51,6 +51,8 @@ impl Graph {
             Some(false),
             // TODO: possibly the edges number can be precomputed.
             None,
+            true,
+            true,
             self.get_name(),
         )
         .unwrap()
@@ -84,6 +86,8 @@ impl Graph {
             Some(false),
             // TODO: possibly the edges number can be precomputed.
             None,
+            true,
+            true,
             self.get_name(),
         )
         .unwrap()
@@ -117,6 +121,8 @@ impl Graph {
             Some(false),
             // TODO: possibly the edges number can be precomputed.
             None,
+            true,
+            true,
             self.get_name(),
         )
         .unwrap()
@@ -151,6 +157,8 @@ impl Graph {
             Some(false),
             // TODO: possibly the edges number can be precomputed.
             None,
+            true,
+            true,
             self.get_name(),
         )
         .unwrap()
@@ -185,6 +193,8 @@ impl Graph {
             Some(false),
             // TODO: possibly the edges number can be precomputed.
             None,
+            true,
+            true,
             self.get_name(),
         )
         .unwrap()
@@ -214,6 +224,8 @@ impl Graph {
             Some(false),
             // TODO: possibly the edges number can be precomputed.
             None,
+            true,
+            true,
             self.get_name(),
         )
         .unwrap()
@@ -241,6 +253,8 @@ impl Graph {
             Some(false),
             Some(false),
             Some(self.get_directed_edges_number()),
+            self.has_singleton_nodes(),
+            self.has_singleton_nodes_with_selfloops(),
             self.get_name(),
         )
         .unwrap()
@@ -277,6 +291,8 @@ impl Graph {
             Some(false),
             Some(false),
             Some((self.get_nodes_number() as EdgeT).pow(2) - self.get_directed_edges_number()),
+            true,
+            true,
             self.get_name(),
         )
         .unwrap()

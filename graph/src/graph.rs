@@ -60,6 +60,18 @@ pub struct Graph {
 
 /// # Graph utility methods
 impl Graph {
+    /// Return new instance of a Graph object.
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to build the graph as directed or undirected.
+    /// * `nodes`: Vocabulary<NodeT> - The nodes vocabulary.
+    /// * `node_types`: Option<NodeTypeVocabulary> - The optional node types vocabulary.
+    /// * `edges`: EliasFano - The Elias-Fano data structure containing the adjacency metric.
+    /// * `edge_types`: Option<EdgeTypeVocabulary> - The optional edge types vocabulary.
+    /// * `weights`: Option<Vec<WeightT>> - The optional edge weights vector.
+    /// * `may_have_singletons`: bool - Whether the graph may contain singletons.
+    /// * `may_have_singleton_with_selfloops`: bool - Whether the graph may contain singleton with selfloops.
+    /// * `name`: S - The name of the graph.
     pub(crate) fn new<S: Into<String>>(
         directed: bool,
         nodes: Vocabulary<NodeT>,
@@ -67,6 +79,8 @@ impl Graph {
         edges: EliasFano,
         edge_types: Option<EdgeTypeVocabulary>,
         weights: Option<Vec<WeightT>>,
+        may_have_singletons: bool,
+        may_have_singleton_with_selfloops: bool,
         name: S,
     ) -> Graph {
         let nodes_number = nodes.len();
@@ -90,14 +104,17 @@ impl Graph {
             connected_nodes: None,
             connected_nodes_number: nodes_number as NodeT,
         };
-        let connected_nodes = graph.get_connected_nodes();
-        let connected_nodes_number = connected_nodes.count_ones() as NodeT;
-        // If there are less connected nodes than the number of nodes
-        // in the graph, it means that there must be some singleton or singleton with selfloops.
-        if connected_nodes_number < graph.get_nodes_number() {
-            graph.connected_nodes = Some(connected_nodes);
-            graph.connected_nodes_number = connected_nodes_number;
-            graph.unique_sources = Some(graph.get_unique_sources());
+        if may_have_singletons || may_have_singleton_with_selfloops {
+            let connected_nodes =
+                graph.get_connected_nodes(may_have_singletons, may_have_singleton_with_selfloops);
+            let connected_nodes_number = connected_nodes.count_ones() as NodeT;
+            // If there are less connected nodes than the number of nodes
+            // in the graph, it means that there must be some singleton or singleton with selfloops.
+            if connected_nodes_number < graph.get_nodes_number() {
+                graph.connected_nodes = Some(connected_nodes);
+                graph.connected_nodes_number = connected_nodes_number;
+                graph.unique_sources = Some(graph.get_unique_sources());
+            }
         }
         graph
     }
@@ -121,12 +138,23 @@ impl Graph {
     }
 
     /// Return bitvector containing nodes as true when they have incoming nodes.
-    fn get_connected_nodes(&self) -> BitVec<Lsb0, u8> {
-        if self.is_directed() {
+    ///
+    /// # Arguments
+    /// * `may_have_singletons`: bool - Whether the graph has singleton.
+    /// * `may_have_singleton_with_selfloops`: bool - Whether the graph has singleton with selfloops.
+    fn get_connected_nodes(
+        &self,
+        may_have_singletons: bool,
+        may_have_singleton_with_selfloops: bool,
+    ) -> BitVec<Lsb0, u8> {
+        let connected_nodes = if may_have_singletons && self.is_directed() {
             let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_nodes_number() as usize];
             let thread_shared_connected_nodes = ThreadDataRaceAware {
                 value: std::cell::UnsafeCell::new(&mut connected_nodes),
             };
+            // If the graph may contain singletons, we need to iterate on all
+            // the nodes neighbours in order to find if whether a node is a singleton or
+            // if it is a trap node.
             // Compute in parallel the bitvector of all the nodes that have incoming edges
             self.par_iter_node_ids().for_each(|node_id| unsafe {
                 let connected_nodes = thread_shared_connected_nodes.value.get();
@@ -141,10 +169,7 @@ impl Graph {
                     *(*connected_nodes).get_unchecked_mut(node_id as usize) = true;
                 }
             });
-
-            unsafe {
-                std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(connected_nodes)
-            }
+            connected_nodes
         } else {
             let mut connected_nodes = bitvec![Lsb0, AtomicU8; 1; self.get_nodes_number() as usize];
             let thread_shared_connected_nodes = ThreadDataRaceAware {
@@ -159,22 +184,22 @@ impl Graph {
                     // there should be only a small amount of singletons.
                     // The same applies also to singletons with selfloops.
                     if unlikely(
-                        node_degree == 0
-                            || self
-                                .iter_unchecked_neighbour_node_ids_from_source_node_id(
-                                    node_id as NodeT,
-                                )
-                                .all(|dst_id| node_id as NodeT == dst_id),
+                        may_have_singletons && node_degree == 0
+                            || may_have_singleton_with_selfloops
+                                && node_degree > 0
+                                && self
+                                    .iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                        node_id as NodeT,
+                                    )
+                                    .all(|dst_id| node_id as NodeT == dst_id),
                     ) {
                         let connected_nodes = thread_shared_connected_nodes.value.get();
                         *(*connected_nodes).get_unchecked_mut(node_id) = false;
                     }
                 });
-
-            unsafe {
-                std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(connected_nodes)
-            }
-        }
+            connected_nodes
+        };
+        unsafe { std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(connected_nodes) }
     }
 
     /// Return whether given graph has any edge overlapping with current graph.
@@ -283,8 +308,6 @@ impl Graph {
     }
 }
 
-
-
 #[derive(Clone, Debug)]
 pub struct GraphMemoryStats {
     pub edges: EliasFanoMemoryStats,
@@ -311,18 +334,18 @@ impl GraphMemoryStats {
     /// Return the total memory used
     pub fn total(&self) -> usize {
         self.edges.total()
-        + self.weights
-        + self.node_types.as_ref().map_or(0, |x| x.total())
-        + self.edge_types.as_ref().map_or(0, |x| x.total())
-        + self.nodes.total()
-        + self.name
-        + self.connected_nodes
-        + self.unique_sources
-        + self.destinations
-        + self.sources
-        + self.cumulative_node_degrees
-        + self.metadata
-        + self.cache
+            + self.weights
+            + self.node_types.as_ref().map_or(0, |x| x.total())
+            + self.edge_types.as_ref().map_or(0, |x| x.total())
+            + self.nodes.total()
+            + self.name
+            + self.connected_nodes
+            + self.unique_sources
+            + self.destinations
+            + self.sources
+            + self.cumulative_node_degrees
+            + self.metadata
+            + self.cache
     }
 }
 
@@ -332,10 +355,14 @@ impl Graph {
     /// This methods is intended for internal and testing uses only.
     pub fn memory_stats(&self) -> GraphMemoryStats {
         use std::mem::size_of;
-        GraphMemoryStats{
+        GraphMemoryStats {
             // Exact main structures
             edges: self.edges.memory_stats(),
-            weights: size_of::<Option<Vec<WeightT>>>() + self.weights.as_ref().map_or(0, |v| v.capacity() * size_of::<WeightT>()),
+            weights: size_of::<Option<Vec<WeightT>>>()
+                + self
+                    .weights
+                    .as_ref()
+                    .map_or(0, |v| v.capacity() * size_of::<WeightT>()),
 
             node_types: self.node_types.as_ref().map(|nt| nt.memory_stats()),
             edge_types: self.edge_types.as_ref().map(|et| et.memory_stats()),
@@ -345,20 +372,35 @@ impl Graph {
             metadata: size_of::<u8>() + size_of::<u64>() + size_of::<bool>(),
             name: size_of::<String>() + self.name.capacity() * size_of::<char>(),
 
-            cache: unsafe{(*self.cache.get()).total()},
-            
-            
+            cache: unsafe { (*self.cache.get()).total() },
+
             // Exact caching data
-            destinations: size_of::<Option<Vec<NodeT>>>() + self.destinations.as_ref().map_or(0, |v| v.capacity() * size_of::<NodeT>()),
-            sources: size_of::<Option<Vec<NodeT>>>() + self.sources.as_ref().map_or(0, |v| v.capacity() * size_of::<NodeT>()),
-            cumulative_node_degrees: size_of::<Option<Vec<EdgeT>>>() + self.cumulative_node_degrees.as_ref().map_or(0, |v| v.capacity() * size_of::<EdgeT>()),
+            destinations: size_of::<Option<Vec<NodeT>>>()
+                + self
+                    .destinations
+                    .as_ref()
+                    .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
+            sources: size_of::<Option<Vec<NodeT>>>()
+                + self
+                    .sources
+                    .as_ref()
+                    .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
+            cumulative_node_degrees: size_of::<Option<Vec<EdgeT>>>()
+                + self
+                    .cumulative_node_degrees
+                    .as_ref()
+                    .map_or(0, |v| v.capacity() * size_of::<EdgeT>()),
 
             unique_sources: self.unique_sources.as_ref().map_or(0, |e| e.size()),
-            connected_nodes: size_of::<Option<BitVec<Lsb0, u8>>>() + self.connected_nodes.as_ref().map_or(0, |bv| bv.capacity() * size_of::<u8>()),
-        } 
+            connected_nodes: size_of::<Option<BitVec<Lsb0, u8>>>()
+                + self
+                    .connected_nodes
+                    .as_ref()
+                    .map_or(0, |bv| bv.capacity() * size_of::<u8>()),
+        }
     }
 
-    /// Returns a string describing the memory usage of all the fields of all the 
+    /// Returns a string describing the memory usage of all the fields of all the
     /// structures used to store the current graph.
     pub fn get_memory_stats(&self) -> String {
         format!("{:#4?}", self.memory_stats())
