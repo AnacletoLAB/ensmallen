@@ -25,6 +25,33 @@ pub struct EdgeTypeVocabulary {
     pub unknown_count: EdgeT,
 }
 
+#[derive(Debug, Clone)]
+pub struct EdgeTypeVocabularyMemoryStats {
+    pub ids: usize,
+    pub vocabulary: VocabularyMemoryStats,
+    pub counts: usize,
+    pub metadata: usize,
+}
+
+impl EdgeTypeVocabularyMemoryStats {
+    pub fn total(&self) -> usize {
+        self.ids + self.vocabulary.total() 
+        + self.counts + self.metadata
+    }
+}
+
+impl EdgeTypeVocabulary {
+    pub fn memory_stats(&self) -> EdgeTypeVocabularyMemoryStats {
+        use std::mem::size_of;
+        EdgeTypeVocabularyMemoryStats{
+            ids: size_of::<Vec<Option<EdgeTypeT>>>() + self.ids.capacity() * size_of::<Option<EdgeTypeT>>(),
+            vocabulary: self.vocabulary.memory_stats(),
+            counts: size_of::<Vec<EdgeT>>() + self.counts.capacity() * size_of::<EdgeT>(),
+            metadata: size_of::<EdgeT>()
+        }
+    }
+}
+
 impl EdgeTypeVocabulary {
     pub fn from_structs(
         ids: Vec<Option<EdgeTypeT>>,
