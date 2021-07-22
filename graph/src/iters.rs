@@ -112,13 +112,29 @@ impl Graph {
             .map(move |node| unsafe { self.get_unchecked_node_degree_from_node_id(node) })
     }
 
-    /// Return iterator on the unweighted node degrees of the graph.
+    /// Return parallel iterator on the unweighted node degrees of the graph.
     ///
     /// Note that with unweighted it is meant that if this graph instance
     /// has weights, the degree will not take them into consideration.
     pub fn par_iter_node_degrees(&self) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
         self.par_iter_node_ids()
             .map(move |node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) })
+    }
+
+    /// Return iterator on the unweighted comulative node degrees of the graph.
+    pub fn iter_comulative_node_degrees(&self) -> impl Iterator<Item = EdgeT> + '_ {
+        self.iter_node_ids().map(move |node_id| unsafe {
+            self.get_unchecked_comulative_node_degree_from_node_id(node_id)
+        })
+    }
+
+    /// Return parallel iterator on the unweighted comulative node degrees of the graph.
+    pub fn par_iter_comulative_node_degrees(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = EdgeT> + '_ {
+        self.par_iter_node_ids().map(move |node_id| unsafe {
+            self.get_unchecked_comulative_node_degree_from_node_id(node_id)
+        })
     }
 
     /// Return iterator on the weighted node degrees of the graph.
@@ -175,12 +191,11 @@ impl Graph {
     /// Return iterator on the singleton nodes IDs of the graph.
     pub fn iter_singleton_node_ids(&self) -> Box<dyn Iterator<Item = NodeT> + '_> {
         match self.connected_nodes.as_ref() {
-            Some(nsns) => Box::new(
-                nsns.iter_zeros()
-                .map(|node_id| node_id as NodeT)
-                .filter(move |&node_id| unsafe {
+            Some(nsns) => Box::new(nsns.iter_zeros().map(|node_id| node_id as NodeT).filter(
+                move |&node_id| unsafe {
                     self.get_unchecked_node_degree_from_node_id(node_id) == 0
-                })),
+                },
+            )),
             _ => Box::new(::std::iter::empty()),
         }
     }
@@ -342,6 +357,14 @@ impl Graph {
         directed: bool,
     ) -> impl ParallelIterator<Item = NodeT> + '_ {
         self.par_iter_edge_node_ids(directed)
+            .map(move |(_, src, _)| src)
+    }
+
+    /// Return parallel iterator on the (non unique) directed source nodes of the graph.
+    pub fn par_iter_directed_source_node_ids(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = NodeT> + '_ {
+        self.par_iter_directed_edge_node_ids()
             .map(move |(_, src, _)| src)
     }
 

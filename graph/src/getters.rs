@@ -413,6 +413,14 @@ impl Graph {
         self.par_iter_source_node_ids(directed).collect()
     }
 
+    /// Return vector on the (non unique) directed source nodes of the graph.
+    pub fn get_directed_source_node_ids(&self) -> Vec<NodeT> {
+        let mut sources = vec![0 as NodeT; self.get_directed_edges_number() as usize];
+        self.par_iter_directed_source_node_ids()
+            .collect_into_vec(&mut sources);
+        sources
+    }
+
     /// Return vector of the non-unique source nodes names.
     ///
     /// # Arguments
@@ -429,6 +437,14 @@ impl Graph {
     /// * `directed`: bool - Whether to filter out the undirected edges.
     pub fn get_destination_node_ids(&self, directed: bool) -> Vec<NodeT> {
         self.par_iter_destination_node_ids(directed).collect()
+    }
+
+    /// Return vector on the (non unique) directed destination nodes of the graph.
+    pub fn get_directed_destination_node_ids(&self) -> Vec<NodeT> {
+        let mut destinations = vec![0 as NodeT; self.get_directed_edges_number() as usize];
+        self.par_iter_directed_destination_node_ids()
+            .collect_into_vec(&mut destinations);
+        destinations
     }
 
     /// Return vector of the non-unique destination nodes names.
@@ -1053,12 +1069,19 @@ impl Graph {
 
     /// Returns the unweighted degree of every node in the graph.
     pub fn get_node_degrees(&self) -> Vec<NodeT> {
-        self.par_iter_node_degrees().collect()
+        let mut node_degrees = vec![0; self.get_nodes_number() as usize];
+        self.par_iter_node_degrees()
+            .collect_into_vec(&mut node_degrees);
+        node_degrees
     }
 
     /// Returns the weighted degree of every node in the graph.
     pub fn get_weighted_node_degrees(&self) -> Result<Vec<f64>> {
-        Ok(self.par_iter_weighted_node_degrees()?.collect())
+        self.par_iter_weighted_node_degrees().map(|iter| {
+            let mut weighted_node_degrees = vec![0.0; self.get_nodes_number() as usize];
+            iter.collect_into_vec(&mut weighted_node_degrees);
+            weighted_node_degrees
+        })
     }
 
     /// Return set of nodes that are not singletons.
@@ -1083,9 +1106,10 @@ impl Graph {
     pub fn get_cumulative_node_degrees(&self) -> Vec<EdgeT> {
         self.cumulative_node_degrees.as_ref().map_or_else(
             || {
-                self.par_iter_node_ids()
-                    .map(|src| unsafe { self.get_unchecked_edge_id_from_node_ids(src + 1, 0) })
-                    .collect()
+                let mut cumulative_node_degrees = vec![0; self.get_nodes_number() as usize];
+                self.par_iter_comulative_node_degrees()
+                    .collect_into_vec(&mut cumulative_node_degrees);
+                cumulative_node_degrees
             },
             |cumulative_node_degrees| cumulative_node_degrees.clone(),
         )

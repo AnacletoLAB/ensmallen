@@ -683,6 +683,30 @@ impl Graph {
             .map(|node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) })
     }
 
+    /// Returns the comulative node degree up to the given node.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Integer ID of the node.
+    ///
+    /// # Safety
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_comulative_node_degree_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> EdgeT {
+        self.get_unchecked_edge_id_from_node_ids(node_id + 1, 0)
+    }
+
+    /// Returns the comulative node degree up to the given node.
+    ///
+    /// # Arguments
+    /// * `node_id`: NodeT - Integer ID of the node.
+    pub fn get_comulative_node_degree_from_node_id(&self, node_id: NodeT) -> Result<EdgeT> {
+        self.validate_node_id(node_id).map(|node_id| unsafe {
+            self.get_unchecked_comulative_node_degree_from_node_id(node_id)
+        })
+    }
+
     /// Returns the weighted sum of outbound neighbours of given node ID.
     ///
     /// # Arguments

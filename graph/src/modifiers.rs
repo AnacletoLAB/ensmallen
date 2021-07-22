@@ -19,14 +19,14 @@ impl Graph {
 
         if vector_destinations {
             if self.destinations.is_none() {
-                self.destinations = Some(self.get_destination_node_ids(true));
+                self.destinations = Some(self.get_directed_destination_node_ids());
             }
         } else {
             self.destinations = None;
         }
         if vector_sources {
             if self.sources.is_none() {
-                self.sources = Some(self.get_source_node_ids(true));
+                self.sources = Some(self.get_directed_source_node_ids());
             }
         } else {
             self.sources = None;
