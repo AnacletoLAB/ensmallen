@@ -667,6 +667,15 @@ impl Graph {
             .collect()
     }
 
+    /// Return vector with the sorted directed edge Ids.
+    pub fn get_directed_edge_node_ids(&self) -> Vec<Vec<NodeT>> {
+        let mut edge_ids = vec![vec![0; 2]; self.get_directed_edges_number() as usize];
+        self.par_iter_directed_edge_node_ids()
+            .map(|(_, src, dst)| vec![src, dst])
+            .collect_into_vec(&mut edge_ids);
+        edge_ids
+    }
+
     /// Return vector with the sorted edge names.
     ///
     /// # Arguments
@@ -675,6 +684,16 @@ impl Graph {
         self.par_iter_edges(directed)
             .map(|(_, _, src_name, _, dst_name)| (src_name, dst_name))
             .collect()
+    }
+
+    /// Return vector with the sorted directed edge names.
+    pub fn get_directed_edge_node_names(&self) -> Vec<(String, String)> {
+        let mut edge_names =
+            vec![("".to_string(), "".to_string()); self.get_directed_edges_number() as usize];
+        self.par_iter_directed_edges()
+            .map(|(_, _, src_name, _, dst_name)| (src_name, dst_name))
+            .collect_into_vec(&mut edge_names);
+        edge_names
     }
 
     /// Returns number of nodes with unknown node type.

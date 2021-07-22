@@ -4933,6 +4933,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return vector on the (non unique) directed source nodes of the graph
+    pub fn get_directed_source_node_ids(&self) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.graph.get_directed_source_node_ids(), NodeT)
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self, directed)"]
     /// Return vector of the non-unique source nodes names.
     ///
@@ -4957,6 +4965,14 @@ impl EnsmallenGraph {
     pub fn get_destination_node_ids(&self, directed: bool) -> Py<PyArray1<NodeT>> {
         let gil = pyo3::Python::acquire_gil();
         to_ndarray_1d!(gil, self.graph.get_destination_node_ids(directed), NodeT)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return vector on the (non unique) directed destination nodes of the graph
+    pub fn get_directed_destination_node_ids(&self) -> Py<PyArray1<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_1d!(gil, self.graph.get_directed_destination_node_ids(), NodeT)
     }
 
     #[automatically_generated_binding]
@@ -5166,6 +5182,14 @@ impl EnsmallenGraph {
     }
 
     #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return vector with the sorted directed edge Ids
+    pub fn get_directed_edge_node_ids(&self) -> Py<PyArray2<NodeT>> {
+        let gil = pyo3::Python::acquire_gil();
+        to_ndarray_2d!(gil, self.graph.get_directed_edge_node_ids(), NodeT)
+    }
+
+    #[automatically_generated_binding]
     #[text_signature = "($self, directed)"]
     /// Return vector with the sorted edge names.
     ///
@@ -5176,6 +5200,13 @@ impl EnsmallenGraph {
     ///
     pub fn get_edge_node_names(&self, directed: bool) -> Vec<(String, String)> {
         self.graph.get_edge_node_names(directed)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self)"]
+    /// Return vector with the sorted directed edge names
+    pub fn get_directed_edge_node_names(&self) -> Vec<(String, String)> {
+        self.graph.get_directed_edge_node_names()
     }
 
     #[automatically_generated_binding]
@@ -7962,6 +7993,40 @@ impl EnsmallenGraph {
     ///
     pub fn get_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<NodeT> {
         pe!(self.graph.get_node_degree_from_node_id(node_id))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_id)"]
+    /// Returns the comulative node degree up to the given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int,
+    ///     Integer ID of the node.
+    ///
+    ///
+    /// Safety
+    /// ------
+    /// If the given node ID does not exist in the current graph the method will raise a panic.
+    pub unsafe fn get_unchecked_comulative_node_degree_from_node_id(
+        &self,
+        node_id: NodeT,
+    ) -> EdgeT {
+        self.graph
+            .get_unchecked_comulative_node_degree_from_node_id(node_id)
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($self, node_id)"]
+    /// Returns the comulative node degree up to the given node.
+    ///
+    /// Parameters
+    /// ----------
+    /// node_id: int,
+    ///     Integer ID of the node.
+    ///
+    pub fn get_comulative_node_degree_from_node_id(&self, node_id: NodeT) -> PyResult<EdgeT> {
+        pe!(self.graph.get_comulative_node_degree_from_node_id(node_id))
     }
 
     #[automatically_generated_binding]
