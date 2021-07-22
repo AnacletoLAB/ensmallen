@@ -15,11 +15,11 @@
 #![feature(option_result_unwrap_unchecked)]
 
 mod vocabulary;
-pub use self::vocabulary::Vocabulary;
+pub use self::vocabulary::*;
 mod node_type_vocabulary;
-pub use self::node_type_vocabulary::NodeTypeVocabulary;
+pub use self::node_type_vocabulary::*;
 mod edge_type_vocabulary;
-pub use self::edge_type_vocabulary::EdgeTypeVocabulary;
+pub use self::edge_type_vocabulary::*;
 
 mod csv_file_writer;
 pub(crate) use self::csv_file_writer::compose_lines;

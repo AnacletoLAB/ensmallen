@@ -946,6 +946,9 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             );
         }
     }
+
+    let _total_memory_used = graph.memory_stats().total();
+
     Ok(())
 }
 

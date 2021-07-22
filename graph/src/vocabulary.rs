@@ -24,6 +24,66 @@ pub enum Vocabulary<IndexT: ToFromUsize + Sync + Debug> {
     },
 }
 
+#[derive(Debug, Clone)]
+pub enum VocabularyMemoryStats {
+    String {
+        map: usize,
+        reverse_map: usize,
+        metadata: usize,
+    },
+    Numeric{
+        metadata: usize,
+    }
+}
+
+impl VocabularyMemoryStats {
+    pub fn total(&self) -> usize {
+        use VocabularyMemoryStats::*;
+        match self {
+            String{
+                map,
+                reverse_map,
+                metadata,
+            } => {
+                map + reverse_map + metadata
+            }
+            Numeric{
+                metadata
+            } => {
+                *metadata
+            }
+        }
+    }
+}
+
+impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
+    pub fn memory_stats(&self) -> VocabularyMemoryStats {
+        use std::mem::size_of;
+
+        match self {
+            Vocabulary::String{
+                map,
+                reverse_map
+            } => {
+                VocabularyMemoryStats::String{
+                    // https://github.com/servo/servo/issues/6908
+                    map: (map.capacity() as f64 * 1.1) as usize 
+                    * (size_of::<String>() + size_of::<IndexT>() + size_of::<usize>())
+                    + map.keys().map(|s| size_of::<String>() + s.capacity() * size_of::<char>()).sum::<usize>(),
+                    reverse_map: reverse_map.iter().map(|s| size_of::<String>() + s.capacity() * size_of::<char>()).sum::<usize>(),
+                    metadata: size_of::<Vocabulary<IndexT>>(),
+                }
+            },
+            Vocabulary::Numeric{..} => {
+                VocabularyMemoryStats::Numeric{
+                    metadata: size_of::<Vocabulary<IndexT>>(),
+                }
+            },
+        }
+    }
+}
+
+
 impl<IndexT: ToFromUsize + Sync + Debug> Default for Vocabulary<IndexT> {
     fn default() -> Self {
         Self::new()
