@@ -153,7 +153,7 @@ impl Checker {
                                             }
                                         }
                                     }
-                                    /// Get the method arguments excluding self
+                                    // Get the method arguments excluding self
                                     let method_args: Vec<_> = method.args.0.iter().filter_map(|x|
                                         match x.arg_type {
                                             Type::SelfType => None,

@@ -22,7 +22,7 @@ const BLACKLIST: &'static [&'static str] = &[
 pub fn skip_file(path: &str) -> bool {
     for deny in BLACKLIST.iter(){
         if path.contains(deny) {
-            eprintln!("SKIPPING");
+            eprintln!("Skipping the file {}", path);
             return true;
         }
     }
@@ -48,11 +48,16 @@ pub fn get_library_sources() -> Vec<Module> {
     for path in src_files {
         // read the file
         println!("Parsing: {:?}", path);
-        let contents = fs::read_to_string(path).expect("File not found");
+        let contents = fs::read_to_string(&path).expect("File not found");
         // parse the file
-        let (_reminder, module) = Module::parse(contents.as_bytes());
-        modules.push(module);
+        let (_reminder, mut module) = Module::parse(contents.as_bytes());
+        module.set_path(path);
+        modules.push(parse_macros(module));
     }
 
     modules
+}
+
+pub fn print_sep() {
+    println!("--------------------------------------------------------------------------------");
 }

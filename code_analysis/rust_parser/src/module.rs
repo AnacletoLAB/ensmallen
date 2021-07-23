@@ -1,6 +1,7 @@
 use super::*;
 #[derive(Debug, Clone, PartialEq)]
 pub struct Module {
+    pub file_path: String,
     pub doc: String,
     pub file: String,
     pub name: String,
@@ -20,6 +21,10 @@ pub struct Module {
 }
 
 impl Module {
+    pub fn iter_on_functions_and_methods(&self) -> impl Iterator<Item=&Function> {
+        self.functions.iter().chain(self.impls.iter().flat_map(|imp| imp.methods.iter()))
+    }
+
     pub fn get_function_names(&self) -> Vec<String> {
         let mut result = Vec::new();
 
@@ -35,11 +40,27 @@ impl Module {
 
         result
     }
+
+    /// Set the source file path for info.
+    pub fn set_path(&mut self, path: String) {
+        self.file_path = path.to_string();
+
+        for function in &mut self.functions {
+            function.file_path = path.to_string();
+        }
+
+        for imp in &mut self.impls {
+            for method in &mut imp.methods {
+                method.file_path = path.to_string();
+            }
+        }
+    }
 }
 
 impl Default for Module {
     fn default() -> Self {
         Module{
+            file_path: String::new(),
             doc: String::new(),
             file: String::new(),
             name: String::new(),

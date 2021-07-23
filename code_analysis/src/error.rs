@@ -1,6 +1,13 @@
 
 #[derive(Debug, Clone, PartialEq)]
 pub enum Error {
+    // MissingIntroduction{
+    //     method_name: String,
+    // },
+    // MissplacedDocSection{
+    //     method_name: String,
+    //     section_name: String,
+    // },
     NoDoc{
         method_name: String,
     },
@@ -24,15 +31,8 @@ pub enum Error {
     EmptyIntroduction{
         method_name: String,
     },
-    MissingIntroduction{
-        method_name: String,
-    },
     DuplicatedIntroduction{
         method_name: String,
-    },
-    MissplacedDocSection{
-        method_name: String,
-        section_name: String,
     },
     MissingSection{
         method_name: String,

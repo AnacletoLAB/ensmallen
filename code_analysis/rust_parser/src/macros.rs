@@ -44,7 +44,7 @@ impl Parse for Macro {
 
         data = skip_whitespace(data);
         
-        let (mut data, mut macro_body) = get_next_matching(data, b'{', b'}');
+        let (mut data, macro_body) = get_next_matching(data, b'{', b'}');
 
         result.content = bytes_to_string(macro_body);
 

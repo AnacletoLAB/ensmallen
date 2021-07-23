@@ -65,6 +65,7 @@ impl Parse for Impl {
             maybe_parse!(impl_content, doc, attrs, MacroCall,  macro_calls);
             if Function::can_parse(impl_content) {
                 let mut method = parse!(impl_content, Function);
+                method.set_class(struct_type.clone());
                 // TODO!: add attributes and doc
                 method.doc = doc;
                 doc = String::new();

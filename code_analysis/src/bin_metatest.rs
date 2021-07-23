@@ -1,6 +1,5 @@
 use rust_parser::*;
 use libcodeanalysis::*;
-use std::collections::HashSet;
 
 const METHODS_BLACKLIST: &'static [&'static str] = &[
     "eq",
@@ -48,7 +47,7 @@ fn build(method_id: usize, method: Function) -> Option<(String, String, String, 
         }
 
         match fuzz_types.iter().find(|x| x.0 == arg.name) {
-            Some((fuzz_name, fuzz_type)) => {
+            Some((_fuzz_name, fuzz_type)) => {
                 match (fuzz_type, arg.arg_type) {
                     (x, y) if x == "Option<_>" && y == "Option<_>" => {
                         // Extract the value inside the option
@@ -186,7 +185,7 @@ pub struct {struct_name} {{
             "#,
                 method_call)
             }
-            x @ _ => {
+            _ => {
                 format!("let _ = {};", method_call)
             }
         };
@@ -454,5 +453,5 @@ pub fn meta_test_trace(data: MetaParams) -> Result<(), String> {{
         meta_struct=meta_struct,
     );
 
-    std::fs::write("../fuzzing/graph_harness/src/meta_test.rs", result);
+    std::fs::write("../fuzzing/graph_harness/src/meta_test.rs", result).unwrap();
 }
