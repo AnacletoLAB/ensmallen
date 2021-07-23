@@ -37,7 +37,7 @@ impl Checker {
                         let method_name = format!("{}::{}", struct_name, method.name);
 
                         // all methods must have doc
-                        if method.doc == "" {
+                        if method.doc.trim().is_empty() {
                             self.log(Error::NoDoc{method_name});
                             continue;
                         }
@@ -154,11 +154,8 @@ impl Checker {
                                         }
                                     }
                                     // Get the method arguments excluding self
-                                    let method_args: Vec<_> = method.args.0.iter().filter_map(|x|
-                                        match x.arg_type {
-                                            Type::SelfType => None,
-                                            _ => Some(x),
-                                        }
+                                    let method_args: Vec<_> = method.args.0.iter().filter(|x|
+                                        matches!(x.arg_type, Type::SelfType)
                                     ).collect();
 
                                     // check that all the args are present and no extra arg is present

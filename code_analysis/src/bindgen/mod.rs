@@ -55,7 +55,7 @@ pub fn gen_bindings(path: &str) {
             } else {
                 match extract_module_name_from_path(binding.file_path.as_str()) {
                     Some(module_name) => {
-                        let module_functions = functions_modules.entry(module_name).or_insert(Vec::new());
+                        let module_functions = functions_modules.entry(module_name).or_insert_with(Vec::new);
                         module_functions.push(binding);
                     }
                     None => {

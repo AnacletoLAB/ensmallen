@@ -22,28 +22,29 @@ pub fn tfidf_gen(file_path: &str) {
 
     let vals = documents
         .iter()
-        .map(|x| x.iter().map(|y| y.as_str()).collect::<Vec<&str>>())
+        .map(|x| x.iter().map(String::as_str).collect::<Vec<&str>>())
         .collect::<Vec<Vec<&str>>>();
 
     let tfidf = okapi_bm25_tfidf(&vals[..], None, None, None, None).unwrap();
 
     let mut terms = HashSet::new();
-    documents.iter().for_each(|document| {
-        document.iter().for_each(|term| {
+
+    for document in &documents {
+        for term in document {
             terms.insert(term);
-        });
-    });
+        }
+    }
 
     let method_names_list = format!(
-        r#"pub const METHODS_NAMES: &'static [&'static str] = &[
+        r#"pub const METHODS_NAMES: &[&str] = &[
 {}
 ];
 
-pub const TERMS: &'static [&'static str] = &[
+pub const TERMS: &[&str] = &[
 {}
 ];
 
-pub const TFIDF_FREQUENCIES: &'static [&'static [(&'static str, f64)]] = &[
+pub const TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
 {}
 ];
 "#,
@@ -76,12 +77,12 @@ pub const TFIDF_FREQUENCIES: &'static [&'static [(&'static str, f64)]] = &[
 
 fn split_words(method_name: &str) -> Vec<String> {
     let mut result: Vec<String> = Vec::new();
-    for word in method_name.split("_") {
+    for word in method_name.split('_') {
         match word {
             "type" | "types" | "id" | "ids" | "name" | "names" => match result.last_mut() {
                 Some(last) => {
                     last.push('_');
-                    last.extend(word.chars());
+                    last.push_str(word);
                 }
                 None => {
                     result.push(word.to_string());

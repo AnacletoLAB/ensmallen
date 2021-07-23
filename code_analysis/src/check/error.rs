@@ -65,7 +65,7 @@ pub enum Error {
         method_name: String,
         regexes: Vec<String>,
     },
-    RegexSytnaxError{
+    RegexSytnax{
         source: String,
         error_msg: String,
     },

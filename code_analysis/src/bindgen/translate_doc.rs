@@ -1,6 +1,6 @@
 use super::*;
 
-pub fn translate_doc(doc: String) -> String {
+pub fn translate_doc(doc: &str) -> String {
     let mut result = String::new();
 
     // parse the documentation into sections
@@ -10,13 +10,13 @@ pub fn translate_doc(doc: String) -> String {
     for section in sections {
         match section {
             DocSection::Introduction(intro) => {
-                result.extend(bytes_to_string(trim(intro.as_bytes())).chars());
+                result.push_str(&bytes_to_string(trim(intro.as_bytes())));
             }
             DocSection::Arguments {
                 arguments,
                 ..
             } => {
-                result.extend("\n\nParameters\n----------\n".chars());
+                result.push_str("\n\nParameters\n----------\n");
 
                 //args_sec.extend(prologue.chars());
 
@@ -26,14 +26,13 @@ pub fn translate_doc(doc: String) -> String {
                             name,
                             arg_type,
                             description,
-                        }) => result.extend(
-                            format!(
+                        }) => result.push_str(
+                            &format!(
                                 "{name}: {arg_type},\n    {description}\n",
                                 name = name,
                                 arg_type = translate_type_str(arg_type),
                                 description = description,
                             )
-                            .chars(),
                         ),
                         Argument::NotParsable(_) => {}
                     }
@@ -45,22 +44,22 @@ pub fn translate_doc(doc: String) -> String {
                 exceptions,
                 ..
             } => {
-                result.extend("\n\nRaises\n-------\n".chars());
+                result.push_str("\n\nRaises\n-------\n");
 
                 for excp in exceptions {
-                    result.extend(format!("ValueError\n    {}\n", excp).chars());
+                    result.push_str(&format!("ValueError\n    {}\n", excp));
                 }
             }
             DocSection::Unsafe { text } => {
-                result.extend("\n\nSafety\n------\n".chars());
-                result.extend(text.chars());
+                result.push_str("\n\nSafety\n------\n");
+                result.push_str(&text);
             }
             _ => {}
         }
     }
 
     result
-        .split("\n")
+        .split('\n')
         .map(|x| format!("    /// {}", x))
         .collect::<Vec<_>>()
         .join("\n")

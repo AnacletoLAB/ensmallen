@@ -3,19 +3,19 @@ use regex::Regex;
 use lazy_static::lazy_static;
 
 // the regexes inside the impl doc must match this regex
-pub const IMPL_DOC_REGEX_REGEX_STR: &'static str = r#"\s*\*\s*`/(.+)/`\s*"#;
+pub const IMPL_DOC_REGEX_REGEX_STR: &str = r#"\s*\*\s*`/(.+)/`\s*"#;
 lazy_static! {
     static ref IMPL_DOC_REGEX_REGEX: Regex = Regex::new(IMPL_DOC_REGEX_REGEX_STR).unwrap();
 }
 
 // The method names must have the keywords at the end of the method, in the right order
-pub const KEYWORDS: &'static [&'static str] = &[
+pub const KEYWORDS: &[&str] = &[
     "unweighted",
     "weighted",
     "unchecked",
     "naive",
 ];
-pub const METHOD_KEYWORD_REGEX_STR: &'static str = r#".+(_weighted)?(_unchecked)?(_naive)?"#;
+pub const METHOD_KEYWORD_REGEX_STR: &str = r#".+(_weighted)?(_unchecked)?(_naive)?"#;
 lazy_static! {
     static ref METHOD_KEYWORD_REGEX: Regex = Regex::new(METHOD_KEYWORD_REGEX_STR).unwrap();
 }
@@ -29,7 +29,7 @@ impl Checker {
         match result {
             Ok(res) => res, 
             Err(error) => {
-                self.log(Error::RegexSytnaxError{
+                self.log(Error::RegexSytnax{
                     source: imp.doc.clone(),
                     error_msg: format!("{:?}", error),
                 });
@@ -39,7 +39,7 @@ impl Checker {
     }
     
 
-    fn check_method(&self, method: &Function, regexes: &Vec<Regex>){
+    fn check_method(&self, method: &Function, regexes: &[Regex]){
         // the method has uncechked in the name iff the method is unsafe
         match (method.is_unsafe(), method.name.contains(&"unchecked")) {
             (true, false) => {
@@ -111,9 +111,7 @@ impl Checker {
                     keyword: "known -> unknown".to_string(),
                 }
             );
-            return;
         }
-
     }
 
     pub fn check_names(&self) {
@@ -124,7 +122,7 @@ impl Checker {
                     continue;
                 }
 
-                let regexes = self.extract_regexes_from_impl(&imp);
+                let regexes = self.extract_regexes_from_impl(imp);
                 println!("{:?}", regexes);
 
                 for method in &imp.methods {

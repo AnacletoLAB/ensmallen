@@ -6,7 +6,7 @@ use walkdir::WalkDir;
 /// List of the files we will skip in the analysis
 /// becasue they have features we don't have implmented yet
 /// nor we care about.
-const BLACKLIST: &'static [&'static str] = &[
+const BLACKLIST: &[&str] = &[
     "types.rs", // macro calls
     "walks.rs", // mods
     "lib.rs",   // mods
@@ -29,6 +29,11 @@ pub fn skip_file(path: &str) -> bool {
     false
 }
 
+/// Returns a vector of modules that represent all the parsable files
+/// of the library.
+///
+/// # Panics
+/// If this function panics then probably the source folder path is wrong! 
 pub fn get_library_sources() -> Vec<Module> {
     let src_files: Vec<String> = WalkDir::new("../graph/src/")
         .into_iter()
@@ -41,7 +46,7 @@ pub fn get_library_sources() -> Vec<Module> {
                 }
             }
         )
-        .filter(|path| !skip_file(&path))
+        .filter(|path| !skip_file(path))
         .collect();
 
     let mut modules = Vec::new();

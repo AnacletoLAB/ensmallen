@@ -1,22 +1,22 @@
 use super::*;
 
 pub fn translate_type_str(value: String) -> String {
-    translate_type(Type::parse_lossy_string(value))
+    translate_type(&Type::parse_lossy_string(value))
 }
 
-pub fn translate_type(value: Type) -> String {
+pub fn translate_type(value: &Type) -> String {
     match value.clone() {
         Type::TupleType(vals) => {
             format!(
                 "Tuple[{}]",
                 vals.iter()
-                    .map(|t| translate_type(t.clone()))
+                    .map(|t| translate_type(t))
                     .collect::<Vec<String>>()
                     .join(", ")
             )
         }
         Type::SliceType(inner_type) => {
-            format!("List[{}]", translate_type(*inner_type))
+            format!("List[{}]", translate_type(&inner_type))
         }
         Type::SimpleType {
             name,
@@ -24,25 +24,18 @@ pub fn translate_type(value: Type) -> String {
             ..
         } => match name.as_str() {
             "Graph" => "EnsmallenGraph".to_string(),
-            "NodeT" => "int".to_string(),
-            "usize" => "int".to_string(),
-            "EdgeT" => "int".to_string(),
-            "WeightT" => "float".to_string(),
-            "u64" => "int".to_string(),
-            "f64" => "float".to_string(),
-            "f32" => "float".to_string(),
+            "NodeT" | "usize" | "EdgeT"
+                | "u64" | "NodeTypeT"
+                | "EdgeTypeT" => "int".to_string(),
+            "WeightT" | "f64" | "f32" => "float".to_string(),
             "bool" => "bool".to_string(),
-            "str" => "str".to_string(),
-            "String" => "str".to_string(),
-            "NodeTypeT" => "int".to_string(),
-            "EdgeTypeT" => "int".to_string(),
-            "S" => "str".to_string(),
+            "str" | "S" | "String" => "str".to_string(),
             "RoaringBitmap" => "List[int]".to_string(),
             "HashSet" => {
                 let mut result = "Set[".to_string();
                 for value in generics.0 {
                     match value {
-                        GenericValue::Type(t) => result.extend(translate_type(t).chars()),
+                        GenericValue::Type(t) => result.push_str(&translate_type(&t)),
                         _ => panic!("Cannot traduce to python the generic value {:?}", value),
                     }
                 }
@@ -55,12 +48,12 @@ pub fn translate_type(value: Type) -> String {
                 for value in generics.0 {
                     match value {
                         GenericValue::Type(t) => {
-                            vals.push(translate_type(t));
+                            vals.push(translate_type(&t));
                         }
                         _ => panic!("Cannot traduce to python the generic value {:?}", value),
                     }
                 }
-                result.extend(vals.join(", ").chars());
+                result.push_str(&vals.join(", "));
                 result.push(']');
                 result
             }
@@ -68,7 +61,7 @@ pub fn translate_type(value: Type) -> String {
                 let mut result = "Optional[".to_string();
                 for value in generics.0 {
                     match value {
-                        GenericValue::Type(t) => result.extend(translate_type(t).chars()),
+                        GenericValue::Type(t) => result.push_str(&translate_type(&t)),
                         _ => panic!("Cannot traduce to python the generic value {:?}", value),
                     }
                 }
@@ -79,7 +72,7 @@ pub fn translate_type(value: Type) -> String {
                 let mut result = "List[".to_string();
                 for value in generics.0 {
                     match value {
-                        GenericValue::Type(t) => result.extend(translate_type(t).chars()),
+                        GenericValue::Type(t) => result.push_str(&translate_type(&t)),
                         _ => panic!("Cannot traduce to python the generic value {:?}", value),
                     }
                 }

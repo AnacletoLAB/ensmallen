@@ -53,7 +53,7 @@ impl From<Function> for  Binding {
                 x if x == "S" => {
                     (
                         format!("{}: String", arg.name),
-                        Some(format!("{}", arg.name)),
+                        Some(arg.name.to_string()),
                     )
                 },
                 x if x == "Graph" => {
@@ -83,17 +83,17 @@ impl From<Function> for  Binding {
                 _ => {
                     (
                         format!("{}: {}", arg.name, arg.arg_type),
-                        Some(format!("{}", arg.name)),
+                        Some(arg.name.to_string()),
                     )
                 }
             };
 
-            args.extend(arg_name.chars());
-            args.extend(", ".chars());
+            args.push_str(&arg_name);
+            args.push_str(", ");
 
             if let Some(ac) = arg_call {
-                args_names.extend(ac.chars());
-                args_names.extend(", ".chars());
+                args_names.push_str(&ac);
+                args_names.push_str(", ");
             }
 
             args_signatures.push(arg.name.clone());
@@ -276,7 +276,7 @@ impl From<Function> for  Binding {
             is_unsafe: func.is_unsafe(),
             is_method: func.is_method(),
             is_static: func.is_static(),
-            doc: translate_doc(func.doc.clone()),
+            doc: translate_doc(&func.doc),
             name: func.name.clone(),
             args,
             text_signature,

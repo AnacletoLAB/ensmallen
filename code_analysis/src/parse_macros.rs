@@ -24,7 +24,7 @@ fn parse_cached_property(macro_call: &mut MacroCall) -> Function {
     // parse the documentations
     let doc_lines = String::from_utf8(data.to_vec()).unwrap();
     let mut doc = String::new();
-    for doc_line in doc_lines.split("\n") {
+    for doc_line in doc_lines.split('\n') {
         // remove extra white space
         match doc_line.trim().strip_prefix("///") {
             None => {
@@ -44,7 +44,7 @@ fn parse_cached_property(macro_call: &mut MacroCall) -> Function {
         arg_modifier: TypeModifiers{
             reference: true,
             mutable: false,
-            ..Default::default()
+            ..TypeModifiers::default()
         },
         arg_type: Type::parse_lossy_str("&self"),
     }]);
@@ -52,10 +52,15 @@ fn parse_cached_property(macro_call: &mut MacroCall) -> Function {
     item
 }
 
+#[must_use]
 /// Expand the macro calls to the generated methods
 ///
 /// This curently handle the following macros:
 /// * `cached_property`
+/// 
+/// # Panics 
+/// The function panics if the macros are called in impossible places.
+/// Codes that compiles should never make this function panic.
 pub fn parse_macros(mut module: Module) -> Module {
     let mut new_functions = Vec::new();
 
@@ -63,7 +68,7 @@ pub fn parse_macros(mut module: Module) -> Module {
         let new_function: Option<Function> = match macro_call.name.as_str() {
             "cached_property" => panic!("A call to cached_property outside an impl is not possible."),
             // Macro not handled so it's ignored`
-            x @ _ => {
+            x => {
                 println!("Macrocall '{}' ignored because it's not yet implemented", x);
                 None
             }
@@ -82,7 +87,7 @@ pub fn parse_macros(mut module: Module) -> Module {
             let new_method: Option<Function>  = match macro_call.name.as_str() {
                 "cached_property" => Some(parse_cached_property(macro_call)),
                 // Macro not handled so it's ignored`
-                x @ _ => {
+                x => {
                     println!("Macrocall '{}' ignored because it's not yet implemented", x);
                     None
                 }

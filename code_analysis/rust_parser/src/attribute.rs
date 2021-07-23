@@ -70,6 +70,7 @@ impl Attribute {
         data = skip_whitespace(&data[1..]);
 
         let arg_type = parse!(data, Type);
+        let _  = data;
 
         Some((arg_name, arg_type))
 

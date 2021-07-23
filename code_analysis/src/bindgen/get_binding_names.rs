@@ -10,9 +10,8 @@ pub fn get_binding_names() -> HashSet<String> {
                 .into_os_string()
                 .into_string()
                 .unwrap()
-                .to_string()
         })
-        .filter(|path| !skip_file(&path))
+        .filter(|path| !skip_file(path))
         .collect();
     let mut bindings_modules = Vec::new();
     let mut method_names = HashSet::new();
