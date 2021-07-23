@@ -1,4 +1,6 @@
 use super::*;
+use std::collections::HashMap;
+use regex::Regex;
 
 mod binding;
 pub use binding::*;
@@ -15,6 +17,10 @@ pub use translate_type::*;
 mod tfidf_gen;
 pub use tfidf_gen::*;
 
+pub fn extract_module_name_from_path(path: &str) -> Option<String> {
+    let re = Regex::new(r"\.\./graph/src/(.+)/.+\.rs").unwrap();
+    re.captures(path).map(|x| x.get(1).unwrap().as_str().to_string())
+}
 
 pub fn gen_bindings(path: &str) {
     print_sep();
@@ -31,6 +37,7 @@ pub fn gen_bindings(path: &str) {
 
     let mut method_bindings = vec![];
     let mut function_bindings = vec![];
+    let mut functions_modules: HashMap<String, Vec<Binding>> = HashMap::new();
 
     for func in functions {
         if !func.name.starts_with("iter")
@@ -46,13 +53,29 @@ pub fn gen_bindings(path: &str) {
             if binding.is_method {
                 method_bindings.push(binding);
             } else {
-                function_bindings.push(binding);
+                match extract_module_name_from_path(binding.file_path.as_str()) {
+                    Some(module_name) => {
+                        let module_functions = functions_modules.entry(module_name).or_insert(Vec::new());
+                        module_functions.push(binding);
+                    }
+                    None => {
+                        function_bindings.push(binding);
+                    }
+                }
             }
         }
     }
 
+
+
     print_sep();
-    println!("Generated bindings for {} functions and {} methods.",  function_bindings.len(), method_bindings.len());
+    println!(
+        "Generated bindings for {} functions, {} methods, and {} modules at {}",  
+        function_bindings.len() + functions_modules.iter().map(|(_, funcs)| funcs.len()).sum::<usize>(), 
+        method_bindings.len(),
+        functions_modules.len(),
+        path,
+    );
     print_sep();
 
     let file_content = format!(
@@ -63,12 +86,17 @@ use pyo3::{{wrap_pyfunction, wrap_pymodule}};
 fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {{
     m.add_class::<EnsmallenGraph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
+    {function_modules_bindings_registration}
     {function_bindings_wrapping}
     env_logger::init();
     Ok(())
 }}
 
+{function_modules_bindings_definition}
+
 {function_bindings}
+
+{function_modules_bindings}
 
 #[pymethods]
 impl EnsmallenGraph {{
@@ -78,8 +106,40 @@ impl EnsmallenGraph {{
         .map(|binding| format!("m.add_wrapped(wrap_pyfunction!({name}))?;", name=binding.name))
         .collect::<Vec<_>>().join("\n"),
 
+    function_modules_bindings_registration=functions_modules.iter()
+        .map(|(module_name, _)| {
+            format!("m.add_wrapped(wrap_pymodule!({}))?;", module_name)
+        }).collect::<Vec<String>>().join(""),
+
+    function_modules_bindings_definition=functions_modules.iter()
+        .map(|(module_name, functions)| {
+            format!(
+r#"
+#[pymodule]
+fn {module_name}(_py: Python, m: &PyModule) -> PyResult<()> {{
+    {functions_registration}
+    Ok(())
+}}
+"#,
+    module_name=module_name,
+    functions_registration=functions.iter()
+        .map(|func| {
+            format!("m.add_wrapped(wrap_pyfunction!({name}))?;", name=func.name)
+        }).collect::<Vec<String>>().join(""),
+            )
+        }).collect::<Vec<String>>().join(""),
+
     function_bindings=function_bindings.into_iter()
         .map(|x| x.into())
+        .collect::<Vec<String>>().join(""),
+
+    function_modules_bindings=functions_modules.into_iter()
+        .flat_map(|(_module_name, functions)| {
+            functions.into_iter()
+                .map(|function| function.into())
+                .collect::<Vec<String>>()
+        
+        })
         .collect::<Vec<String>>().join(""),
 
     method_bindings=method_bindings.into_iter()
@@ -91,6 +151,6 @@ impl EnsmallenGraph {{
         path,
         file_content,
     )
-    .expect("Cannot weite the automatically generated bindings file");
+    .expect("Cannot write the automatically generated bindings file");
 
 }

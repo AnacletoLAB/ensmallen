@@ -51,8 +51,8 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// graph.report();
     /// ```
-    pub fn report(&self) -> HashMap<&str, String> {
-        let mut report: HashMap<&str, String> = HashMap::new();
+    pub fn report(&self) -> HashMap<&'static str, String> {
+        let mut report: HashMap<&'static str, String> = HashMap::new();
 
         // Adding the default metrics
         report.insert("name", self.name.clone());

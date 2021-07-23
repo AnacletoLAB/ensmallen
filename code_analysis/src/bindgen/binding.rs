@@ -11,6 +11,7 @@ pub struct Binding {
     pub name: String,
     pub body: String,
     pub return_type: String,
+    pub file_path: String,
 }
 
 impl Default for Binding {
@@ -25,6 +26,7 @@ impl Default for Binding {
             name: String::new(),
             body: String::new(),
             return_type: String::new(),
+            file_path: String::new(),
         }
     }
 }
@@ -37,48 +39,51 @@ impl From<Function> for  Binding {
         let mut args_signatures = if func.is_static() {
             vec![]
         } else {
-            vec!["$self".to_string()]
+            vec!["$".to_string()]
         };
 
         for arg in func.iter_args() {
             let (arg_name, arg_call) = match &arg.arg_type {
                 Type::SelfType => {
-                    continue
+                    (
+                        format!("{}self", arg.arg_modifier),
+                        None,
+                    )
                 },
                 x if x == "S" => {
                     (
                         format!("{}: String", arg.name),
-                        format!("{}", arg.name),
+                        Some(format!("{}", arg.name)),
                     )
                 },
                 x if x == "Graph" => {
                     (
                         format!("{}: EnsmallenGraph", arg.name),
-                        format!("{}.graph", arg.name),
+                        Some(format!("{}.graph", arg.name)),
                     )
                 },
                 x if x == "&Graph" => {
                     (
                         format!("{}: &EnsmallenGraph", arg.name),
-                        format!("&{}.graph", arg.name),
+                        Some(format!("&{}.graph", arg.name)),
                     )
                 },
                 x if x == "Option<Graph>" => {
                     (
                         format!("{}: Option<EnsmallenGraph>", arg.name),
-                        format!("{}.map(|sg| sg.graph)", arg.name),
+                        Some(format!("{}.map(|sg| sg.graph)", arg.name)),
                     )
                 },
                 x if x == "Option<&Graph>" => {
                     (
                         format!("{}: Option<&EnsmallenGraph>", arg.name),
-                        format!("{}.map(|sg| &sg.graph)", arg.name),
+                        Some(format!("{}.map(|sg| &sg.graph)", arg.name)),
                     )
                 },
                 _ => {
                     (
                         format!("{}: {}", arg.name, arg.arg_type),
-                        format!("{}", arg.name),
+                        Some(format!("{}", arg.name)),
                     )
                 }
             };
@@ -86,8 +91,10 @@ impl From<Function> for  Binding {
             args.extend(arg_name.chars());
             args.extend(", ".chars());
 
-            args_names.extend(arg_call.chars());
-            args_names.extend(", ".chars());
+            if let Some(ac) = arg_call {
+                args_names.extend(ac.chars());
+                args_names.extend(", ".chars());
+            }
 
             args_signatures.push(arg.name.clone());
         }
@@ -275,6 +282,7 @@ impl From<Function> for  Binding {
             text_signature,
             body,
             return_type,
+            file_path: func.file_path,
         }
     }
 }

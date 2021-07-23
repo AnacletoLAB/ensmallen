@@ -12,7 +12,7 @@ pub fn tfidf_gen(file_path: &str) {
     let method_names = get_binding_names();
 
     print_sep();
-    println!("Generating the TF-IDF weights for the name of the bindings");
+    println!("Generating the TF-IDF weights for the name of the bindings at {}", file_path);
     print_sep();
 
     let documents = method_names
