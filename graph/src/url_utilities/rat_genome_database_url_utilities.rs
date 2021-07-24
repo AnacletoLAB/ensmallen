@@ -17,7 +17,7 @@ use super::*;
 pub fn is_valid_rat_genome_database_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
-        Some("RGD"),
+        Some(&["RGD"]),
         Some(12),
         Some(":"),
         None,

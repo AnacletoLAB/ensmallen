@@ -33,6 +33,18 @@ impl Graph {
         self.nodes.par_iter_keys()
     }
 
+    /// Return iterator on the node urls of the graph.
+    pub fn iter_node_urls(&self) -> impl Iterator<Item = Option<String>> + '_ {
+        self.iter_node_names()
+            .map(|node_name| get_node_source_url_from_node_name(&node_name).ok())
+    }
+
+    /// Return parallel iterator on the node urls of the graph.
+    pub fn par_iter_node_urls(&self) -> impl IndexedParallelIterator<Item = Option<String>> + '_ {
+        self.par_iter_node_names()
+            .map(|node_name| get_node_source_url_from_node_name(&node_name).ok())
+    }
+
     /// Return iterator on the unique node type IDs of the graph.
     pub fn iter_unique_node_type_ids(&self) -> Result<impl Iterator<Item = NodeTypeT> + '_> {
         Ok(0..self.get_node_types_number()?)

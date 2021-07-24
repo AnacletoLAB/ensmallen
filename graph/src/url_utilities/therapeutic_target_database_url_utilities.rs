@@ -23,7 +23,7 @@ use super::*;
 pub fn is_valid_therapeutic_target_database_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
-        Some("ttd.drug"),
+        Some(&["ttd.drug"]),
         Some(15),
         Some(":"),
         None,

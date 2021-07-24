@@ -21,7 +21,7 @@ const BLACKLIST: &[&str] = &[
 
 pub fn skip_file(path: &str) -> bool {
     for deny in BLACKLIST.iter(){
-        if path.contains(deny) {
+        if !path.ends_with(".rs") || path.contains(deny) {
             eprintln!("Skipping the file {}", path);
             return true;
         }

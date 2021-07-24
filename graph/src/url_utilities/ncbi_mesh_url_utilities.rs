@@ -15,7 +15,7 @@ use super::*;
 /// assert!(!is_valid_ncbi_mesh_node_name(not_ncbi_mesh_node_name));
 /// ```
 pub fn is_valid_ncbi_mesh_node_name(node_name: &str) -> bool {
-    is_valid_node_name_from_seeds(node_name, Some("MESH"), None, Some(":"), None, None, None)
+    is_valid_node_name_from_seeds(node_name, Some(&["MESH"]), None, Some(":"), None, None, None)
         .is_ok()
 }
 

@@ -19,7 +19,7 @@ use super::*;
 pub fn is_valid_zfin_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
-        Some("ZFIN"),
+        Some(&["ZFIN"]),
         None,
         Some(":"),
         Some("ZDB"),

@@ -19,7 +19,7 @@ use super::*;
 pub fn is_valid_uniprotkb_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
-        Some("UniProtKB"),
+        Some(&["UniProtKB"]),
         None,
         Some(":"),
         None,

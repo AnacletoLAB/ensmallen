@@ -17,7 +17,7 @@ use super::*;
 /// assert!(!is_valid_reactome_node_name(not_reactome_node_name));
 /// ```
 pub fn is_valid_reactome_node_name(node_name: &str) -> bool {
-    is_valid_node_name_from_seeds(node_name, Some("REACT"), None, Some(":"), None, None, None)
+    is_valid_node_name_from_seeds(node_name, Some(&["REACT"]), None, Some(":"), None, None, None)
         .is_ok()
 }
 

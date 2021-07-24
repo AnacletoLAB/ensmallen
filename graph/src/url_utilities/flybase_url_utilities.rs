@@ -9,16 +9,18 @@ use super::*;
 /// To validate a node you can use:
 /// ```rust
 /// # use graph::*;
-/// let flybase_node_name = "FlyBase:FBgn0000003";
+/// let flybase_node_name1 = "FlyBase:FBgn0000003";
+/// let flybase_node_name2 = "FB:FBgn0000003";
 /// let not_flybase_node_name = "PizzaQuattroStagioni";
-/// assert!(is_valid_flybase_node_name(flybase_node_name));
+/// assert!(is_valid_flybase_node_name(flybase_node_name1));
+/// assert!(is_valid_flybase_node_name(flybase_node_name2));
 /// assert!(!is_valid_flybase_node_name(not_flybase_node_name));
 /// ```
 pub fn is_valid_flybase_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
-        Some("FlyBase"),
-        Some(19),
+        Some(&["FlyBase", "FB"]),
+        None,
         Some(":"),
         Some("FB"),
         Some(11),

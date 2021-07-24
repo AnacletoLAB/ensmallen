@@ -17,7 +17,7 @@ use super::*;
 pub fn is_valid_drugcentral_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
-        Some("DrugCentral"),
+        Some(&["DrugCentral"]),
         None,
         Some(":"),
         None,

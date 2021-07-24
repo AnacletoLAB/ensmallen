@@ -16,7 +16,7 @@ use super::*;
 pub fn is_valid_jax_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
-        Some("JAX"),
+        Some(&["JAX"]),
         Some(10),
         Some(":"),
         None,

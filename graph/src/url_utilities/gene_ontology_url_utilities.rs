@@ -23,7 +23,7 @@ pub fn is_valid_gene_ontology_node_name(node_name: &str) -> bool {
     }
     is_valid_node_name_from_seeds(
         node_name.as_ref(),
-        Some("GO"),
+        Some(&["GO"]),
         Some(10),
         Some(":"),
         None,

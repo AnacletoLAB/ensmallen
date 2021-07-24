@@ -17,7 +17,7 @@ use super::*;
 pub fn is_valid_sequence_ontology_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
-        Some("SO"),
+        Some(&["SO"]),
         Some(10),
         Some(":"),
         None,

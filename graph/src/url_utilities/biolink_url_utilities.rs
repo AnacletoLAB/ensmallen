@@ -19,7 +19,7 @@ use super::*;
 pub fn is_valid_biolink_from_object(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
-        Some("biolink"),
+        Some(&["biolink"]),
         None,
         Some(":"),
         None,
