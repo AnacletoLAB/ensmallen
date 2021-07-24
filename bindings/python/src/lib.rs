@@ -16,7 +16,6 @@ mod preprocessing;
 mod trees;
 mod utilities;
 pub(crate) use crate::preprocessing::*;
-pub(crate) use crate::utilities::*;
 mod types;
 pub(crate) use crate::types::*;
 mod walks;
