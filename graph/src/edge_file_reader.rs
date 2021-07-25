@@ -3,8 +3,6 @@ use rayon::iter::ParallelIterator;
 
 use super::*;
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
-///
-/// # Attributes
 #[derive(Clone)]
 pub struct EdgeFileReader {
     pub(crate) reader: CSVFileReader,
@@ -53,7 +51,7 @@ impl EdgeFileReader {
     /// Set the column of the edge IDs.
     ///
     /// # Arguments
-    /// * edge_id_column: Option<String> - The name of the edge id column to use for the file.
+    /// * edge_ids_column: Option<String> - The name of the edge id column to use for the file.
     ///
     pub fn set_edge_ids_column<S: Into<String>>(
         mut self,
@@ -65,16 +63,9 @@ impl EdgeFileReader {
                 return Err("The given node types column is empty.".to_owned());
             }
 
-            match self.reader.get_column_number(column) {
-                Ok(ecn) => {
-                    self = self.set_edge_ids_column_number(Some(ecn))?;
-                }
-                Err(e) => {
-                    if !self.skip_edge_types_if_unavailable {
-                        return Err(e);
-                    }
-                }
-            }
+            let column_number = self.reader.get_column_number(column)?;
+
+            self = self.set_edge_ids_column_number(Some(column_number))?;
         }
         Ok(self)
     }
@@ -82,7 +73,7 @@ impl EdgeFileReader {
     /// Set the edge id node column number.
     ///
     /// # Arguments
-    /// * `edge_id_column_number`: Option<usize> - The edge id column number to use for the file.
+    /// * `edge_ids_column_number`: Option<usize> - The edge id column number to use for the file.
     ///
     pub fn set_edge_ids_column_number(
         mut self,
@@ -359,9 +350,7 @@ impl EdgeFileReader {
     /// * parallel: Option<bool> - Whether to read the edge list using a parallel or sequential reader.
     ///
     pub fn set_parallel(mut self, parallel: Option<bool>) -> EdgeFileReader {
-        if let Some(parallel) = parallel {
-            self.reader.parallel = parallel;
-        }
+        self.reader = self.reader.set_parallel(parallel);
         self
     }
 
@@ -471,12 +460,7 @@ impl EdgeFileReader {
     /// * comment_symbol: Option<String> - if the reader should ignore or not duplicated edges.
     ///
     pub fn set_comment_symbol(mut self, comment_symbol: Option<String>) -> Result<EdgeFileReader> {
-        if let Some(comment_symbol) = comment_symbol {
-            if comment_symbol.is_empty() {
-                return Err("The given comment symbol is empty.".to_string());
-            }
-            self.reader.set_comment_symbol(comment_symbol)?;
-        }
+        self.reader = self.reader.set_comment_symbol(comment_symbol)?;
         Ok(self)
     }
 
@@ -536,19 +520,8 @@ impl EdgeFileReader {
     /// # Arguments
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator<S: Into<String>>(
-        mut self,
-        separator: Option<S>,
-    ) -> Result<EdgeFileReader> {
-        if let Some(separator) = separator {
-            let separator = separator.into();
-            if separator.is_empty() {
-                return Err("The separator cannot be empty.".to_owned());
-            }
-            self.reader.set_separator(separator);
-        } else {
-            self.reader.set_separator(self.reader.detect_separator()?);
-        }
+    pub fn set_separator(mut self, separator: Option<String>) -> Result<EdgeFileReader> {
+        self.reader = self.reader.set_separator(separator)?;
         Ok(self)
     }
 
@@ -563,9 +536,7 @@ impl EdgeFileReader {
     /// * header: Option<bool> - Whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> Result<EdgeFileReader> {
-        if let Some(header) = header {
-            self.reader.set_header(header)?;
-        }
+        self.reader = self.reader.set_header(header)?;
         Ok(self)
     }
 
@@ -580,9 +551,7 @@ impl EdgeFileReader {
     /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> Result<EdgeFileReader> {
-        if let Some(rows_to_skip) = rows_to_skip {
-            self.reader.set_rows_to_skip(rows_to_skip)?;
-        }
+        self.reader = self.reader.set_rows_to_skip(rows_to_skip)?;
         Ok(self)
     }
 
@@ -592,9 +561,7 @@ impl EdgeFileReader {
     /// * max_rows_number: Option<usize> - The edge type to use when edge type is missing.
     ///
     pub fn set_max_rows_number(mut self, max_rows_number: Option<usize>) -> Result<EdgeFileReader> {
-        if let Some(max_rows_number) = max_rows_number {
-            self.reader.set_max_rows_number(max_rows_number)?;
-        }
+        self.reader = self.reader.set_max_rows_number(max_rows_number)?;
         Ok(self)
     }
 
@@ -779,7 +746,7 @@ impl EdgeFileReader {
         Ok(self
             .reader
             .read_lines(
-                [
+                Some([
                     self.edge_ids_column_number,
                     Some(self.sources_column_number),
                     Some(self.destinations_column_number),
@@ -788,7 +755,7 @@ impl EdgeFileReader {
                 ]
                 .iter()
                 .filter_map(|&e| e)
-                .collect(),
+                .collect()),
             )?
             .map(move |line| match line {
                 Ok((line_number, vals)) => self.parse_edge_line(line_number, vals),

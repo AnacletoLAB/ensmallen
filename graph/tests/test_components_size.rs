@@ -11,7 +11,7 @@ fn test_components_size() {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some(","))
+        .set_separator(Some(",".to_string()))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true));

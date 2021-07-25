@@ -11,6 +11,8 @@ use super::*;
 /// * node_types_separator: String - Separator to split the node types.
 pub struct NodeFileWriter {
     pub(crate) writer: CSVFileWriter,
+    pub(crate) node_ids_column: Option<String>,
+    pub(crate) node_ids_column_number: Option<usize>,
     pub(crate) nodes_column: String,
     pub(crate) node_types_column: Option<String>,
     pub(crate) nodes_column_number: usize,
@@ -30,7 +32,9 @@ impl NodeFileWriter {
     pub fn new<S: Into<String>>(path: S) -> NodeFileWriter {
         NodeFileWriter {
             writer: CSVFileWriter::new(path),
-            nodes_column: "id".to_string(),
+            node_ids_column: None,
+            node_ids_column_number: None,
+            nodes_column: "node_names".to_string(),
             nodes_column_number: 0,
             node_types_column: None,
             node_types_column_number: None,
@@ -42,11 +46,21 @@ impl NodeFileWriter {
 
     // Return whether the columns are currently dense.
     fn are_columns_dense(&self) -> bool {
-        self.nodes_column_number == 0
+        let mut offset = 0;
+        if self
+            .node_ids_column_number
+            .map_or(false, |node_ids_column_number| node_ids_column_number != 0)
+        {
+            return false;
+        }
+        if self.node_ids_column_number.is_some() {
+            offset += 1;
+        }
+        self.nodes_column_number == offset
             && self
                 .node_types_column_number
                 .as_ref()
-                .map_or(true, |&ntcn| ntcn == 1)
+                .map_or(true, |&ntcn| ntcn == offset + 1)
     }
 
     /// Set the column of the nodes.
@@ -111,6 +125,33 @@ impl NodeFileWriter {
         self
     }
 
+    /// Set the column of the node IDs.
+    ///
+    /// # Arguments
+    /// * node_ids_column: Option<String> - The node IDs column to use for the file.
+    ///
+    pub fn set_node_ids_column(mut self, node_ids_column: Option<String>) -> NodeFileWriter {
+        self.node_ids_column = node_ids_column;
+        self
+    }
+
+    /// Set the column number of the node IDs.
+    ///
+    /// # Arguments
+    /// * node_ids_column_number: Option<usize> - The node types column to use for the file.
+    ///
+    pub fn set_node_ids_column_number(
+        mut self,
+        node_ids_column_number: Option<usize>,
+    ) -> NodeFileWriter {
+        if let Some(column_number) = node_ids_column_number {
+            self.node_ids_column_number = Some(column_number);
+            self.number_of_columns = self.number_of_columns.max(column_number + 1);
+            self.columns_are_dense = self.are_columns_dense();
+        }
+        self
+    }
+
     /// Set the verbose.
     ///
     /// # Arguments
@@ -118,23 +159,18 @@ impl NodeFileWriter {
     /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> NodeFileWriter {
-        if let Some(v) = verbose {
-            self.writer.verbose = v;
-        }
+        self.writer = self.writer.set_verbose(verbose);
         self
     }
 
     /// Set the separator.
     ///
     /// # Arguments
-    ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator<S: Into<String>>(mut self, separator: Option<S>) -> NodeFileWriter {
-        if let Some(v) = separator {
-            self.writer.separator = v.into();
-        }
-        self
+    pub fn set_separator(mut self, separator: Option<String>) -> Result<NodeFileWriter> {
+        self.writer = self.writer.set_separator(separator)?;
+        Ok(self)
     }
 
     /// Set the header.
@@ -144,16 +180,24 @@ impl NodeFileWriter {
     /// * header: Option<bool> - Whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> NodeFileWriter {
-        if let Some(v) = header {
-            self.writer.header = v;
-        }
+        self.writer = self.writer.set_header(header);
         self
     }
 
     fn build_header(&self) -> (Vec<String>, Vec<usize>) {
         // build the header
-        let mut header_values = vec![self.nodes_column.clone()];
-        let mut header_positions = vec![self.nodes_column_number];
+        let mut header_values = vec![];
+        let mut header_positions = vec![];
+
+        if let (Some(node_ids_column), Some(node_ids_column_number)) =
+            (&self.node_ids_column, self.node_ids_column_number)
+        {
+            header_values.push(node_ids_column.clone());
+            header_positions.push(node_ids_column_number);
+        }
+
+        header_positions.push(self.nodes_column_number.clone());
+        header_values.push(self.nodes_column.clone());
 
         if let (Some(node_types_column), Some(node_types_column_number)) =
             (&self.node_types_column, self.node_types_column_number)
@@ -188,9 +232,16 @@ impl NodeFileWriter {
             Some(graph.get_nodes_number() as usize),
             compose_lines(self.number_of_columns, header_values, header_positions),
             graph.iter_node_names_and_node_type_names().map(
-                |(_, node_name, _, node_type_names)| {
+                |(node_id, node_name, _, node_type_names)| {
                     let mut line = vec![node_name];
                     let mut positions = vec![];
+
+                    if let Some(node_ids_column_number) = &self.node_ids_column_number {
+                        line.push(node_id.to_string());
+                        if !self.columns_are_dense {
+                            positions.push(*node_ids_column_number);
+                        }
+                    }
 
                     if !self.columns_are_dense {
                         positions.push(self.nodes_column_number);

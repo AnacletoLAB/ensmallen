@@ -101,7 +101,7 @@ pub fn filter_duplicates_from_edge_list(
         .set_edge_types_column_number(target_edge_list_edge_type_column_number)
         .set_weights_column(target_edge_list_weights_column)
         .set_weights_column_number(target_edge_list_weights_column_number)
-        .set_separator(target_edge_list_separator)
+        .set_separator(target_edge_list_separator)?
         .set_numeric_node_ids(Some(false))
         .set_numeric_edge_type_ids(Some(false))
         .set_verbose(verbose)

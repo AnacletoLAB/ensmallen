@@ -104,65 +104,106 @@ impl CSVFileReader {
         }
     }
 
+    /// Set whether to load the CSV using the parallel reader or sequential reader.
+    ///
+    /// # Arguments
+    /// * parallel: Option<bool> - Whether to read the CSV using a parallel or sequential reader.
+    ///
+    pub fn set_parallel(mut self, parallel: Option<bool>) -> CSVFileReader {
+        if let Some(parallel) = parallel {
+            self.parallel = parallel;
+        }
+        self
+    }
+
     /// Set separator to the provided value.
     ///
     /// # Arguments
-    /// * `separator`: String - The value to use as separator in the file.
-    pub fn set_separator(&mut self, separator: String) {
-        self.separator = separator;
+    /// * `separator`: Option<String> - The value to use as separator in the file.
+    pub fn set_separator(mut self, separator: Option<String>) -> Result<CSVFileReader> {
+        self.separator = if let Some(separator) = separator {
+            if separator.is_empty() {
+                return Err("The separator cannot be empty.".to_owned());
+            }
+            separator
+        } else {
+            self.detect_separator()?
+        };
         self.separator_was_set = true;
+        Ok(self)
+    }
+
+    /// Return the separator.
+    pub fn get_separator(&self) -> String {
+        self.separator.clone()
+    }
+
+    /// Return whether the reader is expected to include an header.
+    pub fn has_header(&self) -> bool {
+        self.header
     }
 
     /// Set the comment symbol for this file.
     ///
     /// # Arguments
-    /// * `comment_symbol`: String - Comment symbol to use for this file.
+    /// * `comment_symbol`: Option<String> - Comment symbol to use for this file.
     ///
     /// # Raises
     /// * If the separator was already set before calling this method.
-    pub fn set_comment_symbol(&mut self, comment_symbol: String) -> Result<()> {
-        self.separator_must_not_already_be_set()?;
-        self.comment_symbol = Some(comment_symbol);
-        Ok(())
+    pub fn set_comment_symbol(mut self, comment_symbol: Option<String>) -> Result<CSVFileReader> {
+        if let Some(comment_symbol) = comment_symbol {
+            self.separator_must_not_already_be_set()?;
+            if comment_symbol.is_empty() {
+                return Err("The given comment symbol is empty.".to_string());
+            }
+            self.comment_symbol = Some(comment_symbol);
+        }
+        Ok(self)
     }
 
     /// Set the maximum number of rows to be read within this file.
     ///
     /// # Arguments
-    /// * `max_rows_number`: usize - Number of lines to be read from this file.
+    /// * `max_rows_number`: Option<usize> - Number of lines to be read from this file.
     ///
     /// # Raises
     /// * If the separator was already set before calling this method.
-    pub fn set_max_rows_number(&mut self, max_rows_number: usize) -> Result<()> {
-        self.separator_must_not_already_be_set()?;
-        self.max_rows_number = Some(max_rows_number);
-        Ok(())
+    pub fn set_max_rows_number(mut self, max_rows_number: Option<usize>) -> Result<CSVFileReader> {
+        if let Some(max_rows_number) = max_rows_number {
+            self.separator_must_not_already_be_set()?;
+            self.max_rows_number = Some(max_rows_number);
+        }
+        Ok(self)
     }
 
     /// Set the number of lines to skip before starting to read this file.
     ///
     /// # Arguments
-    /// * `rows_to_skip`: usize - Number of lines to skip before reading the file.
+    /// * `rows_to_skip`: Option<usize> - Number of lines to skip before reading the file.
     ///
     /// # Raises
     /// * If the separator was already set before calling this method.
-    pub fn set_rows_to_skip(&mut self, rows_to_skip: usize) -> Result<()> {
-        self.separator_must_not_already_be_set()?;
-        self.rows_to_skip = rows_to_skip;
-        Ok(())
+    pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> Result<CSVFileReader> {
+        if let Some(rows_to_skip) = rows_to_skip {
+            self.separator_must_not_already_be_set()?;
+            self.rows_to_skip = rows_to_skip;
+        }
+        Ok(self)
     }
 
     /// Set whether the file is expected to have an header.
     ///
     /// # Arguments
-    /// * `header`: bool - Whether this file is expected to have an header.
+    /// * `header`: Option<bool> - Whether this file is expected to have an header.
     ///
     /// # Raises
     /// * If the separator was already set before calling this method.
-    pub fn set_header(&mut self, header: bool) -> Result<()> {
-        self.separator_must_not_already_be_set()?;
-        self.header = header;
-        Ok(())
+    pub fn set_header(mut self, header: Option<bool>) -> Result<CSVFileReader> {
+        if let Some(header) = header {
+            self.separator_must_not_already_be_set()?;
+            self.header = header;
+        }
+        Ok(self)
     }
 
     /// Checks if separator was already set and raises an error if it was not.
@@ -384,7 +425,7 @@ impl CSVFileReader {
     /// Return iterator that read a CSV file rows.
     pub(crate) fn read_lines(
         &self,
-        columns_of_interest: Vec<usize>,
+        columns_of_interest: Option<Vec<usize>>,
     ) -> Result<
         ItersWrapper<
             Result<(usize, Vec<Option<String>>)>,
@@ -392,6 +433,12 @@ impl CSVFileReader {
             impl ParallelIterator<Item = Result<(usize, Vec<Option<String>>)>> + '_,
         >,
     > {
+        // Retrieve the number of elements that are expected to be in each line.
+        let number_of_elements_per_line = self.get_elements_per_line()?;
+
+        let columns_of_interest =
+            columns_of_interest.unwrap_or((0..number_of_elements_per_line).collect());
+
         // We check if the provided columns of interest
         let number_of_column_of_interest = columns_of_interest.len();
         if number_of_column_of_interest.is_zero() {
@@ -420,9 +467,6 @@ impl CSVFileReader {
         // We get the minimum and maximum column of interest
         let min_column_of_interest = columns_of_interest_and_position.first().unwrap().1;
         let max_column_of_interest = columns_of_interest_and_position.last().unwrap().1;
-
-        // Retrieve the number of elements that are expected to be in each line.
-        let number_of_elements_per_line = self.get_elements_per_line()?;
 
         // We check that the maximum column of interest is not higher than the
         // number of elements in the lines.

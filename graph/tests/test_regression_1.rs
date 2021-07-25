@@ -14,7 +14,7 @@ fn test_regression_1() -> Result<(), String> {
         .unwrap()
         .set_header(Some(false))
         .unwrap()
-        .set_separator(Some(","))?
+        .set_separator(Some(",".to_string()))?
         .set_verbose(Some(false))
         .set_sources_column_number(Some(0))?
         .set_destinations_column_number(Some(1))?

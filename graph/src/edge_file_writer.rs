@@ -68,8 +68,8 @@ impl EdgeFileWriter {
         }
         if self
             .edge_types_column_number
-            .map_or(false, |edge_ids_column_number| {
-                edge_ids_column_number != 2 + offset
+            .map_or(false, |edge_types_column_number| {
+                edge_types_column_number != 2 + offset
             })
         {
             return false;
@@ -79,8 +79,8 @@ impl EdgeFileWriter {
         }
         if self
             .weights_column_number
-            .map_or(false, |edge_ids_column_number| {
-                edge_ids_column_number != 2 + offset
+            .map_or(false, |weights_column_number| {
+                weights_column_number != 2 + offset
             })
         {
             return false;
@@ -239,9 +239,7 @@ impl EdgeFileWriter {
     /// * `verbose`: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_verbose(mut self, verbose: Option<bool>) -> EdgeFileWriter {
-        if let Some(v) = verbose {
-            self.writer.verbose = v;
-        }
+        self.writer = self.writer.set_verbose(verbose);
         self
     }
 
@@ -277,11 +275,9 @@ impl EdgeFileWriter {
     /// # Arguments
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator<S: Into<String>>(mut self, separator: Option<S>) -> EdgeFileWriter {
-        if let Some(v) = separator {
-            self.writer.separator = v.into();
-        }
-        self
+    pub fn set_separator(mut self, separator: Option<String>) -> Result<EdgeFileWriter> {
+        self.writer = self.writer.set_separator(separator)?;
+        Ok(self)
     }
 
     /// Set the header.
@@ -290,9 +286,7 @@ impl EdgeFileWriter {
     /// * header: Option<bool> - Whether to write out an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> EdgeFileWriter {
-        if let Some(v) = header {
-            self.writer.header = v;
-        }
+        self.writer = self.writer.set_header(header);
         self
     }
 
@@ -333,8 +327,8 @@ impl EdgeFileWriter {
             line.push(src.to_string());
             line.push(dst.to_string());
         } else {
-            line.push(src_name.to_string());
-            line.push(dst_name.to_string());
+            line.push(src_name);
+            line.push(dst_name);
         };
 
         if !self.columns_are_dense {
