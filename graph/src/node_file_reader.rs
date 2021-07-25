@@ -3,20 +3,10 @@ use rayon::iter::ParallelIterator;
 use super::*;
 
 /// Structure that saves the reader specific to writing and reading a nodes csv file.
-///
-/// # Attributes
-/// * reader: CSVFile - The common reader for reading and writing a csv.
-/// * default_node_type: Option<String> - The node type to use if a node has node type or its node type is "".
-/// * nodes_column_number: Option<usize> - The rank of the column with the nodes names. This parameter is mutually exclusive with nodes_column.
-/// * node_types_separator: Option<String> - Separator to split the node types.
-/// * node_types_column_number: Option<usize> - The rank of the column with the nodes types. This parameter is mutually exclusive with node_types_column.
-/// * numeric_node_ids: bool - Whether to load the node IDs as numeric.
-/// * numeric_node_type_ids: bool - Whether to load the node type IDs as numeric.
-/// * skip_node_types_if_unavailable: bool - Whether to skip attempting to load the node types if column is unavailable.
-///
 #[derive(Clone)]
 pub struct NodeFileReader {
     pub(crate) reader: Option<CSVFileReader>,
+    pub(crate) node_ids_column_number: Option<usize>,
     pub(crate) default_node_type: Option<String>,
     pub(crate) nodes_column_number: Option<usize>,
     pub(crate) node_types_separator: Option<String>,
@@ -41,6 +31,7 @@ impl NodeFileReader {
             reader: path.map_or(Ok::<_, String>(None), |path| {
                 Ok(Some(CSVFileReader::new(path, "node list".to_owned())?))
             })?,
+            node_ids_column_number: None,
             default_node_type: None,
             nodes_column_number: None,
             node_types_separator: None,
@@ -51,6 +42,60 @@ impl NodeFileReader {
             numeric_node_type_ids: false,
             skip_node_types_if_unavailable: false,
         })
+    }
+
+    /// Set the column of the node IDs.
+    ///
+    /// # Arguments
+    /// * node_ids_column: Option<String> - The name of the node id column to use for the file.
+    ///
+    pub fn set_node_ids_column<S: Into<String>>(
+        mut self,
+        node_ids_column: Option<S>,
+    ) -> Result<NodeFileReader> {
+        if let Some(column) = node_ids_column {
+            self.must_have_reader()?;
+            let column = column.into();
+            if column.is_empty() {
+                return Err("The given node types column is empty.".to_owned());
+            }
+            let column_number = self
+                .reader
+                .as_ref()
+                .map_or(Ok::<_, String>(None), |reader| {
+                    Ok(Some(reader.get_column_number(column)?))
+                })?;
+            self = self.set_node_ids_column_number(column_number)?;
+        }
+        Ok(self)
+    }
+
+    /// Set the node id node column number.
+    ///
+    /// # Arguments
+    /// * `node_ids_column_number`: Option<usize> - The node id column number to use for the file.
+    ///
+    pub fn set_node_ids_column_number(
+        mut self,
+        node_ids_column_number: Option<usize>,
+    ) -> Result<NodeFileReader> {
+        if let Some(column) = node_ids_column_number {
+            self.must_have_reader()?;
+            if let Some(reader) = self.reader.as_mut() {
+                let expected_elements = reader.get_elements_per_line()?;
+                if column >= expected_elements {
+                    return Err(format!(
+                        concat!(
+                            "The node id column number passed was {} but ",
+                            "the first parsable line has {} values."
+                        ),
+                        column, expected_elements
+                    ));
+                }
+            }
+            self.node_ids_column_number = Some(column);
+        }
+        Ok(self)
     }
 
     /// Raises an error if the file reader was not created.
@@ -199,15 +244,12 @@ impl NodeFileReader {
     /// * comment_symbol: Option<String> - if the reader should ignore or not duplicated edges.
     ///
     pub fn set_comment_symbol(mut self, comment_symbol: Option<String>) -> Result<NodeFileReader> {
-        if let Some(comment_symbol) = comment_symbol {
+        if comment_symbol.is_some() {
             self.must_have_reader()?;
-            if comment_symbol.is_empty() {
-                return Err("The given comment symbol is empty.".to_string());
-            }
-            if let Some(reader) = self.reader.as_mut(){
-                reader.set_comment_symbol(comment_symbol)?;
-            }
         }
+        self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+            Ok(Some(reader.set_comment_symbol(comment_symbol)?))
+        })?;
         Ok(self)
     }
 
@@ -304,23 +346,16 @@ impl NodeFileReader {
     /// Set the separator.
     ///
     /// # Arguments
-    ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator<S: Into<String>>(
-        mut self,
-        separator: Option<S>,
-    ) -> Result<NodeFileReader> {
-        if let Some(separator) = separator {
+    pub fn set_separator(mut self, separator: Option<String>) -> Result<NodeFileReader> {
+        if separator.is_some() {
             self.must_have_reader()?;
-            let separator = separator.into();
-            if separator.is_empty() {
-                return Err("The separator cannot be empty.".to_owned());
-            }
-            self.reader.as_mut().map(|reader| reader.set_separator(separator));
-        } else if let Some(reader) = &mut self.reader {
-            reader.set_separator(reader.detect_separator()?);
         }
+        self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+            Ok(Some(reader.set_separator(separator)?))
+        })?;
+
         Ok(self)
     }
 
@@ -330,7 +365,7 @@ impl NodeFileReader {
     /// a column of node types.
     ///
     /// ```bash
-    /// node_id_columns node_types
+    /// node_ids_columns node_types
     /// node_A node_type_1|node_type_2
     /// node_B node_type_2
     /// ```  
@@ -362,12 +397,12 @@ impl NodeFileReader {
     /// * header: Option<bool> - Whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> Result<NodeFileReader> {
-        if let Some(header) = header {
+        if header.is_some() {
             self.must_have_reader()?;
-            if let Some(reader) = self.reader.as_mut(){
-                reader.set_header(header)?;
-            }
         }
+        self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+            Ok(Some(reader.set_header(header)?))
+        })?;
         Ok(self)
     }
 
@@ -378,12 +413,12 @@ impl NodeFileReader {
     /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> Result<NodeFileReader> {
-        if let Some(rows_to_skip) = rows_to_skip {
+        if rows_to_skip.is_some() {
             self.must_have_reader()?;
-            if let Some(reader) = self.reader.as_mut(){
-                reader.set_rows_to_skip(rows_to_skip)?;
-            }
         }
+        self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+            Ok(Some(reader.set_rows_to_skip(rows_to_skip)?))
+        })?;
         Ok(self)
     }
 
@@ -393,12 +428,12 @@ impl NodeFileReader {
     /// * max_rows_number: Option<usize> - The edge type to use when edge type is missing.
     ///
     pub fn set_max_rows_number(mut self, max_rows_number: Option<usize>) -> Result<NodeFileReader> {
-        if let Some(max_rows_number) = max_rows_number {
+        if max_rows_number.is_some() {
             self.must_have_reader()?;
-            if let Some(reader) = self.reader.as_mut(){
-                reader.set_max_rows_number(max_rows_number)?;
-            }
         }
+        self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+            Ok(Some(reader.set_max_rows_number(max_rows_number)?))
+        })?;
         Ok(self)
     }
 
@@ -451,7 +486,7 @@ impl NodeFileReader {
         &self,
         line_number: usize,
         mut elements_in_line: Vec<Option<String>>,
-    ) -> Result<(String, Option<Vec<String>>)> {
+    ) -> Result<(usize, (String, Option<Vec<String>>))> {
         // extract the values in reverse order
         // We start with the node types
         let maybe_node_types_string = if self.node_types_column_number.is_some() {
@@ -489,8 +524,26 @@ impl NodeFileReader {
             line_number.to_string()
         };
 
+        // Finally we check if the node ID was provided.
+        let line_number = if self.node_ids_column_number.is_some() {
+            let maybe_node_id = elements_in_line
+                .pop()
+                // We can unwrap because the check always happens in the CSV reader
+                .unwrap();
+            if maybe_node_id.is_none() {
+                return Err("The node id cannot be undefined.".to_owned());
+            }
+            let node_id = maybe_node_id.unwrap();
+            match node_id.parse::<usize>() {
+                Ok(node_id) => Ok(node_id),
+                Err(e) => Err(e.to_string()),
+            }?
+        } else {
+            line_number
+        };
+
         // Return tuple with string and list of node types
-        Ok((node_name, node_types))
+        Ok((line_number, (node_name, node_types)))
     }
 
     /// Return iterator of the lines of the node file.
@@ -514,18 +567,47 @@ impl NodeFileReader {
                 return Err("Neither nodes ID column or node types column were given!".to_string());
             }
 
-            // Check that the two columns do not have the same value.
-            if self.nodes_column_number == self.node_types_column_number {
-                return Err("The node column is the same as the node type one.".to_string());
+            let columns_and_names = [
+                (self.node_ids_column_number, "node ids"),
+                (self.nodes_column_number, "node names"),
+                (self.node_types_column_number, "node types"),
+            ];
+
+            for (outer_column_number, outer_column_name) in columns_and_names.iter() {
+                if let Some(outer_column_number) = outer_column_number {
+                    for (inner_column_number, inner_column_name) in columns_and_names.iter() {
+                        if outer_column_name == inner_column_name {
+                            continue;
+                        }
+                        if let Some(inner_column_number) = inner_column_number {
+                            if outer_column_number == inner_column_number {
+                                return Err(format!(
+                                    concat!(
+                                        "The column number {} provided for column {} ",
+                                        "is the same column number {} provided for column {}."
+                                    ),
+                                    outer_column_number,
+                                    outer_column_name,
+                                    inner_column_number,
+                                    inner_column_name
+                                ));
+                            }
+                        }
+                    }
+                }
             }
 
             // Retrieve the expected maximum number of columns.
             let expected_number_of_elements = reader.get_elements_per_line()?;
 
             // Check that the two columns do not have a value higher than the maximum amount.
-            for column in [self.nodes_column_number, self.node_types_column_number]
-                .iter()
-                .filter_map(|maybe_column| *maybe_column)
+            for column in [
+                self.node_ids_column_number,
+                self.nodes_column_number,
+                self.node_types_column_number,
+            ]
+            .iter()
+            .filter_map(|maybe_column| *maybe_column)
             {
                 if column >= expected_number_of_elements {
                     return Err(format!(
@@ -540,16 +622,19 @@ impl NodeFileReader {
 
             Ok(reader
                 .read_lines(
-                    [self.nodes_column_number, self.node_types_column_number]
-                        .iter()
-                        .filter_map(|&e| e)
-                        .collect(),
+                    Some([
+                        self.node_ids_column_number,
+                        self.nodes_column_number,
+                        self.node_types_column_number,
+                    ]
+                    .iter()
+                    .filter_map(|&e| e)
+                    .collect()),
                 )?
                 .map(move |line| match line {
-                    Ok((line_number, elements_in_line)) => Ok((
-                        line_number,
-                        self.parse_node_line(line_number, elements_in_line)?,
-                    )),
+                    Ok((line_number, elements_in_line)) => {
+                        self.parse_node_line(line_number, elements_in_line)
+                    }
                     Err(e) => Err(e),
                 }))
         })

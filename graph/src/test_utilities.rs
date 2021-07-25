@@ -69,7 +69,8 @@ pub fn load_ppi(
                 .set_default_node_type(Some("default".to_string()))
                 .set_ignore_duplicates(Some(true))
                 .unwrap()
-                .set_separator(Some("\t")).unwrap()
+                .set_separator(Some("\t".to_string()))
+                .unwrap()
                 .set_nodes_column(Some("id".to_string()))
                 .unwrap()
                 .set_node_types_column_number(Some(1))
@@ -161,7 +162,7 @@ pub fn load_cora() -> Graph {
     let graph_name = "Cora".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv")
         .unwrap()
-        .set_separator(Some("\t"))
+        .set_separator(Some("\t".to_string()))
         .unwrap()
         .set_verbose(Some(false))
         .set_sources_column(Some("subject"))
@@ -172,7 +173,7 @@ pub fn load_cora() -> Graph {
         .unwrap();
     let nodes_reader = NodeFileReader::new(Some("tests/data/cora/nodes.tsv".to_owned()))
         .unwrap()
-        .set_separator(Some("\t"))
+        .set_separator(Some("\t".to_string()))
         .unwrap()
         .set_nodes_column(Some("id"))
         .unwrap()
@@ -331,7 +332,7 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
         .filter(|node_id| !not_singleton_nodes.contains(node_id))
         .collect::<HashSet<NodeT>>();
 
-    if graph.has_nodes() && !graph.has_edges(){
+    if graph.has_nodes() && !graph.has_edges() {
         assert!(
             graph.has_singleton_nodes(),
             concat!(
@@ -608,14 +609,14 @@ pub fn test_graph_properties(graph: &Graph, verbose: Option<bool>) -> Result<()>
             graph
                 .iter_edge_node_ids_and_edge_type_id(true)
                 .map(|(_, _, _, edge_type)| edge_type.is_some() as EdgeT)
-                .sum()
+                .sum::<EdgeT>()
         );
         assert_eq!(
             graph.get_unknown_edge_types_number().unwrap(),
             graph
                 .iter_edge_node_ids_and_edge_type_id(true)
                 .map(|(_, _, _, edge_type)| edge_type.is_none() as EdgeT)
-                .sum()
+                .sum::<EdgeT>()
         );
         if graph.has_unknown_edge_types().unwrap() {
             assert!(graph
@@ -1740,7 +1741,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let node_file = random_path(None);
     let nodes_writer = NodeFileWriter::new(node_file.clone())
         .set_verbose(verbose)
-        .set_separator(Some("\t"))
+        .set_separator(Some("\t".to_string()))?
         .set_header(Some(true))
         .set_node_types_column_number(Some(4))
         .set_nodes_column_number(Some(6))
@@ -1752,7 +1753,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let edges_file = random_path(None);
     let edges_writer = EdgeFileWriter::new(edges_file.clone())
         .set_verbose(verbose)
-        .set_separator(Some("\t"))
+        .set_separator(Some("\t".to_string()))?
         .set_header(Some(true))
         .set_edge_types_column(Some("edge_types".to_owned()))
         .set_destinations_column_number(Some(3))

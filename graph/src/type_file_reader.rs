@@ -7,6 +7,7 @@ use super::*;
 #[derive(Clone)]
 pub struct TypeFileReader<T: ToFromUsize + Sync> {
     pub(crate) reader: Option<CSVFileReader>,
+    pub(crate) type_ids_column_number: Option<usize>,
     pub(crate) type_column_number: usize,
     pub(crate) types_number: Option<T>,
     pub(crate) numeric_type_ids: bool,
@@ -25,6 +26,7 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
             reader: path.map_or(Ok::<_, String>(None), |path| {
                 Ok(Some(CSVFileReader::new(path, "type list".to_owned())?))
             })?,
+            type_ids_column_number: None,
             type_column_number: 0,
             types_number: None,
             numeric_type_ids: !has_path,
@@ -42,6 +44,60 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
             .to_string());
         }
         Ok(())
+    }
+
+    /// Set the column of the type IDs.
+    ///
+    /// # Arguments
+    /// * type_ids_column: Option<String> - The name of the type id column to use for the file.
+    ///
+    pub fn set_type_ids_column<S: Into<String>>(
+        mut self,
+        type_ids_column: Option<S>,
+    ) -> Result<TypeFileReader<T>> {
+        if let Some(column) = type_ids_column {
+            self.must_have_reader()?;
+            let column = column.into();
+            if column.is_empty() {
+                return Err("The given type types column is empty.".to_owned());
+            }
+            let column_number = self
+                .reader
+                .as_ref()
+                .map_or(Ok::<_, String>(None), |reader| {
+                    Ok(Some(reader.get_column_number(column)?))
+                })?;
+            self = self.set_type_ids_column_number(column_number)?;
+        }
+        Ok(self)
+    }
+
+    /// Set the type id type column number.
+    ///
+    /// # Arguments
+    /// * `type_ids_column_number`: Option<usize> - The type id column number to use for the file.
+    ///
+    pub fn set_type_ids_column_number(
+        mut self,
+        type_ids_column_number: Option<usize>,
+    ) -> Result<TypeFileReader<T>> {
+        if let Some(column) = type_ids_column_number {
+            self.must_have_reader()?;
+            if let Some(reader) = self.reader.as_mut() {
+                let expected_elements = reader.get_elements_per_line()?;
+                if column >= expected_elements {
+                    return Err(format!(
+                        concat!(
+                            "The type id column number passed was {} but ",
+                            "the first parsable line has {} values."
+                        ),
+                        column, expected_elements
+                    ));
+                }
+            }
+            self.type_ids_column_number = Some(column);
+        }
+        Ok(self)
     }
 
     /// Set the column of the type nodes.
@@ -154,12 +210,9 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
     ) -> Result<TypeFileReader<T>> {
         if let Some(comment_symbol) = comment_symbol {
             self.must_have_reader()?;
-            if comment_symbol.is_empty() {
-                return Err("The given comment symbol is empty.".to_string());
-            }
-            if let Some(reader) = self.reader.as_mut() {
-                reader.set_comment_symbol(comment_symbol)?;
-            }
+            self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+                Ok(Some(reader.set_comment_symbol(Some(comment_symbol))?))
+            })?;
         }
         Ok(self)
     }
@@ -212,22 +265,13 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
     ///
     /// * separator: Option<String> - The separator to use for the file.
     ///
-    pub fn set_separator<S: Into<String>>(
-        mut self,
-        separator: Option<S>,
-    ) -> Result<TypeFileReader<T>> {
-        if let Some(separator) = separator {
+    pub fn set_separator(mut self, separator: Option<String>) -> Result<TypeFileReader<T>> {
+        if separator.is_some() {
             self.must_have_reader()?;
-            let separator = separator.into();
-            if separator.is_empty() {
-                return Err("The separator cannot be empty.".to_owned());
-            }
-            self.reader
-                .as_mut()
-                .map(|reader| reader.set_separator(separator));
-        } else if let Some(reader) = &mut self.reader {
-            reader.set_separator(reader.detect_separator()?);
         }
+        self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+            Ok(Some(reader.set_separator(separator)?))
+        })?;
         Ok(self)
     }
 
@@ -238,12 +282,12 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
     /// * header: Option<bool> - Whether to expect an header or not.
     ///
     pub fn set_header(mut self, header: Option<bool>) -> Result<TypeFileReader<T>> {
-        if let Some(header) = header {
+        if header.is_some() {
             self.must_have_reader()?;
-            if let Some(reader) = self.reader.as_mut() {
-                reader.set_header(header)?;
-            }
         }
+        self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+            Ok(Some(reader.set_header(header)?))
+        })?;
         Ok(self)
     }
 
@@ -254,12 +298,12 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
     /// * rows_to_skip: Option<bool> - Whether to show the loading bar or not.
     ///
     pub fn set_rows_to_skip(mut self, rows_to_skip: Option<usize>) -> Result<TypeFileReader<T>> {
-        if let Some(rows_to_skip) = rows_to_skip {
+        if rows_to_skip.is_some() {
             self.must_have_reader()?;
-            if let Some(reader) = self.reader.as_mut() {
-                reader.set_rows_to_skip(rows_to_skip)?;
-            }
         }
+        self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+            Ok(Some(reader.set_rows_to_skip(rows_to_skip)?))
+        })?;
         Ok(self)
     }
 
@@ -272,12 +316,12 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
         mut self,
         max_rows_number: Option<usize>,
     ) -> Result<TypeFileReader<T>> {
-        if let Some(max_rows_number) = max_rows_number {
+        if max_rows_number.is_some() {
             self.must_have_reader()?;
-            if let Some(reader) = self.reader.as_mut() {
-                reader.set_max_rows_number(max_rows_number)?;
-            }
         }
+        self.reader = self.reader.map_or(Ok::<_, String>(None), |reader| {
+            Ok(Some(reader.set_max_rows_number(max_rows_number)?))
+        })?;
         Ok(self)
     }
 
@@ -316,12 +360,32 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
         &self,
         line_number: usize,
         mut elements_in_line: Vec<Option<String>>,
-    ) -> Result<String> {
+    ) -> Result<(usize, String)> {
         // extract the type name
-        elements_in_line.pop().unwrap().map_or_else(
+        let type_name = elements_in_line.pop().unwrap().map_or_else(
             || Err(format!("The type at line {} is empty.", line_number)),
             |type_name| Ok(type_name),
-        )
+        )?;
+
+        // Finally we check if the type ID was provided.
+        let line_number = if self.type_ids_column_number.is_some() {
+            let maybe_type_id = elements_in_line
+                .pop()
+                // We can unwrap because the check always happens in the CSV reader
+                .unwrap();
+            if maybe_type_id.is_none() {
+                return Err("The type id cannot be undefined.".to_owned());
+            }
+            let type_id = maybe_type_id.unwrap();
+            match type_id.parse::<usize>() {
+                Ok(type_id) => Ok(type_id),
+                Err(e) => Err(e.to_string()),
+            }?
+        } else {
+            line_number
+        };
+
+        Ok((line_number, type_name))
     }
 
     /// Return iterator of rows of the edge file.
@@ -338,11 +402,14 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
     > {
         self.reader.as_ref().map(|reader| {
             Ok(reader
-                .read_lines(vec![self.type_column_number])?
+                .read_lines(Some(
+                    vec![self.type_ids_column_number, Some(self.type_column_number)]
+                        .iter()
+                        .filter_map(|&e| e)
+                        .collect(),
+                ))?
                 .map(move |line| match line {
-                    Ok((line_number, vals)) => {
-                        Ok((line_number, self.parse_type_line(line_number, vals)?))
-                    }
+                    Ok((line_number, vals)) => self.parse_type_line(line_number, vals),
                     Err(e) => Err(e),
                 }))
         })

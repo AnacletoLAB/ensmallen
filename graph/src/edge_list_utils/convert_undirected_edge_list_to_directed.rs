@@ -128,7 +128,7 @@ pub fn convert_undirected_edge_list_to_directed(
         .set_weights_column_number(
             target_edge_list_weights_column_number.or(file_reader.get_weights_column_number()),
         )
-        .set_separator(target_edge_list_separator.or(Some(file_reader.get_separator())))
+        .set_separator(target_edge_list_separator.or(Some(file_reader.get_separator())))?
         .set_numeric_node_ids(Some(false))
         .set_numeric_edge_type_ids(Some(false))
         .set_verbose(verbose)

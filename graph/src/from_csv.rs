@@ -147,6 +147,8 @@ impl Graph {
     /// * `node_types_separator: Option<String>,
     /// * `node_list_node_types_column_number: Option<usize>,
     /// * `node_list_node_types_column: Option<String>,
+    /// * `node_ids_column: Option<String>,
+    /// * `node_ids_column_number: Option<usize>,
     /// * `nodes_number: Option<NodeT>,
     /// * `minimum_node_id: Option<NodeT>,
     /// * `numeric_node_ids: Option<bool>,
@@ -227,6 +229,8 @@ impl Graph {
         node_types_separator: Option<String>,
         node_list_node_types_column_number: Option<usize>,
         node_list_node_types_column: Option<String>,
+        node_ids_column: Option<String>,
+        node_ids_column_number: Option<usize>,
         nodes_number: Option<NodeT>,
         minimum_node_id: Option<NodeT>,
         numeric_node_ids: Option<bool>,
@@ -333,6 +337,8 @@ impl Graph {
                     .set_rows_to_skip(node_list_rows_to_skip)?
                     .set_separator(node_list_separator)?
                     .set_nodes_column_number(nodes_column_number)?
+                    .set_node_ids_column(node_ids_column)?
+                    .set_node_ids_column_number(node_ids_column_number)?
                     .set_nodes_column(nodes_column)?
                     .set_minimum_node_id(minimum_node_id)
                     .set_node_types_column_number(node_list_node_types_column_number)?

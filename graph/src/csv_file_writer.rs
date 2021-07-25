@@ -11,9 +11,9 @@ use std::{fs::File, io::prelude::*, io::BufWriter};
 /// * header: bool - If the file (will / must) have the header with the titles of the columns.
 pub struct CSVFileWriter {
     pub(crate) path: String,
-    pub(crate) verbose: bool,
-    pub(crate) separator: String,
-    pub(crate) header: bool,
+    verbose: bool,
+    separator: String,
+    header: bool,
 }
 
 /// # Builder methods
@@ -31,6 +31,48 @@ impl CSVFileWriter {
             separator: "\t".to_string(),
             header: true,
         }
+    }
+
+    /// Set whether the file is expected to have an header.
+    ///
+    /// # Arguments
+    /// * `header`: Option<bool> - Whether this file is expected to have an header.
+    ///
+    /// # Raises
+    /// * If the separator was already set before calling this method.
+    pub fn set_header(mut self, header: Option<bool>) -> CSVFileWriter {
+        if let Some(header) = header {
+            self.header = header;
+        }
+        self
+    }
+
+    /// Set whether to show a loading bar.
+    ///
+    /// # Arguments
+    /// * `verbose`: Option<bool> - Whether to show the loading bar.
+    ///
+    /// # Raises
+    /// * If the separator was already set before calling this method.
+    pub fn set_verbose(mut self, verbose: Option<bool>) -> CSVFileWriter {
+        if let Some(verbose) = verbose {
+            self.verbose = verbose;
+        }
+        self
+    }
+
+    /// Set separator to the provided value.
+    ///
+    /// # Arguments
+    /// * `separator`: Option<String> - The value to use as separator in the file.
+    pub fn set_separator(mut self, separator: Option<String>) -> Result<CSVFileWriter> {
+        if let Some(separator) = separator {
+            if separator.is_empty() {
+                return Err("The separator cannot be empty.".to_owned());
+            }
+            self.separator = separator
+        };
+        Ok(self)
     }
 
     /// Write given rows iterator to file.
