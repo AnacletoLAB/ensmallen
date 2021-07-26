@@ -1,3 +1,5 @@
+use itertools::Itertools;
+
 use super::*;
 
 /// Structure that saves the writer specific to writing and reading a nodes csv file.
@@ -18,6 +20,7 @@ pub struct NodeFileWriter {
     pub(crate) nodes_column_number: usize,
     pub(crate) node_types_column_number: Option<usize>,
     pub(crate) node_types_separator: Option<String>,
+    pub(crate) numeric_node_type_ids: bool,
     number_of_columns: usize,
     columns_are_dense: bool,
 }
@@ -39,6 +42,7 @@ impl NodeFileWriter {
             node_types_column: None,
             node_types_column_number: None,
             node_types_separator: None,
+            numeric_node_type_ids: false,
             number_of_columns: 1,
             columns_are_dense: true,
         }
@@ -152,6 +156,21 @@ impl NodeFileWriter {
         self
     }
 
+    /// Set whether the node type IDs are to be treated as numeric.
+    ///
+    /// # Arguments
+    /// * `numeric_node_type_ids`: Option<bool> - Whether the node type IDs are to be treated as numeric.
+    ///
+    pub fn set_numeric_node_type_ids(
+        mut self,
+        numeric_node_type_ids: Option<bool>,
+    ) -> NodeFileWriter {
+        if let Some(nni) = numeric_node_type_ids {
+            self.numeric_node_type_ids = nni;
+        }
+        self
+    }
+
     /// Set the verbose.
     ///
     /// # Arguments
@@ -170,6 +189,34 @@ impl NodeFileWriter {
     ///
     pub fn set_separator(mut self, separator: Option<String>) -> Result<NodeFileWriter> {
         self.writer = self.writer.set_separator(separator)?;
+        Ok(self)
+    }
+
+    /// Set the node types separator.
+    ///
+    /// In the following example we show a column of node IDs and
+    /// a column of node types.
+    ///
+    /// ```bash
+    /// node_ids_columns node_types
+    /// node_A node_type_1|node_type_2
+    /// node_B node_type_2
+    /// ```  
+    ///
+    /// # Arguments
+    /// * node_types_separator: Option<String> - The separator to use for the node types column.
+    ///
+    pub fn set_node_types_separator<S: Into<String>>(
+        mut self,
+        node_types_separator: Option<S>,
+    ) -> Result<NodeFileWriter> {
+        if let Some(sep) = node_types_separator {
+            let sep = sep.into();
+            if sep.is_empty() {
+                return Err("The node type separator cannot be empty.".to_owned());
+            }
+            self.node_types_separator = Some(sep);
+        }
         Ok(self)
     }
 
@@ -209,14 +256,83 @@ impl NodeFileWriter {
         (header_values, header_positions)
     }
 
+    pub fn parse_line(
+        &self,
+        node_id: NodeT,
+        node_name: String,
+        node_type_ids: Option<Vec<NodeTypeT>>,
+        node_type_names: Option<Vec<String>>,
+    ) -> Vec<String> {
+        let mut line = vec![];
+        let mut positions = vec![];
+
+        if let Some(node_ids_column_number) = &self.node_ids_column_number {
+            line.push(node_id.to_string());
+            if !self.columns_are_dense {
+                positions.push(*node_ids_column_number);
+            }
+        }
+
+        line.push(node_name);
+
+        if !self.columns_are_dense {
+            positions.push(self.nodes_column_number);
+        }
+
+        if let Some(column_number) = &self.node_types_column_number {
+            if self.numeric_node_type_ids {
+                line.push(match (node_type_ids, &self.node_types_separator) {
+                    (None, _) => "".to_string(),
+                    (Some(ntns), Some(sep)) => ntns
+                        .into_iter()
+                        .map(|node_type_id| node_type_id.to_string())
+                        .join(sep),
+                    (Some(mut ntns), None) => ntns.pop().unwrap().to_string(),
+                });
+            } else {
+                line.push(match (node_type_names, &self.node_types_separator) {
+                    (None, _) => "".to_string(),
+                    (Some(ntns), Some(sep)) => ntns.join(sep),
+                    (Some(mut ntns), None) => ntns.pop().unwrap(),
+                });
+            }
+            if !self.columns_are_dense {
+                positions.push(*column_number);
+            }
+        }
+        if self.columns_are_dense {
+            line
+        } else {
+            compose_lines(self.number_of_columns, line, positions)
+        }
+    }
+
+    /// Write edge list iterator to file.
+    ///  
+    /// # Arguments
+    /// * `lines_number`: Option<usize> - The number of lines in the file.
+    /// * `iterator`: impl Iterator<Item=_> - The iterator with the edge list to write to file.
+    pub fn dump_iterator(
+        &self,
+        lines_number: Option<usize>,
+        iterator: impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)>,
+    ) -> Result<()> {
+        let (header_values, header_positions) = self.build_header();
+        self.writer.write_lines(
+            lines_number,
+            compose_lines(self.number_of_columns, header_values, header_positions),
+            iterator.map(|(node_id, node_name, node_type_ids, node_type_names)| {
+                self.parse_line(node_id, node_name, node_type_ids, node_type_names)
+            }),
+        )
+    }
+
     /// Write nodes to file.
     ///
     /// # Arguments
     ///
     /// * `graph`: &Graph, reference to graph to use.
-    pub fn dump(&self, graph: &Graph) -> Result<()> {
-        // build the header
-        let (header_values, header_positions) = self.build_header();
+    pub fn dump_graph(&self, graph: &Graph) -> Result<()> {
         // If the graph has multiple node labels we need a separator to join them.
         if self.node_types_separator.is_none()
             && graph.has_node_types()
@@ -228,42 +344,9 @@ impl NodeFileWriter {
             )
             .to_string());
         }
-        self.writer.write_lines(
+        self.dump_iterator(
             Some(graph.get_nodes_number() as usize),
-            compose_lines(self.number_of_columns, header_values, header_positions),
-            graph.iter_node_names_and_node_type_names().map(
-                |(node_id, node_name, _, node_type_names)| {
-                    let mut line = vec![node_name];
-                    let mut positions = vec![];
-
-                    if let Some(node_ids_column_number) = &self.node_ids_column_number {
-                        line.push(node_id.to_string());
-                        if !self.columns_are_dense {
-                            positions.push(*node_ids_column_number);
-                        }
-                    }
-
-                    if !self.columns_are_dense {
-                        positions.push(self.nodes_column_number);
-                    }
-
-                    if let Some(column_number) = &self.node_types_column_number {
-                        line.push(match (node_type_names, &self.node_types_separator) {
-                            (None, _) => "".to_string(),
-                            (Some(ntns), Some(sep)) => ntns.join(sep),
-                            (Some(mut ntns), None) => ntns.pop().unwrap(),
-                        });
-                        if !self.columns_are_dense {
-                            positions.push(*column_number);
-                        }
-                    }
-                    if self.columns_are_dense {
-                        line
-                    } else {
-                        compose_lines(self.number_of_columns, line, positions)
-                    }
-                },
-            ),
+            graph.iter_node_names_and_node_type_names(),
         )
     }
 }

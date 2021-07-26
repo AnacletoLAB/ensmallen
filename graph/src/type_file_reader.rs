@@ -1,7 +1,7 @@
 use rayon::iter::ParallelIterator;
 
 use super::*;
-/// Structure that saves the reader specific to writing and reading a nodes csv file.
+/// Structure that saves the reader specific to read a types csv file.
 ///
 /// # Attributes
 #[derive(Clone)]
@@ -100,10 +100,10 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
         Ok(self)
     }
 
-    /// Set the column of the type nodes.
+    /// Set the column of the type.
     ///
     /// # Arguments
-    /// * types_column: Option<String> - The type nodes column to use for the file.
+    /// * types_column: Option<String> - The type column to use for the file.
     ///
     pub fn set_type_column<S: Into<String>>(
         mut self,
@@ -184,6 +184,11 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
         self
     }
 
+    /// Get the minimum type ID.
+    pub fn get_minimum_type_id(&self) -> Option<T> {
+        self.minimum_type_id
+    }
+
     /// Set whether the CSV is expected to be well written.
     ///
     /// # Arguments
@@ -197,6 +202,11 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
                 .map(|reader| reader.csv_is_correct = cic);
         }
         Ok(self)
+    }
+
+    /// Return whether the CSV was labelled to have numeric type IDs.
+    pub fn has_numeric_type_ids(&self) -> bool {
+        self.numeric_type_ids
     }
 
     /// Set the comment symbol to use to skip the lines.

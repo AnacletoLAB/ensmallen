@@ -207,6 +207,8 @@ impl Graph {
         node_type_list_separator: Option<String>,
         node_types_column_number: Option<usize>,
         node_types_column: Option<String>,
+        node_types_ids_column_number: Option<usize>,
+        node_types_ids_column: Option<String>,
         node_types_number: Option<NodeTypeT>,
         numeric_node_type_ids: Option<bool>,
         minimum_node_type_id: Option<NodeTypeT>,
@@ -216,6 +218,7 @@ impl Graph {
         node_type_list_max_rows_number: Option<usize>,
         node_type_list_comment_symbol: Option<String>,
         load_node_type_list_in_parallel: Option<bool>,
+
         node_path: Option<String>,
         node_list_separator: Option<String>,
         node_list_header: Option<bool>,
@@ -237,12 +240,15 @@ impl Graph {
         node_list_numeric_node_type_ids: Option<bool>,
         skip_node_types_if_unavailable: Option<bool>,
         load_node_list_in_parallel: Option<bool>,
+        
         edge_type_path: Option<String>,
         edge_types_column_number: Option<usize>,
         edge_types_column: Option<String>,
-        edge_types_number: Option<NodeTypeT>,
+        edge_types_ids_column_number: Option<usize>,
+        edge_types_ids_column: Option<String>,
+        edge_types_number: Option<EdgeTypeT>,
         numeric_edge_type_ids: Option<bool>,
-        minimum_edge_type_id: Option<NodeTypeT>,
+        minimum_edge_type_id: Option<EdgeTypeT>,
         edge_type_list_separator: Option<String>,
         edge_type_list_header: Option<bool>,
         edge_type_list_rows_to_skip: Option<usize>,
@@ -295,6 +301,8 @@ impl Graph {
                         .set_separator(node_type_list_separator)?
                         .set_type_column_number(node_types_column_number)?
                         .set_type_column(node_types_column)?
+                        .set_type_ids_column(node_types_ids_column)?
+                        .set_type_ids_column_number(node_types_ids_column_number)?
                         .set_minimum_type_id(minimum_node_type_id)
                         .set_numeric_type_ids(numeric_node_type_ids)
                         .set_csv_is_correct(node_type_list_is_correct)?
@@ -317,6 +325,8 @@ impl Graph {
                         .set_separator(edge_type_list_separator)?
                         .set_type_column_number(edge_types_column_number)?
                         .set_type_column(edge_types_column)?
+                        .set_type_ids_column(edge_types_ids_column)?
+                        .set_type_ids_column_number(edge_types_ids_column_number)?
                         .set_minimum_type_id(minimum_edge_type_id)
                         .set_numeric_type_ids(numeric_edge_type_ids)
                         .set_csv_is_correct(edge_type_list_is_correct)?

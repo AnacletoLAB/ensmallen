@@ -18,3 +18,5 @@ mod are_there_selfloops_in_edge_list;
 pub use are_there_selfloops_in_edge_list::*;
 mod is_numeric_edge_list;
 pub use is_numeric_edge_list::*;
+mod convert_node_list_node_types_to_numeric;
+pub use convert_node_list_node_types_to_numeric::*;

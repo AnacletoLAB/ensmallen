@@ -1747,7 +1747,7 @@ pub fn test_dump_graph(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
         .set_nodes_column_number(Some(6))
         .set_node_types_column(Some("node_types"))
         .set_nodes_column(Some("node_column".to_string()));
-    nodes_writer.dump(&graph)?;
+    nodes_writer.dump_graph(&graph)?;
     fs::remove_file(node_file).unwrap();
 
     let edges_file = random_path(None);

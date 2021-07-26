@@ -301,6 +301,11 @@ impl CSVFileReader {
         }
     }
 
+    /// Return whether the CSV was labelled as correct.
+    pub fn is_csv_correct(&self) -> bool {
+        self.csv_is_correct
+    }
+
     pub fn get_parallell_lines_iterator(
         &self,
         skip_header: bool,

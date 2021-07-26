@@ -98,6 +98,11 @@ impl NodeFileReader {
         Ok(self)
     }
 
+    /// Return the node ids column number.
+    pub fn get_node_ids_column_number(&self) -> Option<usize> {
+        self.node_ids_column_number
+    }
+
     /// Raises an error if the file reader was not created.
     fn must_have_reader(&self) -> Result<()> {
         if self.reader.is_none() {
@@ -151,6 +156,11 @@ impl NodeFileReader {
             self.nodes_column_number = Some(column);
         }
         Ok(self)
+    }
+
+    /// Return the nodes column number.
+    pub fn get_nodes_column_number(&self) -> Option<usize> {
+        self.nodes_column_number
     }
 
     /// Set the name of the graph to be loaded.
@@ -221,6 +231,11 @@ impl NodeFileReader {
         Ok(self)
     }
 
+    /// Return the node types column number.
+    pub fn get_node_types_column_number(&self) -> Option<usize> {
+        self.node_types_column_number
+    }
+
     /// Set whether to automatically skip node_types if they are not avaitable instead of raising an exception.
     ///
     /// # Arguments
@@ -267,6 +282,21 @@ impl NodeFileReader {
                 .map(|reader| reader.csv_is_correct = cic);
         }
         Ok(self)
+    }
+
+    /// Return whether the CSV was labelled as correct.
+    pub fn is_csv_correct(&self) -> Result<bool> {
+        self.must_have_reader()?;
+        Ok(self
+            .reader
+            .as_ref()
+            .map(|reader| reader.is_csv_correct())
+            .unwrap())
+    }
+
+    /// Return whether the CSV was labelled to have numeric node IDs.
+    pub fn has_numeric_node_ids(&self) -> bool {
+        self.numeric_node_ids
     }
 
     /// Set the default node type.
@@ -359,6 +389,16 @@ impl NodeFileReader {
         Ok(self)
     }
 
+    /// Return separator used for the current node list file.
+    pub fn get_separator(&self) -> Result<String> {
+        self.must_have_reader()?;
+        Ok(self
+            .reader
+            .as_ref()
+            .map(|reader| reader.get_separator())
+            .unwrap())
+    }
+
     /// Set the node types separator.
     ///
     /// In the following example we show a column of node IDs and
@@ -390,6 +430,11 @@ impl NodeFileReader {
         Ok(self)
     }
 
+    /// Return he node types separator used within this file.
+    pub fn get_node_types_separator(&self) -> Option<String> {
+        self.node_types_separator.clone()
+    }
+
     /// Set the header.
     ///
     /// # Arguments
@@ -404,6 +449,16 @@ impl NodeFileReader {
             Ok(Some(reader.set_header(header)?))
         })?;
         Ok(self)
+    }
+
+    /// Return whether the reader is expected to include an header.
+    pub fn has_header(&self) -> Result<bool> {
+        self.must_have_reader()?;
+        Ok(self
+            .reader
+            .as_ref()
+            .map(|reader| reader.has_header())
+            .unwrap())
     }
 
     /// Set number of rows to be skipped when starting to read file.
@@ -470,11 +525,16 @@ impl NodeFileReader {
     /// Set the minimum node ID.
     ///
     /// # Arguments
-    /// * minimum_node_id: Option<usize> - The minimum node ID to expect when loading numeric node IDs.
+    /// * `minimum_node_id`: Option<usize> - The minimum node ID to expect when loading numeric node IDs.
     ///
     pub fn set_minimum_node_id(mut self, minimum_node_id: Option<NodeT>) -> NodeFileReader {
         self.minimum_node_id = minimum_node_id;
         self
+    }
+
+    /// Get the minimum node ID.
+    pub fn get_minimum_node_id(&self) -> Option<NodeT> {
+        self.minimum_node_id
     }
 
     /// Parse a single line (vector of strings already splitted and fitered)
@@ -621,16 +681,16 @@ impl NodeFileReader {
             }
 
             Ok(reader
-                .read_lines(
-                    Some([
+                .read_lines(Some(
+                    [
                         self.node_ids_column_number,
                         self.nodes_column_number,
                         self.node_types_column_number,
                     ]
                     .iter()
                     .filter_map(|&e| e)
-                    .collect()),
-                )?
+                    .collect(),
+                ))?
                 .map(move |line| match line {
                     Ok((line_number, elements_in_line)) => {
                         self.parse_node_line(line_number, elements_in_line)

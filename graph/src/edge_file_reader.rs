@@ -95,6 +95,11 @@ impl EdgeFileReader {
         Ok(self)
     }
 
+    /// Return the edge ids column number.
+    pub fn get_edge_ids_column_number(&self) -> Option<usize> {
+        self.edge_ids_column_number
+    }
+
     /// Set the column of the source nodes.
     ///
     /// # Arguments
