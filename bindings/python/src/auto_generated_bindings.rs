@@ -6,8 +6,8 @@ fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_class::<EnsmallenGraph>()?;
     m.add_wrapped(wrap_pymodule!(preprocessing))?;
     m.add_wrapped(wrap_pymodule!(url_utilities))?;
-    m.add_wrapped(wrap_pymodule!(constructors))?;
     m.add_wrapped(wrap_pymodule!(edge_list_utils))?;
+    m.add_wrapped(wrap_pymodule!(constructors))?;
 
     env_logger::init();
     Ok(())
@@ -366,12 +366,6 @@ fn url_utilities(_py: Python, m: &PyModule) -> PyResult<()> {
 }
 
 #[pymodule]
-fn constructors(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
-    Ok(())
-}
-
-#[pymodule]
 fn edge_list_utils(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(convert_edge_list_to_numeric))?;
     m.add_wrapped(wrap_pyfunction!(densify_sparse_numeric_edge_list))?;
@@ -387,6 +381,12 @@ fn edge_list_utils(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(sort_numeric_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(sort_numeric_edge_list_inplace))?;
     m.add_wrapped(wrap_pyfunction!(build_optimal_undirected_lists_files))?;
+    Ok(())
+}
+
+#[pymodule]
+fn constructors(_py: Python, m: &PyModule) -> PyResult<()> {
+    m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
     Ok(())
 }
 
@@ -3130,20 +3130,6 @@ pub fn is_valid_eaglei_resource_ontology_node_name(node_name: &str) -> bool {
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(directed, name)"]
-/// Return new graph object built from string iterators.
-///
-/// Parameters
-/// ----------
-///
-pub fn build_empty_graph(directed: bool, name: String) -> PyResult<EnsmallenGraph> {
-    Ok(EnsmallenGraph {
-        graph: pe!(graph::build_empty_graph(directed, name))?,
-    })
-}
-
-#[pyfunction]
-#[automatically_generated_binding]
 #[text_signature = "(original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, original_node_ids_column, original_node_ids_column_number, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, original_edge_types_ids_column_number, original_edge_types_ids_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_list_path, original_edge_list_separator, original_edge_list_header, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_ids_column, original_edge_ids_column_number, target_edge_list_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_edge_ids_column, target_edge_ids_column_number, target_node_list_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_ids_column, target_node_ids_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, target_edge_types_ids_column, target_edge_types_ids_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, verbose, name)"]
 /// Create a new edge list starting from given one with node IDs densified.
 ///
@@ -4882,6 +4868,20 @@ pub fn build_optimal_undirected_lists_files(
         verbose,
         name
     ))
+}
+
+#[pyfunction]
+#[automatically_generated_binding]
+#[text_signature = "(directed, name)"]
+/// Return new graph object built from string iterators.
+///
+/// Parameters
+/// ----------
+///
+pub fn build_empty_graph(directed: bool, name: String) -> PyResult<EnsmallenGraph> {
+    Ok(EnsmallenGraph {
+        graph: pe!(graph::build_empty_graph(directed, name))?,
+    })
 }
 
 #[pymethods]

@@ -47,14 +47,14 @@ impl EnsmallenGraph {
             ],
         ))?;
 
-        let writer = NodeFileWriter::new(path)
+        let writer = pe!(NodeFileWriter::new(path)
             .set_verbose(extract_value!(kwargs, "verbose", bool))
-            .set_separator(extract_value!(kwargs, "separator", String))
-            .set_header(extract_value!(kwargs, "header", bool))
-            .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize))
-            .set_nodes_column(extract_value!(kwargs, "nodes_column", String))
-            .set_node_types_column_number(extract_value!(kwargs, "node_types_column_number", usize))
-            .set_node_types_column(extract_value!(kwargs, "nodes_type_column", String));
-        pe!(writer.dump(&self.graph))
+            .set_separator(extract_value!(kwargs, "separator", String)))?
+        .set_header(extract_value!(kwargs, "header", bool))
+        .set_nodes_column_number(extract_value!(kwargs, "nodes_column_number", usize))
+        .set_nodes_column(extract_value!(kwargs, "nodes_column", String))
+        .set_node_types_column_number(extract_value!(kwargs, "node_types_column_number", usize))
+        .set_node_types_column(extract_value!(kwargs, "nodes_type_column", String));
+        pe!(writer.dump_graph(&self.graph))
     }
 }
