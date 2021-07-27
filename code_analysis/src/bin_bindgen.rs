@@ -10,7 +10,7 @@ use bindgen::*;
 
 fn main() {
     // Generate the bindings
-    gen_bindings("../bindings/python/src/auto_generated_bindings.rs");
+    gen_bindings("../bindings/python/src/auto_generated_bindings.rs", "../bindings/python/ensmallen_graph/__init__.py");
 
     // Generate the tfidf weights
     tfidf_gen("../bindings/python/src/method_names_list.rs");

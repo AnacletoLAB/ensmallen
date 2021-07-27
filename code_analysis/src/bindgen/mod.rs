@@ -22,7 +22,7 @@ pub fn extract_module_name_from_path(path: &str) -> Option<String> {
     re.captures(path).map(|x| x.get(1).unwrap().as_str().to_string())
 }
 
-pub fn gen_bindings(path: &str) {
+pub fn gen_bindings(path: &str, init_path: &str) {
     print_sep();
     println!("Parsing the library source files");
     print_sep();
@@ -133,10 +133,10 @@ fn {module_name}(_py: Python, m: &PyModule) -> PyResult<()> {{
         .map(|x| x.into())
         .collect::<Vec<String>>().join(""),
 
-    function_modules_bindings=functions_modules.into_iter()
+    function_modules_bindings=functions_modules.iter()
         .flat_map(|(_module_name, functions)| {
-            functions.into_iter()
-                .map(|function| function.into())
+            functions.iter()
+                .map(|function| function.clone().into())
                 .collect::<Vec<String>>()
         
         })
@@ -153,4 +153,23 @@ fn {module_name}(_py: Python, m: &PyModule) -> PyResult<()> {{
     )
     .expect("Cannot write the automatically generated bindings file");
 
+
+    let mut lines = vec!["\"\"\"Module offering fast graph processing and graph datasets.\"\"\"".to_string()];
+
+    let mut elements = functions_modules.keys().cloned().collect::<Vec<_>>();
+    elements.push("EnsmallenGraph".to_string());
+
+    for module in elements.iter() {
+        lines.push(format!("from .ensmallen_graph import {} # pylint: disable=import-error", module));
+    }
+
+    lines.push(format!(
+        "__all__ = {:?}", elements
+    ));
+
+    fs::write(
+        init_path,
+        lines.join("\n"),
+    )
+    .expect("Cannot write the init file");
 }
