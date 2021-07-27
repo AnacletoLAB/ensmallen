@@ -240,7 +240,7 @@ impl Graph {
         node_list_numeric_node_type_ids: Option<bool>,
         skip_node_types_if_unavailable: Option<bool>,
         load_node_list_in_parallel: Option<bool>,
-        
+
         edge_type_path: Option<String>,
         edge_types_column_number: Option<usize>,
         edge_types_column: Option<String>,
@@ -256,6 +256,7 @@ impl Graph {
         edge_type_list_max_rows_number: Option<usize>,
         edge_type_list_comment_symbol: Option<String>,
         load_edge_type_list_in_parallel: Option<bool>,
+        
         edge_path: Option<String>,
         edge_list_separator: Option<String>,
         edge_list_header: Option<bool>,

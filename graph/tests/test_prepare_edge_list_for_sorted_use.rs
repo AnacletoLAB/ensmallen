@@ -1,19 +1,89 @@
 extern crate graph;
 
-use graph::{
-    add_numeric_id_to_csv, convert_undirected_edge_list_to_directed,
-    densify_sparse_numeric_edge_list, sort_numeric_edge_list, EdgeFileReader, Graph,
-    NodeFileReader,
-};
+use graph::{build_optimal_undirected_lists_files, EdgeFileReader, Graph, NodeFileReader};
 
 #[test]
 fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
-    densify_sparse_numeric_edge_list(
+    let (_, nodes_number, _, edges_number) = build_optimal_undirected_lists_files(
         None,
-        "tests/data/sparse_numeric_macaque.tsv",
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        Some("tests/data/macaque_node_list.tsv".to_string()),
         Some("\t".to_string()),
-        Some(false),
+        Some(true),
+        Some("node_name".to_string()),
+        Some(1),
         None,
+        None,
+        None,
+        Some("node_id".to_string()),
+        Some(0),
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        None,
+        "tests/data/unsorted_macaque.tsv".to_string(),
+        None,
+        Some(false),
         Some(0),
         None,
         Some(1),
@@ -30,119 +100,16 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
         None,
         None,
         None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        "tests/data/dense_macaque.tsv",
-        Some("\t".to_string()),
         Some(true),
-        Some("subject".to_string()),
         None,
-        Some("object".to_string()),
+        "tests/data/sorted_macaque.tsv".to_string(),
         None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None
-    )?;
-    convert_undirected_edge_list_to_directed(
-        "tests/data/dense_macaque.tsv",
-        Some("\t".to_string()),
         Some(true),
-        Some("subject".to_string()),
-        None,
-        Some("object".to_string()),
-        None,
-        None,
-        None,
-        None,
-        None,
-        "tests/data/undirected_macaque.tsv",
-        Some("\t".to_string()),
-        Some(false),
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-    )?;
-    sort_numeric_edge_list(
-        "tests/data/undirected_macaque.tsv",
-        "tests/data/sorted_undirected_macaque.tsv",
-        Some("\t".to_string()),
-        Some(false),
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-    )?;
-
-    add_numeric_id_to_csv(
-        "tests/data/sorted_undirected_macaque.tsv",
-        Some("\t".to_string()),
-        Some(false),
-        "tests/data/sorted_undirected_macaque_with_edge_ids.tsv",
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
+        Some("Macaque".to_string()),
     )?;
 
     let graph_name = "Macaque".to_owned();
-    let edges_reader = EdgeFileReader::new("tests/data/sorted_undirected_macaque.tsv")
+    let edges_reader = EdgeFileReader::new("tests/data/sorted_macaque.tsv")
         .unwrap()
         .set_header(Some(false))
         .unwrap()
@@ -153,12 +120,14 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
         .set_complete(Some(true))
         .set_sorted(Some(true))
         .set_parallel(Some(false))
+        .set_sources_column_number(Some(1))?
+        .set_destinations_column_number(Some(2))?
         .set_csv_is_correct(Some(true))
-        .set_edges_number(Some(2598));
+        .set_edges_number(Some(edges_number));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_nodes_number(Some(193));
+        .set_nodes_number(Some(nodes_number));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),
@@ -176,7 +145,7 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
 
     let graph_name = "Macaque".to_owned();
     let edges_reader =
-        EdgeFileReader::new("tests/data/sorted_undirected_macaque_with_edge_ids.tsv")
+        EdgeFileReader::new("tests/data/sorted_macaque.tsv")
             .unwrap()
             .set_header(Some(false))
             .unwrap()
@@ -191,11 +160,11 @@ fn test_prepare_edge_list_for_sorted_use() -> Result<(), String> {
             .set_sources_column_number(Some(1))?
             .set_destinations_column_number(Some(2))?
             .set_csv_is_correct(Some(true))
-            .set_edges_number(Some(2598));
+            .set_edges_number(Some(edges_number));
 
     let nodes_reader = NodeFileReader::new(None)
         .unwrap()
-        .set_nodes_number(Some(193));
+        .set_nodes_number(Some(nodes_number));
 
     let mut g = Graph::from_file_readers(
         Some(edges_reader),
