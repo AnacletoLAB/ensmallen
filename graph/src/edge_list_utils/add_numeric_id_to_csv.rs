@@ -35,7 +35,7 @@ pub fn add_numeric_id_to_csv(
     rows_to_skip: Option<usize>,
     lines_number: Option<usize>,
     verbose: Option<bool>,
-) -> Result<()> {
+) -> Result<usize> {
     let target_csv_ids_column_number = target_csv_ids_column_number.unwrap_or(0);
     let target_csv_ids_column = target_csv_ids_column.unwrap_or("index".to_string());
     if original_csv_path == target_csv_path {
@@ -69,6 +69,7 @@ pub fn add_numeric_id_to_csv(
     };
     let mut header = file_reader.get_header()?;
     header.insert(target_csv_ids_column_number, target_csv_ids_column);
+    let mut effective_lines_number = 0;
     file_writer.write_lines(
         lines_number,
         header,
@@ -78,11 +79,12 @@ pub fn add_numeric_id_to_csv(
             .enumerate()
             // Processing line
             .map(|(line_number, (_, mut line))| {
+                effective_lines_number += 1;
                 line.insert(target_csv_ids_column_number, Some(line_number.to_string()));
                 line.into_iter()
                     .map(|value| value.unwrap_or("".to_string()))
                     .collect()
             }),
     )?;
-    Ok(())
+    Ok(effective_lines_number)
 }

@@ -12,36 +12,36 @@ use crate::{
 /// * `original_edge_list_path`: &str - The path from where to load the original edge list.
 /// * `original_edge_list_separator`: Option<String> - Separator to use for the original edge list.
 /// * `original_edge_list_header`: Option<bool> - Whether the original edge list has an header.
-/// * `original_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
-/// * `original_edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the original edges list.
-/// * `original_edge_list_destinations_column`: Option<String> - The column name to use to load the destinations in the original edges list.
-/// * `original_edge_list_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the original edges list.
-/// * `original_edge_list_edge_type_column`: Option<String> - The column name to use for the edge types in the original edges list.
-/// * `original_edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the original edges list.
-/// * `original_edge_list_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
-/// * `original_edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
-/// * `original_edge_list_edge_ids_column`: Option<String> - The column name to use for the edge ids in the original edges list.
-/// * `original_edge_list_edge_ids_column_number`: Option<usize> - The column number to use for the edge ids in the original edges list.
+/// * `original_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
+/// * `original_sources_column_number`: Option<usize> - The column number to use to load the sources in the original edges list.
+/// * `original_destinations_column`: Option<String> - The column name to use to load the destinations in the original edges list.
+/// * `original_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the original edges list.
+/// * `original_edge_list_edge_types_column`: Option<String> - The column name to use for the edge types in the original edges list.
+/// * `original_edge_list_edge_types_column_number`: Option<usize> - The column number to use for the edge types in the original edges list.
+/// * `original_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
+/// * `original_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
+/// * `original_edge_ids_column`: Option<String> - The column name to use for the edge ids in the original edges list.
+/// * `original_edge_ids_column_number`: Option<usize> - The column number to use for the edge ids in the original edges list.
 /// * `target_edge_list_path`: &str - The path from where to load the target edge list. This must be different from the original edge list path.
 /// * `target_edge_list_separator`: Option<String> - Separator to use for the target edge list. If None, the one provided from the original edge list will be used.
 /// * `target_edge_list_header`: Option<bool> - Whether the target edge list has an header. If None, the one provided from the original edge list will be used.
-/// * `target_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
-/// * `target_edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
-/// * `target_edge_list_destinations_column`: Option<String> - The column name to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
-/// * `target_edge_list_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
-/// * `target_edge_list_edge_type_column`: Option<String> - The column name to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
-/// * `target_edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
-/// * `target_edge_list_weights_column`: Option<String> - The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
-/// * `target_edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
-/// * `target_edge_list_edge_ids_column`: Option<String> - The column name to use for the edge ids in the target edges list.
-/// * `target_edge_list_edge_ids_column_number`: Option<usize> - The column number to use for the edge ids in the target edges list.
+/// * `target_sources_column`: Option<String> - The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
+/// * `target_sources_column_number`: Option<usize> - The column number to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
+/// * `target_destinations_column`: Option<String> - The column name to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
+/// * `target_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the target edges list. If None, the one provided from the original edge list will be used.
+/// * `target_edge_list_edge_types_column`: Option<String> - The column name to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
+/// * `target_edge_list_edge_types_column_number`: Option<usize> - The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
+/// * `target_weights_column`: Option<String> - The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
+/// * `target_weights_column_number`: Option<usize> - The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
+/// * `target_edge_ids_column`: Option<String> - The column name to use for the edge ids in the target edges list.
+/// * `target_edge_ids_column_number`: Option<usize> - The column number to use for the edge ids in the target edges list.
 /// * `target_node_list_path`: Option<&str> - The optional name for the node list to be written out.
 /// * `target_node_list_separator`: Option<String> - The separator to use for the node list.
 /// * `target_node_list_header`: Option<bool> - Whether to add the header to the node list.
-/// * `target_node_list_nodes_column`: Option<String> - The column name for the node names.
-/// * `target_node_list_nodes_column_number`: Option<usize> - The column number for the node names.
-/// * `target_node_list_node_ids_column`: Option<String> - The column name for the node IDs.
-/// * `target_node_list_node_ids_column_number`: Option<usize> - The column number for the node IDs.
+/// * `target_nodes_column`: Option<String> - The column name for the node names.
+/// * `target_nodes_column_number`: Option<usize> - The column number for the node names.
+/// * `target_node_ids_column`: Option<String> - The column name for the node IDs.
+/// * `target_node_ids_column_number`: Option<usize> - The column number for the node IDs.
 /// * `target_edge_type_list_path`: Option<String> - The optional path where to store the parsed edge types.
 /// * `target_edge_type_list_edge_types_column_number`: Option<usize> - The column number where to store the edge type names.
 /// * `target_edge_type_list_edge_types_column`: Option<String> - The column name where to store the edge type names.
@@ -68,15 +68,15 @@ pub fn convert_edge_list_to_numeric(
     original_node_path: Option<String>,
     original_node_list_separator: Option<String>,
     original_node_list_header: Option<bool>,
-    original_node_list_rows_to_skip: Option<usize>,
-    original_node_list_is_correct: Option<bool>,
-    original_node_list_max_rows_number: Option<usize>,
-    original_node_list_comment_symbol: Option<String>,
+    node_list_rows_to_skip: Option<usize>,
+    node_list_is_correct: Option<bool>,
+    node_list_max_rows_number: Option<usize>,
+    node_list_comment_symbol: Option<String>,
     original_nodes_column_number: Option<usize>,
     original_nodes_column: Option<String>,
     original_node_ids_column: Option<String>,
     original_node_ids_column_number: Option<usize>,
-    original_nodes_number: Option<NodeT>,
+    nodes_number: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
     original_load_node_list_in_parallel: Option<bool>,
@@ -86,52 +86,52 @@ pub fn convert_edge_list_to_numeric(
     original_edge_types_column: Option<String>,
     original_edge_types_ids_column_number: Option<usize>,
     original_edge_types_ids_column: Option<String>,
-    original_edge_types_number: Option<EdgeTypeT>,
+    edge_types_number: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_separator: Option<String>,
     original_edge_type_list_header: Option<bool>,
-    original_edge_type_list_rows_to_skip: Option<usize>,
-    original_edge_type_list_is_correct: Option<bool>,
-    original_edge_type_list_max_rows_number: Option<usize>,
-    original_edge_type_list_comment_symbol: Option<String>,
-    original_load_edge_type_list_in_parallel: Option<bool>,
+    edge_type_list_rows_to_skip: Option<usize>,
+    edge_type_list_is_correct: Option<bool>,
+    edge_type_list_max_rows_number: Option<usize>,
+    edge_type_list_comment_symbol: Option<String>,
+    load_edge_type_list_in_parallel: Option<bool>,
 
     original_edge_list_path: &str,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
-    original_edge_list_sources_column_number: Option<usize>,
-    original_edge_list_sources_column: Option<String>,
-    original_edge_list_destinations_column_number: Option<usize>,
-    original_edge_list_destinations_column: Option<String>,
-    original_edge_list_edge_type_column: Option<String>,
-    original_edge_list_edge_type_column_number: Option<usize>,
-    original_edge_list_weights_column: Option<String>,
-    original_edge_list_weights_column_number: Option<usize>,
-    original_edge_list_edge_ids_column: Option<String>,
-    original_edge_list_edge_ids_column_number: Option<usize>,
+    original_sources_column_number: Option<usize>,
+    original_sources_column: Option<String>,
+    original_destinations_column_number: Option<usize>,
+    original_destinations_column: Option<String>,
+    original_edge_list_edge_types_column: Option<String>,
+    original_edge_list_edge_types_column_number: Option<usize>,
+    original_weights_column: Option<String>,
+    original_weights_column_number: Option<usize>,
+    original_edge_ids_column: Option<String>,
+    original_edge_ids_column_number: Option<usize>,
 
     target_edge_list_path: &str,
     target_edge_list_separator: Option<String>,
     target_edge_list_header: Option<bool>,
-    target_edge_list_sources_column: Option<String>,
-    target_edge_list_sources_column_number: Option<usize>,
-    target_edge_list_destinations_column: Option<String>,
-    target_edge_list_destinations_column_number: Option<usize>,
-    target_edge_list_edge_type_column: Option<String>,
-    target_edge_list_edge_type_column_number: Option<usize>,
-    target_edge_list_weights_column: Option<String>,
-    target_edge_list_weights_column_number: Option<usize>,
-    target_edge_list_edge_ids_column: Option<String>,
-    target_edge_list_edge_ids_column_number: Option<usize>,
+    target_sources_column: Option<String>,
+    target_sources_column_number: Option<usize>,
+    target_destinations_column: Option<String>,
+    target_destinations_column_number: Option<usize>,
+    target_edge_list_edge_types_column: Option<String>,
+    target_edge_list_edge_types_column_number: Option<usize>,
+    target_weights_column: Option<String>,
+    target_weights_column_number: Option<usize>,
+    target_edge_ids_column: Option<String>,
+    target_edge_ids_column_number: Option<usize>,
 
     target_node_list_path: Option<&str>,
     target_node_list_separator: Option<String>,
     target_node_list_header: Option<bool>,
-    target_node_list_nodes_column: Option<String>,
-    target_node_list_nodes_column_number: Option<usize>,
-    target_node_list_node_ids_column: Option<String>,
-    target_node_list_node_ids_column_number: Option<usize>,
+    target_nodes_column: Option<String>,
+    target_nodes_column_number: Option<usize>,
+    target_node_ids_column: Option<String>,
+    target_node_ids_column_number: Option<usize>,
 
     target_edge_type_list_path: Option<String>,
     target_edge_type_list_separator: Option<String>,
@@ -151,7 +151,7 @@ pub fn convert_edge_list_to_numeric(
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
-) -> Result<()> {
+) -> Result<(NodeT, Option<EdgeTypeT>)> {
     if original_edge_list_path == target_edge_list_path {
         return Err(concat!(
             "Both the original and the target edge list path ",
@@ -164,8 +164,8 @@ pub fn convert_edge_list_to_numeric(
         .to_string());
     }
 
-    if original_edge_list_edge_type_column.is_none()
-        && original_edge_list_edge_ids_column_number.is_none()
+    if original_edge_list_edge_types_column.is_none()
+        && original_edge_ids_column_number.is_none()
         && target_edge_type_list_path.is_some()
     {
         return Err(concat!(
@@ -179,10 +179,10 @@ pub fn convert_edge_list_to_numeric(
     let name = name.unwrap_or("Graph".to_owned());
     let mut nodes: Vocabulary<NodeT> = if let Some(original_node_path) = original_node_path {
         let node_file_reader = NodeFileReader::new(Some(original_node_path))?
-            .set_comment_symbol(original_node_list_comment_symbol)?
+            .set_comment_symbol(node_list_comment_symbol)?
             .set_header(original_node_list_header)?
-            .set_max_rows_number(original_node_list_max_rows_number)?
-            .set_rows_to_skip(original_node_list_rows_to_skip)?
+            .set_max_rows_number(node_list_max_rows_number)?
+            .set_rows_to_skip(node_list_rows_to_skip)?
             .set_separator(original_node_list_separator)?
             .set_nodes_column_number(original_nodes_column_number)?
             .set_node_ids_column(original_node_ids_column)?
@@ -190,8 +190,8 @@ pub fn convert_edge_list_to_numeric(
             .set_nodes_column(original_nodes_column)?
             .set_minimum_node_id(original_minimum_node_id)
             .set_numeric_node_ids(original_numeric_node_ids)
-            .set_csv_is_correct(original_node_list_is_correct)?
-            .set_nodes_number(original_nodes_number)
+            .set_csv_is_correct(node_list_is_correct)?
+            .set_nodes_number(nodes_number)
             .set_parallel(original_load_node_list_in_parallel)?;
         let (nodes, _) = parse_nodes(
             node_file_reader.read_lines().transpose()?,
@@ -210,10 +210,10 @@ pub fn convert_edge_list_to_numeric(
     let mut edge_types: Vocabulary<EdgeTypeT> =
         if let Some(original_edge_type_path) = original_edge_type_path {
             let edge_type_file_reader = TypeFileReader::new(Some(original_edge_type_path))?
-                .set_comment_symbol(original_edge_type_list_comment_symbol)?
+                .set_comment_symbol(edge_type_list_comment_symbol)?
                 .set_header(original_edge_type_list_header)?
-                .set_max_rows_number(original_edge_type_list_max_rows_number)?
-                .set_rows_to_skip(original_edge_type_list_rows_to_skip)?
+                .set_max_rows_number(edge_type_list_max_rows_number)?
+                .set_rows_to_skip(edge_type_list_rows_to_skip)?
                 .set_separator(original_edge_type_list_separator)?
                 .set_type_column_number(original_edge_types_column_number)?
                 .set_type_column(original_edge_types_column)?
@@ -221,12 +221,12 @@ pub fn convert_edge_list_to_numeric(
                 .set_type_ids_column_number(original_edge_types_ids_column_number)?
                 .set_minimum_type_id(original_minimum_edge_type_id)
                 .set_numeric_type_ids(original_numeric_edge_type_ids)
-                .set_csv_is_correct(original_edge_type_list_is_correct)?
-                .set_types_number(original_edge_types_number)
-                .set_parallel(original_load_edge_type_list_in_parallel)?;
+                .set_csv_is_correct(edge_type_list_is_correct)?
+                .set_types_number(edge_types_number)
+                .set_parallel(load_edge_type_list_in_parallel)?;
             let edge_types_vocabulary = parse_types(
                 edge_type_file_reader.read_lines().transpose()?,
-                original_edge_types_number,
+                edge_types_number,
                 Some(edge_type_file_reader.has_numeric_type_ids()),
                 edge_type_file_reader.get_minimum_type_id(),
                 true,
@@ -245,16 +245,16 @@ pub fn convert_edge_list_to_numeric(
         .set_separator(original_edge_list_separator)?
         .set_default_edge_type(default_edge_type)
         .set_default_weight(default_weight)?
-        .set_destinations_column(original_edge_list_destinations_column.clone())?
-        .set_destinations_column_number(original_edge_list_destinations_column_number)?
-        .set_sources_column(original_edge_list_sources_column.clone())?
-        .set_sources_column_number(original_edge_list_sources_column_number)?
-        .set_edge_types_column(original_edge_list_edge_type_column.clone())?
-        .set_edge_types_column_number(original_edge_list_edge_type_column_number)?
-        .set_weights_column(original_edge_list_weights_column.clone())?
-        .set_weights_column_number(original_edge_list_weights_column_number)?
-        .set_edge_ids_column(original_edge_list_edge_ids_column.clone())?
-        .set_edge_ids_column_number(original_edge_list_edge_ids_column_number)?
+        .set_destinations_column(original_destinations_column.clone())?
+        .set_destinations_column_number(original_destinations_column_number)?
+        .set_sources_column(original_sources_column.clone())?
+        .set_sources_column_number(original_sources_column_number)?
+        .set_edge_types_column(original_edge_list_edge_types_column.clone())?
+        .set_edge_types_column_number(original_edge_list_edge_types_column_number)?
+        .set_weights_column(original_weights_column.clone())?
+        .set_weights_column_number(original_weights_column_number)?
+        .set_edge_ids_column(original_edge_ids_column.clone())?
+        .set_edge_ids_column_number(original_edge_ids_column_number)?
         .set_parallel(Some(false))
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
@@ -262,33 +262,29 @@ pub fn convert_edge_list_to_numeric(
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_graph_name(name);
     let file_writer = EdgeFileWriter::new(target_edge_list_path)
-        .set_destinations_column(
-            target_edge_list_destinations_column.or(original_edge_list_destinations_column),
-        )
+        .set_destinations_column(target_destinations_column.or(original_destinations_column))
         .set_destinations_column_number(
-            target_edge_list_destinations_column_number
+            target_destinations_column_number
                 .or(Some(file_reader.get_destinations_column_number())),
         )
-        .set_sources_column(target_edge_list_sources_column.or(original_edge_list_sources_column))
+        .set_sources_column(target_sources_column.or(original_sources_column))
         .set_sources_column_number(
-            target_edge_list_sources_column_number
-                .or(Some(file_reader.get_sources_column_number())),
+            target_sources_column_number.or(Some(file_reader.get_sources_column_number())),
         )
         .set_edge_types_column(
-            target_edge_list_edge_type_column.or(original_edge_list_edge_type_column),
+            target_edge_list_edge_types_column.or(original_edge_list_edge_types_column),
         )
         .set_edge_types_column_number(
-            target_edge_list_edge_type_column_number.or(file_reader.get_edge_types_column_number()),
+            target_edge_list_edge_types_column_number
+                .or(file_reader.get_edge_types_column_number()),
         )
-        .set_weights_column(target_edge_list_weights_column.or(original_edge_list_weights_column))
+        .set_weights_column(target_weights_column.or(original_weights_column))
         .set_weights_column_number(
-            target_edge_list_weights_column_number.or(file_reader.get_weights_column_number()),
+            target_weights_column_number.or(file_reader.get_weights_column_number()),
         )
-        .set_edge_ids_column(
-            target_edge_list_edge_ids_column.or(original_edge_list_edge_ids_column),
-        )
+        .set_edge_ids_column(target_edge_ids_column.or(original_edge_ids_column))
         .set_edge_ids_column_number(
-            target_edge_list_edge_ids_column_number.or(file_reader.get_edge_ids_column_number()),
+            target_edge_ids_column_number.or(file_reader.get_edge_ids_column_number()),
         )
         .set_separator(target_edge_list_separator.or(Some(file_reader.get_separator())))?
         .set_numeric_node_ids(Some(true))
@@ -326,10 +322,10 @@ pub fn convert_edge_list_to_numeric(
         let node_file_writer = NodeFileWriter::new(target_node_list_path)
             .set_separator(target_node_list_separator)?
             .set_header(target_node_list_header)
-            .set_node_ids_column(target_node_list_node_ids_column)
-            .set_node_ids_column_number(target_node_list_node_ids_column_number)
-            .set_nodes_column(target_node_list_nodes_column)
-            .set_nodes_column_number(target_node_list_nodes_column_number);
+            .set_node_ids_column(target_node_ids_column)
+            .set_node_ids_column_number(target_node_ids_column_number)
+            .set_nodes_column(target_nodes_column)
+            .set_nodes_column_number(target_nodes_column_number);
 
         node_file_writer.dump_iterator(
             Some(nodes.len()),
@@ -358,7 +354,14 @@ pub fn convert_edge_list_to_numeric(
         )?;
     }
 
-    Ok(())
+    Ok((
+        nodes.len() as NodeT,
+        if edge_types.is_empty() {
+            None
+        } else {
+            Some(edge_types.len() as EdgeTypeT)
+        },
+    ))
 }
 
 /// Create a new edge list starting from given numeric one with node IDs densified and returns the number of unique nodes.
@@ -375,25 +378,25 @@ pub fn convert_edge_list_to_numeric(
 /// * `original_edge_list_path`: &str - The path from where to load the original edge list.
 /// * `original_edge_list_separator`: Option<String> - Separator to use for the original edge list.
 /// * `original_edge_list_header`: Option<bool> - Whether the original edge list has an header.
-/// * `original_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
-/// * `original_edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the original edges list.
-/// * `original_edge_list_destinations_column`: Option<String> - The column name to use to load the destinations in the original edges list.
-/// * `original_edge_list_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the original edges list.
-/// * `original_edge_list_edge_type_column`: Option<String> - The column name to use for the edge types in the original edges list.
-/// * `original_edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the original edges list.
-/// * `original_edge_list_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
-/// * `original_edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
+/// * `original_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
+/// * `original_sources_column_number`: Option<usize> - The column number to use to load the sources in the original edges list.
+/// * `original_destinations_column`: Option<String> - The column name to use to load the destinations in the original edges list.
+/// * `original_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the original edges list.
+/// * `original_edge_list_edge_types_column`: Option<String> - The column name to use for the edge types in the original edges list.
+/// * `original_edge_list_edge_types_column_number`: Option<usize> - The column number to use for the edge types in the original edges list.
+/// * `original_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
+/// * `original_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
 /// * `target_edge_list_path`: &str - The path from where to load the target edge list.
 /// * `target_edge_list_separator`: Option<String> - Separator to use for the target edge list.
 /// * `target_edge_list_header`: Option<bool> - Whether the target edge list has an header.
-/// * `target_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the target edges list.
-/// * `target_edge_list_sources_column_number`: Option<usize> - The column number to use to load the sources in the target edges list.
-/// * `target_edge_list_destinations_column`: Option<String> - The column name to use to load the destinations in the target edges list.
-/// * `target_edge_list_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the target edges list.
-/// * `target_edge_list_edge_type_column`: Option<String> - The column name to use for the edge types in the target edges list.
-/// * `target_edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the target edges list.
-/// * `target_edge_list_weights_column`: Option<String> - The column name to use for the weights in the target edges list.
-/// * `target_edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the target edges list.
+/// * `target_sources_column`: Option<String> - The column name to use to load the sources in the target edges list.
+/// * `target_sources_column_number`: Option<usize> - The column number to use to load the sources in the target edges list.
+/// * `target_destinations_column`: Option<String> - The column name to use to load the destinations in the target edges list.
+/// * `target_destinations_column_number`: Option<usize> - The column number to use to load the destinations in the target edges list.
+/// * `target_edge_list_edge_types_column`: Option<String> - The column name to use for the edge types in the target edges list.
+/// * `target_edge_list_edge_types_column_number`: Option<usize> - The column number to use for the edge types in the target edges list.
+/// * `target_weights_column`: Option<String> - The column name to use for the weights in the target edges list.
+/// * `target_weights_column_number`: Option<usize> - The column number to use for the weights in the target edges list.
 /// * `comment_symbol`: Option<String> - The comment symbol to use within the original edge list.
 /// * `default_edge_type`: Option<String> - The default edge type to use within the original edge list.
 /// * `default_weight`: Option<WeightT> - The default weight to use within the original edge list.
@@ -411,54 +414,54 @@ pub fn densify_sparse_numeric_edge_list(
     original_edge_list_path: &str,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
-    original_edge_list_sources_column: Option<String>,
-    original_edge_list_sources_column_number: Option<usize>,
-    original_edge_list_destinations_column: Option<String>,
-    original_edge_list_destinations_column_number: Option<usize>,
-    original_edge_list_edge_type_column: Option<String>,
-    original_edge_list_edge_type_column_number: Option<usize>,
-    original_edge_list_weights_column: Option<String>,
-    original_edge_list_weights_column_number: Option<usize>,
-    original_edge_list_edge_ids_column: Option<String>,
-    original_edge_list_edge_ids_column_number: Option<usize>,
+    original_sources_column: Option<String>,
+    original_sources_column_number: Option<usize>,
+    original_destinations_column: Option<String>,
+    original_destinations_column_number: Option<usize>,
+    original_edge_list_edge_types_column: Option<String>,
+    original_edge_list_edge_types_column_number: Option<usize>,
+    original_weights_column: Option<String>,
+    original_weights_column_number: Option<usize>,
+    original_edge_ids_column: Option<String>,
+    original_edge_ids_column_number: Option<usize>,
 
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
     original_edge_types_ids_column_number: Option<usize>,
     original_edge_types_ids_column: Option<String>,
-    original_edge_types_number: Option<EdgeTypeT>,
+    edge_types_number: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_separator: Option<String>,
     original_edge_type_list_header: Option<bool>,
-    original_edge_type_list_rows_to_skip: Option<usize>,
-    original_edge_type_list_is_correct: Option<bool>,
-    original_edge_type_list_max_rows_number: Option<usize>,
-    original_edge_type_list_comment_symbol: Option<String>,
-    original_load_edge_type_list_in_parallel: Option<bool>,
+    edge_type_list_rows_to_skip: Option<usize>,
+    edge_type_list_is_correct: Option<bool>,
+    edge_type_list_max_rows_number: Option<usize>,
+    edge_type_list_comment_symbol: Option<String>,
+    load_edge_type_list_in_parallel: Option<bool>,
 
     target_edge_list_path: &str,
     target_edge_list_separator: Option<String>,
     target_edge_list_header: Option<bool>,
-    target_edge_list_sources_column: Option<String>,
-    target_edge_list_sources_column_number: Option<usize>,
-    target_edge_list_destinations_column: Option<String>,
-    target_edge_list_destinations_column_number: Option<usize>,
-    target_edge_list_edge_type_column: Option<String>,
-    target_edge_list_edge_type_column_number: Option<usize>,
-    target_edge_list_weights_column: Option<String>,
-    target_edge_list_weights_column_number: Option<usize>,
-    target_edge_list_edge_ids_column: Option<String>,
-    target_edge_list_edge_ids_column_number: Option<usize>,
+    target_sources_column: Option<String>,
+    target_sources_column_number: Option<usize>,
+    target_destinations_column: Option<String>,
+    target_destinations_column_number: Option<usize>,
+    target_edge_list_edge_types_column: Option<String>,
+    target_edge_list_edge_types_column_number: Option<usize>,
+    target_weights_column: Option<String>,
+    target_weights_column_number: Option<usize>,
+    target_edge_ids_column: Option<String>,
+    target_edge_ids_column_number: Option<usize>,
 
     target_node_list_path: Option<&str>,
     target_node_list_separator: Option<String>,
     target_node_list_header: Option<bool>,
-    target_node_list_nodes_column: Option<String>,
-    target_node_list_nodes_column_number: Option<usize>,
-    target_node_list_node_ids_column: Option<String>,
-    target_node_list_node_ids_column_number: Option<usize>,
+    target_nodes_column: Option<String>,
+    target_nodes_column_number: Option<usize>,
+    target_node_ids_column: Option<String>,
+    target_node_ids_column_number: Option<usize>,
 
     target_edge_type_list_path: Option<String>,
     target_edge_type_list_separator: Option<String>,
@@ -478,7 +481,7 @@ pub fn densify_sparse_numeric_edge_list(
     skip_weights_if_unavailable: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
-) -> Result<NodeT> {
+) -> Result<(NodeT, Option<EdgeTypeT>)> {
     if original_edge_list_path == target_edge_list_path {
         return Err(concat!(
             "Both the original and the target edge list path ",
@@ -491,8 +494,8 @@ pub fn densify_sparse_numeric_edge_list(
         .to_string());
     }
 
-    if original_edge_list_edge_type_column.is_none()
-        && original_edge_list_edge_ids_column_number.is_none()
+    if original_edge_list_edge_types_column.is_none()
+        && original_edge_ids_column_number.is_none()
         && target_edge_type_list_path.is_some()
     {
         return Err(concat!(
@@ -513,10 +516,10 @@ pub fn densify_sparse_numeric_edge_list(
     let mut edge_types: Vocabulary<EdgeTypeT> =
         if let Some(original_edge_type_path) = original_edge_type_path {
             let edge_type_file_reader = TypeFileReader::new(Some(original_edge_type_path))?
-                .set_comment_symbol(original_edge_type_list_comment_symbol)?
+                .set_comment_symbol(edge_type_list_comment_symbol)?
                 .set_header(original_edge_type_list_header)?
-                .set_max_rows_number(original_edge_type_list_max_rows_number)?
-                .set_rows_to_skip(original_edge_type_list_rows_to_skip)?
+                .set_max_rows_number(edge_type_list_max_rows_number)?
+                .set_rows_to_skip(edge_type_list_rows_to_skip)?
                 .set_separator(original_edge_type_list_separator)?
                 .set_type_column_number(original_edge_types_column_number)?
                 .set_type_column(original_edge_types_column)?
@@ -524,12 +527,12 @@ pub fn densify_sparse_numeric_edge_list(
                 .set_type_ids_column_number(original_edge_types_ids_column_number)?
                 .set_minimum_type_id(original_minimum_edge_type_id)
                 .set_numeric_type_ids(original_numeric_edge_type_ids)
-                .set_csv_is_correct(original_edge_type_list_is_correct)?
-                .set_types_number(original_edge_types_number)
-                .set_parallel(original_load_edge_type_list_in_parallel)?;
+                .set_csv_is_correct(edge_type_list_is_correct)?
+                .set_types_number(edge_types_number)
+                .set_parallel(load_edge_type_list_in_parallel)?;
             let edge_types_vocabulary = parse_types(
                 edge_type_file_reader.read_lines().transpose()?,
-                original_edge_types_number,
+                edge_types_number,
                 Some(edge_type_file_reader.has_numeric_type_ids()),
                 edge_type_file_reader.get_minimum_type_id(),
                 true,
@@ -547,16 +550,16 @@ pub fn densify_sparse_numeric_edge_list(
         .set_separator(original_edge_list_separator)?
         .set_default_edge_type(default_edge_type)
         .set_default_weight(default_weight)?
-        .set_destinations_column(original_edge_list_destinations_column.clone())?
-        .set_destinations_column_number(original_edge_list_destinations_column_number)?
-        .set_sources_column(original_edge_list_sources_column.clone())?
-        .set_sources_column_number(original_edge_list_sources_column_number)?
-        .set_edge_types_column(original_edge_list_edge_type_column.clone())?
-        .set_edge_types_column_number(original_edge_list_edge_type_column_number)?
-        .set_weights_column(original_edge_list_weights_column.clone())?
-        .set_weights_column_number(original_edge_list_weights_column_number)?
-        .set_edge_ids_column(original_edge_list_edge_ids_column.clone())?
-        .set_edge_ids_column_number(original_edge_list_edge_ids_column_number)?
+        .set_destinations_column(original_destinations_column.clone())?
+        .set_destinations_column_number(original_destinations_column_number)?
+        .set_sources_column(original_sources_column.clone())?
+        .set_sources_column_number(original_sources_column_number)?
+        .set_edge_types_column(original_edge_list_edge_types_column.clone())?
+        .set_edge_types_column_number(original_edge_list_edge_types_column_number)?
+        .set_weights_column(original_weights_column.clone())?
+        .set_weights_column_number(original_weights_column_number)?
+        .set_edge_ids_column(original_edge_ids_column.clone())?
+        .set_edge_ids_column_number(original_edge_ids_column_number)?
         .set_parallel(Some(false))
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
@@ -565,33 +568,29 @@ pub fn densify_sparse_numeric_edge_list(
         .set_graph_name(name);
 
     let file_writer = EdgeFileWriter::new(target_edge_list_path)
-        .set_destinations_column(
-            target_edge_list_destinations_column.or(original_edge_list_destinations_column),
-        )
+        .set_destinations_column(target_destinations_column.or(original_destinations_column))
         .set_destinations_column_number(
-            target_edge_list_destinations_column_number
+            target_destinations_column_number
                 .or(Some(file_reader.get_destinations_column_number())),
         )
-        .set_sources_column(target_edge_list_sources_column.or(original_edge_list_sources_column))
+        .set_sources_column(target_sources_column.or(original_sources_column))
         .set_sources_column_number(
-            target_edge_list_sources_column_number
-                .or(Some(file_reader.get_sources_column_number())),
+            target_sources_column_number.or(Some(file_reader.get_sources_column_number())),
         )
         .set_edge_types_column(
-            target_edge_list_edge_type_column.or(original_edge_list_edge_type_column),
+            target_edge_list_edge_types_column.or(original_edge_list_edge_types_column),
         )
         .set_edge_types_column_number(
-            target_edge_list_edge_type_column_number.or(file_reader.get_edge_types_column_number()),
+            target_edge_list_edge_types_column_number
+                .or(file_reader.get_edge_types_column_number()),
         )
-        .set_weights_column(target_edge_list_weights_column.or(original_edge_list_weights_column))
+        .set_weights_column(target_weights_column.or(original_weights_column))
         .set_weights_column_number(
-            target_edge_list_weights_column_number.or(file_reader.get_weights_column_number()),
+            target_weights_column_number.or(file_reader.get_weights_column_number()),
         )
-        .set_edge_ids_column(
-            target_edge_list_edge_ids_column.or(original_edge_list_edge_ids_column),
-        )
+        .set_edge_ids_column(target_edge_ids_column.or(original_edge_ids_column))
         .set_edge_ids_column_number(
-            target_edge_list_edge_ids_column_number.or(file_reader.get_edge_ids_column_number()),
+            target_edge_ids_column_number.or(file_reader.get_edge_ids_column_number()),
         )
         .set_separator(target_edge_list_separator.or(Some(file_reader.get_separator())))?
         .set_numeric_node_ids(Some(true))
@@ -649,10 +648,10 @@ pub fn densify_sparse_numeric_edge_list(
         let node_file_writer = NodeFileWriter::new(target_node_list_path)
             .set_separator(target_node_list_separator)?
             .set_header(target_node_list_header)
-            .set_node_ids_column(target_node_list_node_ids_column)
-            .set_node_ids_column_number(target_node_list_node_ids_column_number)
-            .set_nodes_column(target_node_list_nodes_column)
-            .set_nodes_column_number(target_node_list_nodes_column_number);
+            .set_node_ids_column(target_node_ids_column)
+            .set_node_ids_column_number(target_node_ids_column_number)
+            .set_nodes_column(target_nodes_column)
+            .set_nodes_column_number(target_nodes_column_number);
 
         node_file_writer.dump_iterator(
             Some(inserted_nodes as usize),
@@ -684,5 +683,12 @@ pub fn densify_sparse_numeric_edge_list(
         )?;
     }
 
-    Ok(inserted_nodes)
+    Ok((
+        inserted_nodes,
+        if edge_types.is_empty() {
+            None
+        } else {
+            Some(edge_types.len() as EdgeTypeT)
+        },
+    ))
 }

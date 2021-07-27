@@ -12,6 +12,7 @@ class AutomaticallyRetrievedGraph:
         graph_name: str,
         dataset: str,
         directed: bool = False,
+        preprocess_to_optimal: bool = True,
         verbose: int = 2,
         cache_path: str = "graphs",
         callbacks: List[Callable] = (),
@@ -29,6 +30,9 @@ class AutomaticallyRetrievedGraph:
         directed: bool = False,
             Whether to load the graph as directed or undirected.
             By default false.
+        preprocess_to_optimal: bool = True,
+            Whether to preprocess the node list and edge list
+            to be loaded optimally in both time and memory.
         verbose: int = 2,
             Whether to show loading bars.
         cache_path: str = "graphs",
@@ -59,6 +63,7 @@ class AutomaticallyRetrievedGraph:
                 ).format(graph_name)
             )
         self._directed = directed
+        self._preprocess_to_optimal = preprocess_to_optimal
         self._name = graph_name
         self._verbose = verbose
         self._callbacks = callbacks
@@ -82,17 +87,26 @@ class AutomaticallyRetrievedGraph:
                 os.path.join(self._cache_path, path)
                 for path in paths
             ]
+        # Download the necessary data
         self._downloader.download(
             self._graph["urls"],
             paths
         )
+
+        # Call the provided callbacks to process the edge lists, if any.
         for callback, arguments in zip(self._callbacks, self._callbacks_arguments):
             callback(**{
                 key: os.path.join(self._cache_path, value)
                 if key.endswith("_path") else value
                 for key, value in arguments.items()
             })
-        return EnsmallenGraph.from_unsorted_csv(**{
+
+        # Preprocess the edge list to an optimal edge list
+        # if this is enabled.
+        if self._preprocess_to_optimal:
+        
+        # Finally, load the graph
+        return EnsmallenGraph.from_csv(**{
             **{
                 key: os.path.join(self._cache_path, value)
                 if key.endswith("_path") else value

@@ -6,7 +6,7 @@ use graph::densify_sparse_numeric_edge_list;
 fn test_densify_sparse_numeric_edge_list() -> Result<(), String> {
     densify_sparse_numeric_edge_list(
         None,
-        "tests/data/sparse_numeric_macaque.tsv",
+        "tests/data/unsorted_macaque.tsv",
         Some("\t".to_string()),
         Some(false),
         None,

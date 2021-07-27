@@ -37,7 +37,7 @@ pub fn get_minmax_node_from_numeric_edge_list(
     load_edge_list_in_parallel: Option<bool>,
     verbose: Option<bool>,
     name: Option<String>,
-) -> Result<(EdgeT, EdgeT)> {
+) -> Result<(EdgeT, EdgeT, EdgeT)> {
     let name = name.unwrap_or("Graph".to_owned());
     let file_reader = EdgeFileReader::new(path)?
         .set_comment_symbol(comment_symbol)?
@@ -54,14 +54,14 @@ pub fn get_minmax_node_from_numeric_edge_list(
         .set_verbose(verbose)
         .set_graph_name(name);
 
-    let (min, max) = file_reader
+    let (min, max, edges_number) = file_reader
         .read_lines()?
         // Removing eventual errors.
         .filter_map(|line| line.ok())
-        .map(
-            |(_, (src_name, dst_name, _, _))| match src_name.parse::<EdgeT>() {
+        .map(|(_, (src_name, dst_name, _, _))| {
+            match src_name.parse::<EdgeT>() {
                 Ok(src_id) => match dst_name.parse::<EdgeT>() {
-                    Ok(dst_id) => Ok((dst_id.min(src_id), dst_id.max(src_id))),
+                    Ok(dst_id) => Ok((dst_id.min(src_id), dst_id.max(src_id), 1)),
                     Err(_) => Err(format!(
                         "Unable to convert given destination node ID {} to numeric.",
                         dst_name
@@ -71,12 +71,12 @@ pub fn get_minmax_node_from_numeric_edge_list(
                     "Unable to convert given source node ID {} to numeric.",
                     src_name
                 )),
-            },
-        )
+            }
+        })
         .reduce(
-            || Ok((EdgeT::MAX, 0 as EdgeT)),
-            |line1: Result<(EdgeT, EdgeT)>, line2: Result<(EdgeT, EdgeT)>| match (line1, line2) {
-                (Ok((min1, max1)), Ok((min2, max2))) => Ok((min1.min(min2), max1.max(max2))),
+            || Ok((EdgeT::MAX, 0 as EdgeT, 0)),
+            |line1: Result<(EdgeT, EdgeT, EdgeT)>, line2: Result<(EdgeT, EdgeT, EdgeT)>| match (line1, line2) {
+                (Ok((min1, max1, total_edges1)), Ok((min2, max2, total_edges2))) => Ok((min1.min(min2), max1.max(max2), total_edges1 + total_edges2)),
                 (Err(e), _) => Err(e),
                 (_, Err(e)) => Err(e),
             },
@@ -84,5 +84,5 @@ pub fn get_minmax_node_from_numeric_edge_list(
     if min > max {
         return Err("The provided edge list was empty.".to_string());
     }
-    Ok((min, max))
+    Ok((min, max, edges_number))
 }
