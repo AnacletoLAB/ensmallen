@@ -433,14 +433,6 @@ pub(crate) fn parse_string_edges(
         .to_string());
     }
 
-    dbg!(
-        has_edge_types,
-        edge_types_vocabulary
-            .as_ref()
-            .map_or(true, |x| x.is_empty()),
-        correct,
-        numeric_edge_list_edge_type_ids,
-    );
 
     let edge_types_method = match (
         has_edge_types,
@@ -458,7 +450,6 @@ pub(crate) fn parse_string_edges(
         (true, _, true, true) => EdgeTypeParser::to_numeric_unchecked,
         (true, _, false, true) => EdgeTypeParser::to_numeric,
     };
-    dbg!(nodes.is_empty(), correct, numeric_edge_list_node_ids);
     let node_method = match (nodes.is_empty(), correct, numeric_edge_list_node_ids) {
         (true, true, false) => EdgeNodeNamesParser::parse_strings_unchecked,
         (true, false, false) => EdgeNodeNamesParser::parse_strings,
