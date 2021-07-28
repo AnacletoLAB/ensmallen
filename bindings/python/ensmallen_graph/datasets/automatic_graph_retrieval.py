@@ -422,7 +422,7 @@ class AutomaticallyRetrievedGraph:
                 "node_types_separator": "|",
                 "node_ids_column_number": 0,
                 "nodes_column_number": 1,
-                "node_list_node_types_column_number": None if metadata["node_types_number"] is None else 3,
+                "node_list_node_types_column_number": None if metadata["node_types_number"] is None else 2,
                 "nodes_number": metadata["nodes_number"],
                 "node_list_numeric_node_type_ids": True,
                 "skip_node_types_if_unavailable": True,
