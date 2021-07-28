@@ -3,7 +3,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 /// Create a new edge list from a given one filtering duplicates.
 ///
 /// # Arguments
-/// * `original_edge_list_path`: &str - The path from where to load the original edge list.
+/// * `original_edge_path`: &str - The path from where to load the original edge list.
 /// * `original_edge_list_separator`: Option<String> - Separator to use for the original edge list.
 /// * `original_edge_list_header`: Option<bool> - Whether the original edge list has an header.
 /// * `original_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
@@ -14,7 +14,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 /// * `original_edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the original edges list.
 /// * `original_edge_list_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
 /// * `original_edge_list_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
-/// * `target_edge_list_path`: &str - The path from where to load the target edge list.
+/// * `target_edge_path`: &str - The path from where to load the target edge list.
 /// * `target_edge_list_separator`: Option<String> - Separator to use for the target edge list.
 /// * `target_edge_list_header`: Option<bool> - Whether the target edge list has an header.
 /// * `target_edge_list_sources_column`: Option<String> - The column name to use to load the sources in the target edges list.
@@ -36,7 +36,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 /// * `verbose`: Option<bool> - Whether to show the loading bar while processing the file.
 /// * `name`: Option<String> - The name of the graph to display in the loading bar.
 pub fn filter_duplicates_from_edge_list(
-    original_edge_list_path: &str,
+    original_edge_path: &str,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
     original_edge_list_sources_column: Option<String>,
@@ -47,7 +47,7 @@ pub fn filter_duplicates_from_edge_list(
     original_edge_list_edge_type_column_number: Option<usize>,
     original_edge_list_weights_column: Option<String>,
     original_edge_list_weights_column_number: Option<usize>,
-    target_edge_list_path: &str,
+    target_edge_path: &str,
     target_edge_list_separator: Option<String>,
     target_edge_list_header: Option<bool>,
     target_edge_list_sources_column_number: Option<usize>,
@@ -70,7 +70,7 @@ pub fn filter_duplicates_from_edge_list(
     name: Option<String>,
 ) -> Result<()> {
     let name = name.unwrap_or("Graph".to_owned());
-    let file_reader = EdgeFileReader::new(original_edge_list_path)?
+    let file_reader = EdgeFileReader::new(original_edge_path)?
         .set_comment_symbol(comment_symbol)?
         .set_header(original_edge_list_header)?
         .set_max_rows_number(max_rows_number)?
@@ -92,7 +92,7 @@ pub fn filter_duplicates_from_edge_list(
         // To avoid a duplicated loading bar.
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_graph_name(name);
-    let file_writer = EdgeFileWriter::new(target_edge_list_path)
+    let file_writer = EdgeFileWriter::new(target_edge_path)
         .set_destinations_column(target_edge_list_destinations_column)
         .set_destinations_column_number(target_edge_list_destinations_column_number)
         .set_sources_column(target_edge_list_sources_column)

@@ -112,6 +112,12 @@ impl Graph {
             edge_file_reader
                 .as_ref()
                 .map(|etr| etr.numeric_edge_type_ids.clone()),
+                node_file_reader
+                .as_ref()
+                .map(|etr| etr.skip_node_types_if_unavailable.clone()),
+                edge_file_reader
+                .as_ref()
+                .map(|etr| etr.skip_edge_types_if_unavailable.clone()),
             may_have_singletons,
             may_have_singleton_with_selfloops,
             name.into(),
@@ -347,6 +353,7 @@ impl Graph {
                     .set_max_rows_number(node_list_max_rows_number)?
                     .set_rows_to_skip(node_list_rows_to_skip)?
                     .set_separator(node_list_separator)?
+                    .set_skip_node_types_if_unavailable(skip_node_types_if_unavailable)?
                     .set_nodes_column_number(nodes_column_number)?
                     .set_node_ids_column(node_ids_column)?
                     .set_node_ids_column_number(node_ids_column_number)?
@@ -355,7 +362,6 @@ impl Graph {
                     .set_node_types_column_number(node_list_node_types_column_number)?
                     .set_node_types_column(node_list_node_types_column)?
                     .set_node_types_separator(node_types_separator)?
-                    .set_skip_node_types_if_unavailable(skip_node_types_if_unavailable)?
                     .set_default_node_type(default_node_type)
                     .set_numeric_node_ids(numeric_node_ids)
                     .set_numeric_node_type_ids(node_list_numeric_node_type_ids)?
@@ -376,17 +382,17 @@ impl Graph {
                     .set_max_rows_number(edge_list_max_rows_number)?
                     .set_rows_to_skip(edge_list_rows_to_skip)?
                     .set_separator(edge_list_separator)?
+                    .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
+                    .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
                     .set_sources_column_number(sources_column_number)?
                     .set_sources_column(sources_column)?
                     .set_destinations_column_number(destinations_column_number)?
                     .set_destinations_column(destinations_column)?
                     .set_edge_types_column_number(edge_list_edge_types_column_number)?
                     .set_edge_types_column(edge_list_edge_types_column)?
-                    .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
                     .set_default_edge_type(default_edge_type)
                     .set_weights_column_number(weights_column_number)?
                     .set_weights_column(weights_column)?
-                    .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
                     .set_default_weight(default_weight)?
                     .set_edge_ids_column(edge_ids_column)?
                     .set_edge_ids_column_number(edge_ids_column_number)?

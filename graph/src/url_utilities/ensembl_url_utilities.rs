@@ -11,8 +11,10 @@ use super::*;
 /// # use graph::*;
 /// let ensembl_node_name1 = "ENSEMBL:ENSACAG00000000017";
 /// let ensembl_node_name2 = "ENSACAG00000000017";
+/// let ensembl_node_name3 = "ENSEMBL:ENSG00000004059";
 /// let not_ensembl_node_name = "PizzaQuattroStagioni";
 /// assert!(is_valid_ensembl_node_name(ensembl_node_name1));
+/// assert!(is_valid_ensembl_node_name(ensembl_node_name2));
 /// assert!(is_valid_ensembl_node_name(ensembl_node_name2));
 /// assert!(!is_valid_ensembl_node_name(not_ensembl_node_name));
 /// ```
@@ -20,11 +22,11 @@ pub fn is_valid_ensembl_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
         Some(&["ENSEMBL"]),
-        Some(26),
+        None,
         Some(":"),
         Some("ENS"),
-        Some(18),
-        Some(11),
+        None,
+        None,
     )
     .is_ok()
 }

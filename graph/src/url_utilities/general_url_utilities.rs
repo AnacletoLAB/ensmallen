@@ -202,6 +202,9 @@ fn get_url_formatted(url: &str, content: &str, repository: &str) -> String {
 /// * [Therapeutic Target Database](http://db.idrblab.net/ttd/)
 /// * [Reactome](https://reactome.org/)
 ///
+/// TODO! Update documentation.
+/// TODO! Add support for URLs.
+/// 
 /// # Arguments
 /// * `node_name`: &str - Node name to query for.
 ///
@@ -217,9 +220,9 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String> {
     if is_valid_mmrrc_node_name(node_name) {
         return Ok(unsafe { format_mmrrc_url_from_node_name(node_name) });
     }
-    // if is_valid_wormbase_gene_node_name(node_name) {
-    //     return Ok(unsafe { format_wormbase_gene_url_from_node_name(node_name) });
-    // }
+    if is_valid_wormbase_gene_node_name(node_name) {
+        return Ok(unsafe { format_wormbase_gene_url_from_node_name(node_name) });
+    }
     if is_valid_mouse_genome_informatics_node_name(node_name) {
         return Ok(unsafe { format_mouse_genome_informatics_url_from_node_name(node_name) });
     }
@@ -1050,9 +1053,10 @@ pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str> {
     if is_valid_mmrrc_node_name(node_name) {
         return Ok("MMRRC");
     }
-    // if is_valid_wormbase_gene_node_name(node_name) {
-    //     return Ok("WormBase");
-    // }
+    if is_valid_wormbase_gene_node_name(node_name) {
+        return Ok("WormBase Gene");
+    }
+
     if is_valid_mouse_genome_informatics_node_name(node_name) {
         return Ok("Mouse Genome Informatics");
     }

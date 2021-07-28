@@ -296,6 +296,8 @@ impl Graph {
                     None,
                     None,
                     None,
+                    None,
+                    None,
                     true,
                     self.has_selfloops(),
                     self.get_name(),

@@ -47,7 +47,6 @@ pub fn convert_node_list_node_types_to_numeric(
     original_numeric_node_ids: Option<bool>,
     original_node_list_numeric_node_type_ids: Option<bool>,
     original_skip_node_types_if_unavailable: Option<bool>,
-    original_load_node_list_in_parallel: Option<bool>,
 
     target_node_path: String,
     target_node_list_separator: Option<String>,
@@ -111,7 +110,7 @@ pub fn convert_node_list_node_types_to_numeric(
         .set_numeric_node_type_ids(original_node_list_numeric_node_type_ids)?
         .set_csv_is_correct(node_list_is_correct)?
         .set_nodes_number(nodes_number)
-        .set_parallel(original_load_node_list_in_parallel)?;
+        .set_parallel(Some(false))?;
 
     let nodes_writer: NodeFileWriter = NodeFileWriter::new(target_node_path)
         .set_separator(target_node_list_separator.or(Some(nodes_reader.get_separator()?)))?

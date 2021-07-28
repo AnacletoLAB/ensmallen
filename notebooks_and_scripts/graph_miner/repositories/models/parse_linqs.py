@@ -34,8 +34,8 @@ def get_words_data(graph: EnsmallenGraph) -> pd.DataFrame:
 def parse_linqs_pubmed_incidence_matrix(
     cites_path: str,
     content_path: str,
-    edge_list_path: str,
-    node_list_path: str
+    edge_path: str,
+    node_path: str
 ):
     """Parse PubMed incidence matrix and generates proper edge list and node file.
 
@@ -45,14 +45,14 @@ def parse_linqs_pubmed_incidence_matrix(
         Path from where to load the cites file.
     content_path: str,
         Path from where to load the content file.
-    edge_list_path: str,
+    edge_path: str,
         Path where to store the edge list.
-    node_list_path: str,
+    node_path: str,
         Path where to store the node list.
     """
     # Creating directories
-    os.makedirs(os.path.dirname(edge_list_path), exist_ok=True)
-    os.makedirs(os.path.dirname(node_list_path), exist_ok=True)
+    os.makedirs(os.path.dirname(edge_path), exist_ok=True)
+    os.makedirs(os.path.dirname(node_path), exist_ok=True)
     # Loading data
     with open(content_path) as f:
         content = f.read()
@@ -61,8 +61,8 @@ def parse_linqs_pubmed_incidence_matrix(
 
     separator = "\t"
 
-    edge_list_file = open(edge_list_path, "w")
-    node_list_file = open(node_list_path, "w")
+    edge_list_file = open(edge_path, "w")
+    node_list_file = open(node_path, "w")
 
     unique_words = set()
     edge_regex = re.compile(r"paper:(\d+)")
@@ -115,8 +115,8 @@ def parse_linqs_pubmed_incidence_matrix(
 def parse_linqs_incidence_matrix(
     cites_path: str,
     content_path: str,
-    edge_list_path: str,
-    node_list_path: str
+    edge_path: str,
+    node_path: str
 ):
     """Parse Cora and Citeseer incidence matrix and generates proper edge list and node file.
 
@@ -126,14 +126,14 @@ def parse_linqs_incidence_matrix(
         Path from where to load the cites file.
     content_path: str,
         Path from where to load the content file.
-    edge_list_path: str,
+    edge_path: str,
         Path where to store the edge list.
-    node_list_path: str,
+    node_path: str,
         Path where to store the node list.
     """
     # Creating directories
-    os.makedirs(os.path.dirname(edge_list_path), exist_ok=True)
-    os.makedirs(os.path.dirname(node_list_path), exist_ok=True)
+    os.makedirs(os.path.dirname(edge_path), exist_ok=True)
+    os.makedirs(os.path.dirname(node_path), exist_ok=True)
     # Loading the content file (incidence matrix)
     content = pd.read_csv(
         content_path,
@@ -191,6 +191,6 @@ def parse_linqs_incidence_matrix(
         })
     ]).reset_index(drop=True)
     # Storing the generated node list
-    node_list.to_csv(node_list_path, sep="\t", index=False)
+    node_list.to_csv(node_path, sep="\t", index=False)
     # Storing the generated edge list
-    edge_list.to_csv(edge_list_path, sep="\t", index=False)
+    edge_list.to_csv(edge_path, sep="\t", index=False)

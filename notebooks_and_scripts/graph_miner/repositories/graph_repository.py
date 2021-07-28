@@ -507,7 +507,7 @@ class GraphRepository:
         else:
             print(data[:10])
 
-    def get_node_list_path(
+    def get_node_path(
         self,
         graph_name: str,
         download_report: pd.DataFrame
@@ -526,10 +526,10 @@ class GraphRepository:
         The path from where to load the node files.
         """
         raise NotImplementedError(
-            "The method get_node_list_path must be implemented in child classes."
+            "The method get_node_path must be implemented in child classes."
         )
 
-    def get_edge_list_path(
+    def get_edge_path(
         self,
         graph_name: str,
         download_report: pd.DataFrame
@@ -548,7 +548,7 @@ class GraphRepository:
         The path from where to load the edge files.
         """
         raise NotImplementedError(
-            "The method get_edge_list_path must be implemented in child classes."
+            "The method get_edge_path must be implemented in child classes."
         )
 
     def get_imports(self, graph_name: str) -> str:
@@ -646,9 +646,9 @@ class GraphRepository:
                 self.add_corrupted_graph(graph_name)
                 continue
             try:
-                node_path = self.get_node_list_path(
+                node_path = self.get_node_path(
                     graph_name, download_report)
-                edge_path = self.get_edge_list_path(
+                edge_path = self.get_edge_path(
                     graph_name, download_report)
                 arguments = self.from_integer_sorted_parameters(
                     graph_name,

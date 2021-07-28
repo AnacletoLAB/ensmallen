@@ -85,6 +85,8 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
     edges_number: Option<EdgeT>,
     numeric_edge_list_node_ids: Option<bool>,
     numeric_edge_list_edge_type_ids: Option<bool>,
+    skip_node_types_if_unavailable: Option<bool>,
+    skip_edge_types_if_unavailable: Option<bool>,
     mut may_have_singletons: bool,
     may_have_singleton_with_selfloops: bool,
     name: S,
@@ -105,6 +107,7 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
         numeric_node_ids,
         numeric_node_list_node_type_ids,
         minimum_node_ids,
+        skip_node_types_if_unavailable
     )?;
     // If the number of nodes was not known
     // and a nodes iterator was provided, we can fill the gap.
@@ -140,6 +143,7 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
         edges_number,
         numeric_edge_list_node_ids,
         numeric_edge_list_edge_type_ids,
+        skip_edge_types_if_unavailable
     )?;
     Ok(Graph::new(
         directed,
@@ -208,6 +212,8 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
     edges_number: Option<EdgeT>,
     numeric_edge_list_node_ids: Option<bool>,
     numeric_edge_list_edge_type_ids: Option<bool>,
+    skip_node_types_if_unavailable: Option<bool>,
+    skip_edge_types_if_unavailable: Option<bool>,
     may_have_singletons: bool,
     may_have_singleton_with_selfloops: bool,
     name: S,
@@ -239,6 +245,8 @@ pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
         edges_number,
         numeric_edge_list_node_ids,
         numeric_edge_list_edge_type_ids,
+        skip_node_types_if_unavailable,
+        skip_edge_types_if_unavailable,    
         may_have_singletons,
         may_have_singleton_with_selfloops,
         name,
@@ -264,6 +272,8 @@ pub fn build_empty_graph<S: Into<String>>(directed: bool, name: S) -> Result<Gra
         None::<ItersWrapper<_, std::iter::Empty<_>, rayon::iter::Empty<_>>>,
         false,
         directed,
+        None,
+        None,
         None,
         None,
         None,

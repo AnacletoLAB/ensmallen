@@ -522,7 +522,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         """
         return ""
 
-    def get_node_list_path(
+    def get_node_path(
         self,
         graph_name: str,
         download_report: pd.DataFrame
@@ -572,7 +572,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
             return os.path.join(directory, candidate_file_name)
         print(file_names)
         file_name = userinput(
-            "node_list_path",
+            "node_path",
             default=candidate_file_name,
             cache=False,
             validator=set_validator(file_names),
@@ -581,7 +581,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         )
         return os.path.join(directory, file_name)
 
-    def get_edge_list_path(
+    def get_edge_path(
         self,
         graph_name: str,
         download_report: pd.DataFrame
@@ -629,7 +629,7 @@ class NetworkRepositoryGraphRepository(GraphRepository):
         ):
             return os.path.join(directory, candidate_file_name)
         file_name = userinput(
-            "edge_list_path",
+            "edge_path",
             default=candidate_file_name,
             cache=False,
             validator=set_validator(file_names),

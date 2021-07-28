@@ -1,10 +1,10 @@
 use super::*;
 use elias_fano_rust::{ConcurrentEliasFanoBuilder, EliasFano};
-use std::intrinsics::unlikely;
 use num_traits::Zero;
-use std::sync::atomic::AtomicBool;
 use rayon::prelude::*;
 use std::cmp::Ordering;
+use std::intrinsics::unlikely;
+use std::sync::atomic::AtomicBool;
 
 macro_rules! parse_unsorted_edge_list {
     (
@@ -396,12 +396,13 @@ pub(crate) fn parse_string_edges(
     edges_number: Option<EdgeT>,
     numeric_edge_list_node_ids: Option<bool>,
     numeric_edge_list_edge_type_ids: Option<bool>,
+    skip_edge_types_if_unavailable: Option<bool>,
 ) -> Result<(
     Vocabulary<NodeT>,
     EliasFano,
     Option<EdgeTypeVocabulary>,
     Option<Vec<WeightT>>,
-    bool
+    bool,
 )> {
     let correct = correct.unwrap_or(false);
     let complete = complete.unwrap_or(directed);
@@ -409,6 +410,7 @@ pub(crate) fn parse_string_edges(
     let sorted = sorted.unwrap_or(false);
     let numeric_edge_list_node_ids = numeric_edge_list_node_ids.unwrap_or(false);
     let numeric_edge_list_edge_type_ids = numeric_edge_list_edge_type_ids.unwrap_or(false);
+    let skip_edge_types_if_unavailable = skip_edge_types_if_unavailable.unwrap_or(false);
     let has_edge_types = edge_types_vocabulary.is_some();
 
     check_general_edge_constructor_parameters_consistency(
@@ -421,15 +423,24 @@ pub(crate) fn parse_string_edges(
         &edges_iterator,
     )?;
 
-    if !has_edge_types && numeric_edge_list_edge_type_ids {
+    if !has_edge_types && !skip_edge_types_if_unavailable && numeric_edge_list_edge_type_ids {
         return Err(concat!(
-            "The numeric node list node type IDs parameter does not make sense ",
-            "in the context where the node types have not been provided.\n",
-            "If the node types within the nodes list are numeric, simply use ",
-            "the numeric node types ids parameter."
+            "The numeric edge list edge type IDs parameter does not make sense ",
+            "in the context where the edge types have not been provided.\n",
+            "If the edge types within the edges list are numeric, simply use ",
+            "the numeric edge types ids parameter."
         )
         .to_string());
     }
+
+    dbg!(
+        has_edge_types,
+        edge_types_vocabulary
+            .as_ref()
+            .map_or(true, |x| x.is_empty()),
+        correct,
+        numeric_edge_list_edge_type_ids,
+    );
 
     let edge_types_method = match (
         has_edge_types,
@@ -439,14 +450,15 @@ pub(crate) fn parse_string_edges(
         correct,
         numeric_edge_list_edge_type_ids,
     ) {
-        (false, _, _, false) => EdgeTypeParser::ignore,
+        (false, _, _, _) => EdgeTypeParser::ignore,
         (true, true, true, false) => EdgeTypeParser::parse_strings_unchecked,
         (true, true, false, false) => EdgeTypeParser::parse_strings,
         (true, false, true, false) => EdgeTypeParser::get_unchecked,
         (true, false, false, false) => EdgeTypeParser::get,
-        (_, _, true, true) => EdgeTypeParser::to_numeric_unchecked,
-        (_, _, false, true) => EdgeTypeParser::to_numeric,
+        (true, _, true, true) => EdgeTypeParser::to_numeric_unchecked,
+        (true, _, false, true) => EdgeTypeParser::to_numeric,
     };
+    dbg!(nodes.is_empty(), correct, numeric_edge_list_node_ids);
     let node_method = match (nodes.is_empty(), correct, numeric_edge_list_node_ids) {
         (true, true, false) => EdgeNodeNamesParser::parse_strings_unchecked,
         (true, false, false) => EdgeNodeNamesParser::parse_strings,
@@ -566,7 +578,14 @@ pub(crate) fn parse_string_edges(
                 (),
             );
             // Return the computed values
-            (edges, has_selfloops, nodes, edge_types_vocabulary, None, None)
+            (
+                edges,
+                has_selfloops,
+                nodes,
+                edge_types_vocabulary,
+                None,
+                None,
+            )
         }
         (Some(ei), false, true, true) => {
             // Building the edge list
@@ -663,16 +682,53 @@ pub(crate) fn parse_string_edges(
                 duplicates,
             );
             // Return the computed values
-            (edges, has_selfloops, nodes, edge_types_vocabulary, None, None)
+            (
+                edges,
+                has_selfloops,
+                nodes,
+                edge_types_vocabulary,
+                None,
+                None,
+            )
         }
     };
+
+    // Executing self-consistency check for the edge type IDs
+    if edge_type_ids
+        .as_ref()
+        .map_or(false, |edge_type_ids| edges.len() != edge_type_ids.len())
+    {
+        panic!(
+            concat!(
+                "The length of the edges is {}, ",
+                "while the length of the edge type IDs vector is {}."
+            ),
+            edges.len(),
+            edge_type_ids.unwrap().len()
+        );
+    }
+
+    // Executing self-consistency check for the edge weights
+    if weights
+        .as_ref()
+        .map_or(false, |weights| edges.len() != weights.len())
+    {
+        panic!(
+            concat!(
+                "The length of the edges is {}, ",
+                "while the length of the weights vector is {}."
+            ),
+            edges.len(),
+            weights.unwrap().len()
+        );
+    }
 
     Ok((
         nodes,
         edges,
         EdgeTypeVocabulary::from_option_structs(edge_type_ids, Some(edge_types_vocabulary)),
         weights,
-        has_selfloops
+        has_selfloops,
     ))
 }
 
@@ -689,7 +745,12 @@ pub(crate) fn parse_integer_edges(
     duplicates: Option<bool>,
     sorted: Option<bool>,
     edges_number: Option<EdgeT>,
-) -> Result<(EliasFano, Option<EdgeTypeVocabulary>, Option<Vec<WeightT>>, bool)> {
+) -> Result<(
+    EliasFano,
+    Option<EdgeTypeVocabulary>,
+    Option<Vec<WeightT>>,
+    bool,
+)> {
     let complete = complete.unwrap_or(directed);
     let duplicates = duplicates.unwrap_or(true);
     let sorted = sorted.unwrap_or(false);
@@ -708,135 +769,179 @@ pub(crate) fn parse_integer_edges(
     // Here we handle the collection of the iterator
     // in a way to collect only non-None values and hence avoid
     // potentially a huge amount of allocations.
-    let (edges, has_selfloops, edge_type_ids, weights) =
-        match (edges_iterator, sorted, has_edge_types, has_edge_weights) {
-            (None, _, _, _) => (EliasFano::new(0, 0)?, false, None, None),
-            // When the edge lists are provided and are:
-            // - Sorted
-            // - Completely defined in both directions
-            // - Sworn on the tomb of Von Neumann to be a correct edge list
-            (Some(ei), true, true, true) => {
-                let (edges, has_selfloops, edge_type_ids, weights) = parse_sorted_integer_edge_list!(
-                    ei,
-                    nodes_number,
-                    edges_number.unwrap(),
-                    (edge_type, weight),
-                    (edge_type, weight),
-                    (edge_types, weights),
-                    (None, WeightT::NAN),
-                );
-                // Return the computed values
-                (edges, has_selfloops, optionify!(edge_type_ids), optionify!(weights))
-            }
-            (Some(ei), true, false, true) => {
-                let (edges, has_selfloops, weights) = parse_sorted_integer_edge_list!(
-                    ei,
-                    nodes_number,
-                    edges_number.unwrap(),
-                    (_edge_type, weight),
-                    (weight),
-                    (weights),
-                    (WeightT::NAN),
-                );
-                // Return the computed values
-                (edges, has_selfloops, None, optionify!(weights))
-            }
-            (Some(ei), true, true, false) => {
-                let (edges, has_selfloops, edge_type_ids) = parse_sorted_integer_edge_list!(
-                    ei,
-                    nodes_number,
-                    edges_number.unwrap(),
-                    (edge_type, _weight),
-                    (edge_type),
-                    (edge_types),
-                    (None),
-                );
-                // Return the computed values
-                (edges, has_selfloops, optionify!(edge_type_ids), None)
-            }
-            (Some(ei), true, false, false) => {
-                let (edges, has_selfloops) = parse_sorted_integer_edge_list!(
-                    ei,
-                    nodes_number,
-                    edges_number.unwrap(),
-                    (_edge_type, _weight),
-                    (),
-                    (),
-                    (),
-                );
-                // Return the computed values
-                (edges, has_selfloops, None, None)
-            }
-            (Some(ei), false, true, true) => {
-                // Building the edge list
-                let (edges, has_selfloops, edge_type_ids, weights) = parse_unsorted_integer_edge_list!(
-                    ei,
-                    nodes_number,
-                    (edge_type, weight),
-                    (edge_type, weight),
-                    (edge_types, weights),
-                    (None, WeightT::NAN),
-                    directed,
-                    complete,
-                    duplicates,
-                );
-                // Return the computed values
-                (edges, has_selfloops, optionify!(edge_type_ids), optionify!(weights))
-            }
-            (Some(ei), false, true, false) => {
-                // Building the edge list
-                let (edges, has_selfloops, edge_type_ids) = parse_unsorted_integer_edge_list!(
-                    ei,
-                    nodes_number,
-                    (edge_type, _weight),
-                    (edge_type),
-                    (edge_types),
-                    (None),
-                    directed,
-                    complete,
-                    duplicates,
-                );
-                // Return the computed values
-                (edges, has_selfloops, optionify!(edge_type_ids), None)
-            }
-            (Some(ei), false, false, true) => {
-                // Building the edge list
-                let (edges, has_selfloops, weights) = parse_unsorted_integer_edge_list!(
-                    ei,
-                    nodes_number,
-                    (_edge_type, weight),
-                    (weight),
-                    (weights),
-                    (WeightT::NAN),
-                    directed,
-                    complete,
-                    duplicates,
-                );
-                // Return the computed values
-                (edges, has_selfloops, None, optionify!(weights))
-            }
-            (Some(ei), false, false, false) => {
-                // Building the edge list
-                let (edges, has_selfloops) = parse_unsorted_integer_edge_list!(
-                    ei,
-                    nodes_number,
-                    (_edge_type, _weight),
-                    (),
-                    (),
-                    (),
-                    directed,
-                    complete,
-                    duplicates,
-                );
-                // Return the computed values
-                (edges, has_selfloops, None, None)
-            }
-        };
+    let (edges, has_selfloops, edge_type_ids, weights) = match (
+        edges_iterator,
+        sorted,
+        has_edge_types,
+        has_edge_weights,
+    ) {
+        (None, _, _, _) => (EliasFano::new(0, 0)?, false, None, None),
+        // When the edge lists are provided and are:
+        // - Sorted
+        // - Completely defined in both directions
+        // - Sworn on the tomb of Von Neumann to be a correct edge list
+        (Some(ei), true, true, true) => {
+            let (edges, has_selfloops, edge_type_ids, weights) = parse_sorted_integer_edge_list!(
+                ei,
+                nodes_number,
+                edges_number.unwrap(),
+                (edge_type, weight),
+                (edge_type, weight),
+                (edge_types, weights),
+                (None, WeightT::NAN),
+            );
+            // Return the computed values
+            (
+                edges,
+                has_selfloops,
+                optionify!(edge_type_ids),
+                optionify!(weights),
+            )
+        }
+        (Some(ei), true, false, true) => {
+            let (edges, has_selfloops, weights) = parse_sorted_integer_edge_list!(
+                ei,
+                nodes_number,
+                edges_number.unwrap(),
+                (_edge_type, weight),
+                (weight),
+                (weights),
+                (WeightT::NAN),
+            );
+            // Return the computed values
+            (edges, has_selfloops, None, optionify!(weights))
+        }
+        (Some(ei), true, true, false) => {
+            let (edges, has_selfloops, edge_type_ids) = parse_sorted_integer_edge_list!(
+                ei,
+                nodes_number,
+                edges_number.unwrap(),
+                (edge_type, _weight),
+                (edge_type),
+                (edge_types),
+                (None),
+            );
+            // Return the computed values
+            (edges, has_selfloops, optionify!(edge_type_ids), None)
+        }
+        (Some(ei), true, false, false) => {
+            let (edges, has_selfloops) = parse_sorted_integer_edge_list!(
+                ei,
+                nodes_number,
+                edges_number.unwrap(),
+                (_edge_type, _weight),
+                (),
+                (),
+                (),
+            );
+            // Return the computed values
+            (edges, has_selfloops, None, None)
+        }
+        (Some(ei), false, true, true) => {
+            // Building the edge list
+            let (edges, has_selfloops, edge_type_ids, weights) = parse_unsorted_integer_edge_list!(
+                ei,
+                nodes_number,
+                (edge_type, weight),
+                (edge_type, weight),
+                (edge_types, weights),
+                (None, WeightT::NAN),
+                directed,
+                complete,
+                duplicates,
+            );
+            // Return the computed values
+            (
+                edges,
+                has_selfloops,
+                optionify!(edge_type_ids),
+                optionify!(weights),
+            )
+        }
+        (Some(ei), false, true, false) => {
+            // Building the edge list
+            let (edges, has_selfloops, edge_type_ids) = parse_unsorted_integer_edge_list!(
+                ei,
+                nodes_number,
+                (edge_type, _weight),
+                (edge_type),
+                (edge_types),
+                (None),
+                directed,
+                complete,
+                duplicates,
+            );
+            // Return the computed values
+            (edges, has_selfloops, optionify!(edge_type_ids), None)
+        }
+        (Some(ei), false, false, true) => {
+            // Building the edge list
+            let (edges, has_selfloops, weights) = parse_unsorted_integer_edge_list!(
+                ei,
+                nodes_number,
+                (_edge_type, weight),
+                (weight),
+                (weights),
+                (WeightT::NAN),
+                directed,
+                complete,
+                duplicates,
+            );
+            // Return the computed values
+            (edges, has_selfloops, None, optionify!(weights))
+        }
+        (Some(ei), false, false, false) => {
+            // Building the edge list
+            let (edges, has_selfloops) = parse_unsorted_integer_edge_list!(
+                ei,
+                nodes_number,
+                (_edge_type, _weight),
+                (),
+                (),
+                (),
+                directed,
+                complete,
+                duplicates,
+            );
+            // Return the computed values
+            (edges, has_selfloops, None, None)
+        }
+    };
+
+    // Executing self-consistency check for the edge type IDs
+    if edge_type_ids
+        .as_ref()
+        .map_or(false, |edge_type_ids| edges.len() != edge_type_ids.len())
+    {
+        panic!(
+            concat!(
+                "The length of the edges is {}, ",
+                "while the length of the edge type IDs vector is {}."
+            ),
+            edges.len(),
+            edge_type_ids.unwrap().len()
+        );
+    }
+
+    // Executing self-consistency check for the edge weights
+    if weights
+        .as_ref()
+        .map_or(false, |weights| edges.len() != weights.len())
+    {
+        panic!(
+            concat!(
+                "The length of the edges is {}, ",
+                "while the length of the weights vector is {}."
+            ),
+            edges.len(),
+            weights.unwrap().len()
+        );
+    }
 
     Ok((
         edges,
         EdgeTypeVocabulary::from_option_structs(edge_type_ids, edge_types_vocabulary),
         weights,
-        has_selfloops
+        has_selfloops,
     ))
 }

@@ -13,18 +13,20 @@ use super::*;
 /// let therapeutic_target_database_node_name2 = "ttd.drug:D06FHW";
 /// let therapeutic_target_database_node_name3 = "ttd.drug:D09RZX";
 /// let therapeutic_target_database_node_name4 = "ttd.drug:D0G2MM";
+/// let therapeutic_target_database_node_name5 = "ttd.drug:D08-Sep";
 /// let not_therapeutic_target_database_node_name = "PizzaQuattroStagioni";
 /// assert!(is_valid_therapeutic_target_database_node_name(therapeutic_target_database_node_name1));
 /// assert!(is_valid_therapeutic_target_database_node_name(therapeutic_target_database_node_name2));
 /// assert!(is_valid_therapeutic_target_database_node_name(therapeutic_target_database_node_name3));
 /// assert!(is_valid_therapeutic_target_database_node_name(therapeutic_target_database_node_name4));
+/// assert!(is_valid_therapeutic_target_database_node_name(therapeutic_target_database_node_name5));
 /// assert!(!is_valid_therapeutic_target_database_node_name(not_therapeutic_target_database_node_name));
 /// ```
 pub fn is_valid_therapeutic_target_database_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
         Some(&["ttd.drug"]),
-        Some(15),
+        None,
         Some(":"),
         None,
         None,

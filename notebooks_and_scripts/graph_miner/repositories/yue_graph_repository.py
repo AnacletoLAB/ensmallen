@@ -1,26 +1,17 @@
-"""Sub-module handling the retrieval and building of graphs from LINQS."""
+"""Sub-module handling the retrieval and building of graphs from Yue."""
 from typing import List, Dict
 import os
 import compress_json
 import pandas as pd
-import shutil
 from .graph_repository import GraphRepository
-from .models.parse_linqs import (
-    parse_linqs_incidence_matrix,
-    parse_linqs_pubmed_incidence_matrix
-)
 
 
-class LINQSGraphRepository(GraphRepository):
+class YueGraphRepository(GraphRepository):
 
     def __init__(self):
         """Create new String Graph Repository object."""
         super().__init__()
-        self._data = compress_json.local_load("linqs.json")
-        self._parse = {
-            "parse_linqs_incidence_matrix": parse_linqs_incidence_matrix,
-            "parse_linqs_pubmed_incidence_matrix": parse_linqs_pubmed_incidence_matrix
-        }
+        self._data = compress_json.local_load("yue.json")
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
@@ -38,7 +29,7 @@ class LINQSGraphRepository(GraphRepository):
 
     def get_formatted_repository_name(self) -> str:
         """Return formatted repository name."""
-        return "LINQS"
+        return "Yue"
 
     def get_graph_name(self, graph_data) -> str:
         """Return built graph name.
@@ -82,13 +73,11 @@ class LINQSGraphRepository(GraphRepository):
         """
         return [
             open(
-                "{}/models/{}.bib".format(
-                    os.path.dirname(os.path.abspath(__file__)),
-                    citation
+                "{}/models/yue.bib".format(
+                    os.path.dirname(os.path.abspath(__file__))
                 ),
                 "r"
             ).read()
-            for citation in graph_data[1]["citations"]
         ]
 
     def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
@@ -134,89 +123,18 @@ class LINQSGraphRepository(GraphRepository):
                 edge_path,
                 node_path
             ),
-            "sources_column": "subject",
-            "destinations_column": "object",
-            "weights_column": "weight",
-            "default_weight": 1,
-            "edge_types_column": "edge_type",
-            "node_types_column": "node_type",
-            "nodes_column": "id",
-            "edge_separator": "\t",
-            "node_separator": "\t",
-            "skip_weights_if_unavailable": True
+            **{
+                key: value
+                for key, value in self._data[graph_name]["arguments"].items()
+                if not key.endswith("_path")
+            }
         }
 
     def get_graph_list(self) -> List:
         """Return list of graph data."""
         return list(self._data.items())
 
-    def get_imports(self, graph_name: str) -> str:
-        """Return imports to be added to model file.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph.
-
-        Returns
-        -----------------------
-        Imports.
-        """
-        return "\n".join(self._data[graph_name]["imports"])
-
-    def get_description(self, graph_name: str) -> str:
-        """Return description to be added to model file.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph.
-
-        Returns
-        -----------------------
-        description.
-        """
-        return self._data[graph_name]["description"]
-
-    def get_callbacks(self, graph_name: str) -> List[str]:
-        """Return callbacks to be added to model file.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph.
-
-        Returns
-        -----------------------
-        callbacks.
-        """
-        return [self._data[graph_name]["callback"]]
-
-    def get_callbacks_arguments(self, graph_name: str) -> List[Dict]:
-        """Return dictionary with list of arguments to pass to callbacks.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of the graph to retrieve.
-
-        Returns
-        -----------------------
-        Arguments to pass to callbacks.
-        """
-        return [dict(
-            **{
-                parameter: os.path.join(
-                    self.repository_package_name,
-                    value
-                )
-                for parameter, value in self._data[graph_name]["callback_arguments"].items()
-            },
-            node_list_path=self.get_node_list_path(graph_name, None),
-            edge_list_path=self.get_edge_list_path(graph_name, None),
-        )]
-
-    def get_node_list_path(
+    def get_node_path(
         self,
         graph_name: str,
         download_report: pd.DataFrame
@@ -234,13 +152,14 @@ class LINQSGraphRepository(GraphRepository):
         -----------------------
         The path from where to load the node files.
         """
+        if "node_path" not in self._data[graph_name]["arguments"]:
+            return None
         return os.path.join(
             self.repository_package_name,
-            self.build_stored_graph_name(graph_name).lower(),
-            "nodes.tsv"
+            self._data[graph_name]["arguments"]["node_path"]
         )
 
-    def get_edge_list_path(
+    def get_edge_path(
         self,
         graph_name: str,
         download_report: pd.DataFrame
@@ -260,39 +179,5 @@ class LINQSGraphRepository(GraphRepository):
         """
         return os.path.join(
             self.repository_package_name,
-            self.build_stored_graph_name(graph_name).lower(),
-            "edges.tsv"
-        )
-
-    def download(self, graph_data, graph_name: str) -> pd.DataFrame:
-        """Return url for the given graph.
-
-        Parameters
-        -----------------------
-        graph_data,
-            Data of the graph to retrieve.
-        graph_name: str,
-            Name of the graph to retrieve.
-
-        Returns
-        -----------------------
-        Dataframe with download metadata.
-        """
-        report = super().download(graph_data, graph_name)
-        self._parse.get(self._data[graph_name]["callback"][0])(
-            **self.get_callbacks_arguments(graph_name)[0]
-        )
-        return report
-
-    def build_all(self):
-        """Build graph retrieval methods."""
-        super().build_all()
-        shutil.copyfile(
-            "{}/models/parse_linqs.py".format(
-                os.path.dirname(os.path.abspath(__file__))),
-            os.path.join(
-                "bindings/python/ensmallen_graph/datasets",
-                self.repository_package_name,
-                "parse_linqs.py"
-            )
+            self._data[graph_name]["arguments"]["edge_path"]
         )

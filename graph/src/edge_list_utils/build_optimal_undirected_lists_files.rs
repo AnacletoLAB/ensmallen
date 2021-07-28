@@ -54,7 +54,7 @@ pub fn build_optimal_undirected_lists_files(
     original_load_node_list_in_parallel: Option<bool>,
     mut maximum_node_id: Option<EdgeT>,
 
-    target_node_list_path: Option<String>,
+    target_node_path: Option<String>,
     mut target_node_list_separator: Option<String>,
     target_node_list_header: Option<bool>,
     target_nodes_column: Option<String>,
@@ -89,7 +89,7 @@ pub fn build_optimal_undirected_lists_files(
     mut target_edge_types_ids_column: Option<String>,
     mut target_edge_type_list_header: Option<bool>,
 
-    mut original_edge_list_path: String,
+    mut original_edge_path: String,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
     original_sources_column_number: Option<usize>,
@@ -111,7 +111,7 @@ pub fn build_optimal_undirected_lists_files(
     load_edge_list_in_parallel: Option<bool>,
     mut edges_number: Option<EdgeT>,
 
-    target_edge_list_path: String,
+    target_edge_path: String,
     target_edge_list_separator: Option<String>,
 
     verbose: Option<bool>,
@@ -326,7 +326,7 @@ pub fn build_optimal_undirected_lists_files(
     // procedure produces a deterministic internal node ID to
     // node name mapping.
     if let Some(original_node_path) = &mut original_node_path {
-        if target_node_list_path.is_none() {
+        if target_node_path.is_none() {
             return Err(concat!(
                 "When providing the original node path that must be ",
                 "parsed to produce the op"
@@ -377,8 +377,7 @@ pub fn build_optimal_undirected_lists_files(
             original_numeric_node_ids,
             original_node_list_numeric_node_type_ids,
             original_skip_node_types_if_unavailable,
-            original_load_node_list_in_parallel,
-            target_node_list_path.clone().unwrap(),
+            target_node_path.clone().unwrap(),
             target_node_list_separator.clone(),
             target_node_list_header,
             target_nodes_column_number,
@@ -394,7 +393,7 @@ pub fn build_optimal_undirected_lists_files(
         // that should be used in the next step.
         // We do not update again the node types as it
         // is not needed after this step.
-        *original_node_path = target_node_list_path.clone().unwrap();
+        *original_node_path = target_node_path.clone().unwrap();
         original_node_list_separator = target_node_list_separator;
         target_node_list_separator = None;
         original_node_list_header = target_node_list_header;
@@ -412,7 +411,7 @@ pub fn build_optimal_undirected_lists_files(
     let numeric_edge_list_node_ids = !original_node_path.is_some()
         && (original_edge_list_numeric_node_ids.unwrap_or(false)
             || is_numeric_edge_list(
-                original_edge_list_path.as_ref(),
+                original_edge_path.as_ref(),
                 original_edge_list_separator.clone(),
                 original_edge_list_header,
                 original_sources_column.clone(),
@@ -435,8 +434,8 @@ pub fn build_optimal_undirected_lists_files(
     let has_edge_weights =
         original_weights_column.is_some() || original_weights_column_number.is_some();
     // We update the target path to a temporary one
-    let target_numeric_edge_list_path: String =
-        format!("{}.numeric_edge_list.tmp", target_edge_list_path.clone());
+    let target_numeric_edge_path: String =
+        format!("{}.numeric_edge_list.tmp", target_edge_path.clone());
 
     // We convert the edge list to dense numeric
     let (nodes_number, edge_types_number) = if numeric_edge_list_node_ids {
@@ -444,7 +443,7 @@ pub fn build_optimal_undirected_lists_files(
         if maximum_node_id.is_none() {
             let (_, new_maximum_node_id, new_edges_number) =
                 get_minmax_node_from_numeric_edge_list(
-                    original_edge_list_path.as_ref(),
+                    original_edge_path.as_ref(),
                     original_edge_list_separator.clone(),
                     original_edge_list_header,
                     original_sources_column.clone(),
@@ -466,7 +465,7 @@ pub fn build_optimal_undirected_lists_files(
         info!("Converting sparse numeric edge list to dense numeric edge list.");
         densify_sparse_numeric_edge_list(
             maximum_node_id,
-            original_edge_list_path.as_ref(),
+            original_edge_path.as_ref(),
             original_edge_list_separator.clone(),
             original_edge_list_header,
             original_sources_column.clone(),
@@ -494,7 +493,7 @@ pub fn build_optimal_undirected_lists_files(
             edge_type_list_max_rows_number,
             edge_type_list_comment_symbol,
             load_edge_type_list_in_parallel,
-            target_numeric_edge_list_path.as_ref(),
+            target_numeric_edge_path.as_ref(),
             target_edge_list_separator.clone(),
             Some(false),
             None,
@@ -511,7 +510,7 @@ pub fn build_optimal_undirected_lists_files(
             },
             None,
             None,
-            target_node_list_path.as_deref(),
+            target_node_path.as_deref(),
             target_node_list_separator.clone(),
             target_node_list_header,
             target_nodes_column,
@@ -569,7 +568,7 @@ pub fn build_optimal_undirected_lists_files(
             edge_type_list_max_rows_number,
             edge_type_list_comment_symbol,
             load_edge_type_list_in_parallel,
-            original_edge_list_path.as_ref(),
+            original_edge_path.as_ref(),
             original_edge_list_separator.clone(),
             original_edge_list_header,
             original_sources_column_number,
@@ -582,7 +581,7 @@ pub fn build_optimal_undirected_lists_files(
             original_weights_column_number,
             None,
             None,
-            target_numeric_edge_list_path.as_ref(),
+            target_numeric_edge_path.as_ref(),
             target_edge_list_separator.clone(),
             Some(false),
             None,
@@ -599,7 +598,7 @@ pub fn build_optimal_undirected_lists_files(
             },
             None,
             None,
-            target_node_list_path.as_deref(),
+            target_node_path.as_deref(),
             target_node_list_separator,
             target_node_list_header,
             target_nodes_column,
@@ -626,26 +625,29 @@ pub fn build_optimal_undirected_lists_files(
         )
     }?;
 
-    original_edge_list_path = target_numeric_edge_list_path;
+    original_edge_path = target_numeric_edge_path;
     // We update the target path to a new temporary one
-    let target_directed_edge_list_path: String =
-        format!("{}.directed.tmp", target_edge_list_path.clone());
+    let target_directed_edge_path: String = format!("{}.directed.tmp", target_edge_path.clone());
 
     // Create the complete edge list
     info!("Convert undirected edge list to directed.");
     edges_number = Some(convert_undirected_edge_list_to_directed(
-        original_edge_list_path.as_ref(),
+        original_edge_path.as_ref(),
         original_edge_list_separator.clone(),
         original_edge_list_header,
-        original_sources_column.clone(),
-        original_sources_column_number,
-        original_destinations_column.clone(),
-        original_destinations_column_number,
-        original_edge_list_edge_types_column,
-        original_edge_list_edge_types_column_number,
-        original_weights_column.clone(),
-        original_weights_column_number,
-        target_directed_edge_list_path.as_ref(),
+        None,
+        Some(0),
+        None,
+        Some(1),
+        None,
+        if has_edge_types { Some(2) } else { None },
+        None,
+        if has_edge_weights {
+            Some(2 + has_edge_types as usize)
+        } else {
+            None
+        },
+        target_directed_edge_path.as_ref(),
         target_edge_list_separator.clone(),
         Some(false),
         None,
@@ -673,24 +675,28 @@ pub fn build_optimal_undirected_lists_files(
     )?);
 
     info!("Deleting previous temporary file with numeric edge list.");
-    match std::fs::remove_file(original_edge_list_path.clone()) {
+    match std::fs::remove_file(original_edge_path.clone()) {
         Ok(()) => {}
         Err(e) => return Err(e.to_string()),
     };
-    original_edge_list_path = target_directed_edge_list_path;
+    original_edge_path = target_directed_edge_path;
 
     // Sort the edge list
     info!("Sorting the edge list.");
     sort_numeric_edge_list_inplace(
-        original_edge_list_path.as_ref(),
+        original_edge_path.as_ref(),
         original_edge_list_separator.clone(),
         Some(false),
         None,
-        original_sources_column_number,
+        Some(0),
         None,
-        original_destinations_column_number,
+        Some(1),
         None,
-        original_edge_list_edge_types_column_number,
+        if has_edge_weights {
+            Some(2 + has_edge_types as usize)
+        } else {
+            None
+        },
         None,
         None,
     )?;
@@ -698,10 +704,10 @@ pub fn build_optimal_undirected_lists_files(
     // Add the edge IDs to the edge list
     info!("Adding edge ID to the sorted complete edge list.");
     let edges_number = add_numeric_id_to_csv(
-        original_edge_list_path.as_ref(),
+        original_edge_path.as_ref(),
         original_edge_list_separator.clone(),
-        original_edge_list_header,
-        target_edge_list_path.as_ref(),
+        Some(false),
+        target_edge_path.as_ref(),
         target_edge_list_separator,
         None,
         None,
@@ -714,7 +720,7 @@ pub fn build_optimal_undirected_lists_files(
     )? as EdgeT;
 
     info!("Deleting previous temporary file with sorted complete edge list without edge ID.");
-    match std::fs::remove_file(original_edge_list_path) {
+    match std::fs::remove_file(original_edge_path) {
         Ok(()) => {}
         Err(e) => return Err(e.to_string()),
     };

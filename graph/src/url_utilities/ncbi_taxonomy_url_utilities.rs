@@ -9,20 +9,22 @@ use super::*;
 /// To validate a node you can use:
 /// ```rust
 /// # use graph::*;
-/// let ncbi_taxonomy_node_name = "NCBITaxon:264379";
+/// let ncbi_taxonomy_node_name1 = "NCBITaxon:264379";
+/// let ncbi_taxonomy_node_name2 = "NCBITaxon:2697049";
 /// let not_ncbi_taxonomy_node_name = "PizzaQuattroStagioni";
-/// assert!(is_valid_ncbi_taxonomy_node_name(ncbi_taxonomy_node_name));
+/// assert!(is_valid_ncbi_taxonomy_node_name(ncbi_taxonomy_node_name1));
+/// assert!(is_valid_ncbi_taxonomy_node_name(ncbi_taxonomy_node_name2));
 /// assert!(!is_valid_ncbi_taxonomy_node_name(not_ncbi_taxonomy_node_name));
 /// ```
 pub fn is_valid_ncbi_taxonomy_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
         Some(&["NCBITaxon"]),
-        Some(16),
+        None,
         Some(":"),
         None,
         None,
-        Some(6),
+        None,
     )
     .is_ok()
 }

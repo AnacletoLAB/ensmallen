@@ -11,19 +11,21 @@ use super::*;
 /// To validate a node you can use:
 /// ```rust
 /// # use graph::*;
-/// let this_library_node_name = "INTACT:EBI-25567068";
+/// let this_library_node_name1 = "INTACT:EBI-25567068";
+/// let this_library_node_name2 = "INTACT:EBI-986894";
 /// let not_this_library_node_name = "PizzaQuattroStagioni";
-/// assert!(is_valid_intact_node_name(this_library_node_name));
+/// assert!(is_valid_intact_node_name(this_library_node_name1));
+/// assert!(is_valid_intact_node_name(this_library_node_name2));
 /// assert!(!is_valid_intact_node_name(not_this_library_node_name));
 /// ```
 pub fn is_valid_intact_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
         Some(&["INTACT"]),
-        Some(19),
+        None,
         Some(":"),
         None,
-        Some(12),
+        None,
         None
     )
     .is_ok()

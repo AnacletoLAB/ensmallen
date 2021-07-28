@@ -26,7 +26,7 @@ impl EdgeFileReader {
     /// Return new EdgeFileReader object.
     ///
     /// # Arguments
-    /// * reader: CSVFilereader - Path where to store/load the file.
+    /// * `reader`: CSVFilereader - Path where to store/load the file.
     ///
     pub fn new<S: Into<String>>(path: S) -> Result<EdgeFileReader> {
         Ok(EdgeFileReader {
@@ -51,7 +51,7 @@ impl EdgeFileReader {
     /// Set the column of the edge IDs.
     ///
     /// # Arguments
-    /// * edge_ids_column: Option<String> - The name of the edge id column to use for the file.
+    /// * `edge_ids_column`: Option<String> - The name of the edge id column to use for the file.
     ///
     pub fn set_edge_ids_column<S: Into<String>>(
         mut self,
@@ -60,7 +60,7 @@ impl EdgeFileReader {
         if let Some(column) = edge_ids_column {
             let column = column.into();
             if column.is_empty() {
-                return Err("The given node types column is empty.".to_owned());
+                return Err("The given edge ids column is empty.".to_owned());
             }
 
             let column_number = self.reader.get_column_number(column)?;
@@ -84,7 +84,7 @@ impl EdgeFileReader {
             if column >= expected_elements {
                 return Err(format!(
                     concat!(
-                        "The edge id column number passed was {} but ",
+                        "The edge ids column number passed was {} but ",
                         "the first parsable line has {} values."
                     ),
                     column, expected_elements
@@ -103,7 +103,7 @@ impl EdgeFileReader {
     /// Set the column of the source nodes.
     ///
     /// # Arguments
-    /// * sources_column: Option<String> - The source nodes column to use for the file.
+    /// * `sources_column`: Option<String> - The source nodes column to use for the file.
     ///
     pub fn set_sources_column<S: Into<String>>(
         mut self,
@@ -115,16 +115,8 @@ impl EdgeFileReader {
                 return Err("The given source nodes column name is empty.".to_owned());
             }
 
-            match self.reader.get_column_number(column) {
-                Ok(ecn) => {
-                    self = self.set_sources_column_number(Some(ecn))?;
-                }
-                Err(e) => {
-                    if !self.skip_edge_types_if_unavailable {
-                        return Err(e);
-                    }
-                }
-            }
+            let column = self.reader.get_column_number(column)?;
+            self = self.set_sources_column_number(Some(column))?;
         }
         Ok(self)
     }
@@ -132,7 +124,7 @@ impl EdgeFileReader {
     /// Set the sources node column number.
     ///
     /// # Arguments
-    /// * sources_column_number: Option<usize> - The sources column number to use for the file.
+    /// * `sources_column_number`: Option<usize> - The sources column number to use for the file.
     ///
     pub fn set_sources_column_number(
         mut self,
@@ -162,7 +154,7 @@ impl EdgeFileReader {
     /// Set the destination nodes column name.
     ///
     /// # Arguments
-    /// * destination_column: Option<String> - The node types column to use for the file.
+    /// * `destination_column`: Option<String> - The node types column to use for the file.
     ///
     pub fn set_destinations_column<S: Into<String>>(
         mut self,
@@ -171,18 +163,10 @@ impl EdgeFileReader {
         if let Some(column) = destinations_column {
             let column = column.into();
             if column.is_empty() {
-                return Err("The given node types column is empty.".to_owned());
+                return Err("The given destinations column is empty.".to_owned());
             }
-            match self.reader.get_column_number(column) {
-                Ok(ecn) => {
-                    self = self.set_destinations_column_number(Some(ecn))?;
-                }
-                Err(e) => {
-                    if !self.skip_edge_types_if_unavailable {
-                        return Err(e);
-                    }
-                }
-            }
+            let column = self.reader.get_column_number(column)?;
+            self = self.set_destinations_column_number(Some(column))?;
         }
         Ok(self)
     }
@@ -195,7 +179,7 @@ impl EdgeFileReader {
     /// Set the column_number of the nodes.
     ///
     /// # Arguments
-    /// * destinations_column_number: Option<usize> - The destinations column number to use for the file.
+    /// * `destinations_column_number`: Option<usize> - The destinations column number to use for the file.
     ///
     pub fn set_destinations_column_number(
         mut self,
@@ -220,7 +204,7 @@ impl EdgeFileReader {
     /// Set the column of the nodes.
     ///
     /// # Arguments
-    /// * destination_column: Option<String> - The node types column to use for the file.
+    /// * `edge_type_column`: Option<String> - The node types column to use for the file.
     ///
     pub fn set_edge_types_column<S: Into<String>>(
         mut self,
@@ -229,18 +213,17 @@ impl EdgeFileReader {
         if let Some(column) = edge_type_column {
             let column = column.into();
             if column.is_empty() {
-                return Err("The given node types column is empty.".to_owned());
+                return Err("The given edge types column is empty.".to_owned());
             }
-            match self.reader.get_column_number(column) {
-                Ok(ecn) => {
-                    self = self.set_edge_types_column_number(Some(ecn))?;
+            let column_number = self.reader.get_column_number(column);
+            match (column_number, &self.skip_edge_types_if_unavailable) {
+                (Ok(column_number), _) => {
+                    self = self.set_edge_types_column_number(Some(column_number))?;
+                    Ok(())
                 }
-                Err(e) => {
-                    if !self.skip_edge_types_if_unavailable {
-                        return Err(e);
-                    }
-                }
-            }
+                (Err(_), true) => Ok(()),
+                (Err(e), false) => Err(e),
+            }?;
         }
         Ok(self)
     }
@@ -248,7 +231,7 @@ impl EdgeFileReader {
     /// Set the column_number of the nodes.
     ///
     /// # Arguments
-    /// * edge_types_column_number: Option<usize> - The edge_types column number to use for the file.
+    /// * `edge_types_column_number`: Option<usize> - The edge_types column number to use for the file.
     ///
     pub fn set_edge_types_column_number(
         mut self,
@@ -281,7 +264,7 @@ impl EdgeFileReader {
     /// Set the column of the edge weights.
     ///
     /// # Arguments
-    /// * weights_column: Option<String> - The edge weights column to use for the file.
+    /// * `weights_column`: Option<String> - The edge weights column to use for the file.
     ///
     pub fn set_weights_column<S: Into<String>>(
         mut self,
@@ -309,26 +292,26 @@ impl EdgeFileReader {
     /// Set the column_number of the nodes.
     ///
     /// # Arguments
-    /// * weights_column_number: Option<usize> - The weights column number to use for the file.
+    /// * `weights_column_number`: Option<usize> - The weights column number to use for the file.
     ///
     pub fn set_weights_column_number(
         mut self,
         weights_column_number: Option<usize>,
     ) -> Result<EdgeFileReader> {
-        if let Some(wcn) = &weights_column_number {
+        if let Some(weights_column_number) = weights_column_number {
             let expected_elements = self.reader.get_elements_per_line()?;
-            if *wcn >= expected_elements {
+            if weights_column_number >= expected_elements {
                 if !self.skip_edge_types_if_unavailable {
                     return Err(format!(
                         concat!(
                             "The weights column number passed was {} but ",
                             "the first parsable line has {} values."
                         ),
-                        wcn, expected_elements
+                        weights_column_number, expected_elements
                     ));
                 }
             } else {
-                self.weights_column_number = weights_column_number;
+                self.weights_column_number = Some(weights_column_number);
             }
         }
         Ok(self)
@@ -402,7 +385,7 @@ impl EdgeFileReader {
     /// Set the default default_weight.
     ///
     /// # Arguments
-    /// * default_weight: Option<WeightT> - The default_weight to use when default_weight is missing.
+    /// * `default_weight`: Option<WeightT> - The default_weight to use when default_weight is missing.
     ///
     pub fn set_default_weight(mut self, default_weight: Option<WeightT>) -> Result<EdgeFileReader> {
         if let Some(default_weight) = default_weight {
@@ -437,7 +420,7 @@ impl EdgeFileReader {
     /// Set the default edge type.
     ///
     /// # Arguments
-    /// * default_edge_type: Option<String> - The edge type to use when edge type is missing.
+    /// * `default_edge_type`: Option<String> - The edge type to use when edge type is missing.
     ///
     pub fn set_default_edge_type<S: Into<String>>(
         mut self,
@@ -750,8 +733,8 @@ impl EdgeFileReader {
 
         Ok(self
             .reader
-            .read_lines(
-                Some([
+            .read_lines(Some(
+                [
                     self.edge_ids_column_number,
                     Some(self.sources_column_number),
                     Some(self.destinations_column_number),
@@ -760,8 +743,8 @@ impl EdgeFileReader {
                 ]
                 .iter()
                 .filter_map(|&e| e)
-                .collect()),
-            )?
+                .collect(),
+            ))?
             .map(move |line| match line {
                 Ok((line_number, vals)) => self.parse_edge_line(line_number, vals),
                 Err(e) => Err(e),

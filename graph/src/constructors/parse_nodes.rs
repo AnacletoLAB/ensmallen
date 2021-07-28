@@ -18,7 +18,9 @@ pub(crate) fn parse_nodes(
     numeric_node_ids: bool,
     numeric_node_list_node_type_ids: bool,
     minimum_node_ids: Option<NodeT>,
+    skip_node_types_if_unavailable: Option<bool>,
 ) -> Result<(Vocabulary<NodeT>, Option<NodeTypeVocabulary>)> {
+    let skip_node_types_if_unavailable = skip_node_types_if_unavailable.unwrap_or(false);
     if !numeric_node_ids && minimum_node_ids.is_some() {
         return Err(
             "Giving the minimum id is not meaningfull when numeric_ids is false.".to_string(),
@@ -33,7 +35,7 @@ pub(crate) fn parse_nodes(
 
     let has_node_types = node_types_vocabulary.is_some();
 
-    if !has_node_types && numeric_node_list_node_type_ids {
+    if !has_node_types && !skip_node_types_if_unavailable && numeric_node_list_node_type_ids {
         return Err(concat!(
             "The numeric node list node type IDs parameter does not make sense ",
             "in the context where the node types have not been provided.\n",
@@ -51,13 +53,13 @@ pub(crate) fn parse_nodes(
         node_list_is_correct,
         numeric_node_list_node_type_ids,
     ) {
-        (false, _, _, false) => NodeTypeParser::ignore,
+        (false, _, _, _) => NodeTypeParser::ignore,
         (true, true, true, false) => NodeTypeParser::parse_strings_unchecked,
         (true, true, false, false) => NodeTypeParser::parse_strings,
         (true, false, true, false) => NodeTypeParser::get_unchecked,
         (true, false, false, false) => NodeTypeParser::get,
-        (_, _, true, true) => NodeTypeParser::to_numeric_unchecked,
-        (_, _, false, true) => NodeTypeParser::to_numeric,
+        (true, _, true, true) => NodeTypeParser::to_numeric_unchecked,
+        (true, _, false, true) => NodeTypeParser::to_numeric,
     };
     let node_types_vocabulary = node_types_vocabulary.unwrap_or(Vocabulary::new());
 
@@ -287,9 +289,23 @@ pub(crate) fn parse_nodes(
             Ok((Vocabulary::with_capacity(ntn as usize), None, None))
         }
         (None, None, false, None, _) => Ok((Vocabulary::new(), None, None)),
-        // TODO! imporve error
-        _ => unreachable!("All other cases must be explictily handled."),
+        // TODO! improve error
+        _ => unreachable!("All other cases must be explicitly handled."),
     }?;
+
+    // Executing self-consistency check for the node type IDs
+    if node_types_ids.as_ref().map_or(false, |node_types_ids| {
+        nodes_vocabulary.len() != node_types_ids.len()
+    }) {
+        panic!(
+            concat!(
+                "The length of the nodes vocabulary is {}, ",
+                "while the length of the node type IDs vector is {}."
+            ),
+            nodes_vocabulary.len(),
+            node_types_ids.unwrap().len()
+        );
+    }
 
     Ok((
         nodes_vocabulary,

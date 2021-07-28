@@ -10,21 +10,31 @@ use super::*;
 /// ```rust
 /// # use graph::*;
 /// let cord_pubmed_central_node_name1 = "CORD:PMC7187825";
-/// let cord_pubmed_central_node_name2 = "PMC7187825";
+/// let cord_pubmed_central_node_name2 = "CORD:PMC136939";
+/// let cord_pubmed_central_node_name3 = "CORD:PMC468896";
+/// let cord_pubmed_central_node_name4 = "CORD:PMC280685";
+/// let cord_pubmed_central_node_name5 = "CORD:PMC125543";
+/// let cord_pubmed_central_node_name6 = "CORD:PMC126080";
+/// let cord_pubmed_central_node_name7 = "PMC7187825";
 /// let not_cord_pubmed_central_node_name = "PizzaQuattroStagioni";
 /// assert!(is_valid_cord_pubmed_central_node_name(cord_pubmed_central_node_name1));
 /// assert!(is_valid_cord_pubmed_central_node_name(cord_pubmed_central_node_name2));
+/// assert!(is_valid_cord_pubmed_central_node_name(cord_pubmed_central_node_name3));
+/// assert!(is_valid_cord_pubmed_central_node_name(cord_pubmed_central_node_name4));
+/// assert!(is_valid_cord_pubmed_central_node_name(cord_pubmed_central_node_name5));
+/// assert!(is_valid_cord_pubmed_central_node_name(cord_pubmed_central_node_name6));
+/// assert!(is_valid_cord_pubmed_central_node_name(cord_pubmed_central_node_name7));
 /// assert!(!is_valid_cord_pubmed_central_node_name(not_cord_pubmed_central_node_name));
 /// ```
 pub fn is_valid_cord_pubmed_central_node_name(node_name: &str) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
         Some(&["CORD"]),
-        Some(15),
+        None,
         Some(":"),
         Some("PMC"),
-        Some(10),
-        Some(7),
+        None,
+        None,
     )
     .is_ok()
 }

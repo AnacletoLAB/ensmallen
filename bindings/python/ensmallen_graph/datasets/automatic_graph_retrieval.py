@@ -1,9 +1,10 @@
 import os
-from typing import Callable, List, Dict
+from typing import Callable, List, Dict, Optional
 import compress_json
 from downloaders import BaseDownloader
 
-from ..ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
+from ..ensmallen_graph import EnsmallenGraph
+from ..ensmallen_graph import edge_list_utils
 
 
 class AutomaticallyRetrievedGraph:
@@ -12,7 +13,7 @@ class AutomaticallyRetrievedGraph:
         graph_name: str,
         dataset: str,
         directed: bool = False,
-        preprocess_to_optimal: bool = True,
+        preprocess_to_optimal_undirected: bool = True,
         verbose: int = 2,
         cache_path: str = "graphs",
         callbacks: List[Callable] = (),
@@ -63,7 +64,7 @@ class AutomaticallyRetrievedGraph:
                 ).format(graph_name)
             )
         self._directed = directed
-        self._preprocess_to_optimal = preprocess_to_optimal
+        self._preprocess_to_optimal = not self._directed and preprocess_to_optimal_undirected
         self._name = graph_name
         self._verbose = verbose
         self._callbacks = callbacks
@@ -77,6 +78,95 @@ class AutomaticallyRetrievedGraph:
             target_directory=self._cache_path,
             verbose=self._verbose,
             process_number=1
+        )
+
+    def get_preprocessed_graph_directory_path(self) -> str:
+        """Return the path to the directory where to store the preprocessed graph."""
+        return os.path.join(
+            self._cache_path,
+            "preprocessed"
+        )
+
+    def get_preprocessed_graph_node_types_path(self) -> str:
+        """Return the path to file where the metadata of the graph are stored."""
+        return os.path.join(
+            self.get_preprocessed_graph_directory_path(),
+            "node_types.tsv"
+        )
+
+    def get_preprocessed_graph_nodes_path(self) -> str:
+        """Return the path to file where the metadata of the graph are stored."""
+        return os.path.join(
+            self.get_preprocessed_graph_directory_path(),
+            "nodes.tsv"
+        )
+
+    def get_preprocessed_graph_edge_types_path(self) -> str:
+        """Return the path to file where the metadata of the graph are stored."""
+        return os.path.join(
+            self.get_preprocessed_graph_directory_path(),
+            "edge_types.tsv"
+        )
+
+    def get_preprocessed_graph_edges_path(self) -> str:
+        """Return the path to file where the metadata of the graph are stored."""
+        return os.path.join(
+            self.get_preprocessed_graph_directory_path(),
+            "edges.tsv"
+        )
+
+    def get_preprocessed_graph_metadata_path(self) -> str:
+        """Return the path to file where the metadata of the graph are stored."""
+        return os.path.join(
+            self.get_preprocessed_graph_directory_path(),
+            "metadata.json"
+        )
+
+    def is_preprocessed(self) -> bool:
+        """Return whether this graph was preprocessed."""
+        return os.path.exists(
+            self.get_preprocessed_graph_metadata_path()
+        )
+
+    def store_preprocessed_metadata(
+        self,
+        node_types_number: Optional[int],
+        nodes_number: int,
+        edge_types_number: Optional[int],
+        edges_number: int,
+    ):
+        """Store the provided metadata.
+
+        Parameters
+        --------------------------------
+        node_types_number: Optional[int],
+            The number of unique node types existing in this graph.
+        nodes_number: int,
+            The number of unique nodes existing in this graph.
+        edge_types_number: Optional[int],
+            The number of unique edge types existing in this graph.
+        edges_number: int,
+            The number of edges existing in this graph.
+        """
+        compress_json.dump(
+            dict(
+                node_types_number=node_types_number,
+                nodes_number=nodes_number,
+                edge_types_number=edge_types_number,
+                edges_number=edges_number
+            ),
+            self.get_preprocessed_graph_metadata_path()
+        )
+
+    def get_preprocessed_metadata(self) -> Dict:
+        """Return the stored metadata.
+
+        Returns
+        --------------------------------
+        Dictionary with the metadata.
+        """
+        return compress_json.load(
+            self.get_preprocessed_graph_metadata_path()
         )
 
     def __call__(self) -> EnsmallenGraph:
@@ -93,6 +183,11 @@ class AutomaticallyRetrievedGraph:
             paths
         )
 
+        os.makedirs(
+            self.get_preprocessed_graph_directory_path(),
+            exist_ok=True
+        )
+
         # Call the provided callbacks to process the edge lists, if any.
         for callback, arguments in zip(self._callbacks, self._callbacks_arguments):
             callback(**{
@@ -104,16 +199,266 @@ class AutomaticallyRetrievedGraph:
         # Preprocess the edge list to an optimal edge list
         # if this is enabled.
         if self._preprocess_to_optimal:
-        
-        # Finally, load the graph
-        return EnsmallenGraph.from_csv(**{
-            **{
-                key: os.path.join(self._cache_path, value)
-                if key.endswith("_path") else value
-                for key, value in self._graph["arguments"].items()
-            },
-            "directed": self._directed,
-            "verbose": self._verbose > 0,
-            "name": self._name,
-            **self._additional_graph_kwargs,
-        })
+            # If any of the node types columns have been provided,
+            # we compute the target node types column
+            target_node_type_list_path = None
+            if any(
+                column in self._graph["arguments"]
+                for column in (
+                    "node_list_node_types_column_number",
+                    "node_list_node_types_column",
+                )
+            ):
+                target_node_type_list_path = self.get_preprocessed_graph_node_types_path()
+
+            # If any of the edge types columns have been provided,
+            # we compute the target edge types column
+            target_edge_type_list_path = None
+            if any(
+                column in self._graph["arguments"]
+                for column in (
+                    "edge_list_edge_types_column_number",
+                    "edge_list_edge_types_column",
+                )
+            ):
+                target_edge_type_list_path = self.get_preprocessed_graph_edge_types_path()
+
+            target_node_path = self.get_preprocessed_graph_nodes_path()
+            target_edge_path = self.get_preprocessed_graph_edges_path()
+
+            # If a node path was specified
+            node_path = self._graph["arguments"].get(
+                "node_path"
+            )
+            
+            # And it is not None
+            if node_path is not None:
+                # We add the cache path to it
+                node_path = os.path.join(
+                    self._cache_path, self._graph["arguments"]["node_path"])
+
+            if not self.is_preprocessed():
+                (
+                    node_types_number,
+                    nodes_number,
+                    edge_types_number,
+                    edges_number
+                ) = edge_list_utils.build_optimal_undirected_lists_files(
+                    # original_node_type_path,
+                    # original_node_type_list_separator,
+                    # original_node_types_column_number,
+                    # original_node_types_column,
+                    # original_node_types_ids_column_number,
+                    # original_node_types_ids_column,
+                    # original_numeric_node_type_ids,
+                    # original_minimum_node_type_id,
+                    # original_node_type_list_header,
+                    # original_node_type_list_rows_to_skip,
+                    # original_node_type_list_max_rows_number,
+                    # original_node_type_list_comment_symbol,
+                    # original_load_node_type_list_in_parallel,
+                    # original_node_type_list_is_correct,
+                    # node_types_number,
+                    target_node_type_list_path=target_node_type_list_path,
+                    target_node_type_list_separator="\t",
+                    target_node_types_ids_column_number=0,
+                    target_node_type_list_node_types_column_number=1,
+                    original_node_path=node_path,
+                    original_node_list_header=self._graph["arguments"].get(
+                        "node_header"
+                    ),
+                    node_list_rows_to_skip=self._graph["arguments"].get(
+                        "node_list_rows_to_skip"
+                    ),
+                    node_list_is_correct=self._graph["arguments"].get(
+                        "node_list_is_correct"
+                    ),
+                    node_list_max_rows_number=self._graph["arguments"].get(
+                        "node_list_max_rows_number"
+                    ),
+                    node_list_comment_symbol=self._graph["arguments"].get(
+                        "node_list_comment_symbol"
+                    ),
+                    default_node_type=self._graph["arguments"].get(
+                        "default_node_type"
+                    ),
+                    original_nodes_column_number=self._graph["arguments"].get(
+                        "nodes_column_number"
+                    ),
+                    original_nodes_column=self._graph["arguments"].get(
+                        "nodes_column"
+                    ),
+                    original_node_types_separator=self._graph["arguments"].get(
+                        "node_types_separator"
+                    ),
+                    original_node_list_node_types_column_number=self._graph["arguments"].get(
+                        "node_list_node_types_column_number"
+                    ),
+                    original_node_list_node_types_column=self._graph["arguments"].get(
+                        "node_list_node_types_column"
+                    ),
+                    original_node_ids_column=self._graph["arguments"].get(
+                        "node_ids_column"
+                    ),
+                    original_node_ids_column_number=self._graph["arguments"].get(
+                        "node_ids_column_number"
+                    ),
+                    nodes_number=self._graph["arguments"].get("nodes_number"),
+                    # original_minimum_node_id,
+                    # original_numeric_node_ids,
+                    # original_node_list_numeric_node_type_ids,
+                    original_skip_node_types_if_unavailable=True,
+                    original_load_node_list_in_parallel=True,
+                    maximum_node_id=self._graph["arguments"].get(
+                        "maximum_node_id"
+                    ),
+                    target_node_path=target_node_path,
+                    target_node_list_separator="\t",
+                    target_nodes_column=self._graph["arguments"].get(
+                        "nodes_column"
+                    ),
+                    target_node_ids_column_number=0,
+                    target_nodes_column_number=1,
+                    target_node_list_node_types_column_number=2,
+                    target_node_types_separator="|",
+                    # original_edge_type_path,
+                    # original_edge_type_list_separator,
+                    # original_edge_types_column_number,
+                    # original_edge_types_column,
+                    # original_edge_types_ids_column_number,
+                    # original_edge_types_ids_column,
+                    # original_numeric_edge_type_ids,
+                    # original_minimum_edge_type_id,
+                    # original_edge_type_list_header,
+                    # edge_type_list_rows_to_skip,
+                    # edge_type_list_max_rows_number,
+                    # edge_type_list_comment_symbol,
+                    # load_edge_type_list_in_parallel=True,
+                    # edge_type_list_is_correct,
+                    # edge_types_number,
+                    target_edge_type_list_path=target_edge_type_list_path,
+                    target_edge_type_list_separator="\t",
+                    target_edge_type_list_edge_types_column_number=1,
+                    target_edge_types_ids_column_number=0,
+                    original_edge_path=os.path.join(
+                        self._cache_path, self._graph["arguments"]["edge_path"]),
+                    original_edge_list_header=self._graph["arguments"].get(
+                        "edge_list_header"
+                    ),
+                    original_sources_column_number=self._graph["arguments"].get(
+                        "sources_column_number"
+                    ),
+                    original_sources_column=self._graph["arguments"].get(
+                        "sources_column"
+                    ),
+                    original_destinations_column_number=self._graph["arguments"].get(
+                        "destinations_column_number"
+                    ),
+                    original_destinations_column=self._graph["arguments"].get(
+                        "destinations_column"
+                    ),
+                    original_edge_list_edge_types_column_number=self._graph["arguments"].get(
+                        "edge_list_edge_types_column_number"
+                    ),
+                    original_edge_list_edge_types_column=self._graph["arguments"].get(
+                        "edge_list_edge_types_column"
+                    ),
+                    default_edge_type=self._graph["arguments"].get(
+                        "default_edge_type"
+                    ),
+                    original_weights_column_number=self._graph["arguments"].get(
+                        "weights_column_number"
+                    ),
+                    original_weights_column=self._graph["arguments"].get(
+                        "weights_column"
+                    ),
+                    default_weight=self._graph["arguments"].get(
+                        "default_weight"
+                    ),
+                    original_edge_list_numeric_node_ids=self._graph["arguments"].get(
+                        "edge_list_numeric_node_ids"
+                    ),
+                    skip_weights_if_unavailable=True,
+                    skip_edge_types_if_unavailable=True,
+                    edge_list_comment_symbol=self._graph["arguments"].get(
+                        "edge_list_comment_symbol"
+                    ),
+                    edge_list_max_rows_number=self._graph["arguments"].get(
+                        "edge_list_max_rows_number"
+                    ),
+                    edge_list_rows_to_skip=self._graph["arguments"].get(
+                        "edge_list_rows_to_skip"
+                    ),
+                    load_edge_list_in_parallel=True,
+                    edges_number=self._graph["arguments"].get("edges_number"),
+                    target_edge_path=target_edge_path,
+                    target_edge_list_separator="\t",
+                    verbose=self._verbose > 0,
+                    name=self._name,
+                )
+                # Store the obtained metadata
+                self.store_preprocessed_metadata(
+                    node_types_number,
+                    nodes_number,
+                    edge_types_number,
+                    edges_number
+                )
+            # Load the stored metadata
+            metadata = self.get_preprocessed_metadata()
+            # Load the graph
+            return EnsmallenGraph.from_csv(**{
+                **metadata,
+                "node_type_path": target_node_type_list_path,
+                "node_types_ids_column_number": 0,
+                "node_types_column_number": 1,
+                "node_type_list_is_correct": True,
+
+                "node_path": target_node_path,
+                "node_list_is_correct": True,
+                "node_types_separator": "|",
+                "node_ids_column_number": 0,
+                "nodes_column_number": 1,
+                "node_list_node_types_column_number": 2,
+                "nodes_number": metadata["nodes_number"],
+                "node_list_numeric_node_type_ids": True,
+                "skip_node_types_if_unavailable": True,
+
+                "edge_type_path": target_edge_type_list_path,
+                "edge_types_ids_column_number": 0,
+                "edge_types_column_number": 1,
+                "edge_type_list_is_correct": True,
+
+                "edge_path": target_edge_path,
+                "edge_list_header": False,
+                "edge_ids_column_number": 0,
+                "sources_column_number": 1,
+                "destinations_column_number": 2,
+                "edge_list_edge_types_column_number": None if metadata["edge_types_number"] is None else 3,
+                "weights_column_number": 3 + int(metadata["edge_types_number"] is not None),
+                "edge_list_numeric_edge_type_ids": True,
+                "edge_list_numeric_node_ids": True,
+                "skip_weights_if_unavailable": True,
+                "skip_edge_types_if_unavailable": True,
+                "edge_list_is_complete": True,
+                "edge_list_may_contain_duplicates": False,
+                "edge_list_is_sorted": True,
+                "edge_list_is_correct": True,
+                "edges_number": metadata["edges_number"],
+                "verbose": self._verbose > 0,
+                "directed": self._directed,
+                "name": self._name,
+                **self._additional_graph_kwargs,
+            })
+        else:
+            # Finally, load the graph
+            return EnsmallenGraph.from_csv(**{
+                **{
+                    key: os.path.join(self._cache_path, value)
+                    if key.endswith("_path") else value
+                    for key, value in self._graph["arguments"].items()
+                },
+                "directed": self._directed,
+                "verbose": self._verbose > 0,
+                "name": self._name,
+                **self._additional_graph_kwargs,
+            })

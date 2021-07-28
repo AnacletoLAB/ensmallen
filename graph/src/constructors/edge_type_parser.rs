@@ -101,28 +101,34 @@ impl EdgeTypeParser {
     ) -> Result<(usize, (T, T, Option<EdgeTypeT>, W))> {
         let (line_number, (src, dst, edge_type_name, weight)) = value?;
         let vocabulary = self.get_immutable();
-        let edge_type_id = match { edge_type_name.clone().unwrap() }.parse::<EdgeTypeT>() {
-            Ok(edge_type_id) => Ok::<_, String>(edge_type_id),
-            Err(_) => Err::<_, String>(format!(
-                concat!(
-                    "The given edge type name {:?} ",
-                    "cannot be parsed to an integer value."
-                ),
-                edge_type_name
-            )),
-        }?;
-        if vocabulary.len() as EdgeTypeT <= edge_type_id {
-            return Err(format!(
-                concat!(
-                    "The given edge type name {:?} ",
-                    "has a value greater than the number ",
-                    "of provided nodes {}."
-                ),
-                edge_type_id,
-                vocabulary.len()
-            ));
-        }
-        Ok((line_number, (src, dst, Some(edge_type_id), weight)))
+        let edge_type_id = edge_type_name.map_or(Ok::<_, String>(None), |edge_type_name| {
+            let edge_type_id = match edge_type_name.parse::<EdgeTypeT>() {
+                Ok(edge_type_id) => edge_type_id,
+                Err(_) => {
+                    return Err::<_, String>(format!(
+                        concat!(
+                            "The given edge type name {:?} ",
+                            "cannot be parsed to an integer value."
+                        ),
+                        edge_type_name
+                    ))
+                }
+            };
+            if vocabulary.len() as EdgeTypeT <= edge_type_id {
+                return Err(format!(
+                    concat!(
+                        "The given edge type name {:?} ",
+                        "has a value greater than the number ",
+                        "of provided nodes {}."
+                    ),
+                    edge_type_id,
+                    vocabulary.len()
+                ));
+            }
+            Ok(Some(edge_type_id))
+        })?;
+
+        Ok((line_number, (src, dst, edge_type_id, weight)))
     }
 
     pub fn to_numeric_unchecked<T, W>(
@@ -135,7 +141,7 @@ impl EdgeTypeParser {
             (
                 src,
                 dst,
-                Some(edge_type_name.unwrap().parse::<EdgeTypeT>().unwrap()),
+                edge_type_name.map(|edge_type_name| edge_type_name.parse::<EdgeTypeT>().unwrap()),
                 weight,
             ),
         ))

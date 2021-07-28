@@ -131,12 +131,19 @@ impl NodeFileReader {
             if column.is_empty() {
                 return Err("The given node column is empty.".to_owned());
             }
-            self.nodes_column_number = self
+            let column_number = self
                 .reader
                 .as_ref()
-                .map_or(Ok::<_, String>(None), |reader| {
-                    Ok(Some(reader.get_column_number(column)?))
-                })?;
+                .map(|reader| reader.get_column_number(column))
+                .unwrap();
+            match (column_number, &self.skip_node_types_if_unavailable) {
+                (Ok(column_number), _) => {
+                    self = self.set_nodes_column_number(Some(column_number))?;
+                    Ok(())
+                }
+                (Err(_), true) => Ok(()),
+                (Err(e), false) => Err(e),
+            }?;
         }
         Ok(self)
     }
@@ -145,15 +152,28 @@ impl NodeFileReader {
     ///
     /// # Arguments
     ///
-    /// * nodes_column_number: Option<usize> - The nodes column_number to use for the file.
-    ///t
+    /// * `nodes_column_number`: Option<usize> - The nodes column_number to use for the file.
+    ///
     pub fn set_nodes_column_number(
         mut self,
         nodes_column_number: Option<usize>,
     ) -> Result<NodeFileReader> {
-        if let Some(column) = nodes_column_number {
+        if let Some(nodes_column_number) = nodes_column_number {
             self.must_have_reader()?;
-            self.nodes_column_number = Some(column);
+            if let Some(reader) = self.reader.as_ref() {
+                let expected_elements = reader.get_elements_per_line()?;
+                if nodes_column_number >= expected_elements {
+                    return Err(format!(
+                        concat!(
+                            "The nodes column number passed was {} but ",
+                            "the first parsable line has {} values."
+                        ),
+                        nodes_column_number, expected_elements
+                    ));
+                } else {
+                    self.nodes_column_number = Some(nodes_column_number);
+                }
+            }
         }
         Ok(self)
     }
@@ -197,19 +217,14 @@ impl NodeFileReader {
                 .as_ref()
                 .map(|reader| reader.get_column_number(column))
                 .unwrap();
-            match column_number {
-                Ok(ecn) => {
-                    self.node_types_column_number = Some(ecn);
+            match (column_number, &self.skip_node_types_if_unavailable) {
+                (Ok(column_number), _) => {
+                    self = self.set_node_types_column_number(Some(column_number))?;
                     Ok(())
                 }
-                Err(e) => {
-                    if !self.skip_node_types_if_unavailable {
-                        Err(e)
-                    } else {
-                        Ok(())
-                    }
-                }
-            }?
+                (Err(_), true) => Ok(()),
+                (Err(e), false) => Err(e),
+            }?;
         }
         Ok(self)
     }
@@ -224,9 +239,24 @@ impl NodeFileReader {
         mut self,
         node_types_column_number: Option<usize>,
     ) -> Result<NodeFileReader> {
-        if let Some(column) = node_types_column_number {
+        if let Some(node_types_column_number) = node_types_column_number {
             self.must_have_reader()?;
-            self.node_types_column_number = Some(column);
+            if let Some(reader) = self.reader.as_ref() {
+                let expected_elements = reader.get_elements_per_line()?;
+                if node_types_column_number >= expected_elements {
+                    if !self.skip_node_types_if_unavailable {
+                        return Err(format!(
+                            concat!(
+                                "The node types column number passed was {} but ",
+                                "the first parsable line has {} values."
+                            ),
+                            node_types_column_number, expected_elements
+                        ));
+                    }
+                } else {
+                    self.node_types_column_number = Some(node_types_column_number);
+                }
+            }
         }
         Ok(self)
     }

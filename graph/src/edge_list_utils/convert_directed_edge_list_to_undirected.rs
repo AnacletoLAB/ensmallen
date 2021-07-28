@@ -3,7 +3,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 /// Create a new undirected edge list from a given directed one by duplicating the undirected edges.
 ///
 /// # Arguments
-/// * `original_edge_list_path`: &str - The path from where to load the original edge list.
+/// * `original_edge_path`: &str - The path from where to load the original edge list.
 /// * `original_edge_list_separator`: Option<String> - Separator to use for the original edge list.
 /// * `original_edge_list_header`: Option<bool> - Whether the original edge list has an header.
 /// * `original_sources_column`: Option<String> - The column name to use to load the sources in the original edges list.
@@ -14,7 +14,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 /// * `original_edge_list_edge_type_column_number`: Option<usize> - The column number to use for the edge types in the original edges list.
 /// * `original_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
 /// * `original_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
-/// * `target_edge_list_path`: &str - The path from where to load the target edge list. This must be different from the original edge list path.
+/// * `target_edge_path`: &str - The path from where to load the target edge list. This must be different from the original edge list path.
 /// * `target_edge_list_separator`: Option<String> - Separator to use for the target edge list. If None, the one provided from the original edge list will be used.
 /// * `target_edge_list_header`: Option<bool> - Whether the target edge list has an header. If None, the one provided from the original edge list will be used.
 /// * `target_sources_column`: Option<String> - The column name to use to load the sources in the target edges list. If None, the one provided from the original edge list will be used.
@@ -42,7 +42,7 @@ use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT
 ///
 /// TODO! The edge ids can be computed within this method if required!
 pub fn convert_directed_edge_list_to_undirected(
-    original_edge_list_path: &str,
+    original_edge_path: &str,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
     original_sources_column: Option<String>,
@@ -53,7 +53,7 @@ pub fn convert_directed_edge_list_to_undirected(
     original_edge_list_edge_type_column_number: Option<usize>,
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
-    target_edge_list_path: &str,
+    target_edge_path: &str,
     target_edge_list_separator: Option<String>,
     target_edge_list_header: Option<bool>,
     target_sources_column_number: Option<usize>,
@@ -75,7 +75,7 @@ pub fn convert_directed_edge_list_to_undirected(
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<EdgeT> {
-    if original_edge_list_path == target_edge_list_path {
+    if original_edge_path == target_edge_path {
         return Err(concat!(
             "Both the original and the target edge list path ",
             "are set to the same path.\n",
@@ -87,7 +87,7 @@ pub fn convert_directed_edge_list_to_undirected(
         .to_string());
     }
     let name = name.unwrap_or("Graph".to_owned());
-    let file_reader = EdgeFileReader::new(original_edge_list_path)?
+    let file_reader = EdgeFileReader::new(original_edge_path)?
         .set_comment_symbol(comment_symbol)?
         .set_rows_to_skip(rows_to_skip)?
         .set_max_rows_number(max_rows_number)?
@@ -109,7 +109,7 @@ pub fn convert_directed_edge_list_to_undirected(
         // To avoid a duplicated loading bar.
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_graph_name(name);
-    let file_writer = EdgeFileWriter::new(target_edge_list_path)
+    let file_writer = EdgeFileWriter::new(target_edge_path)
         .set_destinations_column(target_destinations_column.or(original_destinations_column))
         .set_destinations_column_number(
             target_destinations_column_number
