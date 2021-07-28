@@ -118,7 +118,7 @@ pub fn filter_duplicates_from_edge_list(
             // Removing eventual errors.
             .filter_map(|line| line.ok())
             // Processing line
-            .filter( |(_, line)| {
+            .filter(|(_, line)| {
                 last_line
                     .replace(line.clone())
                     .map_or(true, |last_line| &last_line != line)

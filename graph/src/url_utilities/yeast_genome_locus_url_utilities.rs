@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_yeast_genome_locus_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("S"),
         Some(10),
-        Some(9)
+        Some(9),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Yeast Genome Locus node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_yeast_genome_locus_url_from_node_name(node_name: &st
         Some(":"),
     )
 }
-

@@ -216,7 +216,7 @@ impl Graph {
         return_edge_weights: Option<bool>,
         max_neighbours: Option<NodeT>,
     ) -> Result<
-        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), Vec<NodeTypeT>)> + '_
+        impl IndexedParallelIterator<Item = ((Vec<NodeT>, Option<Vec<WeightT>>), Vec<NodeTypeT>)> + '_,
     > {
         if let Some(return_edge_weights) = return_edge_weights {
             if return_edge_weights {
@@ -330,7 +330,7 @@ impl Graph {
                     Option<EdgeTypeT>,
                     bool,
                 ),
-            > + 'a
+            > + 'a,
     > {
         let batch_size = batch_size.unwrap_or(1024);
         let negative_samples_rate = negative_samples_rate.unwrap_or(0.5);
@@ -622,15 +622,15 @@ impl Graph {
             "Computing edge metrics",
             self.get_directed_edges_number() as usize,
         );
-        self.par_iter_directed_edge_node_ids().progress_with(pb).map(
-            move |(_, source_node_id, destination_node_id)| unsafe {
+        self.par_iter_directed_edge_node_ids()
+            .progress_with(pb)
+            .map(move |(_, source_node_id, destination_node_id)| unsafe {
                 self.get_unchecked_all_edge_metrics_from_node_ids(
                     source_node_id,
                     destination_node_id,
                     normalize,
                 )
-            },
-        )
+            })
     }
 
     #[fuzz_type(iterations: Option<u8>)]

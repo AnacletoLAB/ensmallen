@@ -1016,7 +1016,7 @@ impl Graph {
             Some(true),
             Some(selected_edges_number),
             true,
-                self.has_selfloops(),
+            self.has_selfloops(),
             format!("{} subgraph", self.get_name()),
         )
     }

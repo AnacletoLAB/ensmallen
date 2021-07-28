@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_ncbi_clinical_variants_submitters_node_name(node_name: &str) -> 
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given NCBI Clinical Variants Submitters node name.
@@ -40,11 +38,12 @@ pub fn is_valid_ncbi_clinical_variants_submitters_node_name(node_name: &str) -> 
 /// This method assumes that the provided node name is a NCBI Clinical Variants Submitters node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_ncbi_clinical_variants_submitters_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_ncbi_clinical_variants_submitters_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://www.ncbi.nlm.nih.gov/clinvar/submitters/{node_name}",
         node_name,
         Some(":"),
     )
 }
-

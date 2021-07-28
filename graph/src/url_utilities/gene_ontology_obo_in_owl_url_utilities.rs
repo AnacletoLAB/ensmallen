@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -26,11 +25,10 @@ pub fn is_valid_gene_ontology_obo_in_owl_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Gene Ontology OBO in OWL node name.
@@ -49,4 +47,3 @@ pub(crate) unsafe fn format_gene_ontology_obo_in_owl_url_from_node_name(node_nam
         Some(":"),
     )
 }
-

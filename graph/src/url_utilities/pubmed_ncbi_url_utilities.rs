@@ -15,8 +15,16 @@ use super::*;
 /// assert!(!is_valid_pubmed_ncbi_node_name(not_pubmed_ncbi_node_name));
 /// ```
 pub fn is_valid_pubmed_ncbi_node_name(node_name: &str) -> bool {
-    is_valid_node_name_from_seeds(node_name, Some(&["PMID"]), None, Some(":"), None, None, None)
-        .is_ok()
+    is_valid_node_name_from_seeds(
+        node_name,
+        Some(&["PMID"]),
+        None,
+        Some(":"),
+        None,
+        None,
+        None,
+    )
+    .is_ok()
 }
 
 /// Returns URL from given Pubmed NCBI node name.

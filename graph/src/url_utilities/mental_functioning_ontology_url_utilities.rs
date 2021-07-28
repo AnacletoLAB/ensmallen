@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_mental_functioning_ontology_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         Some(7),
-        Some(7)
+        Some(7),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Mental Functioning Ontology node name.
@@ -40,11 +38,12 @@ pub fn is_valid_mental_functioning_ontology_node_name(node_name: &str) -> bool {
 /// This method assumes that the provided node name is a Mental Functioning Ontology node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_mental_functioning_ontology_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_mental_functioning_ontology_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://purl.obolibrary.org/obo/MF_{node_name}",
         node_name,
         Some(":"),
     )
 }
-

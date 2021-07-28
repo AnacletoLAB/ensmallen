@@ -58,8 +58,8 @@ pub fn get_minmax_node_from_numeric_edge_list(
         .read_lines()?
         // Removing eventual errors.
         .filter_map(|line| line.ok())
-        .map(|(_, (src_name, dst_name, _, _))| {
-            match src_name.parse::<EdgeT>() {
+        .map(
+            |(_, (src_name, dst_name, _, _))| match src_name.parse::<EdgeT>() {
                 Ok(src_id) => match dst_name.parse::<EdgeT>() {
                     Ok(dst_id) => Ok((dst_id.min(src_id), dst_id.max(src_id), 1)),
                     Err(_) => Err(format!(
@@ -71,12 +71,16 @@ pub fn get_minmax_node_from_numeric_edge_list(
                     "Unable to convert given source node ID {} to numeric.",
                     src_name
                 )),
-            }
-        })
+            },
+        )
         .reduce(
             || Ok((EdgeT::MAX, 0 as EdgeT, 0)),
-            |line1: Result<(EdgeT, EdgeT, EdgeT)>, line2: Result<(EdgeT, EdgeT, EdgeT)>| match (line1, line2) {
-                (Ok((min1, max1, total_edges1)), Ok((min2, max2, total_edges2))) => Ok((min1.min(min2), max1.max(max2), total_edges1 + total_edges2)),
+            |line1: Result<(EdgeT, EdgeT, EdgeT)>, line2: Result<(EdgeT, EdgeT, EdgeT)>| match (
+                line1, line2,
+            ) {
+                (Ok((min1, max1, total_edges1)), Ok((min2, max2, total_edges2))) => {
+                    Ok((min1.min(min2), max1.max(max2), total_edges1 + total_edges2))
+                }
                 (Err(e), _) => Err(e),
                 (_, Err(e)) => Err(e),
             },

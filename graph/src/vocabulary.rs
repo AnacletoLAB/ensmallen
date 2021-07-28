@@ -96,7 +96,7 @@ impl<IndexT: ToFromUsize + Sync + Debug> Vocabulary<IndexT> {
     /// Return whether this vocabulary is numeric or string based.
     pub fn is_numeric(&self) -> bool {
         match self {
-            Vocabulary::Numeric{..} => true,
+            Vocabulary::Numeric { .. } => true,
             _ => false,
         }
     }

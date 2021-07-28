@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_animal_genome_rainbow_trout_qtl_node_name(node_name: &str) -> bo
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Animal Genome Rainbow-Trout QTL node name.
@@ -40,11 +38,12 @@ pub fn is_valid_animal_genome_rainbow_trout_qtl_node_name(node_name: &str) -> bo
 /// This method assumes that the provided node name is a Animal Genome Rainbow-Trout QTL node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_animal_genome_rainbow_trout_qtl_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_animal_genome_rainbow_trout_qtl_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "https://www.animalgenome.org/cgi-bin/QTLdb/OM/qdetails?QTL_ID={node_name}",
         node_name,
         Some(":"),
     )
 }
-

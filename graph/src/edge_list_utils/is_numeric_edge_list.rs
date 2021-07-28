@@ -55,8 +55,7 @@ pub fn is_numeric_edge_list(
         // Removing eventual errors.
         .filter_map(|line| line.ok())
         .all(|(_, (src_name, dst_name, _, _))| {
-            src_name.parse::<EdgeT>().is_ok() &&
-            dst_name.parse::<EdgeT>().is_ok()
+            src_name.parse::<EdgeT>().is_ok() && dst_name.parse::<EdgeT>().is_ok()
         });
     Ok(is_numeric)
 }

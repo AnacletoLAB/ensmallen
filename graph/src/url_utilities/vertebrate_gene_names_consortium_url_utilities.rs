@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_vertebrate_gene_names_consortium_node_name(node_name: &str) -> b
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Vertebrate Gene Names Consortium node name.
@@ -40,11 +38,12 @@ pub fn is_valid_vertebrate_gene_names_consortium_node_name(node_name: &str) -> b
 /// This method assumes that the provided node name is a Vertebrate Gene Names Consortium node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_vertebrate_gene_names_consortium_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_vertebrate_gene_names_consortium_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "https://vertebrate.genenames.org/data/gene-symbol-report/#!/vgnc_id/{node_name}",
         node_name,
         Some(":"),
     )
 }
-

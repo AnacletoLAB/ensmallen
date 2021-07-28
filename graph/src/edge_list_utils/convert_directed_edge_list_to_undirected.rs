@@ -1,4 +1,4 @@
-use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, Result, WeightT, EdgeT};
+use crate::{utils::ItersWrapper, EdgeFileReader, EdgeFileWriter, EdgeT, Result, WeightT};
 
 /// Create a new undirected edge list from a given directed one by duplicating the undirected edges.
 ///

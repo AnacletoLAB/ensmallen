@@ -54,8 +54,6 @@ pub fn are_there_selfloops_in_edge_list(
         .read_lines()?
         // Removing eventual errors.
         .filter_map(|line| line.ok())
-        .any(|(_, (src_name, dst_name, _, _))| {
-            src_name == dst_name
-        });
+        .any(|(_, (src_name, dst_name, _, _))| src_name == dst_name);
     Ok(contains_selfloops)
 }

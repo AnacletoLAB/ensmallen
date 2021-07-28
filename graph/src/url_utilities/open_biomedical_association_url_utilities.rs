@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_open_biomedical_association_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Open Biomedical Association node name.
@@ -40,11 +38,8 @@ pub fn is_valid_open_biomedical_association_node_name(node_name: &str) -> bool {
 /// This method assumes that the provided node name is a Open Biomedical Association node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_open_biomedical_association_url_from_node_name(node_name: &str) -> String {
-    format_url_from_node_name(
-        "http://purl.org/oban/{node_name}",
-        node_name,
-        Some(":"),
-    )
+pub(crate) unsafe fn format_open_biomedical_association_url_from_node_name(
+    node_name: &str,
+) -> String {
+    format_url_from_node_name("http://purl.org/oban/{node_name}", node_name, Some(":"))
 }
-

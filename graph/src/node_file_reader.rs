@@ -624,9 +624,15 @@ impl NodeFileReader {
                 return Err("The node id cannot be undefined.".to_owned());
             }
             let node_id = maybe_node_id.unwrap();
-            match node_id.parse::<usize>() {
+            match node_id.as_str().parse::<usize>() {
                 Ok(node_id) => Ok(node_id),
-                Err(e) => Err(e.to_string()),
+                Err(_) => Err(format!(
+                    concat!(
+                        "Unable to pass the node ID `{:?}` to ",
+                        "a numeric value while reading line {}."
+                    ),
+                    node_id, line_number
+                )),
             }?
         } else {
             line_number

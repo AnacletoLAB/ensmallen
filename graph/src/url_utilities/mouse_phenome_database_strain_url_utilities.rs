@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_mouse_phenome_database_strain_node_name(node_name: &str) -> bool
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Mouse Phenome Database Strain node name.
@@ -40,11 +38,12 @@ pub fn is_valid_mouse_phenome_database_strain_node_name(node_name: &str) -> bool
 /// This method assumes that the provided node name is a Mouse Phenome Database Strain node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_mouse_phenome_database_strain_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_mouse_phenome_database_strain_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://phenome.jax.org/db/q?rtn=strains/details&strainid={node_name}",
         node_name,
         Some(":"),
     )
 }
-

@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_unified_medical_language_system_semantic_code_node_name(node_nam
         Some(":"),
         Some("T"),
         Some(4),
-        Some(3)
+        Some(3),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Unified Medical Language System Semantic Code node name.
@@ -40,11 +38,12 @@ pub fn is_valid_unified_medical_language_system_semantic_code_node_name(node_nam
 /// This method assumes that the provided node name is a Unified Medical Language System Semantic Code node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_unified_medical_language_system_semantic_code_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_unified_medical_language_system_semantic_code_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "https://metamap.nlm.nih.gov/Docs/SemanticTypes_2018AB.txt/code#{node_name}",
         node_name,
         Some(":"),
     )
 }
-

@@ -31,7 +31,7 @@ class AutomaticallyRetrievedGraph:
         directed: bool = False,
             Whether to load the graph as directed or undirected.
             By default false.
-        preprocess_to_optimal: bool = True,
+        preprocess_to_optimal_undirected: bool = True,
             Whether to preprocess the node list and edge list
             to be loaded optimally in both time and memory.
         verbose: int = 2,
@@ -64,7 +64,7 @@ class AutomaticallyRetrievedGraph:
                 ).format(graph_name)
             )
         self._directed = directed
-        self._preprocess_to_optimal = not self._directed and preprocess_to_optimal_undirected
+        self._preprocess_to_optimal = preprocess_to_optimal_undirected
         self._name = graph_name
         self._verbose = verbose
         self._callbacks = callbacks
@@ -84,7 +84,8 @@ class AutomaticallyRetrievedGraph:
         """Return the path to the directory where to store the preprocessed graph."""
         return os.path.join(
             self._cache_path,
-            "preprocessed"
+            "preprocessed",
+            "directed" if self._directed else "undirected"
         )
 
     def get_preprocessed_graph_node_types_path(self) -> str:
@@ -230,12 +231,14 @@ class AutomaticallyRetrievedGraph:
             node_path = self._graph["arguments"].get(
                 "node_path"
             )
-            
+
             # And it is not None
             if node_path is not None:
                 # We add the cache path to it
                 node_path = os.path.join(
-                    self._cache_path, self._graph["arguments"]["node_path"])
+                    self._cache_path,
+                    self._graph["arguments"]["node_path"]
+                )
 
             if not self.is_preprocessed():
                 (
@@ -243,7 +246,7 @@ class AutomaticallyRetrievedGraph:
                     nodes_number,
                     edge_types_number,
                     edges_number
-                ) = edge_list_utils.build_optimal_undirected_lists_files(
+                ) = edge_list_utils.build_optimal_lists_files(
                     # original_node_type_path,
                     # original_node_type_list_separator,
                     # original_node_types_column_number,
@@ -393,6 +396,7 @@ class AutomaticallyRetrievedGraph:
                     edges_number=self._graph["arguments"].get("edges_number"),
                     target_edge_path=target_edge_path,
                     target_edge_list_separator="\t",
+                    directed=self._directed,
                     verbose=self._verbose > 0,
                     name=self._name,
                 )
@@ -418,7 +422,7 @@ class AutomaticallyRetrievedGraph:
                 "node_types_separator": "|",
                 "node_ids_column_number": 0,
                 "nodes_column_number": 1,
-                "node_list_node_types_column_number": 2,
+                "node_list_node_types_column_number": None if metadata["node_types_number"] is None else 3,
                 "nodes_number": metadata["nodes_number"],
                 "node_list_numeric_node_type_ids": True,
                 "skip_node_types_if_unavailable": True,
@@ -449,16 +453,16 @@ class AutomaticallyRetrievedGraph:
                 "name": self._name,
                 **self._additional_graph_kwargs,
             })
-        else:
-            # Finally, load the graph
-            return EnsmallenGraph.from_csv(**{
-                **{
-                    key: os.path.join(self._cache_path, value)
-                    if key.endswith("_path") else value
-                    for key, value in self._graph["arguments"].items()
-                },
-                "directed": self._directed,
-                "verbose": self._verbose > 0,
-                "name": self._name,
-                **self._additional_graph_kwargs,
-            })
+
+        # Otherwise just load the graph.
+        return EnsmallenGraph.from_csv(**{
+            **{
+                key: os.path.join(self._cache_path, value)
+                if key.endswith("_path") else value
+                for key, value in self._graph["arguments"].items()
+            },
+            "directed": self._directed,
+            "verbose": self._verbose > 0,
+            "name": self._name,
+            **self._additional_graph_kwargs,
+        })

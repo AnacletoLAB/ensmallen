@@ -1,4 +1,3 @@
-
 pub trait ArgMaxArgMin<T> {
     fn argmax(&self) -> Option<(usize, T)>;
     fn argmin(&self) -> Option<(usize, T)>;
@@ -33,4 +32,3 @@ impl<T: PartialOrd + Copy> ArgMaxArgMin<T> for Vec<T> {
             })
     }
 }
-

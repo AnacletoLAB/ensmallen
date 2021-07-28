@@ -268,20 +268,17 @@ impl Graph {
     ///
     pub fn to_complementary(&self) -> Graph {
         build_graph_from_integers(
-            Some(
-                self.par_iter_node_ids()
-                    .flat_map(|src| {
-                        self.iter_node_ids()
-                            .filter_map(|dst| {
-                                if self.has_edge_from_node_ids(src, dst) {
-                                    None
-                                } else {
-                                    Some((0, (src, dst, None, WeightT::NAN)))
-                                }
-                            })
-                            .collect::<Vec<_>>()
-                    }),
-            ),
+            Some(self.par_iter_node_ids().flat_map(|src| {
+                self.iter_node_ids()
+                    .filter_map(|dst| {
+                        if self.has_edge_from_node_ids(src, dst) {
+                            None
+                        } else {
+                            Some((0, (src, dst, None, WeightT::NAN)))
+                        }
+                    })
+                    .collect::<Vec<_>>()
+            })),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),

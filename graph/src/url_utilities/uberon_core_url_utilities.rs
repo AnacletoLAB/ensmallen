@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_uberon_core_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Uberon Core node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_uberon_core_url_from_node_name(node_name: &str) -> S
         Some(":"),
     )
 }
-

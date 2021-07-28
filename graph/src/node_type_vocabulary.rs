@@ -31,30 +31,32 @@ pub struct NodeTypeVocabularyMemoryStats {
 
 impl NodeTypeVocabularyMemoryStats {
     pub fn total(&self) -> usize {
-        self.ids + self.vocabulary.total() 
-        + self.counts + self.metadata
+        self.ids + self.vocabulary.total() + self.counts + self.metadata
     }
 }
-
 
 impl NodeTypeVocabulary {
     pub fn memory_stats(&self) -> NodeTypeVocabularyMemoryStats {
         use std::mem::size_of;
-        NodeTypeVocabularyMemoryStats{
-            ids: size_of::<Vec<Option<Vec<NodeTypeT>>>>() + self.ids.iter()
-                .map(|x| 
-                    size_of::<Option<Vec<NodeTypeT>>>() + x.as_ref().map_or(0, |v| 
-                        size_of::<Vec<NodeTypeT>>() + 
-                        v.capacity() * size_of::<NodeTypeT>()
-                )
-            ).sum::<usize>(),
+        NodeTypeVocabularyMemoryStats {
+            ids: size_of::<Vec<Option<Vec<NodeTypeT>>>>()
+                + self
+                    .ids
+                    .iter()
+                    .map(|x| {
+                        size_of::<Option<Vec<NodeTypeT>>>()
+                            + x.as_ref().map_or(0, |v| {
+                                size_of::<Vec<NodeTypeT>>() + v.capacity() * size_of::<NodeTypeT>()
+                            })
+                    })
+                    .sum::<usize>(),
             vocabulary: self.vocabulary.memory_stats(),
             counts: size_of::<Vec<NodeT>>() + self.counts.capacity() * size_of::<NodeT>(),
             metadata: size_of::<NodeT>()
-            + size_of::<NodeT>()
-            + size_of::<NodeTypeT>()
-            + size_of::<NodeT>()
-            + size_of::<bool>()
+                + size_of::<NodeT>()
+                + size_of::<NodeTypeT>()
+                + size_of::<NodeT>()
+                + size_of::<bool>(),
         }
     }
 }

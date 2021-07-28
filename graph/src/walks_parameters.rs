@@ -226,10 +226,7 @@ impl WalksParameters {
     /// # use graph::walks_parameters::WalksParameters;
     /// assert!(WalksParameters::new(32).unwrap().set_max_neighbours(None).is_ok());
     /// ```
-    pub fn set_max_neighbours(
-        mut self,
-        max_neighbours: Option<NodeT>,
-    ) -> Result<WalksParameters> {
+    pub fn set_max_neighbours(mut self, max_neighbours: Option<NodeT>) -> Result<WalksParameters> {
         if let Some(mn) = max_neighbours {
             if mn == 0 {
                 return Err(String::from(
@@ -295,10 +292,7 @@ impl WalksParameters {
     /// # use graph::walks_parameters::WalksParameters;
     /// assert!(WalksParameters::new(32).unwrap().set_return_weight(None).unwrap().is_first_order_walk());
     /// ```
-    pub fn set_return_weight(
-        mut self,
-        return_weight: Option<WeightT>,
-    ) -> Result<WalksParameters> {
+    pub fn set_return_weight(mut self, return_weight: Option<WeightT>) -> Result<WalksParameters> {
         if let Some(rw) = return_weight {
             self.single_walk_parameters.weights.return_weight =
                 WalkWeights::validate_weight("return_weight", rw)?;

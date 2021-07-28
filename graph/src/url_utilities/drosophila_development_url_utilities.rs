@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_drosophila_development_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         Some(8),
-        Some(8)
+        Some(8),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Drosophila development node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_drosophila_development_url_from_node_name(node_name:
         Some(":"),
     )
 }
-

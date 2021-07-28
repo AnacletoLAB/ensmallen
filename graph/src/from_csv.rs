@@ -112,10 +112,10 @@ impl Graph {
             edge_file_reader
                 .as_ref()
                 .map(|etr| etr.numeric_edge_type_ids.clone()),
-                node_file_reader
+            node_file_reader
                 .as_ref()
                 .map(|etr| etr.skip_node_types_if_unavailable.clone()),
-                edge_file_reader
+            edge_file_reader
                 .as_ref()
                 .map(|etr| etr.skip_edge_types_if_unavailable.clone()),
             may_have_singletons,
@@ -262,7 +262,7 @@ impl Graph {
         edge_type_list_max_rows_number: Option<usize>,
         edge_type_list_comment_symbol: Option<String>,
         load_edge_type_list_in_parallel: Option<bool>,
-        
+
         edge_path: Option<String>,
         edge_list_separator: Option<String>,
         edge_list_header: Option<bool>,

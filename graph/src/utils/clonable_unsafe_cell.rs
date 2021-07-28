@@ -3,7 +3,7 @@ use std::fmt::Debug;
 
 /// A Clonable unsafe cell
 pub(crate) struct ClonableUnsafeCell<T> {
-    value: UnsafeCell<T>
+    value: UnsafeCell<T>,
 }
 
 impl<T: Debug> Debug for ClonableUnsafeCell<T> {
@@ -20,8 +20,8 @@ impl<T: Default> Default for ClonableUnsafeCell<T> {
 
 impl<T: Clone> Clone for ClonableUnsafeCell<T> {
     fn clone(&self) -> Self {
-        ClonableUnsafeCell{
-            value: UnsafeCell::new(unsafe{(*self.value.get()).clone()})
+        ClonableUnsafeCell {
+            value: UnsafeCell::new(unsafe { (*self.value.get()).clone() }),
         }
     }
 }
@@ -32,8 +32,8 @@ impl<T> ClonableUnsafeCell<T> {
     }
 
     pub fn new(value: T) -> Self {
-        ClonableUnsafeCell{
-            value: UnsafeCell::new(value)
+        ClonableUnsafeCell {
+            value: UnsafeCell::new(value),
         }
     }
 }

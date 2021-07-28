@@ -638,9 +638,15 @@ impl EdgeFileReader {
                 return Err("The edge id cannot be undefined.".to_owned());
             }
             let edge_id = maybe_edge_id.unwrap();
-            match edge_id.parse::<usize>() {
+            match edge_id.as_str().parse::<usize>() {
                 Ok(edge_id) => Ok(edge_id),
-                Err(e) => Err(e.to_string()),
+                Err(_) => Err(format!(
+                    concat!(
+                        "Unable to pass the edge ID `{:?}` to ",
+                        "a numeric value while reading line {}."
+                    ),
+                    edge_id, line_number
+                )),
             }?
         } else {
             line_number

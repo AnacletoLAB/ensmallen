@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_protein_modification_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         Some(5),
-        Some(5)
+        Some(5),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Protein modification node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_protein_modification_url_from_node_name(node_name: &
         Some(":"),
     )
 }
-

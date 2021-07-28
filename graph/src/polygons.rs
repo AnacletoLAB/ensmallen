@@ -242,13 +242,7 @@ impl Graph {
         if self.is_directed() {
             unsafe { self.get_naive_number_of_triangles(low_centrality, verbose) }
         } else {
-            unsafe {
-                self.get_undirected_number_of_triangles(
-                    normalize,
-                    low_centrality,
-                    verbose,
-                )
-            }
+            unsafe { self.get_undirected_number_of_triangles(normalize, low_centrality, verbose) }
         }
     }
 
@@ -278,11 +272,7 @@ impl Graph {
     /// # Arguments
     /// * `low_centrality`: Option<usize> - The threshold over which to switch to parallel matryoshka. By default 50.
     /// * `verbose`: Option<bool> - Whether to show a loading bar.
-    pub fn get_transitivity(
-        &self,
-        low_centrality: Option<usize>,
-        verbose: Option<bool>,
-    ) -> f64 {
+    pub fn get_transitivity(&self, low_centrality: Option<usize>, verbose: Option<bool>) -> f64 {
         self.get_number_of_triangles(Some(false), low_centrality, verbose) as f64
             / self.get_triads_number() as f64
     }
@@ -531,16 +521,10 @@ impl Graph {
         verbose: Option<bool>,
     ) -> Vec<NodeT> {
         if self.is_directed() {
-            unsafe {
-                self.get_naive_number_of_triangles_per_node(low_centrality, verbose)
-            }
+            unsafe { self.get_naive_number_of_triangles_per_node(low_centrality, verbose) }
         } else {
             unsafe {
-                self.get_undirected_number_of_triangles_per_node(
-                    normalize,
-                    low_centrality,
-                    verbose,
-                )
+                self.get_undirected_number_of_triangles_per_node(normalize, low_centrality, verbose)
             }
         }
     }

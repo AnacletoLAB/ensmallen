@@ -387,9 +387,15 @@ impl<T: ToFromUsize + Sync> TypeFileReader<T> {
                 return Err("The type id cannot be undefined.".to_owned());
             }
             let type_id = maybe_type_id.unwrap();
-            match type_id.parse::<usize>() {
+            match type_id.as_str().parse::<usize>() {
                 Ok(type_id) => Ok(type_id),
-                Err(e) => Err(e.to_string()),
+                Err(_) => Err(format!(
+                    concat!(
+                        "Unable to pass the type ID `{:?}` to ",
+                        "a numeric value while reading line {}."
+                    ),
+                    type_id, line_number
+                )),
             }?
         } else {
             line_number

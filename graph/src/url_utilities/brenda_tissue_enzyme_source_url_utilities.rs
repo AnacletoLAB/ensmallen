@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -17,18 +16,9 @@ use super::*;
 /// assert!(!is_valid_brenda_tissue_enzyme_source_node_name(not_this_library_node_name));
 /// ```
 pub fn is_valid_brenda_tissue_enzyme_source_node_name(node_name: &str) -> bool {
-    is_valid_node_name_from_seeds(
-        node_name,
-        Some(&["BTO"]),
-        None,
-        Some(":"),
-        None,
-        None,
-        None
-    )
-    .is_ok()
+    is_valid_node_name_from_seeds(node_name, Some(&["BTO"]), None, Some(":"), None, None, None)
+        .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given BRENDA tissue / enzyme source node name.
@@ -40,11 +30,12 @@ pub fn is_valid_brenda_tissue_enzyme_source_node_name(node_name: &str) -> bool {
 /// This method assumes that the provided node name is a BRENDA tissue / enzyme source node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_brenda_tissue_enzyme_source_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_brenda_tissue_enzyme_source_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://purl.obolibrary.org/obo/BTO_{node_name}",
         node_name,
         Some(":"),
     )
 }
-

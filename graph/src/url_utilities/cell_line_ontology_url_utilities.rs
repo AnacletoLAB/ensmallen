@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_cell_line_ontology_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         Some(7),
-        Some(7)
+        Some(7),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Cell Line Ontology node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_cell_line_ontology_url_from_node_name(node_name: &st
         Some(":"),
     )
 }
-

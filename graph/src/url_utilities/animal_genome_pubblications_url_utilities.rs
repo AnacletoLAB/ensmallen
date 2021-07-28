@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_animal_genome_pubblications_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("ISU"),
         Some(7),
-        Some(4)
+        Some(4),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Animal Genome Pubblications node name.
@@ -40,11 +38,12 @@ pub fn is_valid_animal_genome_pubblications_node_name(node_name: &str) -> bool {
 /// This method assumes that the provided node name is a Animal Genome Pubblications node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_animal_genome_pubblications_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_animal_genome_pubblications_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "https://www.animalgenome.org/cgi-bin/QTLdb/BT/qabstract?PUBMED_ID={node_name}",
         node_name,
         Some(":"),
     )
 }
-

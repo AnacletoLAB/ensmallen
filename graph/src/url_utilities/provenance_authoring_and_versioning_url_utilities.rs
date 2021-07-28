@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -17,18 +16,9 @@ use super::*;
 /// assert!(!is_valid_provenance_authoring_and_versioning_node_name(not_this_library_node_name));
 /// ```
 pub fn is_valid_provenance_authoring_and_versioning_node_name(node_name: &str) -> bool {
-    is_valid_node_name_from_seeds(
-        node_name,
-        Some(&["PAV"]),
-        None,
-        Some(":"),
-        None,
-        None,
-        None
-    )
-    .is_ok()
+    is_valid_node_name_from_seeds(node_name, Some(&["PAV"]), None, Some(":"), None, None, None)
+        .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Provenance, Authoring and Versioning node name.
@@ -40,11 +30,8 @@ pub fn is_valid_provenance_authoring_and_versioning_node_name(node_name: &str) -
 /// This method assumes that the provided node name is a Provenance, Authoring and Versioning node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_provenance_authoring_and_versioning_url_from_node_name(node_name: &str) -> String {
-    format_url_from_node_name(
-        "http://purl.org/pav/{node_name}",
-        node_name,
-        Some(":"),
-    )
+pub(crate) unsafe fn format_provenance_authoring_and_versioning_url_from_node_name(
+    node_name: &str,
+) -> String {
+    format_url_from_node_name("http://purl.org/pav/{node_name}", node_name, Some(":"))
 }
-

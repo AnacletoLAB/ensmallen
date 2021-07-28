@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_omim_phenotypic_series_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("PS"),
         Some(8),
-        Some(6)
+        Some(6),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given OMIM Phenotypic Series node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_omim_phenotypic_series_url_from_node_name(node_name:
         Some(":"),
     )
 }
-

@@ -94,7 +94,10 @@ pub(crate) fn is_valid_node_name_from_seeds(
 
     // If an ID acronym was provided, we expect the node to respect it.
     if let Some(id_acronym) = id_acronym {
-        if !node_name.to_uppercase().starts_with(&id_acronym.to_uppercase()) {
+        if !node_name
+            .to_uppercase()
+            .starts_with(&id_acronym.to_uppercase())
+        {
             return Err(format!(
                 "The given node name {} does not start with the expected ID acronym {}.",
                 node_name, id_acronym
@@ -204,7 +207,7 @@ fn get_url_formatted(url: &str, content: &str, repository: &str) -> String {
 ///
 /// TODO! Update documentation.
 /// TODO! Add support for URLs.
-/// 
+///
 /// # Arguments
 /// * `node_name`: &str - Node name to query for.
 ///
@@ -993,9 +996,11 @@ pub fn get_node_source_url_from_node_name(node_name: &str) -> Result<String> {
     }
 
     if is_valid_cord_pubmed_central_node_name(node_name) {
-        return Ok(unsafe {
-            format_cord_pubmed_central_url_from_node_name(node_name)
-        });
+        return Ok(unsafe { format_cord_pubmed_central_url_from_node_name(node_name) });
+    }
+
+    if is_valid_website_node_name(node_name){
+        return Ok(unsafe {format_website_url_from_node_name(node_name)});
     }
 
     Err(format!(
@@ -1762,6 +1767,10 @@ pub fn get_node_repository_from_node_name(node_name: &str) -> Result<&str> {
 
     if is_valid_cord_pubmed_central_node_name(node_name) {
         return Ok("CORD Pubmed Central");
+    }
+
+    if is_valid_website_node_name(node_name){
+        return Ok("Website");
     }
 
     Err(format!(

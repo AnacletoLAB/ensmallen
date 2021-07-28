@@ -177,8 +177,8 @@ pub fn convert_edge_list_to_numeric(
     }
 
     let name = name.unwrap_or("Graph".to_owned());
-    let mut nodes: Vocabulary<NodeT> = if let Some(original_node_path) = original_node_path {
-        let node_file_reader = NodeFileReader::new(Some(original_node_path))?
+    let mut nodes: Vocabulary<NodeT> = if let Some(original_node_path) = &original_node_path {
+        let node_file_reader = NodeFileReader::new(Some(original_node_path.to_string()))?
             .set_comment_symbol(node_list_comment_symbol)?
             .set_header(original_node_list_header)?
             .set_max_rows_number(node_list_max_rows_number)?
@@ -201,7 +201,7 @@ pub fn convert_edge_list_to_numeric(
             node_file_reader.has_numeric_node_ids(),
             false,
             node_file_reader.get_minimum_node_id(),
-            None
+            None,
         )?;
         nodes
     } else {
@@ -244,6 +244,8 @@ pub fn convert_edge_list_to_numeric(
         .set_rows_to_skip(rows_to_skip)?
         .set_header(original_edge_list_header)?
         .set_separator(original_edge_list_separator)?
+        .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
+        .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
         .set_default_edge_type(default_edge_type)
         .set_default_weight(default_weight)?
         .set_destinations_column(original_destinations_column.clone())?
@@ -257,8 +259,6 @@ pub fn convert_edge_list_to_numeric(
         .set_edge_ids_column(original_edge_ids_column.clone())?
         .set_edge_ids_column_number(original_edge_ids_column_number)?
         .set_parallel(Some(false))
-        .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
-        .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
         // To avoid a duplicated loading bar.
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_graph_name(name);
@@ -319,32 +319,36 @@ pub fn convert_edge_list_to_numeric(
             ),
     )?;
 
-    if let Some(target_node_path) = target_node_path {
-        let node_file_writer = NodeFileWriter::new(target_node_path)
-            .set_separator(target_node_list_separator)?
-            .set_header(target_node_list_header)
-            .set_node_ids_column(target_node_ids_column)
-            .set_node_ids_column_number(target_node_ids_column_number)
-            .set_nodes_column(target_nodes_column)
-            .set_nodes_column_number(target_nodes_column_number);
+    if original_node_path.is_none() {
+        if let Some(target_node_path) = target_node_path {
+            let node_file_writer = NodeFileWriter::new(target_node_path)
+                .set_separator(target_node_list_separator)?
+                .set_header(target_node_list_header)
+                .set_node_ids_column(target_node_ids_column)
+                .set_node_ids_column_number(target_node_ids_column_number)
+                .set_nodes_column(target_nodes_column)
+                .set_nodes_column_number(target_nodes_column_number);
 
-        node_file_writer.dump_iterator(
-            Some(nodes.len()),
-            nodes
-                .iter_keys()
-                .enumerate()
-                .map(|(node_id, node_name)| (node_id as NodeT, node_name, None, None)),
-        )?;
+            node_file_writer.dump_iterator(
+                Some(nodes.len()),
+                nodes
+                    .iter_keys()
+                    .enumerate()
+                    .map(|(node_id, node_name)| (node_id as NodeT, node_name, None, None)),
+            )?;
+        }
     }
+
+    edge_types.build()?;
 
     if let Some(target_edge_type_list_path) = target_edge_type_list_path {
         let edge_type_writer = TypeFileWriter::new(target_edge_type_list_path)
             .set_separator(target_edge_type_list_separator)?
             .set_header(target_edge_type_list_header)
-            .set_type_ids_column(target_edge_type_list_edge_types_column)
-            .set_type_ids_column_number(target_edge_type_list_edge_types_column_number)
-            .set_types_column(target_edge_types_ids_column)
-            .set_types_column_number(target_edge_types_ids_column_number);
+            .set_type_ids_column(target_edge_types_ids_column)
+            .set_type_ids_column_number(target_edge_types_ids_column_number)
+            .set_types_column(target_edge_type_list_edge_types_column)
+            .set_types_column_number(target_edge_type_list_edge_types_column_number);
 
         edge_type_writer.dump_iterator(
             Some(edge_types.len()),
@@ -666,14 +670,16 @@ pub fn densify_sparse_numeric_edge_list(
         )?;
     }
 
+    edge_types.build()?;
+
     if let Some(target_edge_type_list_path) = target_edge_type_list_path {
         let edge_type_writer = TypeFileWriter::new(target_edge_type_list_path)
             .set_separator(target_edge_type_list_separator)?
             .set_header(target_edge_type_list_header)
-            .set_type_ids_column(target_edge_type_list_edge_types_column)
-            .set_type_ids_column_number(target_edge_type_list_edge_types_column_number)
-            .set_types_column(target_edge_types_ids_column)
-            .set_types_column_number(target_edge_types_ids_column_number);
+            .set_type_ids_column(target_edge_types_ids_column)
+            .set_type_ids_column_number(target_edge_types_ids_column_number)
+            .set_types_column(target_edge_type_list_edge_types_column)
+            .set_types_column_number(target_edge_type_list_edge_types_column_number);
 
         edge_type_writer.dump_iterator(
             Some(edge_types.len()),

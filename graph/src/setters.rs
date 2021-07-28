@@ -61,10 +61,7 @@ impl Graph {
     ///
     /// # Arguments
     /// * `edge_type`: S - The edge type to assing to all the edges.
-    pub fn set_all_edge_types<S: Into<String>>(
-        &self,
-        edge_type: S,
-    ) -> Result<Graph> {
+    pub fn set_all_edge_types<S: Into<String>>(&self, edge_type: S) -> Result<Graph> {
         let mut graph = self.drop_parallel_edges();
         graph.set_inplace_all_edge_types(edge_type)?;
         Ok(graph)

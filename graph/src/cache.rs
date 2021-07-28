@@ -48,6 +48,6 @@ impl Default for PropertyCache {
 impl PropertyCache {
     pub fn total(&self) -> usize {
         use std::mem::size_of;
-        size_of::<PropertyCache>() 
+        size_of::<PropertyCache>()
     }
 }

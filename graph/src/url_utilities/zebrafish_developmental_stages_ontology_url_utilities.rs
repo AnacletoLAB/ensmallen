@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_zebrafish_developmental_stages_ontology_node_name(node_name: &st
         Some(":"),
         None,
         Some(7),
-        Some(7)
+        Some(7),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Zebrafish developmental stages ontology node name.
@@ -40,11 +38,12 @@ pub fn is_valid_zebrafish_developmental_stages_ontology_node_name(node_name: &st
 /// This method assumes that the provided node name is a Zebrafish developmental stages ontology node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_zebrafish_developmental_stages_ontology_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_zebrafish_developmental_stages_ontology_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://purl.obolibrary.org/obo/ZFS_{node_name}",
         node_name,
         Some(":"),
     )
 }
-

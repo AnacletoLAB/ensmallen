@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -16,7 +15,9 @@ use super::*;
 /// assert!(is_valid_feature_annotation_location_description_ontology_node_name(this_library_node_name));
 /// assert!(!is_valid_feature_annotation_location_description_ontology_node_name(not_this_library_node_name));
 /// ```
-pub fn is_valid_feature_annotation_location_description_ontology_node_name(node_name: &str) -> bool {
+pub fn is_valid_feature_annotation_location_description_ontology_node_name(
+    node_name: &str,
+) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
         Some(&["FALDO"]),
@@ -24,11 +25,10 @@ pub fn is_valid_feature_annotation_location_description_ontology_node_name(node_
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Feature Annotation Location Description Ontology node name.
@@ -40,11 +40,12 @@ pub fn is_valid_feature_annotation_location_description_ontology_node_name(node_
 /// This method assumes that the provided node name is a Feature Annotation Location Description Ontology node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_feature_annotation_location_description_ontology_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_feature_annotation_location_description_ontology_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://biohackathon.org/resource/faldo#{node_name}",
         node_name,
         Some(":"),
     )
 }
-

@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_c_elegans_phenotype_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         Some(7),
-        Some(7)
+        Some(7),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given C. elegans phenotype node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_c_elegans_phenotype_url_from_node_name(node_name: &s
         Some(":"),
     )
 }
-

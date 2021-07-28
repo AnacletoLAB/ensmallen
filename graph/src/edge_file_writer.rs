@@ -337,16 +337,10 @@ impl EdgeFileWriter {
         }
 
         if let Some(column_number) = &self.edge_types_column_number {
-            line.push(
-                if let (Some(edge_type), Some(edge_type_name)) = (edge_type, edge_type_name) {
-                    match self.numeric_edge_type_ids {
-                        true => edge_type.to_string(),
-                        false => edge_type_name,
-                    }
-                } else {
-                    "".to_string()
-                },
-            );
+            line.push(match self.numeric_edge_type_ids {
+                true => edge_type.map(|edge_type| edge_type.to_string()),
+                false => edge_type_name,
+            }.unwrap_or("".to_string()));
             if !self.columns_are_dense {
                 positions.push(*column_number);
             }

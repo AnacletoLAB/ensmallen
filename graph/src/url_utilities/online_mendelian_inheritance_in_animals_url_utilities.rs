@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_online_mendelian_inheritance_in_animals_node_name(node_name: &st
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Online Mendelian Inheritance in Animals node name.
@@ -40,11 +38,12 @@ pub fn is_valid_online_mendelian_inheritance_in_animals_node_name(node_name: &st
 /// This method assumes that the provided node name is a Online Mendelian Inheritance in Animals node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_online_mendelian_inheritance_in_animals_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_online_mendelian_inheritance_in_animals_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://purl.obolibrary.org/obo/OMIA_{node_name}",
         node_name,
         Some(":"),
     )
 }
-

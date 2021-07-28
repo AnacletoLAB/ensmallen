@@ -93,7 +93,8 @@ impl Graph {
 
     /// Returns whether graph has weights that can represent probabilities.
     pub fn has_edge_weights_representing_probabilities(&self) -> Result<bool> {
-        Ok(self.get_mininum_edge_weight().clone()? > 0.0 && self.get_maximum_edge_weight().clone()? <= 1.0)
+        Ok(self.get_mininum_edge_weight().clone()? > 0.0
+            && self.get_maximum_edge_weight().clone()? <= 1.0)
     }
 
     /// Returns whether a graph has one or more weighted singleton nodes.
@@ -116,7 +117,8 @@ impl Graph {
     /// * If the graph does not contain edge weights.
     pub fn has_constant_edge_weights(&self) -> Result<bool> {
         Ok(
-            (self.get_maximum_edge_weight().clone()? - self.get_mininum_edge_weight().clone()?).abs()
+            (self.get_maximum_edge_weight().clone()? - self.get_mininum_edge_weight().clone()?)
+                .abs()
                 < WeightT::EPSILON,
         )
     }
@@ -134,7 +136,8 @@ impl Graph {
     /// # Raises
     /// * If the graph does not contain weights.
     pub fn has_negative_edge_weights(&self) -> Result<bool> {
-        self.get_mininum_edge_weight().clone()
+        self.get_mininum_edge_weight()
+            .clone()
             .map(|min_edge_weight| min_edge_weight < 0.0)
     }
 

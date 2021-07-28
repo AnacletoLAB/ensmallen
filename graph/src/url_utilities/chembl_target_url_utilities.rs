@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_chembl_target_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("CHEMBL"),
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given CHEMBL Target node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_chembl_target_url_from_node_name(node_name: &str) ->
         Some(":"),
     )
 }
-

@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_schema_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given SCHEMA node name.
@@ -41,10 +39,5 @@ pub fn is_valid_schema_node_name(node_name: &str) -> bool {
 /// may cause a panic if the aforementioned assumption is not true.
 ///
 pub(crate) unsafe fn format_schema_url_from_node_name(node_name: &str) -> String {
-    format_url_from_node_name(
-        "http://schema.org/{node_name}",
-        node_name,
-        Some(":"),
-    )
+    format_url_from_node_name("http://schema.org/{node_name}", node_name, Some(":"))
 }
-

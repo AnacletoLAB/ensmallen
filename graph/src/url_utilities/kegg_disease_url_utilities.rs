@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_kegg_disease_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("H"),
         Some(6),
-        Some(5)
+        Some(5),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given KEGG Disease node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_kegg_disease_url_from_node_name(node_name: &str) -> 
         Some(":"),
     )
 }
-

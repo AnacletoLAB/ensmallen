@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_unified_medical_language_system_node_name(node_name: &str) -> bo
         Some(":"),
         Some("C"),
         Some(8),
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Unified Medical Language System node name.
@@ -40,11 +38,12 @@ pub fn is_valid_unified_medical_language_system_node_name(node_name: &str) -> bo
 /// This method assumes that the provided node name is a Unified Medical Language System node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_unified_medical_language_system_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_unified_medical_language_system_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://linkedlifedata.com/resource/umls/id/{node_name}",
         node_name,
         Some(":"),
     )
 }
-

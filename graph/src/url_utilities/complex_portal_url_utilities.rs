@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_complex_portal_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("CPX-"),
         Some(8),
-        Some(4)
+        Some(4),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Complex Portal node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_complex_portal_url_from_node_name(node_name: &str) -
         Some(":"),
     )
 }
-

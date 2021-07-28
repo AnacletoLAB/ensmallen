@@ -191,7 +191,7 @@ impl Graph {
                                         }
                                     })
                                     .collect::<Vec<_>>()
-                            })
+                            }),
                     ),
             ),
             self.nodes.clone(),

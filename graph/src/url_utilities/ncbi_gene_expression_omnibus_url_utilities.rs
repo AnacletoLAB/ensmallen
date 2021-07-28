@@ -35,7 +35,9 @@ pub fn is_valid_ncbi_gene_expression_omnibus_node_name(node_name: &str) -> bool 
 /// # Safety
 /// This method assumes that the provided node name is a NCBI Gene Expression Omnibus node name and
 /// may cause a panic if the aforementioned assumption is not true.
-pub(crate) unsafe fn format_ncbi_gene_expression_omnibus_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_ncbi_gene_expression_omnibus_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc={node_name}",
         node_name,

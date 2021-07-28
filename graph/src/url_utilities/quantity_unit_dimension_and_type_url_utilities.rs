@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -17,18 +16,9 @@ use super::*;
 /// assert!(!is_valid_quantity_unit_dimension_and_type_node_name(not_this_library_node_name));
 /// ```
 pub fn is_valid_quantity_unit_dimension_and_type_node_name(node_name: &str) -> bool {
-    is_valid_node_name_from_seeds(
-        node_name,
-        Some(&["QUD"]),
-        None,
-        Some(":"),
-        None,
-        None,
-        None
-    )
-    .is_ok()
+    is_valid_node_name_from_seeds(node_name, Some(&["QUD"]), None, Some(":"), None, None, None)
+        .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Quantity, Unit, Dimension and Type node name.
@@ -40,11 +30,12 @@ pub fn is_valid_quantity_unit_dimension_and_type_node_name(node_name: &str) -> b
 /// This method assumes that the provided node name is a Quantity, Unit, Dimension and Type node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_quantity_unit_dimension_and_type_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_quantity_unit_dimension_and_type_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://qudt.org/1.1/schema/qudt#{node_name}",
         node_name,
         Some(":"),
     )
 }
-

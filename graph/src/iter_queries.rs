@@ -254,8 +254,9 @@ impl Graph {
     pub fn iter_node_names_and_node_type_names_from_node_type_id(
         &self,
         node_type_id: Option<NodeTypeT>,
-    ) -> Result<impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_> 
-    {
+    ) -> Result<
+        impl Iterator<Item = (NodeT, String, Option<Vec<NodeTypeT>>, Option<Vec<String>>)> + '_,
+    > {
         self.validate_node_type_id(node_type_id)
             .map(|node_type_id| {
                 self.iter_node_names_and_node_type_names().filter(
@@ -292,8 +293,8 @@ impl Graph {
                     Option<EdgeTypeT>,
                     Option<String>,
                 ),
-            > + '_> 
-        {
+            > + '_,
+    > {
         self.validate_edge_type_id(edge_type_id)
             .map(|edge_type_id| {
                 self.iter_edge_node_names_and_edge_type_name(directed)

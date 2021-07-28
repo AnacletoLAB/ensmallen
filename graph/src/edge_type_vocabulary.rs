@@ -35,19 +35,19 @@ pub struct EdgeTypeVocabularyMemoryStats {
 
 impl EdgeTypeVocabularyMemoryStats {
     pub fn total(&self) -> usize {
-        self.ids + self.vocabulary.total() 
-        + self.counts + self.metadata
+        self.ids + self.vocabulary.total() + self.counts + self.metadata
     }
 }
 
 impl EdgeTypeVocabulary {
     pub fn memory_stats(&self) -> EdgeTypeVocabularyMemoryStats {
         use std::mem::size_of;
-        EdgeTypeVocabularyMemoryStats{
-            ids: size_of::<Vec<Option<EdgeTypeT>>>() + self.ids.capacity() * size_of::<Option<EdgeTypeT>>(),
+        EdgeTypeVocabularyMemoryStats {
+            ids: size_of::<Vec<Option<EdgeTypeT>>>()
+                + self.ids.capacity() * size_of::<Option<EdgeTypeT>>(),
             vocabulary: self.vocabulary.memory_stats(),
             counts: size_of::<Vec<EdgeT>>() + self.counts.capacity() * size_of::<EdgeT>(),
-            metadata: size_of::<EdgeT>()
+            metadata: size_of::<EdgeT>(),
         }
     }
 }

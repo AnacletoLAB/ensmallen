@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_arabidopsis_tair_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("AT"),
         Some(9),
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Arabidopsis Tair node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_arabidopsis_tair_url_from_node_name(node_name: &str)
         Some(":"),
     )
 }
-

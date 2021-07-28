@@ -37,7 +37,7 @@ impl NodeFileWriter {
             writer: CSVFileWriter::new(path),
             node_ids_column: None,
             node_ids_column_number: None,
-            nodes_column: "node_names".to_string(),
+            nodes_column: "node_name".to_string(),
             nodes_column_number: 0,
             node_types_column: None,
             node_types_column_number: None,
@@ -70,8 +70,7 @@ impl NodeFileWriter {
     /// Set the column of the nodes.
     ///
     /// # Arguments
-    ///
-    /// * nodes_column: Option<String> - The nodes column to use for the file.
+    /// * `nodes_column`: Option<String> - The nodes column to use for the file.
     ///
     pub fn set_nodes_column<S: Into<String>>(mut self, nodes_column: Option<S>) -> NodeFileWriter {
         if let Some(column) = nodes_column {
@@ -83,8 +82,7 @@ impl NodeFileWriter {
     /// Set the column of the nodes.
     ///
     /// # Arguments
-    ///
-    /// * node_types_column: Option<String> - The node types column to use for the file.
+    /// * `node_types_column`: Option<String> - The node types column to use for the file.
     ///
     pub fn set_node_types_column<S: Into<String>>(
         mut self,
@@ -99,8 +97,7 @@ impl NodeFileWriter {
     /// Set the column_number of the nodes.
     ///
     /// # Arguments
-    ///
-    /// * nodes_column_number: Option<usize> - The nodes column_number to use for the file.
+    /// * `nodes_column_number`: Option<usize> - The nodes column_number to use for the file.
     ///
     pub fn set_nodes_column_number(mut self, nodes_column_number: Option<usize>) -> NodeFileWriter {
         if let Some(column_number) = nodes_column_number {
@@ -114,8 +111,7 @@ impl NodeFileWriter {
     /// Set the column_number of the nodes.
     ///
     /// # Arguments
-    ///
-    /// * node_types_column_number: Option<usize> - The node types column_number to use for the file.
+    /// * `node_types_column_number`: Option<usize> - The node types column_number to use for the file.
     ///
     pub fn set_node_types_column_number(
         mut self,
@@ -125,6 +121,9 @@ impl NodeFileWriter {
             self.node_types_column_number = Some(column_number);
             self.number_of_columns = self.number_of_columns.max(column_number + 1);
             self.columns_are_dense = self.are_columns_dense();
+            if self.node_types_column.is_none(){
+                self.node_types_column = Some(column_number.to_string());
+            }
         }
         self
     }
@@ -132,7 +131,7 @@ impl NodeFileWriter {
     /// Set the column of the node IDs.
     ///
     /// # Arguments
-    /// * node_ids_column: Option<String> - The node IDs column to use for the file.
+    /// * `node_ids_column`: Option<String> - The node IDs column to use for the file.
     ///
     pub fn set_node_ids_column(mut self, node_ids_column: Option<String>) -> NodeFileWriter {
         self.node_ids_column = node_ids_column;
@@ -152,6 +151,9 @@ impl NodeFileWriter {
             self.node_ids_column_number = Some(column_number);
             self.number_of_columns = self.number_of_columns.max(column_number + 1);
             self.columns_are_dense = self.are_columns_dense();
+            if self.node_ids_column.is_none(){
+                self.node_ids_column = Some(column_number.to_string());
+            }
         }
         self
     }

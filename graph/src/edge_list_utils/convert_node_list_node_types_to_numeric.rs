@@ -101,10 +101,10 @@ pub fn convert_node_list_node_types_to_numeric(
         .set_node_ids_column_number(original_node_ids_column_number)?
         .set_nodes_column(original_nodes_column.clone())?
         .set_minimum_node_id(original_minimum_node_id)
+        .set_skip_node_types_if_unavailable(original_skip_node_types_if_unavailable)?
         .set_node_types_column_number(original_node_list_node_types_column_number)?
         .set_node_types_column(original_node_list_node_types_column.clone())?
         .set_node_types_separator(original_node_types_separator)?
-        .set_skip_node_types_if_unavailable(original_skip_node_types_if_unavailable)?
         .set_default_node_type(default_node_type)
         .set_numeric_node_ids(original_numeric_node_ids)
         .set_numeric_node_type_ids(original_node_list_numeric_node_type_ids)?
@@ -163,14 +163,16 @@ pub fn convert_node_list_node_types_to_numeric(
         ),
     )?;
 
+    node_types.build()?;
+
     if let Some(target_node_type_list_path) = target_node_type_list_path {
         let node_type_writer = TypeFileWriter::new(target_node_type_list_path)
             .set_separator(target_node_type_list_separator)?
             .set_header(target_node_type_list_header)
-            .set_type_ids_column(target_node_type_list_node_types_column)
-            .set_type_ids_column_number(target_node_type_list_node_types_column_number)
-            .set_types_column(target_node_types_ids_column)
-            .set_types_column_number(target_node_types_ids_column_number);
+            .set_type_ids_column(target_node_types_ids_column)
+            .set_type_ids_column_number(target_node_types_ids_column_number)
+            .set_types_column(target_node_type_list_node_types_column)
+            .set_types_column_number(target_node_type_list_node_types_column_number);
 
         node_type_writer.dump_iterator(
             Some(node_types.len()),

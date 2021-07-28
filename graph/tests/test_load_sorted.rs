@@ -6,7 +6,8 @@ fn test_load_sorted_sequential() {
     let graph_name = "Macaque".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/macaque.tsv")
         .unwrap()
-        .set_header(Some(false)).unwrap()
+        .set_header(Some(false))
+        .unwrap()
         .set_separator(Some("\t".to_string()))
         .unwrap()
         .set_verbose(Some(false))

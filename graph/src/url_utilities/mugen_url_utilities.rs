@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_mugen_node_name(node_name: &str) -> bool {
         Some(":"),
         Some("M"),
         Some(7),
-        Some(6)
+        Some(6),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Mugen node name.
@@ -47,4 +45,3 @@ pub(crate) unsafe fn format_mugen_url_from_node_name(node_name: &str) -> String 
         Some(":"),
     )
 }
-

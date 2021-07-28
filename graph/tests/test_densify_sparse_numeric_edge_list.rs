@@ -70,7 +70,7 @@ fn test_densify_sparse_numeric_edge_list() -> Result<(), String> {
         None,
         None,
         None,
-        None
+        None,
     )?;
     Ok(())
 }

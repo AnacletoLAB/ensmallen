@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -17,18 +16,9 @@ use super::*;
 /// assert!(!is_valid_protein_ontology_pro_node_name(not_this_library_node_name));
 /// ```
 pub fn is_valid_protein_ontology_pro_node_name(node_name: &str) -> bool {
-    is_valid_node_name_from_seeds(
-        node_name,
-        Some(&["PR"]),
-        None,
-        Some(":"),
-        None,
-        None,
-        None
-    )
-    .is_ok()
+    is_valid_node_name_from_seeds(node_name, Some(&["PR"]), None, Some(":"), None, None, None)
+        .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given PRotein Ontology (PRO) node name.
@@ -47,4 +37,3 @@ pub(crate) unsafe fn format_protein_ontology_pro_url_from_node_name(node_name: &
         Some(":"),
     )
 }
-

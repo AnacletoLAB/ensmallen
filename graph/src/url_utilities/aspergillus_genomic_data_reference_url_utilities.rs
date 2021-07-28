@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_aspergillus_genomic_data_reference_node_name(node_name: &str) ->
         Some(":"),
         Some("ASPL"),
         Some(14),
-        Some(10)
+        Some(10),
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Aspergillus Genomic Data Reference node name.
@@ -40,11 +38,12 @@ pub fn is_valid_aspergillus_genomic_data_reference_node_name(node_name: &str) ->
 /// This method assumes that the provided node name is a Aspergillus Genomic Data Reference node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_aspergillus_genomic_data_reference_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_aspergillus_genomic_data_reference_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://www.aspergillusgenome.org/cgi-bin/reference/reference.pl?dbid={node_name}",
         node_name,
         Some(":"),
     )
 }
-

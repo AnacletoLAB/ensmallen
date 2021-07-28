@@ -170,11 +170,10 @@ pub trait MethodCallerTraitParallel<T, R, S> {
     }
 }
 
-impl<T, R, S, J: ?Sized> MethodCallerTraitParallel<T, R, S> for J where J: ParallelIterator<Item = T> {}
-
+impl<T, R, S, J: ?Sized> MethodCallerTraitParallel<T, R, S> for J where J: ParallelIterator<Item = T>
+{}
 
 ////////////////////////////////////////////////////////////////////////////////
-
 
 pub struct SequentialMethodCaller<'a, T, R, S, I> {
     base: I,
@@ -182,9 +181,12 @@ pub struct SequentialMethodCaller<'a, T, R, S, I> {
     context: &'a mut S,
 }
 
-
 impl<'a, T, R, S, I: Iterator<Item = T>> SequentialMethodCaller<'a, T, R, S, I> {
-    pub fn new(base: I, method: fn(&mut S, T) -> R, context: &'a mut S) -> SequentialMethodCaller<'a, T, R, S, I> {
+    pub fn new(
+        base: I,
+        method: fn(&mut S, T) -> R,
+        context: &'a mut S,
+    ) -> SequentialMethodCaller<'a, T, R, S, I> {
         SequentialMethodCaller {
             base,
             method,
@@ -193,15 +195,13 @@ impl<'a, T, R, S, I: Iterator<Item = T>> SequentialMethodCaller<'a, T, R, S, I> 
     }
 }
 
-impl<'a, T, R, S, I: Iterator<Item=T>> Iterator for SequentialMethodCaller<'a, T, R, S, I> {
+impl<'a, T, R, S, I: Iterator<Item = T>> Iterator for SequentialMethodCaller<'a, T, R, S, I> {
     type Item = R;
 
     fn next(&mut self) -> Option<Self::Item> {
         match self.base.next() {
             None => None,
-            Some(val) => {
-                Some((self.method)(self.context, val))
-            }
+            Some(val) => Some((self.method)(self.context, val)),
         }
     }
 }
@@ -215,16 +215,15 @@ pub trait MethodCallerTraitSequential<T, R, S> {
     where
         Self: Iterator<Item = T> + Sized,
     {
-        SequentialMethodCaller{
-            base: self, 
-            method, 
+        SequentialMethodCaller {
+            base: self,
+            method,
             context,
         }
     }
 }
 
 impl<T, R, S, J: ?Sized> MethodCallerTraitSequential<T, R, S> for J where J: Iterator<Item = T> {}
-
 
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -24,11 +23,10 @@ pub fn is_valid_semantic_medline_database_node_name(node_name: &str) -> bool {
         Some(":"),
         None,
         None,
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Semantic MEDLINE Database node name.
@@ -40,11 +38,12 @@ pub fn is_valid_semantic_medline_database_node_name(node_name: &str) -> bool {
 /// This method assumes that the provided node name is a Semantic MEDLINE Database node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_semantic_medline_database_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_semantic_medline_database_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "https://skr3.nlm.nih.gov/SemMedDB{node_name}",
         node_name,
         Some(":"),
     )
 }
-

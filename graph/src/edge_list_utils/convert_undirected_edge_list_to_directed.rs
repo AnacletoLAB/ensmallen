@@ -106,17 +106,14 @@ pub fn convert_undirected_edge_list_to_directed(
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
         .set_graph_name(name);
     let file_writer = EdgeFileWriter::new(target_edge_path)
-        .set_destinations_column(
-            target_destinations_column.or(original_destinations_column),
-        )
+        .set_destinations_column(target_destinations_column.or(original_destinations_column))
         .set_destinations_column_number(
             target_destinations_column_number
                 .or(Some(file_reader.get_destinations_column_number())),
         )
         .set_sources_column(target_sources_column.or(original_sources_column))
         .set_sources_column_number(
-            target_sources_column_number
-                .or(Some(file_reader.get_sources_column_number())),
+            target_sources_column_number.or(Some(file_reader.get_sources_column_number())),
         )
         .set_edge_types_column(
             target_edge_list_edge_type_column.or(original_edge_list_edge_type_column),

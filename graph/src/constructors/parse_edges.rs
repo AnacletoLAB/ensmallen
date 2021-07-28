@@ -433,7 +433,6 @@ pub(crate) fn parse_string_edges(
         .to_string());
     }
 
-
     let edge_types_method = match (
         has_edge_types,
         edge_types_vocabulary

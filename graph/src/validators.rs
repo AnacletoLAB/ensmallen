@@ -444,9 +444,7 @@ impl Graph {
     ///
     /// # Raises
     /// * If the graph does not have edge weights.
-    pub fn must_have_edge_weights_representing_probabilities(
-        &self,
-    ) -> Result<&Vec<WeightT>> {
+    pub fn must_have_edge_weights_representing_probabilities(&self) -> Result<&Vec<WeightT>> {
         if !self.has_edge_weights_representing_probabilities()? {
             return Err(
                 "The current graph instance does not contain weights representing probabilities."

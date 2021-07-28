@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -17,18 +16,9 @@ use super::*;
 /// assert!(!is_valid_mouse_adult_gross_anatomy_node_name(not_this_library_node_name));
 /// ```
 pub fn is_valid_mouse_adult_gross_anatomy_node_name(node_name: &str) -> bool {
-    is_valid_node_name_from_seeds(
-        node_name,
-        Some(&["MA"]),
-        None,
-        Some(":"),
-        None,
-        None,
-        None
-    )
-    .is_ok()
+    is_valid_node_name_from_seeds(node_name, Some(&["MA"]), None, Some(":"), None, None, None)
+        .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Mouse adult gross anatomy node name.
@@ -40,11 +30,12 @@ pub fn is_valid_mouse_adult_gross_anatomy_node_name(node_name: &str) -> bool {
 /// This method assumes that the provided node name is a Mouse adult gross anatomy node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_mouse_adult_gross_anatomy_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_mouse_adult_gross_anatomy_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://purl.obolibrary.org/obo/MA_{node_name}",
         node_name,
         Some(":"),
     )
 }
-

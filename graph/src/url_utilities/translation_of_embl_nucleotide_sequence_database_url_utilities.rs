@@ -1,4 +1,3 @@
-
 use super::*;
 
 #[automatically_generated_function]
@@ -16,7 +15,9 @@ use super::*;
 /// assert!(is_valid_translation_of_embl_nucleotide_sequence_database_node_name(this_library_node_name));
 /// assert!(!is_valid_translation_of_embl_nucleotide_sequence_database_node_name(not_this_library_node_name));
 /// ```
-pub fn is_valid_translation_of_embl_nucleotide_sequence_database_node_name(node_name: &str) -> bool {
+pub fn is_valid_translation_of_embl_nucleotide_sequence_database_node_name(
+    node_name: &str,
+) -> bool {
     is_valid_node_name_from_seeds(
         node_name,
         Some(&["TREMBL"]),
@@ -24,11 +25,10 @@ pub fn is_valid_translation_of_embl_nucleotide_sequence_database_node_name(node_
         Some(":"),
         None,
         Some(6),
-        None
+        None,
     )
     .is_ok()
 }
-
 
 #[automatically_generated_function]
 /// Returns URL from given Translation of EMBL nucleotide sequence database node name.
@@ -40,11 +40,12 @@ pub fn is_valid_translation_of_embl_nucleotide_sequence_database_node_name(node_
 /// This method assumes that the provided node name is a Translation of EMBL nucleotide sequence database node name and
 /// may cause a panic if the aforementioned assumption is not true.
 ///
-pub(crate) unsafe fn format_translation_of_embl_nucleotide_sequence_database_url_from_node_name(node_name: &str) -> String {
+pub(crate) unsafe fn format_translation_of_embl_nucleotide_sequence_database_url_from_node_name(
+    node_name: &str,
+) -> String {
     format_url_from_node_name(
         "http://purl.uniprot.org/uniprot/{node_name}",
         node_name,
         Some(":"),
     )
 }
-

@@ -101,15 +101,24 @@ impl Graph {
         if self.has_edge_weights() {
             report.insert(
                 "minimum_weighted_node_degree",
-                self.get_weighted_minimum_node_degree().clone().unwrap().to_string(),
+                self.get_weighted_minimum_node_degree()
+                    .clone()
+                    .unwrap()
+                    .to_string(),
             );
             report.insert(
                 "maximum_weighted_node_degree",
-                self.get_weighted_maximum_node_degree().clone().unwrap().to_string(),
+                self.get_weighted_maximum_node_degree()
+                    .clone()
+                    .unwrap()
+                    .to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
-                self.get_weighted_node_degrees_mean().clone().unwrap().to_string(),
+                self.get_weighted_node_degrees_mean()
+                    .clone()
+                    .unwrap()
+                    .to_string(),
             );
             report.insert(
                 "total_edge_weights",
