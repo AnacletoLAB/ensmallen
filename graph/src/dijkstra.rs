@@ -761,7 +761,7 @@ impl Graph {
             // If the closest node is the optional destination node, we have
             // completed what the user has required.
             if maybe_dst_node_id.map_or(false, |dst| dst == closest_node_id as NodeT) {
-                dst_node_distance.insert(if use_edge_weights_as_probabilities {
+                let _ = dst_node_distance.insert(if use_edge_weights_as_probabilities {
                     (-nodes_to_explore[closest_node_id]).exp()
                 } else {
                     nodes_to_explore[closest_node_id]

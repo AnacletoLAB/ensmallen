@@ -320,6 +320,7 @@ pub fn convert_edge_list_to_numeric(
     )?;
 
     if original_node_path.is_none() {
+        nodes.build()?;
         if let Some(target_node_path) = target_node_path {
             let node_file_writer = NodeFileWriter::new(target_node_path)
                 .set_separator(target_node_list_separator)?
@@ -339,9 +340,8 @@ pub fn convert_edge_list_to_numeric(
         }
     }
 
-    edge_types.build()?;
-
     if let Some(target_edge_type_list_path) = target_edge_type_list_path {
+        edge_types.build()?;
         let edge_type_writer = TypeFileWriter::new(target_edge_type_list_path)
             .set_separator(target_edge_type_list_separator)?
             .set_header(target_edge_type_list_header)
@@ -649,7 +649,9 @@ pub fn densify_sparse_numeric_edge_list(
             ),
     )?;
 
+
     if let Some(target_node_path) = target_node_path {
+        nodes.build()?;
         let node_file_writer = NodeFileWriter::new(target_node_path)
             .set_separator(target_node_list_separator)?
             .set_header(target_node_list_header)
@@ -670,9 +672,9 @@ pub fn densify_sparse_numeric_edge_list(
         )?;
     }
 
-    edge_types.build()?;
 
     if let Some(target_edge_type_list_path) = target_edge_type_list_path {
+        edge_types.build()?;
         let edge_type_writer = TypeFileWriter::new(target_edge_type_list_path)
             .set_separator(target_edge_type_list_separator)?
             .set_header(target_edge_type_list_header)
