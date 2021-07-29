@@ -45,6 +45,26 @@ impl Graph {
             .map(|node_name| get_node_source_url_from_node_name(&node_name).ok())
     }
 
+    /// Return iterator on the node ontologies of the graph.
+    pub fn iter_node_ontologies(&self) -> impl Iterator<Item = Option<String>> + '_ {
+        self.iter_node_names().map(|node_name| {
+            get_node_repository_from_node_name(&node_name)
+                .ok()
+                .map(|ontology| ontology.to_string())
+        })
+    }
+
+    /// Return parallel iterator on the node ontologies of the graph.
+    pub fn par_iter_node_ontologies(
+        &self,
+    ) -> impl IndexedParallelIterator<Item = Option<String>> + '_ {
+        self.par_iter_node_names().map(|node_name| {
+            get_node_repository_from_node_name(&node_name)
+                .ok()
+                .map(|ontology| ontology.to_string())
+        })
+    }
+
     /// Return iterator on the unique node type IDs of the graph.
     pub fn iter_unique_node_type_ids(&self) -> Result<impl Iterator<Item = NodeTypeT> + '_> {
         Ok(0..self.get_node_types_number()?)

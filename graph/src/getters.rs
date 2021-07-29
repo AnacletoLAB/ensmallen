@@ -477,6 +477,21 @@ impl Graph {
         node_urls
     }
 
+    /// Return vector with the node predicted ontology.
+    ///
+    /// # Implementative details
+    /// The node with an unknown ontology will have None as an URL.
+    ///
+    /// # How to add new ontologies
+    /// If you need another ontology to be added, just do a pull request
+    /// and add the proper file in the url utilities folder within
+    /// the Ensmallen rust package.
+    pub fn get_node_ontologies(&self) -> Vec<Option<String>> {
+        let mut node_urls = vec![None; self.get_nodes_number() as usize];
+        self.par_iter_node_ontologies().collect_into_vec(&mut node_urls);
+        node_urls
+    }
+
     /// Return vector with the sorted nodes Ids.
     pub fn get_node_ids(&self) -> Vec<NodeT> {
         self.iter_node_ids().collect()
