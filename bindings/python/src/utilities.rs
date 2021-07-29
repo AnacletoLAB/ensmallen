@@ -1,8 +1,8 @@
-use graph::WalksParameters;
-use shared::{NodeT, Result, WeightT};
 use crate::types::EnsmallenGraph;
-use std::collections::HashMap;
+use graph::WalksParameters;
 use pyo3::types::PyDict;
+use shared::{NodeT, Result, WeightT};
+use std::collections::HashMap;
 use std::collections::HashSet;
 use strsim::levenshtein;
 

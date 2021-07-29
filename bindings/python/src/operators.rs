@@ -1,12 +1,12 @@
-use pyo3::prelude::*;
 use pyo3::class::basic::PyObjectProtocol;
 use pyo3::class::number::PyNumberProtocol;
 use pyo3::exceptions::PyAttributeError;
+use pyo3::prelude::*;
 use rayon::iter::{IndexedParallelIterator, IntoParallelRefIterator, ParallelIterator};
 use strsim::*;
 
-use crate::EnsmallenGraph;
 use crate::method_names_list::*;
+use crate::EnsmallenGraph;
 
 #[pyproto]
 impl PyNumberProtocol for EnsmallenGraph {

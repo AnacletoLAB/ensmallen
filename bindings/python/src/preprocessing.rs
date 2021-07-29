@@ -1,29 +1,17 @@
-
-use pyo3::prelude::*;
-use shared::*;
 use preprocessing::{
-    cooccurence_matrix as rust_cooccurence_matrix, 
-    okapi_bm25_tfidf as rust_okapi_bm25_tfidf,
+    cooccurence_matrix as rust_cooccurence_matrix, okapi_bm25_tfidf as rust_okapi_bm25_tfidf,
     word2vec as rust_word2vec,
 };
+use pyo3::prelude::*;
+use shared::*;
 
 use crate::types::*;
 use crate::utilities::validate_kwargs;
 
 use numpy::PyArray1;
-use pyo3::wrap_pyfunction;
 use pyo3::types::PyDict;
 use rayon::prelude::*;
 use std::collections::HashMap;
-
-
-#[pymodule]
-fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_wrapped(wrap_pyfunction!(word2vec))?;
-    m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
-    m.add_wrapped(wrap_pyfunction!(okapi_bm25_tfidf))?;
-    Ok(())
-}
 
 #[pyfunction()]
 #[text_signature = "(documents, k1, b, vocabulary_size, verbose)"]

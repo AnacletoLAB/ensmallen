@@ -4,7 +4,6 @@ use shared::*;
 use numpy::PyArray2;
 use pyo3::prelude::*;
 
-
 #[pymethods]
 impl EnsmallenGraph {
     #[text_signature = "($self, verbose)"]

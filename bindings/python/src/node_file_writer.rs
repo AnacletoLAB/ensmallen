@@ -1,9 +1,9 @@
-use pyo3::prelude::*;
 use crate::types::EnsmallenGraph;
 use crate::utilities::validate_kwargs;
+use graph::DumpGraph;
+use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use readers_and_writers::NodeFileWriter;
-use graph::DumpGraph;
 
 #[pymethods]
 impl EnsmallenGraph {

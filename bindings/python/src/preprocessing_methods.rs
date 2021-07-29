@@ -1,6 +1,6 @@
+use crate::types::*;
 use pyo3::prelude::*;
 use shared::*;
-use crate::types::*;
 
 use numpy::{PyArray1, PyArray2};
 use pyo3::types::PyDict;

@@ -7,7 +7,6 @@ use pyo3::prelude::*;
 use pyo3::types::PyDict;
 use rayon::iter::{IndexedParallelIterator, ParallelIterator};
 
-
 #[pymethods]
 impl EnsmallenGraph {
     #[args(py_kwargs = "**")]

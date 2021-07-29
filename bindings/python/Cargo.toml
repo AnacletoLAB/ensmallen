@@ -26,11 +26,13 @@ features = ["extension-module"]
 
 [dependencies]
 env_logger = "0.8.1"
-graph = { path = "../../crates/graph" }
-tags = { path = "../../crates/tags" }
-preprocessing = { path = "../../crates/preprocessing"}
-shared = { path = "../../crates/shared"}
-readers_and_writers = { path = "../../crates/readers_and_writers"}
+graph =               {path = "../../crates/graph"}
+tags =                {path = "../../crates/tags"}
+url_utilities =       {path = "../../crates/url_utilities"}
+edge_list_utils =     {path = "../../crates/edge_list_utils"}
+preprocessing =       {path = "../../crates/preprocessing"}
+shared =              {path = "../../crates/shared"}
+readers_and_writers = {path = "../../crates/readers_and_writers"}
 
 numpy = "0.13.1"
 strsim = "0.10.0"
@@ -74,3 +76,8 @@ lto = "fat"
 # where a higher threshold will allow more inlining.
 # The default for opt-level=3 is 275.
 #inline-threshold=1000000
+
+[target.x86_64-unknown-linux-gnu]
+rustflags = [
+    "-C", "link-arg=-fuse-ld=lld",
+]

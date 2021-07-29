@@ -1,28 +1,19 @@
-use pyo3::prelude::*;
-use pyo3::{wrap_pyfunction, wrap_pymodule};
-use numpy::{PyArray1, PyArray2};
-
-use crate::preprocessing::*;
+#[allow(unused_imports)]
 use crate::types::EnsmallenGraph;
-use tags::*;
-use graph::*;
+#[allow(unused_imports)]
+use graph::{DumpGraph, Graph};
+#[allow(unused_imports)]
+use numpy::{PyArray, PyArray1, PyArray2};
+#[allow(unused_imports)]
+use pyo3::prelude::*;
+#[allow(unused_imports)]
+use pyo3::types::PyDict;
+#[allow(unused_imports)]
 use shared::*;
-
+#[allow(unused_imports)]
 use std::collections::{HashMap, HashSet};
-
-#[pymodule]
-fn ensmallen_graph(_py: Python, m: &PyModule) -> PyResult<()> {
-    m.add_class::<EnsmallenGraph>()?;
-    m.add_wrapped(wrap_pymodule!(preprocessing))?;
-
-    m.add_wrapped(wrap_pyfunction!(convert_edge_list_to_numeric))?;
-    m.add_wrapped(wrap_pyfunction!(densify_sparse_numeric_edge_list))?;
-    m.add_wrapped(wrap_pyfunction!(convert_node_list_node_types_to_numeric))?;
-    m.add_wrapped(wrap_pyfunction!(build_optimal_lists_files))?;
-    m.add_wrapped(wrap_pyfunction!(build_empty_graph))?;
-    env_logger::init();
-    Ok(())
-}
+#[allow(unused_imports)]
+use tags::*;
 
 #[pyfunction]
 #[automatically_generated_binding]

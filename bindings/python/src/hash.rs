@@ -1,5 +1,5 @@
-use pyo3::prelude::*;
 use crate::types::EnsmallenGraph;
+use pyo3::prelude::*;
 
 #[pymethods]
 impl EnsmallenGraph {

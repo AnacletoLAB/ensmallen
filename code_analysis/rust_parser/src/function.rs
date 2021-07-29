@@ -13,6 +13,7 @@ pub struct Function{
     pub is_unsafe: bool,
     pub class: Option<Type>,
     pub file_path: String,
+    pub module_name: String,
 }
 
 impl Default for Function{
@@ -29,6 +30,7 @@ impl Default for Function{
             is_unsafe: false,
             class: None,
             file_path: String::new(),
+            module_name: String::new(),
         }
     }
 }
@@ -165,6 +167,7 @@ impl Parse for Function {
                 is_unsafe: is_unsafe,
                 class: None,
                 file_path: String::new(),
+                module_name: String::new(),
             }
         )
     }

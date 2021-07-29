@@ -1,7 +1,7 @@
 use graph::Graph;
-use shared::types::NodeT;
 use numpy::{PyArray1, PyArray2};
 use pyo3::prelude::*;
+use shared::types::NodeT;
 
 #[pyclass]
 #[derive(Clone, Debug)]

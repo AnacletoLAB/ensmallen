@@ -10,7 +10,17 @@ use bindgen::*;
 
 fn main() {
     // Generate the bindings
-    gen_bindings("../bindings/python/src/auto_generated_bindings.rs", "../bindings/python/ensmallen_graph/__init__.py");
+    let mut modules = Vec::new();
+    modules.extend(gen_bindings("graph", false));
+    modules.extend(gen_bindings("edge_list_utils", true));
+    modules.extend(gen_bindings("url_utilities", true));
+
+
+    fix_init(
+        modules,
+        "../bindings/python/ensmallen_graph/__init__.py",
+        "../bindings/python/src/auto_import.rs",
+    );
 
     // Generate the tfidf weights
     tfidf_gen("../bindings/python/src/method_names_list.rs");
