@@ -121,7 +121,7 @@ impl NodeFileWriter {
             self.node_types_column_number = Some(column_number);
             self.number_of_columns = self.number_of_columns.max(column_number + 1);
             self.columns_are_dense = self.are_columns_dense();
-            if self.node_types_column.is_none(){
+            if self.node_types_column.is_none() {
                 self.node_types_column = Some(column_number.to_string());
             }
         }
@@ -151,7 +151,7 @@ impl NodeFileWriter {
             self.node_ids_column_number = Some(column_number);
             self.number_of_columns = self.number_of_columns.max(column_number + 1);
             self.columns_are_dense = self.are_columns_dense();
-            if self.node_ids_column.is_none(){
+            if self.node_ids_column.is_none() {
                 self.node_ids_column = Some(column_number.to_string());
             }
         }

@@ -20,8 +20,6 @@ use crate::{
 /// * `original_edge_list_edge_types_column_number`: Option<usize> - The column number to use for the edge types in the original edges list.
 /// * `original_weights_column`: Option<String> - The column name to use for the weights in the original edges list.
 /// * `original_weights_column_number`: Option<usize> - The column number to use for the weights in the original edges list.
-/// * `original_edge_ids_column`: Option<String> - The column name to use for the edge ids in the original edges list.
-/// * `original_edge_ids_column_number`: Option<usize> - The column number to use for the edge ids in the original edges list.
 /// * `target_edge_path`: &str - The path from where to load the target edge list. This must be different from the original edge list path.
 /// * `target_edge_list_separator`: Option<String> - Separator to use for the target edge list. If None, the one provided from the original edge list will be used.
 /// * `target_edge_list_header`: Option<bool> - Whether the target edge list has an header. If None, the one provided from the original edge list will be used.
@@ -33,8 +31,6 @@ use crate::{
 /// * `target_edge_list_edge_types_column_number`: Option<usize> - The column number to use for the edge types in the target edges list. If None, the one provided from the original edge list will be used.
 /// * `target_weights_column`: Option<String> - The column name to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
 /// * `target_weights_column_number`: Option<usize> - The column number to use for the weights in the target edges list. If None, the one provided from the original edge list will be used.
-/// * `target_edge_ids_column`: Option<String> - The column name to use for the edge ids in the target edges list.
-/// * `target_edge_ids_column_number`: Option<usize> - The column number to use for the edge ids in the target edges list.
 /// * `target_node_path`: Option<&str> - The optional name for the node list to be written out.
 /// * `target_node_list_separator`: Option<String> - The separator to use for the node list.
 /// * `target_node_list_header`: Option<bool> - Whether to add the header to the node list.
@@ -108,8 +104,6 @@ pub fn convert_edge_list_to_numeric(
     original_edge_list_edge_types_column_number: Option<usize>,
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
-    original_edge_ids_column: Option<String>,
-    original_edge_ids_column_number: Option<usize>,
 
     target_edge_path: &str,
     target_edge_list_separator: Option<String>,
@@ -122,8 +116,6 @@ pub fn convert_edge_list_to_numeric(
     target_edge_list_edge_types_column_number: Option<usize>,
     target_weights_column: Option<String>,
     target_weights_column_number: Option<usize>,
-    target_edge_ids_column: Option<String>,
-    target_edge_ids_column_number: Option<usize>,
 
     target_node_path: Option<&str>,
     target_node_list_separator: Option<String>,
@@ -149,6 +141,7 @@ pub fn convert_edge_list_to_numeric(
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
+    directed: bool,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<(NodeT, Option<EdgeTypeT>)> {
@@ -165,7 +158,7 @@ pub fn convert_edge_list_to_numeric(
     }
 
     if original_edge_list_edge_types_column.is_none()
-        && original_edge_ids_column_number.is_none()
+        && original_edge_list_edge_types_column_number.is_none()
         && target_edge_type_list_path.is_some()
     {
         return Err(concat!(
@@ -256,8 +249,6 @@ pub fn convert_edge_list_to_numeric(
         .set_edge_types_column_number(original_edge_list_edge_types_column_number)?
         .set_weights_column(original_weights_column.clone())?
         .set_weights_column_number(original_weights_column_number)?
-        .set_edge_ids_column(original_edge_ids_column.clone())?
-        .set_edge_ids_column_number(original_edge_ids_column_number)?
         .set_parallel(Some(false))
         // To avoid a duplicated loading bar.
         .set_verbose(verbose.map(|verbose| verbose && edges_number.is_none()))
@@ -283,10 +274,6 @@ pub fn convert_edge_list_to_numeric(
         .set_weights_column_number(
             target_weights_column_number.or(file_reader.get_weights_column_number()),
         )
-        .set_edge_ids_column(target_edge_ids_column.or(original_edge_ids_column))
-        .set_edge_ids_column_number(
-            target_edge_ids_column_number.or(file_reader.get_edge_ids_column_number()),
-        )
         .set_separator(target_edge_list_separator.or(Some(file_reader.get_separator())))?
         .set_numeric_node_ids(Some(true))
         .set_numeric_edge_type_ids(Some(true))
@@ -303,20 +290,47 @@ pub fn convert_edge_list_to_numeric(
             // Removing eventual errors.
             .filter_map(|line| line.ok())
             // Processing line
-            .map(
-                |(line_number, (src_name, dst_name, edge_type, weight))| unsafe {
-                    (
-                        line_number as u64,
-                        nodes.unchecked_insert(src_name),
-                        "".to_owned(),
-                        nodes.unchecked_insert(dst_name),
-                        "".to_owned(),
-                        edge_type.map(|edge_type| edge_types.unchecked_insert(edge_type)),
+            .flat_map(|(_, (src_name, dst_name, edge_type, weight))| unsafe {
+                let src_id = nodes.unchecked_insert(src_name);
+                let dst_id = nodes.unchecked_insert(dst_name);
+                let edge_type = edge_type.map(|edge_type| edge_types.unchecked_insert(edge_type));
+                let weight = if weight.is_nan() { None } else { Some(weight) };
+                if directed || src_id == dst_id {
+                    vec![(
+                        0,
+                        src_id,
+                        "".to_string(),
+                        dst_id,
+                        "".to_string(),
+                        edge_type,
                         None,
-                        if weight.is_nan() { None } else { Some(weight) },
-                    )
-                },
-            ),
+                        weight,
+                    )]
+                } else {
+                    vec![
+                        (
+                            0,
+                            src_id,
+                            "".to_string(),
+                            dst_id,
+                            "".to_string(),
+                            edge_type,
+                            None,
+                            weight,
+                        ),
+                        (
+                            0,
+                            dst_id,
+                            "".to_string(),
+                            src_id,
+                            "".to_string(),
+                            edge_type,
+                            None,
+                            weight,
+                        ),
+                    ]
+                }
+            }),
     )?;
 
     if original_node_path.is_none() {
@@ -427,8 +441,6 @@ pub fn densify_sparse_numeric_edge_list(
     original_edge_list_edge_types_column_number: Option<usize>,
     original_weights_column: Option<String>,
     original_weights_column_number: Option<usize>,
-    original_edge_ids_column: Option<String>,
-    original_edge_ids_column_number: Option<usize>,
 
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
@@ -457,8 +469,6 @@ pub fn densify_sparse_numeric_edge_list(
     target_edge_list_edge_types_column_number: Option<usize>,
     target_weights_column: Option<String>,
     target_weights_column_number: Option<usize>,
-    target_edge_ids_column: Option<String>,
-    target_edge_ids_column_number: Option<usize>,
 
     target_node_path: Option<&str>,
     target_node_list_separator: Option<String>,
@@ -484,6 +494,7 @@ pub fn densify_sparse_numeric_edge_list(
     edges_number: Option<usize>,
     skip_edge_types_if_unavailable: Option<bool>,
     skip_weights_if_unavailable: Option<bool>,
+    directed: bool,
     verbose: Option<bool>,
     name: Option<String>,
 ) -> Result<(NodeT, Option<EdgeTypeT>)> {
@@ -500,7 +511,7 @@ pub fn densify_sparse_numeric_edge_list(
     }
 
     if original_edge_list_edge_types_column.is_none()
-        && original_edge_ids_column_number.is_none()
+        && original_edge_list_edge_types_column_number.is_none()
         && target_edge_type_list_path.is_some()
     {
         return Err(concat!(
@@ -563,8 +574,6 @@ pub fn densify_sparse_numeric_edge_list(
         .set_edge_types_column_number(original_edge_list_edge_types_column_number)?
         .set_weights_column(original_weights_column.clone())?
         .set_weights_column_number(original_weights_column_number)?
-        .set_edge_ids_column(original_edge_ids_column.clone())?
-        .set_edge_ids_column_number(original_edge_ids_column_number)?
         .set_parallel(Some(false))
         .set_skip_edge_types_if_unavailable(skip_edge_types_if_unavailable)
         .set_skip_weights_if_unavailable(skip_weights_if_unavailable)
@@ -592,10 +601,6 @@ pub fn densify_sparse_numeric_edge_list(
         .set_weights_column(target_weights_column.or(original_weights_column))
         .set_weights_column_number(
             target_weights_column_number.or(file_reader.get_weights_column_number()),
-        )
-        .set_edge_ids_column(target_edge_ids_column.or(original_edge_ids_column))
-        .set_edge_ids_column_number(
-            target_edge_ids_column_number.or(file_reader.get_edge_ids_column_number()),
         )
         .set_separator(target_edge_list_separator.or(Some(file_reader.get_separator())))?
         .set_numeric_node_ids(Some(true))
@@ -633,22 +638,34 @@ pub fn densify_sparse_numeric_edge_list(
             // Removing eventual errors.
             .filter_map(|line| line.ok())
             // Processing line
-            .map(
-                |(line_number, (src_name, dst_name, edge_type, weight))| unsafe {
-                    (
-                        line_number as u64,
-                        to_numeric_node_name(&src_name),
-                        src_name,
-                        to_numeric_node_name(&dst_name),
-                        dst_name,
-                        edge_type.map(|edge_type| edge_types.unchecked_insert(edge_type)),
-                        None,
-                        if weight.is_nan() { None } else { Some(weight) },
-                    )
-                },
-            ),
+            .flat_map(|(_, (src_name, dst_name, edge_type, weight))| unsafe {
+                let src_id = to_numeric_node_name(&src_name);
+                let dst_id = to_numeric_node_name(&dst_name);
+                let edge_type = edge_type.map(|edge_type| edge_types.unchecked_insert(edge_type));
+                let weight = if weight.is_nan() { None } else { Some(weight) };
+                if directed || src_id == dst_id {
+                    vec![(
+                        0, src_id, src_name, dst_id, dst_name, edge_type, None, weight,
+                    )]
+                } else {
+                    vec![
+                        (
+                            0,
+                            src_id,
+                            src_name.clone(),
+                            dst_id,
+                            dst_name.clone(),
+                            edge_type,
+                            None,
+                            weight,
+                        ),
+                        (
+                            0, dst_id, dst_name, src_id, src_name, edge_type, None, weight,
+                        ),
+                    ]
+                }
+            }),
     )?;
-
 
     if let Some(target_node_path) = target_node_path {
         let node_file_writer = NodeFileWriter::new(target_node_path)
@@ -670,7 +687,6 @@ pub fn densify_sparse_numeric_edge_list(
                 }),
         )?;
     }
-
 
     if let Some(target_edge_type_list_path) = target_edge_type_list_path {
         edge_types.build()?;

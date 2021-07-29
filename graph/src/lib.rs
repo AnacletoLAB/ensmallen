@@ -42,8 +42,8 @@ mod compression;
 mod from_csv;
 pub(crate) use self::compression::*;
 
-mod validators;
-pub use self::validators::*;
+mod parameters_validators;
+pub use self::parameters_validators::*;
 mod getters_boolean;
 pub use self::getters_boolean::*;
 mod replace;

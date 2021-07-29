@@ -1,8 +1,7 @@
 use crate::{
     add_numeric_id_to_csv, convert_edge_list_to_numeric, convert_node_list_node_types_to_numeric,
-    convert_undirected_edge_list_to_directed, densify_sparse_numeric_edge_list,
-    get_minmax_node_from_numeric_edge_list, is_numeric_edge_list, sort_numeric_edge_list_inplace,
-    EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT,
+    densify_sparse_numeric_edge_list, get_minmax_node_from_numeric_edge_list, is_numeric_edge_list,
+    sort_numeric_edge_list_inplace, EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT,
 };
 use log::info;
 
@@ -500,8 +499,6 @@ pub fn build_optimal_lists_files(
             original_edge_list_edge_types_column_number,
             original_weights_column.clone(),
             original_weights_column_number,
-            None,
-            None,
             original_edge_type_path,
             original_edge_types_column_number,
             original_edge_types_column,
@@ -532,8 +529,6 @@ pub fn build_optimal_lists_files(
             } else {
                 None
             },
-            None,
-            None,
             target_node_path.as_deref(),
             target_node_list_separator.clone(),
             target_node_list_header,
@@ -556,6 +551,7 @@ pub fn build_optimal_lists_files(
             edges_number.map(|edges_number| edges_number as usize),
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
+            directed,
             verbose,
             name.clone(),
         )
@@ -603,8 +599,6 @@ pub fn build_optimal_lists_files(
             original_edge_list_edge_types_column_number,
             original_weights_column.clone(),
             original_weights_column_number,
-            None,
-            None,
             target_numeric_edge_path.as_ref(),
             target_edge_list_separator.clone(),
             Some(false),
@@ -620,8 +614,6 @@ pub fn build_optimal_lists_files(
             } else {
                 None
             },
-            None,
-            None,
             target_node_path.as_deref(),
             target_node_list_separator,
             target_node_list_header,
@@ -644,76 +636,13 @@ pub fn build_optimal_lists_files(
             edges_number.map(|edges_number| edges_number as usize),
             skip_edge_types_if_unavailable,
             skip_weights_if_unavailable,
+            directed,
             verbose,
             name.clone(),
         )
     }?;
 
     original_edge_path = target_numeric_edge_path;
-
-    if !directed {
-        // We update the target path to a new temporary one
-        let target_directed_edge_path: String =
-            format!("{}.complete.tmp", target_edge_path.clone());
-
-        // Create the complete edge list
-        info!("Convert undirected edge list to directed.");
-        edges_number = Some(convert_undirected_edge_list_to_directed(
-            original_edge_path.as_ref(),
-            original_edge_list_separator.clone(),
-            original_edge_list_header,
-            None,
-            Some(0),
-            None,
-            Some(1),
-            None,
-            if has_edge_types { Some(2) } else { None },
-            None,
-            if has_edge_weights {
-                Some(2 + has_edge_types as usize)
-            } else {
-                None
-            },
-            target_directed_edge_path.as_ref(),
-            target_edge_list_separator.clone(),
-            Some(false),
-            None,
-            Some(0),
-            None,
-            Some(1),
-            None,
-            if has_edge_types { Some(2) } else { None },
-            None,
-            if has_edge_weights {
-                Some(2 + has_edge_types as usize)
-            } else {
-                None
-            },
-            edge_list_comment_symbol.clone(),
-            default_edge_type.clone(),
-            default_weight,
-            edge_list_max_rows_number,
-            edge_list_rows_to_skip,
-            edges_number.map(|edges_number| edges_number as usize),
-            skip_edge_types_if_unavailable,
-            skip_weights_if_unavailable,
-            verbose,
-            name.clone(),
-        )?);
-
-        info!("Deleting previous temporary file with numeric edge list.");
-        match std::fs::remove_file(original_edge_path.clone()) {
-            Ok(()) => {}
-            Err(_) => {
-                return Err(format!(
-                    concat!("It is not possible to delete the numeric edge list file {}.",),
-                    original_edge_path.clone()
-                ));
-            }
-        };
-
-        original_edge_path = target_directed_edge_path;
-    }
 
     // Sort the edge list
     info!("Sorting the edge list.");

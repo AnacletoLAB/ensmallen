@@ -8,11 +8,9 @@ use super::*;
 /// To validate a node you can use:
 /// ```rust
 /// # use graph::*;
-/// let mouse_genome_informatics_node_name1 = "MGI:2159965";
-/// let mouse_genome_informatics_node_name2 = "MGI:MGI:2159965";
+/// let mouse_genome_informatics_node_name = "MGI:2159965";
 /// let not_mouse_genome_informatics_node_name = "PizzaQuattroStagioni";
-/// assert!(is_valid_mouse_genome_informatics_node_name(mouse_genome_informatics_node_name1));
-/// assert!(!is_valid_mouse_genome_informatics_node_name(mouse_genome_informatics_node_name2));
+/// assert!(is_valid_mouse_genome_informatics_node_name(mouse_genome_informatics_node_name));
 /// assert!(!is_valid_mouse_genome_informatics_node_name(not_mouse_genome_informatics_node_name));
 /// ```
 pub fn is_valid_mouse_genome_informatics_node_name(node_name: &str) -> bool {

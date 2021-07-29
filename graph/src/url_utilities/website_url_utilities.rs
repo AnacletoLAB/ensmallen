@@ -11,12 +11,15 @@ use super::*;
 /// ```rust
 /// # use graph::*;
 /// let this_library_node_name = "https://docs.rs/url/2.2.2/url/";
-/// let not_this_library_node_name = "PizzaQuattroStagioni";
+/// let not_this_library_node_name1 = "PizzaQuattroStagioni";
+/// let not_this_library_node_name2 = "CORD:b65faf5b8f0846d278b50285898e849e45d30839";
 /// assert!(is_valid_website_node_name(this_library_node_name));
-/// assert!(!is_valid_website_node_name(not_this_library_node_name));
+/// assert!(!is_valid_website_node_name(not_this_library_node_name1));
+/// assert!(!is_valid_website_node_name(not_this_library_node_name2));
 /// ```
 pub fn is_valid_website_node_name(node_name: &str) -> bool {
-    url::Url::parse(node_name).is_ok()
+    (node_name.starts_with("http") || node_name.starts_with("ftp"))
+        && validator::validate_url(node_name)
 }
 
 #[automatically_generated_function]
