@@ -1,6 +1,6 @@
 use super::*;
 
-use graph::okapi_bm25_tfidf;
+use preprocessing::okapi_bm25_tfidf;
 
 /// Pre-compute the TD-IDF weight for each term of each binding.
 /// Then write the compute weights in a file at the given path.

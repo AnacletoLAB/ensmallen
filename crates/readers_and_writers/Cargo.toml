@@ -1,0 +1,16 @@
+[package]
+name = "readers_and_writers"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+shared = {path="../shared"}
+num-traits = "0.2.14"
+itertools = "0.10.0"
+rayon = "1.1"
+indicatif = {version="0.16.0", features = ["rayon"]}
+
+[target.'cfg(unix)'.dependencies]
+nix = "0.22.0"

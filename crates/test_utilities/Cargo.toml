@@ -1,0 +1,21 @@
+[package]
+name = "test_utilities"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+shared={path="../shared"}
+graph={path="../graph"}
+readers_and_writers={path="../readers_and_writers"}
+log = "0.4.8"
+rayon = "1.1"
+num-traits = "0.2.14"
+itertools = "0.10.0"
+rand = {version="0.7", features = ["small_rng"] }
+
+[target.x86_64-unknown-linux-gnu]
+rustflags = [
+    "-C", "link-arg=-fuse-ld=lld",
+]

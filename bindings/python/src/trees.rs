@@ -1,4 +1,9 @@
-use super::*;
+use crate::types::EnsmallenGraph;
+use shared::*;
+
+use numpy::PyArray2;
+use pyo3::prelude::*;
+
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -27,15 +32,15 @@ impl EnsmallenGraph {
     fn spanning_arborescence(&self, verbose: Option<bool>) -> PyResult<Py<PyArray2<NodeT>>> {
         let py = pyo3::Python::acquire_gil();
         let (edges_number, iter) = pe!(self.graph.spanning_arborescence(verbose))?;
-        let array = ThreadDataRaceAware {
-            t: PyArray2::new(py.python(), [edges_number, 2], false),
+        let array = ThreadDataRaceAwareMutable {
+            value: PyArray2::new(py.python(), [edges_number, 2], false),
         };
         unsafe {
             iter.enumerate().for_each(|(index, (src, dst))| {
-                *(array.t.uget_mut([index, 0])) = src;
-                *(array.t.uget_mut([index, 1])) = dst;
+                *(array.value.uget_mut([index, 0])) = src;
+                *(array.value.uget_mut([index, 1])) = dst;
             });
         }
-        Ok(array.t.to_owned())
+        Ok(array.value.to_owned())
     }
 }

@@ -1,1 +1,0 @@
-from .entry import entrypoint

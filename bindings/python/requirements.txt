@@ -1,5 +1,5 @@
 maturin
 compress_json
-scipy
 tqdm
 pandas
+downloaders

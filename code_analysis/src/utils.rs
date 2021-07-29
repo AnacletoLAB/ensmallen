@@ -34,7 +34,7 @@ pub fn skip_file(path: &str) -> bool {
 /// # Panics
 /// If this function panics then probably the source folder path is wrong!
 pub fn get_library_sources() -> Vec<Module> {
-    let src_files: Vec<String> = WalkDir::new("../graph/src/")
+    let src_files: Vec<String> = WalkDir::new("../crates/graph/src/")
         .into_iter()
         .filter_map(|entry| {
             let value = entry.unwrap();

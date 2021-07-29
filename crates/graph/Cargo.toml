@@ -1,0 +1,56 @@
+[package]
+name = "graph"
+version = "0.6.0"
+authors = [
+    "LucaCappelletti94 <cappelletti.luca94@gmail.com>",
+    "Tommaso Fontana <tommaso.fontana.96@gmail.com>"   
+] 
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "graph"
+
+[build-dependencies]
+cc = "1.0.46"
+
+[dependencies]
+log = "0.4.8"
+counter = "0.5.2"
+rayon = "1.1"
+rand = {version="0.7", features = ["small_rng"] }
+itertools = "0.10.0"
+permutation = "0.2.5"
+bitvec = {version="0.22", features=["atomic"]}
+validator = "0.14.0"
+num_cpus = "1.13.0"
+iter-set = "2.0.1"
+atomic_float = "0.1.0"
+num-traits = "0.2.14"
+indicatif = {version="0.16.0", features = ["rayon"]}
+
+roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
+vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
+elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "develop"}
+
+tags = {path="../tags/"}
+shared = {path="../shared"}
+readers_and_writers = {path="../readers_and_writers"}
+preprocessing = {path="../preprocessing"}
+edge_list_utils = {path="../edge_list_utils"}
+url_utilities = {path="../url_utilities"}
+
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+overflow-checks = true   # Disable integer overflow checks.
+debug = false            # Include debug info.
+debug-assertions = true  # Enables debug assertions.
+
+[profile.test]
+overflow-checks = true   # Disable integer overflow checks.
+debug = false            # Include debug info.
+debug-assertions = true  # Enables debug assertions.
+opt-level = 3

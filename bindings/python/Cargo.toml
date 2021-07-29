@@ -26,13 +26,18 @@ features = ["extension-module"]
 
 [dependencies]
 env_logger = "0.8.1"
-graph = { path = "../../graph" }
-tags = { path = "../../graph/tags" }
+graph = { path = "../../crates/graph" }
+tags = { path = "../../crates/tags" }
+preprocessing = { path = "../../crates/preprocessing"}
+shared = { path = "../../crates/shared"}
+readers_and_writers = { path = "../../crates/readers_and_writers"}
+
 numpy = "0.13.1"
 strsim = "0.10.0"
 markdown = "0.3"
 rayon = "1.5.0"
 ctrlc = "3.1.7"
+
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 
 [profile.release]

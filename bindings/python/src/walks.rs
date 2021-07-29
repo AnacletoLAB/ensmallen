@@ -1,9 +1,12 @@
-use super::*;
-use graph::NodeT;
+use crate::types::EnsmallenGraph;
+use crate::utilities::*;
+use shared::*;
+
 use numpy::PyArray2;
-use rayon::iter::IndexedParallelIterator;
-use rayon::prelude::*;
-use types::ThreadDataRaceAware;
+use pyo3::prelude::*;
+use pyo3::types::PyDict;
+use rayon::iter::{IndexedParallelIterator, ParallelIterator};
+
 
 #[pymethods]
 impl EnsmallenGraph {
@@ -79,8 +82,8 @@ impl EnsmallenGraph {
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
         let iter = pe!(self.graph.iter_random_walks(quantity, &parameters))?;
-        let array = ThreadDataRaceAware {
-            t: PyArray2::new(
+        let array = ThreadDataRaceAwareMutable {
+            value: PyArray2::new(
                 py.python(),
                 [
                     quantity as usize * parameters.get_iterations() as usize,
@@ -93,10 +96,10 @@ impl EnsmallenGraph {
             iter.enumerate().for_each(|(y, vy)| {
                 vy.iter()
                     .enumerate()
-                    .for_each(|(x, vyx)| *(array.t.uget_mut([y, x])) = *vyx)
+                    .for_each(|(x, vyx)| *(array.value.uget_mut([y, x])) = *vyx)
             });
         }
-        Ok(array.t.to_owned())
+        Ok(array.value.to_owned())
     }
 
     #[args(py_kwargs = "**")]
@@ -168,8 +171,8 @@ impl EnsmallenGraph {
 
         let parameters = pe!(self.build_walk_parameters(walk_length, kwargs))?;
         let iter = pe!(self.graph.iter_complete_walks(&parameters))?;
-        let array = ThreadDataRaceAware {
-            t: PyArray2::new(
+        let array = ThreadDataRaceAwareMutable {
+            value: PyArray2::new(
                 py.python(),
                 [
                     self.graph.get_unique_source_nodes_number() as usize
@@ -183,9 +186,9 @@ impl EnsmallenGraph {
             iter.enumerate().for_each(|(y, vy)| {
                 vy.iter()
                     .enumerate()
-                    .for_each(|(x, vyx)| *(array.t.uget_mut([y, x])) = *vyx)
+                    .for_each(|(x, vyx)| *(array.value.uget_mut([y, x])) = *vyx)
             });
         }
-        Ok(array.t.to_owned())
+        Ok(array.value.to_owned())
     }
 }

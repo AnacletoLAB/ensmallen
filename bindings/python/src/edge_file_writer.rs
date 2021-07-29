@@ -1,6 +1,9 @@
-use super::*;
-use graph::EdgeFileWriter;
+use pyo3::prelude::*;
 use pyo3::types::PyDict;
+use readers_and_writers::EdgeFileWriter;
+use graph::DumpGraph;
+use crate::types::EnsmallenGraph;
+use crate::utilities::validate_kwargs;
 
 #[pymethods]
 impl EnsmallenGraph {
