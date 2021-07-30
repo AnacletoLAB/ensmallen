@@ -1,32 +1,14 @@
 """
-This file offers the methods to automatically retrieve the graph Afipia sp. OHSUIC4.
+This file offers the methods to automatically retrieve the graph AfipiaSpOhsuic4.
 
 The graph is automatically retrieved from the STRING repository. 
-
-
-
-Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-03 21:29:33.778022
-
-The undirected graph Afipia sp. OHSUIC4 has 4553 nodes and 479466 weighted
-edges, of which none are self-loops. The graph is dense as it has a density
-of 0.04627 and has 16 connected components, where the component with most
-nodes has 4513 nodes and the component with the least nodes has 2 nodes.
-The graph median node degree is 176, the mean node degree is 210.62, and
-the node degree mode is 2. The top 5 most central nodes are 1297863.APJF01000019_gene2437
-(degree 1529), 1297863.APJF01000025_gene3006 (degree 1520), 1297863.APJF01000010_gene3466
-(degree 1518), 1297863.APJF01000018_gene3071 (degree 1490) and 1297863.APJF01000001_gene2016
-(degree 1321).
 
 
 References
 ---------------------
 Please cite the following if you use the data:
 
+```latex
 @article{szklarczyk2019string,
     title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
     author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -37,43 +19,7 @@ Please cite the following if you use the data:
     year={2019},
     publisher={Oxford University Press}
 }
-
-
-Usage example
-----------------------
-The usage of this graph is relatively straightforward:
-
-.. code:: python
-
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.string import AfipiaSpOhsuic4
-
-    # Then load the graph
-    graph = AfipiaSpOhsuic4()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Wether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
+```
 """
 from typing import Dict
 
@@ -81,57 +27,52 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def AfipiaSpOhsuic4(
+def Afipiaspohsuic4(
     directed: bool = False,
+    preprocess: bool = True,
     verbose: int = 2,
+    cache: bool = True,
     cache_path: str = "graphs/string",
+    version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Afipia sp. OHSUIC4 graph.
+    """Return new instance of the AfipiaSpOhsuic4 graph.
 
-    The graph is automatically retrieved from the STRING repository. 
-
-	
+    The graph is automatically retrieved from the STRING repository.	
 
     Parameters
     -------------------
     directed: bool = False,
         Wether to load the graph as directed or undirected.
         By default false.
+    preprocess: bool = True,
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
+    cache: bool = True,
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    version: str = "11.5",
+        The version of the graph to retrieve.		
+	The available versions are:
+			- 11.0
+			- 11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of Afipia sp. OHSUIC4 graph.
-
-	Report
-	---------------------
-	At the time of rendering these methods (please see datetime below), the graph
-	had the following characteristics:
-	
-	Datetime: 2021-02-03 21:29:33.778022
-	
-	The undirected graph Afipia sp. OHSUIC4 has 4553 nodes and 479466 weighted
-	edges, of which none are self-loops. The graph is dense as it has a density
-	of 0.04627 and has 16 connected components, where the component with most
-	nodes has 4513 nodes and the component with the least nodes has 2 nodes.
-	The graph median node degree is 176, the mean node degree is 210.62, and
-	the node degree mode is 2. The top 5 most central nodes are 1297863.APJF01000019_gene2437
-	(degree 1529), 1297863.APJF01000025_gene3006 (degree 1520), 1297863.APJF01000010_gene3466
-	(degree 1518), 1297863.APJF01000018_gene3071 (degree 1490) and 1297863.APJF01000001_gene2016
-	(degree 1321).
-	
+    Instace of AfipiaSpOhsuic4 graph.
 
 	References
 	---------------------
 	Please cite the following if you use the data:
 	
+	```latex
 	@article{szklarczyk2019string,
 	    title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
 	    author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -142,49 +83,16 @@ def AfipiaSpOhsuic4(
 	    year={2019},
 	    publisher={Oxford University Press}
 	}
-	
-
-	Usage example
-	----------------------
-	The usage of this graph is relatively straightforward:
-	
-	.. code:: python
-	
-	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.string import AfipiaSpOhsuic4
-	
-	    # Then load the graph
-	    graph = AfipiaSpOhsuic4()
-	
-	    # Finally, you can do anything with it, for instance, compute its report:
-	    print(graph)
-	
-	    # If you need to run a link prediction task with validation,
-	    # you can split the graph using a connected holdout as follows:
-	    train_graph, validation_graph = graph.connected_holdout(
-	        # You can use an 80/20 split the holdout, for example.
-	        train_size=0.8,
-	        # The random state is used to reproduce the holdout.
-	        random_state=42,
-	        # Wether to show a loading bar.
-	        verbose=True
-	    )
-	
-	    # Remember that, if you need, you can enable the memory-time trade-offs:
-	    train_graph.enable(
-	        vector_sources=True,
-	        vector_destinations=True,
-	        vector_outbounds=True
-	    )
-	
-	    # Consider using the methods made available in the Embiggen package
-	    # to run graph embedding or link prediction tasks.
+	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="AfipiaSpOhsuic4",
+        graph_name="Afipiaspohsuic4",
         dataset="string",
+        version=version,
         directed=directed,
+        preprocess=preprocess,
         verbose=verbose,
+        cache=cache,
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs
     )()

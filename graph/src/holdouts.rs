@@ -1,3 +1,5 @@
+use crate::constructors::build_graph_from_integers;
+
 use super::*;
 use counter::Counter;
 use indicatif::ParallelProgressIterator;
@@ -103,7 +105,7 @@ impl Graph {
         seed_graph: Option<&Graph>,
         only_from_same_component: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         if negatives_number == 0 {
             return Err(String::from("The number of negatives cannot be zero."));
         }
@@ -277,7 +279,7 @@ impl Graph {
                 negative_edges_hashset.insert(*edge_id);
             }
 
-            if sampling_round > 50000 {
+            if sampling_round > 100000 {
                 panic!("Deadlock in sampling negatives!");
             }
 
@@ -287,28 +289,23 @@ impl Graph {
 
         pb1.finish();
 
-        Graph::from_integer_unsorted(
-            negative_edges_hashset.into_par_iter().flat_map(|edge| {
+        build_graph_from_integers(
+            Some(negative_edges_hashset.into_par_iter().map(|edge| {
                 let (src, dst) = self.decode_edge(edge);
-                if !self.is_directed() && src != dst {
-                    vec![Ok((src, dst, None, None)), Ok((dst, src, None, None))]
-                } else {
-                    vec![Ok((src, dst, None, None))]
-                }
-            }),
+                (0, (src, dst, None, WeightT::NAN))
+            })),
             self.nodes.clone(),
             self.node_types.clone(),
             None,
-            self.directed,
-            format!("Negative {}", self.name.clone()),
             false,
-            false,
-            false,
-            false,
+            self.is_directed(),
+            Some(false),
+            Some(false),
+            Some(false),
+            None,
             true,
             self.has_selfloops(),
-            true,
-            verbose,
+            format!("Negative {}", self.get_name()),
         )
     }
 
@@ -323,7 +320,7 @@ impl Graph {
         &self,
         train_size: f64,
         total_elements: usize,
-    ) -> Result<(usize, usize), String> {
+    ) -> Result<(usize, usize)> {
         if train_size <= 0.0 || train_size >= 1.0 {
             return Err(String::from("Train rate must be strictly between 0 and 1."));
         }
@@ -371,9 +368,7 @@ impl Graph {
         include_all_edge_types: bool,
         user_condition_for_validation_edges: impl Fn(EdgeT, NodeT, NodeT, Option<EdgeTypeT>) -> bool,
         verbose: Option<bool>,
-        train_graph_might_contain_singletons: bool,
-        train_graph_might_contain_singletons_with_selfloops: bool,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         let verbose = verbose.unwrap_or(false);
         let random_state = random_state.unwrap_or(0xbadf00d);
         let validation_edges_pb = get_loading_bar(
@@ -447,69 +442,71 @@ impl Graph {
                 actual_validation_edges_number=actual_validation_edges_number,
             ));
         }
+        let validation_edge_ids = (0..self.get_directed_edges_number())
+            .into_par_iter()
+            .filter(|edge_id| valid_edges_bitmap.contains(*edge_id))
+            .collect::<Vec<_>>();
 
-        // Creating the loading bar for the building of both the training and validation.
-        let pb_valid = get_loading_bar(
-            verbose,
-            "Building the validation graph",
-            valid_edges_bitmap.len() as usize,
-        );
-        let pb_train = get_loading_bar(
-            verbose,
-            "Building the train graph",
-            (self.get_directed_edges_number() - valid_edges_bitmap.len()) as usize,
-        );
+        let train_edge_ids = (0..self.get_directed_edges_number())
+            .into_par_iter()
+            .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
+            .collect::<Vec<_>>();
+
+        let train_edges_number = train_edge_ids.len();
+        let validation_edges_number = validation_edge_ids.len();
 
         Ok((
-            Graph::from_integer_sorted(
-                (0..self.get_directed_edges_number())
-                    .filter(|edge_id| !valid_edges_bitmap.contains(*edge_id))
-                    .progress_with(pb_train)
-                    .map(|edge_id| unsafe {
-                        Ok(self
+            build_graph_from_integers(
+                Some(
+                    train_edge_ids
+                        .into_par_iter()
+                        .enumerate()
+                        .map(|(i, edge_id)| unsafe {
+                            let (src, dst, edge_type, weight) = self
                             .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
                                 edge_id,
-                            ))
-                    }),
-                self.get_directed_edges_number() as usize - valid_edges_bitmap.len() as usize,
+                            );
+                            (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                        }),
+                ),
                 self.nodes.clone(),
                 self.node_types.clone(),
                 self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-                self.directed,
-                true,
-                format!("{} training", self.name.clone()),
-                true,
-                self.has_edge_types(),
                 self.has_edge_weights(),
-                false,
-                train_graph_might_contain_singletons,
-                train_graph_might_contain_singletons_with_selfloops,
-                true,
-            )?,
-            Graph::from_integer_sorted(
-                valid_edges_bitmap
-                    .iter()
-                    .progress_with(pb_valid)
-                    .map(|edge_id| unsafe {
-                        Ok(self
-                            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
-                                edge_id,
-                            ))
-                    }),
-                valid_edges_bitmap.len() as usize,
-                self.nodes.clone(),
-                self.node_types.clone(),
-                self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-                self.directed,
-                true,
-                format!("{} testing", self.name.clone()),
-                true,
-                self.has_edge_types(),
-                self.has_edge_weights(),
-                false,
+                self.is_directed(),
+                Some(true),
+                Some(false),
+                Some(true),
+                Some(train_edges_number as EdgeT),
                 true,
                 self.has_selfloops(),
+                format!("{} train", self.get_name()),
+            )?,
+            build_graph_from_integers(
+                Some(
+                    validation_edge_ids
+                        .into_par_iter()
+                        .enumerate()
+                        .map(|(i, edge_id)| unsafe {
+                            let (src, dst, edge_type, weight) = self
+                            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+                                edge_id,
+                            );
+                            (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                        }),
+                ),
+                self.nodes.clone(),
+                self.node_types.clone(),
+                self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
+                self.has_edge_weights(),
+                self.is_directed(),
+                Some(true),
+                Some(false),
+                Some(true),
+                Some(validation_edges_number as EdgeT),
                 true,
+                self.has_selfloops(),
+                format!("{} test", self.get_name()),
             )?,
         ))
     }
@@ -546,7 +543,7 @@ impl Graph {
         edge_types: Option<Vec<Option<String>>>,
         include_all_edge_types: Option<bool>,
         verbose: Option<bool>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         let include_all_edge_types = include_all_edge_types.unwrap_or(false);
         // If the user has requested to restrict the connected holdout to a
         // limited set of edge types, the graph must have edge types.
@@ -609,7 +606,8 @@ impl Graph {
             include_all_edge_types,
             |_, src, dst, edge_type| {
                 let is_in_tree = tree.contains(&(src, dst));
-                let singleton_selfloop = self.is_singleton_with_selfloops_from_node_id(src);
+                let singleton_selfloop =
+                    unsafe { self.is_unchecked_singleton_with_selfloops_from_node_id(src) };
                 let correct_edge_type = edge_type_ids
                     .as_ref()
                     .map_or(true, |etis| etis.contains(&edge_type));
@@ -619,8 +617,6 @@ impl Graph {
                 !is_in_tree && !singleton_selfloop && correct_edge_type
             },
             verbose,
-            self.has_singleton_nodes(),
-            self.has_singleton_nodes_with_selfloops(),
         )
     }
 
@@ -651,7 +647,7 @@ impl Graph {
         edge_types: Option<Vec<Option<String>>>,
         min_number_overlaps: Option<EdgeT>,
         verbose: Option<bool>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         let include_all_edge_types = include_all_edge_types.unwrap_or(false);
         // If the user has requested to restrict the connected holdout to a
         // limited set of edge types, the graph must have edge types.
@@ -659,7 +655,7 @@ impl Graph {
             self.must_have_edge_types()?;
         }
         let total_edges_number = if include_all_edge_types {
-            self.unique_edges_number
+            self.get_unique_edges_number()
         } else {
             self.get_directed_edges_number()
         };
@@ -701,10 +697,6 @@ impl Graph {
                 true
             },
             verbose,
-            // Singletons may be generated during the holdouts process
-            true,
-            // Singletons with selfloops may be generated during the holdouts process only when there are selfloops in the graph
-            self.has_selfloops(),
         )
     }
 
@@ -731,7 +723,7 @@ impl Graph {
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         self.must_have_node_types()?;
         let random_state = random_state.unwrap_or(0xbadf00d);
         let use_stratification = use_stratification.unwrap_or(false);
@@ -817,12 +809,12 @@ impl Graph {
         let mut test_graph = self.clone();
 
         // Replace the node_types with the one computes above
-        train_graph.node_types = NodeTypeVocabulary::from_structs(
-            train_node_types,
+        train_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(train_node_types),
             self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
         );
-        test_graph.node_types = NodeTypeVocabulary::from_structs(
-            test_node_types,
+        test_graph.node_types = NodeTypeVocabulary::from_option_structs(
+            Some(test_node_types),
             self.node_types.as_ref().map(|ntv| ntv.vocabulary.clone()),
         );
 
@@ -978,7 +970,7 @@ impl Graph {
         train_size: f64,
         use_stratification: Option<bool>,
         random_state: Option<EdgeT>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
         if self.get_known_edge_types_number()? < 2 {
             return Err("It is not possible to create a edge label holdout when the number of edges with known edge type is less than two.".to_string());
         }
@@ -1230,7 +1222,7 @@ impl Graph {
         nodes_number: NodeT,
         random_state: Option<usize>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         if nodes_number <= 1 {
             return Err(String::from("Required nodes number must be more than 1."));
         }
@@ -1249,10 +1241,9 @@ impl Graph {
 
         // Creating the loading bars
         let pb1 = get_loading_bar(verbose, "Sampling nodes subset", nodes_number as usize);
-        let pb2 = get_loading_bar(verbose, "Computing subgraph edges", nodes_number as usize);
-        let pb3 = get_loading_bar(
+        let pb2 = get_loading_bar(
             verbose,
-            "Building subgraph",
+            "Computing subgraph edges",
             self.get_directed_edges_number() as usize,
         );
 
@@ -1299,46 +1290,43 @@ impl Graph {
 
         pb1.finish();
 
-        let edges_bitmap: RoaringTreemap = unique_nodes
-            .iter()
+        let selected_edge_ids = self
+            .par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
             .progress_with(pb2)
-            .flat_map(|src| unsafe {
-                let (min_edge_id, max_edge_id) =
-                    self.get_unchecked_minmax_edge_ids_from_source_node_id(src);
-                (min_edge_id..max_edge_id)
-                    .filter(|edge_id| {
-                        unique_nodes
-                            .contains(self.get_unchecked_destination_node_id_from_edge_id(*edge_id))
-                    })
-                    .collect::<Vec<EdgeT>>()
-            })
-            .collect();
+            .filter(|&(_, src, dst, _, _)| unique_nodes.contains(src) && unique_nodes.contains(dst))
+            .map(|(edge_id, _, _, _, _)| edge_id)
+            .collect::<Vec<_>>();
 
-        Graph::from_integer_sorted(
-            edges_bitmap
-                .iter()
-                .progress_with(pb3)
-                .map(|edge_id| unsafe {
-                    Ok(
-                        self.get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
-                            edge_id,
-                        ),
-                    )
-                }),
-            edges_bitmap.len() as usize,
+        let selected_edges_number = selected_edge_ids.len() as EdgeT;
+
+        let pb3 = get_loading_bar(verbose, "Building subgraph", selected_edge_ids.len());
+
+        build_graph_from_integers(
+            Some(
+                selected_edge_ids
+                    .into_par_iter()
+                    .enumerate()
+                    .map(|(i, edge_id)| unsafe {
+                        let (src, dst, edge_type, weight) = self
+                            .get_unchecked_node_ids_and_edge_type_id_and_edge_weight_from_edge_id(
+                                edge_id,
+                            );
+                        (i, (src, dst, edge_type, weight.unwrap_or(WeightT::NAN)))
+                    })
+                    .progress_with(pb3),
+            ),
             self.nodes.clone(),
             self.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.directed,
-            true,
-            format!("{} subgraph", self.name.clone()),
-            false,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(true),
+            Some(selected_edges_number),
             true,
             self.has_selfloops(),
-            true,
+            format!("{} subgraph", self.get_name()),
         )
     }
 
@@ -1377,7 +1365,17 @@ impl Graph {
         edge_types: Option<Vec<Option<String>>>,
         random_state: Option<EdgeT>,
         verbose: Option<bool>,
-    ) -> Result<(Graph, Graph), String> {
+    ) -> Result<(Graph, Graph)> {
+        if k <= 1 {
+            return Err(String::from(
+                "Cannot do a k-fold with only one or zero folds.",
+            ));
+        }
+        if k_index >= k {
+            return Err(String::from(
+                "The index of the k-fold must be strictly less than the number of folds.",
+            ));
+        }
         let random_state = random_state.unwrap_or(0xbadf00d);
 
         // If edge types is not None, to compute the chunks only use the edges
@@ -1422,8 +1420,6 @@ impl Graph {
             false,
             |edge_id, _, _, _| chunk.contains(edge_id),
             verbose,
-            true,
-            self.has_selfloops(),
         )
     }
 }

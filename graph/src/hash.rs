@@ -1,5 +1,6 @@
 use super::*;
 use std::collections::hash_map::DefaultHasher;
+use std::fmt::Debug;
 use std::hash::{Hash, Hasher};
 
 #[inline(always)]
@@ -77,17 +78,16 @@ impl Hash for Graph {
     }
 }
 
-impl<IndexT: ToFromUsize> Hash for Vocabulary<IndexT> {
+impl<IndexT: ToFromUsize + Sync + Debug> Hash for Vocabulary<IndexT> {
     fn hash<H: Hasher>(&self, state: &mut H) {
         // The hashmap is not hashable, so we convert it to a
         // sorted array of tuples.
 
-        let mut vector: Vec<(&String, &IndexT)> = self.map.iter().collect();
+        let mut vector: Vec<(String, IndexT)> = self.map().into_iter().collect::<Vec<_>>();
         vector.sort();
         vector.hash(state);
 
-        self.reverse_map.hash(state);
-        self.numeric_ids.hash(state);
+        self.keys().hash(state);
     }
 }
 

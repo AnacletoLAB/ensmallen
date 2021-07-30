@@ -1,32 +1,14 @@
 """
-This file offers the methods to automatically retrieve the graph Subdoligranulum sp. 4354A2FAA.
+This file offers the methods to automatically retrieve the graph SubdoligranulumSp4354a2faa.
 
 The graph is automatically retrieved from the STRING repository. 
-
-
-
-Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-02 21:28:19.043006
-
-The undirected graph Subdoligranulum sp. 4354A2FAA has 4073 nodes and 299216
-weighted edges, of which none are self-loops. The graph is dense as it
-has a density of 0.03608 and has 18 connected components, where the component
-with most nodes has 3996 nodes and the component with the least nodes has
-2 nodes. The graph median node degree is 108, the mean node degree is 146.93,
-and the node degree mode is 4. The top 5 most central nodes are 665956.HMPREF1032_00239
-(degree 1424), 665956.HMPREF1032_02486 (degree 1304), 665956.HMPREF1032_02791
-(degree 1157), 665956.HMPREF1032_02396 (degree 1107) and 665956.HMPREF1032_03312
-(degree 1018).
 
 
 References
 ---------------------
 Please cite the following if you use the data:
 
+```latex
 @article{szklarczyk2019string,
     title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
     author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -37,43 +19,7 @@ Please cite the following if you use the data:
     year={2019},
     publisher={Oxford University Press}
 }
-
-
-Usage example
-----------------------
-The usage of this graph is relatively straightforward:
-
-.. code:: python
-
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.string import SubdoligranulumSp4354a2faa
-
-    # Then load the graph
-    graph = SubdoligranulumSp4354a2faa()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Whether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
+```
 """
 from typing import Dict
 
@@ -81,57 +27,52 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def SubdoligranulumSp4354a2faa(
+def Subdoligranulumsp4354a2faa(
     directed: bool = False,
+    preprocess: bool = True,
     verbose: int = 2,
+    cache: bool = True,
     cache_path: str = "graphs/string",
+    version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Subdoligranulum sp. 4354A2FAA graph.
+    """Return new instance of the SubdoligranulumSp4354a2faa graph.
 
-    The graph is automatically retrieved from the STRING repository. 
-
-	
+    The graph is automatically retrieved from the STRING repository.	
 
     Parameters
     -------------------
     directed: bool = False,
-        Whether to load the graph as directed or undirected.
+        Wether to load the graph as directed or undirected.
         By default false.
+    preprocess: bool = True,
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
     verbose: int = 2,
-        Whether to show loading bars during the retrieval and building
+        Wether to show loading bars during the retrieval and building
         of the graph.
+    cache: bool = True,
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    version: str = "11.5",
+        The version of the graph to retrieve.		
+	The available versions are:
+			- 11.0
+			- 11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of Subdoligranulum sp. 4354A2FAA graph.
-
-	Report
-	---------------------
-	At the time of rendering these methods (please see datetime below), the graph
-	had the following characteristics:
-	
-	Datetime: 2021-02-02 21:28:19.043006
-	
-	The undirected graph Subdoligranulum sp. 4354A2FAA has 4073 nodes and 299216
-	weighted edges, of which none are self-loops. The graph is dense as it
-	has a density of 0.03608 and has 18 connected components, where the component
-	with most nodes has 3996 nodes and the component with the least nodes has
-	2 nodes. The graph median node degree is 108, the mean node degree is 146.93,
-	and the node degree mode is 4. The top 5 most central nodes are 665956.HMPREF1032_00239
-	(degree 1424), 665956.HMPREF1032_02486 (degree 1304), 665956.HMPREF1032_02791
-	(degree 1157), 665956.HMPREF1032_02396 (degree 1107) and 665956.HMPREF1032_03312
-	(degree 1018).
-	
+    Instace of SubdoligranulumSp4354a2faa graph.
 
 	References
 	---------------------
 	Please cite the following if you use the data:
 	
+	```latex
 	@article{szklarczyk2019string,
 	    title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
 	    author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -142,49 +83,16 @@ def SubdoligranulumSp4354a2faa(
 	    year={2019},
 	    publisher={Oxford University Press}
 	}
-	
-
-	Usage example
-	----------------------
-	The usage of this graph is relatively straightforward:
-	
-	.. code:: python
-	
-	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.string import SubdoligranulumSp4354a2faa
-	
-	    # Then load the graph
-	    graph = SubdoligranulumSp4354a2faa()
-	
-	    # Finally, you can do anything with it, for instance, compute its report:
-	    print(graph)
-	
-	    # If you need to run a link prediction task with validation,
-	    # you can split the graph using a connected holdout as follows:
-	    train_graph, validation_graph = graph.connected_holdout(
-	        # You can use an 80/20 split the holdout, for example.
-	        train_size=0.8,
-	        # The random state is used to reproduce the holdout.
-	        random_state=42,
-	        # Whether to show a loading bar.
-	        verbose=True
-	    )
-	
-	    # Remember that, if you need, you can enable the memory-time trade-offs:
-	    train_graph.enable(
-	        vector_sources=True,
-	        vector_destinations=True,
-	        vector_outbounds=True
-	    )
-	
-	    # Consider using the methods made available in the Embiggen package
-	    # to run graph embedding or link prediction tasks.
+	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="SubdoligranulumSp4354a2faa",
+        graph_name="Subdoligranulumsp4354a2faa",
         dataset="string",
+        version=version,
         directed=directed,
+        preprocess=preprocess,
         verbose=verbose,
+        cache=cache,
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs
     )()

@@ -1,62 +1,18 @@
 //! A graph representation optimized for executing random walks on huge graphs.
+use std::{intrinsics::unlikely, sync::atomic::AtomicU8};
+
 use super::*;
 use bitvec::prelude::*;
-use elias_fano_rust::EliasFano;
+use elias_fano_rust::*;
 use rayon::prelude::*;
-use roaring::RoaringBitmap;
 
 /// A graph representation optimized for executing random walks on huge graphs.
-///
-/// This class should be initialized using the two constructors:
-/// `graph::Graph::new_directed` or `graph::Graph::new_undirected`
-///
-/// # Example
-/// Load the graph Cora:
-/// ```rust
-/// use graph::*;
-///
-/// // Create the edge file reader
-/// let edges_reader = EdgeFileReader::new("tests/data/cora/edges.tsv").unwrap()
-///     .set_separator(Some("\t")).unwrap()
-///     .set_verbose(Some(false))
-///     .set_sources_column(Some("subject")).unwrap()
-///     .set_destinations_column(Some("object")).unwrap()
-///     .set_default_weight(Some(1.0))
-///     .set_edge_types_column(Some("edge_type")).unwrap();
-///
-/// // Create the node file reader
-/// let nodes_reader = Some(
-///     NodeFileReader::new("tests/data/cora/nodes.tsv").unwrap()
-///         .set_separator(Some("\t")).unwrap()
-///         .set_nodes_column(Some("id")).unwrap()
-///         .set_verbose(Some(false))
-///         .set_node_types_column(Some("node_type")).unwrap(),
-/// );
-///
-/// // Load the graph
-/// let mut cora = Graph::from_unsorted_csv(
-///     edges_reader,
-///     nodes_reader,
-///     false,          // if the graph is Directed
-///     false,          // if the edge list is Directed
-///     "Cora".to_string()
-///    ).unwrap();
-///
-/// // Enable Speed-ups but it uses more memory.
-/// cora.enable(Some(true), Some(true), Some(true)).unwrap();
-/// ```
 #[derive(Clone, Debug)]
 pub struct Graph {
     /// The main datastructure where all the edges are saved
     /// in the endoced form ((src << self.node_bits) | dst) this allows us to do almost every
     /// operation in O(1) without decompressing the data.
     pub(crate) edges: EliasFano,
-    /// How many bits are needed to save a node.
-    pub(crate) node_bits: u8,
-    /// The mask used to extract the dst value form an encoded edge.
-    /// This is saved for speed sake. It's equivalent to (1 << self.node_bits) - 1;
-    pub(crate) node_bit_mask: u64,
-
     /// Optional vector of the weights of every edge.
     /// `weights[10]` return the weight of the edge with edge_id 10
     pub(crate) weights: Option<Vec<WeightT>>,
@@ -69,49 +25,16 @@ pub struct Graph {
     /// Vocabulary that save the mappings from string to index of every node
     pub(crate) nodes: Vocabulary<NodeT>,
 
-    // //////////////////////////////////////////////////////////////////////////
-    // Cached properties
-    // //////////////////////////////////////////////////////////////////////////
+    /// How many bits are needed to save a node.
+    pub(crate) node_bits: u8,
+    /// The mask used to extract the dst value form an encoded edge.
+    /// This is saved for speed sake. It's equivalent to (1 << self.node_bits) - 1;
+    pub(crate) node_bit_mask: u64,
+
     /// if the graph is directed or undirected
     pub(crate) directed: bool,
-    /// Number of nodes that have at least a self-loop.
-    /// This means that if a nodes has multiples self-loops they will be count as one.
-    pub(crate) unique_selfloop_number: NodeT,
-    /// Number of self-loop edges. This counts multiple times eventual multi-graph self-loops.
-    pub(crate) selfloop_number: EdgeT,
-    /// Number of nodes that have at least an edge inbound or outbound.
-    pub(crate) connected_nodes_number: NodeT,
-    /// Number of singleton nodes that have a self-loop
-    pub(crate) singleton_nodes_with_selfloops_number: NodeT,
-    /// How many unique edges the graph has (excluding the multi-graph ones)
-    pub(crate) unique_edges_number: EdgeT,
-    /// Minimum outbound node degree.
-    pub(crate) min_node_degree: NodeT,
-    /// Maximum outbound node degree.
-    pub(crate) max_node_degree: NodeT,
-    // Id of one the nodes with max_node_degree.
-    pub(crate) most_central_node_id: NodeT,
-    /// Minimum edge weight. Is None if weights are not defined.
-    pub(crate) min_edge_weight: Option<WeightT>,
-    /// Maximum edge weight. Is None if weights are not defined.
-    pub(crate) max_edge_weight: Option<WeightT>,
-    /// Minimum weighted node degree. Is None if weights are not defined.
-    pub(crate) min_weighted_node_degree: Option<f64>,
-    /// Maximum weighted node degree. Is None if weights are not defined.
-    pub(crate) max_weighted_node_degree: Option<f64>,
-    // Total edge weights
-    pub(crate) total_weights: Option<f64>,
-    /// Number of nodes with zero weighted node degree.
-    pub(crate) weighted_singleton_nodes_number: Option<NodeT>,
-    /// Whether the node IDs are provided sorted by decreasing outbound node degree.
-    pub(crate) nodes_are_sorted_by_decreasing_outbound_node_degree: bool,
-    /// Whether the node IDs are provided sorted by increasing outbound node degree.
-    pub(crate) nodes_are_sorted_by_increasing_outbound_node_degree: bool,
     /// Graph name
     pub(crate) name: String,
-    pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
-    pub(crate) singleton_nodes_with_selfloops: Option<RoaringBitmap>,
-    pub(crate) unique_sources: Option<EliasFano>,
 
     // /////////////////////////////////////////////////////////////////////////
     // Elias-Fano Caching related attributes
@@ -122,73 +45,161 @@ pub struct Graph {
     pub(crate) sources: Option<Vec<NodeT>>,
     /// Vector of cumulative_node_degrees to execute fast walks if required.
     pub(crate) cumulative_node_degrees: Option<Vec<EdgeT>>,
+    /// Option of Elias-Fano of unique sources.
+    /// When it is None it means that ALL nodes are sources.
+    pub(crate) unique_sources: Option<EliasFano>,
+    /// Option of bitvec containing connected nodes.
+    /// When it is None it means that ALL nodes are connected, i.e. not singleton or singletons with selfloops.
+    pub(crate) connected_nodes: Option<BitVec<Lsb0, u8>>,
+    /// Number of connected nodes in the graph.
+    pub(crate) connected_nodes_number: NodeT,
+
+    // /////////////////////////////////////////////////////////////////////////
+    pub(crate) cache: ClonableUnsafeCell<PropertyCache>,
 }
 
 /// # Graph utility methods
 impl Graph {
+    /// Return new instance of a Graph object.
+    ///
+    /// # Arguments
+    /// * `directed`: bool - Whether to build the graph as directed or undirected.
+    /// * `nodes`: Vocabulary<NodeT> - The nodes vocabulary.
+    /// * `node_types`: Option<NodeTypeVocabulary> - The optional node types vocabulary.
+    /// * `edges`: EliasFano - The Elias-Fano data structure containing the adjacency metric.
+    /// * `edge_types`: Option<EdgeTypeVocabulary> - The optional edge types vocabulary.
+    /// * `weights`: Option<Vec<WeightT>> - The optional edge weights vector.
+    /// * `may_have_singletons`: bool - Whether the graph may contain singletons.
+    /// * `may_have_singleton_with_selfloops`: bool - Whether the graph may contain singleton with selfloops.
+    /// * `name`: S - The name of the graph.
     pub(crate) fn new<S: Into<String>>(
         directed: bool,
-        unique_selfloop_number: NodeT,
-        selfloop_number: EdgeT,
-        connected_nodes_number: NodeT,
-        singleton_nodes_with_selfloops_number: NodeT,
-        unique_edges_number: EdgeT,
-        edges: EliasFano,
-        unique_sources: Option<EliasFano>,
         nodes: Vocabulary<NodeT>,
-        node_bit_mask: EdgeT,
-        node_bits: u8,
-        edge_types: Option<EdgeTypeVocabulary>,
-        name: S,
-        weights: Option<Vec<WeightT>>,
-        min_edge_weight: Option<WeightT>,
-        max_edge_weight: Option<WeightT>,
         node_types: Option<NodeTypeVocabulary>,
-        connected_nodes: Option<BitVec<Lsb0, u8>>,
-        singleton_nodes_with_selfloops: Option<RoaringBitmap>,
-        min_node_degree: NodeT,
-        max_node_degree: NodeT,
-        most_central_node_id: NodeT,
-        min_weighted_node_degree: Option<f64>,
-        max_weighted_node_degree: Option<f64>,
-        total_weights: Option<f64>,
-        weighted_singleton_nodes_number: Option<NodeT>,
-        nodes_are_sorted_by_decreasing_outbound_node_degree: bool,
-        nodes_are_sorted_by_increasing_outbound_node_degree: bool,
+        edges: EliasFano,
+        edge_types: Option<EdgeTypeVocabulary>,
+        weights: Option<Vec<WeightT>>,
+        may_have_singletons: bool,
+        may_have_singleton_with_selfloops: bool,
+        name: S,
     ) -> Graph {
-        Graph {
+        let nodes_number = nodes.len();
+        let node_bits = get_node_bits(nodes_number as NodeT);
+        let node_bit_mask = (1 << node_bits) - 1;
+        let mut graph = Graph {
             directed,
-            unique_selfloop_number,
-            selfloop_number,
-            connected_nodes_number,
-            singleton_nodes_with_selfloops_number,
-            unique_edges_number,
             edges,
-            unique_sources,
-            node_bit_mask,
             node_bits,
+            node_bit_mask,
             weights,
-            min_edge_weight,
-            max_edge_weight,
-            min_node_degree,
-            max_node_degree,
-            most_central_node_id,
-            node_types: node_types.map(|nts| nts.set_numeric_ids(false)),
-            edge_types: edge_types.map(|ets| ets.set_numeric_ids(false)),
-            nodes: nodes.set_numeric_ids(false),
+            node_types,
+            edge_types,
+            nodes,
             sources: None,
             destinations: None,
             cumulative_node_degrees: None,
             name: name.into(),
-            connected_nodes,
-            singleton_nodes_with_selfloops,
-            min_weighted_node_degree,
-            max_weighted_node_degree,
-            total_weights,
-            weighted_singleton_nodes_number,
-            nodes_are_sorted_by_decreasing_outbound_node_degree,
-            nodes_are_sorted_by_increasing_outbound_node_degree,
+            cache: ClonableUnsafeCell::default(),
+            unique_sources: None,
+            connected_nodes: None,
+            connected_nodes_number: nodes_number as NodeT,
+        };
+        if may_have_singletons || may_have_singleton_with_selfloops {
+            let connected_nodes =
+                graph.get_connected_nodes(may_have_singletons, may_have_singleton_with_selfloops);
+            let connected_nodes_number = connected_nodes.count_ones() as NodeT;
+            // If there are less connected nodes than the number of nodes
+            // in the graph, it means that there must be some singleton or singleton with selfloops.
+            if connected_nodes_number < graph.get_nodes_number() {
+                graph.connected_nodes = Some(connected_nodes);
+                graph.connected_nodes_number = connected_nodes_number;
+                graph.unique_sources = Some(graph.get_unique_sources());
+            }
         }
+        graph
+    }
+
+    /// Returns Elias-Fano data structure with the source nodes.
+    fn get_unique_sources(&self) -> EliasFano {
+        let unique_source_nodes_number = self.get_nodes_number()
+            - self.get_singleton_nodes_number()
+            - self.get_trap_nodes_number();
+        let mut elias_fano_unique_sources = EliasFano::new(
+            self.get_nodes_number() as u64,
+            unique_source_nodes_number as usize,
+        )
+        .unwrap();
+        self.iter_node_ids()
+            .filter(|&node_id| unsafe { self.get_unchecked_node_degree_from_node_id(node_id) > 0 })
+            .for_each(|node_id| {
+                elias_fano_unique_sources.unchecked_push(node_id as u64);
+            });
+        elias_fano_unique_sources
+    }
+
+    /// Return bitvector containing nodes as true when they have incoming nodes.
+    ///
+    /// # Arguments
+    /// * `may_have_singletons`: bool - Whether the graph has singleton.
+    /// * `may_have_singleton_with_selfloops`: bool - Whether the graph has singleton with selfloops.
+    fn get_connected_nodes(
+        &self,
+        may_have_singletons: bool,
+        may_have_singleton_with_selfloops: bool,
+    ) -> BitVec<Lsb0, u8> {
+        let connected_nodes = if may_have_singletons && self.is_directed() {
+            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 0; self.get_nodes_number() as usize];
+            let thread_shared_connected_nodes = ThreadDataRaceAware {
+                value: std::cell::UnsafeCell::new(&mut connected_nodes),
+            };
+            // If the graph may contain singletons, we need to iterate on all
+            // the nodes neighbours in order to find if whether a node is a singleton or
+            // if it is a trap node.
+            // Compute in parallel the bitvector of all the nodes that have incoming edges
+            self.par_iter_node_ids().for_each(|node_id| unsafe {
+                let connected_nodes = thread_shared_connected_nodes.value.get();
+                let mut is_connected = false;
+                self.iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)
+                    .filter(|&dst_id| node_id != dst_id)
+                    .for_each(|dst_id| {
+                        is_connected = true;
+                        *(*connected_nodes).get_unchecked_mut(dst_id as usize) = true;
+                    });
+                if is_connected {
+                    *(*connected_nodes).get_unchecked_mut(node_id as usize) = true;
+                }
+            });
+            connected_nodes
+        } else {
+            let mut connected_nodes = bitvec![Lsb0, AtomicU8; 1; self.get_nodes_number() as usize];
+            let thread_shared_connected_nodes = ThreadDataRaceAware {
+                value: std::cell::UnsafeCell::new(&mut connected_nodes),
+            };
+            self.par_iter_node_degrees()
+                .enumerate()
+                .for_each(|(node_id, node_degree)| unsafe {
+                    // If this node is a singleton we mark it as disconnected.
+                    // We use the unlikely directive to tell the compiler that this
+                    // should be a rare occurrence: in a well formed graph
+                    // there should be only a small amount of singletons.
+                    // The same applies also to singletons with selfloops.
+                    if unlikely(
+                        may_have_singletons && node_degree == 0
+                            || may_have_singleton_with_selfloops
+                                && node_degree > 0
+                                && self
+                                    .iter_unchecked_neighbour_node_ids_from_source_node_id(
+                                        node_id as NodeT,
+                                    )
+                                    .all(|dst_id| node_id as NodeT == dst_id),
+                    ) {
+                        let connected_nodes = thread_shared_connected_nodes.value.get();
+                        *(*connected_nodes).get_unchecked_mut(node_id) = false;
+                    }
+                });
+            connected_nodes
+        };
+        unsafe { std::mem::transmute::<BitVec<Lsb0, AtomicU8>, BitVec<Lsb0, u8>>(connected_nodes) }
     }
 
     /// Return whether given graph has any edge overlapping with current graph.
@@ -227,7 +238,7 @@ impl Graph {
     /// * If one of the two graphs has edge weights and the other does not.
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
-    pub fn overlaps(&self, other: &Graph) -> Result<bool, String> {
+    pub fn overlaps(&self, other: &Graph) -> Result<bool> {
         Ok(match self.is_compatible(other)? {
             true => other
                 .par_iter_edge_node_ids_and_edge_type_id(other.directed)
@@ -277,7 +288,7 @@ impl Graph {
     /// * If one of the two graphs has edge weights and the other does not.
     /// * If one of the two graphs has node types and the other does not.
     /// * If one of the two graphs has edge types and the other does not.
-    pub fn contains(&self, other: &Graph) -> Result<bool, String> {
+    pub fn contains(&self, other: &Graph) -> Result<bool> {
         Ok(match self.is_compatible(other)? {
             true => other
                 .par_iter_edge_node_ids_and_edge_type_id(other.directed)
@@ -294,5 +305,109 @@ impl Graph {
                     )
                 }),
         })
+    }
+}
+
+#[derive(Clone, Debug)]
+pub struct GraphMemoryStats {
+    pub edges: EliasFanoMemoryStats,
+    pub weights: usize,
+
+    pub node_types: Option<NodeTypeVocabularyMemoryStats>,
+    pub edge_types: Option<EdgeTypeVocabularyMemoryStats>,
+    pub nodes: VocabularyMemoryStats,
+    pub cache: usize,
+
+    /// Graph name
+    pub name: usize,
+    pub connected_nodes: usize,
+    pub unique_sources: usize,
+
+    pub destinations: usize,
+    pub sources: usize,
+    pub cumulative_node_degrees: usize,
+
+    pub metadata: usize,
+}
+
+impl GraphMemoryStats {
+    /// Return the total memory used
+    pub fn total(&self) -> usize {
+        self.edges.total()
+            + self.weights
+            + self.node_types.as_ref().map_or(0, |x| x.total())
+            + self.edge_types.as_ref().map_or(0, |x| x.total())
+            + self.nodes.total()
+            + self.name
+            + self.connected_nodes
+            + self.unique_sources
+            + self.destinations
+            + self.sources
+            + self.cumulative_node_degrees
+            + self.metadata
+            + self.cache
+    }
+}
+
+impl Graph {
+    #[no_binding]
+    /// Returns the memory usage of all the fields of graph
+    /// This methods is intended for internal and testing uses only.
+    pub fn memory_stats(&self) -> GraphMemoryStats {
+        use std::mem::size_of;
+        GraphMemoryStats {
+            // Exact main structures
+            edges: self.edges.memory_stats(),
+            weights: size_of::<Option<Vec<WeightT>>>()
+                + self
+                    .weights
+                    .as_ref()
+                    .map_or(0, |v| v.capacity() * size_of::<WeightT>()),
+
+            node_types: self.node_types.as_ref().map(|nt| nt.memory_stats()),
+            edge_types: self.edge_types.as_ref().map(|et| et.memory_stats()),
+            nodes: self.nodes.memory_stats(),
+
+            // Exact metadata
+            metadata: size_of::<u8>() + size_of::<u64>() + size_of::<bool>(),
+            name: size_of::<String>() + self.name.capacity() * size_of::<char>(),
+
+            cache: unsafe { (*self.cache.get()).total() },
+
+            // Exact caching data
+            destinations: size_of::<Option<Vec<NodeT>>>()
+                + self
+                    .destinations
+                    .as_ref()
+                    .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
+            sources: size_of::<Option<Vec<NodeT>>>()
+                + self
+                    .sources
+                    .as_ref()
+                    .map_or(0, |v| v.capacity() * size_of::<NodeT>()),
+            cumulative_node_degrees: size_of::<Option<Vec<EdgeT>>>()
+                + self
+                    .cumulative_node_degrees
+                    .as_ref()
+                    .map_or(0, |v| v.capacity() * size_of::<EdgeT>()),
+
+            unique_sources: self.unique_sources.as_ref().map_or(0, |e| e.size()),
+            connected_nodes: size_of::<Option<BitVec<Lsb0, u8>>>()
+                + self
+                    .connected_nodes
+                    .as_ref()
+                    .map_or(0, |bv| bv.capacity() * size_of::<u8>()),
+        }
+    }
+
+    /// Returns a string describing the memory usage of all the fields of all the
+    /// structures used to store the current graph.
+    pub fn get_memory_stats(&self) -> String {
+        format!("{:#4?}", self.memory_stats())
+    }
+
+    /// Returns how many bytes are currently used to store the given graph.
+    pub fn get_total_memory_used(&self) -> usize {
+        self.memory_stats().total()
     }
 }

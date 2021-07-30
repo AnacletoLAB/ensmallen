@@ -9,7 +9,7 @@ pub enum Visibility{
 }
 
 impl Parse for Visibility {
-    fn parse(mut data: &[u8]) -> (&[u8], Self) {
+    fn parse(data: &[u8]) -> (&[u8], Self) {
         match data {
             _x if data.starts_with(b"pub(super)") => (&data[10..], Visibility::PublicSuper),
             _x if data.starts_with(b"pub(crate)") => (&data[10..], Visibility::PublicCrate),

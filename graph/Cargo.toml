@@ -33,6 +33,7 @@ derive-getters = "0.1.0"
 bitvec = {version="0.22", features=["atomic"]}
 glob = "0.3.0"
 keyed_priority_queue = "0.3.2"
+validator = "0.14.0"
 num_cpus = "1.13.0"
 iter-set = "2.0.1"
 atomic_float = "0.1.0"
@@ -42,18 +43,21 @@ indicatif = {version="0.16.0", features = ["rayon"]}
 arbitrary = { version = "0.4.5", features = ["derive"] }
 roaring = { git = "https://github.com/zommiommy/roaring-rs", branch = "master" }
 vec_rand = { git = "https://github.com/zommiommy/vec_rand", branch = "master" }
-elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "master"}
+elias_fano_rust = { git = "https://github.com/zommiommy/elias_fano_rust", branch = "develop"}
 tags = {path="./tags/"}
+
+[target.'cfg(unix)'.dependencies]
+nix = "0.22.0"
 
 [profile.release]
 opt-level = 3
 lto = "fat"
-overflow-checks = true     # Disable integer overflow checks.
-debug = true             # Include debug info.
+overflow-checks = true   # Disable integer overflow checks.
+debug = false            # Include debug info.
 debug-assertions = true  # Enables debug assertions.
 
 [profile.test]
-overflow-checks = true     # Disable integer overflow checks.
-debug = true             # Include debug info.
+overflow-checks = true   # Disable integer overflow checks.
+debug = false            # Include debug info.
 debug-assertions = true  # Enables debug assertions.
 opt-level = 3

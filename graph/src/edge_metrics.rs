@@ -26,7 +26,7 @@ impl Graph {
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
     pub unsafe fn get_unchecked_weighted_minimum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_weighted_minimum_node_degree() as f64).pow(2)
+        (self.get_weighted_minimum_node_degree().clone().unwrap() as f64).pow(2)
     }
 
     /// Returns the maximum weighted preferential attachment score.
@@ -34,7 +34,7 @@ impl Graph {
     /// # Safety
     /// If the graph does not contain nodes, the return value will be undefined.
     pub unsafe fn get_unchecked_weighted_maximum_preferential_attachment(&self) -> f64 {
-        (self.get_unchecked_weighted_maximum_node_degree() as f64).pow(2)
+        (self.get_weighted_maximum_node_degree().clone().unwrap() as f64).pow(2)
     }
 
     /// Returns the unweighted preferential attachment from the given node IDs.
@@ -53,10 +53,9 @@ impl Graph {
         destination_node_id: NodeT,
         normalize: bool,
     ) -> f64 {
-        let mut preferential_attachment_score = self
-            .get_unchecked_node_degree_from_node_id(source_node_id)
-            as f64
-            * self.get_unchecked_node_degree_from_node_id(destination_node_id) as f64;
+        let mut preferential_attachment_score =
+            self.get_unchecked_node_degree_from_node_id(source_node_id) as f64
+                * self.get_unchecked_node_degree_from_node_id(destination_node_id) as f64;
         if normalize {
             let min_preferential_attachment_score =
                 self.get_unchecked_minimum_preferential_attachment();
@@ -84,7 +83,7 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         Ok(unsafe {
             self.get_unchecked_preferential_attachment_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -109,7 +108,7 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         Ok(unsafe {
             self.get_unchecked_preferential_attachment_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -166,7 +165,7 @@ impl Graph {
         source_node_id: NodeT,
         destination_node_id: NodeT,
         normalize: bool,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_preferential_attachment_from_node_ids(
@@ -192,7 +191,7 @@ impl Graph {
         first_node_name: &str,
         second_node_name: &str,
         normalize: bool,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_preferential_attachment_from_node_ids(
@@ -264,7 +263,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         Ok(unsafe {
             self.get_unchecked_jaccard_coefficient_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -290,7 +289,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         Ok(unsafe {
             self.get_unchecked_jaccard_coefficient_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -357,7 +356,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         Ok(unsafe {
             self.get_unchecked_adamic_adar_index_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -389,7 +388,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         Ok(unsafe {
             self.get_unchecked_adamic_adar_index_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -494,7 +493,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         Ok(unsafe {
             self.get_unchecked_resource_allocation_index_from_node_ids(
                 self.validate_node_id(source_node_id)?,
@@ -527,7 +526,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         Ok(unsafe {
             self.get_unchecked_resource_allocation_index_from_node_ids(
                 self.get_node_id_from_node_name(first_node_name)?,
@@ -560,7 +559,7 @@ impl Graph {
         &self,
         source_node_id: NodeT,
         destination_node_id: NodeT,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_resource_allocation_index_from_node_ids(
@@ -594,7 +593,7 @@ impl Graph {
         &self,
         first_node_name: &str,
         second_node_name: &str,
-    ) -> Result<f64, String> {
+    ) -> Result<f64> {
         self.must_have_edge_weights()?;
         Ok(unsafe {
             self.get_unchecked_weighted_resource_allocation_index_from_node_ids(

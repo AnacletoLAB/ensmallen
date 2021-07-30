@@ -1,29 +1,14 @@
 """
-This file offers the methods to automatically retrieve the graph EX5.
+This file offers the methods to automatically retrieve the graph Ex5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
-
-
-
-Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-06 11:01:26.260486
-
-The undirected graph EX5 has 6545 nodes and 147840 unweighted edges, of
-which none are self-loops. The graph is sparse as it has a density of 0.00690
-and is connected, as it has a single component. The graph median node degree
-is 46, the mean node degree is 45.18, and the node degree mode is 44. The
-top 5 most central nodes are 6462 (degree 48), 6496 (degree 48), 6475 (degree
-48), 6464 (degree 48) and 6463 (degree 48).
 
 
 References
 ---------------------
 Please cite the following if you use the data:
 
+```latex
 @inproceedings{nr,
     title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
     author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -31,43 +16,7 @@ Please cite the following if you use the data:
     url={http://networkrepository.com},
     year={2015}
 }
-
-
-Usage example
-----------------------
-The usage of this graph is relatively straightforward:
-
-.. code:: python
-
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.networkrepository import Ex5
-
-    # Then load the graph
-    graph = Ex5()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Wether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
+```
 """
 from typing import Dict
 
@@ -77,52 +26,47 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 def Ex5(
     directed: bool = False,
+    preprocess: bool = True,
     verbose: int = 2,
+    cache: bool = True,
     cache_path: str = "graphs/networkrepository",
+    version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EX5 graph.
+    """Return new instance of the Ex5 graph.
 
-    The graph is automatically retrieved from the NetworkRepository repository. 
-
-	
+    The graph is automatically retrieved from the NetworkRepository repository.	
 
     Parameters
     -------------------
     directed: bool = False,
         Wether to load the graph as directed or undirected.
         By default false.
+    preprocess: bool = True,
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
+    cache: bool = True,
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    version: str = "latest",
+        The version of the graph to retrieve.	
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of EX5 graph.
-
-	Report
-	---------------------
-	At the time of rendering these methods (please see datetime below), the graph
-	had the following characteristics:
-	
-	Datetime: 2021-02-06 11:01:26.260486
-	
-	The undirected graph EX5 has 6545 nodes and 147840 unweighted edges, of
-	which none are self-loops. The graph is sparse as it has a density of 0.00690
-	and is connected, as it has a single component. The graph median node degree
-	is 46, the mean node degree is 45.18, and the node degree mode is 44. The
-	top 5 most central nodes are 6462 (degree 48), 6496 (degree 48), 6475 (degree
-	48), 6464 (degree 48) and 6463 (degree 48).
-	
+    Instace of Ex5 graph.
 
 	References
 	---------------------
 	Please cite the following if you use the data:
 	
+	```latex
 	@inproceedings{nr,
 	    title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
 	    author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -130,49 +74,16 @@ def Ex5(
 	    url={http://networkrepository.com},
 	    year={2015}
 	}
-	
-
-	Usage example
-	----------------------
-	The usage of this graph is relatively straightforward:
-	
-	.. code:: python
-	
-	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.networkrepository import Ex5
-	
-	    # Then load the graph
-	    graph = Ex5()
-	
-	    # Finally, you can do anything with it, for instance, compute its report:
-	    print(graph)
-	
-	    # If you need to run a link prediction task with validation,
-	    # you can split the graph using a connected holdout as follows:
-	    train_graph, validation_graph = graph.connected_holdout(
-	        # You can use an 80/20 split the holdout, for example.
-	        train_size=0.8,
-	        # The random state is used to reproduce the holdout.
-	        random_state=42,
-	        # Wether to show a loading bar.
-	        verbose=True
-	    )
-	
-	    # Remember that, if you need, you can enable the memory-time trade-offs:
-	    train_graph.enable(
-	        vector_sources=True,
-	        vector_destinations=True,
-	        vector_outbounds=True
-	    )
-	
-	    # Consider using the methods made available in the Embiggen package
-	    # to run graph embedding or link prediction tasks.
+	```
     """
     return AutomaticallyRetrievedGraph(
         graph_name="Ex5",
         dataset="networkrepository",
+        version=version,
         directed=directed,
+        preprocess=preprocess,
         verbose=verbose,
+        cache=cache,
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs
     )()

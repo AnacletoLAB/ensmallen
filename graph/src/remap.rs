@@ -1,7 +1,8 @@
+use crate::constructors::build_graph_from_integers;
+
 use super::*;
-use indicatif::{ParallelProgressIterator, ProgressIterator};
 use itertools::Itertools;
-use rayon::iter::ParallelIterator;
+use rayon::iter::{IntoParallelIterator, ParallelIterator};
 
 impl Graph {
     /// Return whether nodes are remappable to those of the given graph.
@@ -36,67 +37,50 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_ids`: Vec<NodeT> - The node Ids to remap the graph to.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
     /// # Safety
     /// This method will cause a panic if the node IDs are either:
     /// * Not unique
     /// * Not available for each of the node IDs of the graph.
-    pub unsafe fn remap_unchecked_from_node_ids(
-        &self,
-        node_ids: Vec<NodeT>,
-        verbose: Option<bool>,
-    ) -> Graph {
-        let verbose = verbose.unwrap_or(true);
-
-        let pb_edges = get_loading_bar(
-            verbose,
-            "Building sorted edges",
-            self.get_directed_edges_number() as usize,
-        );
-
-        let pb_nodes = get_loading_bar(
-            verbose,
-            "Building sorted nodes",
-            self.get_nodes_number() as usize,
-        );
-
-        Graph::from_string_unsorted(
-            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
-                .progress_with(pb_edges)
-                .map(|(_, _, src_name, _, dst_name, _, edge_type_name, weight)| {
-                    Ok((src_name, dst_name, edge_type_name, weight))
-                }),
+    pub unsafe fn remap_unchecked_from_node_ids(&self, node_ids: Vec<NodeT>) -> Graph {
+        let new_nodes_vocabulary: Vocabulary<NodeT> = Vocabulary::from_reverse_map(
+            node_ids
+                .into_par_iter()
+                .map(|node_id| self.get_unchecked_node_name_from_node_id(node_id))
+                .collect(),
+        )
+        .unwrap();
+        let new_node_positions = self
+            .par_iter_node_names()
+            .map(|node_name| new_nodes_vocabulary.get(&node_name).unwrap())
+            .collect::<Vec<NodeT>>();
+        build_graph_from_integers(
             Some(
-                node_ids
-                    .iter()
-                    .progress_with(pb_nodes)
-                    .map(|node_id| unsafe {
-                        Ok((
-                            self.get_unchecked_node_name_from_node_id(*node_id),
-                            self.get_unchecked_node_type_names_from_node_id(*node_id),
-                        ))
+                self.par_iter_directed_edge_node_ids_and_edge_type_id_and_edge_weight()
+                    .map(|(_, src_name_id, dst_name_id, edge_type_id, weight)| {
+                        (
+                            0,
+                            (
+                                new_node_positions[src_name_id as usize],
+                                new_node_positions[dst_name_id as usize],
+                                edge_type_id,
+                                weight.unwrap_or(WeightT::NAN),
+                            ),
+                        )
                     }),
             ),
-            self.is_directed(),
-            true,
-            self.get_name(),
-            false,
-            true,
-            false,
-            true,
-            false,
-            false,
-            false,
-            false,
-            self.has_node_types(),
-            self.has_edge_types(),
+            new_nodes_vocabulary,
+            self.node_types.clone(),
+            self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
             self.has_edge_weights(),
-            false,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            Some(false),
+            Some(self.get_directed_edges_number()),
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
-            self.has_trap_nodes(),
-            verbose,
+            self.get_name(),
         )
         .unwrap()
     }
@@ -105,16 +89,11 @@ impl Graph {
     ///
     /// # Arguments
     /// * `node_ids`: Vec<NodeT> - The node Ids to remap the graph to.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
     /// # Raises
     /// * If the given node IDs are not unique.
     /// * If the given node IDs are not available for all the values in the graph.
-    pub fn remap_from_node_ids(
-        &self,
-        node_ids: Vec<NodeT>,
-        verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    pub fn remap_from_node_ids(&self, node_ids: Vec<NodeT>) -> Result<Graph> {
         if node_ids.len() != self.get_nodes_number() as usize {
             return Err(format!(
                 concat!(
@@ -155,29 +134,23 @@ impl Graph {
                 node_ids.len() - without_duplicates_len
             ));
         }
-        Ok(unsafe { self.remap_unchecked_from_node_ids(node_ids, verbose) })
+        Ok(unsafe { self.remap_unchecked_from_node_ids(node_ids) })
     }
 
     /// Returns graph remapped using given node names ordering.
     ///
     /// # Arguments
     /// * `node_names`: Vec<&str> - The node names to remap the graph to.
-    /// * `verbose`: Option<bool> - Whether to show a loading bar while building the graph.
     ///
     /// # Raises
     /// * If the given node names are not unique.
     /// * If the given node names are not available for all the values in the graph.
-    pub fn remap_from_node_names(
-        &self,
-        node_names: Vec<&str>,
-        verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    pub fn remap_from_node_names(&self, node_names: Vec<&str>) -> Result<Graph> {
         self.remap_from_node_ids(
             node_names
                 .into_iter()
                 .map(|node_name| self.get_node_id_from_node_name(node_name))
-                .collect::<Result<Vec<NodeT>, String>>()?,
-            verbose,
+                .collect::<Result<Vec<NodeT>>>()?,
         )
     }
 
@@ -186,55 +159,54 @@ impl Graph {
     /// # Arguments
     ///
     /// * `other`: &Graph - The graph to remap towards.
-    /// * `verbose`: Option<bool> - Whether to show a loding bar.
     ///
     /// # Example
     /// A graph is always remappable to itself:
     /// ```rust
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
-    /// assert_eq!(graph, graph.remap_from_graph(&graph, None).unwrap());
+    /// assert_eq!(graph, graph.remap_from_graph(&graph).unwrap());
     /// ```
     ///
-    pub fn remap_from_graph(&self, other: &Graph, verbose: Option<bool>) -> Result<Graph, String> {
-        let verbose = verbose.unwrap_or(false);
-        let pb = get_loading_bar(
-            verbose,
-            format!("Building remapped {}", self.name).as_ref(),
-            self.get_directed_edges_number() as usize,
-        );
-
+    pub fn remap_from_graph(&self, other: &Graph) -> Result<Graph> {
         if !self.are_nodes_remappable(other) {
             return Err("The two graphs nodes sets are not remappable one-another.".to_owned());
         }
 
-        Graph::from_integer_unsorted(
-            self.par_iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
-                .progress_with(pb)
-                .map(
-                    |(_, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {
-                        Ok((
-                            other.get_unchecked_node_id_from_node_name(&src_name),
-                            other.get_unchecked_node_id_from_node_name(&dst_name),
-                            edge_type.and_then(|et| {
-                                self.get_unchecked_edge_type_id_from_edge_type_name(et.as_str())
-                            }),
-                            weight,
-                        ))
-                    },
-                ),
+        build_graph_from_integers(
+            Some(
+                self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
+                    .map(
+                        |(edge_id, _, src_name, _, dst_name, _, edge_type, weight)| unsafe {
+                            (
+                                edge_id as usize,
+                                (
+                                    other.get_unchecked_node_id_from_node_name(&src_name),
+                                    other.get_unchecked_node_id_from_node_name(&dst_name),
+                                    edge_type.and_then(|et| {
+                                        self.get_unchecked_edge_type_id_from_edge_type_name(
+                                            et.as_str(),
+                                        )
+                                    }),
+                                    weight.unwrap_or(WeightT::NAN),
+                                ),
+                            )
+                        },
+                    ),
+            ),
             other.nodes.clone(),
             other.node_types.clone(),
             self.edge_types.as_ref().map(|ets| ets.vocabulary.clone()),
-            self.is_directed(),
-            self.name.clone(),
-            false,
-            self.has_edge_types(),
             self.has_edge_weights(),
-            false,
+            self.is_directed(),
+            Some(true),
+            Some(false),
+            // Because of the remapping the resulting edge list
+            // may not be sorted.
+            Some(false),
+            Some(self.get_directed_edges_number()),
             self.has_singleton_nodes(),
             self.has_singleton_nodes_with_selfloops(),
-            self.has_trap_nodes(),
-            verbose,
+            self.get_name(),
         )
     }
 }

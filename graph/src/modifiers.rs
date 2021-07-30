@@ -12,21 +12,21 @@ impl Graph {
         vector_sources: Option<bool>,
         vector_destinations: Option<bool>,
         vector_cumulative_node_degrees: Option<bool>,
-    ) -> Result<(), String> {
+    ) -> Result<()> {
         let vector_sources = vector_sources.unwrap_or(false);
         let vector_destinations = vector_destinations.unwrap_or(true);
         let vector_cumulative_node_degrees = vector_cumulative_node_degrees.unwrap_or(true);
 
         if vector_destinations {
             if self.destinations.is_none() {
-                self.destinations = Some(self.get_destination_node_ids(true));
+                self.destinations = Some(self.get_directed_destination_node_ids());
             }
         } else {
             self.destinations = None;
         }
         if vector_sources {
             if self.sources.is_none() {
-                self.sources = Some(self.get_source_node_ids(true));
+                self.sources = Some(self.get_directed_source_node_ids());
             }
         } else {
             self.sources = None;

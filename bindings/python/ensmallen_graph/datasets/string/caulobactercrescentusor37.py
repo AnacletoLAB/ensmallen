@@ -1,32 +1,14 @@
 """
-This file offers the methods to automatically retrieve the graph Caulobacter crescentus OR37.
+This file offers the methods to automatically retrieve the graph CaulobacterCrescentusOr37.
 
 The graph is automatically retrieved from the STRING repository. 
-
-
-
-Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-03 21:22:48.744250
-
-The undirected graph Caulobacter crescentus OR37 has 4049 nodes and 434892
-weighted edges, of which none are self-loops. The graph is dense as it
-has a density of 0.05307 and has 10 connected components, where the component
-with most nodes has 4031 nodes and the component with the least nodes has
-2 nodes. The graph median node degree is 183, the mean node degree is 214.81,
-and the node degree mode is 2. The top 5 most central nodes are 1292034.OR37_00454
-(degree 1488), 1292034.OR37_03117 (degree 1440), 1292034.OR37_02661 (degree
-1243), 1292034.OR37_01338 (degree 1160) and 1292034.OR37_02658 (degree
-1157).
 
 
 References
 ---------------------
 Please cite the following if you use the data:
 
+```latex
 @article{szklarczyk2019string,
     title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
     author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -37,43 +19,7 @@ Please cite the following if you use the data:
     year={2019},
     publisher={Oxford University Press}
 }
-
-
-Usage example
-----------------------
-The usage of this graph is relatively straightforward:
-
-.. code:: python
-
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.string import CaulobacterCrescentusOr37
-
-    # Then load the graph
-    graph = CaulobacterCrescentusOr37()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Wether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
+```
 """
 from typing import Dict
 
@@ -81,57 +27,52 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def CaulobacterCrescentusOr37(
+def Caulobactercrescentusor37(
     directed: bool = False,
+    preprocess: bool = True,
     verbose: int = 2,
+    cache: bool = True,
     cache_path: str = "graphs/string",
+    version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Caulobacter crescentus OR37 graph.
+    """Return new instance of the CaulobacterCrescentusOr37 graph.
 
-    The graph is automatically retrieved from the STRING repository. 
-
-	
+    The graph is automatically retrieved from the STRING repository.	
 
     Parameters
     -------------------
     directed: bool = False,
         Wether to load the graph as directed or undirected.
         By default false.
+    preprocess: bool = True,
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
+    cache: bool = True,
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    version: str = "11.5",
+        The version of the graph to retrieve.		
+	The available versions are:
+			- 11.0
+			- 11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of Caulobacter crescentus OR37 graph.
-
-	Report
-	---------------------
-	At the time of rendering these methods (please see datetime below), the graph
-	had the following characteristics:
-	
-	Datetime: 2021-02-03 21:22:48.744250
-	
-	The undirected graph Caulobacter crescentus OR37 has 4049 nodes and 434892
-	weighted edges, of which none are self-loops. The graph is dense as it
-	has a density of 0.05307 and has 10 connected components, where the component
-	with most nodes has 4031 nodes and the component with the least nodes has
-	2 nodes. The graph median node degree is 183, the mean node degree is 214.81,
-	and the node degree mode is 2. The top 5 most central nodes are 1292034.OR37_00454
-	(degree 1488), 1292034.OR37_03117 (degree 1440), 1292034.OR37_02661 (degree
-	1243), 1292034.OR37_01338 (degree 1160) and 1292034.OR37_02658 (degree
-	1157).
-	
+    Instace of CaulobacterCrescentusOr37 graph.
 
 	References
 	---------------------
 	Please cite the following if you use the data:
 	
+	```latex
 	@article{szklarczyk2019string,
 	    title={STRING v11: protein--protein association networks with increased coverage, supporting functional discovery in genome-wide experimental datasets},
 	    author={Szklarczyk, Damian and Gable, Annika L and Lyon, David and Junge, Alexander and Wyder, Stefan and Huerta-Cepas, Jaime and Simonovic, Milan and Doncheva, Nadezhda T and Morris, John H and Bork, Peer and others},
@@ -142,49 +83,16 @@ def CaulobacterCrescentusOr37(
 	    year={2019},
 	    publisher={Oxford University Press}
 	}
-	
-
-	Usage example
-	----------------------
-	The usage of this graph is relatively straightforward:
-	
-	.. code:: python
-	
-	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.string import CaulobacterCrescentusOr37
-	
-	    # Then load the graph
-	    graph = CaulobacterCrescentusOr37()
-	
-	    # Finally, you can do anything with it, for instance, compute its report:
-	    print(graph)
-	
-	    # If you need to run a link prediction task with validation,
-	    # you can split the graph using a connected holdout as follows:
-	    train_graph, validation_graph = graph.connected_holdout(
-	        # You can use an 80/20 split the holdout, for example.
-	        train_size=0.8,
-	        # The random state is used to reproduce the holdout.
-	        random_state=42,
-	        # Wether to show a loading bar.
-	        verbose=True
-	    )
-	
-	    # Remember that, if you need, you can enable the memory-time trade-offs:
-	    train_graph.enable(
-	        vector_sources=True,
-	        vector_destinations=True,
-	        vector_outbounds=True
-	    )
-	
-	    # Consider using the methods made available in the Embiggen package
-	    # to run graph embedding or link prediction tasks.
+	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="CaulobacterCrescentusOr37",
+        graph_name="Caulobactercrescentusor37",
         dataset="string",
+        version=version,
         directed=directed,
+        preprocess=preprocess,
         verbose=verbose,
+        cache=cache,
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs
     )()

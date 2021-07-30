@@ -1,6 +1,9 @@
+use crate::constructors::build_graph_from_strings_without_type_iterators;
+
 use super::*;
 use counter::Counter;
 use indicatif::ProgressIterator;
+use rayon::iter::ParallelIterator;
 use roaring::RoaringBitmap;
 use std::collections::HashSet;
 
@@ -24,7 +27,7 @@ impl Graph {
         minimum_component_size: Option<NodeT>,
         top_k_components: Option<NodeT>,
         verbose: Option<bool>,
-    ) -> Result<Graph, String> {
+    ) -> Result<Graph> {
         let verbose = verbose.unwrap_or(false);
         let mut keep_components = RoaringBitmap::new();
         let components_vector = self.get_node_connected_component_ids(Some(verbose));
@@ -88,70 +91,70 @@ impl Graph {
                 });
         }
 
-        let pb = get_loading_bar(
-            verbose,
-            &format!(
-                "Building edge list with only required components {}",
-                &self.name
-            ),
-            self.get_directed_edges_number() as usize,
-        );
-        let pb_nodes = get_loading_bar(
-            verbose,
-            &format!(
-                "Building node list with only required components {}",
-                &self.name
-            ),
-            self.get_nodes_number() as usize,
-        );
+        let nodes_iterator: ItersWrapper<_, std::iter::Empty<_>, _> =
+            ItersWrapper::Parallel(self.par_iter_node_names_and_node_type_names().filter_map(
+                |(node_id, node_name, _, node_type_names)| {
+                    match keep_components.contains(components_vector[node_id as usize]) {
+                        // We put as row 0 as it will not be dense because of the filter
+                        // It may be possible to get it to be dense with the proper offsets
+                        true => Some(Ok((0, (node_name, node_type_names)))),
+                        false => None,
+                    }
+                },
+            ));
 
-        let min_component_size = keep_components
-            .iter()
-            .map(|component_id| *counter.get(&component_id).unwrap())
-            .min();
-
-        Graph::from_string_unsorted(
-            self.iter_edge_node_names_and_edge_type_name_and_edge_weight(true)
-                .progress_with(pb)
+        let edges_iterator: ItersWrapper<_, std::iter::Empty<_>, _> = ItersWrapper::Parallel(
+            self.par_iter_directed_edge_node_names_and_edge_type_name_and_edge_weight()
                 .filter_map(
                     |(_, src, src_name, _, dst_name, _, edge_type_name, weight)| {
                         // we just check src because dst is trivially in the same component as src
                         match keep_components.contains(components_vector[src as usize]) {
-                            true => Some(Ok((src_name, dst_name, edge_type_name, weight))),
+                            true => Some(Ok((
+                                0,
+                                (
+                                    src_name,
+                                    dst_name,
+                                    edge_type_name,
+                                    weight.unwrap_or(WeightT::NAN),
+                                ),
+                            ))),
                             false => None,
                         }
                     },
                 ),
-            Some(
-                self.iter_node_names_and_node_type_names()
-                    .progress_with(pb_nodes)
-                    .filter_map(|(node_id, node_name, _, node_type_names)| {
-                        match keep_components.contains(components_vector[node_id as usize]) {
-                            true => Some(Ok((node_name, node_type_names))),
-                            false => None,
-                        }
-                    }),
-            ),
-            self.directed,
-            true,
-            self.get_name(),
-            false,
-            true,
-            true,
-            true, // Approximation of expected nodes number.
-            false,
-            false,
-            false,
-            false,
+        );
+
+        // TODO if a vector of offsets of removed edges is kept, it is possible
+        // to build the filtered version in parallell sorted without memory peaks.
+        build_graph_from_strings_without_type_iterators(
             self.has_node_types(),
-            self.has_edge_types(),
-            self.has_edge_weights(),
+            Some(nodes_iterator),
+            // Since we remove components, we do not know how many
+            // nodes we will end up with.
+            // TODO: precompute the number of nodes that are expected to remain.
+            None,
+            true,
             false,
-            min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
-            self.has_singleton_nodes_with_selfloops()
-                && min_component_size.as_ref().map_or(true, |mcs| *mcs <= 1),
-            self.has_trap_nodes(),
-            verbose,
+            false,
+            None,
+            self.has_edge_types(),
+            Some(edges_iterator),
+            self.has_edge_weights(),
+            self.is_directed(),
+            Some(true),
+            Some(true),
+            Some(false),
+            // TODO: as aforementioned in the previous todos, it is possible to get this to work
+            // as sorted with the proper offsets precomputed.
+            Some(false),
+            None,
+            None,
+            None,
+            None,
+            None,
+            true,
+            self.has_singleton_nodes_with_selfloops(),
+            self.get_name(),
         )
     }
 }

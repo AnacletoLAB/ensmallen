@@ -149,15 +149,13 @@ impl CmpWithoutModifiers for Type {
             (
                 SimpleType{
                     name: n1,
-                    modifiers: m1,
                     generics: g1,
-                    traits: t1,
+                    ..
                 },
                 SimpleType{
                     name: n2,
-                    modifiers: m2,
                     generics: g2,
-                    traits: t2,
+                    ..
                 },
             ) => n1 == n2 && g1.cmp_without_modifiers(g2),
             (Primitive, SimpleType{name, ..}) | (SimpleType{name, ..}, Primitive) => {
@@ -218,7 +216,7 @@ impl Parse for Type {
                 Type::TupleType(result)
             },
             // Fn type
-            x if x.starts_with(b"Fn") => {
+            x if x.starts_with(b"Fn") || x.starts_with(b"fn") => {
                 // TODO! Save which variant it is
                 if x.starts_with(b"FnMut") {
                     data = skip_whitespace(&data[5..]);

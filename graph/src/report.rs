@@ -51,8 +51,8 @@ impl Graph {
     /// # let graph = graph::test_utilities::load_ppi(true, true, true, true, false, false);
     /// graph.report();
     /// ```
-    pub fn report(&self) -> HashMap<&str, String> {
-        let mut report: HashMap<&str, String> = HashMap::new();
+    pub fn report(&self) -> HashMap<&'static str, String> {
+        let mut report: HashMap<&'static str, String> = HashMap::new();
 
         // Adding the default metrics
         report.insert("name", self.name.clone());
@@ -66,15 +66,11 @@ impl Graph {
             report.insert("density", self.get_density().unwrap().to_string());
             report.insert(
                 "minimum_node_degree",
-                self.get_minimum_node_degree()
-                    .unwrap()
-                    .to_string(),
+                self.get_minimum_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "maximum_node_degree",
-                self.get_maximum_node_degree()
-                    .unwrap()
-                    .to_string(),
+                self.get_maximum_node_degree().unwrap().to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
@@ -85,10 +81,7 @@ impl Graph {
             "directed_edges_number",
             self.get_directed_edges_number().to_string(),
         );
-        report.insert(
-            "selfloops_number",
-            self.get_selfloop_number().to_string(),
-        );
+        report.insert("selfloops_number", self.get_selfloops_number().to_string());
         report.insert(
             "singleton_nodes_with_selfloops_number",
             self.get_singleton_nodes_with_selfloops_number().to_string(),
@@ -108,19 +101,28 @@ impl Graph {
         if self.has_edge_weights() {
             report.insert(
                 "minimum_weighted_node_degree",
-                self.get_weighted_mininum_node_degree().unwrap().to_string(),
+                self.get_weighted_minimum_node_degree()
+                    .clone()
+                    .unwrap()
+                    .to_string(),
             );
             report.insert(
                 "maximum_weighted_node_degree",
-                self.get_weighted_maximum_node_degree().unwrap().to_string(),
+                self.get_weighted_maximum_node_degree()
+                    .clone()
+                    .unwrap()
+                    .to_string(),
             );
             report.insert(
                 "unweighted_node_degrees_mean",
-                self.get_weighted_node_degrees_mean().unwrap().to_string(),
+                self.get_weighted_node_degrees_mean()
+                    .clone()
+                    .unwrap()
+                    .to_string(),
             );
             report.insert(
                 "total_edge_weights",
-                self.get_total_edge_weights().unwrap().to_string(),
+                self.get_total_edge_weights().clone().unwrap().to_string(),
             );
         }
         report.insert("has_node_types", self.has_node_types().to_string());
@@ -213,11 +215,7 @@ impl Graph {
     ///
     /// * `other`: &Graph - graph to create overlap report with.
     /// * `verbose`: Option<bool> - Whether to shor the loading bars.
-    pub fn overlap_textual_report(
-        &self,
-        other: &Graph,
-        verbose: Option<bool>,
-    ) -> Result<String, String> {
+    pub fn overlap_textual_report(&self, other: &Graph, verbose: Option<bool>) -> Result<String> {
         // Checking if overlap is allowed
         self.validate_operator_terms(other)?;
         // Get overlapping nodes
@@ -351,7 +349,7 @@ impl Graph {
     /// # Arguments
     /// * `node_id`: NodeT - Whether to show a loading bar in graph operations.
     ///
-    pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String, String> {
+    pub fn get_node_report_from_node_id(&self, node_id: NodeT) -> Result<String> {
         self.validate_node_id(node_id)?;
         let mut partial_reports: Vec<String> = Vec::new();
         let node_name = unsafe { self.get_unchecked_node_name_from_node_id(node_id) };
@@ -370,7 +368,7 @@ impl Graph {
                         )
                     }
                 }
-            } else if self.is_singleton_with_selfloops_from_node_id(node_id) {
+            } else if unsafe { self.is_unchecked_singleton_with_selfloops_from_node_id(node_id) } {
                 match self.get_singleton_nodes_with_selfloops_number() {
                     1 => format!(
                         concat!(
@@ -419,7 +417,7 @@ impl Graph {
     /// # Arguments
     /// * `node_name`: &str - Whether to show a loading bar in graph operations.
     ///
-    pub fn get_node_report_from_node_name(&self, node_name: &str) -> Result<String, String> {
+    pub fn get_node_report_from_node_name(&self, node_name: &str) -> Result<String> {
         self.get_node_id_from_node_name(node_name)
             .and_then(|node_id| self.get_node_report_from_node_id(node_id))
     }
@@ -482,8 +480,7 @@ impl Graph {
                     // According to the presence of the node type segment
                     // of the description we add the correct join term
                     join_term = if node_type.is_some() { "," } else { " and" },
-                    weighted_degree =
-                        self.get_unchecked_node_degree_from_node_id(node_id)
+                    weighted_degree = self.get_unchecked_node_degree_from_node_id(node_id)
                 )
             });
         }
@@ -665,9 +662,9 @@ impl Graph {
         format!(
             concat!(
                 "<h3>Degree centrality</h3>",
-                "The minimum node degree is {minimum_node_degree}, the maximum node degree is {maximum_node_degree}, ",
-                "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree:.2} and the node degree median is {node_degree_median}.\n",
-                "The nodes with highest degree centrality are: {list_of_most_central_nodes}.\n"
+                "<p>The minimum node degree is {minimum_node_degree}, the maximum node degree is {maximum_node_degree}, ",
+                "the mode degree is {mode_node_degree}, the mean degree is {mean_node_degree:.2} and the node degree median is {node_degree_median}.</p>",
+                "<p>The nodes with highest degree centrality are: {list_of_most_central_nodes}.</p>"
             ),
             minimum_node_degree = self.get_minimum_node_degree().unwrap(),
             maximum_node_degree = self.get_maximum_node_degree().unwrap(),
@@ -749,9 +746,9 @@ impl Graph {
         format!(
             concat!(
                 "<h4>Singleton nodes with selfloops</h4>",
-                "Singleton nodes with selfloops are nodes with no edge to other nodes ",
-                "and have exclusively selfloops.\n",
-                "The graph contains {singleton_nodes_with_selfloops_number}.\n"
+                "<p>Singleton nodes with selfloops are nodes with no edge to other nodes ",
+                "and have exclusively selfloops. ",
+                "The graph contains {singleton_nodes_with_selfloops_number}.</p>"
             ),
             singleton_nodes_with_selfloops_number = match self
                 .get_singleton_nodes_with_selfloops_number()
@@ -807,9 +804,9 @@ impl Graph {
         paragraphs.push(format!(
             concat!(
                 "<h3>Disconnected nodes</h3>",
-                "Disconnected nodes are nodes that are not connected ",
-                "to any other node.\n",
-                "The graph contains {disconnected_nodes_number} disconnected nodes.\n"
+                "<p>Disconnected nodes are nodes that are not connected ",
+                "to any other node.",
+                "The graph contains {disconnected_nodes_number} disconnected nodes.</p>"
             ),
             disconnected_nodes_number = self.get_disconnected_nodes_number()
         ));
@@ -836,18 +833,18 @@ impl Graph {
     unsafe fn get_edge_weights_report(&self) -> String {
         format!(
             concat!(
-                "<h3>Weights</h3>\n",
-                "<p>The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.</p>\n",
+                "<h3>Weights</h3>",
+                "<p>The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.</p>",
                 "<h4>Weighted degree centrality</h4>",
                 "<p>The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
-                "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>\n",
-                "<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>\n"
+                "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>",
+                "<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>"
             ),
-            minimum_edge_weight= self.get_mininum_edge_weight().unwrap(),
-            maximum_edge_weight= self.get_maximum_edge_weight().unwrap(),
-            total_edge_weight=self.get_total_edge_weights().unwrap(),
-            weighted_minimum_node_degree = self.get_weighted_mininum_node_degree().unwrap(),
-            weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().unwrap(),
+            minimum_edge_weight= self.get_mininum_edge_weight().clone().unwrap(),
+            maximum_edge_weight= self.get_maximum_edge_weight().clone().unwrap(),
+            total_edge_weight=self.get_total_edge_weights().clone().unwrap(),
+            weighted_minimum_node_degree = self.get_weighted_minimum_node_degree().clone().unwrap(),
+            weighted_maximum_node_degree = self.get_weighted_maximum_node_degree().clone().unwrap(),
             weighted_mean_node_degree = self.get_weighted_node_degrees_mean().unwrap(),
             weighted_node_degree_median = self.get_weighted_node_degrees_median().unwrap(),
             weighted_list_of_most_central_nodes = self.get_unchecked_formatted_list(
@@ -871,11 +868,11 @@ impl Graph {
         format!(
             concat!(
                 "<h4>Singleton node types</h4>",
-                "Singleton node types are node types that are assigned ",
+                "<p>Singleton node types are node types that are assigned ",
                 "exclusively to a single node, making the node type ",
                 "relatively meaningless, as it adds no more information ",
-                "then the name of node itself.\n",
-                "The graph contains {singleton_nodes_types_number}.\n"
+                "then the name of node itself. ",
+                "The graph contains {singleton_nodes_types_number}.</p>"
             ),
             singleton_nodes_types_number = match self.get_singleton_node_types_number().unwrap() {
                 1 => format!(
@@ -932,11 +929,11 @@ impl Graph {
         format!(
             concat!(
                 "<h4>Unknown node types</h4>",
-                "Nodes with unknown node types are nodes with a ",
+                "<p>Nodes with unknown node types are nodes with a ",
                 "node type that was not provided during the creation of ",
                 "the graph, which may be desired as the output of a ",
-                "node-label holdout.\n",
-                "The graph contains {unknown_node_types_number}, making up {unknown_node_types_percentage:.2} of the nodes.\n"
+                "node-label holdout. ",
+                "The graph contains {unknown_node_types_number}, making up {unknown_node_types_percentage:.2} of the nodes.</p>"
             ),
             unknown_node_types_percentage = self.get_unknown_node_types_rate().unwrap() * 100.0,
             unknown_node_types_number = match self.get_unknown_node_types_number().unwrap() {
@@ -995,7 +992,7 @@ impl Graph {
         paragraphs.push(format!(
             concat!(
                 "<h3>Node types</h3>",
-                "The graph has {node_types_number}.\n"
+                "<p>The graph has {node_types_number}.</p>"
             ),
             node_types_number = match self.get_node_types_number().unwrap() {
                 1 => format!(
@@ -1071,11 +1068,11 @@ impl Graph {
         format!(
             concat!(
                 "<h4>Singleton edge types</h4>",
-                "Singleton edge types are edge types that are assigned ",
+                "<p>Singleton edge types are edge types that are assigned ",
                 "exclusively to a single edge, making the edge type ",
                 "relatively meaningless, as it adds no more information ",
-                "then the name of edge itself.\n",
-                "The graph contains {singleton_edges_types_number}"
+                "then the name of edge itself. ",
+                "The graph contains {singleton_edges_types_number}</p>"
             ),
             singleton_edges_types_number = match self.get_singleton_edge_types_number().unwrap() {
                 1 => format!(
@@ -1132,11 +1129,11 @@ impl Graph {
         format!(
             concat!(
                 "<h4>Unknown edge types</h4>",
-                "Edges with unknown edge types are edges with a ",
+                "<p>Edges with unknown edge types are edges with a ",
                 "edge type that was not provided during the creation of ",
                 "the graph, which may be desired as the output of a ",
-                "edge-label holdout.\n",
-                "The graph contains {unknown_edge_types_number}, making up {unknown_edge_types_percentage:.2} of the edges.\n"
+                "edge-label holdout. ",
+                "The graph contains {unknown_edge_types_number}, making up {unknown_edge_types_percentage:.2} of the edges.</p>"
             ),
             unknown_edge_types_percentage = self.get_unknown_edge_types_rate().unwrap() * 100.0,
             unknown_edge_types_number = match self.get_unknown_edge_types_number().unwrap() {
@@ -1195,7 +1192,7 @@ impl Graph {
         paragraphs.push(format!(
             concat!(
                 "<h3>Edge types</h3>",
-                "The graph has {edge_types_number}.\n"
+                "<p>The graph has {edge_types_number}.</p>"
             ),
             edge_types_number = match self.get_edge_types_number().unwrap() {
                 1 => format!(

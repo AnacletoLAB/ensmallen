@@ -21,6 +21,45 @@ pub struct NodeTypeVocabulary {
     pub multilabel: bool,
 }
 
+#[derive(Debug, Clone)]
+pub struct NodeTypeVocabularyMemoryStats {
+    pub ids: usize,
+    pub vocabulary: VocabularyMemoryStats,
+    pub counts: usize,
+    pub metadata: usize,
+}
+
+impl NodeTypeVocabularyMemoryStats {
+    pub fn total(&self) -> usize {
+        self.ids + self.vocabulary.total() + self.counts + self.metadata
+    }
+}
+
+impl NodeTypeVocabulary {
+    pub fn memory_stats(&self) -> NodeTypeVocabularyMemoryStats {
+        use std::mem::size_of;
+        NodeTypeVocabularyMemoryStats {
+            ids: size_of::<Vec<Option<Vec<NodeTypeT>>>>()
+                + self
+                    .ids
+                    .iter()
+                    .map(|x| {
+                        size_of::<Option<Vec<NodeTypeT>>>()
+                            + x.as_ref().map_or(0, |v| {
+                                size_of::<Vec<NodeTypeT>>() + v.capacity() * size_of::<NodeTypeT>()
+                            })
+                    })
+                    .sum::<usize>(),
+            vocabulary: self.vocabulary.memory_stats(),
+            counts: size_of::<Vec<NodeT>>() + self.counts.capacity() * size_of::<NodeT>(),
+            metadata: size_of::<NodeT>()
+                + size_of::<NodeT>()
+                + size_of::<NodeTypeT>()
+                + size_of::<NodeT>()
+                + size_of::<bool>(),
+        }
+    }
+}
 impl NodeTypeVocabulary {
     fn compute_hash(&self) -> u64 {
         let mut hasher = DefaultHasher::new();
@@ -35,45 +74,36 @@ impl PartialEq for NodeTypeVocabulary {
     }
 }
 
-impl Default for NodeTypeVocabulary {
-    fn default() -> NodeTypeVocabulary {
-        NodeTypeVocabulary {
-            ids: Vec::new(),
-            vocabulary: Vocabulary::default(),
+impl NodeTypeVocabulary {
+    pub fn from_structs(
+        ids: Vec<Option<Vec<NodeTypeT>>>,
+        vocabulary: Vocabulary<NodeTypeT>,
+    ) -> NodeTypeVocabulary {
+        let multilabel = ids
+            .iter()
+            .any(|node_types| node_types.as_ref().map_or(false, |nts| nts.len() > 1));
+        let mut vocabvec = NodeTypeVocabulary {
+            ids,
+            vocabulary,
             counts: Vec::new(),
             min_count: 0,
             max_count: 0,
             max_multilabel_count: 0,
             unknown_count: NodeT::from_usize(0),
-            multilabel: false,
-        }
+            multilabel,
+        };
+        vocabvec.build_counts();
+        vocabvec
     }
-}
 
-impl NodeTypeVocabulary {
-    pub fn from_structs(
-        ids: Vec<Option<Vec<NodeTypeT>>>,
+    pub fn from_option_structs(
+        ids: Option<Vec<Option<Vec<NodeTypeT>>>>,
         vocabulary: Option<Vocabulary<NodeTypeT>>,
     ) -> Option<NodeTypeVocabulary> {
-        match vocabulary {
-            Some(vocab) => {
-                let multilabel = ids
-                    .iter()
-                    .any(|node_types| node_types.as_ref().map_or(false, |nts| nts.len() > 1));
-                let mut vocabvec = NodeTypeVocabulary {
-                    ids,
-                    vocabulary: vocab,
-                    counts: Vec::new(),
-                    min_count: 0,
-                    max_count: 0,
-                    max_multilabel_count: 0,
-                    unknown_count: NodeT::from_usize(0),
-                    multilabel,
-                };
-                vocabvec.build_counts();
-                Some(vocabvec)
-            }
-            None => None,
+        if let (Some(ids), Some(vocabulary)) = (ids, vocabulary) {
+            Some(NodeTypeVocabulary::from_structs(ids, vocabulary))
+        } else {
+            None
         }
     }
 
@@ -96,14 +126,6 @@ impl NodeTypeVocabulary {
     fn update_min_max_count(&mut self) {
         self.min_count = self.counts.iter().cloned().min().unwrap_or(0);
         self.max_count = self.counts.iter().cloned().max().unwrap_or(0);
-    }
-
-    /// Computes the reverse terms mapping.
-    ///
-    /// # Raises
-    /// * If the terms mapping is found to be not dense.
-    pub fn build_reverse_mapping(&mut self) -> Result<(), String> {
-        self.vocabulary.build_reverse_mapping()
     }
 
     /// Returns ids of given values inserted.
@@ -147,7 +169,7 @@ impl NodeTypeVocabulary {
     pub fn insert_values<S: AsRef<str> + std::fmt::Debug>(
         &mut self,
         maybe_values: Option<Vec<S>>,
-    ) -> Result<Option<Vec<NodeTypeT>>, String> {
+    ) -> Result<Option<Vec<NodeTypeT>>> {
         Ok(match maybe_values {
             Some(values) => {
                 // Check if there is at least one node type
@@ -162,7 +184,7 @@ impl NodeTypeVocabulary {
                             .insert(value.as_ref())
                             .map(|values| values.0)
                     })
-                    .collect::<Result<Vec<NodeTypeT>, String>>()?;
+                    .collect::<Result<Vec<NodeTypeT>>>()?;
                 // Sort the slice
                 ids.sort_unstable();
 
@@ -240,7 +262,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `id`: NodeTypeT - Node Type ID to be translated.
-    pub fn translate(&self, id: NodeTypeT) -> Result<String, String> {
+    pub fn translate(&self, id: NodeTypeT) -> Result<String> {
         self.vocabulary.translate(id)
     }
 
@@ -260,7 +282,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `ids`: Vec<NodeTypeT> - Node Type IDs to be translated.
-    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Result<Vec<String>, String> {
+    pub fn translate_vector(&self, ids: Vec<NodeTypeT>) -> Result<Vec<String>> {
         ids.into_iter().map(|id| self.translate(id)).collect()
     }
 
@@ -269,7 +291,7 @@ impl NodeTypeVocabulary {
     /// # Arguments
     ///
     /// * `key`: &str - the key whose Id is to be retrieved.
-    pub fn get(&self, key: &str) -> Option<&NodeTypeT> {
+    pub fn get(&self, key: &str) -> Option<NodeTypeT> {
         self.vocabulary.get(key)
     }
 
@@ -281,16 +303,6 @@ impl NodeTypeVocabulary {
     /// Return length of the vocabulary.    
     pub fn len(&self) -> usize {
         self.counts.len()
-    }
-
-    /// Set whether to load IDs as numeric.
-    ///
-    /// # Arguments
-    /// * numeric_ids: bool - Whether to load the IDs as numeric
-    ///
-    pub fn set_numeric_ids(mut self, numeric_ids: bool) -> NodeTypeVocabulary {
-        self.vocabulary = self.vocabulary.set_numeric_ids(numeric_ids);
-        self
     }
 
     /// Remove a node type from the vocabulary

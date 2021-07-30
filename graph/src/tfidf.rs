@@ -6,6 +6,7 @@ use std::collections::HashMap;
 
 use super::*;
 
+#[manual_binding]
 /// Return vector of hashmaps containing the non-zero frequencies.
 ///
 /// # Arguments
@@ -21,7 +22,7 @@ pub fn okapi_bm25_tfidf(
     b: Option<f64>,
     vocabulary_size: Option<usize>,
     verbose: Option<bool>,
-) -> Result<Vec<HashMap<String, f64>>, String> {
+) -> Result<Vec<HashMap<String, f64>>> {
     if documents.is_empty() {
         return Err("The given documents set is empty!".to_string());
     }

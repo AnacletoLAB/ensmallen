@@ -1,27 +1,35 @@
 extern crate graph;
-use graph::{EdgeFileReader, Graph};
+use graph::{EdgeFileReader, Graph, NodeFileReader};
 
 #[test]
-/// this test used to deadlock the sample negatives
-/// becasue we computed wrongly the total number of negative edges
-/// in undirected graphs.
-fn test_load_sorted() {
+fn test_load_sorted_sequential() {
     let graph_name = "Macaque".to_owned();
     let edges_reader = EdgeFileReader::new("tests/data/macaque.tsv")
         .unwrap()
-        .set_separator(Some("\t"))
+        .set_header(Some(false))
+        .unwrap()
+        .set_separator(Some("\t".to_string()))
         .unwrap()
         .set_verbose(Some(false))
         .set_numeric_node_ids(Some(true))
-        .set_header(Some(false));
+        .set_complete(Some(true))
+        .set_sorted(Some(true))
+        .set_parallel(Some(false))
+        .set_csv_is_correct(Some(true))
+        .set_edges_number(Some(3054));
 
-    let mut g = Graph::from_sorted_csv(
-        edges_reader,
+    let nodes_reader = NodeFileReader::new(None)
+        .unwrap()
+        .set_nodes_number(Some(242));
+
+    let mut g = Graph::from_file_readers(
+        Some(edges_reader),
+        Some(nodes_reader),
         None,
-        false,
-        false,
-        6108,
-        242,
+        None,
+        true,
+        true,
+        true,
         graph_name.clone(),
     )
     .unwrap();
