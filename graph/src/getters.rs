@@ -584,32 +584,6 @@ impl Graph {
         Ok(self.iter_one_hot_encoded_node_type_ids()?.collect())
     }
 
-    /// Returns boolean mask of known node types.
-    ///
-    /// # Raises
-    /// * If the graph does not have node types.
-    pub fn get_known_node_types_mask(&self) -> Result<Vec<bool>, String> {
-        self.must_have_node_types()?;
-        Ok(unsafe {
-            self.iter_unchecked_node_type_ids()
-                .map(|nt| nt.is_some())
-                .collect()
-        })
-    }
-
-    /// Returns boolean mask of unknown node types.
-    ///
-    /// # Raises
-    /// * If the graph does not have node types.
-    pub fn get_unknown_node_types_mask(&self) -> Result<Vec<bool>, String> {
-        self.must_have_node_types()?;
-        Ok(unsafe {
-            self.iter_unchecked_node_type_ids()
-                .map(|nt| nt.is_none())
-                .collect()
-        })
-    }
-
     /// Returns one-hot encoded known node types.
     ///
     /// # Raises
