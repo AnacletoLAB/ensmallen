@@ -240,16 +240,39 @@ impl CSVFileReader {
             .iter()
             .map(|separator| (*separator, 0))
             .collect();
+        let mut first_line_counter: HashMap<char, usize> = TYPES_OF_SEPARATORS
+            .iter()
+            .map(|separator| (*separator, 0))
+            .collect();
+        for (_, line) in self.get_sequential_lines_iterator(true, false)?.take(1) {
+            let line = line?;
+            line.chars().for_each(|character| {
+                first_line_counter.entry(character).and_modify(|entry| {
+                    *entry += 1;
+                });
+            });
+        }
         for (_, line) in self
             .get_sequential_lines_iterator(true, false)?
             .take(self.number_of_lines_to_automatically_detect_separator)
         {
             let line = line?;
+            let mut line_counter: HashMap<char, usize> = TYPES_OF_SEPARATORS
+                .iter()
+                .map(|separator| (*separator, 0))
+                .collect();
             line.chars().for_each(|character| {
-                counter.entry(character).and_modify(|entry| {
+                line_counter.entry(character).and_modify(|entry| {
                     *entry += 1;
                 });
             });
+            for (key, count) in line_counter.into_iter() {
+                if *first_line_counter.get(&key).unwrap() == count {
+                    counter.entry(key).and_modify(|entry| {
+                        *entry += count;
+                    });
+                }
+            }
         }
         Ok(counter
             .into_iter()
@@ -586,8 +609,11 @@ impl CSVFileReader {
         match header.iter().position(|x| *x == column_name) {
             Some(column_number) => Ok(column_number),
             None => Err(format!(
-                "The column '{}' is not present in the header\n{:?}",
-                column_name, header
+                concat!(
+                    "The column '{}' is not present in the header:\n {:?}\n",
+                    "Note that the separator used was `{}`."
+                ),
+                column_name, header, self.separator
             )),
         }
     }

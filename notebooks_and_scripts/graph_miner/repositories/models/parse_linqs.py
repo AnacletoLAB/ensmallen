@@ -50,6 +50,10 @@ def parse_linqs_pubmed_incidence_matrix(
     node_path: str,
         Path where to store the node list.
     """
+    # If the file has already been created, we skip
+    # this preprocessing.
+    if os.path.exists(node_path) and os.path.exists(edge_path):
+        return
     # Creating directories
     os.makedirs(os.path.dirname(edge_path), exist_ok=True)
     os.makedirs(os.path.dirname(node_path), exist_ok=True)
@@ -131,6 +135,10 @@ def parse_linqs_incidence_matrix(
     node_path: str,
         Path where to store the node list.
     """
+    # If the file has already been created, we skip
+    # this preprocessing.
+    if os.path.exists(node_path) and os.path.exists(edge_path):
+        return
     # Creating directories
     os.makedirs(os.path.dirname(edge_path), exist_ok=True)
     os.makedirs(os.path.dirname(node_path), exist_ok=True)

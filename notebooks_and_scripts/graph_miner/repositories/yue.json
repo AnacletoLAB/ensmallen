@@ -8,7 +8,7 @@
             "arguments": {
                 "edge_path": "STRING_PPI.edgelist",
                 "node_path": "node_list.txt",
-                "edge_separator": " ",
+                "edge_list_separator": " ",
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "edge_header": false,
@@ -26,7 +26,7 @@
             "arguments": {
                 "edge_path": "CTD_DDA.edgelist",
                 "node_path": "node_list.txt",
-                "edge_separator": " ",
+                "edge_list_separator": " ",
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "edge_header": false,
@@ -47,7 +47,7 @@
             "arguments": {
                 "edge_path": "DrugBank_DDI.edgelist",
                 "node_path": "node_list.txt",
-                "edge_separator": " ",
+                "edge_list_separator": " ",
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "edge_header": false,
@@ -65,7 +65,7 @@
             "arguments": {
                 "edge_path": "NDFRT_DDA.edgelist",
                 "node_path": "node_list.txt",
-                "edge_separator": " ",
+                "edge_list_separator": " ",
                 "sources_column_number": 0,
                 "destinations_column_number": 1,
                 "edge_header": false,

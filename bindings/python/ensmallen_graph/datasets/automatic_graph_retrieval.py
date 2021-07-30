@@ -333,6 +333,9 @@ class AutomaticallyRetrievedGraph:
                     original_node_types_separator=self._graph["arguments"].get(
                         "node_types_separator"
                     ),
+                    original_node_list_separator=self._graph["arguments"].get(
+                        "node_list_separator"
+                    ),
                     original_node_list_node_types_column_number=self._graph["arguments"].get(
                         "node_list_node_types_column_number"
                     ),
@@ -386,6 +389,9 @@ class AutomaticallyRetrievedGraph:
                         self._cache_path, self._graph["arguments"]["edge_path"]),
                     original_edge_list_header=self._graph["arguments"].get(
                         "edge_list_header"
+                    ),
+                    original_edge_list_separator=self._graph["arguments"].get(
+                        "edge_list_separator"
                     ),
                     original_sources_column_number=self._graph["arguments"].get(
                         "sources_column_number"

@@ -170,8 +170,8 @@ class LINQSGraphRepository(GraphRepository):
             "edge_list_edge_types_column": "edge_type",
             "node_list_node_types_column": "node_type",
             "nodes_column": "id",
-            "edge_separator": "\t",
-            "node_separator": "\t",
+            "edge_list_separator": "\t",
+            "node_list_separator": "\t",
             "skip_weights_if_unavailable": True
         }
 
