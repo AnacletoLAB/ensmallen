@@ -7,8 +7,6 @@ import compress_json
 import datetime
 import shutil
 from glob import glob
-from collections import Counter
-from downloaders import BaseDownloader
 from ensmallen_graph import EnsmallenGraph
 from tqdm.auto import tqdm
 from environments_utils import is_notebook
@@ -19,11 +17,6 @@ from .custom_exceptions import UnsupportedGraphException
 class GraphRepository:
     def __init__(self):
         """Create new Graph Repository object."""
-        self._downloader = BaseDownloader(
-            process_number=1,
-            verbose=2,
-            target_directory=self.repository_package_name
-        )
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
@@ -39,22 +32,6 @@ class GraphRepository:
         """
         raise NotImplementedError(
             "The method build_stored_graph_name must be implemented in child classes."
-        )
-
-    def get_graph_name(self, graph_data) -> str:
-        """Return built graph name.
-
-        Parameters
-        -----------------------
-        graph_data: str,
-            Graph data to be used.
-
-        Returns
-        -----------------------
-        Complete name of the graph.
-        """
-        raise NotImplementedError(
-            "The method get_graph_name must be implemented in child classes."
         )
 
     def get_formatted_repository_name(self) -> str:
@@ -79,113 +56,62 @@ class GraphRepository:
             "The method get_graph_citations must be implemented in child classes."
         )
 
-    def from_integer_sorted_reports_directory(self) -> str:
-        """Return directory path where graph reports are stored.
-
-        Returns
-        -----------------------
-        String with directtory.
-        """
+    def get_graph_data_path(self, graph_name: str) -> str:
+        """Return path where to store the graph data."""
         return os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
-            self.repository_package_name,
-            "reports",
+            "graph_repositories",
+            self.get_formatted_repository_name(),
+            "{}.json.gz".format(graph_name),
         )
 
-    def from_integer_sorted_report_path(self, graph_name: str) -> str:
-        """Return path where graph report is stored.
+    def load_graph_data(self, graph_name: str) -> Dict:
+        """Return the data stored for the provided graph.
 
         Parameters
         -----------------------
         graph_name: str,
-            Name of graph to build path for.
+            Name of graph to retrieve data for.
 
         Returns
         -----------------------
-        String with path.
+        The stored data for this graph.
         """
-        return os.path.join(
-            self.from_integer_sorted_reports_directory(),
-            "{}.json.gz".format(
-                self.build_stored_graph_name(graph_name)
-            )
+        return compress_json.local_load(
+            self.get_graph_data_path(graph_name)
         )
 
-    def load_graph_report(self, graph_name: str) -> Dict:
-        """Return dictionary with metadata.
+    def store_graph_data(self, data: Dict, graph_name: str) -> Dict:
+        """Return the data stored for the provided graph.
 
         Parameters
         -----------------------
         graph_name: str,
-            Name of graph to build path for.
+            Name of graph to store data for.
 
         Returns
         -----------------------
-        Metadata relative to the given graph.
+        The stored data for this graph.
         """
-        return compress_json.load(
-            self.from_integer_sorted_report_path(graph_name)
+        return compress_json.local_dump(
+            data,
+            self.get_graph_data_path(graph_name)
         )
 
-    def dump_graph_report(
-        self,
-        graph_name: str,
-        graph_textual_report: str,
-        graph_json_report: Dict,
-        citations: List[str],
-        urls: List[str],
-        paths: List[str],
-        arguments: Dict
-    ):
-        """Save given graph data into database.
-
-        Parameters
-        -----------------------
-        graph_name: str,
-            Name of graph to build path for.
-        graph_textual_report: str,
-            Textual report of the graph.
-        graph_json_report: Dict,
-            Report of the graph in JSON form.
-        citations: List[str],
-            List of citations.
-        urls: List[str],
-            Urls from where to download the files from.
-        paths: List[str],
-            Paths where to store the files.
-        arguments: Dict,
-            Arguments to use to load the graph object.
-        """
-        if not paths:
-            paths = None
-        compress_json.dump(
-            {
-                "graph_name": graph_name,
-                "graph_method_name": self.build_stored_graph_name(graph_name),
-                "graph_textual_report": graph_textual_report,
-                "graph_json_report": graph_json_report,
-                "citations": citations,
-                "urls": urls,
-                "paths": paths,
-                "datetime": str(datetime.datetime.now()),
-                "arguments": arguments,
-            },
-            self.from_integer_sorted_report_path(graph_name)
-        )
-
-    def is_graph_cached(self, graph_name: str) -> bool:
+    def is_graph_cached(self, graph_name: str, version: str) -> bool:
         """Return boolean representing if graph is cached.
 
         Parameters
         -----------------------
         graph_name: str,
             Name of graph to check if it is cached.
+        version: str,
+            The version of the graph to check for.
 
         Returns
         -----------------------
         Wether the cache if cached.
         """
-        return os.path.exists(self.from_integer_sorted_report_path(graph_name))
+        return os.path.exists(self.get_graph_data_path(graph_name, version))
 
     @property
     def name(self) -> str:
@@ -291,22 +217,39 @@ class GraphRepository:
     def get_uncached_graph_list(self) -> List[str]:
         """Return graphs to be parsed."""
         return [
-            (self.get_graph_name(graph_data), graph_data)
-            for graph_data in self.get_graph_list()
+            graph_name
+            for graph_name in self.get_graph_list()
             if not (
-                self.is_graph_cached(self.get_graph_name(graph_data)) or
-                self.is_graph_corrupted(self.get_graph_name(graph_data)) or
-                self.is_graph_unsupported(self.get_graph_name(graph_data))
+                self.is_graph_corrupted(graph_name) or
+                self.is_graph_unsupported(graph_name)
             )
         ]
 
+    def get_graph_versions(self, graph_name: str) -> List[str]:
+        """Return list of versions of the given graph.
+
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of graph to retrieve versions for.
+
+        Returns
+        -----------------------
+        List of versions for the given graph.
+        """
+        raise NotImplementedError(
+            "The method get_graph_versions must be implemented in child classes."
+        )
+
     def get_graph_urls(self, graph_name: str) -> List[str]:
-        """Return url for the given graph.
+        """Return urls for the given graph.
 
         Parameters
         -----------------------
         graph_name: str,
             Name of graph to retrievel URLs for.
+        version: str,
+            Version to retrieve this information for.
 
         Returns
         -----------------------
@@ -316,15 +259,15 @@ class GraphRepository:
             "The method get_graph_urls must be implemented in child classes."
         )
 
-    def get_graph_paths(self, graph_name: str, urls: List[str]) -> List[str]:
-        """Return url for the given graph.
+    def get_graph_paths(self, graph_name: str, version: str) -> List[str]:
+        """Return paths for the given graph.
 
         Parameters
         -----------------------
         graph_name: str,
             Name of graph to retrievel URLs for.
-        urls: List[str],
-            Urls from where to download the graphs.
+        version: str,
+            Version to retrieve this information for.
 
         Returns
         -----------------------
@@ -334,224 +277,43 @@ class GraphRepository:
             "The method get_graph_paths must be implemented in child classes."
         )
 
-    def from_integer_sorted_parameters(
-        self,
-        graph_name: str,
-        edge_path: str,
-        node_path: str = None,
-    ) -> Dict:
-        """Return dictionary with kwargs to load graph.
-
-        Parameters
-        ---------------------
-        graph_name: str,
-            Name of the graph to load.
-        edge_path: str,
-            Path from where to load the edge list.
-        node_path: str = None,
-            Optionally, path from where to load the nodes.
-
-        Returns
-        -----------------------
-        Dictionary to build the graph object.
-        """
-        return dict(
-            name=graph_name,
-            edge_path=edge_path,
-            **(
-                dict(node_path=node_path)
-                if node_path is not None
-                else {}
-            ),
-            edge_separator=self.get_file_separator(edge_path),
-            node_separator=self.get_file_separator(node_path),
-            edge_rows_to_skip=self.get_lines_to_skip(edge_path),
-            edge_file_comment_symbol=self.get_file_comment_symbol(edge_path),
-            node_file_comment_symbol=self.get_file_comment_symbol(node_path),
-            directed=False
-        )
-
-    def download(self, graph_data, graph_name: str) -> pd.DataFrame:
-        """Return url for the given graph.
-
-        Parameters
-        -----------------------
-        graph_data,
-            Data of the graph to retrieve.
-        graph_name: str,
-            Name of the graph to retrieve.
-
-        Returns
-        -----------------------
-        Dataframe with download metadata.
-        """
-        urls = self.get_graph_urls(graph_data)
-        return self._downloader.download(
-            urls=urls,
-            paths=self.get_graph_paths(graph_name, urls)
-        )
-
-    def get_file_separator(
-        self,
-        path: str
-    ) -> str:
-        """Return the candidate file separator.
-
-        Parameters
-        -----------------------
-        path: str,
-            Path for which to identify the separator.
-
-        Returns
-        -----------------------
-        Character likely used as separator in the file.
-        """
-        if path is None:
-            return None
-
-        counter = Counter()
-        with open(path, "r") as f:
-            for _ in range(2000):
-                counter.update([
-                    c
-                    for c in f.readline()
-                    if c in (";", ",", " ", "\t")
-                ])
-
-        return counter.most_common(n=1)[0][0]
-
-    def get_file_comment_symbol(
-        self,
-        path: str
-    ) -> str:
-        """Return the candidate file comment.
-
-        Parameters
-        -----------------------
-        path: str,
-            Path for which to identify the comment.
-
-        Returns
-        -----------------------
-        Character likely used as comment identifier in the file.
-        """
-        if path is None:
-            return None
-
-        with open(path, "r") as f:
-            first_line = f.readline()
-
-        comment_character = None
-        for symbol in ("%", "#"):
-            if first_line.startswith(symbol):
-                comment_character = symbol
-
-        return comment_character
-
-    def get_starting_commented_lines_number(self, path: str) -> int:
-        """Return number of commented lines since beginning.
-
-        Parameters
-        -----------------------
-        path: str,
-            Path from which to count commented lines.
-
-        Returns
-        -----------------------
-        Number of commented lines.
-        """
-        comment_symbol = self.get_file_comment_symbol(path)
-        if comment_symbol is None:
-            return 0
-        commented_lines_number = 0
-        with open(path, "r") as f:
-            while True:
-                if f.readline().startswith(comment_symbol):
-                    commented_lines_number += 1
-                else:
-                    break
-        return commented_lines_number
-
-    def get_lines_to_skip(self, path: str) -> int:
-        """Return number of lines to skip.
-
-        Parameters
-        -----------------------
-        path: str,
-            Path from which to identify lines to skip.
-
-        Returns
-        -----------------------
-        Number of lines to skip.
-        """
-        if path.endswith(".mtx"):
-            return 1
-        return 0
-
-    def load_dataframe(self, path: str) -> pd.DataFrame:
-        """Return data loaded as DataFrame."""
-        return pd.read_csv(
-            path,
-            sep=self.get_file_separator(path),
-            skiprows=self.get_starting_commented_lines_number(
-                path) + self.get_lines_to_skip(path),
-            header=None,
-            nrows=1000000,
-            low_memory=False
-        )
-
-    def display_dataframe_preview(self, data: pd.DataFrame):
-        """Displays in the best way possible the file."""
-        if is_notebook():
-            display(data[:10])
-        else:
-            print(data[:10])
-
-    def get_node_path(
-        self,
-        graph_name: str,
-        download_report: pd.DataFrame
-    ) -> str:
-        """Return path from where to load the node files.
+    def get_graph_references(self, graph_name: str, version: str) -> List[str]:
+        """Return references for a given graph and version.
 
         Parameters
         -----------------------
         graph_name: str,
-            Name of the graph.
-        download_report: pd.DataFrame,
-            Report from downloader.
+            Name of graph to retrievel URLs for.
+        version: str,
+            Version to retrieve this information for.
 
         Returns
         -----------------------
-        The path from where to load the node files.
+        The bibliographic references relative to this graph.
         """
         raise NotImplementedError(
-            "The method get_node_path must be implemented in child classes."
+            "The method get_graph_references must be implemented in child classes."
         )
 
-    def get_edge_path(
-        self,
-        graph_name: str,
-        download_report: pd.DataFrame
-    ) -> str:
-        """Return path from where to load the edge files.
+    def get_graph_arguments(self, graph_name: str, version: str) -> Dict:
+        """Return arguments for a given graph and version.
 
         Parameters
         -----------------------
         graph_name: str,
-            Name of the graph.
-        download_report: pd.DataFrame,
-            Report from downloader.
+            Name of graph to retrievel URLs for.
+        version: str,
+            Version to retrieve this information for.
 
         Returns
         -----------------------
-        The path from where to load the edge files.
+        Dictionary with the arguments required to load this graph.
         """
         raise NotImplementedError(
-            "The method get_edge_path must be implemented in child classes."
+            "The method get_graph_arguments must be implemented in child classes."
         )
 
-    def get_imports(self, graph_name: str) -> str:
+    def get_imports(self, graph_name: str, version: str) -> str:
         """Return imports to be added to model file.
 
         Parameters
@@ -565,7 +327,7 @@ class GraphRepository:
         """
         return ""
 
-    def get_description(self, graph_name: str) -> str:
+    def get_description(self, graph_name: str, version: str) -> str:
         """Return description to be added to model file.
 
         Parameters
@@ -579,7 +341,7 @@ class GraphRepository:
         """
         return ""
 
-    def get_callbacks(self, graph_name: str) -> str:
+    def get_callbacks(self, graph_name: str, version: str) -> str:
         """Return callbacks to be added to model file.
 
         Parameters
@@ -595,7 +357,7 @@ class GraphRepository:
             "The method get_callbacks must be implemented in child classes."
         )
 
-    def get_callbacks_arguments(self, graph_name: str) -> List[Dict]:
+    def get_callbacks_arguments(self, graph_name: str, version: str) -> List[Dict]:
         """Return arguments for callbacks to be added to model file.
 
         Parameters
@@ -611,66 +373,37 @@ class GraphRepository:
             "The method get_callbacks_arguments must be implemented in child classes."
         )
 
-    def check_nominal_download(
-        self,
-        download_report: pd.DataFrame
-    ) -> bool:
-        """Return boolean representing if everything went ok.
-
-        Parameters
-        -----------------------
-        download_report: pd.DataFrame,
-            Report from downloader.
-
-        Returns
-        -----------------------
-        Boolean representing if everything went ok.
-        """
-        return True
-
-    def clear_downloaded_data(self):
-        """Removes all downloaded graph files."""
-        if os.path.exists(self.repository_package_name):
-            shutil.rmtree(self.repository_package_name)
-
     def retrieve_all(self):
         """Retrives data for the graphs from the considered repository."""
-        for graph_name, graph_data in tqdm(
+        for graph_name in tqdm(
             self.get_uncached_graph_list(),
             desc="Retrieving graphs for {}".format(self.name),
             leave=False
         ):
-            self.clear_downloaded_data()
-            download_report = self.download(graph_data, graph_name)
-            if not self.check_nominal_download(download_report):
-                self.add_corrupted_graph(graph_name)
-                continue
-            try:
-                node_path = self.get_node_path(
-                    graph_name, download_report)
-                edge_path = self.get_edge_path(
-                    graph_name, download_report)
-                arguments = self.from_integer_sorted_parameters(
-                    graph_name,
-                    edge_path=edge_path,
-                    node_path=node_path,
-                )
-            except UnsupportedGraphException:
-                self.add_unsupported_graph(graph_name)
-                continue
-            graph: EnsmallenGraph = EnsmallenGraph.from_unsorted_csv(
-                **arguments
+            self.store_graph_data(
+                {
+                    version: dict(
+                        graph_name=graph_name,
+                        version=version,
+                        graph_method_name=self.build_stored_graph_name(
+                            graph_name
+                        ),
+                        datetime=str(datetime.datetime.now()),
+                        urls=self.get_graph_urls(graph_name, version),
+                        paths=self.get_graph_paths(graph_name, version),
+                        references=self.get_graph_references(
+                            graph_name,
+                            version
+                        ),
+                        arguments=self.get_graph_arguments(
+                            graph_name,
+                            version
+                        )
+                    )
+                    for version in self.get_graph_versions(graph_name)
+                },
+                graph_name=graph_name,
             )
-            self.dump_graph_report(
-                graph_name,
-                graph_textual_report=str(graph),
-                graph_json_report=graph.report(),
-                arguments=arguments,
-                citations=self.get_graph_citations(graph_data),
-                urls=download_report.url.tolist(),
-                paths=download_report.destination.tolist(),
-            )
-            self.clear_downloaded_data()
 
     def format_references(self, references: List[str]) -> str:
         """Return formatted references model.
@@ -692,6 +425,15 @@ class GraphRepository:
             "r"
         ) as f:
             return f.read().format("\n\n".join(references))
+
+    def format_versions(self, versions: List[str]) -> str:
+        """Return versions available."""
+        if versions == ["latest"]:
+            return ""
+        return "\t\nThe available versions are:\n{}".format("\n".join([
+            "\t\t- {}".format(version)
+            for version in versions
+        ]))
 
     def format_lines(self, text: str, line_length: int = 70) -> str:
         """Return formatted lines.
@@ -722,52 +464,6 @@ class GraphRepository:
             lines.append(line)
         return "\n".join(lines)
 
-    def format_report(self, report: str, datetime: str) -> str:
-        """Return formatted report model.
-
-        Parameters
-        ---------------------
-        report: str,
-            Report of the graph.
-        datetime: str,
-            Datetime of when the report whas created.
-
-        Returns
-        ---------------------
-        Formatted model of the report.
-        """
-        with open(
-            "{}/models/report.rst".format(
-                os.path.dirname(os.path.abspath(__file__))),
-            "r"
-        ) as f:
-            return f.read().format(
-                report=self.format_lines(report),
-                datetime=datetime
-            )
-
-    def format_usage_example(self, graph_name: str) -> str:
-        """Return formatted report model.
-
-        Parameters
-        ---------------------
-        graph_name: str,
-            Name of the graph to retrieve.
-
-        Returns
-        ---------------------
-        Formatted model of the report.
-        """
-        with open(
-            "{}/models/usage_example.rst".format(
-                os.path.dirname(os.path.abspath(__file__))),
-            "r"
-        ) as f:
-            return f.read().format(
-                repository_package_name=self.repository_package_name,
-                graph_method_name=self.build_stored_graph_name(graph_name)
-            )
-
     def add_tabs(self, text: str) -> str:
         """Add tabs for formatting porposes to given text.
 
@@ -782,7 +478,7 @@ class GraphRepository:
         """
         return "\t" + "\n\t".join(text.split("\n"))
 
-    def format_callbacks_data(self, graph_name: str) -> str:
+    def format_callbacks_data(self, graph_name: str, version: str) -> str:
         """Return formatted callbacks data.
 
         Parameters
@@ -795,8 +491,8 @@ class GraphRepository:
         Formatted callbacks data.
         """
         try:
-            callbacks = self.get_callbacks(graph_name)
-            callbacks_data = self.get_callbacks_arguments(graph_name)
+            callbacks = self.get_callbacks(graph_name, version)
+            callbacks_data = self.get_callbacks_arguments(graph_name, version)
             return ",\n" + self.add_tabs(self.add_tabs("\n".join((
                 "callbacks=[\n{}\n],".format(self.add_tabs("\n".join(
                     callbacks
@@ -812,17 +508,15 @@ class GraphRepository:
     def format_graph_retrieval_file(
         self,
         graph_name: str,
-        report: str,
-        references: List[str]
+        references: List[str],
+        versions: List[str]
     ) -> str:
-        """Return formatted report model.
+        """Return formatted model.
 
         Parameters
         ---------------------
         graph_name: str,
             Name of the graph to retrieve.
-        report: str,
-            Report of the graph.
         references: List[str],
             List of the references of the graph.
 
@@ -840,24 +534,26 @@ class GraphRepository:
                 repository_package_name=self.repository_package_name,
                 graph_name=graph_name,
                 repository_name=self.get_formatted_repository_name(),
-                report=report,
-                imports=self.get_imports(graph_name),
+                imports=self.get_imports(graph_name, versions[-1]),
                 callbacks_data=self.format_callbacks_data(
                     graph_name,
+                    versions[-1]
                 ),
                 description=self.format_lines(
-                    self.get_description(graph_name)
+                    self.get_description(graph_name, versions[-1])
                 ),
                 tabbed_description=self.add_tabs(
-                    self.format_lines(self.get_description(graph_name))
+                    self.format_lines(self.get_description(
+                        graph_name, versions[-1]))
                 ),
                 references=self.format_references(references),
-                usage_example=self.format_usage_example(graph_name),
-                tabbed_report=self.add_tabs(report),
                 tabbed_references=self.add_tabs(
-                    self.format_references(references)),
-                tabbed_usage_example=self.add_tabs(
-                    self.format_usage_example(graph_name))
+                    self.format_references(references)
+                ),
+                default_version="latest" if "latest" in versions else versions[-1],
+                available_graph_versions=self.add_tabs(
+                    self.format_versions(versions)
+                ),
             )
 
     def format_init_file(
@@ -910,46 +606,56 @@ class GraphRepository:
         graph_method_names = []
         graph_file_names = []
         target_directory_path = os.path.join(
-            "bindings/python/ensmallen_graph/datasets",
+            "../bindings/python/ensmallen_graph/datasets",
             self.repository_package_name,
         )
-        for graph_report_path in tqdm(
-            glob("{}/*.json.gz".format(self.from_integer_sorted_reports_directory())),
+        os.makedirs(target_directory_path, exist_ok=True)
+        for graph_data_path in tqdm(
+            glob(os.path.join(
+                os.path.dirname(os.path.abspath(__file__)),
+                "graph_repositories",
+                self.get_formatted_repository_name(),
+                "*.json.gz"
+            )),
             desc="Building graph retrieval methods for {}".format(self.name),
             leave=False
         ):
-            graph_data = compress_json.load(graph_report_path)
+            graph_data = compress_json.load(graph_data_path)
+            first_graph_version_data = list(graph_data.values())[0]
             graph_retrieval_file = self.format_graph_retrieval_file(
-                graph_name=graph_data["graph_name"],
-                report=self.format_report(
-                    graph_data["graph_textual_report"],
-                    graph_data["datetime"]
-                ),
-                references=graph_data["citations"],
+                graph_name=first_graph_version_data["graph_name"],
+                references=first_graph_version_data["references"],
+                versions=list(graph_data.keys())
             )
+
             target_path = os.path.join(
                 target_directory_path,
                 "{}.py".format(
                     self.build_stored_graph_name(
-                        graph_data["graph_name"]).lower()
+                        first_graph_version_data["graph_name"]
+                    ).lower()
                 )
             )
             graph_method_names.append(
-                self.build_stored_graph_name(graph_data["graph_name"])
+                self.build_stored_graph_name(
+                    first_graph_version_data["graph_name"])
             )
             graph_file_names.append(
-                self.build_stored_graph_name(graph_data["graph_name"]).lower()
+                self.build_stored_graph_name(
+                    first_graph_version_data["graph_name"]).lower()
             )
             target_json_path = os.path.join(
                 target_directory_path,
                 "{}.json.gz".format(
-                    self.build_stored_graph_name(graph_data["graph_name"])
+                    self.build_stored_graph_name(
+                        first_graph_version_data["graph_name"])
                 )
             )
             os.makedirs(target_directory_path, exist_ok=True)
             with open(target_path, "w") as f:
                 f.write(graph_retrieval_file)
             compress_json.dump(graph_data, target_json_path)
+
         init_path = os.path.join(
             target_directory_path,
             "__init__.py"

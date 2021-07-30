@@ -1,7 +1,10 @@
-"""Sub-module handling the retrieval and building of graphs from STRING."""
+"""Sub-module handling the retrieval and building of graphs from KGHUB."""
 from typing import List, Dict
 import os
+import requests
+from bs4 import BeautifulSoup
 import pandas as pd
+import string
 from .graph_repository import GraphRepository
 
 
@@ -10,11 +13,50 @@ class StringGraphRepository(GraphRepository):
     def __init__(self):
         """Create new String Graph Repository object."""
         super().__init__()
-        self._base_url = "https://stringdb-static.org/download/protein.links.v11.0/{}.protein.links.v11.0.txt.gz"
-        self._organisms = pd.read_csv(
+        self._data = self.get_data()
+
+    def get_data(self) -> Dict:
+        """Returns metadata mined from the KGHub repository."""
+        species_11_0 = pd.read_csv(
             "https://stringdb-static.org/download/species.v11.0.txt",
             sep="\t"
         )
+        species_11_5 = pd.read_csv(
+            "https://stringdb-static.org/download/species.v11.5.txt",
+            sep="\t"
+        )
+
+        mined_data = {}
+
+        graph_url_pattern = "https://stringdb-static.org/download/protein.links.v{version}/{taxon_id}.protein.links.v{version}.txt.gz"
+
+        for version, species in (
+            ("11.0", species_11_0),
+            ("11.5", species_11_5),
+        ):
+            for _, row in species.iterrows():
+                graph_name = self.build_stored_graph_name(row.STRING_name_compact)
+                if graph_name not in mined_data:
+                    mined_data[graph_name] = {}
+                taxon_id = row[0]
+                graph_url = graph_url_pattern.format(
+                    taxon_id=taxon_id,
+                    version=version
+                )
+                mined_data[graph_name][version] = {
+                    "urls": [graph_url],
+                    "arguments": {
+                        "edge_path": "{taxon_id}.protein.links.v{version}.txt".format(
+                            taxon_id=taxon_id,
+                            version=version
+                        ),
+                        "sources_column": "protein1",
+                        "destinations_column": "protein2",
+                        "weights_column": "combined_score",
+                    }
+                }
+
+        return mined_data
 
     def build_stored_graph_name(self, partial_graph_name: str) -> str:
         """Return built graph name.
@@ -28,54 +70,87 @@ class StringGraphRepository(GraphRepository):
         -----------------------
         Complete name of the graph.
         """
+        for target in string.punctuation:
+            partial_graph_name = partial_graph_name.replace(target, " ")
         return "".join([
             term.capitalize()
-            for term in partial_graph_name.replace(".", " ").split(" ")
+            for term in partial_graph_name.split()
         ])
 
     def get_formatted_repository_name(self) -> str:
         """Return formatted repository name."""
         return "STRING"
 
-    def get_graph_name(self, graph_data) -> str:
-        """Return built graph name.
+    def get_graph_arguments(
+        self,
+        graph_name: str,
+        version: str
+    ) -> List[str]:
+        """Return arguments for the given graph and version.
 
         Parameters
         -----------------------
-        graph_data: str,
-            Partial graph name to be built.
+        graph_name: str,
+            Name of graph to retrievel arguments for.
+        version: str,
+            Version to retrieve this information for.
 
         Returns
         -----------------------
-        Complete name of the graph.
+        The arguments list to use to build the graph.
         """
-        return graph_data.STRING_name_compact
+        return self._data[graph_name][version]["arguments"]
 
-    def get_graph_urls(self, graph_data) -> List[str]:
-        """Return url for the given graph.
+    def get_graph_versions(
+        self,
+        graph_name: str,
+    ) -> List[str]:
+        """Return list of versions of the given graph.
+        
+        Parameters
+        -----------------------
+        graph_name: str,
+            Name of graph to retrieve versions for.
+
+        Returns
+        -----------------------
+        List of versions for the given graph.
+        """
+        return list(self._data[graph_name].keys())
+
+    def get_graph_urls(
+        self,
+        graph_name: str,
+        version: str
+    ) -> List[str]:
+        """Return urls for the given graph and version.
 
         Parameters
         -----------------------
-        graph_data,
-            Graph data to use to retrieve the URLs.
+        graph_name: str,
+            Name of graph to retrievel URLs for.
+        version: str,
+            Version to retrieve this information for.
 
         Returns
         -----------------------
         The urls list from where to download the graph data.
         """
-        return [self._base_url.format(graph_data['## taxon_id'])]
+        return self._data[graph_name][version]["urls"]
 
-    def get_graph_citations(self, graph_data) -> List[str]:
+    def get_graph_references(self, graph_name: str, version: str) -> List[str]:
         """Return url for the given graph.
 
         Parameters
         -----------------------
-        graph_data,
-            Graph data to use to retrieve the citations.
+        graph_name: str,
+            Name of graph to retrievel URLs for.
+        version: str,
+            Version to retrieve this information for.
 
         Returns
         -----------------------
-        Citations relative to the STRING graphs.
+        Citations relative to the STRING.
         """
         return [
             open(
@@ -99,83 +174,14 @@ class StringGraphRepository(GraphRepository):
         Returns
         -----------------------
         The paths where to store the downloaded graphs.
-        """
-        return [os.path.join(
-            self.repository_package_name,
-            "{}.csv.gz".format(
-                graph_name.lower().replace(" ", "_")
-            )
-        )]
 
-    def from_integer_sorted_parameters(
-        self,
-        graph_name: str,
-        edge_path: str,
-        node_path: str = None,
-    ) -> Dict:
-        """Return dictionary with kwargs to load graph.
-
-        Parameters
-        ---------------------
-        graph_name: str,
-            Name of the graph to load.
-        edge_path: str,
-            Path from where to load the edge list.
-        node_path: str = None,
-            Optionally, path from where to load the nodes.
-
-        Returns
+        Implementative details
         -----------------------
-        Dictionary to build the graph object.
-        """
-        return {
-            **super().from_integer_sorted_parameters(
-                graph_name,
-                edge_path,
-                node_path
-            ),
-            "sources_column": "protein1",
-            "destinations_column": "protein2",
-            "weights_column": "combined_score",
-        }
-
-    def get_graph_list(self) -> List[str]:
-        """Return list of graph names."""
-        return [
-            row
-            for _, row in self._organisms.iterrows()
-        ]
-
-    def get_node_path(
-        self,
-        download_report: pd.DataFrame
-    ) -> str:
-        """Return path from where to load the node files.
-
-        Parameters
-        -----------------------
-        download_report: pd.DataFrame,
-            Report from downloader.
-
-        Returns
-        -----------------------
-        The path from where to load the node files.
+        It is returned None because the path that is automatically
+        used by downloader is sufficiently precise.
         """
         return None
 
-    def get_edge_path(
-        self,
-        download_report: pd.DataFrame
-    ) -> str:
-        """Return path from where to load the edge files.
-
-        Parameters
-        -----------------------
-        download_report: pd.DataFrame,
-            Report from downloader.
-
-        Returns
-        -----------------------
-        The path from where to load the edge files.
-        """
-        return download_report.extraction_destination[0]
+    def get_graph_list(self) -> List[str]:
+        """Return list of graph names."""
+        return list(self._data.keys())

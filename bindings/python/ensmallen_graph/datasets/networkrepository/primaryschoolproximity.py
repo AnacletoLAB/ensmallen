@@ -1,31 +1,14 @@
 """
-This file offers the methods to automatically retrieve the graph primary-school-proximity.
+This file offers the methods to automatically retrieve the graph PrimarySchoolProximity.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
-
-
-
-Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-06 11:37:41.721769
-
-The undirected multigraph primary-school-proximity has 242 nodes and 125773
-unweighted edges with 3100 different edge types:  the 5 most common are
-38900, 144520, 38520, 38460 and 39040, of which none are self-loops and
-234912 are parallel. The graph is quite dense as it has a density of 0.28521
-and is connected, as it has a single component. The graph median node degree
-is 1000, the mean node degree is 1039.45, and the node degree mode is 1033.
-The top 5 most central nodes are 1695 (degree 2594), 1697 (degree 2532),
-1665 (degree 2447), 1698 (degree 2442) and 1613 (degree 2249).
 
 
 References
 ---------------------
 Please cite the following if you use the data:
 
+```latex
 @inproceedings{nr,
     title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
     author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -38,43 +21,7 @@ Please cite the following if you use the data:
         author={{SocioPatterns}},
         title={Infectious contact networks},
         url={http://www.sociopatterns.org/datasets/}}
-
-
-Usage example
-----------------------
-The usage of this graph is relatively straightforward:
-
-.. code:: python
-
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.networkrepository import PrimarySchoolProximity
-
-    # Then load the graph
-    graph = PrimarySchoolProximity()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Wether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
+```
 """
 from typing import Dict
 
@@ -84,54 +31,47 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 def PrimarySchoolProximity(
     directed: bool = False,
+    preprocess: bool = True,
     verbose: int = 2,
+    cache: bool = True,
     cache_path: str = "graphs/networkrepository",
+    version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the primary-school-proximity graph.
+    """Return new instance of the PrimarySchoolProximity graph.
 
-    The graph is automatically retrieved from the NetworkRepository repository. 
-
-	
+    The graph is automatically retrieved from the NetworkRepository repository.	
 
     Parameters
     -------------------
     directed: bool = False,
         Wether to load the graph as directed or undirected.
         By default false.
+    preprocess: bool = True,
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
+    cache: bool = True,
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    version: str = "latest",
+        The version of the graph to retrieve.	
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of primary-school-proximity graph.
-
-	Report
-	---------------------
-	At the time of rendering these methods (please see datetime below), the graph
-	had the following characteristics:
-	
-	Datetime: 2021-02-06 11:37:41.721769
-	
-	The undirected multigraph primary-school-proximity has 242 nodes and 125773
-	unweighted edges with 3100 different edge types:  the 5 most common are
-	38900, 144520, 38520, 38460 and 39040, of which none are self-loops and
-	234912 are parallel. The graph is quite dense as it has a density of 0.28521
-	and is connected, as it has a single component. The graph median node degree
-	is 1000, the mean node degree is 1039.45, and the node degree mode is 1033.
-	The top 5 most central nodes are 1695 (degree 2594), 1697 (degree 2532),
-	1665 (degree 2447), 1698 (degree 2442) and 1613 (degree 2249).
-	
+    Instace of PrimarySchoolProximity graph.
 
 	References
 	---------------------
 	Please cite the following if you use the data:
 	
+	```latex
 	@inproceedings{nr,
 	    title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
 	    author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -144,49 +84,16 @@ def PrimarySchoolProximity(
 	        author={{SocioPatterns}},
 	        title={Infectious contact networks},
 	        url={http://www.sociopatterns.org/datasets/}}
-	
-
-	Usage example
-	----------------------
-	The usage of this graph is relatively straightforward:
-	
-	.. code:: python
-	
-	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.networkrepository import PrimarySchoolProximity
-	
-	    # Then load the graph
-	    graph = PrimarySchoolProximity()
-	
-	    # Finally, you can do anything with it, for instance, compute its report:
-	    print(graph)
-	
-	    # If you need to run a link prediction task with validation,
-	    # you can split the graph using a connected holdout as follows:
-	    train_graph, validation_graph = graph.connected_holdout(
-	        # You can use an 80/20 split the holdout, for example.
-	        train_size=0.8,
-	        # The random state is used to reproduce the holdout.
-	        random_state=42,
-	        # Wether to show a loading bar.
-	        verbose=True
-	    )
-	
-	    # Remember that, if you need, you can enable the memory-time trade-offs:
-	    train_graph.enable(
-	        vector_sources=True,
-	        vector_destinations=True,
-	        vector_outbounds=True
-	    )
-	
-	    # Consider using the methods made available in the Embiggen package
-	    # to run graph embedding or link prediction tasks.
+	```
     """
     return AutomaticallyRetrievedGraph(
         graph_name="PrimarySchoolProximity",
         dataset="networkrepository",
+        version=version,
         directed=directed,
+        preprocess=preprocess,
         verbose=verbose,
+        cache=cache,
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs
     )()

@@ -1,5 +1,5 @@
 maturin
 compress_json
-scipy
+environments_utils
 tqdm
 pandas

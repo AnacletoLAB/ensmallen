@@ -1,0 +1,36 @@
+{
+    "Monarch": {
+        "202103": {
+            "urls": [
+                "https://archive.monarchinitiative.org/202103/kgx/sri-reference-kg_nodes.tsv",
+                "https://archive.monarchinitiative.org/202103/kgx/sri-reference-kg_edges.tsv"
+            ],
+            "arguments": {
+                "edge_path": "sri-reference-kg_edges.tsv",
+                "node_path": "sri-reference-kg_nodes.tsv",
+                "sources_column": "subject",
+                "destinations_column": "object",
+                "edge_list_edge_types_column": "predicate",
+                "nodes_column": "id",
+                "node_list_node_types_column": "category",
+                "node_types_separator": "|"
+            }
+        },
+        "202012": {
+            "urls": [
+                "https://archive.monarchinitiative.org/202012/kgx/sri-reference-kg_nodes.tsv.gz",
+                "https://archive.monarchinitiative.org/202012/kgx/sri-reference-kg_edges.tsv.gz"
+            ],
+            "arguments": {
+                "edge_path": "sri-reference-kg_edges.tsv",
+                "node_path": "sri-reference-kg_nodes.tsv",
+                "sources_column": "subject",
+                "destinations_column": "object",
+                "edge_list_edge_types_column": "predicate",
+                "nodes_column": "id",
+                "node_list_node_types_column": "category",
+                "node_types_separator": "|"
+            }
+        }
+    }
+}

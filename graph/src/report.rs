@@ -833,7 +833,7 @@ impl Graph {
     unsafe fn get_edge_weights_report(&self) -> String {
         format!(
             concat!(
-                "<h3>Weights</h3>\n",
+                "<h3>Weights</h3>",
                 "<p>The minimum edge weight is {minimum_edge_weight}, the maximum edge weight is {maximum_edge_weight} and the total edge weight is {total_edge_weight}.</p>",
                 "<h4>Weighted degree centrality</h4>",
                 "<p>The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",

@@ -1,33 +1,14 @@
 """
-This file offers the methods to automatically retrieve the graph proteins-all.
+This file offers the methods to automatically retrieve the graph ProteinsAll.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
-
-
-
-Report
----------------------
-At the time of rendering these methods (please see datetime below), the graph
-had the following characteristics:
-
-Datetime: 2021-02-04 08:49:32.298032
-
-The undirected graph proteins-all has 43471 nodes with 3 different node
-types: 1 (nodes number 21151), 2 (nodes number 20931) and 3 (nodes number
-1389), of which 5 are singletons, and 81044 unweighted edges, of which
-none are self-loops. The graph is extremely sparse as it has a density
-of 0.00009 and has 1200 connected components, where the component with
-most nodes has 620 nodes and the component with the least nodes has a single
-node. The graph median node degree is 4, the mean node degree is 3.73,
-and the node degree mode is 3. The top 5 most central nodes are 14097 (degree
-25), 14093 (degree 25), 14095 (degree 24), 14088 (degree 15) and 14086
-(degree 15).
 
 
 References
 ---------------------
 Please cite the following if you use the data:
 
+```latex
 @inproceedings{nr,
     title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
     author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -35,43 +16,7 @@ Please cite the following if you use the data:
     url={http://networkrepository.com},
     year={2015}
 }
-
-
-Usage example
-----------------------
-The usage of this graph is relatively straightforward:
-
-.. code:: python
-
-    # First import the function to retrieve the graph from the datasets
-    from ensmallen_graph.datasets.networkrepository import ProteinsAll
-
-    # Then load the graph
-    graph = ProteinsAll()
-
-    # Finally, you can do anything with it, for instance, compute its report:
-    print(graph)
-
-    # If you need to run a link prediction task with validation,
-    # you can split the graph using a connected holdout as follows:
-    train_graph, validation_graph = graph.connected_holdout(
-        # You can use an 80/20 split the holdout, for example.
-        train_size=0.8,
-        # The random state is used to reproduce the holdout.
-        random_state=42,
-        # Wether to show a loading bar.
-        verbose=True
-    )
-
-    # Remember that, if you need, you can enable the memory-time trade-offs:
-    train_graph.enable(
-        vector_sources=True,
-        vector_destinations=True,
-        vector_outbounds=True
-    )
-
-    # Consider using the methods made available in the Embiggen package
-    # to run graph embedding or link prediction tasks.
+```
 """
 from typing import Dict
 
@@ -81,56 +26,47 @@ from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 def ProteinsAll(
     directed: bool = False,
+    preprocess: bool = True,
     verbose: int = 2,
+    cache: bool = True,
     cache_path: str = "graphs/networkrepository",
+    version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the proteins-all graph.
+    """Return new instance of the ProteinsAll graph.
 
-    The graph is automatically retrieved from the NetworkRepository repository. 
-
-	
+    The graph is automatically retrieved from the NetworkRepository repository.	
 
     Parameters
     -------------------
     directed: bool = False,
         Wether to load the graph as directed or undirected.
         By default false.
+    preprocess: bool = True,
+        Whether to preprocess the graph to be loaded in 
+        optimal time and memory.
     verbose: int = 2,
         Wether to show loading bars during the retrieval and building
         of the graph.
+    cache: bool = True,
+        Whether to use cache, i.e. download files only once
+        and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
+    version: str = "latest",
+        The version of the graph to retrieve.	
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of proteins-all graph.
-
-	Report
-	---------------------
-	At the time of rendering these methods (please see datetime below), the graph
-	had the following characteristics:
-	
-	Datetime: 2021-02-04 08:49:32.298032
-	
-	The undirected graph proteins-all has 43471 nodes with 3 different node
-	types: 1 (nodes number 21151), 2 (nodes number 20931) and 3 (nodes number
-	1389), of which 5 are singletons, and 81044 unweighted edges, of which
-	none are self-loops. The graph is extremely sparse as it has a density
-	of 0.00009 and has 1200 connected components, where the component with
-	most nodes has 620 nodes and the component with the least nodes has a single
-	node. The graph median node degree is 4, the mean node degree is 3.73,
-	and the node degree mode is 3. The top 5 most central nodes are 14097 (degree
-	25), 14093 (degree 25), 14095 (degree 24), 14088 (degree 15) and 14086
-	(degree 15).
-	
+    Instace of ProteinsAll graph.
 
 	References
 	---------------------
 	Please cite the following if you use the data:
 	
+	```latex
 	@inproceedings{nr,
 	    title = {The Network Data Repository with Interactive Graph Analytics and Visualization},
 	    author={Ryan A. Rossi and Nesreen K. Ahmed},
@@ -138,49 +74,16 @@ def ProteinsAll(
 	    url={http://networkrepository.com},
 	    year={2015}
 	}
-	
-
-	Usage example
-	----------------------
-	The usage of this graph is relatively straightforward:
-	
-	.. code:: python
-	
-	    # First import the function to retrieve the graph from the datasets
-	    from ensmallen_graph.datasets.networkrepository import ProteinsAll
-	
-	    # Then load the graph
-	    graph = ProteinsAll()
-	
-	    # Finally, you can do anything with it, for instance, compute its report:
-	    print(graph)
-	
-	    # If you need to run a link prediction task with validation,
-	    # you can split the graph using a connected holdout as follows:
-	    train_graph, validation_graph = graph.connected_holdout(
-	        # You can use an 80/20 split the holdout, for example.
-	        train_size=0.8,
-	        # The random state is used to reproduce the holdout.
-	        random_state=42,
-	        # Wether to show a loading bar.
-	        verbose=True
-	    )
-	
-	    # Remember that, if you need, you can enable the memory-time trade-offs:
-	    train_graph.enable(
-	        vector_sources=True,
-	        vector_destinations=True,
-	        vector_outbounds=True
-	    )
-	
-	    # Consider using the methods made available in the Embiggen package
-	    # to run graph embedding or link prediction tasks.
+	```
     """
     return AutomaticallyRetrievedGraph(
         graph_name="ProteinsAll",
         dataset="networkrepository",
+        version=version,
         directed=directed,
+        preprocess=preprocess,
         verbose=verbose,
+        cache=cache,
         cache_path=cache_path,
         additional_graph_kwargs=additional_graph_kwargs
     )()

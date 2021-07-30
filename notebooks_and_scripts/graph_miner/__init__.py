@@ -4,7 +4,8 @@ from .repositories import (
     NetworkRepositoryGraphRepository,
     KGHubGraphRepository,
     YueGraphRepository,
-    LINQSGraphRepository
+    LINQSGraphRepository,
+    MonarchInitiativeGraphRepository
 )
 
 __all__ = [
@@ -12,5 +13,6 @@ __all__ = [
     "NetworkRepositoryGraphRepository",
     "KGHubGraphRepository",
     "YueGraphRepository",
-    "LINQSGraphRepository"
+    "LINQSGraphRepository",
+    "MonarchInitiativeGraphRepository"
 ]

@@ -1,112 +1,126 @@
 {
     "StringPPI": {
-        "urls": [
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/STRING_PPI/STRING_PPI.edgelist",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/STRING_PPI/node_list.txt"
-        ],
-        "arguments": {
-            "edge_path": "STRING_PPI.edgelist",
-            "node_path": "node_list.txt",
-            "edge_separator": " ",
-            "sources_column_number": 0,
-            "destinations_column_number": 1,
-            "edge_header": false,
-            "nodes_column": "STRING_id",
-            "numeric_edge_node_ids": true
+        "latest": {
+            "urls": [
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/STRING_PPI/STRING_PPI.edgelist",
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/STRING_PPI/node_list.txt"
+            ],
+            "arguments": {
+                "edge_path": "STRING_PPI.edgelist",
+                "node_path": "node_list.txt",
+                "edge_separator": " ",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "edge_header": false,
+                "nodes_column": "STRING_id",
+                "numeric_edge_node_ids": true
+            }
         }
     },
     "CTDDDA": {
-        "urls": [
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/CTD_DDA/CTD_DDA.edgelist",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/CTD_DDA/node_list.txt"
-        ],
-        "arguments": {
-            "edge_path": "CTD_DDA.edgelist",
-            "node_path": "node_list.txt",
-            "edge_separator": " ",
-            "sources_column_number": 0,
-            "destinations_column_number": 1,
-            "edge_header": false,
-            "node_header": false,
-            "node_rows_to_skip": 1,
-            "nodes_column_number": 1,
-            "node_types_column_number": 3,
-            "numeric_edge_node_ids": true
+        "latest": {
+            "urls": [
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/CTD_DDA/CTD_DDA.edgelist",
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/CTD_DDA/node_list.txt"
+            ],
+            "arguments": {
+                "edge_path": "CTD_DDA.edgelist",
+                "node_path": "node_list.txt",
+                "edge_separator": " ",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "edge_header": false,
+                "node_header": false,
+                "node_rows_to_skip": 1,
+                "nodes_column_number": 1,
+                "node_types_column_number": 3,
+                "numeric_edge_node_ids": true
+            }
         }
     },
     "DrugBankDDI": {
-        "urls": [
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/DrugBank_DDI/DrugBank_DDI.edgelist",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/DrugBank_DDI/node_list.txt"
-        ],
-        "arguments": {
-            "edge_path": "DrugBank_DDI.edgelist",
-            "node_path": "node_list.txt",
-            "edge_separator": " ",
-            "sources_column_number": 0,
-            "destinations_column_number": 1,
-            "edge_header": false,
-            "nodes_column": "DrugBank_id",
-            "numeric_edge_node_ids": true
+        "latest": {
+            "urls": [
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/DrugBank_DDI/DrugBank_DDI.edgelist",
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/DrugBank_DDI/node_list.txt"
+            ],
+            "arguments": {
+                "edge_path": "DrugBank_DDI.edgelist",
+                "node_path": "node_list.txt",
+                "edge_separator": " ",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "edge_header": false,
+                "nodes_column": "DrugBank_id",
+                "numeric_edge_node_ids": true
+            }
         }
     },
     "NDFRTDDA": {
-        "urls": [
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/NDFRT_DDA/NDFRT_DDA.edgelist",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/NDFRT_DDA/node_list.txt"
-        ],
-        "arguments": {
-            "edge_path": "NDFRT_DDA.edgelist",
-            "node_path": "node_list.txt",
-            "edge_separator": " ",
-            "sources_column_number": 0,
-            "destinations_column_number": 1,
-            "edge_header": false,
-            "node_header": false,
-            "node_rows_to_skip": 1,
-            "nodes_column_number": 1,
-            "node_types_column_number": 2,
-            "numeric_edge_node_ids": true
+        "latest": {
+            "urls": [
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/NDFRT_DDA/NDFRT_DDA.edgelist",
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/NDFRT_DDA/node_list.txt"
+            ],
+            "arguments": {
+                "edge_path": "NDFRT_DDA.edgelist",
+                "node_path": "node_list.txt",
+                "edge_separator": " ",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "edge_header": false,
+                "node_header": false,
+                "node_rows_to_skip": 1,
+                "nodes_column_number": 1,
+                "node_types_column_number": 2,
+                "numeric_edge_node_ids": true
+            }
         }
     },
     "MashupPPI": {
-        "urls": [
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Mashup_PPI/Mashup_PPI.edgelist",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Mashup_PPI/Mashup_PPI_labels.txt"
-        ],
-        "arguments": {
-            "edge_path": "Mashup_PPI.edgelist",
-            "sources_column_number": 0,
-            "destinations_column_number": 1,
-            "weights_column_number": 2
+        "latest": {
+            "urls": [
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Mashup_PPI/Mashup_PPI.edgelist",
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Mashup_PPI/Mashup_PPI_labels.txt"
+            ],
+            "arguments": {
+                "edge_path": "Mashup_PPI.edgelist",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "weights_column_number": 2
+            }
         }
     },
     "node2vecPPI": {
-        "urls": [
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/node2vec_PPI/node2vec_PPI.edgelist",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/node2vec_PPI/node2vec_PPI_labels.txt"
-        ],
-        "arguments": {
-            "edge_path": "node2vec_PPI.edgelist",
-            "sources_column_number": 0,
-            "destinations_column_number": 1
+        "latest": {
+            "urls": [
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/node2vec_PPI/node2vec_PPI.edgelist",
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/node2vec_PPI/node2vec_PPI_labels.txt"
+            ],
+            "arguments": {
+                "edge_path": "node2vec_PPI.edgelist",
+                "sources_column_number": 0,
+                "destinations_column_number": 1
+            }
         }
     },
     "ClinTermCOOC": {
-        "urls": [
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/Clin_Term_COOC.edgelist",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/node_list.txt",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/Clin_Term_COOC_labels.txt",
-            "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/label_list.txt"
-        ],
-        "arguments": {
-            "edge_path": "Clin_Term_COOC.edgelist",
-            "node_path": "node_list.txt",
-            "sources_column_number": 0,
-            "destinations_column_number": 1,
-            "node_header": true,
-            "numeric_edge_node_ids": true,
-            "nodes_column": "term_id"
+        "latest": {
+            "urls": [
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/Clin_Term_COOC.edgelist",
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/node_list.txt",
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/Clin_Term_COOC_labels.txt",
+                "https://raw.githubusercontent.com/xiangyue9607/BioNEV/master/data/Clin_Term_COOC/label_list.txt"
+            ],
+            "arguments": {
+                "edge_path": "Clin_Term_COOC.edgelist",
+                "node_path": "node_list.txt",
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "node_header": true,
+                "numeric_edge_node_ids": true,
+                "nodes_column": "term_id"
+            }
         }
     }
 }

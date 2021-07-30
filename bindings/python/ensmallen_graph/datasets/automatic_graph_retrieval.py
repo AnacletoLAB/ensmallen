@@ -1,20 +1,24 @@
 import os
-from typing import Callable, List, Dict, Optional
+import shutil
+from typing import Callable, Dict, List, Optional
+
 import compress_json
 from downloaders import BaseDownloader
+from environments_utils import is_windows
 
-from ..ensmallen_graph import EnsmallenGraph
-from ..ensmallen_graph import edge_list_utils
+from ..ensmallen_graph import EnsmallenGraph, edge_list_utils
 
 
 class AutomaticallyRetrievedGraph:
     def __init__(
         self,
         graph_name: str,
+        version: str,
         dataset: str,
         directed: bool = False,
-        preprocess_to_optimal_undirected: bool = True,
+        preprocess: bool = True,
         verbose: int = 2,
+        cache: bool = True,
         cache_path: str = "graphs",
         callbacks: List[Callable] = (),
         callbacks_arguments: List[Dict] = (),
@@ -26,16 +30,21 @@ class AutomaticallyRetrievedGraph:
         -------------------
         graph_name: str,
             The name of the graph to be retrieved and loaded.
+        version: str,
+            The version of the graph to be retrieved.
         dataset: str,
             Name of the dataset to load data from.
         directed: bool = False,
             Whether to load the graph as directed or undirected.
             By default false.
-        preprocess_to_optimal_undirected: bool = True,
+        preprocess: bool = True,
             Whether to preprocess the node list and edge list
             to be loaded optimally in both time and memory.
         verbose: int = 2,
             Whether to show loading bars.
+        cache: bool = True,
+            Whether to use cache, i.e. download files only once
+            and preprocess them only once.
         cache_path: str = "graphs",
             Where to store the downloaded graphs.
         callbacks: List[Callable] = (),
@@ -49,12 +58,25 @@ class AutomaticallyRetrievedGraph:
         -------------------
         ValueError,
             If the given graph name is not available.
+        ValueError,
+            If the preprocess flag is provided but the system
+            is Windows, which does not provide the sort command.
         """
         try:
-            self._graph = compress_json.local_load(os.path.join(
+            all_versions = compress_json.local_load(os.path.join(
                 dataset,
                 "{}.json.gz".format(graph_name)
             ))
+
+            if version not in all_versions:
+                raise ValueError(
+                    (
+                        "Requested graph `{}` from dataset `{}` is ",
+                        "not available in the requested version `{}`."
+                    ).format(graph_name, dataset, version)
+                )
+                
+            self._graph = all_versions[version]
         except FileNotFoundError:
             raise ValueError(
                 (
@@ -63,9 +85,19 @@ class AutomaticallyRetrievedGraph:
                     "for this graph to be added."
                 ).format(graph_name)
             )
+
+        if preprocess and is_windows():
+            raise ValueError(
+                "Currently preprocessing to optimal edge list is not supported "
+                "on Windows because the sorting step is based upon the `sort` "
+                "command, which is only available to our knowledge on Linux and "
+                "macOS systems."
+            )
         self._directed = directed
-        self._preprocess_to_optimal = preprocess_to_optimal_undirected
+        self._preprocess = preprocess
         self._name = graph_name
+        self._version = version
+        self._cache = cache
         self._verbose = verbose
         self._callbacks = callbacks
         if additional_graph_kwargs is None:
@@ -75,6 +107,7 @@ class AutomaticallyRetrievedGraph:
         self._cache_path = os.path.join(cache_path, graph_name)
         self._downloader = BaseDownloader(
             auto_extract=True,
+            cache=cache,
             target_directory=self._cache_path,
             verbose=self._verbose,
             process_number=1
@@ -178,6 +211,12 @@ class AutomaticallyRetrievedGraph:
                 os.path.join(self._cache_path, path)
                 for path in paths
             ]
+
+        root = self.get_preprocessed_graph_directory_path()
+
+        if not self._cache and os.path.exists(root):
+            shutil.rmtree(root)
+
         # Download the necessary data
         self._downloader.download(
             self._graph["urls"],
@@ -185,7 +224,7 @@ class AutomaticallyRetrievedGraph:
         )
 
         os.makedirs(
-            self.get_preprocessed_graph_directory_path(),
+            root,
             exist_ok=True
         )
 
@@ -199,7 +238,7 @@ class AutomaticallyRetrievedGraph:
 
         # Preprocess the edge list to an optimal edge list
         # if this is enabled.
-        if self._preprocess_to_optimal:
+        if self._preprocess:
             # If any of the node types columns have been provided,
             # we compute the target node types column
             target_node_type_list_path = None

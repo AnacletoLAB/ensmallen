@@ -4,11 +4,13 @@ from .network_repository_graph_repository import NetworkRepositoryGraphRepositor
 from .kg_hub_graph_repository import KGHubGraphRepository
 from .yue_graph_repository import YueGraphRepository
 from .linqs_graph_repository import LINQSGraphRepository
+from .monarch_initiative_graph_repository import MonarchInitiativeGraphRepository
 
 __all__ = [
     "StringGraphRepository",
     "NetworkRepositoryGraphRepository",
     "KGHubGraphRepository",
     "YueGraphRepository",
-    "LINQSGraphRepository"
+    "LINQSGraphRepository",
+    "MonarchInitiativeGraphRepository"
 ]
