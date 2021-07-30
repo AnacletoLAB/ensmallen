@@ -104,7 +104,7 @@ class AutomaticallyRetrievedGraph:
             additional_graph_kwargs = {}
         self._additional_graph_kwargs = additional_graph_kwargs
         self._callbacks_arguments = callbacks_arguments
-        self._cache_path = os.path.join(cache_path, graph_name)
+        self._cache_path = os.path.join(cache_path, graph_name, version)
         self._downloader = BaseDownloader(
             auto_extract=True,
             cache=cache,
