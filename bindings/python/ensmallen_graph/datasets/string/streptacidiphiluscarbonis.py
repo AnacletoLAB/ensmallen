@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Streptacidiphiluscarbonis(
+def StreptacidiphilusCarbonis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Streptacidiphiluscarbonis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Streptacidiphiluscarbonis",
+        graph_name="StreptacidiphilusCarbonis",
         dataset="string",
         version=version,
         directed=directed,

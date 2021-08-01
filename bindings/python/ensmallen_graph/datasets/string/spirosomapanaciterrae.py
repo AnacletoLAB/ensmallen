@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Spirosomapanaciterrae(
+def SpirosomaPanaciterrae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Spirosomapanaciterrae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Spirosomapanaciterrae",
+        graph_name="SpirosomaPanaciterrae",
         dataset="string",
         version=version,
         directed=directed,

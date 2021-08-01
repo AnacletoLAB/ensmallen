@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanocellapaludicola(
+def MethanocellaPaludicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methanocellapaludicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanocellapaludicola",
+        graph_name="MethanocellaPaludicola",
         dataset="string",
         version=version,
         directed=directed,

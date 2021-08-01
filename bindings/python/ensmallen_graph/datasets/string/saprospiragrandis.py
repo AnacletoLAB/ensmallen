@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Saprospiragrandis(
+def SaprospiraGrandis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Saprospiragrandis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Saprospiragrandis",
+        graph_name="SaprospiraGrandis",
         dataset="string",
         version=version,
         directed=directed,

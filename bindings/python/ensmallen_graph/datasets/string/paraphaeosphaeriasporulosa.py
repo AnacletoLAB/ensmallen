@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Paraphaeosphaeriasporulosa(
+def ParaphaeosphaeriaSporulosa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Paraphaeosphaeriasporulosa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Paraphaeosphaeriasporulosa",
+        graph_name="ParaphaeosphaeriaSporulosa",
         dataset="string",
         version=version,
         directed=directed,

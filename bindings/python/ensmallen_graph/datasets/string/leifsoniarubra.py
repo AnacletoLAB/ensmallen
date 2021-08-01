@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Leifsoniarubra(
+def LeifsoniaRubra(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Leifsoniarubra(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Leifsoniarubra",
+        graph_name="LeifsoniaRubra",
         dataset="string",
         version=version,
         directed=directed,

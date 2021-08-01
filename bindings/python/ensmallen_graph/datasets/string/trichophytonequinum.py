@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Trichophytonequinum(
+def TrichophytonEquinum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Trichophytonequinum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Trichophytonequinum",
+        graph_name="TrichophytonEquinum",
         dataset="string",
         version=version,
         directed=directed,

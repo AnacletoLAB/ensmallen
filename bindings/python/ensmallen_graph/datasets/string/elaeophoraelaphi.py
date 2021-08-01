@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Elaeophoraelaphi(
+def ElaeophoraElaphi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Elaeophoraelaphi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Elaeophoraelaphi",
+        graph_name="ElaeophoraElaphi",
         dataset="string",
         version=version,
         directed=directed,

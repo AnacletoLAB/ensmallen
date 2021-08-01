@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stenotrophomonasginsengisoli(
+def StenotrophomonasGinsengisoli(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Stenotrophomonasginsengisoli(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stenotrophomonasginsengisoli",
+        graph_name="StenotrophomonasGinsengisoli",
         dataset="string",
         version=version,
         directed=directed,

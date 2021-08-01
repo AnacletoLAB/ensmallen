@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cohnellalaeviribosi(
+def CohnellaLaeviribosi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cohnellalaeviribosi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cohnellalaeviribosi",
+        graph_name="CohnellaLaeviribosi",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Erysiphenecator(
+def ErysipheNecator(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Erysiphenecator(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Erysiphenecator",
+        graph_name="ErysipheNecator",
         dataset="string",
         version=version,
         directed=directed,

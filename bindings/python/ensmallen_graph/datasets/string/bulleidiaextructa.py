@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bulleidiaextructa(
+def BulleidiaExtructa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Bulleidiaextructa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bulleidiaextructa",
+        graph_name="BulleidiaExtructa",
         dataset="string",
         version=version,
         directed=directed,

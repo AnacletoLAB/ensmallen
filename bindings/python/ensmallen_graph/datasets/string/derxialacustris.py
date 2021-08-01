@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Derxialacustris(
+def DerxiaLacustris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Derxialacustris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Derxialacustris",
+        graph_name="DerxiaLacustris",
         dataset="string",
         version=version,
         directed=directed,

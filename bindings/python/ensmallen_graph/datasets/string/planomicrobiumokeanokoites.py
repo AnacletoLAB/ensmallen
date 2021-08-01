@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Planomicrobiumokeanokoites(
+def PlanomicrobiumOkeanokoites(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Planomicrobiumokeanokoites(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Planomicrobiumokeanokoites",
+        graph_name="PlanomicrobiumOkeanokoites",
         dataset="string",
         version=version,
         directed=directed,

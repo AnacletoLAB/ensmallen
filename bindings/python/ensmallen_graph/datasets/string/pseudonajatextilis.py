@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudonajatextilis(
+def PseudonajaTextilis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudonajatextilis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudonajatextilis",
+        graph_name="PseudonajaTextilis",
         dataset="string",
         version=version,
         directed=directed,

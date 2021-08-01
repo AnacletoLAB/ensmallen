@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Moschusmoschiferus(
+def MoschusMoschiferus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Moschusmoschiferus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Moschusmoschiferus",
+        graph_name="MoschusMoschiferus",
         dataset="string",
         version=version,
         directed=directed,

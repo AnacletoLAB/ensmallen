@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hamadaeatsunoensis(
+def HamadaeaTsunoensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Hamadaeatsunoensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hamadaeatsunoensis",
+        graph_name="HamadaeaTsunoensis",
         dataset="string",
         version=version,
         directed=directed,

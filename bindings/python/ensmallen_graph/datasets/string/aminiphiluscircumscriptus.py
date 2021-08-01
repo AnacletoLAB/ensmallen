@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aminiphiluscircumscriptus(
+def AminiphilusCircumscriptus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Aminiphiluscircumscriptus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aminiphiluscircumscriptus",
+        graph_name="AminiphilusCircumscriptus",
         dataset="string",
         version=version,
         directed=directed,

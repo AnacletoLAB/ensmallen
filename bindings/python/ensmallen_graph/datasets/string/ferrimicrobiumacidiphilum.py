@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ferrimicrobiumacidiphilum(
+def FerrimicrobiumAcidiphilum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Ferrimicrobiumacidiphilum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ferrimicrobiumacidiphilum",
+        graph_name="FerrimicrobiumAcidiphilum",
         dataset="string",
         version=version,
         directed=directed,

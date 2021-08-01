@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Haloferacaceaearchaeonb1br10e2g22(
+def HaloferacaceaeArchaeonB1Br10E2g22(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Haloferacaceaearchaeonb1br10e2g22(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Haloferacaceaearchaeonb1br10e2g22",
+        graph_name="HaloferacaceaeArchaeonB1Br10E2g22",
         dataset="string",
         version=version,
         directed=directed,

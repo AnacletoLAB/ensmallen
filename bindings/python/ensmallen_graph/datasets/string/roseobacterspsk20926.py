@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Roseobacterspsk20926(
+def RoseobacterSpSk20926(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Roseobacterspsk20926(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Roseobacterspsk20926",
+        graph_name="RoseobacterSpSk20926",
         dataset="string",
         version=version,
         directed=directed,

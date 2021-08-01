@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gordoniasoli(
+def GordoniaSoli(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gordoniasoli(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gordoniasoli",
+        graph_name="GordoniaSoli",
         dataset="string",
         version=version,
         directed=directed,

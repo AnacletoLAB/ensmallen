@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aegilopstauschiisubspstrangulata(
+def AegilopsTauschiiSubspStrangulata(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Aegilopstauschiisubspstrangulata(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aegilopstauschiisubspstrangulata",
+        graph_name="AegilopsTauschiiSubspStrangulata",
         dataset="string",
         version=version,
         directed=directed,

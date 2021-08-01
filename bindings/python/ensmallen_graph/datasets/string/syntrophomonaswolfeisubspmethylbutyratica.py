@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Syntrophomonaswolfeisubspmethylbutyratica(
+def SyntrophomonasWolfeiSubspMethylbutyratica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Syntrophomonaswolfeisubspmethylbutyratica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Syntrophomonaswolfeisubspmethylbutyratica",
+        graph_name="SyntrophomonasWolfeiSubspMethylbutyratica",
         dataset="string",
         version=version,
         directed=directed,

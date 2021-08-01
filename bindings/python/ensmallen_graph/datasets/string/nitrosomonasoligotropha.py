@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nitrosomonasoligotropha(
+def NitrosomonasOligotropha(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nitrosomonasoligotropha(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nitrosomonasoligotropha",
+        graph_name="NitrosomonasOligotropha",
         dataset="string",
         version=version,
         directed=directed,

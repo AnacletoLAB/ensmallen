@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Choanephoracucurbitarum(
+def ChoanephoraCucurbitarum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Choanephoracucurbitarum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Choanephoracucurbitarum",
+        graph_name="ChoanephoraCucurbitarum",
         dataset="string",
         version=version,
         directed=directed,

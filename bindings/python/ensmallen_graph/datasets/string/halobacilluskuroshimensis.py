@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halobacilluskuroshimensis(
+def HalobacillusKuroshimensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Halobacilluskuroshimensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halobacilluskuroshimensis",
+        graph_name="HalobacillusKuroshimensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caryophanontenue(
+def CaryophanonTenue(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Caryophanontenue(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caryophanontenue",
+        graph_name="CaryophanonTenue",
         dataset="string",
         version=version,
         directed=directed,

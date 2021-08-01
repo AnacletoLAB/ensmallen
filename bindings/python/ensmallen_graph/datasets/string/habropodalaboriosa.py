@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Habropodalaboriosa(
+def HabropodaLaboriosa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Habropodalaboriosa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Habropodalaboriosa",
+        graph_name="HabropodaLaboriosa",
         dataset="string",
         version=version,
         directed=directed,

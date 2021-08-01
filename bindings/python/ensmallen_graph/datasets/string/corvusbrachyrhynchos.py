@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Corvusbrachyrhynchos(
+def CorvusBrachyrhynchos(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Corvusbrachyrhynchos(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Corvusbrachyrhynchos",
+        graph_name="CorvusBrachyrhynchos",
         dataset="string",
         version=version,
         directed=directed,

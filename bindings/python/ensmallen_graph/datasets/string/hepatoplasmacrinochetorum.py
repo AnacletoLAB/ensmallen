@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hepatoplasmacrinochetorum(
+def HepatoplasmaCrinochetorum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Hepatoplasmacrinochetorum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hepatoplasmacrinochetorum",
+        graph_name="HepatoplasmaCrinochetorum",
         dataset="string",
         version=version,
         directed=directed,

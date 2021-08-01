@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Prosthecobacterdebontii(
+def ProsthecobacterDebontii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Prosthecobacterdebontii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Prosthecobacterdebontii",
+        graph_name="ProsthecobacterDebontii",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Friedmanniomycesendolithicus(
+def FriedmanniomycesEndolithicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Friedmanniomycesendolithicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Friedmanniomycesendolithicus",
+        graph_name="FriedmanniomycesEndolithicus",
         dataset="string",
         version=version,
         directed=directed,

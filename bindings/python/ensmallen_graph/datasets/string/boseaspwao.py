@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Boseaspwao(
+def BoseaSpWao(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Boseaspwao(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Boseaspwao",
+        graph_name="BoseaSpWao",
         dataset="string",
         version=version,
         directed=directed,

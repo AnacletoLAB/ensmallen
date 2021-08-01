@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Geofilumrubicundumjcm15548(
+def GeofilumRubicundumJcm15548(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Geofilumrubicundumjcm15548(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Geofilumrubicundumjcm15548",
+        graph_name="GeofilumRubicundumJcm15548",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Procaviacapensis(
+def ProcaviaCapensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Procaviacapensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Procaviacapensis",
+        graph_name="ProcaviaCapensis",
         dataset="string",
         version=version,
         directed=directed,

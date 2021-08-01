@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Shewanellaamazonensis(
+def ShewanellaAmazonensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Shewanellaamazonensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Shewanellaamazonensis",
+        graph_name="ShewanellaAmazonensis",
         dataset="string",
         version=version,
         directed=directed,

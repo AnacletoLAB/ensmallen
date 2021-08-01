@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Anaerobiospirillumsucciniciproducens(
+def AnaerobiospirillumSucciniciproducens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Anaerobiospirillumsucciniciproducens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Anaerobiospirillumsucciniciproducens",
+        graph_name="AnaerobiospirillumSucciniciproducens",
         dataset="string",
         version=version,
         directed=directed,

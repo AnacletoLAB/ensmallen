@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sphaerochaetacoccoides(
+def SphaerochaetaCoccoides(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Sphaerochaetacoccoides(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sphaerochaetacoccoides",
+        graph_name="SphaerochaetaCoccoides",
         dataset="string",
         version=version,
         directed=directed,

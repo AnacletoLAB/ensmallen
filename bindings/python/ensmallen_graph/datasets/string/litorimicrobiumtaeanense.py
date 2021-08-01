@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Litorimicrobiumtaeanense(
+def LitorimicrobiumTaeanense(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Litorimicrobiumtaeanense(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Litorimicrobiumtaeanense",
+        graph_name="LitorimicrobiumTaeanense",
         dataset="string",
         version=version,
         directed=directed,

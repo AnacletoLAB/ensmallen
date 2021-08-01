@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Terracidiphilusgabretensis(
+def TerracidiphilusGabretensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Terracidiphilusgabretensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Terracidiphilusgabretensis",
+        graph_name="TerracidiphilusGabretensis",
         dataset="string",
         version=version,
         directed=directed,

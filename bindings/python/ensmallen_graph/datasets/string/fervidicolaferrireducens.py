@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fervidicolaferrireducens(
+def FervidicolaFerrireducens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Fervidicolaferrireducens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fervidicolaferrireducens",
+        graph_name="FervidicolaFerrireducens",
         dataset="string",
         version=version,
         directed=directed,

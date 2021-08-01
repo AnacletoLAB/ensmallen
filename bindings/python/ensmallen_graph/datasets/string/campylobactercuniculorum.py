@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Campylobactercuniculorum(
+def CampylobacterCuniculorum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Campylobactercuniculorum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Campylobactercuniculorum",
+        graph_name="CampylobacterCuniculorum",
         dataset="string",
         version=version,
         directed=directed,

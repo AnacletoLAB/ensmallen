@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Desulfotomaculumhydrothermale(
+def DesulfotomaculumHydrothermale(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Desulfotomaculumhydrothermale(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Desulfotomaculumhydrothermale",
+        graph_name="DesulfotomaculumHydrothermale",
         dataset="string",
         version=version,
         directed=directed,

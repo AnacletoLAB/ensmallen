@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylosinustrichosporium(
+def MethylosinusTrichosporium(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methylosinustrichosporium(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylosinustrichosporium",
+        graph_name="MethylosinusTrichosporium",
         dataset="string",
         version=version,
         directed=directed,

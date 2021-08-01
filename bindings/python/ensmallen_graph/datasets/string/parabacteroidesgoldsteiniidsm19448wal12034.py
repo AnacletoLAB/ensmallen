@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parabacteroidesgoldsteiniidsm19448wal12034(
+def ParabacteroidesGoldsteiniiDsm19448Wal12034(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Parabacteroidesgoldsteiniidsm19448wal12034(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parabacteroidesgoldsteiniidsm19448wal12034",
+        graph_name="ParabacteroidesGoldsteiniiDsm19448Wal12034",
         dataset="string",
         version=version,
         directed=directed,

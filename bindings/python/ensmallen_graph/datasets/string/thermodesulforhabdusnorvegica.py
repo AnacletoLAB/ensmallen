@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermodesulforhabdusnorvegica(
+def ThermodesulforhabdusNorvegica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thermodesulforhabdusnorvegica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermodesulforhabdusnorvegica",
+        graph_name="ThermodesulforhabdusNorvegica",
         dataset="string",
         version=version,
         directed=directed,

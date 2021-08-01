@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Catagonuswagneri(
+def CatagonusWagneri(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Catagonuswagneri(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Catagonuswagneri",
+        graph_name="CatagonusWagneri",
         dataset="string",
         version=version,
         directed=directed,

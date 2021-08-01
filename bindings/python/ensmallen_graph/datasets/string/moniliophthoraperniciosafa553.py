@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Moniliophthoraperniciosafa553(
+def MoniliophthoraPerniciosaFa553(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Moniliophthoraperniciosafa553(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Moniliophthoraperniciosafa553",
+        graph_name="MoniliophthoraPerniciosaFa553",
         dataset="string",
         version=version,
         directed=directed,

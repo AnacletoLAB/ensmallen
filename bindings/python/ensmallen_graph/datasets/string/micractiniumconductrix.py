@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Micractiniumconductrix(
+def MicractiniumConductrix(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Micractiniumconductrix(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Micractiniumconductrix",
+        graph_name="MicractiniumConductrix",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sclerotiniasclerotiorum(
+def SclerotiniaSclerotiorum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Sclerotiniasclerotiorum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sclerotiniasclerotiorum",
+        graph_name="SclerotiniaSclerotiorum",
         dataset="string",
         version=version,
         directed=directed,

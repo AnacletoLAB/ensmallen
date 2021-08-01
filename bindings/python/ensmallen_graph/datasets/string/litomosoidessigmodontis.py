@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Litomosoidessigmodontis(
+def LitomosoidesSigmodontis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Litomosoidessigmodontis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Litomosoidessigmodontis",
+        graph_name="LitomosoidesSigmodontis",
         dataset="string",
         version=version,
         directed=directed,

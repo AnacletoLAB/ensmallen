@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Geovibriospl21acebes(
+def GeovibrioSpL21acebes(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Geovibriospl21acebes(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Geovibriospl21acebes",
+        graph_name="GeovibrioSpL21acebes",
         dataset="string",
         version=version,
         directed=directed,

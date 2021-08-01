@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Podarcismuralis(
+def PodarcisMuralis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Podarcismuralis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Podarcismuralis",
+        graph_name="PodarcisMuralis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Alishewanellaagri(
+def AlishewanellaAgri(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Alishewanellaagri(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Alishewanellaagri",
+        graph_name="AlishewanellaAgri",
         dataset="string",
         version=version,
         directed=directed,

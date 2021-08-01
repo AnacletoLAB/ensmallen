@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Micromonosporapattaloongensis(
+def MicromonosporaPattaloongensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Micromonosporapattaloongensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Micromonosporapattaloongensis",
+        graph_name="MicromonosporaPattaloongensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lipomycesstarkeyinrrly11557(
+def LipomycesStarkeyiNrrlY11557(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lipomycesstarkeyinrrly11557(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lipomycesstarkeyinrrly11557",
+        graph_name="LipomycesStarkeyiNrrlY11557",
         dataset="string",
         version=version,
         directed=directed,

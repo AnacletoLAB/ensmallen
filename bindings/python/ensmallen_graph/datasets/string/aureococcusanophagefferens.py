@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aureococcusanophagefferens(
+def AureococcusAnophagefferens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Aureococcusanophagefferens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aureococcusanophagefferens",
+        graph_name="AureococcusAnophagefferens",
         dataset="string",
         version=version,
         directed=directed,

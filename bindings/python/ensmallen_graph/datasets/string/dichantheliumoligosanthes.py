@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dichantheliumoligosanthes(
+def DichantheliumOligosanthes(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dichantheliumoligosanthes(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dichantheliumoligosanthes",
+        graph_name="DichantheliumOligosanthes",
         dataset="string",
         version=version,
         directed=directed,

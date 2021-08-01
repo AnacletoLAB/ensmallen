@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Arenimonascomposti(
+def ArenimonasComposti(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Arenimonascomposti(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Arenimonascomposti",
+        graph_name="ArenimonasComposti",
         dataset="string",
         version=version,
         directed=directed,

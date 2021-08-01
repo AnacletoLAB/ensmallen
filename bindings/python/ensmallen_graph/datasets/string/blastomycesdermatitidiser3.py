@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Blastomycesdermatitidiser3(
+def BlastomycesDermatitidisEr3(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Blastomycesdermatitidiser3(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Blastomycesdermatitidiser3",
+        graph_name="BlastomycesDermatitidisEr3",
         dataset="string",
         version=version,
         directed=directed,

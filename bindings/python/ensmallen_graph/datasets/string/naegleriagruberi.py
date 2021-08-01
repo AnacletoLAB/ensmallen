@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Naegleriagruberi(
+def NaegleriaGruberi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Naegleriagruberi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Naegleriagruberi",
+        graph_name="NaegleriaGruberi",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hyphopichiaburtoniinrrly1933(
+def HyphopichiaBurtoniiNrrlY1933(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hyphopichiaburtoniinrrly1933(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hyphopichiaburtoniinrrly1933",
+        graph_name="HyphopichiaBurtoniiNrrlY1933",
         dataset="string",
         version=version,
         directed=directed,

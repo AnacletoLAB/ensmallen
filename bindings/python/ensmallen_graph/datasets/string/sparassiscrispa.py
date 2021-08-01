@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sparassiscrispa(
+def SparassisCrispa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sparassiscrispa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sparassiscrispa",
+        graph_name="SparassisCrispa",
         dataset="string",
         version=version,
         directed=directed,

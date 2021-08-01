@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chloropiconprimus(
+def ChloropiconPrimus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Chloropiconprimus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chloropiconprimus",
+        graph_name="ChloropiconPrimus",
         dataset="string",
         version=version,
         directed=directed,

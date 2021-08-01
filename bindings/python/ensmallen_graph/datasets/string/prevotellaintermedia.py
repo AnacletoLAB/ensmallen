@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Prevotellaintermedia(
+def PrevotellaIntermedia(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Prevotellaintermedia(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Prevotellaintermedia",
+        graph_name="PrevotellaIntermedia",
         dataset="string",
         version=version,
         directed=directed,

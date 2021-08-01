@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanocellaarvoryzae(
+def MethanocellaArvoryzae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methanocellaarvoryzae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanocellaarvoryzae",
+        graph_name="MethanocellaArvoryzae",
         dataset="string",
         version=version,
         directed=directed,

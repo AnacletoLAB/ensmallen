@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Xylanimonascellulosilytica(
+def XylanimonasCellulosilytica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Xylanimonascellulosilytica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Xylanimonascellulosilytica",
+        graph_name="XylanimonasCellulosilytica",
         dataset="string",
         version=version,
         directed=directed,

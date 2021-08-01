@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Alphaproteobacteriumjlt2015(
+def AlphaProteobacteriumJlt2015(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Alphaproteobacteriumjlt2015(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Alphaproteobacteriumjlt2015",
+        graph_name="AlphaProteobacteriumJlt2015",
         dataset="string",
         version=version,
         directed=directed,

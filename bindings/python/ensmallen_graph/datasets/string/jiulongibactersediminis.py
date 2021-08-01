@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Jiulongibactersediminis(
+def JiulongibacterSediminis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Jiulongibactersediminis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Jiulongibactersediminis",
+        graph_name="JiulongibacterSediminis",
         dataset="string",
         version=version,
         directed=directed,

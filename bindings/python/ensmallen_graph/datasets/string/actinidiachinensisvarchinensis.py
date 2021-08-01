@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Actinidiachinensisvarchinensis(
+def ActinidiaChinensisVarChinensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Actinidiachinensisvarchinensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Actinidiachinensisvarchinensis",
+        graph_name="ActinidiaChinensisVarChinensis",
         dataset="string",
         version=version,
         directed=directed,

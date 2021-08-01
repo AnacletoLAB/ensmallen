@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halococcussediminicola(
+def HalococcusSediminicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Halococcussediminicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halococcussediminicola",
+        graph_name="HalococcusSediminicola",
         dataset="string",
         version=version,
         directed=directed,

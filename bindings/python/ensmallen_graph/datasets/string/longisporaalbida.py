@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Longisporaalbida(
+def LongisporaAlbida(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Longisporaalbida(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Longisporaalbida",
+        graph_name="LongisporaAlbida",
         dataset="string",
         version=version,
         directed=directed,

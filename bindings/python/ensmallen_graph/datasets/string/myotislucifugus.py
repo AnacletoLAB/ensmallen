@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Myotislucifugus(
+def MyotisLucifugus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Myotislucifugus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Myotislucifugus",
+        graph_name="MyotisLucifugus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Planktotaleafrisia(
+def PlanktotaleaFrisia(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Planktotaleafrisia(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Planktotaleafrisia",
+        graph_name="PlanktotaleaFrisia",
         dataset="string",
         version=version,
         directed=directed,

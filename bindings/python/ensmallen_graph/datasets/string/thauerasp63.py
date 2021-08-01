@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thauerasp63(
+def ThaueraSp63(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thauerasp63(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thauerasp63",
+        graph_name="ThaueraSp63",
         dataset="string",
         version=version,
         directed=directed,

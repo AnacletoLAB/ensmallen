@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nakamurellamultipartita(
+def NakamurellaMultipartita(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nakamurellamultipartita(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nakamurellamultipartita",
+        graph_name="NakamurellaMultipartita",
         dataset="string",
         version=version,
         directed=directed,

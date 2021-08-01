@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Magnetovibrioblakemorei(
+def MagnetovibrioBlakemorei(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Magnetovibrioblakemorei(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Magnetovibrioblakemorei",
+        graph_name="MagnetovibrioBlakemorei",
         dataset="string",
         version=version,
         directed=directed,

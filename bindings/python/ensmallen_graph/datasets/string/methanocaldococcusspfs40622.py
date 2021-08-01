@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanocaldococcusspfs40622(
+def MethanocaldococcusSpFs40622(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methanocaldococcusspfs40622(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanocaldococcusspfs40622",
+        graph_name="MethanocaldococcusSpFs40622",
         dataset="string",
         version=version,
         directed=directed,

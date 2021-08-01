@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gemmataspiil30(
+def GemmataSpIil30(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gemmataspiil30(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gemmataspiil30",
+        graph_name="GemmataSpIil30",
         dataset="string",
         version=version,
         directed=directed,

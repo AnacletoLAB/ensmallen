@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oleiagrimonassoli(
+def OleiagrimonasSoli(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Oleiagrimonassoli(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oleiagrimonassoli",
+        graph_name="OleiagrimonasSoli",
         dataset="string",
         version=version,
         directed=directed,

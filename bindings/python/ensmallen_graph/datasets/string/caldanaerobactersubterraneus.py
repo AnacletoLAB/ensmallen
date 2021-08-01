@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caldanaerobactersubterraneus(
+def CaldanaerobacterSubterraneus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Caldanaerobactersubterraneus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caldanaerobactersubterraneus",
+        graph_name="CaldanaerobacterSubterraneus",
         dataset="string",
         version=version,
         directed=directed,

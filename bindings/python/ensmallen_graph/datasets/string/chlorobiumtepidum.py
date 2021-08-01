@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chlorobiumtepidum(
+def ChlorobiumTepidum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Chlorobiumtepidum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chlorobiumtepidum",
+        graph_name="ChlorobiumTepidum",
         dataset="string",
         version=version,
         directed=directed,

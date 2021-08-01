@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nitratireductorindicus(
+def NitratireductorIndicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nitratireductorindicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nitratireductorindicus",
+        graph_name="NitratireductorIndicus",
         dataset="string",
         version=version,
         directed=directed,

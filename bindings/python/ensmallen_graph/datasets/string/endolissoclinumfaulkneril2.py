@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Endolissoclinumfaulkneril2(
+def EndolissoclinumFaulkneriL2(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Endolissoclinumfaulkneril2(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Endolissoclinumfaulkneril2",
+        graph_name="EndolissoclinumFaulkneriL2",
         dataset="string",
         version=version,
         directed=directed,

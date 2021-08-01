@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermoflavimicrobiumdichotomicum(
+def ThermoflavimicrobiumDichotomicum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thermoflavimicrobiumdichotomicum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermoflavimicrobiumdichotomicum",
+        graph_name="ThermoflavimicrobiumDichotomicum",
         dataset="string",
         version=version,
         directed=directed,

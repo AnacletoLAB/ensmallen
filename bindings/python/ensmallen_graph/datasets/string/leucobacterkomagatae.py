@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Leucobacterkomagatae(
+def LeucobacterKomagatae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Leucobacterkomagatae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Leucobacterkomagatae",
+        graph_name="LeucobacterKomagatae",
         dataset="string",
         version=version,
         directed=directed,

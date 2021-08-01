@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Marinifilumfragilejcm15579(
+def MarinifilumFragileJcm15579(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Marinifilumfragilejcm15579(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Marinifilumfragilejcm15579",
+        graph_name="MarinifilumFragileJcm15579",
         dataset="string",
         version=version,
         directed=directed,

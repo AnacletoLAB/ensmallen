@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rhodovulumspmb263(
+def RhodovulumSpMb263(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rhodovulumspmb263(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rhodovulumspmb263",
+        graph_name="RhodovulumSpMb263",
         dataset="string",
         version=version,
         directed=directed,

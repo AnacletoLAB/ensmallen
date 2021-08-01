@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sedimentitaleananhaiensis(
+def SedimentitaleaNanhaiensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Sedimentitaleananhaiensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sedimentitaleananhaiensis",
+        graph_name="SedimentitaleaNanhaiensis",
         dataset="string",
         version=version,
         directed=directed,

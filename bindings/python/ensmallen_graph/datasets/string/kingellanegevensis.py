@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kingellanegevensis(
+def KingellaNegevensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Kingellanegevensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kingellanegevensis",
+        graph_name="KingellaNegevensis",
         dataset="string",
         version=version,
         directed=directed,

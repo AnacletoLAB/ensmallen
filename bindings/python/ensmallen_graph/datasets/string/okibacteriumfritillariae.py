@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Okibacteriumfritillariae(
+def OkibacteriumFritillariae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Okibacteriumfritillariae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Okibacteriumfritillariae",
+        graph_name="OkibacteriumFritillariae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Veillonellaatypicakon(
+def VeillonellaAtypicaKon(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Veillonellaatypicakon(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Veillonellaatypicakon",
+        graph_name="VeillonellaAtypicaKon",
         dataset="string",
         version=version,
         directed=directed,

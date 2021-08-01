@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Demequinaoxidasica(
+def DemequinaOxidasica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Demequinaoxidasica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Demequinaoxidasica",
+        graph_name="DemequinaOxidasica",
         dataset="string",
         version=version,
         directed=directed,

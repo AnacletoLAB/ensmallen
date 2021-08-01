@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nitrosomonascommunis(
+def NitrosomonasCommunis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nitrosomonascommunis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nitrosomonascommunis",
+        graph_name="NitrosomonasCommunis",
         dataset="string",
         version=version,
         directed=directed,

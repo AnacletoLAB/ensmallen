@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chelativoransspj32(
+def ChelativoransSpJ32(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Chelativoransspj32(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chelativoransspj32",
+        graph_name="ChelativoransSpJ32",
         dataset="string",
         version=version,
         directed=directed,

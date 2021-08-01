@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Paraliobacillusryukyuensis(
+def ParaliobacillusRyukyuensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Paraliobacillusryukyuensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Paraliobacillusryukyuensis",
+        graph_name="ParaliobacillusRyukyuensis",
         dataset="string",
         version=version,
         directed=directed,

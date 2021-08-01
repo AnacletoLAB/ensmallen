@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermoflexibacterruber(
+def ThermoflexibacterRuber(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thermoflexibacterruber(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermoflexibacterruber",
+        graph_name="ThermoflexibacterRuber",
         dataset="string",
         version=version,
         directed=directed,

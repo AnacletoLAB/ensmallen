@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Propionibacteriumfreudenreichii(
+def PropionibacteriumFreudenreichii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Propionibacteriumfreudenreichii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Propionibacteriumfreudenreichii",
+        graph_name="PropionibacteriumFreudenreichii",
         dataset="string",
         version=version,
         directed=directed,

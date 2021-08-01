@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Flavobacteriumfrigidimaris(
+def FlavobacteriumFrigidimaris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Flavobacteriumfrigidimaris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Flavobacteriumfrigidimaris",
+        graph_name="FlavobacteriumFrigidimaris",
         dataset="string",
         version=version,
         directed=directed,

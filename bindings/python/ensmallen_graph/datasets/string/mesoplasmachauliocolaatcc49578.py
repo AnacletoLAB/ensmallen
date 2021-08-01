@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mesoplasmachauliocolaatcc49578(
+def MesoplasmaChauliocolaAtcc49578(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Mesoplasmachauliocolaatcc49578(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mesoplasmachauliocolaatcc49578",
+        graph_name="MesoplasmaChauliocolaAtcc49578",
         dataset="string",
         version=version,
         directed=directed,

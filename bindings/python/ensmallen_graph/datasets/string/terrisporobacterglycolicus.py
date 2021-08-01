@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Terrisporobacterglycolicus(
+def TerrisporobacterGlycolicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Terrisporobacterglycolicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Terrisporobacterglycolicus",
+        graph_name="TerrisporobacterGlycolicus",
         dataset="string",
         version=version,
         directed=directed,

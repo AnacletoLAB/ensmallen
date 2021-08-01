@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Wolbachiaspculex(
+def WolbachiaSpCulex(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Wolbachiaspculex(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Wolbachiaspculex",
+        graph_name="WolbachiaSpCulex",
         dataset="string",
         version=version,
         directed=directed,

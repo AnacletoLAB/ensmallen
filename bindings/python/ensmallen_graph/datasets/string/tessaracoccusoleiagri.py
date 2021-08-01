@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tessaracoccusoleiagri(
+def TessaracoccusOleiagri(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tessaracoccusoleiagri(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tessaracoccusoleiagri",
+        graph_name="TessaracoccusOleiagri",
         dataset="string",
         version=version,
         directed=directed,

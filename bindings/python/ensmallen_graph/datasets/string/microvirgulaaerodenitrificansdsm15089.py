@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microvirgulaaerodenitrificansdsm15089(
+def MicrovirgulaAerodenitrificansDsm15089(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microvirgulaaerodenitrificansdsm15089(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microvirgulaaerodenitrificansdsm15089",
+        graph_name="MicrovirgulaAerodenitrificansDsm15089",
         dataset="string",
         version=version,
         directed=directed,

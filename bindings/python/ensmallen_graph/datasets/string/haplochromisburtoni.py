@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Haplochromisburtoni(
+def HaplochromisBurtoni(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Haplochromisburtoni(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Haplochromisburtoni",
+        graph_name="HaplochromisBurtoni",
         dataset="string",
         version=version,
         directed=directed,

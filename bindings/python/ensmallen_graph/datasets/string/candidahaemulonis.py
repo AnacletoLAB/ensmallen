@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Candidahaemulonis(
+def CandidaHaemulonis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Candidahaemulonis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Candidahaemulonis",
+        graph_name="CandidaHaemulonis",
         dataset="string",
         version=version,
         directed=directed,

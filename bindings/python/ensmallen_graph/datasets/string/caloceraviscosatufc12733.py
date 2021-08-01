@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caloceraviscosatufc12733(
+def CaloceraViscosaTufc12733(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Caloceraviscosatufc12733(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caloceraviscosatufc12733",
+        graph_name="CaloceraViscosaTufc12733",
         dataset="string",
         version=version,
         directed=directed,

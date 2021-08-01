@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lampropediacohaerens(
+def LampropediaCohaerens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lampropediacohaerens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lampropediacohaerens",
+        graph_name="LampropediaCohaerens",
         dataset="string",
         version=version,
         directed=directed,

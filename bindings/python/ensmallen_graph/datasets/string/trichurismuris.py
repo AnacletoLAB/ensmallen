@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Trichurismuris(
+def TrichurisMuris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Trichurismuris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Trichurismuris",
+        graph_name="TrichurisMuris",
         dataset="string",
         version=version,
         directed=directed,

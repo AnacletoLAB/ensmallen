@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Unculturedsup05clusterbacterium(
+def UnculturedSup05ClusterBacterium(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Unculturedsup05clusterbacterium(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Unculturedsup05clusterbacterium",
+        graph_name="UnculturedSup05ClusterBacterium",
         dataset="string",
         version=version,
         directed=directed,

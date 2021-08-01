@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oryzisolibacterpropanilivorax(
+def OryzisolibacterPropanilivorax(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Oryzisolibacterpropanilivorax(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oryzisolibacterpropanilivorax",
+        graph_name="OryzisolibacterPropanilivorax",
         dataset="string",
         version=version,
         directed=directed,

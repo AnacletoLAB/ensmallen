@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chlorobiumlimicola(
+def ChlorobiumLimicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Chlorobiumlimicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chlorobiumlimicola",
+        graph_name="ChlorobiumLimicola",
         dataset="string",
         version=version,
         directed=directed,

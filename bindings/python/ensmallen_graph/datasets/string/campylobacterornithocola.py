@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Campylobacterornithocola(
+def CampylobacterOrnithocola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Campylobacterornithocola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Campylobacterornithocola",
+        graph_name="CampylobacterOrnithocola",
         dataset="string",
         version=version,
         directed=directed,

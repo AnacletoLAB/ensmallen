@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stenotrophomonasmaltophilias028(
+def StenotrophomonasMaltophiliaS028(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Stenotrophomonasmaltophilias028(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stenotrophomonasmaltophilias028",
+        graph_name="StenotrophomonasMaltophiliaS028",
         dataset="string",
         version=version,
         directed=directed,

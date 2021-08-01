@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ornithinibacilluscaliforniensis(
+def OrnithinibacillusCaliforniensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ornithinibacilluscaliforniensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ornithinibacilluscaliforniensis",
+        graph_name="OrnithinibacillusCaliforniensis",
         dataset="string",
         version=version,
         directed=directed,

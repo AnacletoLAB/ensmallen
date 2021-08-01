@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Serendipitavermiferamaff305830(
+def SerendipitaVermiferaMaff305830(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Serendipitavermiferamaff305830(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Serendipitavermiferamaff305830",
+        graph_name="SerendipitaVermiferaMaff305830",
         dataset="string",
         version=version,
         directed=directed,

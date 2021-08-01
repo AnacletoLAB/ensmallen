@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microbulbiferyueqingensis(
+def MicrobulbiferYueqingensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microbulbiferyueqingensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microbulbiferyueqingensis",
+        graph_name="MicrobulbiferYueqingensis",
         dataset="string",
         version=version,
         directed=directed,

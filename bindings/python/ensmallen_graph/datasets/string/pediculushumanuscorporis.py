@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pediculushumanuscorporis(
+def PediculusHumanusCorporis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pediculushumanuscorporis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pediculushumanuscorporis",
+        graph_name="PediculusHumanusCorporis",
         dataset="string",
         version=version,
         directed=directed,

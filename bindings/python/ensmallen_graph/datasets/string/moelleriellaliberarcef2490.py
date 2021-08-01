@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Moelleriellaliberarcef2490(
+def MoelleriellaLiberaRcef2490(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Moelleriellaliberarcef2490(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Moelleriellaliberarcef2490",
+        graph_name="MoelleriellaLiberaRcef2490",
         dataset="string",
         version=version,
         directed=directed,

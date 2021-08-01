@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylovorusspmm2(
+def MethylovorusSpMm2(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methylovorusspmm2(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylovorusspmm2",
+        graph_name="MethylovorusSpMm2",
         dataset="string",
         version=version,
         directed=directed,

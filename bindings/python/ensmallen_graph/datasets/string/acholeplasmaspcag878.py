@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acholeplasmaspcag878(
+def AcholeplasmaSpCag878(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Acholeplasmaspcag878(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acholeplasmaspcag878",
+        graph_name="AcholeplasmaSpCag878",
         dataset="string",
         version=version,
         directed=directed,

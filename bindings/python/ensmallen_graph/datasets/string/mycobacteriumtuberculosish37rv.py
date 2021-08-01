@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mycobacteriumtuberculosish37rv(
+def MycobacteriumTuberculosisH37rv(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Mycobacteriumtuberculosish37rv(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mycobacteriumtuberculosish37rv",
+        graph_name="MycobacteriumTuberculosisH37rv",
         dataset="string",
         version=version,
         directed=directed,

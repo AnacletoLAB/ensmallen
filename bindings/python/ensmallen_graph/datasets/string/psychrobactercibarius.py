@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Psychrobactercibarius(
+def PsychrobacterCibarius(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Psychrobactercibarius(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Psychrobactercibarius",
+        graph_name="PsychrobacterCibarius",
         dataset="string",
         version=version,
         directed=directed,

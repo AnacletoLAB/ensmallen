@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Izhakiellaaustraliensis(
+def IzhakiellaAustraliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Izhakiellaaustraliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Izhakiellaaustraliensis",
+        graph_name="IzhakiellaAustraliensis",
         dataset="string",
         version=version,
         directed=directed,

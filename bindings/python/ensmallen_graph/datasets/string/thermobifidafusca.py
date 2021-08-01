@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermobifidafusca(
+def ThermobifidaFusca(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermobifidafusca(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermobifidafusca",
+        graph_name="ThermobifidaFusca",
         dataset="string",
         version=version,
         directed=directed,

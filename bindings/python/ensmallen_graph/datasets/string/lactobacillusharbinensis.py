@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lactobacillusharbinensis(
+def LactobacillusHarbinensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Lactobacillusharbinensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lactobacillusharbinensis",
+        graph_name="LactobacillusHarbinensis",
         dataset="string",
         version=version,
         directed=directed,

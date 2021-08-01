@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Xylariaflabelliformis(
+def XylariaFlabelliformis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Xylariaflabelliformis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Xylariaflabelliformis",
+        graph_name="XylariaFlabelliformis",
         dataset="string",
         version=version,
         directed=directed,

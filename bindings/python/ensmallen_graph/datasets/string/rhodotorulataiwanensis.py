@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rhodotorulataiwanensis(
+def RhodotorulaTaiwanensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rhodotorulataiwanensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rhodotorulataiwanensis",
+        graph_name="RhodotorulaTaiwanensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nannocystisexedens(
+def NannocystisExedens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nannocystisexedens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nannocystisexedens",
+        graph_name="NannocystisExedens",
         dataset="string",
         version=version,
         directed=directed,

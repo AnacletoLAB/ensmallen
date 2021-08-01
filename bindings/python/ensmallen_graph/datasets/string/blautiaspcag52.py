@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Blautiaspcag52(
+def BlautiaSpCag52(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Blautiaspcag52(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Blautiaspcag52",
+        graph_name="BlautiaSpCag52",
         dataset="string",
         version=version,
         directed=directed,

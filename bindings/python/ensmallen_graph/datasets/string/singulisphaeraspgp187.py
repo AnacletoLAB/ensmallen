@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Singulisphaeraspgp187(
+def SingulisphaeraSpGp187(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Singulisphaeraspgp187(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Singulisphaeraspgp187",
+        graph_name="SingulisphaeraSpGp187",
         dataset="string",
         version=version,
         directed=directed,

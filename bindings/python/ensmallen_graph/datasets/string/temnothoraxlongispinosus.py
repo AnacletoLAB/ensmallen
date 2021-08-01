@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Temnothoraxlongispinosus(
+def TemnothoraxLongispinosus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Temnothoraxlongispinosus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Temnothoraxlongispinosus",
+        graph_name="TemnothoraxLongispinosus",
         dataset="string",
         version=version,
         directed=directed,

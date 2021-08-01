@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Shuttleworthiasatelles(
+def ShuttleworthiaSatelles(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Shuttleworthiasatelles(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Shuttleworthiasatelles",
+        graph_name="ShuttleworthiaSatelles",
         dataset="string",
         version=version,
         directed=directed,

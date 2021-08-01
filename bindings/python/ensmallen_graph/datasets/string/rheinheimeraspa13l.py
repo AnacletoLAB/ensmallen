@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rheinheimeraspa13l(
+def RheinheimeraSpA13l(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Rheinheimeraspa13l(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rheinheimeraspa13l",
+        graph_name="RheinheimeraSpA13l",
         dataset="string",
         version=version,
         directed=directed,

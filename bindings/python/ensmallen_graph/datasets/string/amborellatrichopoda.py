@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Amborellatrichopoda(
+def AmborellaTrichopoda(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Amborellatrichopoda(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Amborellatrichopoda",
+        graph_name="AmborellaTrichopoda",
         dataset="string",
         version=version,
         directed=directed,

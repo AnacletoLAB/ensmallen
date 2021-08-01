@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Anditaleaandensis(
+def AnditaleaAndensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Anditaleaandensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Anditaleaandensis",
+        graph_name="AnditaleaAndensis",
         dataset="string",
         version=version,
         directed=directed,

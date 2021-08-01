@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thiomonasbhubaneswarensis(
+def ThiomonasBhubaneswarensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thiomonasbhubaneswarensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thiomonasbhubaneswarensis",
+        graph_name="ThiomonasBhubaneswarensis",
         dataset="string",
         version=version,
         directed=directed,

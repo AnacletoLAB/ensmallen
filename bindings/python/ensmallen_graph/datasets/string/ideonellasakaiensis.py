@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ideonellasakaiensis(
+def IdeonellaSakaiensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ideonellasakaiensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ideonellasakaiensis",
+        graph_name="IdeonellaSakaiensis",
         dataset="string",
         version=version,
         directed=directed,

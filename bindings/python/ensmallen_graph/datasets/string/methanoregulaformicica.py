@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanoregulaformicica(
+def MethanoregulaFormicica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methanoregulaformicica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanoregulaformicica",
+        graph_name="MethanoregulaFormicica",
         dataset="string",
         version=version,
         directed=directed,

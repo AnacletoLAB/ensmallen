@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sulfuritaleahydrogenivoranssk43h(
+def SulfuritaleaHydrogenivoransSk43h(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sulfuritaleahydrogenivoranssk43h(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sulfuritaleahydrogenivoranssk43h",
+        graph_name="SulfuritaleaHydrogenivoransSk43h",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hirundorusticarustica(
+def HirundoRusticaRustica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hirundorusticarustica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hirundorusticarustica",
+        graph_name="HirundoRusticaRustica",
         dataset="string",
         version=version,
         directed=directed,

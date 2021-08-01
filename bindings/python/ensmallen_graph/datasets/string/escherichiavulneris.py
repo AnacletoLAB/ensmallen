@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Escherichiavulneris(
+def EscherichiaVulneris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Escherichiavulneris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Escherichiavulneris",
+        graph_name="EscherichiaVulneris",
         dataset="string",
         version=version,
         directed=directed,

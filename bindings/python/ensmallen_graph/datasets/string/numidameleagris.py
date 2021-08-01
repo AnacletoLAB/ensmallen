@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Numidameleagris(
+def NumidaMeleagris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Numidameleagris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Numidameleagris",
+        graph_name="NumidaMeleagris",
         dataset="string",
         version=version,
         directed=directed,

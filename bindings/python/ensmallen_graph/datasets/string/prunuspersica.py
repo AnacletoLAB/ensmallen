@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Prunuspersica(
+def PrunusPersica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Prunuspersica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Prunuspersica",
+        graph_name="PrunusPersica",
         dataset="string",
         version=version,
         directed=directed,

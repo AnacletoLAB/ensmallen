@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Postiaplacentamad698r(
+def PostiaPlacentaMad698R(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Postiaplacentamad698r(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Postiaplacentamad698r",
+        graph_name="PostiaPlacentaMad698R",
         dataset="string",
         version=version,
         directed=directed,

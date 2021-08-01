@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halioglobuspacificus(
+def HalioglobusPacificus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Halioglobuspacificus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halioglobuspacificus",
+        graph_name="HalioglobusPacificus",
         dataset="string",
         version=version,
         directed=directed,

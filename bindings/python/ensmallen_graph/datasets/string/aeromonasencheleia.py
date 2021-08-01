@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aeromonasencheleia(
+def AeromonasEncheleia(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Aeromonasencheleia(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aeromonasencheleia",
+        graph_name="AeromonasEncheleia",
         dataset="string",
         version=version,
         directed=directed,

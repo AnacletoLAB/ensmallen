@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dactylellinahaptotylacbs20050(
+def DactylellinaHaptotylaCbs20050(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dactylellinahaptotylacbs20050(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dactylellinahaptotylacbs20050",
+        graph_name="DactylellinaHaptotylaCbs20050",
         dataset="string",
         version=version,
         directed=directed,

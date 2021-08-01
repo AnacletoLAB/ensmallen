@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acholeplasmapalmaej233(
+def AcholeplasmaPalmaeJ233(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Acholeplasmapalmaej233(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acholeplasmapalmaej233",
+        graph_name="AcholeplasmaPalmaeJ233",
         dataset="string",
         version=version,
         directed=directed,

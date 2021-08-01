@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ehrlichiasphf(
+def EhrlichiaSpHf(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Ehrlichiasphf(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ehrlichiasphf",
+        graph_name="EhrlichiaSpHf",
         dataset="string",
         version=version,
         directed=directed,

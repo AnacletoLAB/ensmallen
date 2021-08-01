@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coccomyxasubellipsoidea(
+def CoccomyxaSubellipsoidea(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Coccomyxasubellipsoidea(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coccomyxasubellipsoidea",
+        graph_name="CoccomyxaSubellipsoidea",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thioclavaspf366(
+def ThioclavaSpF366(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thioclavaspf366(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thioclavaspf366",
+        graph_name="ThioclavaSpF366",
         dataset="string",
         version=version,
         directed=directed,

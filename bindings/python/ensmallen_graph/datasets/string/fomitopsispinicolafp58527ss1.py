@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fomitopsispinicolafp58527ss1(
+def FomitopsisPinicolaFp58527Ss1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Fomitopsispinicolafp58527ss1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fomitopsispinicolafp58527ss1",
+        graph_name="FomitopsisPinicolaFp58527Ss1",
         dataset="string",
         version=version,
         directed=directed,

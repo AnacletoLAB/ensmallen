@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Taeniopygiaguttata(
+def TaeniopygiaGuttata(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Taeniopygiaguttata(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Taeniopygiaguttata",
+        graph_name="TaeniopygiaGuttata",
         dataset="string",
         version=version,
         directed=directed,

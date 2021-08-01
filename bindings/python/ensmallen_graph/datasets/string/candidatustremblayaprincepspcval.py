@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Candidatustremblayaprincepspcval(
+def CandidatusTremblayaPrincepsPcval(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Candidatustremblayaprincepspcval(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Candidatustremblayaprincepspcval",
+        graph_name="CandidatusTremblayaPrincepsPcval",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sphingobacteriumnematocida(
+def SphingobacteriumNematocida(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sphingobacteriumnematocida(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sphingobacteriumnematocida",
+        graph_name="SphingobacteriumNematocida",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acidovoraxspleaf160(
+def AcidovoraxSpLeaf160(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Acidovoraxspleaf160(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acidovoraxspleaf160",
+        graph_name="AcidovoraxSpLeaf160",
         dataset="string",
         version=version,
         directed=directed,

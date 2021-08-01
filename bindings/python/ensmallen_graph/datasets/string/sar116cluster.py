@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sar116cluster(
+def Sar116Cluster(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sar116cluster(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sar116cluster",
+        graph_name="Sar116Cluster",
         dataset="string",
         version=version,
         directed=directed,

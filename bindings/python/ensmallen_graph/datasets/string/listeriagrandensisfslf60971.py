@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Listeriagrandensisfslf60971(
+def ListeriaGrandensisFslF60971(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Listeriagrandensisfslf60971(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Listeriagrandensisfslf60971",
+        graph_name="ListeriaGrandensisFslF60971",
         dataset="string",
         version=version,
         directed=directed,

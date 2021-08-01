@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cycloclasticusspsymbiontofpoeciloscleridaspm(
+def CycloclasticusSpSymbiontOfPoeciloscleridaSpM(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cycloclasticusspsymbiontofpoeciloscleridaspm(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cycloclasticusspsymbiontofpoeciloscleridaspm",
+        graph_name="CycloclasticusSpSymbiontOfPoeciloscleridaSpM",
         dataset="string",
         version=version,
         directed=directed,

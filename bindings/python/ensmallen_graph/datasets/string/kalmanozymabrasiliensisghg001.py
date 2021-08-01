@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kalmanozymabrasiliensisghg001(
+def KalmanozymaBrasiliensisGhg001(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Kalmanozymabrasiliensisghg001(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kalmanozymabrasiliensisghg001",
+        graph_name="KalmanozymaBrasiliensisGhg001",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halohastalitchfieldiae(
+def HalohastaLitchfieldiae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Halohastalitchfieldiae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halohastalitchfieldiae",
+        graph_name="HalohastaLitchfieldiae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Malasseziavespertilionis(
+def MalasseziaVespertilionis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Malasseziavespertilionis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Malasseziavespertilionis",
+        graph_name="MalasseziaVespertilionis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Wolbachiaspbma(
+def WolbachiaSpBma(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Wolbachiaspbma(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Wolbachiaspbma",
+        graph_name="WolbachiaSpBma",
         dataset="string",
         version=version,
         directed=directed,

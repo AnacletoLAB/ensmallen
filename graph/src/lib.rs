@@ -12,6 +12,7 @@
 #![feature(map_first_last)]
 #![feature(core_intrinsics)]
 #![type_length_limit = "3764086"]
+#![feature(exclusive_range_pattern)]
 #![feature(option_result_unwrap_unchecked)]
 
 mod vocabulary;
@@ -136,3 +137,6 @@ pub use getters_cached::*;
 
 mod visualizations;
 pub use visualizations::*;
+
+mod memory;
+pub use memory::*;

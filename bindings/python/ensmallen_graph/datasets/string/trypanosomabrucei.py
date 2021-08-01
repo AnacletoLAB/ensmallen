@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Trypanosomabrucei(
+def TrypanosomaBrucei(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Trypanosomabrucei(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Trypanosomabrucei",
+        graph_name="TrypanosomaBrucei",
         dataset="string",
         version=version,
         directed=directed,

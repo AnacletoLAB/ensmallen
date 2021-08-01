@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Anserbrachyrhynchus(
+def AnserBrachyrhynchus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Anserbrachyrhynchus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Anserbrachyrhynchus",
+        graph_name="AnserBrachyrhynchus",
         dataset="string",
         version=version,
         directed=directed,

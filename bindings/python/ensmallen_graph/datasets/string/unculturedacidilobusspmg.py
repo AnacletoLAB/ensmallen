@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Unculturedacidilobusspmg(
+def UnculturedAcidilobusSpMg(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Unculturedacidilobusspmg(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Unculturedacidilobusspmg",
+        graph_name="UnculturedAcidilobusSpMg",
         dataset="string",
         version=version,
         directed=directed,

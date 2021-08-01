@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Arcobacterspaf1028(
+def ArcobacterSpAf1028(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Arcobacterspaf1028(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Arcobacterspaf1028",
+        graph_name="ArcobacterSpAf1028",
         dataset="string",
         version=version,
         directed=directed,

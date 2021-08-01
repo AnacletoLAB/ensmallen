@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Akkermansiaglycaniphila(
+def AkkermansiaGlycaniphila(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Akkermansiaglycaniphila(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Akkermansiaglycaniphila",
+        graph_name="AkkermansiaGlycaniphila",
         dataset="string",
         version=version,
         directed=directed,

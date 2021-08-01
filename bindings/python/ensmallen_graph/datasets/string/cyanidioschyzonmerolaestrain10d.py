@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cyanidioschyzonmerolaestrain10d(
+def CyanidioschyzonMerolaeStrain10d(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cyanidioschyzonmerolaestrain10d(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cyanidioschyzonmerolaestrain10d",
+        graph_name="CyanidioschyzonMerolaeStrain10d",
         dataset="string",
         version=version,
         directed=directed,

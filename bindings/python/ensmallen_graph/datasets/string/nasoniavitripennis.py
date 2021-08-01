@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nasoniavitripennis(
+def NasoniaVitripennis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nasoniavitripennis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nasoniavitripennis",
+        graph_name="NasoniaVitripennis",
         dataset="string",
         version=version,
         directed=directed,

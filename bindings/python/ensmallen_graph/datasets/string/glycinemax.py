@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Glycinemax(
+def GlycineMax(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Glycinemax(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Glycinemax",
+        graph_name="GlycineMax",
         dataset="string",
         version=version,
         directed=directed,

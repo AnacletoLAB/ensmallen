@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Syncephalastrumracemosum(
+def SyncephalastrumRacemosum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Syncephalastrumracemosum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Syncephalastrumracemosum",
+        graph_name="SyncephalastrumRacemosum",
         dataset="string",
         version=version,
         directed=directed,

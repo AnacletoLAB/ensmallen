@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermusoshimai(
+def ThermusOshimai(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermusoshimai(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermusoshimai",
+        graph_name="ThermusOshimai",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stoquefichusmassiliensis(
+def StoquefichusMassiliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Stoquefichusmassiliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stoquefichusmassiliensis",
+        graph_name="StoquefichusMassiliensis",
         dataset="string",
         version=version,
         directed=directed,

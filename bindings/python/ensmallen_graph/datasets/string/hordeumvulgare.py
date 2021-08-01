@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hordeumvulgare(
+def HordeumVulgare(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Hordeumvulgare(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hordeumvulgare",
+        graph_name="HordeumVulgare",
         dataset="string",
         version=version,
         directed=directed,

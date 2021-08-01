@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Polyporusbrumalis(
+def PolyporusBrumalis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Polyporusbrumalis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Polyporusbrumalis",
+        graph_name="PolyporusBrumalis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aureobasidiumsubglacialeexf2481(
+def AureobasidiumSubglacialeExf2481(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Aureobasidiumsubglacialeexf2481(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aureobasidiumsubglacialeexf2481",
+        graph_name="AureobasidiumSubglacialeExf2481",
         dataset="string",
         version=version,
         directed=directed,

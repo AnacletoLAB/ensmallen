@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Boseaspunc402clcol(
+def BoseaSpUnc402clcol(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Boseaspunc402clcol(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Boseaspunc402clcol",
+        graph_name="BoseaSpUnc402clcol",
         dataset="string",
         version=version,
         directed=directed,

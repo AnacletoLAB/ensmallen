@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tolypocladiumophioglossoidescbs100239(
+def TolypocladiumOphioglossoidesCbs100239(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tolypocladiumophioglossoidescbs100239(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tolypocladiumophioglossoidescbs100239",
+        graph_name="TolypocladiumOphioglossoidesCbs100239",
         dataset="string",
         version=version,
         directed=directed,

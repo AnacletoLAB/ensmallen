@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Alkalispirochaetaalkalicadsm8900(
+def AlkalispirochaetaAlkalicaDsm8900(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Alkalispirochaetaalkalicadsm8900(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Alkalispirochaetaalkalicadsm8900",
+        graph_name="AlkalispirochaetaAlkalicaDsm8900",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Terrimicrobiumsacchariphilum(
+def TerrimicrobiumSacchariphilum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Terrimicrobiumsacchariphilum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Terrimicrobiumsacchariphilum",
+        graph_name="TerrimicrobiumSacchariphilum",
         dataset="string",
         version=version,
         directed=directed,

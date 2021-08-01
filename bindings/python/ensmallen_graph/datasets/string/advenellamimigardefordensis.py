@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Advenellamimigardefordensis(
+def AdvenellaMimigardefordensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Advenellamimigardefordensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Advenellamimigardefordensis",
+        graph_name="AdvenellaMimigardefordensis",
         dataset="string",
         version=version,
         directed=directed,

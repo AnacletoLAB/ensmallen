@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cupriavidustaiwanensis(
+def CupriavidusTaiwanensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cupriavidustaiwanensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cupriavidustaiwanensis",
+        graph_name="CupriavidusTaiwanensis",
         dataset="string",
         version=version,
         directed=directed,

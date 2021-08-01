@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mariniblastusfucicola(
+def MariniblastusFucicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Mariniblastusfucicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mariniblastusfucicola",
+        graph_name="MariniblastusFucicola",
         dataset="string",
         version=version,
         directed=directed,

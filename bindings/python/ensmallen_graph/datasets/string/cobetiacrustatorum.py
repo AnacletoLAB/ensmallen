@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cobetiacrustatorum(
+def CobetiaCrustatorum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cobetiacrustatorum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cobetiacrustatorum",
+        graph_name="CobetiaCrustatorum",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Verticilliumnonalfalfae(
+def VerticilliumNonalfalfae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Verticilliumnonalfalfae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Verticilliumnonalfalfae",
+        graph_name="VerticilliumNonalfalfae",
         dataset="string",
         version=version,
         directed=directed,

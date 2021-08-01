@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Guillardiathetaccmp2712(
+def GuillardiaThetaCcmp2712(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Guillardiathetaccmp2712(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Guillardiathetaccmp2712",
+        graph_name="GuillardiaThetaCcmp2712",
         dataset="string",
         version=version,
         directed=directed,

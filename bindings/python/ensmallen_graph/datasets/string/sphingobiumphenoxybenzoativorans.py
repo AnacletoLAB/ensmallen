@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sphingobiumphenoxybenzoativorans(
+def SphingobiumPhenoxybenzoativorans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sphingobiumphenoxybenzoativorans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sphingobiumphenoxybenzoativorans",
+        graph_name="SphingobiumPhenoxybenzoativorans",
         dataset="string",
         version=version,
         directed=directed,

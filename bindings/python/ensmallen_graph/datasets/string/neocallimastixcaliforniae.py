@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Neocallimastixcaliforniae(
+def NeocallimastixCaliforniae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Neocallimastixcaliforniae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Neocallimastixcaliforniae",
+        graph_name="NeocallimastixCaliforniae",
         dataset="string",
         version=version,
         directed=directed,

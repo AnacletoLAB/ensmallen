@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylacidiphilumfumariolicum(
+def MethylacidiphilumFumariolicum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methylacidiphilumfumariolicum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylacidiphilumfumariolicum",
+        graph_name="MethylacidiphilumFumariolicum",
         dataset="string",
         version=version,
         directed=directed,

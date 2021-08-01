@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Poseidonocellasedimentorum(
+def PoseidonocellaSedimentorum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Poseidonocellasedimentorum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Poseidonocellasedimentorum",
+        graph_name="PoseidonocellaSedimentorum",
         dataset="string",
         version=version,
         directed=directed,

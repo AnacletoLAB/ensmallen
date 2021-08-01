@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lutibacterprofundi(
+def LutibacterProfundi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lutibacterprofundi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lutibacterprofundi",
+        graph_name="LutibacterProfundi",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Paraburkholderiatuberum(
+def ParaburkholderiaTuberum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Paraburkholderiatuberum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Paraburkholderiatuberum",
+        graph_name="ParaburkholderiaTuberum",
         dataset="string",
         version=version,
         directed=directed,

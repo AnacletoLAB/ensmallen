@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lacinutrixspheli90(
+def LacinutrixSpHelI90(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lacinutrixspheli90(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lacinutrixspheli90",
+        graph_name="LacinutrixSpHelI90",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Friedmanniomycessimplex(
+def FriedmanniomycesSimplex(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Friedmanniomycessimplex(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Friedmanniomycessimplex",
+        graph_name="FriedmanniomycesSimplex",
         dataset="string",
         version=version,
         directed=directed,

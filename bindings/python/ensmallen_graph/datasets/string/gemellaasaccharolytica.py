@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gemellaasaccharolytica(
+def GemellaAsaccharolytica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gemellaasaccharolytica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gemellaasaccharolytica",
+        graph_name="GemellaAsaccharolytica",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermusislandicus(
+def ThermusIslandicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermusislandicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermusislandicus",
+        graph_name="ThermusIslandicus",
         dataset="string",
         version=version,
         directed=directed,

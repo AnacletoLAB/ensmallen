@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Arthrodermabenhamiae(
+def ArthrodermaBenhamiae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Arthrodermabenhamiae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Arthrodermabenhamiae",
+        graph_name="ArthrodermaBenhamiae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Salmonellaentericasubspdiarizonae(
+def SalmonellaEntericaSubspDiarizonae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Salmonellaentericasubspdiarizonae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Salmonellaentericasubspdiarizonae",
+        graph_name="SalmonellaEntericaSubspDiarizonae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sulfurospirillumarcachonense(
+def SulfurospirillumArcachonense(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Sulfurospirillumarcachonense(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sulfurospirillumarcachonense",
+        graph_name="SulfurospirillumArcachonense",
         dataset="string",
         version=version,
         directed=directed,

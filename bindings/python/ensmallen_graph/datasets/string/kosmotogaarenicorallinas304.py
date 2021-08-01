@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kosmotogaarenicorallinas304(
+def KosmotogaArenicorallinaS304(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Kosmotogaarenicorallinas304(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kosmotogaarenicorallinas304",
+        graph_name="KosmotogaArenicorallinaS304",
         dataset="string",
         version=version,
         directed=directed,

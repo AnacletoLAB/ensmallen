@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chelatococcusdaeguensis(
+def ChelatococcusDaeguensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Chelatococcusdaeguensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chelatococcusdaeguensis",
+        graph_name="ChelatococcusDaeguensis",
         dataset="string",
         version=version,
         directed=directed,

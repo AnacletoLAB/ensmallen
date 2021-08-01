@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nematostellavectensis(
+def NematostellaVectensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nematostellavectensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nematostellavectensis",
+        graph_name="NematostellaVectensis",
         dataset="string",
         version=version,
         directed=directed,

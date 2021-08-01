@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Buchneraaphidicolastr5aacyrthosiphonpisum(
+def BuchneraAphidicolaStr5aAcyrthosiphonPisum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Buchneraaphidicolastr5aacyrthosiphonpisum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Buchneraaphidicolastr5aacyrthosiphonpisum",
+        graph_name="BuchneraAphidicolaStr5aAcyrthosiphonPisum",
         dataset="string",
         version=version,
         directed=directed,

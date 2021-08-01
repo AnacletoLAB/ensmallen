@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gallibacteriumgenomosp3(
+def GallibacteriumGenomosp3(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gallibacteriumgenomosp3(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gallibacteriumgenomosp3",
+        graph_name="GallibacteriumGenomosp3",
         dataset="string",
         version=version,
         directed=directed,

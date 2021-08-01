@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Smittiummucronatum(
+def SmittiumMucronatum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Smittiummucronatum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Smittiummucronatum",
+        graph_name="SmittiumMucronatum",
         dataset="string",
         version=version,
         directed=directed,

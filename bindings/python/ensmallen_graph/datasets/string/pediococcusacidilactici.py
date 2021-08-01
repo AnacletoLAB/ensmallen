@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pediococcusacidilactici(
+def PediococcusAcidilactici(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pediococcusacidilactici(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pediococcusacidilactici",
+        graph_name="PediococcusAcidilactici",
         dataset="string",
         version=version,
         directed=directed,

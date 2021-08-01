@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mangrovimonasspst2l15(
+def MangrovimonasSpSt2l15(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Mangrovimonasspst2l15(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mangrovimonasspst2l15",
+        graph_name="MangrovimonasSpSt2l15",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caldicellulosiruptornaganoensisna10(
+def CaldicellulosiruptorNaganoensisNa10(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Caldicellulosiruptornaganoensisna10(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caldicellulosiruptornaganoensisna10",
+        graph_name="CaldicellulosiruptorNaganoensisNa10",
         dataset="string",
         version=version,
         directed=directed,

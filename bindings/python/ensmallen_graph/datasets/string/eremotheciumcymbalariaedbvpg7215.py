@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Eremotheciumcymbalariaedbvpg7215(
+def EremotheciumCymbalariaeDbvpg7215(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Eremotheciumcymbalariaedbvpg7215(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Eremotheciumcymbalariaedbvpg7215",
+        graph_name="EremotheciumCymbalariaeDbvpg7215",
         dataset="string",
         version=version,
         directed=directed,

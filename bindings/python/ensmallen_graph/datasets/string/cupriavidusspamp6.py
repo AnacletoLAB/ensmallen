@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cupriavidusspamp6(
+def CupriavidusSpAmp6(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cupriavidusspamp6(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cupriavidusspamp6",
+        graph_name="CupriavidusSpAmp6",
         dataset="string",
         version=version,
         directed=directed,

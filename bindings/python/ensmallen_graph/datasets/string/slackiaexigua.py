@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Slackiaexigua(
+def SlackiaExigua(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Slackiaexigua(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Slackiaexigua",
+        graph_name="SlackiaExigua",
         dataset="string",
         version=version,
         directed=directed,

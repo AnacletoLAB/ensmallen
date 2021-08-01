@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Natronobacteriumtexcoconense(
+def NatronobacteriumTexcoconense(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Natronobacteriumtexcoconense(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Natronobacteriumtexcoconense",
+        graph_name="NatronobacteriumTexcoconense",
         dataset="string",
         version=version,
         directed=directed,

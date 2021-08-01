@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Schizosaccharomycesoctosporus(
+def SchizosaccharomycesOctosporus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Schizosaccharomycesoctosporus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Schizosaccharomycesoctosporus",
+        graph_name="SchizosaccharomycesOctosporus",
         dataset="string",
         version=version,
         directed=directed,

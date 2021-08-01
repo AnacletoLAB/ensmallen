@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Peptoanaerobacterstomatis(
+def PeptoanaerobacterStomatis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Peptoanaerobacterstomatis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Peptoanaerobacterstomatis",
+        graph_name="PeptoanaerobacterStomatis",
         dataset="string",
         version=version,
         directed=directed,

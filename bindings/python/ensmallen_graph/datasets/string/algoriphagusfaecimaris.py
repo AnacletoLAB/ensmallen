@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Algoriphagusfaecimaris(
+def AlgoriphagusFaecimaris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Algoriphagusfaecimaris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Algoriphagusfaecimaris",
+        graph_name="AlgoriphagusFaecimaris",
         dataset="string",
         version=version,
         directed=directed,

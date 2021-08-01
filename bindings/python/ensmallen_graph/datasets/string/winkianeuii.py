@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Winkianeuii(
+def WinkiaNeuii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Winkianeuii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Winkianeuii",
+        graph_name="WinkiaNeuii",
         dataset="string",
         version=version,
         directed=directed,

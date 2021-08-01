@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Glutamicibacterhalophytocola(
+def GlutamicibacterHalophytocola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Glutamicibacterhalophytocola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Glutamicibacterhalophytocola",
+        graph_name="GlutamicibacterHalophytocola",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Alcanivoraxspnbrc102024(
+def AlcanivoraxSpNbrc102024(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Alcanivoraxspnbrc102024(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Alcanivoraxspnbrc102024",
+        graph_name="AlcanivoraxSpNbrc102024",
         dataset="string",
         version=version,
         directed=directed,

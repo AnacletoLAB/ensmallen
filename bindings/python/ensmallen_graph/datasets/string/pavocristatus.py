@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pavocristatus(
+def PavoCristatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pavocristatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pavocristatus",
+        graph_name="PavoCristatus",
         dataset="string",
         version=version,
         directed=directed,

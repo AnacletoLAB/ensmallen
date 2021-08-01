@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mannheimiavarigenausdaarsusmarc1296(
+def MannheimiaVarigenaUsdaarsusmarc1296(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Mannheimiavarigenausdaarsusmarc1296(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mannheimiavarigenausdaarsusmarc1296",
+        graph_name="MannheimiaVarigenaUsdaarsusmarc1296",
         dataset="string",
         version=version,
         directed=directed,

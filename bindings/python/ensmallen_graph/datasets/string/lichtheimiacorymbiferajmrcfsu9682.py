@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lichtheimiacorymbiferajmrcfsu9682(
+def LichtheimiaCorymbiferaJmrcFsu9682(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lichtheimiacorymbiferajmrcfsu9682(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lichtheimiacorymbiferajmrcfsu9682",
+        graph_name="LichtheimiaCorymbiferaJmrcFsu9682",
         dataset="string",
         version=version,
         directed=directed,

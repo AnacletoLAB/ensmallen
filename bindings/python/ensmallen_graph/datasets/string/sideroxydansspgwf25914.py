@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sideroxydansspgwf25914(
+def SideroxydansSpGwf25914(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sideroxydansspgwf25914(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sideroxydansspgwf25914",
+        graph_name="SideroxydansSpGwf25914",
         dataset="string",
         version=version,
         directed=directed,

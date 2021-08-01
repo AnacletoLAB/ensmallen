@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nesterenkoniaspan1(
+def NesterenkoniaSpAn1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nesterenkoniaspan1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nesterenkoniaspan1",
+        graph_name="NesterenkoniaSpAn1",
         dataset="string",
         version=version,
         directed=directed,

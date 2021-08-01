@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tetrasphaeraspsoil756(
+def TetrasphaeraSpSoil756(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tetrasphaeraspsoil756(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tetrasphaeraspsoil756",
+        graph_name="TetrasphaeraSpSoil756",
         dataset="string",
         version=version,
         directed=directed,

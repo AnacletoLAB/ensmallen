@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hyphomonadaceaebacteriumbrhc29(
+def HyphomonadaceaeBacteriumBrhC29(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hyphomonadaceaebacteriumbrhc29(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hyphomonadaceaebacteriumbrhc29",
+        graph_name="HyphomonadaceaeBacteriumBrhC29",
         dataset="string",
         version=version,
         directed=directed,

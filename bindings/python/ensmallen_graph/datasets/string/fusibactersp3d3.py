@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fusibactersp3d3(
+def FusibacterSp3d3(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Fusibactersp3d3(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fusibactersp3d3",
+        graph_name="FusibacterSp3d3",
         dataset="string",
         version=version,
         directed=directed,

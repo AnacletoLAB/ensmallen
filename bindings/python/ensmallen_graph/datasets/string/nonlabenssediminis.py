@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nonlabenssediminis(
+def NonlabensSediminis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nonlabenssediminis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nonlabenssediminis",
+        graph_name="NonlabensSediminis",
         dataset="string",
         version=version,
         directed=directed,

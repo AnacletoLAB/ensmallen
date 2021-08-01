@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Botryobasidiumbotryosumfd172ss1(
+def BotryobasidiumBotryosumFd172Ss1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Botryobasidiumbotryosumfd172ss1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Botryobasidiumbotryosumfd172ss1",
+        graph_name="BotryobasidiumBotryosumFd172Ss1",
         dataset="string",
         version=version,
         directed=directed,

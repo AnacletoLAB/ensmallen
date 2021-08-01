@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cellulomonasspb6(
+def CellulomonasSpB6(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cellulomonasspb6(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cellulomonasspb6",
+        graph_name="CellulomonasSpB6",
         dataset="string",
         version=version,
         directed=directed,

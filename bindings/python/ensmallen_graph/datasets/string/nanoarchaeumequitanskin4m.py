@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nanoarchaeumequitanskin4m(
+def NanoarchaeumEquitansKin4M(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nanoarchaeumequitanskin4m(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nanoarchaeumequitanskin4m",
+        graph_name="NanoarchaeumEquitansKin4M",
         dataset="string",
         version=version,
         directed=directed,

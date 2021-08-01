@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aliivibriosp1s175(
+def AliivibrioSp1s175(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Aliivibriosp1s175(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aliivibriosp1s175",
+        graph_name="AliivibrioSp1s175",
         dataset="string",
         version=version,
         directed=directed,

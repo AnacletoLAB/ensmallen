@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Scleropagesformosus(
+def ScleropagesFormosus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Scleropagesformosus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Scleropagesformosus",
+        graph_name="ScleropagesFormosus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanogenicarchaeoniso4h5(
+def MethanogenicArchaeonIso4H5(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methanogenicarchaeoniso4h5(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanogenicarchaeoniso4h5",
+        graph_name="MethanogenicArchaeonIso4H5",
         dataset="string",
         version=version,
         directed=directed,

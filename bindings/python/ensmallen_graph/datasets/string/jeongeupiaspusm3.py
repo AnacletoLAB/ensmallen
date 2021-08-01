@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Jeongeupiaspusm3(
+def JeongeupiaSpUsm3(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Jeongeupiaspusm3(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Jeongeupiaspusm3",
+        graph_name="JeongeupiaSpUsm3",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microchaetesppcc7126(
+def MicrochaeteSpPcc7126(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Microchaetesppcc7126(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microchaetesppcc7126",
+        graph_name="MicrochaeteSpPcc7126",
         dataset="string",
         version=version,
         directed=directed,

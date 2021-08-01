@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fischerellathermalis(
+def FischerellaThermalis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Fischerellathermalis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fischerellathermalis",
+        graph_name="FischerellaThermalis",
         dataset="string",
         version=version,
         directed=directed,

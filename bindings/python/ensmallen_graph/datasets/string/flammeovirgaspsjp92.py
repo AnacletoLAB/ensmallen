@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Flammeovirgaspsjp92(
+def FlammeovirgaSpSjp92(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Flammeovirgaspsjp92(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Flammeovirgaspsjp92",
+        graph_name="FlammeovirgaSpSjp92",
         dataset="string",
         version=version,
         directed=directed,

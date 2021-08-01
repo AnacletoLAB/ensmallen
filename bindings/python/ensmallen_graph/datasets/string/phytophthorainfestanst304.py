@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Phytophthorainfestanst304(
+def PhytophthoraInfestansT304(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Phytophthorainfestanst304(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Phytophthorainfestanst304",
+        graph_name="PhytophthoraInfestansT304",
         dataset="string",
         version=version,
         directed=directed,

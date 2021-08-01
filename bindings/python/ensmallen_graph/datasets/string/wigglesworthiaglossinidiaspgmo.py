@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Wigglesworthiaglossinidiaspgmo(
+def WigglesworthiaGlossinidiaSpGmo(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Wigglesworthiaglossinidiaspgmo(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Wigglesworthiaglossinidiaspgmo",
+        graph_name="WigglesworthiaGlossinidiaSpGmo",
         dataset="string",
         version=version,
         directed=directed,

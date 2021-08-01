@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dechloromonasdenitrificans(
+def DechloromonasDenitrificans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dechloromonasdenitrificans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dechloromonasdenitrificans",
+        graph_name="DechloromonasDenitrificans",
         dataset="string",
         version=version,
         directed=directed,

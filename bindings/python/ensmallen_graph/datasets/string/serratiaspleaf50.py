@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Serratiaspleaf50(
+def SerratiaSpLeaf50(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Serratiaspleaf50(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Serratiaspleaf50",
+        graph_name="SerratiaSpLeaf50",
         dataset="string",
         version=version,
         directed=directed,

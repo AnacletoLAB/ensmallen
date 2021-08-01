@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Leucosporidiumcreatinivorum(
+def LeucosporidiumCreatinivorum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Leucosporidiumcreatinivorum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Leucosporidiumcreatinivorum",
+        graph_name="LeucosporidiumCreatinivorum",
         dataset="string",
         version=version,
         directed=directed,

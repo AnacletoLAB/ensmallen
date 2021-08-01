@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Unculturedblautiasp(
+def UnculturedBlautiaSp(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Unculturedblautiasp(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Unculturedblautiasp",
+        graph_name="UnculturedBlautiaSp",
         dataset="string",
         version=version,
         directed=directed,

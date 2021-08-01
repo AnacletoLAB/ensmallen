@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Vavraiaculicissubspfloridensis(
+def VavraiaCulicisSubspFloridensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Vavraiaculicissubspfloridensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Vavraiaculicissubspfloridensis",
+        graph_name="VavraiaCulicisSubspFloridensis",
         dataset="string",
         version=version,
         directed=directed,

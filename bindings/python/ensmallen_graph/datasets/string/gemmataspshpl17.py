@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gemmataspshpl17(
+def GemmataSpShPl17(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gemmataspshpl17(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gemmataspshpl17",
+        graph_name="GemmataSpShPl17",
         dataset="string",
         version=version,
         directed=directed,

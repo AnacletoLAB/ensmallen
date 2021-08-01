@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caballeroniatemeraria(
+def CaballeroniaTemeraria(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Caballeroniatemeraria(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caballeroniatemeraria",
+        graph_name="CaballeroniaTemeraria",
         dataset="string",
         version=version,
         directed=directed,

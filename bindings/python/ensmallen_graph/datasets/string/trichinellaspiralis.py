@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Trichinellaspiralis(
+def TrichinellaSpiralis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Trichinellaspiralis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Trichinellaspiralis",
+        graph_name="TrichinellaSpiralis",
         dataset="string",
         version=version,
         directed=directed,

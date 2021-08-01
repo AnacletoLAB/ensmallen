@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gallaecimonasxiamenensis(
+def GallaecimonasXiamenensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gallaecimonasxiamenensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gallaecimonasxiamenensis",
+        graph_name="GallaecimonasXiamenensis",
         dataset="string",
         version=version,
         directed=directed,

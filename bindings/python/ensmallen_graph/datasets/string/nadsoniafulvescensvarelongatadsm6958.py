@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nadsoniafulvescensvarelongatadsm6958(
+def NadsoniaFulvescensVarElongataDsm6958(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nadsoniafulvescensvarelongatadsm6958(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nadsoniafulvescensvarelongatadsm6958",
+        graph_name="NadsoniaFulvescensVarElongataDsm6958",
         dataset="string",
         version=version,
         directed=directed,

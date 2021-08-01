@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermotogaspmc24(
+def ThermotogaSpMc24(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermotogaspmc24(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermotogaspmc24",
+        graph_name="ThermotogaSpMc24",
         dataset="string",
         version=version,
         directed=directed,

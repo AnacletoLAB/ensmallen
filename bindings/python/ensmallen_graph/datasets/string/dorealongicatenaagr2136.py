@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dorealongicatenaagr2136(
+def DoreaLongicatenaAgr2136(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Dorealongicatenaagr2136(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dorealongicatenaagr2136",
+        graph_name="DoreaLongicatenaAgr2136",
         dataset="string",
         version=version,
         directed=directed,

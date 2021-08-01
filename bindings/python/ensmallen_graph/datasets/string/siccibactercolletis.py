@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Siccibactercolletis(
+def SiccibacterColletis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Siccibactercolletis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Siccibactercolletis",
+        graph_name="SiccibacterColletis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chitinophagacostaii(
+def ChitinophagaCostaii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Chitinophagacostaii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chitinophagacostaii",
+        graph_name="ChitinophagaCostaii",
         dataset="string",
         version=version,
         directed=directed,

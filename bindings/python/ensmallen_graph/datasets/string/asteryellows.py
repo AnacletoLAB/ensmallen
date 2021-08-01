@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Asteryellows(
+def AsterYellows(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Asteryellows(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Asteryellows",
+        graph_name="AsterYellows",
         dataset="string",
         version=version,
         directed=directed,

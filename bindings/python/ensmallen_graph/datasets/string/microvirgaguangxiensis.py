@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microvirgaguangxiensis(
+def MicrovirgaGuangxiensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microvirgaguangxiensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microvirgaguangxiensis",
+        graph_name="MicrovirgaGuangxiensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caricapapaya(
+def CaricaPapaya(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Caricapapaya(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caricapapaya",
+        graph_name="CaricaPapaya",
         dataset="string",
         version=version,
         directed=directed,

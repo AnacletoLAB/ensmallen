@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Proteocatellasphenisci(
+def ProteocatellaSphenisci(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Proteocatellasphenisci(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Proteocatellasphenisci",
+        graph_name="ProteocatellaSphenisci",
         dataset="string",
         version=version,
         directed=directed,

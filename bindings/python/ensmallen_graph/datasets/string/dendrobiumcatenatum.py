@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dendrobiumcatenatum(
+def DendrobiumCatenatum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dendrobiumcatenatum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dendrobiumcatenatum",
+        graph_name="DendrobiumCatenatum",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cardiniumendosymbiontceper1(
+def CardiniumEndosymbiontCeper1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cardiniumendosymbiontceper1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cardiniumendosymbiontceper1",
+        graph_name="CardiniumEndosymbiontCeper1",
         dataset="string",
         version=version,
         directed=directed,

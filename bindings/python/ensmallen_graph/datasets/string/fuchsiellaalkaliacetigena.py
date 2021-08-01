@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fuchsiellaalkaliacetigena(
+def FuchsiellaAlkaliacetigena(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Fuchsiellaalkaliacetigena(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fuchsiellaalkaliacetigena",
+        graph_name="FuchsiellaAlkaliacetigena",
         dataset="string",
         version=version,
         directed=directed,

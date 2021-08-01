@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rubidibacterlacunae(
+def RubidibacterLacunae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Rubidibacterlacunae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rubidibacterlacunae",
+        graph_name="RubidibacterLacunae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Moorellathermoacetica(
+def MoorellaThermoacetica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Moorellathermoacetica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Moorellathermoacetica",
+        graph_name="MoorellaThermoacetica",
         dataset="string",
         version=version,
         directed=directed,

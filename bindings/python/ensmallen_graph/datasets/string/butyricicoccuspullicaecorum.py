@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Butyricicoccuspullicaecorum(
+def ButyricicoccusPullicaecorum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Butyricicoccuspullicaecorum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Butyricicoccuspullicaecorum",
+        graph_name="ButyricicoccusPullicaecorum",
         dataset="string",
         version=version,
         directed=directed,

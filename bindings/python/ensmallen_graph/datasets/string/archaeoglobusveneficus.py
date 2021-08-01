@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Archaeoglobusveneficus(
+def ArchaeoglobusVeneficus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Archaeoglobusveneficus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Archaeoglobusveneficus",
+        graph_name="ArchaeoglobusVeneficus",
         dataset="string",
         version=version,
         directed=directed,

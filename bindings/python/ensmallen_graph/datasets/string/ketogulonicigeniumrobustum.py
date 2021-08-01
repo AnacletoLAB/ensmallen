@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ketogulonicigeniumrobustum(
+def KetogulonicigeniumRobustum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ketogulonicigeniumrobustum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ketogulonicigeniumrobustum",
+        graph_name="KetogulonicigeniumRobustum",
         dataset="string",
         version=version,
         directed=directed,

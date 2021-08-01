@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermonemarossianum(
+def ThermonemaRossianum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermonemarossianum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermonemarossianum",
+        graph_name="ThermonemaRossianum",
         dataset="string",
         version=version,
         directed=directed,

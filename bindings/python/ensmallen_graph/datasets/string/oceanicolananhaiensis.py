@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oceanicolananhaiensis(
+def OceanicolaNanhaiensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Oceanicolananhaiensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oceanicolananhaiensis",
+        graph_name="OceanicolaNanhaiensis",
         dataset="string",
         version=version,
         directed=directed,

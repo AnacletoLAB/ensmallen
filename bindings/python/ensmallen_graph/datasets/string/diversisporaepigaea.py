@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Diversisporaepigaea(
+def DiversisporaEpigaea(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Diversisporaepigaea(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Diversisporaepigaea",
+        graph_name="DiversisporaEpigaea",
         dataset="string",
         version=version,
         directed=directed,

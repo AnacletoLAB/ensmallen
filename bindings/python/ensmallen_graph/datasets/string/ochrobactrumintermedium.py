@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ochrobactrumintermedium(
+def OchrobactrumIntermedium(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ochrobactrumintermedium(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ochrobactrumintermedium",
+        graph_name="OchrobactrumIntermedium",
         dataset="string",
         version=version,
         directed=directed,

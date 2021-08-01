@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylocaldumszegedienseo12(
+def MethylocaldumSzegedienseO12(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methylocaldumszegedienseo12(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylocaldumszegedienseo12",
+        graph_name="MethylocaldumSzegedienseO12",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fournierellamassiliensis(
+def FournierellaMassiliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Fournierellamassiliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fournierellamassiliensis",
+        graph_name="FournierellaMassiliensis",
         dataset="string",
         version=version,
         directed=directed,

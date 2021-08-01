@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rhizobiumsproot1203(
+def RhizobiumSpRoot1203(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rhizobiumsproot1203(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rhizobiumsproot1203",
+        graph_name="RhizobiumSpRoot1203",
         dataset="string",
         version=version,
         directed=directed,

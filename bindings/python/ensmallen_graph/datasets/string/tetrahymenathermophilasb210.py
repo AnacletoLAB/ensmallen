@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tetrahymenathermophilasb210(
+def TetrahymenaThermophilaSb210(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tetrahymenathermophilasb210(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tetrahymenathermophilasb210",
+        graph_name="TetrahymenaThermophilaSb210",
         dataset="string",
         version=version,
         directed=directed,

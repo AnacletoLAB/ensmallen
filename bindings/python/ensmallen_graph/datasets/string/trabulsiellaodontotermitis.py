@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Trabulsiellaodontotermitis(
+def TrabulsiellaOdontotermitis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Trabulsiellaodontotermitis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Trabulsiellaodontotermitis",
+        graph_name="TrabulsiellaOdontotermitis",
         dataset="string",
         version=version,
         directed=directed,

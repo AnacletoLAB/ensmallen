@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cobetiamarina(
+def CobetiaMarina(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cobetiamarina(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cobetiamarina",
+        graph_name="CobetiaMarina",
         dataset="string",
         version=version,
         directed=directed,

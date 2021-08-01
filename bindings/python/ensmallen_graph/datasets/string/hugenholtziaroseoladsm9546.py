@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hugenholtziaroseoladsm9546(
+def HugenholtziaRoseolaDsm9546(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hugenholtziaroseoladsm9546(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hugenholtziaroseoladsm9546",
+        graph_name="HugenholtziaRoseolaDsm9546",
         dataset="string",
         version=version,
         directed=directed,

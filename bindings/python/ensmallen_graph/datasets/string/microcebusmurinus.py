@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microcebusmurinus(
+def MicrocebusMurinus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microcebusmurinus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microcebusmurinus",
+        graph_name="MicrocebusMurinus",
         dataset="string",
         version=version,
         directed=directed,

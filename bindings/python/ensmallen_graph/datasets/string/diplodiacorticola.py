@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Diplodiacorticola(
+def DiplodiaCorticola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Diplodiacorticola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Diplodiacorticola",
+        graph_name="DiplodiaCorticola",
         dataset="string",
         version=version,
         directed=directed,

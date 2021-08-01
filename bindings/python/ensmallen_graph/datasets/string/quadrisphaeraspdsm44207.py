@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Quadrisphaeraspdsm44207(
+def QuadrisphaeraSpDsm44207(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Quadrisphaeraspdsm44207(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Quadrisphaeraspdsm44207",
+        graph_name="QuadrisphaeraSpDsm44207",
         dataset="string",
         version=version,
         directed=directed,

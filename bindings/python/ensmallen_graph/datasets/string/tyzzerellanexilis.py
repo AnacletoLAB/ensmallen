@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tyzzerellanexilis(
+def TyzzerellaNexilis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Tyzzerellanexilis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tyzzerellanexilis",
+        graph_name="TyzzerellaNexilis",
         dataset="string",
         version=version,
         directed=directed,

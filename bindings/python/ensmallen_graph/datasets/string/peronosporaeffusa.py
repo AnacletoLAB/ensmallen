@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Peronosporaeffusa(
+def PeronosporaEffusa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Peronosporaeffusa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Peronosporaeffusa",
+        graph_name="PeronosporaEffusa",
         dataset="string",
         version=version,
         directed=directed,

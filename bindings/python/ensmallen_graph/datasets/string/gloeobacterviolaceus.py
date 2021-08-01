@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gloeobacterviolaceus(
+def GloeobacterViolaceus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gloeobacterviolaceus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gloeobacterviolaceus",
+        graph_name="GloeobacterViolaceus",
         dataset="string",
         version=version,
         directed=directed,

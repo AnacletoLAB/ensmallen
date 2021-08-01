@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fundulusheteroclitus(
+def FundulusHeteroclitus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Fundulusheteroclitus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fundulusheteroclitus",
+        graph_name="FundulusHeteroclitus",
         dataset="string",
         version=version,
         directed=directed,

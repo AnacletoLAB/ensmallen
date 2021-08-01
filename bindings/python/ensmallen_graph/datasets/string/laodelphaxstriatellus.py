@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Laodelphaxstriatellus(
+def LaodelphaxStriatellus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Laodelphaxstriatellus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Laodelphaxstriatellus",
+        graph_name="LaodelphaxStriatellus",
         dataset="string",
         version=version,
         directed=directed,

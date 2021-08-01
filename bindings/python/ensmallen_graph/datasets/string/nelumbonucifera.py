@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nelumbonucifera(
+def NelumboNucifera(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nelumbonucifera(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nelumbonucifera",
+        graph_name="NelumboNucifera",
         dataset="string",
         version=version,
         directed=directed,

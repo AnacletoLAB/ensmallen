@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanocorpusculumlabreanum(
+def MethanocorpusculumLabreanum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methanocorpusculumlabreanum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanocorpusculumlabreanum",
+        graph_name="MethanocorpusculumLabreanum",
         dataset="string",
         version=version,
         directed=directed,

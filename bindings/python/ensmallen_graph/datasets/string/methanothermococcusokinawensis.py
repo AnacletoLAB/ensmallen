@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanothermococcusokinawensis(
+def MethanothermococcusOkinawensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methanothermococcusokinawensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanothermococcusokinawensis",
+        graph_name="MethanothermococcusOkinawensis",
         dataset="string",
         version=version,
         directed=directed,

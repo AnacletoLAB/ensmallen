@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Podosporaanserinasmat(
+def PodosporaAnserinaSMat(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Podosporaanserinasmat(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Podosporaanserinasmat",
+        graph_name="PodosporaAnserinaSMat",
         dataset="string",
         version=version,
         directed=directed,

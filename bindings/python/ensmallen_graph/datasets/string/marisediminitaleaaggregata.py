@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Marisediminitaleaaggregata(
+def MarisediminitaleaAggregata(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Marisediminitaleaaggregata(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Marisediminitaleaaggregata",
+        graph_name="MarisediminitaleaAggregata",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Entomoplasmalucivoraxatcc49196(
+def EntomoplasmaLucivoraxAtcc49196(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Entomoplasmalucivoraxatcc49196(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Entomoplasmalucivoraxatcc49196",
+        graph_name="EntomoplasmaLucivoraxAtcc49196",
         dataset="string",
         version=version,
         directed=directed,

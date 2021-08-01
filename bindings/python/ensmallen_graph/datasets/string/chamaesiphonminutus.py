@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chamaesiphonminutus(
+def ChamaesiphonMinutus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Chamaesiphonminutus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chamaesiphonminutus",
+        graph_name="ChamaesiphonMinutus",
         dataset="string",
         version=version,
         directed=directed,

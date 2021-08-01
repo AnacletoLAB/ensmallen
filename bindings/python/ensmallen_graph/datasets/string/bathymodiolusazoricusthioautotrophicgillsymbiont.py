@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bathymodiolusazoricusthioautotrophicgillsymbiont(
+def BathymodiolusAzoricusThioautotrophicGillSymbiont(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Bathymodiolusazoricusthioautotrophicgillsymbiont(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bathymodiolusazoricusthioautotrophicgillsymbiont",
+        graph_name="BathymodiolusAzoricusThioautotrophicGillSymbiont",
         dataset="string",
         version=version,
         directed=directed,

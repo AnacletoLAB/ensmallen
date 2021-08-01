@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylopilasp73b(
+def MethylopilaSp73b(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methylopilasp73b(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylopilasp73b",
+        graph_name="MethylopilaSp73b",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Arcobactercryaerophilus(
+def ArcobacterCryaerophilus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Arcobactercryaerophilus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Arcobactercryaerophilus",
+        graph_name="ArcobacterCryaerophilus",
         dataset="string",
         version=version,
         directed=directed,

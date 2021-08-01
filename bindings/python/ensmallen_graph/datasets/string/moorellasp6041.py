@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Moorellasp6041(
+def MoorellaSp6041(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Moorellasp6041(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Moorellasp6041",
+        graph_name="MoorellaSp6041",
         dataset="string",
         version=version,
         directed=directed,

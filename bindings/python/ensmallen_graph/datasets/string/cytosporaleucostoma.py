@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cytosporaleucostoma(
+def CytosporaLeucostoma(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cytosporaleucostoma(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cytosporaleucostoma",
+        graph_name="CytosporaLeucostoma",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lyngbyasppcc8106(
+def LyngbyaSpPcc8106(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Lyngbyasppcc8106(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lyngbyasppcc8106",
+        graph_name="LyngbyaSpPcc8106",
         dataset="string",
         version=version,
         directed=directed,

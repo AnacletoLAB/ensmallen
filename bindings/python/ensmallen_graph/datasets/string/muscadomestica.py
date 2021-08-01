@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Muscadomestica(
+def MuscaDomestica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Muscadomestica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Muscadomestica",
+        graph_name="MuscaDomestica",
         dataset="string",
         version=version,
         directed=directed,

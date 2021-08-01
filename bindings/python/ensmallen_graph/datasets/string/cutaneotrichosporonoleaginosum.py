@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cutaneotrichosporonoleaginosum(
+def CutaneotrichosporonOleaginosum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cutaneotrichosporonoleaginosum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cutaneotrichosporonoleaginosum",
+        graph_name="CutaneotrichosporonOleaginosum",
         dataset="string",
         version=version,
         directed=directed,

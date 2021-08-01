@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Muricaudaantarctica(
+def MuricaudaAntarctica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Muricaudaantarctica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Muricaudaantarctica",
+        graph_name="MuricaudaAntarctica",
         dataset="string",
         version=version,
         directed=directed,

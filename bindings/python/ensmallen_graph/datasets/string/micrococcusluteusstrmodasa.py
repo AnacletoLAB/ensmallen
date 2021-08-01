@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Micrococcusluteusstrmodasa(
+def MicrococcusLuteusStrModasa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Micrococcusluteusstrmodasa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Micrococcusluteusstrmodasa",
+        graph_name="MicrococcusLuteusStrModasa",
         dataset="string",
         version=version,
         directed=directed,

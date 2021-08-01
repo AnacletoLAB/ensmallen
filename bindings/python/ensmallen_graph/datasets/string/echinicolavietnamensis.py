@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Echinicolavietnamensis(
+def EchinicolaVietnamensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Echinicolavietnamensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Echinicolavietnamensis",
+        graph_name="EchinicolaVietnamensis",
         dataset="string",
         version=version,
         directed=directed,

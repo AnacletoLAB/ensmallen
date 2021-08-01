@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Boecherastricta(
+def BoecheraStricta(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Boecherastricta(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Boecherastricta",
+        graph_name="BoecheraStricta",
         dataset="string",
         version=version,
         directed=directed,

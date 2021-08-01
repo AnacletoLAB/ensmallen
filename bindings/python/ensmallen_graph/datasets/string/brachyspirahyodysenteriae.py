@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Brachyspirahyodysenteriae(
+def BrachyspiraHyodysenteriae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Brachyspirahyodysenteriae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Brachyspirahyodysenteriae",
+        graph_name="BrachyspiraHyodysenteriae",
         dataset="string",
         version=version,
         directed=directed,

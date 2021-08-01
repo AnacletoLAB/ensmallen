@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Weissellaceti(
+def WeissellaCeti(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Weissellaceti(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Weissellaceti",
+        graph_name="WeissellaCeti",
         dataset="string",
         version=version,
         directed=directed,

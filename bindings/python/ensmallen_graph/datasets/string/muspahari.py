@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Muspahari(
+def MusPahari(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Muspahari(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Muspahari",
+        graph_name="MusPahari",
         dataset="string",
         version=version,
         directed=directed,

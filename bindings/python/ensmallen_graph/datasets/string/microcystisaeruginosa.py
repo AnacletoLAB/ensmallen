@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microcystisaeruginosa(
+def MicrocystisAeruginosa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Microcystisaeruginosa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microcystisaeruginosa",
+        graph_name="MicrocystisAeruginosa",
         dataset="string",
         version=version,
         directed=directed,

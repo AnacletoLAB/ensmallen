@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acidocellafacilis(
+def AcidocellaFacilis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Acidocellafacilis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acidocellafacilis",
+        graph_name="AcidocellaFacilis",
         dataset="string",
         version=version,
         directed=directed,

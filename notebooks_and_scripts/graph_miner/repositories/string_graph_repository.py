@@ -35,15 +35,16 @@ class StringGraphRepository(GraphRepository):
             ("11.5", species_11_5),
         ):
             for _, row in species.iterrows():
-                graph_name = self.build_stored_graph_name(row.STRING_name_compact)
-                if graph_name not in mined_data:
-                    mined_data[graph_name] = {}
+                graph_name = row.STRING_name_compact
+                stored_graph_name = self.build_stored_graph_name(graph_name)
+                if stored_graph_name not in mined_data:
+                    mined_data[stored_graph_name] = {}
                 taxon_id = row[0]
                 graph_url = graph_url_pattern.format(
                     taxon_id=taxon_id,
                     version=version
                 )
-                mined_data[graph_name][version] = {
+                mined_data[stored_graph_name][version] = {
                     "urls": [graph_url],
                     "arguments": {
                         "edge_path": "{taxon_id}.protein.links.v{version}.txt".format(
@@ -74,7 +75,7 @@ class StringGraphRepository(GraphRepository):
             partial_graph_name = partial_graph_name.replace(target, " ")
         return "".join([
             term.capitalize()
-            for term in partial_graph_name.split()
+            for term in partial_graph_name.split(" ")
         ])
 
     def get_formatted_repository_name(self) -> str:

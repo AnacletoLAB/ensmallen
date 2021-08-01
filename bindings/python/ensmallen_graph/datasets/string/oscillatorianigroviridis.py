@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oscillatorianigroviridis(
+def OscillatoriaNigroviridis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Oscillatorianigroviridis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oscillatorianigroviridis",
+        graph_name="OscillatoriaNigroviridis",
         dataset="string",
         version=version,
         directed=directed,

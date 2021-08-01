@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Erysipelothrixtonsillarum(
+def ErysipelothrixTonsillarum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Erysipelothrixtonsillarum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Erysipelothrixtonsillarum",
+        graph_name="ErysipelothrixTonsillarum",
         dataset="string",
         version=version,
         directed=directed,

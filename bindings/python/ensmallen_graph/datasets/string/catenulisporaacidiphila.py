@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Catenulisporaacidiphila(
+def CatenulisporaAcidiphila(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Catenulisporaacidiphila(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Catenulisporaacidiphila",
+        graph_name="CatenulisporaAcidiphila",
         dataset="string",
         version=version,
         directed=directed,

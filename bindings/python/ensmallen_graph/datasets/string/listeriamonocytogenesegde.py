@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Listeriamonocytogenesegde(
+def ListeriaMonocytogenesEgde(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Listeriamonocytogenesegde(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Listeriamonocytogenesegde",
+        graph_name="ListeriaMonocytogenesEgde",
         dataset="string",
         version=version,
         directed=directed,

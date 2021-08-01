@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nodulariaspumigena(
+def NodulariaSpumigena(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nodulariaspumigena(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nodulariaspumigena",
+        graph_name="NodulariaSpumigena",
         dataset="string",
         version=version,
         directed=directed,

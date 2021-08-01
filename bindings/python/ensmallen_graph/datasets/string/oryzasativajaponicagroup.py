@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oryzasativajaponicagroup(
+def OryzaSativaJaponicaGroup(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Oryzasativajaponicagroup(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oryzasativajaponicagroup",
+        graph_name="OryzaSativaJaponicaGroup",
         dataset="string",
         version=version,
         directed=directed,

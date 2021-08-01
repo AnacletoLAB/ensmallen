@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Anaplasmaphagocytophilum(
+def AnaplasmaPhagocytophilum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Anaplasmaphagocytophilum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Anaplasmaphagocytophilum",
+        graph_name="AnaplasmaPhagocytophilum",
         dataset="string",
         version=version,
         directed=directed,

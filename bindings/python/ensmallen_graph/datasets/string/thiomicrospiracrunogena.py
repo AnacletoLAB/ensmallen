@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thiomicrospiracrunogena(
+def ThiomicrospiraCrunogena(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thiomicrospiracrunogena(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thiomicrospiracrunogena",
+        graph_name="ThiomicrospiraCrunogena",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Maylandiazebra(
+def MaylandiaZebra(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Maylandiazebra(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Maylandiazebra",
+        graph_name="MaylandiaZebra",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microvirgalupini(
+def MicrovirgaLupini(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Microvirgalupini(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microvirgalupini",
+        graph_name="MicrovirgaLupini",
         dataset="string",
         version=version,
         directed=directed,

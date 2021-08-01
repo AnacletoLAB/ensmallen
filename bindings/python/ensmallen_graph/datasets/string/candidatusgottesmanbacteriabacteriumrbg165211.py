@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Candidatusgottesmanbacteriabacteriumrbg165211(
+def CandidatusGottesmanbacteriaBacteriumRbg165211(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Candidatusgottesmanbacteriabacteriumrbg165211(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Candidatusgottesmanbacteriabacteriumrbg165211",
+        graph_name="CandidatusGottesmanbacteriaBacteriumRbg165211",
         dataset="string",
         version=version,
         directed=directed,

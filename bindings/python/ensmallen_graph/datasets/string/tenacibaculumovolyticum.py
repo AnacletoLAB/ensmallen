@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tenacibaculumovolyticum(
+def TenacibaculumOvolyticum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tenacibaculumovolyticum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tenacibaculumovolyticum",
+        graph_name="TenacibaculumOvolyticum",
         dataset="string",
         version=version,
         directed=directed,

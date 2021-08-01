@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylocapsaaurea(
+def MethylocapsaAurea(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methylocapsaaurea(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylocapsaaurea",
+        graph_name="MethylocapsaAurea",
         dataset="string",
         version=version,
         directed=directed,

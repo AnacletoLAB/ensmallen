@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lewinellaagarilytica(
+def LewinellaAgarilytica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lewinellaagarilytica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lewinellaagarilytica",
+        graph_name="LewinellaAgarilytica",
         dataset="string",
         version=version,
         directed=directed,

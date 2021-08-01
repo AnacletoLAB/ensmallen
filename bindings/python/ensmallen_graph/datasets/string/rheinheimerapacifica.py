@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rheinheimerapacifica(
+def RheinheimeraPacifica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rheinheimerapacifica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rheinheimerapacifica",
+        graph_name="RheinheimeraPacifica",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lebetimonasspjs170(
+def LebetimonasSpJs170(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Lebetimonasspjs170(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lebetimonasspjs170",
+        graph_name="LebetimonasSpJs170",
         dataset="string",
         version=version,
         directed=directed,

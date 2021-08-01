@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kallipygamassiliensis(
+def KallipygaMassiliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Kallipygamassiliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kallipygamassiliensis",
+        graph_name="KallipygaMassiliensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tigriopuscalifornicus(
+def TigriopusCalifornicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tigriopuscalifornicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tigriopuscalifornicus",
+        graph_name="TigriopusCalifornicus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Weissellaminor(
+def WeissellaMinor(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Weissellaminor(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Weissellaminor",
+        graph_name="WeissellaMinor",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Entamoebadispar(
+def EntamoebaDispar(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Entamoebadispar(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Entamoebadispar",
+        graph_name="EntamoebaDispar",
         dataset="string",
         version=version,
         directed=directed,

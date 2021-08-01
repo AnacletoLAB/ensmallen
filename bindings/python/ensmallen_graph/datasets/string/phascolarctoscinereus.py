@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Phascolarctoscinereus(
+def PhascolarctosCinereus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Phascolarctoscinereus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Phascolarctoscinereus",
+        graph_name="PhascolarctosCinereus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chloroflexusaggregans(
+def ChloroflexusAggregans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Chloroflexusaggregans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chloroflexusaggregans",
+        graph_name="ChloroflexusAggregans",
         dataset="string",
         version=version,
         directed=directed,

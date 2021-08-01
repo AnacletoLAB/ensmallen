@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Naemateliaencephala(
+def NaemateliaEncephala(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Naemateliaencephala(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Naemateliaencephala",
+        graph_name="NaemateliaEncephala",
         dataset="string",
         version=version,
         directed=directed,

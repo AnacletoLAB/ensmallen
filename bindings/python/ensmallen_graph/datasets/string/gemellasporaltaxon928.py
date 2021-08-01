@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gemellasporaltaxon928(
+def GemellaSpOralTaxon928(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gemellasporaltaxon928(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gemellasporaltaxon928",
+        graph_name="GemellaSpOralTaxon928",
         dataset="string",
         version=version,
         directed=directed,

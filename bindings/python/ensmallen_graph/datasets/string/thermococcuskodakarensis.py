@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermococcuskodakarensis(
+def ThermococcusKodakarensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermococcuskodakarensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermococcuskodakarensis",
+        graph_name="ThermococcusKodakarensis",
         dataset="string",
         version=version,
         directed=directed,

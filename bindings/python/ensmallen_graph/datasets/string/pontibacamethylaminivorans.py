@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pontibacamethylaminivorans(
+def PontibacaMethylaminivorans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pontibacamethylaminivorans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pontibacamethylaminivorans",
+        graph_name="PontibacaMethylaminivorans",
         dataset="string",
         version=version,
         directed=directed,

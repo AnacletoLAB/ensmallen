@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Saimiriboliviensis(
+def SaimiriBoliviensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Saimiriboliviensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Saimiriboliviensis",
+        graph_name="SaimiriBoliviensis",
         dataset="string",
         version=version,
         directed=directed,

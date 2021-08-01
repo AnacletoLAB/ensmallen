@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dialisterpneumosintes(
+def DialisterPneumosintes(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dialisterpneumosintes(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dialisterpneumosintes",
+        graph_name="DialisterPneumosintes",
         dataset="string",
         version=version,
         directed=directed,

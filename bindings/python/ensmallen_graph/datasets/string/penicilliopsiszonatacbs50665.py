@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Penicilliopsiszonatacbs50665(
+def PenicilliopsisZonataCbs50665(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Penicilliopsiszonatacbs50665(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Penicilliopsiszonatacbs50665",
+        graph_name="PenicilliopsisZonataCbs50665",
         dataset="string",
         version=version,
         directed=directed,

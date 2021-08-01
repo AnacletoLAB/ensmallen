@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kocuriapalustris(
+def KocuriaPalustris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Kocuriapalustris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kocuriapalustris",
+        graph_name="KocuriaPalustris",
         dataset="string",
         version=version,
         directed=directed,

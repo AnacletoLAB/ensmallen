@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tepidimonastaiwanensis(
+def TepidimonasTaiwanensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tepidimonastaiwanensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tepidimonastaiwanensis",
+        graph_name="TepidimonasTaiwanensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ralstoniamannitolilytica(
+def RalstoniaMannitolilytica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ralstoniamannitolilytica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ralstoniamannitolilytica",
+        graph_name="RalstoniaMannitolilytica",
         dataset="string",
         version=version,
         directed=directed,

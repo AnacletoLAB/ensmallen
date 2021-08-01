@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Propionimicrobiumlymphophilumacs093vsch5(
+def PropionimicrobiumLymphophilumAcs093VSch5(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Propionimicrobiumlymphophilumacs093vsch5(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Propionimicrobiumlymphophilumacs093vsch5",
+        graph_name="PropionimicrobiumLymphophilumAcs093VSch5",
         dataset="string",
         version=version,
         directed=directed,

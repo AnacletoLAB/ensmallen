@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Granulicatellabalaenopterae(
+def GranulicatellaBalaenopterae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Granulicatellabalaenopterae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Granulicatellabalaenopterae",
+        graph_name="GranulicatellaBalaenopterae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tuberborchii(
+def TuberBorchii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tuberborchii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tuberborchii",
+        graph_name="TuberBorchii",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dehalogenimonasalkenigignens(
+def DehalogenimonasAlkenigignens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dehalogenimonasalkenigignens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dehalogenimonasalkenigignens",
+        graph_name="DehalogenimonasAlkenigignens",
         dataset="string",
         version=version,
         directed=directed,

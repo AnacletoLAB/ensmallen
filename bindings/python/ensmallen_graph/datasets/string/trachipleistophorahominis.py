@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Trachipleistophorahominis(
+def TrachipleistophoraHominis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Trachipleistophorahominis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Trachipleistophorahominis",
+        graph_name="TrachipleistophoraHominis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Xylariahypoxylon(
+def XylariaHypoxylon(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Xylariahypoxylon(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Xylariahypoxylon",
+        graph_name="XylariaHypoxylon",
         dataset="string",
         version=version,
         directed=directed,

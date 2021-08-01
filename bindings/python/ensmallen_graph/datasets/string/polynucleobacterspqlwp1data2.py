@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Polynucleobacterspqlwp1data2(
+def PolynucleobacterSpQlwP1data2(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Polynucleobacterspqlwp1data2(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Polynucleobacterspqlwp1data2",
+        graph_name="PolynucleobacterSpQlwP1data2",
         dataset="string",
         version=version,
         directed=directed,

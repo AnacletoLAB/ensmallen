@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bipolarismaydisc5(
+def BipolarisMaydisC5(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Bipolarismaydisc5(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bipolarismaydisc5",
+        graph_name="BipolarisMaydisC5",
         dataset="string",
         version=version,
         directed=directed,

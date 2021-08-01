@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bacteriasymbiontbfo1offrankliniellaoccidentalis(
+def BacteriaSymbiontBfo1OfFrankliniellaOccidentalis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Bacteriasymbiontbfo1offrankliniellaoccidentalis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bacteriasymbiontbfo1offrankliniellaoccidentalis",
+        graph_name="BacteriaSymbiontBfo1OfFrankliniellaOccidentalis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pyrolobusfumarii(
+def PyrolobusFumarii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pyrolobusfumarii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pyrolobusfumarii",
+        graph_name="PyrolobusFumarii",
         dataset="string",
         version=version,
         directed=directed,

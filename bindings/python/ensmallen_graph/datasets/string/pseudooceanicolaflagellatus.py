@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudooceanicolaflagellatus(
+def PseudooceanicolaFlagellatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudooceanicolaflagellatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudooceanicolaflagellatus",
+        graph_name="PseudooceanicolaFlagellatus",
         dataset="string",
         version=version,
         directed=directed,

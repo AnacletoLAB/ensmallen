@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermoactinosporarubra(
+def ThermoactinosporaRubra(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thermoactinosporarubra(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermoactinosporarubra",
+        graph_name="ThermoactinosporaRubra",
         dataset="string",
         version=version,
         directed=directed,

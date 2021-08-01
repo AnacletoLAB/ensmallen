@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylomirabilisoxyfera(
+def MethylomirabilisOxyfera(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methylomirabilisoxyfera(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylomirabilisoxyfera",
+        graph_name="MethylomirabilisOxyfera",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acholeplasmamodicum(
+def AcholeplasmaModicum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Acholeplasmamodicum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acholeplasmamodicum",
+        graph_name="AcholeplasmaModicum",
         dataset="string",
         version=version,
         directed=directed,

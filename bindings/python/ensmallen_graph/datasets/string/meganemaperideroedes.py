@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Meganemaperideroedes(
+def MeganemaPerideroedes(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Meganemaperideroedes(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Meganemaperideroedes",
+        graph_name="MeganemaPerideroedes",
         dataset="string",
         version=version,
         directed=directed,

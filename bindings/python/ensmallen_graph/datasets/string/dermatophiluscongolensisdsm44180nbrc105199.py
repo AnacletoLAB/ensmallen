@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dermatophiluscongolensisdsm44180nbrc105199(
+def DermatophilusCongolensisDsm44180Nbrc105199(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dermatophiluscongolensisdsm44180nbrc105199(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dermatophiluscongolensisdsm44180nbrc105199",
+        graph_name="DermatophilusCongolensisDsm44180Nbrc105199",
         dataset="string",
         version=version,
         directed=directed,

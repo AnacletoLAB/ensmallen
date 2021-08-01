@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ficedulaalbicollis(
+def FicedulaAlbicollis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Ficedulaalbicollis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ficedulaalbicollis",
+        graph_name="FicedulaAlbicollis",
         dataset="string",
         version=version,
         directed=directed,

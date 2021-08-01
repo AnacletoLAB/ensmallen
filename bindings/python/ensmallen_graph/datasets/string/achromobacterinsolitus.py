@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Achromobacterinsolitus(
+def AchromobacterInsolitus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Achromobacterinsolitus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Achromobacterinsolitus",
+        graph_name="AchromobacterInsolitus",
         dataset="string",
         version=version,
         directed=directed,

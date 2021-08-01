@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanothrixthermoacetophilapt(
+def MethanothrixThermoacetophilaPt(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methanothrixthermoacetophilapt(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanothrixthermoacetophilapt",
+        graph_name="MethanothrixThermoacetophilaPt",
         dataset="string",
         version=version,
         directed=directed,

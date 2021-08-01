@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mannheimiagranulomatisdsm19156(
+def MannheimiaGranulomatisDsm19156(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Mannheimiagranulomatisdsm19156(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mannheimiagranulomatisdsm19156",
+        graph_name="MannheimiaGranulomatisDsm19156",
         dataset="string",
         version=version,
         directed=directed,

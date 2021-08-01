@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coleophomacylindrospora(
+def ColeophomaCylindrospora(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Coleophomacylindrospora(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coleophomacylindrospora",
+        graph_name="ColeophomaCylindrospora",
         dataset="string",
         version=version,
         directed=directed,

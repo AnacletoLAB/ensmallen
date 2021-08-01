@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Trichobilharziaregenti(
+def TrichobilharziaRegenti(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Trichobilharziaregenti(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Trichobilharziaregenti",
+        graph_name="TrichobilharziaRegenti",
         dataset="string",
         version=version,
         directed=directed,

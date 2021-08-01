@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Phialocephalascopiformis(
+def PhialocephalaScopiformis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Phialocephalascopiformis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Phialocephalascopiformis",
+        graph_name="PhialocephalaScopiformis",
         dataset="string",
         version=version,
         directed=directed,

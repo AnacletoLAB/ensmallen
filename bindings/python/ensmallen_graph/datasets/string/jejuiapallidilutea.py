@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Jejuiapallidilutea(
+def JejuiaPallidilutea(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Jejuiapallidilutea(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Jejuiapallidilutea",
+        graph_name="JejuiaPallidilutea",
         dataset="string",
         version=version,
         directed=directed,

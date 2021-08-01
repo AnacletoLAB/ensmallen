@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Zavarzinellaformosa(
+def ZavarzinellaFormosa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Zavarzinellaformosa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Zavarzinellaformosa",
+        graph_name="ZavarzinellaFormosa",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acanthocheilonemaviteae(
+def AcanthocheilonemaViteae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Acanthocheilonemaviteae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acanthocheilonemaviteae",
+        graph_name="AcanthocheilonemaViteae",
         dataset="string",
         version=version,
         directed=directed,

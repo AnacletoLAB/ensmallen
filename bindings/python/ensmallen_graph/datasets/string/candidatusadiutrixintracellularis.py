@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Candidatusadiutrixintracellularis(
+def CandidatusAdiutrixIntracellularis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Candidatusadiutrixintracellularis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Candidatusadiutrixintracellularis",
+        graph_name="CandidatusAdiutrixIntracellularis",
         dataset="string",
         version=version,
         directed=directed,

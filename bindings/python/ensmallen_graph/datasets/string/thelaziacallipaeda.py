@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thelaziacallipaeda(
+def ThelaziaCallipaeda(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thelaziacallipaeda(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thelaziacallipaeda",
+        graph_name="ThelaziaCallipaeda",
         dataset="string",
         version=version,
         directed=directed,

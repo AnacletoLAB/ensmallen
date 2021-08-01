@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parambassisranga(
+def ParambassisRanga(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Parambassisranga(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parambassisranga",
+        graph_name="ParambassisRanga",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pandoraeathiooxydans(
+def PandoraeaThiooxydans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pandoraeathiooxydans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pandoraeathiooxydans",
+        graph_name="PandoraeaThiooxydans",
         dataset="string",
         version=version,
         directed=directed,

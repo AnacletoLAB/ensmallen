@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Arabidopsisthaliana(
+def ArabidopsisThaliana(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Arabidopsisthaliana(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Arabidopsisthaliana",
+        graph_name="ArabidopsisThaliana",
         dataset="string",
         version=version,
         directed=directed,

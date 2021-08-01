@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Legionellapneumophilasubsppascullei(
+def LegionellaPneumophilaSubspPascullei(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Legionellapneumophilasubsppascullei(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Legionellapneumophilasubsppascullei",
+        graph_name="LegionellaPneumophilaSubspPascullei",
         dataset="string",
         version=version,
         directed=directed,

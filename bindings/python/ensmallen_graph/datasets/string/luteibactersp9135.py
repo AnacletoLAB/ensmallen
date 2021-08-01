@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Luteibactersp9135(
+def LuteibacterSp9135(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Luteibactersp9135(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Luteibactersp9135",
+        graph_name="LuteibacterSp9135",
         dataset="string",
         version=version,
         directed=directed,

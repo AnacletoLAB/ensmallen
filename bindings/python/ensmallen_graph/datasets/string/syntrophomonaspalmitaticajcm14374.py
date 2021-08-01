@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Syntrophomonaspalmitaticajcm14374(
+def SyntrophomonasPalmitaticaJcm14374(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Syntrophomonaspalmitaticajcm14374(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Syntrophomonaspalmitaticajcm14374",
+        graph_name="SyntrophomonasPalmitaticaJcm14374",
         dataset="string",
         version=version,
         directed=directed,

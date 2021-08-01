@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermotogahypogea(
+def ThermotogaHypogea(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermotogahypogea(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermotogahypogea",
+        graph_name="ThermotogaHypogea",
         dataset="string",
         version=version,
         directed=directed,

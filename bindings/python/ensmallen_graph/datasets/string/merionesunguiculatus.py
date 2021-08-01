@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Merionesunguiculatus(
+def MerionesUnguiculatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Merionesunguiculatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Merionesunguiculatus",
+        graph_name="MerionesUnguiculatus",
         dataset="string",
         version=version,
         directed=directed,

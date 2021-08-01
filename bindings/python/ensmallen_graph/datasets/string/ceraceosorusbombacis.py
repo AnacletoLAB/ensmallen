@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ceraceosorusbombacis(
+def CeraceosorusBombacis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ceraceosorusbombacis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ceraceosorusbombacis",
+        graph_name="CeraceosorusBombacis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Shimiaspsk013(
+def ShimiaSpSk013(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Shimiaspsk013(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Shimiaspsk013",
+        graph_name="ShimiaSpSk013",
         dataset="string",
         version=version,
         directed=directed,

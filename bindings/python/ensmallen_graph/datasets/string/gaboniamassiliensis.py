@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gaboniamassiliensis(
+def GaboniaMassiliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gaboniamassiliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gaboniamassiliensis",
+        graph_name="GaboniaMassiliensis",
         dataset="string",
         version=version,
         directed=directed,

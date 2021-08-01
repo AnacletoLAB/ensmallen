@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thiovulumspes(
+def ThiovulumSpEs(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thiovulumspes(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thiovulumspes",
+        graph_name="ThiovulumSpEs",
         dataset="string",
         version=version,
         directed=directed,

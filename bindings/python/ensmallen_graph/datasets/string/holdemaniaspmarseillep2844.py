@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Holdemaniaspmarseillep2844(
+def HoldemaniaSpMarseilleP2844(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Holdemaniaspmarseillep2844(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Holdemaniaspmarseillep2844",
+        graph_name="HoldemaniaSpMarseilleP2844",
         dataset="string",
         version=version,
         directed=directed,

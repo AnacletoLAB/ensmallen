@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hydrogenophilaceaebacteriumcg10262390(
+def HydrogenophilaceaeBacteriumCg10262390(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hydrogenophilaceaebacteriumcg10262390(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hydrogenophilaceaebacteriumcg10262390",
+        graph_name="HydrogenophilaceaeBacteriumCg10262390",
         dataset="string",
         version=version,
         directed=directed,

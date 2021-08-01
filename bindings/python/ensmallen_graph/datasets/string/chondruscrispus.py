@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chondruscrispus(
+def ChondrusCrispus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Chondruscrispus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chondruscrispus",
+        graph_name="ChondrusCrispus",
         dataset="string",
         version=version,
         directed=directed,

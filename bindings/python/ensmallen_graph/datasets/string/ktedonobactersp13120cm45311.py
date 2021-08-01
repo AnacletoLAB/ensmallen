@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ktedonobactersp13120cm45311(
+def KtedonobacterSp13120cm45311(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ktedonobactersp13120cm45311(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ktedonobactersp13120cm45311",
+        graph_name="KtedonobacterSp13120cm45311",
         dataset="string",
         version=version,
         directed=directed,

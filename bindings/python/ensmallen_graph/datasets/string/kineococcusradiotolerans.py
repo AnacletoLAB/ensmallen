@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kineococcusradiotolerans(
+def KineococcusRadiotolerans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Kineococcusradiotolerans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kineococcusradiotolerans",
+        graph_name="KineococcusRadiotolerans",
         dataset="string",
         version=version,
         directed=directed,

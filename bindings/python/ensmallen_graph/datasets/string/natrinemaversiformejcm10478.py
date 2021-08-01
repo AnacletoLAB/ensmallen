@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Natrinemaversiformejcm10478(
+def NatrinemaVersiformeJcm10478(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Natrinemaversiformejcm10478(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Natrinemaversiformejcm10478",
+        graph_name="NatrinemaVersiformeJcm10478",
         dataset="string",
         version=version,
         directed=directed,

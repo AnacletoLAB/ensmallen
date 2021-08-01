@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dokdoniasppro95(
+def DokdoniaSpPro95(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Dokdoniasppro95(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dokdoniasppro95",
+        graph_name="DokdoniaSpPro95",
         dataset="string",
         version=version,
         directed=directed,

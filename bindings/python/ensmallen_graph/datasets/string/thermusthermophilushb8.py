@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermusthermophilushb8(
+def ThermusThermophilusHb8(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermusthermophilushb8(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermusthermophilushb8",
+        graph_name="ThermusThermophilusHb8",
         dataset="string",
         version=version,
         directed=directed,

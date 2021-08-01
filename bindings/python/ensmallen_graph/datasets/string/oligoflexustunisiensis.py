@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oligoflexustunisiensis(
+def OligoflexusTunisiensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Oligoflexustunisiensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oligoflexustunisiensis",
+        graph_name="OligoflexusTunisiensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Borreliacoriaceae(
+def BorreliaCoriaceae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Borreliacoriaceae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Borreliacoriaceae",
+        graph_name="BorreliaCoriaceae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thiobacillusspgwe1629(
+def ThiobacillusSpGwe1629(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thiobacillusspgwe1629(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thiobacillusspgwe1629",
+        graph_name="ThiobacillusSpGwe1629",
         dataset="string",
         version=version,
         directed=directed,

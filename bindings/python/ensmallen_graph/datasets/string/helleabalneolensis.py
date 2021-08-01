@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Helleabalneolensis(
+def HelleaBalneolensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Helleabalneolensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Helleabalneolensis",
+        graph_name="HelleaBalneolensis",
         dataset="string",
         version=version,
         directed=directed,

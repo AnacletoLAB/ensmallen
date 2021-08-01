@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dethiosulfatarculussandiegensis(
+def DethiosulfatarculusSandiegensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dethiosulfatarculussandiegensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dethiosulfatarculussandiegensis",
+        graph_name="DethiosulfatarculusSandiegensis",
         dataset="string",
         version=version,
         directed=directed,

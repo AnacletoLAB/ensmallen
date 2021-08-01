@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acidothermuscellulolyticus(
+def AcidothermusCellulolyticus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Acidothermuscellulolyticus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acidothermuscellulolyticus",
+        graph_name="AcidothermusCellulolyticus",
         dataset="string",
         version=version,
         directed=directed,

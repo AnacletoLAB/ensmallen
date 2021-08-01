@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Batrachochytriumdendrobatidisjam81(
+def BatrachochytriumDendrobatidisJam81(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Batrachochytriumdendrobatidisjam81(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Batrachochytriumdendrobatidisjam81",
+        graph_name="BatrachochytriumDendrobatidisJam81",
         dataset="string",
         version=version,
         directed=directed,

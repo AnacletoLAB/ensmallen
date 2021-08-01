@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Vibrioazureus(
+def VibrioAzureus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Vibrioazureus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Vibrioazureus",
+        graph_name="VibrioAzureus",
         dataset="string",
         version=version,
         directed=directed,

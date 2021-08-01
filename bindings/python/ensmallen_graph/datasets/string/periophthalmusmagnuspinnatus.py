@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Periophthalmusmagnuspinnatus(
+def PeriophthalmusMagnuspinnatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Periophthalmusmagnuspinnatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Periophthalmusmagnuspinnatus",
+        graph_name="PeriophthalmusMagnuspinnatus",
         dataset="string",
         version=version,
         directed=directed,

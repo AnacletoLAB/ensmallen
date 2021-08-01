@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gemmobacternectariphilus(
+def GemmobacterNectariphilus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gemmobacternectariphilus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gemmobacternectariphilus",
+        graph_name="GemmobacterNectariphilus",
         dataset="string",
         version=version,
         directed=directed,

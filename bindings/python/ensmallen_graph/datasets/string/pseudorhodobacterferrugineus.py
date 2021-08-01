@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudorhodobacterferrugineus(
+def PseudorhodobacterFerrugineus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudorhodobacterferrugineus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudorhodobacterferrugineus",
+        graph_name="PseudorhodobacterFerrugineus",
         dataset="string",
         version=version,
         directed=directed,

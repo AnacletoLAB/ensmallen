@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Marmoricolaspurhb0036(
+def MarmoricolaSpUrhb0036(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Marmoricolaspurhb0036(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Marmoricolaspurhb0036",
+        graph_name="MarmoricolaSpUrhb0036",
         dataset="string",
         version=version,
         directed=directed,

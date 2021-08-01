@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Marinitogapiezophila(
+def MarinitogaPiezophila(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Marinitogapiezophila(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Marinitogapiezophila",
+        graph_name="MarinitogaPiezophila",
         dataset="string",
         version=version,
         directed=directed,

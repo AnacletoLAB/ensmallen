@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Prevotellaspagr2160(
+def PrevotellaSpAgr2160(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Prevotellaspagr2160(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Prevotellaspagr2160",
+        graph_name="PrevotellaSpAgr2160",
         dataset="string",
         version=version,
         directed=directed,

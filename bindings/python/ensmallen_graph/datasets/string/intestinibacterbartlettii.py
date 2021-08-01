@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Intestinibacterbartlettii(
+def IntestinibacterBartlettii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Intestinibacterbartlettii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Intestinibacterbartlettii",
+        graph_name="IntestinibacterBartlettii",
         dataset="string",
         version=version,
         directed=directed,

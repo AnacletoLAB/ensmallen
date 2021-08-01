@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Auriculariopsisampla(
+def AuriculariopsisAmpla(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Auriculariopsisampla(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Auriculariopsisampla",
+        graph_name="AuriculariopsisAmpla",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Torrubiellahemipterigena(
+def TorrubiellaHemipterigena(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Torrubiellahemipterigena(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Torrubiellahemipterigena",
+        graph_name="TorrubiellaHemipterigena",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coemansiareversanrrl1564(
+def CoemansiaReversaNrrl1564(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Coemansiareversanrrl1564(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coemansiareversanrrl1564",
+        graph_name="CoemansiaReversaNrrl1564",
         dataset="string",
         version=version,
         directed=directed,

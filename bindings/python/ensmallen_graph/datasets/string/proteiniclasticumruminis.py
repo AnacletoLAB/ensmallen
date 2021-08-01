@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Proteiniclasticumruminis(
+def ProteiniclasticumRuminis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Proteiniclasticumruminis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Proteiniclasticumruminis",
+        graph_name="ProteiniclasticumRuminis",
         dataset="string",
         version=version,
         directed=directed,

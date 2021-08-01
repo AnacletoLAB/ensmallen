@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Metarhiziumacridum(
+def MetarhiziumAcridum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Metarhiziumacridum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Metarhiziumacridum",
+        graph_name="MetarhiziumAcridum",
         dataset="string",
         version=version,
         directed=directed,

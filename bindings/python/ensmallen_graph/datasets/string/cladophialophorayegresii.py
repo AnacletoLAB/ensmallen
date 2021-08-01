@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cladophialophorayegresii(
+def CladophialophoraYegresii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cladophialophorayegresii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cladophialophorayegresii",
+        graph_name="CladophialophoraYegresii",
         dataset="string",
         version=version,
         directed=directed,

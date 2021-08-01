@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parasutterellaexcrementihominis(
+def ParasutterellaExcrementihominis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Parasutterellaexcrementihominis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parasutterellaexcrementihominis",
+        graph_name="ParasutterellaExcrementihominis",
         dataset="string",
         version=version,
         directed=directed,

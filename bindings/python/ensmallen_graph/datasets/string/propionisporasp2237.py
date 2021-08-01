@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Propionisporasp2237(
+def PropionisporaSp2237(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Propionisporasp2237(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Propionisporasp2237",
+        graph_name="PropionisporaSp2237",
         dataset="string",
         version=version,
         directed=directed,

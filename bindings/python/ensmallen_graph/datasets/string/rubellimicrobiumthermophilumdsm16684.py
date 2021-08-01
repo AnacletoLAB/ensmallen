@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rubellimicrobiumthermophilumdsm16684(
+def RubellimicrobiumThermophilumDsm16684(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rubellimicrobiumthermophilumdsm16684(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rubellimicrobiumthermophilumdsm16684",
+        graph_name="RubellimicrobiumThermophilumDsm16684",
         dataset="string",
         version=version,
         directed=directed,

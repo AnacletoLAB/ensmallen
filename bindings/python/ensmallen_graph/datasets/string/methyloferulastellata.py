@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methyloferulastellata(
+def MethyloferulaStellata(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methyloferulastellata(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methyloferulastellata",
+        graph_name="MethyloferulaStellata",
         dataset="string",
         version=version,
         directed=directed,

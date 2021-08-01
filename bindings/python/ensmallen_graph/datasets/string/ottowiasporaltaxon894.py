@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ottowiasporaltaxon894(
+def OttowiaSpOralTaxon894(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ottowiasporaltaxon894(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ottowiasporaltaxon894",
+        graph_name="OttowiaSpOralTaxon894",
         dataset="string",
         version=version,
         directed=directed,

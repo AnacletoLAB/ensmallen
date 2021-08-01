@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stemphyliumlycopersici(
+def StemphyliumLycopersici(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Stemphyliumlycopersici(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stemphyliumlycopersici",
+        graph_name="StemphyliumLycopersici",
         dataset="string",
         version=version,
         directed=directed,

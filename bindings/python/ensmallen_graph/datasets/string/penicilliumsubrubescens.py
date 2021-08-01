@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Penicilliumsubrubescens(
+def PenicilliumSubrubescens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Penicilliumsubrubescens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Penicilliumsubrubescens",
+        graph_name="PenicilliumSubrubescens",
         dataset="string",
         version=version,
         directed=directed,

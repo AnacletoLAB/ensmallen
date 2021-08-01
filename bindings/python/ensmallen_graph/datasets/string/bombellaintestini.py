@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bombellaintestini(
+def BombellaIntestini(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Bombellaintestini(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bombellaintestini",
+        graph_name="BombellaIntestini",
         dataset="string",
         version=version,
         directed=directed,

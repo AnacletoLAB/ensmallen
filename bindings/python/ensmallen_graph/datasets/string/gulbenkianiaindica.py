@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gulbenkianiaindica(
+def GulbenkianiaIndica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gulbenkianiaindica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gulbenkianiaindica",
+        graph_name="GulbenkianiaIndica",
         dataset="string",
         version=version,
         directed=directed,

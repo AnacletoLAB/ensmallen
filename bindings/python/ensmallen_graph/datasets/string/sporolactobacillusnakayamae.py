@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sporolactobacillusnakayamae(
+def SporolactobacillusNakayamae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sporolactobacillusnakayamae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sporolactobacillusnakayamae",
+        graph_name="SporolactobacillusNakayamae",
         dataset="string",
         version=version,
         directed=directed,

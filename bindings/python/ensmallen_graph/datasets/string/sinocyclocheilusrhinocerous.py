@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sinocyclocheilusrhinocerous(
+def SinocyclocheilusRhinocerous(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sinocyclocheilusrhinocerous(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sinocyclocheilusrhinocerous",
+        graph_name="SinocyclocheilusRhinocerous",
         dataset="string",
         version=version,
         directed=directed,

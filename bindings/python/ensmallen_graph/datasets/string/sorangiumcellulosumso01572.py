@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sorangiumcellulosumso01572(
+def SorangiumCellulosumSo01572(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Sorangiumcellulosumso01572(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sorangiumcellulosumso01572",
+        graph_name="SorangiumCellulosumSo01572",
         dataset="string",
         version=version,
         directed=directed,

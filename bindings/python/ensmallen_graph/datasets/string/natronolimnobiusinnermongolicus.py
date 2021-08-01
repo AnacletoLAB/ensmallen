@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Natronolimnobiusinnermongolicus(
+def NatronolimnobiusInnermongolicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Natronolimnobiusinnermongolicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Natronolimnobiusinnermongolicus",
+        graph_name="NatronolimnobiusInnermongolicus",
         dataset="string",
         version=version,
         directed=directed,

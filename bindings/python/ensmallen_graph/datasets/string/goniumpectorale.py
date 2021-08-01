@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Goniumpectorale(
+def GoniumPectorale(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Goniumpectorale(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Goniumpectorale",
+        graph_name="GoniumPectorale",
         dataset="string",
         version=version,
         directed=directed,

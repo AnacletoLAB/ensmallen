@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hydravulgaris(
+def HydraVulgaris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Hydravulgaris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hydravulgaris",
+        graph_name="HydraVulgaris",
         dataset="string",
         version=version,
         directed=directed,

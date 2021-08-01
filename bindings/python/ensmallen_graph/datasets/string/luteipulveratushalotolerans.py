@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Luteipulveratushalotolerans(
+def LuteipulveratusHalotolerans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Luteipulveratushalotolerans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Luteipulveratushalotolerans",
+        graph_name="LuteipulveratusHalotolerans",
         dataset="string",
         version=version,
         directed=directed,

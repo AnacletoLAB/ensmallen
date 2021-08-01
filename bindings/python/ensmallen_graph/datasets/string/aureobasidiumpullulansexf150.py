@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aureobasidiumpullulansexf150(
+def AureobasidiumPullulansExf150(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Aureobasidiumpullulansexf150(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aureobasidiumpullulansexf150",
+        graph_name="AureobasidiumPullulansExf150",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanohalophilusportucalensisfdf1(
+def MethanohalophilusPortucalensisFdf1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methanohalophilusportucalensisfdf1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanohalophilusportucalensisfdf1",
+        graph_name="MethanohalophilusPortucalensisFdf1",
         dataset="string",
         version=version,
         directed=directed,

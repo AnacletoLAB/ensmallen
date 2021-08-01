@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Azospirillumhalopraeferens(
+def AzospirillumHalopraeferens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Azospirillumhalopraeferens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Azospirillumhalopraeferens",
+        graph_name="AzospirillumHalopraeferens",
         dataset="string",
         version=version,
         directed=directed,

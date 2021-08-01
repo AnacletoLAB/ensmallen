@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Papiliomachaon(
+def PapilioMachaon(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Papiliomachaon(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Papiliomachaon",
+        graph_name="PapilioMachaon",
         dataset="string",
         version=version,
         directed=directed,

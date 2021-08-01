@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Butyrivibriofibrisolvens164(
+def ButyrivibrioFibrisolvens164(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Butyrivibriofibrisolvens164(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Butyrivibriofibrisolvens164",
+        graph_name="ButyrivibrioFibrisolvens164",
         dataset="string",
         version=version,
         directed=directed,

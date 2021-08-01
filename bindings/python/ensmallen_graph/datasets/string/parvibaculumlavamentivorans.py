@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parvibaculumlavamentivorans(
+def ParvibaculumLavamentivorans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Parvibaculumlavamentivorans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parvibaculumlavamentivorans",
+        graph_name="ParvibaculumLavamentivorans",
         dataset="string",
         version=version,
         directed=directed,

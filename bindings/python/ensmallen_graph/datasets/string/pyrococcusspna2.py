@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pyrococcusspna2(
+def PyrococcusSpNa2(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pyrococcusspna2(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pyrococcusspna2",
+        graph_name="PyrococcusSpNa2",
         dataset="string",
         version=version,
         directed=directed,

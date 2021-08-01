@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sporolituusthermophilusdsm23256(
+def SporolituusThermophilusDsm23256(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sporolituusthermophilusdsm23256(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sporolituusthermophilusdsm23256",
+        graph_name="SporolituusThermophilusDsm23256",
         dataset="string",
         version=version,
         directed=directed,

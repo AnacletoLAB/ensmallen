@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Celeribacterneptunius(
+def CeleribacterNeptunius(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Celeribacterneptunius(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Celeribacterneptunius",
+        graph_name="CeleribacterNeptunius",
         dataset="string",
         version=version,
         directed=directed,

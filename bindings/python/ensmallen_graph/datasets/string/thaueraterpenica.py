@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thaueraterpenica(
+def ThaueraTerpenica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thaueraterpenica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thaueraterpenica",
+        graph_name="ThaueraTerpenica",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hydrogenophagasph7(
+def HydrogenophagaSpH7(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hydrogenophagasph7(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hydrogenophagasph7",
+        graph_name="HydrogenophagaSpH7",
         dataset="string",
         version=version,
         directed=directed,

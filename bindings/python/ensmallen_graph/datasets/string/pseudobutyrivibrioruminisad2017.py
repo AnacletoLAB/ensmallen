@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudobutyrivibrioruminisad2017(
+def PseudobutyrivibrioRuminisAd2017(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pseudobutyrivibrioruminisad2017(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudobutyrivibrioruminisad2017",
+        graph_name="PseudobutyrivibrioRuminisAd2017",
         dataset="string",
         version=version,
         directed=directed,

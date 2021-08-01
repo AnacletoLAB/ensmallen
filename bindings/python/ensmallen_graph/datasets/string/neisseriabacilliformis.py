@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Neisseriabacilliformis(
+def NeisseriaBacilliformis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Neisseriabacilliformis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Neisseriabacilliformis",
+        graph_name="NeisseriaBacilliformis",
         dataset="string",
         version=version,
         directed=directed,

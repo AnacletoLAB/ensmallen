@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stackebrandtianassauensis(
+def StackebrandtiaNassauensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Stackebrandtianassauensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stackebrandtianassauensis",
+        graph_name="StackebrandtiaNassauensis",
         dataset="string",
         version=version,
         directed=directed,

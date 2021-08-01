@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Helicosporidiumspatcc50920(
+def HelicosporidiumSpAtcc50920(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Helicosporidiumspatcc50920(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Helicosporidiumspatcc50920",
+        graph_name="HelicosporidiumSpAtcc50920",
         dataset="string",
         version=version,
         directed=directed,

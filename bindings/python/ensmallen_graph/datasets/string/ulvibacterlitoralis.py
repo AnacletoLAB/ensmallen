@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ulvibacterlitoralis(
+def UlvibacterLitoralis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ulvibacterlitoralis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ulvibacterlitoralis",
+        graph_name="UlvibacterLitoralis",
         dataset="string",
         version=version,
         directed=directed,

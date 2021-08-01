@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Archaeongw2011ar5(
+def ArchaeonGw2011Ar5(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Archaeongw2011ar5(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Archaeongw2011ar5",
+        graph_name="ArchaeonGw2011Ar5",
         dataset="string",
         version=version,
         directed=directed,

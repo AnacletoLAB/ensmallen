@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Paraglaciecolahydrolytica(
+def ParaglaciecolaHydrolytica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Paraglaciecolahydrolytica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Paraglaciecolahydrolytica",
+        graph_name="ParaglaciecolaHydrolytica",
         dataset="string",
         version=version,
         directed=directed,

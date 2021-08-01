@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Wolbachiaendosymbiontofdrosophilasimulans(
+def WolbachiaEndosymbiontOfDrosophilaSimulans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Wolbachiaendosymbiontofdrosophilasimulans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Wolbachiaendosymbiontofdrosophilasimulans",
+        graph_name="WolbachiaEndosymbiontOfDrosophilaSimulans",
         dataset="string",
         version=version,
         directed=directed,

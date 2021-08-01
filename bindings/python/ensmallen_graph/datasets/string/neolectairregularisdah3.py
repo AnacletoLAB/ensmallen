@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Neolectairregularisdah3(
+def NeolectaIrregularisDah3(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Neolectairregularisdah3(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Neolectairregularisdah3",
+        graph_name="NeolectaIrregularisDah3",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gluconobacterjaponicus(
+def GluconobacterJaponicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gluconobacterjaponicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gluconobacterjaponicus",
+        graph_name="GluconobacterJaponicus",
         dataset="string",
         version=version,
         directed=directed,

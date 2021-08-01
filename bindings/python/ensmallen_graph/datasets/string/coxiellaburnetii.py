@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coxiellaburnetii(
+def CoxiellaBurnetii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Coxiellaburnetii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coxiellaburnetii",
+        graph_name="CoxiellaBurnetii",
         dataset="string",
         version=version,
         directed=directed,

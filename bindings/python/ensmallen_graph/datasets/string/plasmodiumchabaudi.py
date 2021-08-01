@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Plasmodiumchabaudi(
+def PlasmodiumChabaudi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Plasmodiumchabaudi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Plasmodiumchabaudi",
+        graph_name="PlasmodiumChabaudi",
         dataset="string",
         version=version,
         directed=directed,

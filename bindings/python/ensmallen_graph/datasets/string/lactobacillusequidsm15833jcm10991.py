@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lactobacillusequidsm15833jcm10991(
+def LactobacillusEquiDsm15833Jcm10991(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lactobacillusequidsm15833jcm10991(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lactobacillusequidsm15833jcm10991",
+        graph_name="LactobacillusEquiDsm15833Jcm10991",
         dataset="string",
         version=version,
         directed=directed,

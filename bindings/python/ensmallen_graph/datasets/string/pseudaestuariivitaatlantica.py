@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudaestuariivitaatlantica(
+def PseudaestuariivitaAtlantica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudaestuariivitaatlantica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudaestuariivitaatlantica",
+        graph_name="PseudaestuariivitaAtlantica",
         dataset="string",
         version=version,
         directed=directed,

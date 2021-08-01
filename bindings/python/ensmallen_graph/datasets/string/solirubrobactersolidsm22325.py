@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Solirubrobactersolidsm22325(
+def SolirubrobacterSoliDsm22325(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Solirubrobactersolidsm22325(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Solirubrobactersolidsm22325",
+        graph_name="SolirubrobacterSoliDsm22325",
         dataset="string",
         version=version,
         directed=directed,

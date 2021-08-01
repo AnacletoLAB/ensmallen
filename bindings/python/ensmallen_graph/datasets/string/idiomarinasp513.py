@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Idiomarinasp513(
+def IdiomarinaSp513(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Idiomarinasp513(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Idiomarinasp513",
+        graph_name="IdiomarinaSp513",
         dataset="string",
         version=version,
         directed=directed,

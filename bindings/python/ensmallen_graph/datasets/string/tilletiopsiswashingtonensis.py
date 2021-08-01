@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tilletiopsiswashingtonensis(
+def TilletiopsisWashingtonensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tilletiopsiswashingtonensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tilletiopsiswashingtonensis",
+        graph_name="TilletiopsisWashingtonensis",
         dataset="string",
         version=version,
         directed=directed,

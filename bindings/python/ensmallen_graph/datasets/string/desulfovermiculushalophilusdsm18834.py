@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Desulfovermiculushalophilusdsm18834(
+def DesulfovermiculusHalophilusDsm18834(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Desulfovermiculushalophilusdsm18834(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Desulfovermiculushalophilusdsm18834",
+        graph_name="DesulfovermiculusHalophilusDsm18834",
         dataset="string",
         version=version,
         directed=directed,

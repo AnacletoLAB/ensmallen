@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Serratiarubidaea(
+def SerratiaRubidaea(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Serratiarubidaea(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Serratiarubidaea",
+        graph_name="SerratiaRubidaea",
         dataset="string",
         version=version,
         directed=directed,

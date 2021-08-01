@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermocrinisspgbs(
+def ThermocrinisSpGbs(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermocrinisspgbs(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermocrinisspgbs",
+        graph_name="ThermocrinisSpGbs",
         dataset="string",
         version=version,
         directed=directed,

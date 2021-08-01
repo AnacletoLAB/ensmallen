@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fusariumpseudograminearum(
+def FusariumPseudograminearum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Fusariumpseudograminearum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fusariumpseudograminearum",
+        graph_name="FusariumPseudograminearum",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Allisonellahistaminiformans(
+def AllisonellaHistaminiformans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Allisonellahistaminiformans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Allisonellahistaminiformans",
+        graph_name="AllisonellaHistaminiformans",
         dataset="string",
         version=version,
         directed=directed,

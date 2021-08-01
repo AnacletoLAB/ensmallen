@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methyloversatilisthermotolerans(
+def MethyloversatilisThermotolerans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methyloversatilisthermotolerans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methyloversatilisthermotolerans",
+        graph_name="MethyloversatilisThermotolerans",
         dataset="string",
         version=version,
         directed=directed,

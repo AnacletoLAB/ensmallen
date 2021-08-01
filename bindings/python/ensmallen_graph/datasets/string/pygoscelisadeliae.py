@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pygoscelisadeliae(
+def PygoscelisAdeliae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pygoscelisadeliae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pygoscelisadeliae",
+        graph_name="PygoscelisAdeliae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nesiotobacterexalbescens(
+def NesiotobacterExalbescens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nesiotobacterexalbescens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nesiotobacterexalbescens",
+        graph_name="NesiotobacterExalbescens",
         dataset="string",
         version=version,
         directed=directed,

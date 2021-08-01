@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Raphidiopsisbrookii(
+def RaphidiopsisBrookii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Raphidiopsisbrookii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Raphidiopsisbrookii",
+        graph_name="RaphidiopsisBrookii",
         dataset="string",
         version=version,
         directed=directed,

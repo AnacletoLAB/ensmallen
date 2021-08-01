@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Steinernemacarpocapsae(
+def SteinernemaCarpocapsae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Steinernemacarpocapsae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Steinernemacarpocapsae",
+        graph_name="SteinernemaCarpocapsae",
         dataset="string",
         version=version,
         directed=directed,

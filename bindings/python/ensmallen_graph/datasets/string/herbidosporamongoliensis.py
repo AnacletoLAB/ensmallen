@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Herbidosporamongoliensis(
+def HerbidosporaMongoliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Herbidosporamongoliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Herbidosporamongoliensis",
+        graph_name="HerbidosporaMongoliensis",
         dataset="string",
         version=version,
         directed=directed,

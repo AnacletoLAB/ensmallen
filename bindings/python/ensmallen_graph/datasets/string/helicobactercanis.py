@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Helicobactercanis(
+def HelicobacterCanis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Helicobactercanis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Helicobactercanis",
+        graph_name="HelicobacterCanis",
         dataset="string",
         version=version,
         directed=directed,

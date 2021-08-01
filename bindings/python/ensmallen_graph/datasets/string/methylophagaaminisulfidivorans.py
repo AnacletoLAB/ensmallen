@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylophagaaminisulfidivorans(
+def MethylophagaAminisulfidivorans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methylophagaaminisulfidivorans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylophagaaminisulfidivorans",
+        graph_name="MethylophagaAminisulfidivorans",
         dataset="string",
         version=version,
         directed=directed,

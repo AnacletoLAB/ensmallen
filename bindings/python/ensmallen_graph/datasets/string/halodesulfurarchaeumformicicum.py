@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halodesulfurarchaeumformicicum(
+def HalodesulfurarchaeumFormicicum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Halodesulfurarchaeumformicicum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halodesulfurarchaeumformicicum",
+        graph_name="HalodesulfurarchaeumFormicicum",
         dataset="string",
         version=version,
         directed=directed,

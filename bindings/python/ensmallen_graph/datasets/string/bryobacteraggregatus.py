@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bryobacteraggregatus(
+def BryobacterAggregatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Bryobacteraggregatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bryobacteraggregatus",
+        graph_name="BryobacterAggregatus",
         dataset="string",
         version=version,
         directed=directed,

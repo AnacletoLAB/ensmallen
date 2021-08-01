@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thiothrixcaldifontis(
+def ThiothrixCaldifontis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thiothrixcaldifontis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thiothrixcaldifontis",
+        graph_name="ThiothrixCaldifontis",
         dataset="string",
         version=version,
         directed=directed,

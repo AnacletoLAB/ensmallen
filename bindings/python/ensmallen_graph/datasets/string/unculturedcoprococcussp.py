@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Unculturedcoprococcussp(
+def UnculturedCoprococcusSp(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Unculturedcoprococcussp(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Unculturedcoprococcussp",
+        graph_name="UnculturedCoprococcusSp",
         dataset="string",
         version=version,
         directed=directed,

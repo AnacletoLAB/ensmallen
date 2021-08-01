@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Petromyzonmarinus(
+def PetromyzonMarinus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Petromyzonmarinus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Petromyzonmarinus",
+        graph_name="PetromyzonMarinus",
         dataset="string",
         version=version,
         directed=directed,

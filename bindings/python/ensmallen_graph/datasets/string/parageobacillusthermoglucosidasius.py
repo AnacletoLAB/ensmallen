@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parageobacillusthermoglucosidasius(
+def ParageobacillusThermoglucosidasius(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Parageobacillusthermoglucosidasius(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parageobacillusthermoglucosidasius",
+        graph_name="ParageobacillusThermoglucosidasius",
         dataset="string",
         version=version,
         directed=directed,

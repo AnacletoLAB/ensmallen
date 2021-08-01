@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudovibrioascidiaceicola(
+def PseudovibrioAscidiaceicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudovibrioascidiaceicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudovibrioascidiaceicola",
+        graph_name="PseudovibrioAscidiaceicola",
         dataset="string",
         version=version,
         directed=directed,

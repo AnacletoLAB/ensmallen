@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Galbibactermarinus(
+def GalbibacterMarinus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Galbibactermarinus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Galbibactermarinus",
+        graph_name="GalbibacterMarinus",
         dataset="string",
         version=version,
         directed=directed,

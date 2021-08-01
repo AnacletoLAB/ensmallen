@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bizioniaargentinensis(
+def BizioniaArgentinensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Bizioniaargentinensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bizioniaargentinensis",
+        graph_name="BizioniaArgentinensis",
         dataset="string",
         version=version,
         directed=directed,

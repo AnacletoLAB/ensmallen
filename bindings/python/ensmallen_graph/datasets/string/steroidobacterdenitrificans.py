@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Steroidobacterdenitrificans(
+def SteroidobacterDenitrificans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Steroidobacterdenitrificans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Steroidobacterdenitrificans",
+        graph_name="SteroidobacterDenitrificans",
         dataset="string",
         version=version,
         directed=directed,

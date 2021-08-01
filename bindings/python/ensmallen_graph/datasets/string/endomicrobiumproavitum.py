@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Endomicrobiumproavitum(
+def EndomicrobiumProavitum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Endomicrobiumproavitum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Endomicrobiumproavitum",
+        graph_name="EndomicrobiumProavitum",
         dataset="string",
         version=version,
         directed=directed,

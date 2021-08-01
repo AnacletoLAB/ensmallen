@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fulvimarinamanganoxydans(
+def FulvimarinaManganoxydans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Fulvimarinamanganoxydans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fulvimarinamanganoxydans",
+        graph_name="FulvimarinaManganoxydans",
         dataset="string",
         version=version,
         directed=directed,

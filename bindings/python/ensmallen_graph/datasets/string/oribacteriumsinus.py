@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oribacteriumsinus(
+def OribacteriumSinus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Oribacteriumsinus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oribacteriumsinus",
+        graph_name="OribacteriumSinus",
         dataset="string",
         version=version,
         directed=directed,

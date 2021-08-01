@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Armillariasolidipes(
+def ArmillariaSolidipes(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Armillariasolidipes(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Armillariasolidipes",
+        graph_name="ArmillariaSolidipes",
         dataset="string",
         version=version,
         directed=directed,

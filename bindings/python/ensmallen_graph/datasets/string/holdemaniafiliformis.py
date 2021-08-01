@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Holdemaniafiliformis(
+def HoldemaniaFiliformis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Holdemaniafiliformis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Holdemaniafiliformis",
+        graph_name="HoldemaniaFiliformis",
         dataset="string",
         version=version,
         directed=directed,

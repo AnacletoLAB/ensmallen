@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Orchesellacincta(
+def OrchesellaCincta(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Orchesellacincta(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Orchesellacincta",
+        graph_name="OrchesellaCincta",
         dataset="string",
         version=version,
         directed=directed,

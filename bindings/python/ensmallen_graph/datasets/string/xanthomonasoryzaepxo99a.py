@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Xanthomonasoryzaepxo99a(
+def XanthomonasOryzaePxo99a(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Xanthomonasoryzaepxo99a(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Xanthomonasoryzaepxo99a",
+        graph_name="XanthomonasOryzaePxo99a",
         dataset="string",
         version=version,
         directed=directed,

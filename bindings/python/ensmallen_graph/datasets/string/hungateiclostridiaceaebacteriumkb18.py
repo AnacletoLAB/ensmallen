@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hungateiclostridiaceaebacteriumkb18(
+def HungateiclostridiaceaeBacteriumKb18(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hungateiclostridiaceaebacteriumkb18(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hungateiclostridiaceaebacteriumkb18",
+        graph_name="HungateiclostridiaceaeBacteriumKb18",
         dataset="string",
         version=version,
         directed=directed,

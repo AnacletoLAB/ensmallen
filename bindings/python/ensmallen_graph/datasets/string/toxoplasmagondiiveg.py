@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Toxoplasmagondiiveg(
+def ToxoplasmaGondiiVeg(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Toxoplasmagondiiveg(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Toxoplasmagondiiveg",
+        graph_name="ToxoplasmaGondiiVeg",
         dataset="string",
         version=version,
         directed=directed,

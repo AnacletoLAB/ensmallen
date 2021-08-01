@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rodentibactergenomosp1(
+def RodentibacterGenomosp1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rodentibactergenomosp1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rodentibactergenomosp1",
+        graph_name="RodentibacterGenomosp1",
         dataset="string",
         version=version,
         directed=directed,

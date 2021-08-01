@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stenotrophomonasdaejeonensis(
+def StenotrophomonasDaejeonensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Stenotrophomonasdaejeonensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stenotrophomonasdaejeonensis",
+        graph_name="StenotrophomonasDaejeonensis",
         dataset="string",
         version=version,
         directed=directed,

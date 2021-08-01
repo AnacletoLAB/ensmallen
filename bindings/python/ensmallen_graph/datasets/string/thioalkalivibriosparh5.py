@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thioalkalivibriosparh5(
+def ThioalkalivibrioSpArh5(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thioalkalivibriosparh5(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thioalkalivibriosparh5",
+        graph_name="ThioalkalivibrioSpArh5",
         dataset="string",
         version=version,
         directed=directed,

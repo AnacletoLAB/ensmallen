@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Capnocytophagaspf0087(
+def CapnocytophagaSpF0087(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Capnocytophagaspf0087(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Capnocytophagaspf0087",
+        graph_name="CapnocytophagaSpF0087",
         dataset="string",
         version=version,
         directed=directed,
