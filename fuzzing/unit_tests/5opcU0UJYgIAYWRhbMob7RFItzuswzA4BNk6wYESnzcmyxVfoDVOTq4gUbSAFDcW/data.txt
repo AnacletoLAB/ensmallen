@@ -1,0 +1,83 @@
+FromStringsParameters {
+    node_types_number: None,
+    numeric_node_type_ids: None,
+    minimum_node_type_id: None,
+    has_node_types: false,
+    nodes_number: None,
+    numeric_node_ids: false,
+    numeric_node_list_node_type_ids: false,
+    minimum_node_ids: None,
+    edge_types_number: None,
+    numeric_edge_type_ids: None,
+    minimum_edge_type_id: None,
+    has_edge_types: false,
+    has_edge_weights: false,
+    directed: false,
+    correct: None,
+    complete: None,
+    duplicates: None,
+    sorted: None,
+    edges_number: Some(
+        11389875874121371831,
+    ),
+    numeric_edge_list_node_ids: Some(
+        true,
+    ),
+    numeric_edge_list_edge_type_ids: Some(
+        false,
+    ),
+    skip_node_types_if_unavailable: None,
+    skip_edge_types_if_unavailable: None,
+    may_have_singletons: false,
+    may_have_singleton_with_selfloops: true,
+    name: "T",
+    edges_iterator_is_parallel: false,
+    edge_types_iterator_is_parallel: false,
+    nodes_iterator_is_parallel: true,
+    node_types_iterator_is_parallel: true,
+    edges_iterator: None,
+    edge_types_iterator: Some(
+        [
+            Ok(
+                (
+                    15485299299859603023,
+                    "|F",
+                ),
+            ),
+            Err(
+                "",
+            ),
+        ],
+    ),
+    nodes_iterator: Some(
+        [
+            Ok(
+                (
+                    253230193783196544,
+                    (
+                        "Pt",
+                        Some(
+                            [],
+                        ),
+                    ),
+                ),
+            ),
+        ],
+    ),
+    node_types_iterator: Some(
+        [
+            Ok(
+                (
+                    363952664004068613,
+                    "",
+                ),
+            ),
+            Ok(
+                (
+                    12456267197075227909,
+                    "",
+                ),
+            ),
+        ],
+    ),
+}

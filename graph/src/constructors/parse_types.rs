@@ -1,11 +1,8 @@
 use super::*;
 use rayon::iter::ParallelIterator;
-use std::fmt::Debug;
-use std::ops::Add;
-use std::str::FromStr;
 
 pub(crate) fn parse_types<
-    TypeT: FromStr + ToFromUsize + Sync + Send + Debug + Add<Output = TypeT>,
+    TypeT: ToFromUsize,
 >(
     types_iterator: Option<
         ItersWrapper<
@@ -90,7 +87,13 @@ pub(crate) fn parse_types<
             Ok(Some(Vocabulary::from_range(TypeT::from_usize(0)..ntn)))
         }
         (None, Some(ntn), true, Some(min_val)) => {
-            Ok(Some(Vocabulary::from_range(min_val..(min_val + ntn))))
+            Ok(Some(Vocabulary::from_range(min_val..(
+                min_val.checked_add(ntn)
+                    .ok_or(format!(concat!(
+                        "Error while building a numeric vocabulary, you are trying to build a range",
+                        " with minimum {} and max {} + {} but the max overflows the current type.",
+                    ), min_val, ntn, min_val))?
+            ))))
         }
         (None, None, true, _) => {
             let min = minimum_type_id.unwrap_or(TypeT::from_usize(0));

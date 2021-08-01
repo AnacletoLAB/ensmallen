@@ -34,7 +34,7 @@ use rayon::prelude::*;
 /// * `may_have_singleton_with_selfloops`: bool - Whether the graph may contain singleton with selfloops.
 /// * `name: S - The name of the graph.
 ///
-pub(crate) fn build_graph_from_strings<S: Into<String>>(
+pub fn build_graph_from_strings<S: Into<String>>(
     node_types_iterator: Option<
         ItersWrapper<
             Result<(usize, String)>,
@@ -181,7 +181,7 @@ pub(crate) fn build_graph_from_strings<S: Into<String>>(
 /// * `numeric_edge_list_edge_type_ids`: Option<bool> - Whether the provided edge type IDs in the edge list are to be loaded as numeric.
 /// * `name: S - The name of the graph.
 ///
-pub(crate) fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
+pub fn build_graph_from_strings_without_type_iterators<S: Into<String>>(
     has_node_types: bool,
     nodes_iterator: Option<
         ItersWrapper<
@@ -303,7 +303,7 @@ pub fn build_empty_graph<S: Into<String>>(directed: bool, name: S) -> Result<Gra
 /// * `may_have_singletons`: bool - Whether the graph may contain singletons.
 /// * `may_have_singleton_with_selfloops`: bool - Whether the graph may contain singleton with selfloops.
 /// * `name`: S - The name of the graph.
-pub(crate) fn build_graph_from_integers<S: Into<String>>(
+pub fn build_graph_from_integers<S: Into<String>>(
     edges_iterator: Option<
         impl ParallelIterator<Item = (usize, (NodeT, NodeT, Option<EdgeTypeT>, WeightT))>,
     >,

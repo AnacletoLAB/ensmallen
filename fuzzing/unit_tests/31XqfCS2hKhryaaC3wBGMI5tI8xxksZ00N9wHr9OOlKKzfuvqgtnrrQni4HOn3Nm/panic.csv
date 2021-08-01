@@ -1,0 +1,4 @@
+file,"/Workspace/Shared/ensmallen_graph/graph/src/constructors/edge_type_parser.rs"
+line,144
+col,89
+message,called `Result::unwrap()` on an `Err` value: ParseIntError { kind: Empty }

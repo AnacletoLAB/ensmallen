@@ -56,7 +56,7 @@ mod constructors;
 pub use constructors::*;
 
 pub mod utils;
-pub(crate) use self::utils::*;
+pub use self::utils::*;
 
 mod bitmaps;
 mod centrality;

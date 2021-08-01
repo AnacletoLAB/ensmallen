@@ -1,0 +1,86 @@
+FromStringsParameters {
+    node_types_number: Some(
+        46908,
+    ),
+    numeric_node_type_ids: Some(
+        true,
+    ),
+    minimum_node_type_id: None,
+    has_node_types: true,
+    nodes_number: None,
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: false,
+    minimum_node_ids: Some(
+        1083874399,
+    ),
+    edge_types_number: Some(
+        19465,
+    ),
+    numeric_edge_type_ids: None,
+    minimum_edge_type_id: Some(
+        63775,
+    ),
+    has_edge_types: true,
+    has_edge_weights: true,
+    directed: false,
+    correct: Some(
+        false,
+    ),
+    complete: Some(
+        true,
+    ),
+    duplicates: Some(
+        true,
+    ),
+    sorted: None,
+    edges_number: Some(
+        9357378322354244700,
+    ),
+    numeric_edge_list_node_ids: None,
+    numeric_edge_list_edge_type_ids: Some(
+        false,
+    ),
+    skip_node_types_if_unavailable: Some(
+        false,
+    ),
+    skip_edge_types_if_unavailable: None,
+    may_have_singletons: false,
+    may_have_singleton_with_selfloops: false,
+    name: "",
+    edges_iterator_is_parallel: true,
+    edge_types_iterator_is_parallel: true,
+    nodes_iterator_is_parallel: false,
+    node_types_iterator_is_parallel: false,
+    edges_iterator: Some(
+        [],
+    ),
+    edge_types_iterator: Some(
+        [
+            Ok(
+                (
+                    2378465760868564991,
+                    "\u{2}\u{2}[[[[[[[[[[[[\u{0}\u{3}",
+                ),
+            ),
+            Err(
+                "",
+            ),
+            Ok(
+                (
+                    6582955865703930715,
+                    "",
+                ),
+            ),
+            Ok(
+                (
+                    15847738421240617819,
+                    "",
+                ),
+            ),
+        ],
+    ),
+    nodes_iterator: Some(
+        [],
+    ),
+    node_types_iterator: None,
+}

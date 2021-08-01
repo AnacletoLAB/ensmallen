@@ -13,7 +13,8 @@ use types::ThreadDataRaceAware;
 fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(word2vec))?;
     m.add_wrapped(wrap_pyfunction!(cooccurence_matrix))?;
-    m.add_wrapped(wrap_pyfunction!(okapi_bm25_tfidf))?;
+    m.add_wrapped(wrap_pyfunction!(okapi_bm25_tfidf_int))?;
+    m.add_wrapped(wrap_pyfunction!(okapi_bm25_tfidf_str))?;
     Ok(())
 }
 
@@ -35,14 +36,48 @@ fn preprocessing(_py: Python, m: &PyModule) -> PyResult<()> {
 /// verbose: Optional[bool],
 ///     Whether to show a loading bar.
 ///
-fn okapi_bm25_tfidf(
+fn okapi_bm25_tfidf_int(
+    documents: Vec<Vec<u64>>,
+    k1: Option<f64>,
+    b: Option<f64>,
+    vocabulary_size: Option<usize>,
+    verbose: Option<bool>,
+) -> PyResult<Vec<HashMap<u64, f64>>> {
+    pe!(rust_okapi_bm25_tfidf::<u64>(
+        &documents,
+        k1,
+        b,
+        vocabulary_size,
+        verbose
+    ))
+}
+
+#[pyfunction()]
+#[text_signature = "(documents, k1, b, vocabulary_size, verbose)"]
+/// Return vocabulary and TFIDF matrix of given documents.
+///
+///
+/// Arguments
+/// ---------
+/// documents: List[List[String]],
+///     The documents to parse
+/// k1: Optional[float],
+///     The default parameter for k1, tipically between 1.2 and 2.0.
+/// b: Optional[float],
+///     The default parameter for b, tipically equal to 0.75.
+/// vocabulary_size: Optional[usize],
+///     The expected vocabulary size.
+/// verbose: Optional[bool],
+///     Whether to show a loading bar.
+///
+fn okapi_bm25_tfidf_str(
     documents: Vec<Vec<&str>>,
     k1: Option<f64>,
     b: Option<f64>,
     vocabulary_size: Option<usize>,
     verbose: Option<bool>,
-) -> PyResult<Vec<HashMap<String, f64>>> {
-    pe!(rust_okapi_bm25_tfidf(
+) -> PyResult<Vec<HashMap<&str, f64>>> {
+    pe!(rust_okapi_bm25_tfidf::<&str>(
         &documents,
         k1,
         b,

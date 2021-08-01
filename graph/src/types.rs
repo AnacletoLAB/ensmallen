@@ -1,6 +1,10 @@
 use std::fmt::Display;
 use std::hash::Hash;
 use std::ops::{Add, AddAssign, Sub};
+use std::fmt::Debug;
+use std::str::FromStr;
+use std::cell::UnsafeCell;
+
 
 // Types used to represent edges, nodes and their types.
 /// Type used to index the Nodes.
@@ -39,7 +43,8 @@ pub type Result<T> = std::result::Result<T, String>;
 /// and it has no effects on performance because it's optimized away during
 /// compilaton.
 pub trait ToFromUsize:
-    Clone + Display + Ord + Copy + AddAssign + Add + Sub<Output = Self> + Hash
+    Clone + Display + Ord + Copy + AddAssign + Add + Sub<Output=Self> + Hash
+    + FromStr + Sync + Send + Debug + Add<Output=Self>
 {
     /// create the type from a usize
     fn from_usize(v: usize) -> Self;
@@ -47,6 +52,8 @@ pub trait ToFromUsize:
     fn to_usize(v: Self) -> usize;
     /// Retrun the maximum encodable number
     fn get_max() -> Self;
+
+    fn checked_add(self, rhs: Self) -> Option<Self>;
 }
 
 /// Automatically implement the methods needed to convert from and to usize
@@ -68,6 +75,11 @@ macro_rules! macro_impl_to_from_usize {
                 fn get_max() -> $ty {
                     (0 as $ty).wrapping_sub(1)
                 }
+
+                #[inline(always)]
+                fn checked_add(self, rhs: $ty) -> Option<$ty> {
+                    self.checked_add(rhs)
+                }
             }
         )*
     }
@@ -75,7 +87,7 @@ macro_rules! macro_impl_to_from_usize {
 
 macro_impl_to_from_usize!(u8 u16 u32 u64 usize);
 
-use std::cell::UnsafeCell;
+
 
 pub(crate) struct ThreadDataRaceAware<T> {
     pub(crate) value: UnsafeCell<T>,

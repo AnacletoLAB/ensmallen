@@ -1,0 +1,88 @@
+FromStringsParameters {
+    node_types_number: Some(
+        65535,
+    ),
+    numeric_node_type_ids: Some(
+        true,
+    ),
+    minimum_node_type_id: None,
+    has_node_types: false,
+    nodes_number: None,
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: false,
+    minimum_node_ids: None,
+    edge_types_number: None,
+    numeric_edge_type_ids: Some(
+        true,
+    ),
+    minimum_edge_type_id: Some(
+        59902,
+    ),
+    has_edge_types: true,
+    has_edge_weights: true,
+    directed: false,
+    correct: Some(
+        true,
+    ),
+    complete: None,
+    duplicates: Some(
+        false,
+    ),
+    sorted: None,
+    edges_number: None,
+    numeric_edge_list_node_ids: None,
+    numeric_edge_list_edge_type_ids: None,
+    skip_node_types_if_unavailable: Some(
+        false,
+    ),
+    skip_edge_types_if_unavailable: None,
+    may_have_singletons: false,
+    may_have_singleton_with_selfloops: false,
+    name: "",
+    edges_iterator_is_parallel: true,
+    edge_types_iterator_is_parallel: false,
+    nodes_iterator_is_parallel: false,
+    node_types_iterator_is_parallel: true,
+    edges_iterator: Some(
+        [
+            Ok(
+                (
+                    15693298979101694811,
+                    (
+                        "",
+                        "",
+                        None,
+                        -1964430100000000.0,
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    3646501643427202915,
+                    (
+                        "",
+                        "02530",
+                        Some(
+                            "",
+                        ),
+                        140976984000000000.0,
+                    ),
+                ),
+            ),
+            Ok(
+                (
+                    6582955728884089435,
+                    (
+                        "[",
+                        "",
+                        None,
+                         0.0,
+                    ),
+                ),
+            ),
+        ],
+    ),
+    edge_types_iterator: None,
+    nodes_iterator: None,
+    node_types_iterator: None,
+}

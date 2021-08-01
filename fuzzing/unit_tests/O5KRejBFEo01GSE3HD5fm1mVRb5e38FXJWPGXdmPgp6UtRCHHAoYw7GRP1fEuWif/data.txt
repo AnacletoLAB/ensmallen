@@ -1,0 +1,97 @@
+FromStringsParameters {
+    node_types_number: None,
+    numeric_node_type_ids: None,
+    minimum_node_type_id: Some(
+        2225,
+    ),
+    has_node_types: false,
+    nodes_number: Some(
+        1532755967,
+    ),
+    numeric_node_ids: true,
+    numeric_node_list_node_type_ids: false,
+    minimum_node_ids: None,
+    edge_types_number: Some(
+        23387,
+    ),
+    numeric_edge_type_ids: Some(
+        true,
+    ),
+    minimum_edge_type_id: Some(
+         603,
+    ),
+    has_edge_types: false,
+    has_edge_weights: true,
+    directed: true,
+    correct: Some(
+        true,
+    ),
+    complete: Some(
+        true,
+    ),
+    duplicates: Some(
+        true,
+    ),
+    sorted: Some(
+        true,
+    ),
+    edges_number: Some(
+        6582955728264977243,
+    ),
+    numeric_edge_list_node_ids: Some(
+        true,
+    ),
+    numeric_edge_list_edge_type_ids: Some(
+        true,
+    ),
+    skip_node_types_if_unavailable: Some(
+        true,
+    ),
+    skip_edge_types_if_unavailable: Some(
+        true,
+    ),
+    may_have_singletons: true,
+    may_have_singleton_with_selfloops: true,
+    name: "[~",
+    edges_iterator_is_parallel: true,
+    edge_types_iterator_is_parallel: true,
+    nodes_iterator_is_parallel: true,
+    node_types_iterator_is_parallel: true,
+    edges_iterator: Some(
+        [
+            Ok(
+                (
+                    217020518514229339,
+                    (
+                        "\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}\u{3}",
+                        "",
+                        Some(
+                            "",
+                        ),
+                        61743874000000000.0,
+                    ),
+                ),
+            ),
+        ],
+    ),
+    edge_types_iterator: Some(
+        [],
+    ),
+    nodes_iterator: None,
+    node_types_iterator: Some(
+        [
+            Ok(
+                (
+                    18446743107341910651,
+                    "",
+                ),
+            ),
+            Ok(
+                (
+                    25715106031295323,
+                    "",
+                ),
+            ),
+        ],
+    ),
+}
