@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Anaplasmamarginaleflorida(
+def AnaplasmaMarginaleFlorida(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Anaplasmamarginaleflorida(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Anaplasmamarginaleflorida",
+        graph_name="AnaplasmaMarginaleFlorida",
         dataset="string",
         version=version,
         directed=directed,

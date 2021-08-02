@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Allobaculumstercoricanis(
+def AllobaculumStercoricanis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Allobaculumstercoricanis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Allobaculumstercoricanis",
+        graph_name="AllobaculumStercoricanis",
         dataset="string",
         version=version,
         directed=directed,

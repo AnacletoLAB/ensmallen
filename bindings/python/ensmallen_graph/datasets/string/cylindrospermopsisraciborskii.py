@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cylindrospermopsisraciborskii(
+def CylindrospermopsisRaciborskii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cylindrospermopsisraciborskii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cylindrospermopsisraciborskii",
+        graph_name="CylindrospermopsisRaciborskii",
         dataset="string",
         version=version,
         directed=directed,

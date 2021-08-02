@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sulfobacillusthermosulfidooxidans(
+def SulfobacillusThermosulfidooxidans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sulfobacillusthermosulfidooxidans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sulfobacillusthermosulfidooxidans",
+        graph_name="SulfobacillusThermosulfidooxidans",
         dataset="string",
         version=version,
         directed=directed,

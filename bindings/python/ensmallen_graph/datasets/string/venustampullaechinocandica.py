@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Venustampullaechinocandica(
+def VenustampullaEchinocandica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Venustampullaechinocandica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Venustampullaechinocandica",
+        graph_name="VenustampullaEchinocandica",
         dataset="string",
         version=version,
         directed=directed,

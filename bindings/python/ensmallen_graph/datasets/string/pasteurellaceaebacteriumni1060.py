@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pasteurellaceaebacteriumni1060(
+def PasteurellaceaeBacteriumNi1060(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pasteurellaceaebacteriumni1060(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pasteurellaceaebacteriumni1060",
+        graph_name="PasteurellaceaeBacteriumNi1060",
         dataset="string",
         version=version,
         directed=directed,

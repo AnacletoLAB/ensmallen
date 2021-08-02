@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chitinophagaginsengisegetis(
+def ChitinophagaGinsengisegetis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Chitinophagaginsengisegetis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chitinophagaginsengisegetis",
+        graph_name="ChitinophagaGinsengisegetis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ictidomystridecemlineatus(
+def IctidomysTridecemlineatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Ictidomystridecemlineatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ictidomystridecemlineatus",
+        graph_name="IctidomysTridecemlineatus",
         dataset="string",
         version=version,
         directed=directed,

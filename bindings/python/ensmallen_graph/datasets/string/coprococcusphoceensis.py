@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coprococcusphoceensis(
+def CoprococcusPhoceensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Coprococcusphoceensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coprococcusphoceensis",
+        graph_name="CoprococcusPhoceensis",
         dataset="string",
         version=version,
         directed=directed,

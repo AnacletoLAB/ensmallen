@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Penaeusvannamei(
+def PenaeusVannamei(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Penaeusvannamei(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Penaeusvannamei",
+        graph_name="PenaeusVannamei",
         dataset="string",
         version=version,
         directed=directed,

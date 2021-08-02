@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Xylariagrammica(
+def XylariaGrammica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Xylariagrammica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Xylariagrammica",
+        graph_name="XylariaGrammica",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Panaeoluscyanescens(
+def PanaeolusCyanescens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Panaeoluscyanescens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Panaeoluscyanescens",
+        graph_name="PanaeolusCyanescens",
         dataset="string",
         version=version,
         directed=directed,

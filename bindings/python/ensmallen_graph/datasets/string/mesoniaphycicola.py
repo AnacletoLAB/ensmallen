@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mesoniaphycicola(
+def MesoniaPhycicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Mesoniaphycicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mesoniaphycicola",
+        graph_name="MesoniaPhycicola",
         dataset="string",
         version=version,
         directed=directed,

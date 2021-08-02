@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Klebsiellaspritpid(
+def KlebsiellaSpRitPiD(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Klebsiellaspritpid(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Klebsiellaspritpid",
+        graph_name="KlebsiellaSpRitPiD",
         dataset="string",
         version=version,
         directed=directed,

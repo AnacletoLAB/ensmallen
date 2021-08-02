@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microbulbiferthermotolerans(
+def MicrobulbiferThermotolerans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microbulbiferthermotolerans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microbulbiferthermotolerans",
+        graph_name="MicrobulbiferThermotolerans",
         dataset="string",
         version=version,
         directed=directed,

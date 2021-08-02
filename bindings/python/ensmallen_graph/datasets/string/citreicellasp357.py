@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Citreicellasp357(
+def CitreicellaSp357(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Citreicellasp357(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Citreicellasp357",
+        graph_name="CitreicellaSp357",
         dataset="string",
         version=version,
         directed=directed,

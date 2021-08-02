@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caldicellulosiruptorbescii(
+def CaldicellulosiruptorBescii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Caldicellulosiruptorbescii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caldicellulosiruptorbescii",
+        graph_name="CaldicellulosiruptorBescii",
         dataset="string",
         version=version,
         directed=directed,

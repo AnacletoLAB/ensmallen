@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pantoeaagglomerans(
+def PantoeaAgglomerans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pantoeaagglomerans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pantoeaagglomerans",
+        graph_name="PantoeaAgglomerans",
         dataset="string",
         version=version,
         directed=directed,

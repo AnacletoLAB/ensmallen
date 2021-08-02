@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ruegeriaspangr(
+def RuegeriaSpAngR(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ruegeriaspangr(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ruegeriaspangr",
+        graph_name="RuegeriaSpAngR",
         dataset="string",
         version=version,
         directed=directed,

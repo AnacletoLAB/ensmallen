@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sodalislikeendosymbiontofproechinophthirusfluctus(
+def SodalisLikeEndosymbiontOfProechinophthirusFluctus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sodalislikeendosymbiontofproechinophthirusfluctus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sodalislikeendosymbiontofproechinophthirusfluctus",
+        graph_name="SodalisLikeEndosymbiontOfProechinophthirusFluctus",
         dataset="string",
         version=version,
         directed=directed,

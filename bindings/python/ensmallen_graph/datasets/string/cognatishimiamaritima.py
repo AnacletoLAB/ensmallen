@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cognatishimiamaritima(
+def CognatishimiaMaritima(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cognatishimiamaritima(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cognatishimiamaritima",
+        graph_name="CognatishimiaMaritima",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hyalangiumminutum(
+def HyalangiumMinutum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hyalangiumminutum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hyalangiumminutum",
+        graph_name="HyalangiumMinutum",
         dataset="string",
         version=version,
         directed=directed,

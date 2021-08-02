@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Olsenellamediterranea(
+def OlsenellaMediterranea(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Olsenellamediterranea(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Olsenellamediterranea",
+        graph_name="OlsenellaMediterranea",
         dataset="string",
         version=version,
         directed=directed,

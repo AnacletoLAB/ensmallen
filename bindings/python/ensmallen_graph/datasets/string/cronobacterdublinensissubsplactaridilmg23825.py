@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cronobacterdublinensissubsplactaridilmg23825(
+def CronobacterDublinensisSubspLactaridiLmg23825(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cronobacterdublinensissubsplactaridilmg23825(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cronobacterdublinensissubsplactaridilmg23825",
+        graph_name="CronobacterDublinensisSubspLactaridiLmg23825",
         dataset="string",
         version=version,
         directed=directed,

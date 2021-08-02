@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halolaminarubra(
+def HalolaminaRubra(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Halolaminarubra(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halolaminarubra",
+        graph_name="HalolaminaRubra",
         dataset="string",
         version=version,
         directed=directed,

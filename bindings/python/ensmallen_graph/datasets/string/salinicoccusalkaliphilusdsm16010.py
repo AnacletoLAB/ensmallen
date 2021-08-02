@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Salinicoccusalkaliphilusdsm16010(
+def SalinicoccusAlkaliphilusDsm16010(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Salinicoccusalkaliphilusdsm16010(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Salinicoccusalkaliphilusdsm16010",
+        graph_name="SalinicoccusAlkaliphilusDsm16010",
         dataset="string",
         version=version,
         directed=directed,

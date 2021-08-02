@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Johnsonellaignava(
+def JohnsonellaIgnava(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Johnsonellaignava(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Johnsonellaignava",
+        graph_name="JohnsonellaIgnava",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Arcobacterbutzlerirm4018(
+def ArcobacterButzleriRm4018(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Arcobacterbutzlerirm4018(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Arcobacterbutzlerirm4018",
+        graph_name="ArcobacterButzleriRm4018",
         dataset="string",
         version=version,
         directed=directed,

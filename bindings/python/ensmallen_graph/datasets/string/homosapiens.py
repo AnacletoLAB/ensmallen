@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Homosapiens(
+def HomoSapiens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Homosapiens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Homosapiens",
+        graph_name="HomoSapiens",
         dataset="string",
         version=version,
         directed=directed,

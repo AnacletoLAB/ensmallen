@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cellulophagafucicola(
+def CellulophagaFucicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cellulophagafucicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cellulophagafucicola",
+        graph_name="CellulophagaFucicola",
         dataset="string",
         version=version,
         directed=directed,

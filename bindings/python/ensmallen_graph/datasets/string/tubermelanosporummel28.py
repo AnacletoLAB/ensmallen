@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tubermelanosporummel28(
+def TuberMelanosporumMel28(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tubermelanosporummel28(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tubermelanosporummel28",
+        graph_name="TuberMelanosporumMel28",
         dataset="string",
         version=version,
         directed=directed,

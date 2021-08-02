@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pisolithusmicrocarpus441(
+def PisolithusMicrocarpus441(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pisolithusmicrocarpus441(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pisolithusmicrocarpus441",
+        graph_name="PisolithusMicrocarpus441",
         dataset="string",
         version=version,
         directed=directed,

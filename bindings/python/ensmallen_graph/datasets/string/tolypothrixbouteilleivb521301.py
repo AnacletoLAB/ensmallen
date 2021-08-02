@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tolypothrixbouteilleivb521301(
+def TolypothrixBouteilleiVb521301(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tolypothrixbouteilleivb521301(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tolypothrixbouteilleivb521301",
+        graph_name="TolypothrixBouteilleiVb521301",
         dataset="string",
         version=version,
         directed=directed,

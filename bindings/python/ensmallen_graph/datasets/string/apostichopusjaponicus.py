@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Apostichopusjaponicus(
+def ApostichopusJaponicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Apostichopusjaponicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Apostichopusjaponicus",
+        graph_name="ApostichopusJaponicus",
         dataset="string",
         version=version,
         directed=directed,

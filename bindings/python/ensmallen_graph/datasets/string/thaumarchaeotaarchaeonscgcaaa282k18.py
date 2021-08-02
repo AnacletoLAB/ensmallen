@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thaumarchaeotaarchaeonscgcaaa282k18(
+def ThaumarchaeotaArchaeonScgcAaa282K18(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thaumarchaeotaarchaeonscgcaaa282k18(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thaumarchaeotaarchaeonscgcaaa282k18",
+        graph_name="ThaumarchaeotaArchaeonScgcAaa282K18",
         dataset="string",
         version=version,
         directed=directed,

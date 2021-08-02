@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Schizoporaparadoxa(
+def SchizoporaParadoxa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Schizoporaparadoxa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Schizoporaparadoxa",
+        graph_name="SchizoporaParadoxa",
         dataset="string",
         version=version,
         directed=directed,

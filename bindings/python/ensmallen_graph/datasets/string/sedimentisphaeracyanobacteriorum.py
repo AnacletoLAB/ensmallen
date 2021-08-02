@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sedimentisphaeracyanobacteriorum(
+def SedimentisphaeraCyanobacteriorum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sedimentisphaeracyanobacteriorum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sedimentisphaeracyanobacteriorum",
+        graph_name="SedimentisphaeraCyanobacteriorum",
         dataset="string",
         version=version,
         directed=directed,

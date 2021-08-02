@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coturnixjaponica(
+def CoturnixJaponica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Coturnixjaponica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coturnixjaponica",
+        graph_name="CoturnixJaponica",
         dataset="string",
         version=version,
         directed=directed,

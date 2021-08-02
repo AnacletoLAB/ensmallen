@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Jeotgalibacillusmalaysiensis(
+def JeotgalibacillusMalaysiensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Jeotgalibacillusmalaysiensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Jeotgalibacillusmalaysiensis",
+        graph_name="JeotgalibacillusMalaysiensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Xenorhabdusmauleonii(
+def XenorhabdusMauleonii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Xenorhabdusmauleonii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Xenorhabdusmauleonii",
+        graph_name="XenorhabdusMauleonii",
         dataset="string",
         version=version,
         directed=directed,

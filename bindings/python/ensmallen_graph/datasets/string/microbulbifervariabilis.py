@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microbulbifervariabilis(
+def MicrobulbiferVariabilis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Microbulbifervariabilis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microbulbifervariabilis",
+        graph_name="MicrobulbiferVariabilis",
         dataset="string",
         version=version,
         directed=directed,

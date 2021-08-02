@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Herpetosiphonaurantiacus(
+def HerpetosiphonAurantiacus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Herpetosiphonaurantiacus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Herpetosiphonaurantiacus",
+        graph_name="HerpetosiphonAurantiacus",
         dataset="string",
         version=version,
         directed=directed,

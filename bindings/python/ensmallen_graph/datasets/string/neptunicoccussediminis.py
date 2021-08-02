@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Neptunicoccussediminis(
+def NeptunicoccusSediminis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Neptunicoccussediminis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Neptunicoccussediminis",
+        graph_name="NeptunicoccusSediminis",
         dataset="string",
         version=version,
         directed=directed,

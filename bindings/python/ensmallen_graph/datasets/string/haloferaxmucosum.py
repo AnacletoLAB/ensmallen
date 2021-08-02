@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Haloferaxmucosum(
+def HaloferaxMucosum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Haloferaxmucosum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Haloferaxmucosum",
+        graph_name="HaloferaxMucosum",
         dataset="string",
         version=version,
         directed=directed,

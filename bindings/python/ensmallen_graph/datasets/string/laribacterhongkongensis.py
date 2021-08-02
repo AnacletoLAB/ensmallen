@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Laribacterhongkongensis(
+def LaribacterHongkongensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Laribacterhongkongensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Laribacterhongkongensis",
+        graph_name="LaribacterHongkongensis",
         dataset="string",
         version=version,
         directed=directed,

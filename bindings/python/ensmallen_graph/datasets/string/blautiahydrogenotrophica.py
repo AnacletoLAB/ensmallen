@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Blautiahydrogenotrophica(
+def BlautiaHydrogenotrophica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Blautiahydrogenotrophica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Blautiahydrogenotrophica",
+        graph_name="BlautiaHydrogenotrophica",
         dataset="string",
         version=version,
         directed=directed,

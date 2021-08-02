@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Taphrinadeformanspycc5710(
+def TaphrinaDeformansPycc5710(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Taphrinadeformanspycc5710(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Taphrinadeformanspycc5710",
+        graph_name="TaphrinaDeformansPycc5710",
         dataset="string",
         version=version,
         directed=directed,

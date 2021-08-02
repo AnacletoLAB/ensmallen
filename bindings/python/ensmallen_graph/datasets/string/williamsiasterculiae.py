@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Williamsiasterculiae(
+def WilliamsiaSterculiae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Williamsiasterculiae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Williamsiasterculiae",
+        graph_name="WilliamsiaSterculiae",
         dataset="string",
         version=version,
         directed=directed,

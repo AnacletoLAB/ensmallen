@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tepidimonasfonticaldi(
+def TepidimonasFonticaldi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tepidimonasfonticaldi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tepidimonasfonticaldi",
+        graph_name="TepidimonasFonticaldi",
         dataset="string",
         version=version,
         directed=directed,

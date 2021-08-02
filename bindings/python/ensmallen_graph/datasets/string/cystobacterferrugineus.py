@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cystobacterferrugineus(
+def CystobacterFerrugineus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cystobacterferrugineus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cystobacterferrugineus",
+        graph_name="CystobacterFerrugineus",
         dataset="string",
         version=version,
         directed=directed,

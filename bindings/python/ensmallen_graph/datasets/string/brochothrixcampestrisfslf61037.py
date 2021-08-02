@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Brochothrixcampestrisfslf61037(
+def BrochothrixCampestrisFslF61037(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Brochothrixcampestrisfslf61037(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Brochothrixcampestrisfslf61037",
+        graph_name="BrochothrixCampestrisFslF61037",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Crucibulumlaeve(
+def CrucibulumLaeve(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Crucibulumlaeve(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Crucibulumlaeve",
+        graph_name="CrucibulumLaeve",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudomonasspcmr5c(
+def PseudomonasSpCmr5c(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudomonasspcmr5c(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudomonasspcmr5c",
+        graph_name="PseudomonasSpCmr5c",
         dataset="string",
         version=version,
         directed=directed,

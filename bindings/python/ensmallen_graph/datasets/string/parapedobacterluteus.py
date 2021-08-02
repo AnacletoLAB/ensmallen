@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parapedobacterluteus(
+def ParapedobacterLuteus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Parapedobacterluteus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parapedobacterluteus",
+        graph_name="ParapedobacterLuteus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Handroanthusimpetiginosus(
+def HandroanthusImpetiginosus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Handroanthusimpetiginosus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Handroanthusimpetiginosus",
+        graph_name="HandroanthusImpetiginosus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Komagataeibacterrhaeticus(
+def KomagataeibacterRhaeticus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Komagataeibacterrhaeticus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Komagataeibacterrhaeticus",
+        graph_name="KomagataeibacterRhaeticus",
         dataset="string",
         version=version,
         directed=directed,

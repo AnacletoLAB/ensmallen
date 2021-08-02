@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rubeoparvulummassiliense(
+def RubeoparvulumMassiliense(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rubeoparvulummassiliense(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rubeoparvulummassiliense",
+        graph_name="RubeoparvulumMassiliense",
         dataset="string",
         version=version,
         directed=directed,

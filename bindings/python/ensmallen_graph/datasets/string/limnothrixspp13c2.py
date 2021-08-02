@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Limnothrixspp13c2(
+def LimnothrixSpP13c2(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Limnothrixspp13c2(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Limnothrixspp13c2",
+        graph_name="LimnothrixSpP13c2",
         dataset="string",
         version=version,
         directed=directed,

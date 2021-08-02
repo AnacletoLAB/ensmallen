@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dialistermicroaerophilus(
+def DialisterMicroaerophilus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Dialistermicroaerophilus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dialistermicroaerophilus",
+        graph_name="DialisterMicroaerophilus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ochrobactrumspp6bsiii(
+def OchrobactrumSpP6bsIii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ochrobactrumspp6bsiii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ochrobactrumspp6bsiii",
+        graph_name="OchrobactrumSpP6bsIii",
         dataset="string",
         version=version,
         directed=directed,

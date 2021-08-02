@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Laccariaamethystinalaam081(
+def LaccariaAmethystinaLaam081(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Laccariaamethystinalaam081(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Laccariaamethystinalaam081",
+        graph_name="LaccariaAmethystinaLaam081",
         dataset="string",
         version=version,
         directed=directed,

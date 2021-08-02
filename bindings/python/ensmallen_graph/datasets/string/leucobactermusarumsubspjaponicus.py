@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Leucobactermusarumsubspjaponicus(
+def LeucobacterMusarumSubspJaponicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Leucobactermusarumsubspjaponicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Leucobactermusarumsubspjaponicus",
+        graph_name="LeucobacterMusarumSubspJaponicus",
         dataset="string",
         version=version,
         directed=directed,

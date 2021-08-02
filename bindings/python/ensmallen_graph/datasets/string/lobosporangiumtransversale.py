@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lobosporangiumtransversale(
+def LobosporangiumTransversale(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lobosporangiumtransversale(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lobosporangiumtransversale",
+        graph_name="LobosporangiumTransversale",
         dataset="string",
         version=version,
         directed=directed,

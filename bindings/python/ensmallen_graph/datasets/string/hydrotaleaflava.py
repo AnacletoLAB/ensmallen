@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hydrotaleaflava(
+def HydrotaleaFlava(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hydrotaleaflava(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hydrotaleaflava",
+        graph_name="HydrotaleaFlava",
         dataset="string",
         version=version,
         directed=directed,

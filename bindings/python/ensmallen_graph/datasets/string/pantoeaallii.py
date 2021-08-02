@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pantoeaallii(
+def PantoeaAllii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pantoeaallii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pantoeaallii",
+        graph_name="PantoeaAllii",
         dataset="string",
         version=version,
         directed=directed,

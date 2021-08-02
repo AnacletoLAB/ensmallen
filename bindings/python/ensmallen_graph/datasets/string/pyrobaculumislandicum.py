@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pyrobaculumislandicum(
+def PyrobaculumIslandicum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pyrobaculumislandicum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pyrobaculumislandicum",
+        graph_name="PyrobaculumIslandicum",
         dataset="string",
         version=version,
         directed=directed,

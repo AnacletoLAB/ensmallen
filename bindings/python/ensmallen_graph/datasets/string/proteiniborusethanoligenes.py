@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Proteiniborusethanoligenes(
+def ProteiniborusEthanoligenes(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Proteiniborusethanoligenes(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Proteiniborusethanoligenes",
+        graph_name="ProteiniborusEthanoligenes",
         dataset="string",
         version=version,
         directed=directed,

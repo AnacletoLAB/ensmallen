@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Unculturedflavonifractorsp(
+def UnculturedFlavonifractorSp(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Unculturedflavonifractorsp(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Unculturedflavonifractorsp",
+        graph_name="UnculturedFlavonifractorSp",
         dataset="string",
         version=version,
         directed=directed,

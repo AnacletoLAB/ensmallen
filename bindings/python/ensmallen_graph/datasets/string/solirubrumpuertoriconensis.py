@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Solirubrumpuertoriconensis(
+def SolirubrumPuertoriconensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Solirubrumpuertoriconensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Solirubrumpuertoriconensis",
+        graph_name="SolirubrumPuertoriconensis",
         dataset="string",
         version=version,
         directed=directed,

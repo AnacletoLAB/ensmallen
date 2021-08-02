@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sedimenticolathiotaurini(
+def SedimenticolaThiotaurini(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sedimenticolathiotaurini(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sedimenticolathiotaurini",
+        graph_name="SedimenticolaThiotaurini",
         dataset="string",
         version=version,
         directed=directed,

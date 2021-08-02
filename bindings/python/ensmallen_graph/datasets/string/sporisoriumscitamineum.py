@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sporisoriumscitamineum(
+def SporisoriumScitamineum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sporisoriumscitamineum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sporisoriumscitamineum",
+        graph_name="SporisoriumScitamineum",
         dataset="string",
         version=version,
         directed=directed,

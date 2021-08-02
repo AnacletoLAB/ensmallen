@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ornatilineaapprima(
+def OrnatilineaApprima(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ornatilineaapprima(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ornatilineaapprima",
+        graph_name="OrnatilineaApprima",
         dataset="string",
         version=version,
         directed=directed,

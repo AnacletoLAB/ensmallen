@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ardenticatenamaritima(
+def ArdenticatenaMaritima(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ardenticatenamaritima(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ardenticatenamaritima",
+        graph_name="ArdenticatenaMaritima",
         dataset="string",
         version=version,
         directed=directed,

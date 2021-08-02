@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coprothermobacterproteolyticus(
+def CoprothermobacterProteolyticus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Coprothermobacterproteolyticus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coprothermobacterproteolyticus",
+        graph_name="CoprothermobacterProteolyticus",
         dataset="string",
         version=version,
         directed=directed,

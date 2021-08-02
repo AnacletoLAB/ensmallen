@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nectriahaematococcampvi77134(
+def NectriaHaematococcaMpvi77134(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nectriahaematococcampvi77134(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nectriahaematococcampvi77134",
+        graph_name="NectriaHaematococcaMpvi77134",
         dataset="string",
         version=version,
         directed=directed,

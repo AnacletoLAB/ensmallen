@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudomonasthermotoleransdsm14292(
+def PseudomonasThermotoleransDsm14292(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudomonasthermotoleransdsm14292(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudomonasthermotoleransdsm14292",
+        graph_name="PseudomonasThermotoleransDsm14292",
         dataset="string",
         version=version,
         directed=directed,

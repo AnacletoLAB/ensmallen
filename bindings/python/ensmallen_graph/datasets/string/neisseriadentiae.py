@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Neisseriadentiae(
+def NeisseriaDentiae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Neisseriadentiae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Neisseriadentiae",
+        graph_name="NeisseriaDentiae",
         dataset="string",
         version=version,
         directed=directed,

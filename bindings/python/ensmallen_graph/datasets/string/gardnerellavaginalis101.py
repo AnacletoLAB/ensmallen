@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gardnerellavaginalis101(
+def GardnerellaVaginalis101(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gardnerellavaginalis101(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gardnerellavaginalis101",
+        graph_name="GardnerellaVaginalis101",
         dataset="string",
         version=version,
         directed=directed,

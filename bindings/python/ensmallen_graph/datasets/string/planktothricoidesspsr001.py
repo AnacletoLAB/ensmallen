@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Planktothricoidesspsr001(
+def PlanktothricoidesSpSr001(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Planktothricoidesspsr001(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Planktothricoidesspsr001",
+        graph_name="PlanktothricoidesSpSr001",
         dataset="string",
         version=version,
         directed=directed,

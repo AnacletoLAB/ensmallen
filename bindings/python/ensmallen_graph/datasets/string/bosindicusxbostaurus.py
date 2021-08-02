@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bosindicusxbostaurus(
+def BosIndicusXBosTaurus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Bosindicusxbostaurus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bosindicusxbostaurus",
+        graph_name="BosIndicusXBosTaurus",
         dataset="string",
         version=version,
         directed=directed,

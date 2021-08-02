@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Anaerohalosphaeralusitana(
+def AnaerohalosphaeraLusitana(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Anaerohalosphaeralusitana(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Anaerohalosphaeralusitana",
+        graph_name="AnaerohalosphaeraLusitana",
         dataset="string",
         version=version,
         directed=directed,

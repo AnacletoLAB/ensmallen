@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parvimonasspf0440(
+def ParvimonasSpF0440(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Parvimonasspf0440(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parvimonasspf0440",
+        graph_name="ParvimonasSpF0440",
         dataset="string",
         version=version,
         directed=directed,

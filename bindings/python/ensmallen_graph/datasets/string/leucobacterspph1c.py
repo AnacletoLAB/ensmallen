@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Leucobacterspph1c(
+def LeucobacterSpPh1c(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Leucobacterspph1c(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Leucobacterspph1c",
+        graph_name="LeucobacterSpPh1c",
         dataset="string",
         version=version,
         directed=directed,

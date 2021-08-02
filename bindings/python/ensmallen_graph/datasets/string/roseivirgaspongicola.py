@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Roseivirgaspongicola(
+def RoseivirgaSpongicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Roseivirgaspongicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Roseivirgaspongicola",
+        graph_name="RoseivirgaSpongicola",
         dataset="string",
         version=version,
         directed=directed,

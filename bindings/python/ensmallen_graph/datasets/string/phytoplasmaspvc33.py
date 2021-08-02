@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Phytoplasmaspvc33(
+def PhytoplasmaSpVc33(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Phytoplasmaspvc33(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Phytoplasmaspvc33",
+        graph_name="PhytoplasmaSpVc33",
         dataset="string",
         version=version,
         directed=directed,

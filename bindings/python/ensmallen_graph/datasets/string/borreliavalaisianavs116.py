@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Borreliavalaisianavs116(
+def BorreliaValaisianaVs116(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Borreliavalaisianavs116(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Borreliavalaisianavs116",
+        graph_name="BorreliaValaisianaVs116",
         dataset="string",
         version=version,
         directed=directed,

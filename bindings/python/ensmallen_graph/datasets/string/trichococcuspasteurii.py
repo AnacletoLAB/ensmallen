@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Trichococcuspasteurii(
+def TrichococcusPasteurii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Trichococcuspasteurii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Trichococcuspasteurii",
+        graph_name="TrichococcusPasteurii",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gemellacuniculi(
+def GemellaCuniculi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gemellacuniculi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gemellacuniculi",
+        graph_name="GemellaCuniculi",
         dataset="string",
         version=version,
         directed=directed,

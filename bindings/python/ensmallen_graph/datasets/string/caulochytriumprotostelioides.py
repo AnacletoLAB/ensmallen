@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caulochytriumprotostelioides(
+def CaulochytriumProtostelioides(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Caulochytriumprotostelioides(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caulochytriumprotostelioides",
+        graph_name="CaulochytriumProtostelioides",
         dataset="string",
         version=version,
         directed=directed,

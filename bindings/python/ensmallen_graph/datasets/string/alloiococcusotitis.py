@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Alloiococcusotitis(
+def AlloiococcusOtitis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Alloiococcusotitis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Alloiococcusotitis",
+        graph_name="AlloiococcusOtitis",
         dataset="string",
         version=version,
         directed=directed,

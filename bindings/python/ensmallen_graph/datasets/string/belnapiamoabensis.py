@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Belnapiamoabensis(
+def BelnapiaMoabensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Belnapiamoabensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Belnapiamoabensis",
+        graph_name="BelnapiaMoabensis",
         dataset="string",
         version=version,
         directed=directed,

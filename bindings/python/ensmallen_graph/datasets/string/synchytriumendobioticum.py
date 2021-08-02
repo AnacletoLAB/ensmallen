@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Synchytriumendobioticum(
+def SynchytriumEndobioticum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Synchytriumendobioticum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Synchytriumendobioticum",
+        graph_name="SynchytriumEndobioticum",
         dataset="string",
         version=version,
         directed=directed,

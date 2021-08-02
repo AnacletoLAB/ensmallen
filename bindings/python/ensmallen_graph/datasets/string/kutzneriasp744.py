@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kutzneriasp744(
+def KutzneriaSp744(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Kutzneriasp744(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kutzneriasp744",
+        graph_name="KutzneriaSp744",
         dataset="string",
         version=version,
         directed=directed,

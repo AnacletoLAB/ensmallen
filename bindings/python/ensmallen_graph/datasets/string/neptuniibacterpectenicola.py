@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Neptuniibacterpectenicola(
+def NeptuniibacterPectenicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Neptuniibacterpectenicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Neptuniibacterpectenicola",
+        graph_name="NeptuniibacterPectenicola",
         dataset="string",
         version=version,
         directed=directed,

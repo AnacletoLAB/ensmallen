@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermodesulfobacteriumgeofontis(
+def ThermodesulfobacteriumGeofontis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermodesulfobacteriumgeofontis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermodesulfobacteriumgeofontis",
+        graph_name="ThermodesulfobacteriumGeofontis",
         dataset="string",
         version=version,
         directed=directed,

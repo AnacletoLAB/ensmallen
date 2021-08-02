@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chiloscylliumpunctatum(
+def ChiloscylliumPunctatum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Chiloscylliumpunctatum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chiloscylliumpunctatum",
+        graph_name="ChiloscylliumPunctatum",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Vitreoscillastercoraria(
+def VitreoscillaStercoraria(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Vitreoscillastercoraria(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Vitreoscillastercoraria",
+        graph_name="VitreoscillaStercoraria",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cavenderiafasciculatash3(
+def CavenderiaFasciculataSh3(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cavenderiafasciculatash3(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cavenderiafasciculatash3",
+        graph_name="CavenderiaFasciculataSh3",
         dataset="string",
         version=version,
         directed=directed,

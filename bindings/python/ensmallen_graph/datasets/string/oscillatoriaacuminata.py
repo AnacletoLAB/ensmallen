@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oscillatoriaacuminata(
+def OscillatoriaAcuminata(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Oscillatoriaacuminata(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oscillatoriaacuminata",
+        graph_name="OscillatoriaAcuminata",
         dataset="string",
         version=version,
         directed=directed,

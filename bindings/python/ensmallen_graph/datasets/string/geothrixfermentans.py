@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Geothrixfermentans(
+def GeothrixFermentans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Geothrixfermentans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Geothrixfermentans",
+        graph_name="GeothrixFermentans",
         dataset="string",
         version=version,
         directed=directed,

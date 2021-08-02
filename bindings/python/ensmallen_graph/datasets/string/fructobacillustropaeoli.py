@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fructobacillustropaeoli(
+def FructobacillusTropaeoli(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Fructobacillustropaeoli(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fructobacillustropaeoli",
+        graph_name="FructobacillusTropaeoli",
         dataset="string",
         version=version,
         directed=directed,

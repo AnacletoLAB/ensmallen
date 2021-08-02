@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Carboxydothermusislandicus(
+def CarboxydothermusIslandicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Carboxydothermusislandicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Carboxydothermusislandicus",
+        graph_name="CarboxydothermusIslandicus",
         dataset="string",
         version=version,
         directed=directed,

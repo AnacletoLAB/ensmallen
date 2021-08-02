@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Strongyloidespapillosus(
+def StrongyloidesPapillosus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Strongyloidespapillosus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Strongyloidespapillosus",
+        graph_name="StrongyloidesPapillosus",
         dataset="string",
         version=version,
         directed=directed,

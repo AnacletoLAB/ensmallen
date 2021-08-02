@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Epicoccumnigrum(
+def EpicoccumNigrum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Epicoccumnigrum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Epicoccumnigrum",
+        graph_name="EpicoccumNigrum",
         dataset="string",
         version=version,
         directed=directed,

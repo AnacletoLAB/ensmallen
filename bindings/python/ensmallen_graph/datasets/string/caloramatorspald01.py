@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caloramatorspald01(
+def CaloramatorSpAld01(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Caloramatorspald01(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caloramatorspald01",
+        graph_name="CaloramatorSpAld01",
         dataset="string",
         version=version,
         directed=directed,

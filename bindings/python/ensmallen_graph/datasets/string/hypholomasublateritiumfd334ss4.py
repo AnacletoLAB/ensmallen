@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hypholomasublateritiumfd334ss4(
+def HypholomaSublateritiumFd334Ss4(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hypholomasublateritiumfd334ss4(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hypholomasublateritiumfd334ss4",
+        graph_name="HypholomaSublateritiumFd334Ss4",
         dataset="string",
         version=version,
         directed=directed,

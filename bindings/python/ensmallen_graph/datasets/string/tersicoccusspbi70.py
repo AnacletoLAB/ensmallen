@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tersicoccusspbi70(
+def TersicoccusSpBi70(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tersicoccusspbi70(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tersicoccusspbi70",
+        graph_name="TersicoccusSpBi70",
         dataset="string",
         version=version,
         directed=directed,

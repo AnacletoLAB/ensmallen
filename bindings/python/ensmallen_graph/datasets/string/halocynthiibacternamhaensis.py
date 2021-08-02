@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halocynthiibacternamhaensis(
+def HalocynthiibacterNamhaensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Halocynthiibacternamhaensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halocynthiibacternamhaensis",
+        graph_name="HalocynthiibacterNamhaensis",
         dataset="string",
         version=version,
         directed=directed,

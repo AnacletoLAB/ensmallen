@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hepatobacterpenaei(
+def HepatobacterPenaei(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Hepatobacterpenaei(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hepatobacterpenaei",
+        graph_name="HepatobacterPenaei",
         dataset="string",
         version=version,
         directed=directed,

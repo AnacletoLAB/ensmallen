@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tannerellasp6158faact1(
+def TannerellaSp6158faaCt1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tannerellasp6158faact1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tannerellasp6158faact1",
+        graph_name="TannerellaSp6158faaCt1",
         dataset="string",
         version=version,
         directed=directed,

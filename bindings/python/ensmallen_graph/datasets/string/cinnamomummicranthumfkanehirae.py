@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cinnamomummicranthumfkanehirae(
+def CinnamomumMicranthumFKanehirae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cinnamomummicranthumfkanehirae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cinnamomummicranthumfkanehirae",
+        graph_name="CinnamomumMicranthumFKanehirae",
         dataset="string",
         version=version,
         directed=directed,

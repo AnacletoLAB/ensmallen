@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ochrobactrumpseudogrignonense(
+def OchrobactrumPseudogrignonense(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ochrobactrumpseudogrignonense(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ochrobactrumpseudogrignonense",
+        graph_name="OchrobactrumPseudogrignonense",
         dataset="string",
         version=version,
         directed=directed,

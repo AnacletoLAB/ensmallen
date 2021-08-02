@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Polyangiumbrachysporum(
+def PolyangiumBrachysporum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Polyangiumbrachysporum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Polyangiumbrachysporum",
+        graph_name="PolyangiumBrachysporum",
         dataset="string",
         version=version,
         directed=directed,

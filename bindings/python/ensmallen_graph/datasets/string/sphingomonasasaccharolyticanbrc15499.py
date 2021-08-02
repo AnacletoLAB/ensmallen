@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sphingomonasasaccharolyticanbrc15499(
+def SphingomonasAsaccharolyticaNbrc15499(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sphingomonasasaccharolyticanbrc15499(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sphingomonasasaccharolyticanbrc15499",
+        graph_name="SphingomonasAsaccharolyticaNbrc15499",
         dataset="string",
         version=version,
         directed=directed,

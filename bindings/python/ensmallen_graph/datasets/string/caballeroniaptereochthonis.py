@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caballeroniaptereochthonis(
+def CaballeroniaPtereochthonis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Caballeroniaptereochthonis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caballeroniaptereochthonis",
+        graph_name="CaballeroniaPtereochthonis",
         dataset="string",
         version=version,
         directed=directed,

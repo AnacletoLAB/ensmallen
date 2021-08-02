@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Branchiostomafloridae(
+def BranchiostomaFloridae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Branchiostomafloridae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Branchiostomafloridae",
+        graph_name="BranchiostomaFloridae",
         dataset="string",
         version=version,
         directed=directed,

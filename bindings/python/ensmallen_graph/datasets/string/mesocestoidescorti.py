@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mesocestoidescorti(
+def MesocestoidesCorti(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Mesocestoidescorti(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mesocestoidescorti",
+        graph_name="MesocestoidesCorti",
         dataset="string",
         version=version,
         directed=directed,

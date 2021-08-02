@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudocercosporamusae(
+def PseudocercosporaMusae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudocercosporamusae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudocercosporamusae",
+        graph_name="PseudocercosporaMusae",
         dataset="string",
         version=version,
         directed=directed,

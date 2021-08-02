@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acholeplasmamultilocaleatcc49900(
+def AcholeplasmaMultilocaleAtcc49900(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Acholeplasmamultilocaleatcc49900(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acholeplasmamultilocaleatcc49900",
+        graph_name="AcholeplasmaMultilocaleAtcc49900",
         dataset="string",
         version=version,
         directed=directed,

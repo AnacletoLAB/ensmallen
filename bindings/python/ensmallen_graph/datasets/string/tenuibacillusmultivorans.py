@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tenuibacillusmultivorans(
+def TenuibacillusMultivorans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tenuibacillusmultivorans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tenuibacillusmultivorans",
+        graph_name="TenuibacillusMultivorans",
         dataset="string",
         version=version,
         directed=directed,

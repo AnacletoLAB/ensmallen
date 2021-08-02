@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nematocidasp1ertm2(
+def NematocidaSp1Ertm2(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nematocidasp1ertm2(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nematocidasp1ertm2",
+        graph_name="NematocidaSp1Ertm2",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Puniceispirillummarinum(
+def PuniceispirillumMarinum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Puniceispirillummarinum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Puniceispirillummarinum",
+        graph_name="PuniceispirillumMarinum",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Niameybactermassiliensis(
+def NiameybacterMassiliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Niameybactermassiliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Niameybactermassiliensis",
+        graph_name="NiameybacterMassiliensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Valsasordida(
+def ValsaSordida(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Valsasordida(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Valsasordida",
+        graph_name="ValsaSordida",
         dataset="string",
         version=version,
         directed=directed,

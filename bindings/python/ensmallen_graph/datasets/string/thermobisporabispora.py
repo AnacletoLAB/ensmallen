@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermobisporabispora(
+def ThermobisporaBispora(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermobisporabispora(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermobisporabispora",
+        graph_name="ThermobisporaBispora",
         dataset="string",
         version=version,
         directed=directed,

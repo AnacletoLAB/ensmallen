@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Clostridiumbutyricum(
+def ClostridiumButyricum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Clostridiumbutyricum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Clostridiumbutyricum",
+        graph_name="ClostridiumButyricum",
         dataset="string",
         version=version,
         directed=directed,

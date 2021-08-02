@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rhodospiratrueperi(
+def RhodospiraTrueperi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rhodospiratrueperi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rhodospiratrueperi",
+        graph_name="RhodospiraTrueperi",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lacinutrixsp5h374(
+def LacinutrixSp5h374(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Lacinutrixsp5h374(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lacinutrixsp5h374",
+        graph_name="LacinutrixSp5h374",
         dataset="string",
         version=version,
         directed=directed,

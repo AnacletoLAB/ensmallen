@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tepidibacillusdecaturensis(
+def TepidibacillusDecaturensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tepidibacillusdecaturensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tepidibacillusdecaturensis",
+        graph_name="TepidibacillusDecaturensis",
         dataset="string",
         version=version,
         directed=directed,

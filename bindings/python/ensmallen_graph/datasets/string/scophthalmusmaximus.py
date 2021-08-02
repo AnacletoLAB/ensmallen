@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Scophthalmusmaximus(
+def ScophthalmusMaximus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Scophthalmusmaximus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Scophthalmusmaximus",
+        graph_name="ScophthalmusMaximus",
         dataset="string",
         version=version,
         directed=directed,

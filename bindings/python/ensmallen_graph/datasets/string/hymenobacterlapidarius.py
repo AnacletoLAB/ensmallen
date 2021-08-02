@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hymenobacterlapidarius(
+def HymenobacterLapidarius(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hymenobacterlapidarius(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hymenobacterlapidarius",
+        graph_name="HymenobacterLapidarius",
         dataset="string",
         version=version,
         directed=directed,

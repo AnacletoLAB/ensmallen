@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Francisellaendosymbiontofornithodorosmoubata(
+def FrancisellaEndosymbiontOfOrnithodorosMoubata(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Francisellaendosymbiontofornithodorosmoubata(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Francisellaendosymbiontofornithodorosmoubata",
+        graph_name="FrancisellaEndosymbiontOfOrnithodorosMoubata",
         dataset="string",
         version=version,
         directed=directed,

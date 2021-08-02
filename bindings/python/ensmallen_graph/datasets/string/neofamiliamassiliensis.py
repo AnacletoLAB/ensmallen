@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Neofamiliamassiliensis(
+def NeofamiliaMassiliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Neofamiliamassiliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Neofamiliamassiliensis",
+        graph_name="NeofamiliaMassiliensis",
         dataset="string",
         version=version,
         directed=directed,

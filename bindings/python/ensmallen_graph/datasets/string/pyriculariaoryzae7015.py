@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pyriculariaoryzae7015(
+def PyriculariaOryzae7015(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pyriculariaoryzae7015(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pyriculariaoryzae7015",
+        graph_name="PyriculariaOryzae7015",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Allochromatiumvinosum(
+def AllochromatiumVinosum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Allochromatiumvinosum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Allochromatiumvinosum",
+        graph_name="AllochromatiumVinosum",
         dataset="string",
         version=version,
         directed=directed,

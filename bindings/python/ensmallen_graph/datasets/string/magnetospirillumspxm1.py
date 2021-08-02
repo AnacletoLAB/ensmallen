@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Magnetospirillumspxm1(
+def MagnetospirillumSpXm1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Magnetospirillumspxm1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Magnetospirillumspxm1",
+        graph_name="MagnetospirillumSpXm1",
         dataset="string",
         version=version,
         directed=directed,

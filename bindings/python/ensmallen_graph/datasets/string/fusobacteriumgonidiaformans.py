@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fusobacteriumgonidiaformans(
+def FusobacteriumGonidiaformans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Fusobacteriumgonidiaformans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fusobacteriumgonidiaformans",
+        graph_name="FusobacteriumGonidiaformans",
         dataset="string",
         version=version,
         directed=directed,

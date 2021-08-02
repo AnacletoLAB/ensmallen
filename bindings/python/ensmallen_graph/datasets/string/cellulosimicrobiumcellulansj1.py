@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cellulosimicrobiumcellulansj1(
+def CellulosimicrobiumCellulansJ1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cellulosimicrobiumcellulansj1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cellulosimicrobiumcellulansj1",
+        graph_name="CellulosimicrobiumCellulansJ1",
         dataset="string",
         version=version,
         directed=directed,

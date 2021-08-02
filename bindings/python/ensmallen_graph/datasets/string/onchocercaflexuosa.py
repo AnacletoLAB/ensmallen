@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Onchocercaflexuosa(
+def OnchocercaFlexuosa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Onchocercaflexuosa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Onchocercaflexuosa",
+        graph_name="OnchocercaFlexuosa",
         dataset="string",
         version=version,
         directed=directed,

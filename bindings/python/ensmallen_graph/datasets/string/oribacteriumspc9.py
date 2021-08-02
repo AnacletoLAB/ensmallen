@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oribacteriumspc9(
+def OribacteriumSpC9(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Oribacteriumspc9(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oribacteriumspc9",
+        graph_name="OribacteriumSpC9",
         dataset="string",
         version=version,
         directed=directed,

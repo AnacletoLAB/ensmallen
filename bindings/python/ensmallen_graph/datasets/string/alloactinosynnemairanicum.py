@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Alloactinosynnemairanicum(
+def AlloactinosynnemaIranicum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Alloactinosynnemairanicum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Alloactinosynnemairanicum",
+        graph_name="AlloactinosynnemaIranicum",
         dataset="string",
         version=version,
         directed=directed,

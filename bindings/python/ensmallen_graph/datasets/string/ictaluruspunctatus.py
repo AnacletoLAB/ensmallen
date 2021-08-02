@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ictaluruspunctatus(
+def IctalurusPunctatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ictaluruspunctatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ictaluruspunctatus",
+        graph_name="IctalurusPunctatus",
         dataset="string",
         version=version,
         directed=directed,

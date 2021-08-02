@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aggregatibactersporaltaxon458strw10330(
+def AggregatibacterSpOralTaxon458StrW10330(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Aggregatibactersporaltaxon458strw10330(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aggregatibactersporaltaxon458strw10330",
+        graph_name="AggregatibacterSpOralTaxon458StrW10330",
         dataset="string",
         version=version,
         directed=directed,

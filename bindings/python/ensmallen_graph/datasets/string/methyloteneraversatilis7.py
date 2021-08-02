@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methyloteneraversatilis7(
+def MethyloteneraVersatilis7(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methyloteneraversatilis7(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methyloteneraversatilis7",
+        graph_name="MethyloteneraVersatilis7",
         dataset="string",
         version=version,
         directed=directed,

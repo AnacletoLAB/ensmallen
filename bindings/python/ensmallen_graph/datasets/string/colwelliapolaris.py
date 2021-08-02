@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Colwelliapolaris(
+def ColwelliaPolaris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Colwelliapolaris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Colwelliapolaris",
+        graph_name="ColwelliaPolaris",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Megasphaeracerevisiae(
+def MegasphaeraCerevisiae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Megasphaeracerevisiae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Megasphaeracerevisiae",
+        graph_name="MegasphaeraCerevisiae",
         dataset="string",
         version=version,
         directed=directed,

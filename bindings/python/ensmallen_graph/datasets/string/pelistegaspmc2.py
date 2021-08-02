@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pelistegaspmc2(
+def PelistegaSpMc2(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pelistegaspmc2(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pelistegaspmc2",
+        graph_name="PelistegaSpMc2",
         dataset="string",
         version=version,
         directed=directed,

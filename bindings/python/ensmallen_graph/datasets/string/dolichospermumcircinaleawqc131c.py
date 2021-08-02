@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dolichospermumcircinaleawqc131c(
+def DolichospermumCircinaleAwqc131c(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dolichospermumcircinaleawqc131c(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dolichospermumcircinaleawqc131c",
+        graph_name="DolichospermumCircinaleAwqc131c",
         dataset="string",
         version=version,
         directed=directed,

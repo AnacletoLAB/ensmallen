@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Silanimonaslenta(
+def SilanimonasLenta(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Silanimonaslenta(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Silanimonaslenta",
+        graph_name="SilanimonasLenta",
         dataset="string",
         version=version,
         directed=directed,

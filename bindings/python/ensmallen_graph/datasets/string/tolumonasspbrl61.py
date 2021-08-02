@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tolumonasspbrl61(
+def TolumonasSpBrl61(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Tolumonasspbrl61(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tolumonasspbrl61",
+        graph_name="TolumonasSpBrl61",
         dataset="string",
         version=version,
         directed=directed,

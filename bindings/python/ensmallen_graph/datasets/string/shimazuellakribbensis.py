@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Shimazuellakribbensis(
+def ShimazuellaKribbensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Shimazuellakribbensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Shimazuellakribbensis",
+        graph_name="ShimazuellaKribbensis",
         dataset="string",
         version=version,
         directed=directed,

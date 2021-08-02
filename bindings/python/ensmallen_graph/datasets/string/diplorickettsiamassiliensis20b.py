@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Diplorickettsiamassiliensis20b(
+def DiplorickettsiaMassiliensis20b(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Diplorickettsiamassiliensis20b(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Diplorickettsiamassiliensis20b",
+        graph_name="DiplorickettsiaMassiliensis20b",
         dataset="string",
         version=version,
         directed=directed,

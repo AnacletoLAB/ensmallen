@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pantoeavagans(
+def PantoeaVagans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pantoeavagans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pantoeavagans",
+        graph_name="PantoeaVagans",
         dataset="string",
         version=version,
         directed=directed,

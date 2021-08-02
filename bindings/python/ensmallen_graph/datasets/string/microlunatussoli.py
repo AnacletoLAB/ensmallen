@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microlunatussoli(
+def MicrolunatusSoli(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microlunatussoli(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microlunatussoli",
+        graph_name="MicrolunatusSoli",
         dataset="string",
         version=version,
         directed=directed,

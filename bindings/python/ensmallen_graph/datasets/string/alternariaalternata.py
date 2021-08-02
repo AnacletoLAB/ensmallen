@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Alternariaalternata(
+def AlternariaAlternata(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Alternariaalternata(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Alternariaalternata",
+        graph_name="AlternariaAlternata",
         dataset="string",
         version=version,
         directed=directed,

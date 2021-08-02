@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Noviherbaspirillumautotrophicum(
+def NoviherbaspirillumAutotrophicum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Noviherbaspirillumautotrophicum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Noviherbaspirillumautotrophicum",
+        graph_name="NoviherbaspirillumAutotrophicum",
         dataset="string",
         version=version,
         directed=directed,

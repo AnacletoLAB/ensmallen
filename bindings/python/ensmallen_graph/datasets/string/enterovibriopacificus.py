@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Enterovibriopacificus(
+def EnterovibrioPacificus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Enterovibriopacificus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Enterovibriopacificus",
+        graph_name="EnterovibrioPacificus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Leptospiramayottensis200901116(
+def LeptospiraMayottensis200901116(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Leptospiramayottensis200901116(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Leptospiramayottensis200901116",
+        graph_name="LeptospiraMayottensis200901116",
         dataset="string",
         version=version,
         directed=directed,

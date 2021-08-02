@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Eggerthellalenta(
+def EggerthellaLenta(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Eggerthellalenta(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Eggerthellalenta",
+        graph_name="EggerthellaLenta",
         dataset="string",
         version=version,
         directed=directed,

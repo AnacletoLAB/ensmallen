@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hebelomacylindrosporumh7(
+def HebelomaCylindrosporumH7(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hebelomacylindrosporumh7(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hebelomacylindrosporumh7",
+        graph_name="HebelomaCylindrosporumH7",
         dataset="string",
         version=version,
         directed=directed,

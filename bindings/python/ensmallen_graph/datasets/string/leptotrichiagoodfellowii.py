@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Leptotrichiagoodfellowii(
+def LeptotrichiaGoodfellowii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Leptotrichiagoodfellowii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Leptotrichiagoodfellowii",
+        graph_name="LeptotrichiaGoodfellowii",
         dataset="string",
         version=version,
         directed=directed,

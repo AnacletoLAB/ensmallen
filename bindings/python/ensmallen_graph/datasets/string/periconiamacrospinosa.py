@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Periconiamacrospinosa(
+def PericoniaMacrospinosa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Periconiamacrospinosa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Periconiamacrospinosa",
+        graph_name="PericoniaMacrospinosa",
         dataset="string",
         version=version,
         directed=directed,

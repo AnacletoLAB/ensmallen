@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lentisphaeraaraneosa(
+def LentisphaeraAraneosa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Lentisphaeraaraneosa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lentisphaeraaraneosa",
+        graph_name="LentisphaeraAraneosa",
         dataset="string",
         version=version,
         directed=directed,

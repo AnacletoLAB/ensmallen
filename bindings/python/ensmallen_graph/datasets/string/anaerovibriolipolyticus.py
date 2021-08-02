@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Anaerovibriolipolyticus(
+def AnaerovibrioLipolyticus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Anaerovibriolipolyticus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Anaerovibriolipolyticus",
+        graph_name="AnaerovibrioLipolyticus",
         dataset="string",
         version=version,
         directed=directed,

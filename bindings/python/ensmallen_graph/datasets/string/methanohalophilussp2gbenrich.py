@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanohalophilussp2gbenrich(
+def MethanohalophilusSp2Gbenrich(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methanohalophilussp2gbenrich(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanohalophilussp2gbenrich",
+        graph_name="MethanohalophilusSp2Gbenrich",
         dataset="string",
         version=version,
         directed=directed,

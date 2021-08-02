@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Quasibacillusthermotolerans(
+def QuasibacillusThermotolerans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Quasibacillusthermotolerans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Quasibacillusthermotolerans",
+        graph_name="QuasibacillusThermotolerans",
         dataset="string",
         version=version,
         directed=directed,

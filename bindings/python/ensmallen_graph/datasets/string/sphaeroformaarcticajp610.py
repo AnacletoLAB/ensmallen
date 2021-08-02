@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sphaeroformaarcticajp610(
+def SphaeroformaArcticaJp610(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sphaeroformaarcticajp610(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sphaeroformaarcticajp610",
+        graph_name="SphaeroformaArcticaJp610",
         dataset="string",
         version=version,
         directed=directed,

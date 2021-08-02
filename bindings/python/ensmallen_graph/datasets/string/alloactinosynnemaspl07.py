@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Alloactinosynnemaspl07(
+def AlloactinosynnemaSpL07(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Alloactinosynnemaspl07(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Alloactinosynnemaspl07",
+        graph_name="AlloactinosynnemaSpL07",
         dataset="string",
         version=version,
         directed=directed,

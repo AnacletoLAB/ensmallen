@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sphingobiumchlorophenolicum(
+def SphingobiumChlorophenolicum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Sphingobiumchlorophenolicum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sphingobiumchlorophenolicum",
+        graph_name="SphingobiumChlorophenolicum",
         dataset="string",
         version=version,
         directed=directed,

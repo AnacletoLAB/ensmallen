@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ceratocystisfimbriatacbs114723(
+def CeratocystisFimbriataCbs114723(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ceratocystisfimbriatacbs114723(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ceratocystisfimbriatacbs114723",
+        graph_name="CeratocystisFimbriataCbs114723",
         dataset="string",
         version=version,
         directed=directed,

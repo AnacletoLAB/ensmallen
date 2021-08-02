@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Devosiaepidermidihirudinis(
+def DevosiaEpidermidihirudinis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Devosiaepidermidihirudinis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Devosiaepidermidihirudinis",
+        graph_name="DevosiaEpidermidihirudinis",
         dataset="string",
         version=version,
         directed=directed,

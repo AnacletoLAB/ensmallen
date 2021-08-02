@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kribbellaspali6a(
+def KribbellaSpAli6A(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Kribbellaspali6a(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kribbellaspali6a",
+        graph_name="KribbellaSpAli6A",
         dataset="string",
         version=version,
         directed=directed,

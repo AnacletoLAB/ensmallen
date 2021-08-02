@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parasaccharibacterapium(
+def ParasaccharibacterApium(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Parasaccharibacterapium(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parasaccharibacterapium",
+        graph_name="ParasaccharibacterApium",
         dataset="string",
         version=version,
         directed=directed,

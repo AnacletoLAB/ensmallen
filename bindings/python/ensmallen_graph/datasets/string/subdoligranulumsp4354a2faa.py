@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Subdoligranulumsp4354a2faa(
+def SubdoligranulumSp4354a2faa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Subdoligranulumsp4354a2faa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Subdoligranulumsp4354a2faa",
+        graph_name="SubdoligranulumSp4354a2faa",
         dataset="string",
         version=version,
         directed=directed,

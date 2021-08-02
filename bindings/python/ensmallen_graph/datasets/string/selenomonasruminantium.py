@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Selenomonasruminantium(
+def SelenomonasRuminantium(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Selenomonasruminantium(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Selenomonasruminantium",
+        graph_name="SelenomonasRuminantium",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tubulinosemaratisbonensis(
+def TubulinosemaRatisbonensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tubulinosemaratisbonensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tubulinosemaratisbonensis",
+        graph_name="TubulinosemaRatisbonensis",
         dataset="string",
         version=version,
         directed=directed,

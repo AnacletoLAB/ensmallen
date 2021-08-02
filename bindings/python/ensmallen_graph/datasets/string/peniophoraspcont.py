@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Peniophoraspcont(
+def PeniophoraSpCont(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Peniophoraspcont(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Peniophoraspcont",
+        graph_name="PeniophoraSpCont",
         dataset="string",
         version=version,
         directed=directed,

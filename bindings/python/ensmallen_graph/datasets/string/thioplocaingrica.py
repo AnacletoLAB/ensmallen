@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thioplocaingrica(
+def ThioplocaIngrica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thioplocaingrica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thioplocaingrica",
+        graph_name="ThioplocaIngrica",
         dataset="string",
         version=version,
         directed=directed,

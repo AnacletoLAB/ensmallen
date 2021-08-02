@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Psychroserpensdamuponensis(
+def PsychroserpensDamuponensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Psychroserpensdamuponensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Psychroserpensdamuponensis",
+        graph_name="PsychroserpensDamuponensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oscillatorialescyanobacteriumcg2304421(
+def OscillatorialesCyanobacteriumCg2304421(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Oscillatorialescyanobacteriumcg2304421(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oscillatorialescyanobacteriumcg2304421",
+        graph_name="OscillatorialesCyanobacteriumCg2304421",
         dataset="string",
         version=version,
         directed=directed,

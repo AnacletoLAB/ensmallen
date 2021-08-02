@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gracilariopsischorda(
+def GracilariopsisChorda(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gracilariopsischorda(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gracilariopsischorda",
+        graph_name="GracilariopsisChorda",
         dataset="string",
         version=version,
         directed=directed,

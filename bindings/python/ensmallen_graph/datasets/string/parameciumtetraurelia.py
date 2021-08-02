@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parameciumtetraurelia(
+def ParameciumTetraurelia(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Parameciumtetraurelia(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parameciumtetraurelia",
+        graph_name="ParameciumTetraurelia",
         dataset="string",
         version=version,
         directed=directed,

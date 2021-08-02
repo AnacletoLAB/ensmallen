@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acaryochlorismarina(
+def AcaryochlorisMarina(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Acaryochlorismarina(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acaryochlorismarina",
+        graph_name="AcaryochlorisMarina",
         dataset="string",
         version=version,
         directed=directed,

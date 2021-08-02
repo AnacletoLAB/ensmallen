@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hathewayaproteolyticadsm3090(
+def HathewayaProteolyticaDsm3090(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hathewayaproteolyticadsm3090(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hathewayaproteolyticadsm3090",
+        graph_name="HathewayaProteolyticaDsm3090",
         dataset="string",
         version=version,
         directed=directed,

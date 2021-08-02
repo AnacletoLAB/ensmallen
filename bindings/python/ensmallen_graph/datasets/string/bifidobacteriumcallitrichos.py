@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bifidobacteriumcallitrichos(
+def BifidobacteriumCallitrichos(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Bifidobacteriumcallitrichos(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bifidobacteriumcallitrichos",
+        graph_name="BifidobacteriumCallitrichos",
         dataset="string",
         version=version,
         directed=directed,

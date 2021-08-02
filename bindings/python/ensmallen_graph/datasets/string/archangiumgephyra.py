@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Archangiumgephyra(
+def ArchangiumGephyra(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Archangiumgephyra(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Archangiumgephyra",
+        graph_name="ArchangiumGephyra",
         dataset="string",
         version=version,
         directed=directed,

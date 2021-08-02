@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Geodermatophilusafricanus(
+def GeodermatophilusAfricanus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Geodermatophilusafricanus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Geodermatophilusafricanus",
+        graph_name="GeodermatophilusAfricanus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gramellaechinicola(
+def GramellaEchinicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gramellaechinicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gramellaechinicola",
+        graph_name="GramellaEchinicola",
         dataset="string",
         version=version,
         directed=directed,

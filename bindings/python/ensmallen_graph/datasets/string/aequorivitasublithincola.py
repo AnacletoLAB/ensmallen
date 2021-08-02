@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aequorivitasublithincola(
+def AequorivitaSublithincola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Aequorivitasublithincola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aequorivitasublithincola",
+        graph_name="AequorivitaSublithincola",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Motiliproteusspmsk221(
+def MotiliproteusSpMsk221(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Motiliproteusspmsk221(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Motiliproteusspmsk221",
+        graph_name="MotiliproteusSpMsk221",
         dataset="string",
         version=version,
         directed=directed,

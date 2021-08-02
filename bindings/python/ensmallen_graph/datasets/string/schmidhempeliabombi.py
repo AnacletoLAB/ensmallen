@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Schmidhempeliabombi(
+def SchmidhempeliaBombi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Schmidhempeliabombi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Schmidhempeliabombi",
+        graph_name="SchmidhempeliaBombi",
         dataset="string",
         version=version,
         directed=directed,

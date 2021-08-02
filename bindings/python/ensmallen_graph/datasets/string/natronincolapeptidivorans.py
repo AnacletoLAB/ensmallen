@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Natronincolapeptidivorans(
+def NatronincolaPeptidivorans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Natronincolapeptidivorans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Natronincolapeptidivorans",
+        graph_name="NatronincolaPeptidivorans",
         dataset="string",
         version=version,
         directed=directed,

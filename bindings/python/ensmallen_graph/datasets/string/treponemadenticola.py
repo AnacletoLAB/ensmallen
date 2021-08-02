@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Treponemadenticola(
+def TreponemaDenticola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Treponemadenticola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Treponemadenticola",
+        graph_name="TreponemaDenticola",
         dataset="string",
         version=version,
         directed=directed,

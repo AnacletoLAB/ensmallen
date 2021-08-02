@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Serioladumerili(
+def SeriolaDumerili(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Serioladumerili(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Serioladumerili",
+        graph_name="SeriolaDumerili",
         dataset="string",
         version=version,
         directed=directed,

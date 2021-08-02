@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Anaerostipessp992a(
+def AnaerostipesSp992a(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Anaerostipessp992a(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Anaerostipessp992a",
+        graph_name="AnaerostipesSp992a",
         dataset="string",
         version=version,
         directed=directed,

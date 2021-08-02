@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mizugakiibactersediminis(
+def MizugakiibacterSediminis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Mizugakiibactersediminis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mizugakiibactersediminis",
+        graph_name="MizugakiibacterSediminis",
         dataset="string",
         version=version,
         directed=directed,

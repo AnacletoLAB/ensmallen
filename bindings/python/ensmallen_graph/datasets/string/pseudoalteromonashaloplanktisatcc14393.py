@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudoalteromonashaloplanktisatcc14393(
+def PseudoalteromonasHaloplanktisAtcc14393(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pseudoalteromonashaloplanktisatcc14393(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudoalteromonashaloplanktisatcc14393",
+        graph_name="PseudoalteromonasHaloplanktisAtcc14393",
         dataset="string",
         version=version,
         directed=directed,

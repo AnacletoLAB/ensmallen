@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oligellaurethralis(
+def OligellaUrethralis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Oligellaurethralis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oligellaurethralis",
+        graph_name="OligellaUrethralis",
         dataset="string",
         version=version,
         directed=directed,

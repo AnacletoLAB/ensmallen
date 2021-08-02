@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudozobelliathermophila(
+def PseudozobelliaThermophila(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudozobelliathermophila(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudozobelliathermophila",
+        graph_name="PseudozobelliaThermophila",
         dataset="string",
         version=version,
         directed=directed,

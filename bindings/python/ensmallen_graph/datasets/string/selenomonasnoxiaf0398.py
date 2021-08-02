@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Selenomonasnoxiaf0398(
+def SelenomonasNoxiaF0398(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Selenomonasnoxiaf0398(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Selenomonasnoxiaf0398",
+        graph_name="SelenomonasNoxiaF0398",
         dataset="string",
         version=version,
         directed=directed,

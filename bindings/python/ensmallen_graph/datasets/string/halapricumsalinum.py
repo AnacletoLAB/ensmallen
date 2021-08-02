@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halapricumsalinum(
+def HalapricumSalinum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Halapricumsalinum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halapricumsalinum",
+        graph_name="HalapricumSalinum",
         dataset="string",
         version=version,
         directed=directed,

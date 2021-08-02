@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cryptotermessecundus(
+def CryptotermesSecundus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cryptotermessecundus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cryptotermessecundus",
+        graph_name="CryptotermesSecundus",
         dataset="string",
         version=version,
         directed=directed,

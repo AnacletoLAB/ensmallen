@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hippeajasoniae(
+def HippeaJasoniae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Hippeajasoniae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hippeajasoniae",
+        graph_name="HippeaJasoniae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Massilimicrobiotatimonensis(
+def MassilimicrobiotaTimonensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Massilimicrobiotatimonensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Massilimicrobiotatimonensis",
+        graph_name="MassilimicrobiotaTimonensis",
         dataset="string",
         version=version,
         directed=directed,

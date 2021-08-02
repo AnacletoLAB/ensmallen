@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Onionyellows(
+def OnionYellows(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Onionyellows(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Onionyellows",
+        graph_name="OnionYellows",
         dataset="string",
         version=version,
         directed=directed,

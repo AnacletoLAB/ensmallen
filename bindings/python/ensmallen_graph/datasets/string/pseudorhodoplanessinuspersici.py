@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudorhodoplanessinuspersici(
+def PseudorhodoplanesSinuspersici(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudorhodoplanessinuspersici(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudorhodoplanessinuspersici",
+        graph_name="PseudorhodoplanesSinuspersici",
         dataset="string",
         version=version,
         directed=directed,

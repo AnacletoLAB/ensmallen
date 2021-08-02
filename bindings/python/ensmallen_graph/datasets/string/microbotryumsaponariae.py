@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microbotryumsaponariae(
+def MicrobotryumSaponariae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microbotryumsaponariae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microbotryumsaponariae",
+        graph_name="MicrobotryumSaponariae",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oryzameridionalis(
+def OryzaMeridionalis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Oryzameridionalis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oryzameridionalis",
+        graph_name="OryzaMeridionalis",
         dataset="string",
         version=version,
         directed=directed,

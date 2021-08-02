@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pyrenochaetaspds3say3a(
+def PyrenochaetaSpDs3say3a(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pyrenochaetaspds3say3a(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pyrenochaetaspds3say3a",
+        graph_name="PyrenochaetaSpDs3say3a",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nitrososphaeraevergladensis(
+def NitrososphaeraEvergladensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nitrososphaeraevergladensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nitrososphaeraevergladensis",
+        graph_name="NitrososphaeraEvergladensis",
         dataset="string",
         version=version,
         directed=directed,

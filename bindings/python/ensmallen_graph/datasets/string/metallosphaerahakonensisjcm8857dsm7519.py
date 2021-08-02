@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Metallosphaerahakonensisjcm8857dsm7519(
+def MetallosphaeraHakonensisJcm8857Dsm7519(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Metallosphaerahakonensisjcm8857dsm7519(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Metallosphaerahakonensisjcm8857dsm7519",
+        graph_name="MetallosphaeraHakonensisJcm8857Dsm7519",
         dataset="string",
         version=version,
         directed=directed,

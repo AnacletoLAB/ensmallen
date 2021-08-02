@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gemmatimonasspap64(
+def GemmatimonasSpAp64(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gemmatimonasspap64(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gemmatimonasspap64",
+        graph_name="GemmatimonasSpAp64",
         dataset="string",
         version=version,
         directed=directed,

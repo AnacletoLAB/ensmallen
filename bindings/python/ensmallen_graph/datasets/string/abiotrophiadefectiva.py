@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Abiotrophiadefectiva(
+def AbiotrophiaDefectiva(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Abiotrophiadefectiva(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Abiotrophiadefectiva",
+        graph_name="AbiotrophiaDefectiva",
         dataset="string",
         version=version,
         directed=directed,

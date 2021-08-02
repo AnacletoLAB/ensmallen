@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Domibacillusaminovorans(
+def DomibacillusAminovorans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Domibacillusaminovorans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Domibacillusaminovorans",
+        graph_name="DomibacillusAminovorans",
         dataset="string",
         version=version,
         directed=directed,

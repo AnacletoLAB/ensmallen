@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Comamonascompostidsm21721(
+def ComamonasCompostiDsm21721(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Comamonascompostidsm21721(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Comamonascompostidsm21721",
+        graph_name="ComamonasCompostiDsm21721",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Acanthamoebacastellaniistrneff(
+def AcanthamoebaCastellaniiStrNeff(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Acanthamoebacastellaniistrneff(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Acanthamoebacastellaniistrneff",
+        graph_name="AcanthamoebaCastellaniiStrNeff",
         dataset="string",
         version=version,
         directed=directed,

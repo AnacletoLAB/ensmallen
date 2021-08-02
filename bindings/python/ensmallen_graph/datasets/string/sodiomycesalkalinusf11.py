@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sodiomycesalkalinusf11(
+def SodiomycesAlkalinusF11(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sodiomycesalkalinusf11(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sodiomycesalkalinusf11",
+        graph_name="SodiomycesAlkalinusF11",
         dataset="string",
         version=version,
         directed=directed,

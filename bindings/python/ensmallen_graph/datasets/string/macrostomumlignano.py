@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Macrostomumlignano(
+def MacrostomumLignano(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Macrostomumlignano(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Macrostomumlignano",
+        graph_name="MacrostomumLignano",
         dataset="string",
         version=version,
         directed=directed,

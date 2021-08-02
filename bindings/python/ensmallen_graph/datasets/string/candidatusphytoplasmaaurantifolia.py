@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Candidatusphytoplasmaaurantifolia(
+def CandidatusPhytoplasmaAurantifolia(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Candidatusphytoplasmaaurantifolia(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Candidatusphytoplasmaaurantifolia",
+        graph_name="CandidatusPhytoplasmaAurantifolia",
         dataset="string",
         version=version,
         directed=directed,

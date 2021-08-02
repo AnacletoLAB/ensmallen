@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Propionispiraarboris(
+def PropionispiraArboris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Propionispiraarboris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Propionispiraarboris",
+        graph_name="PropionispiraArboris",
         dataset="string",
         version=version,
         directed=directed,

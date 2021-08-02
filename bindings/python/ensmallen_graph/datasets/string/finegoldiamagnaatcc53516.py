@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Finegoldiamagnaatcc53516(
+def FinegoldiaMagnaAtcc53516(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Finegoldiamagnaatcc53516(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Finegoldiamagnaatcc53516",
+        graph_name="FinegoldiaMagnaAtcc53516",
         dataset="string",
         version=version,
         directed=directed,

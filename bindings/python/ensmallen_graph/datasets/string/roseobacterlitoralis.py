@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Roseobacterlitoralis(
+def RoseobacterLitoralis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Roseobacterlitoralis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Roseobacterlitoralis",
+        graph_name="RoseobacterLitoralis",
         dataset="string",
         version=version,
         directed=directed,

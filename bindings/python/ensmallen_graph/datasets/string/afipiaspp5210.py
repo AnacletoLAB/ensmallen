@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Afipiaspp5210(
+def AfipiaSpP5210(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Afipiaspp5210(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Afipiaspp5210",
+        graph_name="AfipiaSpP5210",
         dataset="string",
         version=version,
         directed=directed,

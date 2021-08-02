@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Scytonematolypothrichoidesvb61278(
+def ScytonemaTolypothrichoidesVb61278(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Scytonematolypothrichoidesvb61278(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Scytonematolypothrichoidesvb61278",
+        graph_name="ScytonemaTolypothrichoidesVb61278",
         dataset="string",
         version=version,
         directed=directed,

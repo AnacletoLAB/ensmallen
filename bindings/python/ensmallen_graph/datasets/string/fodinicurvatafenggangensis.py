@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fodinicurvatafenggangensis(
+def FodinicurvataFenggangensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Fodinicurvatafenggangensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fodinicurvatafenggangensis",
+        graph_name="FodinicurvataFenggangensis",
         dataset="string",
         version=version,
         directed=directed,

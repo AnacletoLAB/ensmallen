@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Capitellateleta(
+def CapitellaTeleta(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Capitellateleta(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Capitellateleta",
+        graph_name="CapitellaTeleta",
         dataset="string",
         version=version,
         directed=directed,

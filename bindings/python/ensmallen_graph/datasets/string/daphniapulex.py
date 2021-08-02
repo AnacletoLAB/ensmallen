@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Daphniapulex(
+def DaphniaPulex(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Daphniapulex(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Daphniapulex",
+        graph_name="DaphniaPulex",
         dataset="string",
         version=version,
         directed=directed,

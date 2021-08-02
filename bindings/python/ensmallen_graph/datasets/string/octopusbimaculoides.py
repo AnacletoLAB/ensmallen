@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Octopusbimaculoides(
+def OctopusBimaculoides(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Octopusbimaculoides(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Octopusbimaculoides",
+        graph_name="OctopusBimaculoides",
         dataset="string",
         version=version,
         directed=directed,

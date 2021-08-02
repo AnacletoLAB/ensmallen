@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Propionicicellasuperfundiadsm22317(
+def PropionicicellaSuperfundiaDsm22317(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Propionicicellasuperfundiadsm22317(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Propionicicellasuperfundiadsm22317",
+        graph_name="PropionicicellaSuperfundiaDsm22317",
         dataset="string",
         version=version,
         directed=directed,

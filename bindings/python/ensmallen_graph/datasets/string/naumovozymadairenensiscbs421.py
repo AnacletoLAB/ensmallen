@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Naumovozymadairenensiscbs421(
+def NaumovozymaDairenensisCbs421(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Naumovozymadairenensiscbs421(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Naumovozymadairenensiscbs421",
+        graph_name="NaumovozymaDairenensisCbs421",
         dataset="string",
         version=version,
         directed=directed,

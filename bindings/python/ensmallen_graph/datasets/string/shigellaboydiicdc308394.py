@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Shigellaboydiicdc308394(
+def ShigellaBoydiiCdc308394(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Shigellaboydiicdc308394(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Shigellaboydiicdc308394",
+        graph_name="ShigellaBoydiiCdc308394",
         dataset="string",
         version=version,
         directed=directed,

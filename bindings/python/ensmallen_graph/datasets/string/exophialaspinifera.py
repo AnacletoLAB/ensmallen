@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Exophialaspinifera(
+def ExophialaSpinifera(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Exophialaspinifera(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Exophialaspinifera",
+        graph_name="ExophialaSpinifera",
         dataset="string",
         version=version,
         directed=directed,

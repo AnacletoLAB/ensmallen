@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Emticiciaoligotrophica(
+def EmticiciaOligotrophica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Emticiciaoligotrophica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Emticiciaoligotrophica",
+        graph_name="EmticiciaOligotrophica",
         dataset="string",
         version=version,
         directed=directed,

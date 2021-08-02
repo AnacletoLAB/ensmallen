@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Natronohydrobacterthiooxidans(
+def NatronohydrobacterThiooxidans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Natronohydrobacterthiooxidans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Natronohydrobacterthiooxidans",
+        graph_name="NatronohydrobacterThiooxidans",
         dataset="string",
         version=version,
         directed=directed,

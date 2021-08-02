@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Haliearubra(
+def HalieaRubra(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Haliearubra(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Haliearubra",
+        graph_name="HalieaRubra",
         dataset="string",
         version=version,
         directed=directed,

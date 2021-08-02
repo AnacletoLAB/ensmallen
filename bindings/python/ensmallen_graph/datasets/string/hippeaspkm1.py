@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hippeaspkm1(
+def HippeaSpKm1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Hippeaspkm1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hippeaspkm1",
+        graph_name="HippeaSpKm1",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hypoxylonspci4a(
+def HypoxylonSpCi4a(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hypoxylonspci4a(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hypoxylonspci4a",
+        graph_name="HypoxylonSpCi4a",
         dataset="string",
         version=version,
         directed=directed,

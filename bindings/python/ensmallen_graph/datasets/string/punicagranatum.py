@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Punicagranatum(
+def PunicaGranatum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Punicagranatum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Punicagranatum",
+        graph_name="PunicaGranatum",
         dataset="string",
         version=version,
         directed=directed,

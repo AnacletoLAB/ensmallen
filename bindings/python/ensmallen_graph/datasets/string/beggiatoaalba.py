@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Beggiatoaalba(
+def BeggiatoaAlba(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Beggiatoaalba(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Beggiatoaalba",
+        graph_name="BeggiatoaAlba",
         dataset="string",
         version=version,
         directed=directed,

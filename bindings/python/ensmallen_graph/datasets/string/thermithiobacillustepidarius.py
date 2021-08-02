@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermithiobacillustepidarius(
+def ThermithiobacillusTepidarius(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermithiobacillustepidarius(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermithiobacillustepidarius",
+        graph_name="ThermithiobacillusTepidarius",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Colletotrichumgloeosporioides(
+def ColletotrichumGloeosporioides(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Colletotrichumgloeosporioides(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Colletotrichumgloeosporioides",
+        graph_name="ColletotrichumGloeosporioides",
         dataset="string",
         version=version,
         directed=directed,

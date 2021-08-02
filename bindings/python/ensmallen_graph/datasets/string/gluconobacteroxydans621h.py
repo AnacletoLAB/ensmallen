@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gluconobacteroxydans621h(
+def GluconobacterOxydans621h(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gluconobacteroxydans621h(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gluconobacteroxydans621h",
+        graph_name="GluconobacterOxydans621h",
         dataset="string",
         version=version,
         directed=directed,

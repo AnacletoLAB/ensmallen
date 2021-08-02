@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Isosphaerapallida(
+def IsosphaeraPallida(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Isosphaerapallida(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Isosphaerapallida",
+        graph_name="IsosphaeraPallida",
         dataset="string",
         version=version,
         directed=directed,

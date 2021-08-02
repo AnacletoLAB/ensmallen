@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Klebsiellaoxytoca(
+def KlebsiellaOxytoca(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Klebsiellaoxytoca(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Klebsiellaoxytoca",
+        graph_name="KlebsiellaOxytoca",
         dataset="string",
         version=version,
         directed=directed,

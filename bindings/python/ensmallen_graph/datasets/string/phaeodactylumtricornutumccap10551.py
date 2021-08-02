@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Phaeodactylumtricornutumccap10551(
+def PhaeodactylumTricornutumCcap10551(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Phaeodactylumtricornutumccap10551(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Phaeodactylumtricornutumccap10551",
+        graph_name="PhaeodactylumTricornutumCcap10551",
         dataset="string",
         version=version,
         directed=directed,

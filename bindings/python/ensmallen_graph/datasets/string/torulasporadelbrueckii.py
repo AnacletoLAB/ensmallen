@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Torulasporadelbrueckii(
+def TorulasporaDelbrueckii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Torulasporadelbrueckii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Torulasporadelbrueckii",
+        graph_name="TorulasporaDelbrueckii",
         dataset="string",
         version=version,
         directed=directed,

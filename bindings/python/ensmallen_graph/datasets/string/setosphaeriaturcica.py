@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Setosphaeriaturcica(
+def SetosphaeriaTurcica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Setosphaeriaturcica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Setosphaeriaturcica",
+        graph_name="SetosphaeriaTurcica",
         dataset="string",
         version=version,
         directed=directed,

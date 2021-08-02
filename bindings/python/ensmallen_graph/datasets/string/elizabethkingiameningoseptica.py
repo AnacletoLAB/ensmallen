@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Elizabethkingiameningoseptica(
+def ElizabethkingiaMeningoseptica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Elizabethkingiameningoseptica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Elizabethkingiameningoseptica",
+        graph_name="ElizabethkingiaMeningoseptica",
         dataset="string",
         version=version,
         directed=directed,

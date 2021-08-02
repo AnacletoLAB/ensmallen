@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cuculuscanorus(
+def CuculusCanorus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cuculuscanorus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cuculuscanorus",
+        graph_name="CuculusCanorus",
         dataset="string",
         version=version,
         directed=directed,

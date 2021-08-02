@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Phytoplasmaaustraliense(
+def PhytoplasmaAustraliense(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Phytoplasmaaustraliense(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Phytoplasmaaustraliense",
+        graph_name="PhytoplasmaAustraliense",
         dataset="string",
         version=version,
         directed=directed,

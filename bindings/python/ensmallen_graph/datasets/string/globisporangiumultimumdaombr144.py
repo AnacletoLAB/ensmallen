@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Globisporangiumultimumdaombr144(
+def GlobisporangiumUltimumDaomBr144(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Globisporangiumultimumdaombr144(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Globisporangiumultimumdaombr144",
+        graph_name="GlobisporangiumUltimumDaomBr144",
         dataset="string",
         version=version,
         directed=directed,

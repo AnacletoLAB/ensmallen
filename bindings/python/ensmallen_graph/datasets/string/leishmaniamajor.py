@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Leishmaniamajor(
+def LeishmaniaMajor(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Leishmaniamajor(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Leishmaniamajor",
+        graph_name="LeishmaniaMajor",
         dataset="string",
         version=version,
         directed=directed,

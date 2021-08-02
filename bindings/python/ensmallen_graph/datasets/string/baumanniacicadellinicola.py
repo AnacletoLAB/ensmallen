@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Baumanniacicadellinicola(
+def BaumanniaCicadellinicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Baumanniacicadellinicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Baumanniacicadellinicola",
+        graph_name="BaumanniaCicadellinicola",
         dataset="string",
         version=version,
         directed=directed,

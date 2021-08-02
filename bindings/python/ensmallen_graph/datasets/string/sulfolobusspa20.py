@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sulfolobusspa20(
+def SulfolobusSpA20(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sulfolobusspa20(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sulfolobusspa20",
+        graph_name="SulfolobusSpA20",
         dataset="string",
         version=version,
         directed=directed,

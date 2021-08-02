@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lactonifactorlongoviformisdsm17459(
+def LactonifactorLongoviformisDsm17459(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lactonifactorlongoviformisdsm17459(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lactonifactorlongoviformisdsm17459",
+        graph_name="LactonifactorLongoviformisDsm17459",
         dataset="string",
         version=version,
         directed=directed,

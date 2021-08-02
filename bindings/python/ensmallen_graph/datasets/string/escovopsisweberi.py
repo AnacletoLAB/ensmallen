@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Escovopsisweberi(
+def EscovopsisWeberi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Escovopsisweberi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Escovopsisweberi",
+        graph_name="EscovopsisWeberi",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Catenovulummaritimum(
+def CatenovulumMaritimum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Catenovulummaritimum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Catenovulummaritimum",
+        graph_name="CatenovulumMaritimum",
         dataset="string",
         version=version,
         directed=directed,

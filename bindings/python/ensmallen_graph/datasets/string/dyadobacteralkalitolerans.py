@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dyadobacteralkalitolerans(
+def DyadobacterAlkalitolerans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Dyadobacteralkalitolerans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dyadobacteralkalitolerans",
+        graph_name="DyadobacterAlkalitolerans",
         dataset="string",
         version=version,
         directed=directed,

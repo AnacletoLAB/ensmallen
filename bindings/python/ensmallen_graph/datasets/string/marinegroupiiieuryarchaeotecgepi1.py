@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Marinegroupiiieuryarchaeotecgepi1(
+def MarineGroupIiiEuryarchaeoteCgEpi1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Marinegroupiiieuryarchaeotecgepi1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Marinegroupiiieuryarchaeotecgepi1",
+        graph_name="MarineGroupIiiEuryarchaeoteCgEpi1",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halanaerobiumpraevalens(
+def HalanaerobiumPraevalens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Halanaerobiumpraevalens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halanaerobiumpraevalens",
+        graph_name="HalanaerobiumPraevalens",
         dataset="string",
         version=version,
         directed=directed,

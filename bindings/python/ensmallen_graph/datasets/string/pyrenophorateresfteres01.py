@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pyrenophorateresfteres01(
+def PyrenophoraTeresFTeres01(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pyrenophorateresfteres01(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pyrenophorateresfteres01",
+        graph_name="PyrenophoraTeresFTeres01",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Plasmodiumknowlesistrainh(
+def PlasmodiumKnowlesiStrainH(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Plasmodiumknowlesistrainh(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Plasmodiumknowlesistrainh",
+        graph_name="PlasmodiumKnowlesiStrainH",
         dataset="string",
         version=version,
         directed=directed,

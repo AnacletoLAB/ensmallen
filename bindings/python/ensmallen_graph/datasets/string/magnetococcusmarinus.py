@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Magnetococcusmarinus(
+def MagnetococcusMarinus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Magnetococcusmarinus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Magnetococcusmarinus",
+        graph_name="MagnetococcusMarinus",
         dataset="string",
         version=version,
         directed=directed,

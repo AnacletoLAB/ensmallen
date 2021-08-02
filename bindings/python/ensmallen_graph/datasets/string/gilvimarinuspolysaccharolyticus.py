@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gilvimarinuspolysaccharolyticus(
+def GilvimarinusPolysaccharolyticus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gilvimarinuspolysaccharolyticus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gilvimarinuspolysaccharolyticus",
+        graph_name="GilvimarinusPolysaccharolyticus",
         dataset="string",
         version=version,
         directed=directed,

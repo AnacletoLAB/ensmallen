@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chondromycescrocatus(
+def ChondromycesCrocatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Chondromycescrocatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chondromycescrocatus",
+        graph_name="ChondromycesCrocatus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Vibrioproteolyticus(
+def VibrioProteolyticus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Vibrioproteolyticus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Vibrioproteolyticus",
+        graph_name="VibrioProteolyticus",
         dataset="string",
         version=version,
         directed=directed,

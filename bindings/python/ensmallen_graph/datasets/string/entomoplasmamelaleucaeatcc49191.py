@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Entomoplasmamelaleucaeatcc49191(
+def EntomoplasmaMelaleucaeAtcc49191(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Entomoplasmamelaleucaeatcc49191(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Entomoplasmamelaleucaeatcc49191",
+        graph_name="EntomoplasmaMelaleucaeAtcc49191",
         dataset="string",
         version=version,
         directed=directed,

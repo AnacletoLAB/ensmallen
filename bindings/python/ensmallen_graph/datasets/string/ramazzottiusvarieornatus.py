@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ramazzottiusvarieornatus(
+def RamazzottiusVarieornatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ramazzottiusvarieornatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ramazzottiusvarieornatus",
+        graph_name="RamazzottiusVarieornatus",
         dataset="string",
         version=version,
         directed=directed,

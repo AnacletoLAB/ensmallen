@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ensiferalkalisoli(
+def EnsiferAlkalisoli(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ensiferalkalisoli(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ensiferalkalisoli",
+        graph_name="EnsiferAlkalisoli",
         dataset="string",
         version=version,
         directed=directed,

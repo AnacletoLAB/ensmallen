@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pucciniastriiformisfsptriticipst78(
+def PucciniaStriiformisFSpTriticiPst78(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pucciniastriiformisfsptriticipst78(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pucciniastriiformisfsptriticipst78",
+        graph_name="PucciniaStriiformisFSpTriticiPst78",
         dataset="string",
         version=version,
         directed=directed,

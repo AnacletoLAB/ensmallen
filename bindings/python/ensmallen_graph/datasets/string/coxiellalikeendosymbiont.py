@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coxiellalikeendosymbiont(
+def CoxiellaLikeEndosymbiont(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Coxiellalikeendosymbiont(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coxiellalikeendosymbiont",
+        graph_name="CoxiellaLikeEndosymbiont",
         dataset="string",
         version=version,
         directed=directed,

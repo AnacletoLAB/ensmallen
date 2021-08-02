@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stachybotryschlorohalonataibt40285(
+def StachybotrysChlorohalonataIbt40285(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Stachybotryschlorohalonataibt40285(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stachybotryschlorohalonataibt40285",
+        graph_name="StachybotrysChlorohalonataIbt40285",
         dataset="string",
         version=version,
         directed=directed,

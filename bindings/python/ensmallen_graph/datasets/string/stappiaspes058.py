@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stappiaspes058(
+def StappiaSpEs058(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Stappiaspes058(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stappiaspes058",
+        graph_name="StappiaSpEs058",
         dataset="string",
         version=version,
         directed=directed,

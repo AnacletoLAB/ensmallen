@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Enterobacterspkpr6(
+def EnterobacterSpKpr6(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Enterobacterspkpr6(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Enterobacterspkpr6",
+        graph_name="EnterobacterSpKpr6",
         dataset="string",
         version=version,
         directed=directed,

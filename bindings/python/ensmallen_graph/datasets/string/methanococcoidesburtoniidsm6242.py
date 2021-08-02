@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanococcoidesburtoniidsm6242(
+def MethanococcoidesBurtoniiDsm6242(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methanococcoidesburtoniidsm6242(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanococcoidesburtoniidsm6242",
+        graph_name="MethanococcoidesBurtoniiDsm6242",
         dataset="string",
         version=version,
         directed=directed,

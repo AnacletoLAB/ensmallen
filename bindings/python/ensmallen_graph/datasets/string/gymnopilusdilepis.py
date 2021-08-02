@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gymnopilusdilepis(
+def GymnopilusDilepis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gymnopilusdilepis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gymnopilusdilepis",
+        graph_name="GymnopilusDilepis",
         dataset="string",
         version=version,
         directed=directed,

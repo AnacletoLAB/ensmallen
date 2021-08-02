@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Blautiaspmarseillep3201t(
+def BlautiaSpMarseilleP3201t(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Blautiaspmarseillep3201t(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Blautiaspmarseillep3201t",
+        graph_name="BlautiaSpMarseilleP3201t",
         dataset="string",
         version=version,
         directed=directed,

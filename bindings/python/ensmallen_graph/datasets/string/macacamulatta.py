@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Macacamulatta(
+def MacacaMulatta(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Macacamulatta(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Macacamulatta",
+        graph_name="MacacaMulatta",
         dataset="string",
         version=version,
         directed=directed,

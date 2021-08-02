@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ferrithrixthermotoleransdsm19514(
+def FerrithrixThermotoleransDsm19514(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ferrithrixthermotoleransdsm19514(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ferrithrixthermotoleransdsm19514",
+        graph_name="FerrithrixThermotoleransDsm19514",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Endocarponpusillum(
+def EndocarponPusillum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Endocarponpusillum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Endocarponpusillum",
+        graph_name="EndocarponPusillum",
         dataset="string",
         version=version,
         directed=directed,

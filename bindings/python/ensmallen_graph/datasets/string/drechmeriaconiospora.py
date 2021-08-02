@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Drechmeriaconiospora(
+def DrechmeriaConiospora(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Drechmeriaconiospora(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Drechmeriaconiospora",
+        graph_name="DrechmeriaConiospora",
         dataset="string",
         version=version,
         directed=directed,

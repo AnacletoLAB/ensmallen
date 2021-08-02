@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Metarhiziumrileyircef4871(
+def MetarhiziumRileyiRcef4871(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Metarhiziumrileyircef4871(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Metarhiziumrileyircef4871",
+        graph_name="MetarhiziumRileyiRcef4871",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermoplasmatalesarchaeoniplasma(
+def ThermoplasmatalesArchaeonIPlasma(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thermoplasmatalesarchaeoniplasma(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermoplasmatalesarchaeoniplasma",
+        graph_name="ThermoplasmatalesArchaeonIPlasma",
         dataset="string",
         version=version,
         directed=directed,

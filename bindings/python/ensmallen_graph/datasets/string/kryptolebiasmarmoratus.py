@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kryptolebiasmarmoratus(
+def KryptolebiasMarmoratus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Kryptolebiasmarmoratus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kryptolebiasmarmoratus",
+        graph_name="KryptolebiasMarmoratus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oreochromisniloticus(
+def OreochromisNiloticus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Oreochromisniloticus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oreochromisniloticus",
+        graph_name="OreochromisNiloticus",
         dataset="string",
         version=version,
         directed=directed,

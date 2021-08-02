@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Megamonasfuniformis(
+def MegamonasFuniformis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Megamonasfuniformis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Megamonasfuniformis",
+        graph_name="MegamonasFuniformis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methanohalobiumevestigatumz7303(
+def MethanohalobiumEvestigatumZ7303(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methanohalobiumevestigatumz7303(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methanohalobiumevestigatumz7303",
+        graph_name="MethanohalobiumEvestigatumZ7303",
         dataset="string",
         version=version,
         directed=directed,

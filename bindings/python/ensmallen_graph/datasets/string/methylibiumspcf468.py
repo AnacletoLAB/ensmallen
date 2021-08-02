@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylibiumspcf468(
+def MethylibiumSpCf468(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Methylibiumspcf468(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylibiumspcf468",
+        graph_name="MethylibiumSpCf468",
         dataset="string",
         version=version,
         directed=directed,

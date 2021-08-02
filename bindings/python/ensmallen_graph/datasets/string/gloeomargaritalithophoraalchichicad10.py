@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gloeomargaritalithophoraalchichicad10(
+def GloeomargaritaLithophoraAlchichicaD10(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gloeomargaritalithophoraalchichicad10(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gloeomargaritalithophoraalchichicad10",
+        graph_name="GloeomargaritaLithophoraAlchichicaD10",
         dataset="string",
         version=version,
         directed=directed,

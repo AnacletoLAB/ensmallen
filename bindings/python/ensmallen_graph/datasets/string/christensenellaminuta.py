@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Christensenellaminuta(
+def ChristensenellaMinuta(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Christensenellaminuta(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Christensenellaminuta",
+        graph_name="ChristensenellaMinuta",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microgenomatesgroupbacteriumrifcsplowo201full4710(
+def MicrogenomatesGroupBacteriumRifcsplowo201Full4710(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microgenomatesgroupbacteriumrifcsplowo201full4710(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microgenomatesgroupbacteriumrifcsplowo201full4710",
+        graph_name="MicrogenomatesGroupBacteriumRifcsplowo201Full4710",
         dataset="string",
         version=version,
         directed=directed,

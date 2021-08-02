@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Zonotrichiaalbicollis(
+def ZonotrichiaAlbicollis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Zonotrichiaalbicollis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Zonotrichiaalbicollis",
+        graph_name="ZonotrichiaAlbicollis",
         dataset="string",
         version=version,
         directed=directed,

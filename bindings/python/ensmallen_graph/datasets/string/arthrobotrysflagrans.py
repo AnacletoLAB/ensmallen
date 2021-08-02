@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Arthrobotrysflagrans(
+def ArthrobotrysFlagrans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Arthrobotrysflagrans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Arthrobotrysflagrans",
+        graph_name="ArthrobotrysFlagrans",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Octadecabactertemperatus(
+def OctadecabacterTemperatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Octadecabactertemperatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Octadecabactertemperatus",
+        graph_name="OctadecabacterTemperatus",
         dataset="string",
         version=version,
         directed=directed,

@@ -385,9 +385,7 @@ class GraphRepository:
                     version: dict(
                         graph_name=graph_name,
                         version=version,
-                        graph_method_name=self.build_stored_graph_name(
-                            graph_name
-                        ),
+                        graph_method_name=graph_name,
                         datetime=str(datetime.datetime.now()),
                         urls=self.get_graph_urls(graph_name, version),
                         paths=self.get_graph_paths(graph_name, version),
@@ -530,7 +528,7 @@ class GraphRepository:
             "r"
         ) as f:
             return f.read().format(
-                graph_method_name=self.build_stored_graph_name(graph_name),
+                graph_method_name=graph_name,
                 repository_package_name=self.repository_package_name,
                 graph_name=graph_name,
                 repository_name=self.get_formatted_repository_name(),
@@ -622,8 +620,9 @@ class GraphRepository:
         ):
             graph_data = compress_json.load(graph_data_path)
             first_graph_version_data = list(graph_data.values())[0]
+            graph_name = first_graph_version_data["graph_name"]
             graph_retrieval_file = self.format_graph_retrieval_file(
-                graph_name=first_graph_version_data["graph_name"],
+                graph_name=graph_name,
                 references=first_graph_version_data["references"],
                 versions=list(graph_data.keys())
             )
@@ -631,24 +630,17 @@ class GraphRepository:
             target_path = os.path.join(
                 target_directory_path,
                 "{}.py".format(
-                    self.build_stored_graph_name(
-                        first_graph_version_data["graph_name"]
-                    ).lower()
+                    graph_name.lower()
                 )
             )
-            graph_method_names.append(
-                self.build_stored_graph_name(
-                    first_graph_version_data["graph_name"])
-            )
+            graph_method_names.append(graph_name)
             graph_file_names.append(
-                self.build_stored_graph_name(
-                    first_graph_version_data["graph_name"]).lower()
+                graph_name.lower()
             )
             target_json_path = os.path.join(
                 target_directory_path,
                 "{}.json.gz".format(
-                    self.build_stored_graph_name(
-                        first_graph_version_data["graph_name"])
+                    graph_name
                 )
             )
             os.makedirs(target_directory_path, exist_ok=True)

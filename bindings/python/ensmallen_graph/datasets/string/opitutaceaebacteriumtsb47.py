@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Opitutaceaebacteriumtsb47(
+def OpitutaceaeBacteriumTsb47(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Opitutaceaebacteriumtsb47(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Opitutaceaebacteriumtsb47",
+        graph_name="OpitutaceaeBacteriumTsb47",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Myxococcussp(
+def MyxococcusSp(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Myxococcussp(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Myxococcussp",
+        graph_name="MyxococcusSp",
         dataset="string",
         version=version,
         directed=directed,

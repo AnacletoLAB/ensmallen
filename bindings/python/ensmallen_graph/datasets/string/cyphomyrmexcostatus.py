@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cyphomyrmexcostatus(
+def CyphomyrmexCostatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cyphomyrmexcostatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cyphomyrmexcostatus",
+        graph_name="CyphomyrmexCostatus",
         dataset="string",
         version=version,
         directed=directed,

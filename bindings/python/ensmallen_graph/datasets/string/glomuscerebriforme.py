@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Glomuscerebriforme(
+def GlomusCerebriforme(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Glomuscerebriforme(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Glomuscerebriforme",
+        graph_name="GlomusCerebriforme",
         dataset="string",
         version=version,
         directed=directed,

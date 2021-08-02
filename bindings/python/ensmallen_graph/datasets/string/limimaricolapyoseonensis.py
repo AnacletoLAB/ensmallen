@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Limimaricolapyoseonensis(
+def LimimaricolaPyoseonensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Limimaricolapyoseonensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Limimaricolapyoseonensis",
+        graph_name="LimimaricolaPyoseonensis",
         dataset="string",
         version=version,
         directed=directed,

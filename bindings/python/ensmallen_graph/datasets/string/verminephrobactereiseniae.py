@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Verminephrobactereiseniae(
+def VerminephrobacterEiseniae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Verminephrobactereiseniae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Verminephrobactereiseniae",
+        graph_name="VerminephrobacterEiseniae",
         dataset="string",
         version=version,
         directed=directed,

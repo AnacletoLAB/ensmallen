@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Escherichiacoliatcc8739(
+def EscherichiaColiAtcc8739(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Escherichiacoliatcc8739(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Escherichiacoliatcc8739",
+        graph_name="EscherichiaColiAtcc8739",
         dataset="string",
         version=version,
         directed=directed,

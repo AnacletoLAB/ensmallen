@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Danausplexippus(
+def DanausPlexippus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Danausplexippus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Danausplexippus",
+        graph_name="DanausPlexippus",
         dataset="string",
         version=version,
         directed=directed,

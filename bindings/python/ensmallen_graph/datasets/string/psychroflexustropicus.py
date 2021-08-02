@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Psychroflexustropicus(
+def PsychroflexusTropicus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Psychroflexustropicus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Psychroflexustropicus",
+        graph_name="PsychroflexusTropicus",
         dataset="string",
         version=version,
         directed=directed,

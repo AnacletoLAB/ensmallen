@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hortaeawerneckiiexf2000(
+def HortaeaWerneckiiExf2000(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hortaeawerneckiiexf2000(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hortaeawerneckiiexf2000",
+        graph_name="HortaeaWerneckiiExf2000",
         dataset="string",
         version=version,
         directed=directed,

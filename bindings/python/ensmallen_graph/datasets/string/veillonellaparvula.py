@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Veillonellaparvula(
+def VeillonellaParvula(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Veillonellaparvula(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Veillonellaparvula",
+        graph_name="VeillonellaParvula",
         dataset="string",
         version=version,
         directed=directed,

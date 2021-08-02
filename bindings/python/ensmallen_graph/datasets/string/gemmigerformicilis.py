@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gemmigerformicilis(
+def GemmigerFormicilis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gemmigerformicilis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gemmigerformicilis",
+        graph_name="GemmigerFormicilis",
         dataset="string",
         version=version,
         directed=directed,

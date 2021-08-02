@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Polycyclovoransalgicola(
+def PolycyclovoransAlgicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Polycyclovoransalgicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Polycyclovoransalgicola",
+        graph_name="PolycyclovoransAlgicola",
         dataset="string",
         version=version,
         directed=directed,

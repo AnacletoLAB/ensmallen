@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gryllotalpicolaginsengisoli(
+def GryllotalpicolaGinsengisoli(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gryllotalpicolaginsengisoli(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gryllotalpicolaginsengisoli",
+        graph_name="GryllotalpicolaGinsengisoli",
         dataset="string",
         version=version,
         directed=directed,

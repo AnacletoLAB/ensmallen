@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Filifactoralocis(
+def FilifactorAlocis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Filifactoralocis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Filifactoralocis",
+        graph_name="FilifactorAlocis",
         dataset="string",
         version=version,
         directed=directed,

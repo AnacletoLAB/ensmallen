@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Klebsiellapneumoniaesubsppneumoniaehs11286(
+def KlebsiellaPneumoniaeSubspPneumoniaeHs11286(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Klebsiellapneumoniaesubsppneumoniaehs11286(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Klebsiellapneumoniaesubsppneumoniaehs11286",
+        graph_name="KlebsiellaPneumoniaeSubspPneumoniaeHs11286",
         dataset="string",
         version=version,
         directed=directed,

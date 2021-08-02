@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Megasphaeraspmjr8396c(
+def MegasphaeraSpMjr8396c(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Megasphaeraspmjr8396c(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Megasphaeraspmjr8396c",
+        graph_name="MegasphaeraSpMjr8396c",
         dataset="string",
         version=version,
         directed=directed,

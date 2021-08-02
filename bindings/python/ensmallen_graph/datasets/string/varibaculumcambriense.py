@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Varibaculumcambriense(
+def VaribaculumCambriense(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Varibaculumcambriense(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Varibaculumcambriense",
+        graph_name="VaribaculumCambriense",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Mahellaaustraliensis(
+def MahellaAustraliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Mahellaaustraliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Mahellaaustraliensis",
+        graph_name="MahellaAustraliensis",
         dataset="string",
         version=version,
         directed=directed,

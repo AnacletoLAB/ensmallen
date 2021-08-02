@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Drancourtellamassiliensis(
+def DrancourtellaMassiliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Drancourtellamassiliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Drancourtellamassiliensis",
+        graph_name="DrancourtellaMassiliensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Simplicispirapsychrophila(
+def SimplicispiraPsychrophila(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Simplicispirapsychrophila(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Simplicispirapsychrophila",
+        graph_name="SimplicispiraPsychrophila",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hydrogenovibriospma26(
+def HydrogenovibrioSpMa26(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hydrogenovibriospma26(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hydrogenovibriospma26",
+        graph_name="HydrogenovibrioSpMa26",
         dataset="string",
         version=version,
         directed=directed,

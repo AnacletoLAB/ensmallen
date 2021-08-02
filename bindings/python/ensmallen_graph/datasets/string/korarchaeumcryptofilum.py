@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Korarchaeumcryptofilum(
+def KorarchaeumCryptofilum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Korarchaeumcryptofilum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Korarchaeumcryptofilum",
+        graph_name="KorarchaeumCryptofilum",
         dataset="string",
         version=version,
         directed=directed,

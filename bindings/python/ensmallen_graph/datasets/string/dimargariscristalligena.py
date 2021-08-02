@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dimargariscristalligena(
+def DimargarisCristalligena(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dimargariscristalligena(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dimargariscristalligena",
+        graph_name="DimargarisCristalligena",
         dataset="string",
         version=version,
         directed=directed,

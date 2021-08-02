@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caenispirillumsalinarum(
+def CaenispirillumSalinarum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Caenispirillumsalinarum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caenispirillumsalinarum",
+        graph_name="CaenispirillumSalinarum",
         dataset="string",
         version=version,
         directed=directed,

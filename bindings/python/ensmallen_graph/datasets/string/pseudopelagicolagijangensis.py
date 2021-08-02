@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudopelagicolagijangensis(
+def PseudopelagicolaGijangensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudopelagicolagijangensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudopelagicolagijangensis",
+        graph_name="PseudopelagicolaGijangensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Doreaformicigenerans4653afaa(
+def DoreaFormicigenerans4653afaa(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Doreaformicigenerans4653afaa(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Doreaformicigenerans4653afaa",
+        graph_name="DoreaFormicigenerans4653afaa",
         dataset="string",
         version=version,
         directed=directed,

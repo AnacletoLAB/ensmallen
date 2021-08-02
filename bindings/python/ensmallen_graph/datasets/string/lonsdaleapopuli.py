@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lonsdaleapopuli(
+def LonsdaleaPopuli(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lonsdaleapopuli(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lonsdaleapopuli",
+        graph_name="LonsdaleaPopuli",
         dataset="string",
         version=version,
         directed=directed,

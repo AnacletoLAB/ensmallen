@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Hanseniasporaosmophila(
+def HanseniasporaOsmophila(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Hanseniasporaosmophila(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Hanseniasporaosmophila",
+        graph_name="HanseniasporaOsmophila",
         dataset="string",
         version=version,
         directed=directed,

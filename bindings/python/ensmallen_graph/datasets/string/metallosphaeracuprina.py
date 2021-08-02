@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Metallosphaeracuprina(
+def MetallosphaeraCuprina(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Metallosphaeracuprina(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Metallosphaeracuprina",
+        graph_name="MetallosphaeraCuprina",
         dataset="string",
         version=version,
         directed=directed,

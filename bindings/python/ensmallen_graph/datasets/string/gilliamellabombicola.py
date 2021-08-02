@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gilliamellabombicola(
+def GilliamellaBombicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Gilliamellabombicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gilliamellabombicola",
+        graph_name="GilliamellaBombicola",
         dataset="string",
         version=version,
         directed=directed,

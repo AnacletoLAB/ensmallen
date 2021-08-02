@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kozakiabaliensis(
+def KozakiaBaliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Kozakiabaliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kozakiabaliensis",
+        graph_name="KozakiaBaliensis",
         dataset="string",
         version=version,
         directed=directed,

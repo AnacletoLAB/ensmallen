@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Luteimonasspfcs9(
+def LuteimonasSpFcs9(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Luteimonasspfcs9(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Luteimonasspfcs9",
+        graph_name="LuteimonasSpFcs9",
         dataset="string",
         version=version,
         directed=directed,

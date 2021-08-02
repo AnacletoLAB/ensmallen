@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Histoplasmacapsulatumh88(
+def HistoplasmaCapsulatumH88(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Histoplasmacapsulatumh88(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Histoplasmacapsulatumh88",
+        graph_name="HistoplasmaCapsulatumH88",
         dataset="string",
         version=version,
         directed=directed,

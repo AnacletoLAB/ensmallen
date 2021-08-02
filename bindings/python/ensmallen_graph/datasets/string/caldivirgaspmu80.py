@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caldivirgaspmu80(
+def CaldivirgaSpMu80(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Caldivirgaspmu80(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caldivirgaspmu80",
+        graph_name="CaldivirgaSpMu80",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Colletotrichumhigginsianumimi349063(
+def ColletotrichumHigginsianumImi349063(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Colletotrichumhigginsianumimi349063(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Colletotrichumhigginsianumimi349063",
+        graph_name="ColletotrichumHigginsianumImi349063",
         dataset="string",
         version=version,
         directed=directed,

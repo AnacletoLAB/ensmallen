@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylocapsaacidiphila(
+def MethylocapsaAcidiphila(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methylocapsaacidiphila(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylocapsaacidiphila",
+        graph_name="MethylocapsaAcidiphila",
         dataset="string",
         version=version,
         directed=directed,

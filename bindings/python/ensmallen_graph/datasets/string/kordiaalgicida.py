@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kordiaalgicida(
+def KordiaAlgicida(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Kordiaalgicida(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kordiaalgicida",
+        graph_name="KordiaAlgicida",
         dataset="string",
         version=version,
         directed=directed,

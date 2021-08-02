@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Serratiamarcescensdb11(
+def SerratiaMarcescensDb11(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Serratiamarcescensdb11(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Serratiamarcescensdb11",
+        graph_name="SerratiaMarcescensDb11",
         dataset="string",
         version=version,
         directed=directed,

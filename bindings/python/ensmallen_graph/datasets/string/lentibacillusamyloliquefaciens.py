@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lentibacillusamyloliquefaciens(
+def LentibacillusAmyloliquefaciens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lentibacillusamyloliquefaciens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lentibacillusamyloliquefaciens",
+        graph_name="LentibacillusAmyloliquefaciens",
         dataset="string",
         version=version,
         directed=directed,

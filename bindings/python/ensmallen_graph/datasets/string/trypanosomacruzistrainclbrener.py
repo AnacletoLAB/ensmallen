@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Trypanosomacruzistrainclbrener(
+def TrypanosomaCruziStrainClBrener(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Trypanosomacruzistrainclbrener(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Trypanosomacruzistrainclbrener",
+        graph_name="TrypanosomaCruziStrainClBrener",
         dataset="string",
         version=version,
         directed=directed,

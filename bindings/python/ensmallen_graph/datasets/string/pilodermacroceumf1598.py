@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pilodermacroceumf1598(
+def PilodermaCroceumF1598(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pilodermacroceumf1598(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pilodermacroceumf1598",
+        graph_name="PilodermaCroceumF1598",
         dataset="string",
         version=version,
         directed=directed,

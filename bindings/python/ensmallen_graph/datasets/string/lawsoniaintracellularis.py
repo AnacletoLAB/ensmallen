@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lawsoniaintracellularis(
+def LawsoniaIntracellularis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Lawsoniaintracellularis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lawsoniaintracellularis",
+        graph_name="LawsoniaIntracellularis",
         dataset="string",
         version=version,
         directed=directed,

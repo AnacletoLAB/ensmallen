@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lentinulaedodes(
+def LentinulaEdodes(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lentinulaedodes(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lentinulaedodes",
+        graph_name="LentinulaEdodes",
         dataset="string",
         version=version,
         directed=directed,

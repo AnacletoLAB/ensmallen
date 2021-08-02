@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ramulariacollocygni(
+def RamulariaColloCygni(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ramulariacollocygni(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ramulariacollocygni",
+        graph_name="RamulariaColloCygni",
         dataset="string",
         version=version,
         directed=directed,

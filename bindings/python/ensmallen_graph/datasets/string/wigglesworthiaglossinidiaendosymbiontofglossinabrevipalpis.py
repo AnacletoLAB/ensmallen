@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Wigglesworthiaglossinidiaendosymbiontofglossinabrevipalpis(
+def WigglesworthiaGlossinidiaEndosymbiontOfGlossinaBrevipalpis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Wigglesworthiaglossinidiaendosymbiontofglossinabrevipalpis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Wigglesworthiaglossinidiaendosymbiontofglossinabrevipalpis",
+        graph_name="WigglesworthiaGlossinidiaEndosymbiontOfGlossinaBrevipalpis",
         dataset="string",
         version=version,
         directed=directed,

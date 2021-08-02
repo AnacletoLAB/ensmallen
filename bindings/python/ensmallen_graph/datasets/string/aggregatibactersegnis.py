@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aggregatibactersegnis(
+def AggregatibacterSegnis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Aggregatibactersegnis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aggregatibactersegnis",
+        graph_name="AggregatibacterSegnis",
         dataset="string",
         version=version,
         directed=directed,

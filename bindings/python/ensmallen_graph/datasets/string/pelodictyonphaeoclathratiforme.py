@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pelodictyonphaeoclathratiforme(
+def PelodictyonPhaeoclathratiforme(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pelodictyonphaeoclathratiforme(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pelodictyonphaeoclathratiforme",
+        graph_name="PelodictyonPhaeoclathratiforme",
         dataset="string",
         version=version,
         directed=directed,

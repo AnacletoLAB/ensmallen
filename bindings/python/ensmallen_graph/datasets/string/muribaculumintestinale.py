@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Muribaculumintestinale(
+def MuribaculumIntestinale(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Muribaculumintestinale(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Muribaculumintestinale",
+        graph_name="MuribaculumIntestinale",
         dataset="string",
         version=version,
         directed=directed,

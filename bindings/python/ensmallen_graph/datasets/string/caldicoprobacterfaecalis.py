@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caldicoprobacterfaecalis(
+def CaldicoprobacterFaecalis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Caldicoprobacterfaecalis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caldicoprobacterfaecalis",
+        graph_name="CaldicoprobacterFaecalis",
         dataset="string",
         version=version,
         directed=directed,

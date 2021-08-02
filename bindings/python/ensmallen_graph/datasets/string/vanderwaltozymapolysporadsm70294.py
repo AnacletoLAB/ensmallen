@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Vanderwaltozymapolysporadsm70294(
+def VanderwaltozymaPolysporaDsm70294(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Vanderwaltozymapolysporadsm70294(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Vanderwaltozymapolysporadsm70294",
+        graph_name="VanderwaltozymaPolysporaDsm70294",
         dataset="string",
         version=version,
         directed=directed,

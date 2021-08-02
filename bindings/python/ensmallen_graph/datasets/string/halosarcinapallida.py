@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halosarcinapallida(
+def HalosarcinaPallida(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Halosarcinapallida(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halosarcinapallida",
+        graph_name="HalosarcinaPallida",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Sediminicolaspyik13(
+def SediminicolaSpYik13(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Sediminicolaspyik13(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Sediminicolaspyik13",
+        graph_name="SediminicolaSpYik13",
         dataset="string",
         version=version,
         directed=directed,

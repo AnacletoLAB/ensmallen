@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Campylobacterjejuni414(
+def CampylobacterJejuni414(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Campylobacterjejuni414(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Campylobacterjejuni414",
+        graph_name="CampylobacterJejuni414",
         dataset="string",
         version=version,
         directed=directed,

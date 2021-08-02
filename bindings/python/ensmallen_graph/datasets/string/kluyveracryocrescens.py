@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kluyveracryocrescens(
+def KluyveraCryocrescens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Kluyveracryocrescens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kluyveracryocrescens",
+        graph_name="KluyveraCryocrescens",
         dataset="string",
         version=version,
         directed=directed,

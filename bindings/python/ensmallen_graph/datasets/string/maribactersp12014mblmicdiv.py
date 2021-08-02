@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Maribactersp12014mblmicdiv(
+def MaribacterSp12014mblMicdiv(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Maribactersp12014mblmicdiv(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Maribactersp12014mblmicdiv",
+        graph_name="MaribacterSp12014mblMicdiv",
         dataset="string",
         version=version,
         directed=directed,

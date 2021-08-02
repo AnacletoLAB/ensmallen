@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Parachlamydiaacanthamoebae(
+def ParachlamydiaAcanthamoebae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Parachlamydiaacanthamoebae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Parachlamydiaacanthamoebae",
+        graph_name="ParachlamydiaAcanthamoebae",
         dataset="string",
         version=version,
         directed=directed,

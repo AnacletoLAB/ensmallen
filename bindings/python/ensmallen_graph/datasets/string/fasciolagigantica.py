@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Fasciolagigantica(
+def FasciolaGigantica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Fasciolagigantica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Fasciolagigantica",
+        graph_name="FasciolaGigantica",
         dataset="string",
         version=version,
         directed=directed,

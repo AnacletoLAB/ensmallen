@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aquimarinamegaterium(
+def AquimarinaMegaterium(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Aquimarinamegaterium(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aquimarinamegaterium",
+        graph_name="AquimarinaMegaterium",
         dataset="string",
         version=version,
         directed=directed,

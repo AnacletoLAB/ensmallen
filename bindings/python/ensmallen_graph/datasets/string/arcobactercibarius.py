@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Arcobactercibarius(
+def ArcobacterCibarius(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Arcobactercibarius(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Arcobactercibarius",
+        graph_name="ArcobacterCibarius",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Natronomonaspharaonis(
+def NatronomonasPharaonis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Natronomonaspharaonis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Natronomonaspharaonis",
+        graph_name="NatronomonasPharaonis",
         dataset="string",
         version=version,
         directed=directed,

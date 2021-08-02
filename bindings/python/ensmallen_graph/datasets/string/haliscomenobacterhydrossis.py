@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Haliscomenobacterhydrossis(
+def HaliscomenobacterHydrossis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Haliscomenobacterhydrossis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Haliscomenobacterhydrossis",
+        graph_name="HaliscomenobacterHydrossis",
         dataset="string",
         version=version,
         directed=directed,

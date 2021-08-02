@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Syntrophomonaswolfei(
+def SyntrophomonasWolfei(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Syntrophomonaswolfei(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Syntrophomonaswolfei",
+        graph_name="SyntrophomonasWolfei",
         dataset="string",
         version=version,
         directed=directed,

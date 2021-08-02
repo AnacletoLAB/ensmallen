@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Saccharophagusdegradans(
+def SaccharophagusDegradans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Saccharophagusdegradans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Saccharophagusdegradans",
+        graph_name="SaccharophagusDegradans",
         dataset="string",
         version=version,
         directed=directed,

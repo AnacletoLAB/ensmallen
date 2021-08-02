@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thiothrixflexilis(
+def ThiothrixFlexilis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thiothrixflexilis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thiothrixflexilis",
+        graph_name="ThiothrixFlexilis",
         dataset="string",
         version=version,
         directed=directed,

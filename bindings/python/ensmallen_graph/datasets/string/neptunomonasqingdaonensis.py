@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Neptunomonasqingdaonensis(
+def NeptunomonasQingdaonensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Neptunomonasqingdaonensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Neptunomonasqingdaonensis",
+        graph_name="NeptunomonasQingdaonensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thielaviaterrestris(
+def ThielaviaTerrestris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thielaviaterrestris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thielaviaterrestris",
+        graph_name="ThielaviaTerrestris",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Amycolatopsismethanolica(
+def AmycolatopsisMethanolica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Amycolatopsismethanolica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Amycolatopsismethanolica",
+        graph_name="AmycolatopsisMethanolica",
         dataset="string",
         version=version,
         directed=directed,

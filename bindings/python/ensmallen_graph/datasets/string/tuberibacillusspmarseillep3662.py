@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tuberibacillusspmarseillep3662(
+def TuberibacillusSpMarseilleP3662(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tuberibacillusspmarseillep3662(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tuberibacillusspmarseillep3662",
+        graph_name="TuberibacillusSpMarseilleP3662",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Borreliellaburgdorferib31(
+def BorreliellaBurgdorferiB31(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Borreliellaburgdorferib31(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Borreliellaburgdorferib31",
+        graph_name="BorreliellaBurgdorferiB31",
         dataset="string",
         version=version,
         directed=directed,

@@ -561,9 +561,9 @@ impl Graph {
         if !self.has_nodes() {
             report.push(format!(
                 concat!(
-                    "The graph{name} is <b>empty</b>, that is, it has neither nodes nor edges.\n",
+                    "<p>The graph{name} is <b>empty</b>, that is, it has neither nodes nor edges. ",
                     "If this is unexpected, it may have happened because of a ",
-                    "mis-parametrization of a filter method uphill.\n"
+                    "mis-parametrization of a filter method uphill.</p>"
                 ),
                 name = name.unwrap_or_else(|| "".to_string())
             ));
@@ -599,9 +599,9 @@ impl Graph {
         if !self.has_edges() {
             report.push(format!(
                 concat!(
-                    "The graph{name} contains {nodes_number} and no edges.\n",
+                    "<p>The graph{name} contains {nodes_number} and no edges. ",
                     "If this is unexpected, it may have happened because of a ",
-                    "mis-parametrization of a filter method uphill.\n"
+                    "mis-parametrization of a filter method uphill.</p>"
                 ),
                 name = name.unwrap_or_else(|| "".to_string()),
                 nodes_number = nodes_number
@@ -635,7 +635,11 @@ impl Graph {
 
         // And put the report summary line togheter.
         report.push(format!(
-            "The {directionality}{multigraph} graph{name} has {nodes_number} and {edges_number}.\n",
+            concat!(
+                "<p>The {directionality}{multigraph} graph{name} has {nodes_number} and {edges_number}.</p>",
+                "<h3>RAM requirements</h3>",
+                "<p>The RAM requirements for the nodes and edges data structures are {ram_nodes} and {ram_edges} respectively.</p>"
+            ),
             directionality = if self.is_directed() {
                 "directed"
             } else {
@@ -648,7 +652,9 @@ impl Graph {
             },
             name = name.unwrap_or_else(|| "".to_string()),
             nodes_number = nodes_number,
-            edges_number = edges_number
+            edges_number = edges_number,
+            ram_nodes = self.get_nodes_total_memory_requirement_human_readable(),
+            ram_edges = self.get_edges_total_memory_requirement_human_readable()
         ));
 
         report.join("")
@@ -695,9 +701,9 @@ impl Graph {
         format!(
             concat!(
                 "<h4>Singleton nodes</h4>",
-                "Singleton nodes are nodes with no edge to other nodes ",
-                "nor selfloops.\n",
-                "The graph contains {singleton_nodes_number}.\n"
+                "<p>Singleton nodes are nodes with no edge to other nodes ",
+                "nor selfloops. ",
+                "The graph contains {singleton_nodes_number}.</p>"
             ),
             singleton_nodes_number = match self.get_singleton_nodes_number() {
                 1 => format!(
@@ -838,7 +844,9 @@ impl Graph {
                 "<h4>Weighted degree centrality</h4>",
                 "<p>The minimum node degree is {weighted_minimum_node_degree:.2}, the maximum node degree is {weighted_maximum_node_degree:.2}, ",
                 "the mean degree is {weighted_mean_node_degree:.2} and the node degree median is {weighted_node_degree_median:2}.</p>",
-                "<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>"
+                "<p>The nodes with highest degree centrality are: {weighted_list_of_most_central_nodes}.</p>",
+                "<h4>RAM requirements</h4>",
+                "<p>The RAM requirements for the edge weights data structure is {ram_edge_weights}.</p>"
             ),
             minimum_edge_weight= self.get_mininum_edge_weight().clone().unwrap(),
             maximum_edge_weight= self.get_maximum_edge_weight().clone().unwrap(),
@@ -855,7 +863,8 @@ impl Graph {
                     })
                     .collect::<Vec<_>>()
                     .as_ref()
-            )
+            ),
+            ram_edge_weights=self.get_edge_weights_total_memory_requirements_human_readable()
         )
     }
 
@@ -992,7 +1001,9 @@ impl Graph {
         paragraphs.push(format!(
             concat!(
                 "<h3>Node types</h3>",
-                "<p>The graph has {node_types_number}.</p>"
+                "<p>The graph has {node_types_number}.</p>",
+                "<h4>RAM requirements</h4>",
+                "<p>The RAM requirements for the node types data structure is {ram_node_types}.</p>"
             ),
             node_types_number = match self.get_node_types_number().unwrap() {
                 1 => format!(
@@ -1043,7 +1054,8 @@ impl Graph {
                         node_type_description = node_type_descriptions
                     )
                 }
-            }
+            },
+            ram_node_types=self.get_node_types_total_memory_requirements_human_readable().unwrap()
         ));
 
         // When the graph contains singleton node types, we build their report.
@@ -1090,7 +1102,7 @@ impl Graph {
                         concat!(
                             "{singleton_edges_types_number} edges with singleton edge types, which are ",
                             "{singleton_edge_types_list}",
-                            "{additional_edgges_with_singleton_edge_types}.\n"
+                            "{additional_edgges_with_singleton_edge_types}. "
                         ),
                         singleton_edges_types_number = singleton_edges_types_number,
                         singleton_edge_types_list = self.get_unchecked_formatted_list(
@@ -1151,7 +1163,7 @@ impl Graph {
                         concat!(
                             "{unknown_types_number} edges with unknown edge type, which are ",
                             "{unknown_edge_types_list}",
-                            "{additional_unknown_edges}.\n"
+                            "{additional_unknown_edges}."
                         ),
                         unknown_types_number = unknown_types_number,
                         unknown_edge_types_list = self.get_unchecked_formatted_list(
@@ -1192,7 +1204,9 @@ impl Graph {
         paragraphs.push(format!(
             concat!(
                 "<h3>Edge types</h3>",
-                "<p>The graph has {edge_types_number}.</p>"
+                "<p>The graph has {edge_types_number}.</p>",
+                "<h4>RAM requirements</h4>",
+                "<p>The RAM requirements for the edge types data structure is {ram_edge_types}.</p>"
             ),
             edge_types_number = match self.get_edge_types_number().unwrap() {
                 1 => format!(
@@ -1244,7 +1258,8 @@ impl Graph {
                         edge_type_description = edge_type_descriptions
                     )
                 }
-            }
+            },
+            ram_edge_types = self.get_edge_types_total_memory_requirements().unwrap()
         ));
 
         // When the graph contains singleton edge types, we build their report.
@@ -1307,6 +1322,6 @@ impl Graph {
             paragraphs.push(unsafe { self.get_edge_types_report() });
         }
 
-        paragraphs.join("").replace("\n", "<br>")
+        paragraphs.join("")
     }
 }

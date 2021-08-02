@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Massiliaputida(
+def MassiliaPutida(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Massiliaputida(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Massiliaputida",
+        graph_name="MassiliaPutida",
         dataset="string",
         version=version,
         directed=directed,

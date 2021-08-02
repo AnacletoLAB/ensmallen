@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Brassicanapus(
+def BrassicaNapus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Brassicanapus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Brassicanapus",
+        graph_name="BrassicaNapus",
         dataset="string",
         version=version,
         directed=directed,

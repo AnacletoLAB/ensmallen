@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lonchurastriatadomestica(
+def LonchuraStriataDomestica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Lonchurastriatadomestica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lonchurastriatadomestica",
+        graph_name="LonchuraStriataDomestica",
         dataset="string",
         version=version,
         directed=directed,

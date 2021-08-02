@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Riemerellaanatipestifer(
+def RiemerellaAnatipestifer(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Riemerellaanatipestifer(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Riemerellaanatipestifer",
+        graph_name="RiemerellaAnatipestifer",
         dataset="string",
         version=version,
         directed=directed,

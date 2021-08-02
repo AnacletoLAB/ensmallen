@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Haloquadratumwalsbyidsm16790(
+def HaloquadratumWalsbyiDsm16790(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Haloquadratumwalsbyidsm16790(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Haloquadratumwalsbyidsm16790",
+        graph_name="HaloquadratumWalsbyiDsm16790",
         dataset="string",
         version=version,
         directed=directed,

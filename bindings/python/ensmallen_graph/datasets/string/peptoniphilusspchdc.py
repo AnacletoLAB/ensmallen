@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Peptoniphilusspchdc(
+def PeptoniphilusSpChdc(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Peptoniphilusspchdc(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Peptoniphilusspchdc",
+        graph_name="PeptoniphilusSpChdc",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Plasmodiumyoeliiyoelii(
+def PlasmodiumYoeliiYoelii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Plasmodiumyoeliiyoelii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Plasmodiumyoeliiyoelii",
+        graph_name="PlasmodiumYoeliiYoelii",
         dataset="string",
         version=version,
         directed=directed,

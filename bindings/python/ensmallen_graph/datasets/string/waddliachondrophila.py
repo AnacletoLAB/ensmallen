@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Waddliachondrophila(
+def WaddliaChondrophila(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Waddliachondrophila(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Waddliachondrophila",
+        graph_name="WaddliaChondrophila",
         dataset="string",
         version=version,
         directed=directed,

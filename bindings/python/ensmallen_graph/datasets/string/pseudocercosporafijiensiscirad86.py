@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudocercosporafijiensiscirad86(
+def PseudocercosporaFijiensisCirad86(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudocercosporafijiensiscirad86(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudocercosporafijiensiscirad86",
+        graph_name="PseudocercosporaFijiensisCirad86",
         dataset="string",
         version=version,
         directed=directed,

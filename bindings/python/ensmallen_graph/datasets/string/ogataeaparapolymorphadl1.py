@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ogataeaparapolymorphadl1(
+def OgataeaParapolymorphaDl1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ogataeaparapolymorphadl1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ogataeaparapolymorphadl1",
+        graph_name="OgataeaParapolymorphaDl1",
         dataset="string",
         version=version,
         directed=directed,

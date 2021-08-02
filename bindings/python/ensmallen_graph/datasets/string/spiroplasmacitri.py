@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Spiroplasmacitri(
+def SpiroplasmaCitri(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Spiroplasmacitri(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Spiroplasmacitri",
+        graph_name="SpiroplasmaCitri",
         dataset="string",
         version=version,
         directed=directed,

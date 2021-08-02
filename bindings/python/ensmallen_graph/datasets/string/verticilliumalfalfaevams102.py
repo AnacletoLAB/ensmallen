@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Verticilliumalfalfaevams102(
+def VerticilliumAlfalfaeVams102(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Verticilliumalfalfaevams102(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Verticilliumalfalfaevams102",
+        graph_name="VerticilliumAlfalfaeVams102",
         dataset="string",
         version=version,
         directed=directed,

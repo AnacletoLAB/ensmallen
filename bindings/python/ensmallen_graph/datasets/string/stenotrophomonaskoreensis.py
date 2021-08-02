@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stenotrophomonaskoreensis(
+def StenotrophomonasKoreensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Stenotrophomonaskoreensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stenotrophomonaskoreensis",
+        graph_name="StenotrophomonasKoreensis",
         dataset="string",
         version=version,
         directed=directed,

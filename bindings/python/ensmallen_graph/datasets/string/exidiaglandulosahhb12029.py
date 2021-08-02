@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Exidiaglandulosahhb12029(
+def ExidiaGlandulosaHhb12029(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Exidiaglandulosahhb12029(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Exidiaglandulosahhb12029",
+        graph_name="ExidiaGlandulosaHhb12029",
         dataset="string",
         version=version,
         directed=directed,

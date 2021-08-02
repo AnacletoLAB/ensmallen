@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lachnospiramultiparaatcc19207(
+def LachnospiraMultiparaAtcc19207(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Lachnospiramultiparaatcc19207(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lachnospiramultiparaatcc19207",
+        graph_name="LachnospiraMultiparaAtcc19207",
         dataset="string",
         version=version,
         directed=directed,

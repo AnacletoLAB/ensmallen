@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rhizoctoniasolaniag1ib(
+def RhizoctoniaSolaniAg1Ib(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rhizoctoniasolaniag1ib(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rhizoctoniasolaniag1ib",
+        graph_name="RhizoctoniaSolaniAg1Ib",
         dataset="string",
         version=version,
         directed=directed,

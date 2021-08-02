@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Natrinemaaltunense(
+def NatrinemaAltunense(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Natrinemaaltunense(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Natrinemaaltunense",
+        graph_name="NatrinemaAltunense",
         dataset="string",
         version=version,
         directed=directed,

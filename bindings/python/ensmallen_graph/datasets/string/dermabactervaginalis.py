@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dermabactervaginalis(
+def DermabacterVaginalis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dermabactervaginalis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dermabactervaginalis",
+        graph_name="DermabacterVaginalis",
         dataset="string",
         version=version,
         directed=directed,

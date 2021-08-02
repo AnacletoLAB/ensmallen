@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Clavibactermichiganensisncppb382(
+def ClavibacterMichiganensisNcppb382(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Clavibactermichiganensisncppb382(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Clavibactermichiganensisncppb382",
+        graph_name="ClavibacterMichiganensisNcppb382",
         dataset="string",
         version=version,
         directed=directed,

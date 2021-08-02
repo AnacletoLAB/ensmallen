@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Camponotusfloridanus(
+def CamponotusFloridanus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Camponotusfloridanus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Camponotusfloridanus",
+        graph_name="CamponotusFloridanus",
         dataset="string",
         version=version,
         directed=directed,

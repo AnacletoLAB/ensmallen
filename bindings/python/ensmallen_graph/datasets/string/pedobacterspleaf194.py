@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pedobacterspleaf194(
+def PedobacterSpLeaf194(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pedobacterspleaf194(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pedobacterspleaf194",
+        graph_name="PedobacterSpLeaf194",
         dataset="string",
         version=version,
         directed=directed,

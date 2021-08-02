@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Labeorohita(
+def LabeoRohita(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Labeorohita(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Labeorohita",
+        graph_name="LabeoRohita",
         dataset="string",
         version=version,
         directed=directed,

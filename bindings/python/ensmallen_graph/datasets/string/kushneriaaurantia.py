@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Kushneriaaurantia(
+def KushneriaAurantia(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Kushneriaaurantia(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Kushneriaaurantia",
+        graph_name="KushneriaAurantia",
         dataset="string",
         version=version,
         directed=directed,

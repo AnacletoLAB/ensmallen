@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Variovoraxspkk3(
+def VariovoraxSpKk3(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Variovoraxspkk3(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Variovoraxspkk3",
+        graph_name="VariovoraxSpKk3",
         dataset="string",
         version=version,
         directed=directed,

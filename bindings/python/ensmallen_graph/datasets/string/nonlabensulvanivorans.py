@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nonlabensulvanivorans(
+def NonlabensUlvanivorans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nonlabensulvanivorans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nonlabensulvanivorans",
+        graph_name="NonlabensUlvanivorans",
         dataset="string",
         version=version,
         directed=directed,

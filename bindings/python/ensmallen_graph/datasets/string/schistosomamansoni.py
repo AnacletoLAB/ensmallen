@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Schistosomamansoni(
+def SchistosomaMansoni(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Schistosomamansoni(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Schistosomamansoni",
+        graph_name="SchistosomaMansoni",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pygocentrusnattereri(
+def PygocentrusNattereri(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pygocentrusnattereri(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pygocentrusnattereri",
+        graph_name="PygocentrusNattereri",
         dataset="string",
         version=version,
         directed=directed,

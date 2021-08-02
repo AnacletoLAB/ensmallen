@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Reichenbachiellafaecimaris(
+def ReichenbachiellaFaecimaris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Reichenbachiellafaecimaris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Reichenbachiellafaecimaris",
+        graph_name="ReichenbachiellaFaecimaris",
         dataset="string",
         version=version,
         directed=directed,

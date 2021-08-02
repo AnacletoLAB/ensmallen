@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Arhodomonasaquaeoleidsm8974(
+def ArhodomonasAquaeoleiDsm8974(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Arhodomonasaquaeoleidsm8974(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Arhodomonasaquaeoleidsm8974",
+        graph_name="ArhodomonasAquaeoleiDsm8974",
         dataset="string",
         version=version,
         directed=directed,

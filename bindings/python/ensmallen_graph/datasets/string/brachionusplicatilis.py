@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Brachionusplicatilis(
+def BrachionusPlicatilis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Brachionusplicatilis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Brachionusplicatilis",
+        graph_name="BrachionusPlicatilis",
         dataset="string",
         version=version,
         directed=directed,

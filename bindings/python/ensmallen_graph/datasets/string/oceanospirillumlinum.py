@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oceanospirillumlinum(
+def OceanospirillumLinum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Oceanospirillumlinum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oceanospirillumlinum",
+        graph_name="OceanospirillumLinum",
         dataset="string",
         version=version,
         directed=directed,

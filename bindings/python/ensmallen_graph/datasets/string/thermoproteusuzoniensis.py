@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermoproteusuzoniensis(
+def ThermoproteusUzoniensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermoproteusuzoniensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermoproteusuzoniensis",
+        graph_name="ThermoproteusUzoniensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ehrlichiaruminantium(
+def EhrlichiaRuminantium(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Ehrlichiaruminantium(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ehrlichiaruminantium",
+        graph_name="EhrlichiaRuminantium",
         dataset="string",
         version=version,
         directed=directed,

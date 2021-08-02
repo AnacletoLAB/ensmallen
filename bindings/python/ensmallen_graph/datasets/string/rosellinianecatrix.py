@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Rosellinianecatrix(
+def RoselliniaNecatrix(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Rosellinianecatrix(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Rosellinianecatrix",
+        graph_name="RoselliniaNecatrix",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Bordetellaansorpii(
+def BordetellaAnsorpii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Bordetellaansorpii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Bordetellaansorpii",
+        graph_name="BordetellaAnsorpii",
         dataset="string",
         version=version,
         directed=directed,

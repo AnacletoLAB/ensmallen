@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Vittaformacorneaeatcc50505(
+def VittaformaCorneaeAtcc50505(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Vittaformacorneaeatcc50505(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Vittaformacorneaeatcc50505",
+        graph_name="VittaformaCorneaeAtcc50505",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermophagusxiamenensis(
+def ThermophagusXiamenensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Thermophagusxiamenensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermophagusxiamenensis",
+        graph_name="ThermophagusXiamenensis",
         dataset="string",
         version=version,
         directed=directed,

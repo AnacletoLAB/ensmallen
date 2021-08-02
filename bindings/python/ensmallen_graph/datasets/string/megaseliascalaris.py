@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Megaseliascalaris(
+def MegaseliaScalaris(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Megaseliascalaris(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Megaseliascalaris",
+        graph_name="MegaseliaScalaris",
         dataset="string",
         version=version,
         directed=directed,

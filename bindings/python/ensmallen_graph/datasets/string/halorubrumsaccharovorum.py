@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Halorubrumsaccharovorum(
+def HalorubrumSaccharovorum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Halorubrumsaccharovorum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Halorubrumsaccharovorum",
+        graph_name="HalorubrumSaccharovorum",
         dataset="string",
         version=version,
         directed=directed,

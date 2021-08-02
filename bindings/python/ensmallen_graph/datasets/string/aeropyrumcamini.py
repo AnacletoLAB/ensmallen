@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aeropyrumcamini(
+def AeropyrumCamini(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Aeropyrumcamini(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aeropyrumcamini",
+        graph_name="AeropyrumCamini",
         dataset="string",
         version=version,
         directed=directed,

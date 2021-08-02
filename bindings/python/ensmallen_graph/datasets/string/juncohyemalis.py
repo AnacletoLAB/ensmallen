@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Juncohyemalis(
+def JuncoHyemalis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Juncohyemalis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Juncohyemalis",
+        graph_name="JuncoHyemalis",
         dataset="string",
         version=version,
         directed=directed,

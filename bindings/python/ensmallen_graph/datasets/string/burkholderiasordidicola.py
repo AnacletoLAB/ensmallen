@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Burkholderiasordidicola(
+def BurkholderiaSordidicola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Burkholderiasordidicola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Burkholderiasordidicola",
+        graph_name="BurkholderiaSordidicola",
         dataset="string",
         version=version,
         directed=directed,

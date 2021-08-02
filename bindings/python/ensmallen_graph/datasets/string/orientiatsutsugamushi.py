@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Orientiatsutsugamushi(
+def OrientiaTsutsugamushi(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Orientiatsutsugamushi(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Orientiatsutsugamushi",
+        graph_name="OrientiaTsutsugamushi",
         dataset="string",
         version=version,
         directed=directed,

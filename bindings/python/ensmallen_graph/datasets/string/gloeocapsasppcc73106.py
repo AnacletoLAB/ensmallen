@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Gloeocapsasppcc73106(
+def GloeocapsaSpPcc73106(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Gloeocapsasppcc73106(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Gloeocapsasppcc73106",
+        graph_name="GloeocapsaSpPcc73106",
         dataset="string",
         version=version,
         directed=directed,

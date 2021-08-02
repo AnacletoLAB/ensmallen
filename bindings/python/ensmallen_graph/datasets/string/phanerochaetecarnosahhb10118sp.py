@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Phanerochaetecarnosahhb10118sp(
+def PhanerochaeteCarnosaHhb10118Sp(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Phanerochaetecarnosahhb10118sp(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Phanerochaetecarnosahhb10118sp",
+        graph_name="PhanerochaeteCarnosaHhb10118Sp",
         dataset="string",
         version=version,
         directed=directed,

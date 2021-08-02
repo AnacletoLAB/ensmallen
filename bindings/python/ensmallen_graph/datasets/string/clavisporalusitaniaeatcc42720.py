@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Clavisporalusitaniaeatcc42720(
+def ClavisporaLusitaniaeAtcc42720(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Clavisporalusitaniaeatcc42720(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Clavisporalusitaniaeatcc42720",
+        graph_name="ClavisporaLusitaniaeAtcc42720",
         dataset="string",
         version=version,
         directed=directed,

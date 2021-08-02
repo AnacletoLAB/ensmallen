@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudoflavonifractorcapillosus(
+def PseudoflavonifractorCapillosus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pseudoflavonifractorcapillosus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudoflavonifractorcapillosus",
+        graph_name="PseudoflavonifractorCapillosus",
         dataset="string",
         version=version,
         directed=directed,

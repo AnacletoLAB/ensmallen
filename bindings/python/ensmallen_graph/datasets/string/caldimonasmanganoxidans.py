@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caldimonasmanganoxidans(
+def CaldimonasManganoxidans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Caldimonasmanganoxidans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caldimonasmanganoxidans",
+        graph_name="CaldimonasManganoxidans",
         dataset="string",
         version=version,
         directed=directed,

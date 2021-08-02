@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pontibacterlucknowensis(
+def PontibacterLucknowensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pontibacterlucknowensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pontibacterlucknowensis",
+        graph_name="PontibacterLucknowensis",
         dataset="string",
         version=version,
         directed=directed,

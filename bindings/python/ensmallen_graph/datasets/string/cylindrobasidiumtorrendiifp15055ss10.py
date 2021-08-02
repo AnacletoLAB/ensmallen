@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cylindrobasidiumtorrendiifp15055ss10(
+def CylindrobasidiumTorrendiiFp15055Ss10(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cylindrobasidiumtorrendiifp15055ss10(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cylindrobasidiumtorrendiifp15055ss10",
+        graph_name="CylindrobasidiumTorrendiiFp15055Ss10",
         dataset="string",
         version=version,
         directed=directed,

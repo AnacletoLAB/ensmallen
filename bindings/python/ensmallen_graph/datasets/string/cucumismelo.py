@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cucumismelo(
+def CucumisMelo(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cucumismelo(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cucumismelo",
+        graph_name="CucumisMelo",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nigeriummassiliense(
+def NigeriumMassiliense(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Nigeriummassiliense(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nigeriummassiliense",
+        graph_name="NigeriumMassiliense",
         dataset="string",
         version=version,
         directed=directed,

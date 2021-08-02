@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Caenorhabditisbriggsae(
+def CaenorhabditisBriggsae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Caenorhabditisbriggsae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Caenorhabditisbriggsae",
+        graph_name="CaenorhabditisBriggsae",
         dataset="string",
         version=version,
         directed=directed,

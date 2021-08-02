@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Terrapenecarolinatriunguis(
+def TerrapeneCarolinaTriunguis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Terrapenecarolinatriunguis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Terrapenecarolinatriunguis",
+        graph_name="TerrapeneCarolinaTriunguis",
         dataset="string",
         version=version,
         directed=directed,

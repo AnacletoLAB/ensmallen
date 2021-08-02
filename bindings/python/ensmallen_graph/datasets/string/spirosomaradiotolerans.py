@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Spirosomaradiotolerans(
+def SpirosomaRadiotolerans(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Spirosomaradiotolerans(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Spirosomaradiotolerans",
+        graph_name="SpirosomaRadiotolerans",
         dataset="string",
         version=version,
         directed=directed,

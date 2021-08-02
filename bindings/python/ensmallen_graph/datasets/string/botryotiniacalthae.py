@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Botryotiniacalthae(
+def BotryotiniaCalthae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Botryotiniacalthae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Botryotiniacalthae",
+        graph_name="BotryotiniaCalthae",
         dataset="string",
         version=version,
         directed=directed,

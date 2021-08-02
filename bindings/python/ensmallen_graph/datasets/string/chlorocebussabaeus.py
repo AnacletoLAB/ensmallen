@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chlorocebussabaeus(
+def ChlorocebusSabaeus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Chlorocebussabaeus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chlorocebussabaeus",
+        graph_name="ChlorocebusSabaeus",
         dataset="string",
         version=version,
         directed=directed,

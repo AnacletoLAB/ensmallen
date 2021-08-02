@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Taylorellaequigenitalis(
+def TaylorellaEquigenitalis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Taylorellaequigenitalis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Taylorellaequigenitalis",
+        graph_name="TaylorellaEquigenitalis",
         dataset="string",
         version=version,
         directed=directed,

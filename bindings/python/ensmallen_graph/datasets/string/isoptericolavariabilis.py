@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Isoptericolavariabilis(
+def IsoptericolaVariabilis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Isoptericolavariabilis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Isoptericolavariabilis",
+        graph_name="IsoptericolaVariabilis",
         dataset="string",
         version=version,
         directed=directed,

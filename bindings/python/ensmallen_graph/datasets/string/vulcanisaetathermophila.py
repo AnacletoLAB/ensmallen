@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Vulcanisaetathermophila(
+def VulcanisaetaThermophila(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Vulcanisaetathermophila(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Vulcanisaetathermophila",
+        graph_name="VulcanisaetaThermophila",
         dataset="string",
         version=version,
         directed=directed,

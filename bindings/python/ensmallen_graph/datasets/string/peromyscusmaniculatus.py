@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Peromyscusmaniculatus(
+def PeromyscusManiculatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Peromyscusmaniculatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Peromyscusmaniculatus",
+        graph_name="PeromyscusManiculatus",
         dataset="string",
         version=version,
         directed=directed,

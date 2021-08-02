@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Massilimaliaemassiliensis(
+def MassilimaliaeMassiliensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Massilimaliaemassiliensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Massilimaliaemassiliensis",
+        graph_name="MassilimaliaeMassiliensis",
         dataset="string",
         version=version,
         directed=directed,

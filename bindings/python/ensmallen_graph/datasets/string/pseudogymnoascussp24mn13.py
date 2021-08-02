@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudogymnoascussp24mn13(
+def PseudogymnoascusSp24mn13(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudogymnoascussp24mn13(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudogymnoascussp24mn13",
+        graph_name="PseudogymnoascusSp24mn13",
         dataset="string",
         version=version,
         directed=directed,

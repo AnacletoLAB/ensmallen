@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Richeliaintracellularis(
+def RicheliaIntracellularis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Richeliaintracellularis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Richeliaintracellularis",
+        graph_name="RicheliaIntracellularis",
         dataset="string",
         version=version,
         directed=directed,

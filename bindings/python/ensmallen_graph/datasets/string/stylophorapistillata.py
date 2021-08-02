@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Stylophorapistillata(
+def StylophoraPistillata(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Stylophorapistillata(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Stylophorapistillata",
+        graph_name="StylophoraPistillata",
         dataset="string",
         version=version,
         directed=directed,

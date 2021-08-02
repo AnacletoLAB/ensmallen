@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Charabraunii(
+def CharaBraunii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Charabraunii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Charabraunii",
+        graph_name="CharaBraunii",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cyprinodonvariegatus(
+def CyprinodonVariegatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Cyprinodonvariegatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cyprinodonvariegatus",
+        graph_name="CyprinodonVariegatus",
         dataset="string",
         version=version,
         directed=directed,

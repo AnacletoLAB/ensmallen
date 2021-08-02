@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Labilithrixluteola(
+def LabilithrixLuteola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Labilithrixluteola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Labilithrixluteola",
+        graph_name="LabilithrixLuteola",
         dataset="string",
         version=version,
         directed=directed,

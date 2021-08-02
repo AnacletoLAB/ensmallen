@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coniochaetaligniarianrrl30616(
+def ConiochaetaLigniariaNrrl30616(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Coniochaetaligniarianrrl30616(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coniochaetaligniarianrrl30616",
+        graph_name="ConiochaetaLigniariaNrrl30616",
         dataset="string",
         version=version,
         directed=directed,

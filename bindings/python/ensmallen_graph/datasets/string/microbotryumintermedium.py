@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microbotryumintermedium(
+def MicrobotryumIntermedium(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microbotryumintermedium(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microbotryumintermedium",
+        graph_name="MicrobotryumIntermedium",
         dataset="string",
         version=version,
         directed=directed,

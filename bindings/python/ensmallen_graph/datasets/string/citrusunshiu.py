@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Citrusunshiu(
+def CitrusUnshiu(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Citrusunshiu(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Citrusunshiu",
+        graph_name="CitrusUnshiu",
         dataset="string",
         version=version,
         directed=directed,

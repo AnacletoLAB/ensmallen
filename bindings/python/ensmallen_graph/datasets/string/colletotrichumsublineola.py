@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Colletotrichumsublineola(
+def ColletotrichumSublineola(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Colletotrichumsublineola(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Colletotrichumsublineola",
+        graph_name="ColletotrichumSublineola",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Ophiocordycepscamponotirufipedis(
+def OphiocordycepsCamponotiRufipedis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Ophiocordycepscamponotirufipedis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Ophiocordycepscamponotirufipedis",
+        graph_name="OphiocordycepsCamponotiRufipedis",
         dataset="string",
         version=version,
         directed=directed,

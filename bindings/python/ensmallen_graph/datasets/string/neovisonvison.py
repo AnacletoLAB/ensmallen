@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Neovisonvison(
+def NeovisonVison(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Neovisonvison(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Neovisonvison",
+        graph_name="NeovisonVison",
         dataset="string",
         version=version,
         directed=directed,

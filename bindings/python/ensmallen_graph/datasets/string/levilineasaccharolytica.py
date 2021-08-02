@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Levilineasaccharolytica(
+def LevilineaSaccharolytica(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Levilineasaccharolytica(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Levilineasaccharolytica",
+        graph_name="LevilineaSaccharolytica",
         dataset="string",
         version=version,
         directed=directed,

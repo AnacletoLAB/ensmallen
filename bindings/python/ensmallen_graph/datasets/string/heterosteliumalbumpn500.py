@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Heterosteliumalbumpn500(
+def HeterosteliumAlbumPn500(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Heterosteliumalbumpn500(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Heterosteliumalbumpn500",
+        graph_name="HeterosteliumAlbumPn500",
         dataset="string",
         version=version,
         directed=directed,

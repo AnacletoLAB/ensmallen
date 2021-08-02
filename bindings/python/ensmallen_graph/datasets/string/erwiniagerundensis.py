@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Erwiniagerundensis(
+def ErwiniaGerundensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Erwiniagerundensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Erwiniagerundensis",
+        graph_name="ErwiniaGerundensis",
         dataset="string",
         version=version,
         directed=directed,

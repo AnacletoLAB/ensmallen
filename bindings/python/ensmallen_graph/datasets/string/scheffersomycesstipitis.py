@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Scheffersomycesstipitis(
+def ScheffersomycesStipitis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Scheffersomycesstipitis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Scheffersomycesstipitis",
+        graph_name="ScheffersomycesStipitis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Secondaryendosymbiontofctenarytainaeucalypti(
+def SecondaryEndosymbiontOfCtenarytainaEucalypti(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Secondaryendosymbiontofctenarytainaeucalypti(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Secondaryendosymbiontofctenarytainaeucalypti",
+        graph_name="SecondaryEndosymbiontOfCtenarytainaEucalypti",
         dataset="string",
         version=version,
         directed=directed,

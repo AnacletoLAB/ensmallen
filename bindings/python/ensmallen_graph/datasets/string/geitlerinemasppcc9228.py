@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Geitlerinemasppcc9228(
+def GeitlerinemaSpPcc9228(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Geitlerinemasppcc9228(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Geitlerinemasppcc9228",
+        graph_name="GeitlerinemaSpPcc9228",
         dataset="string",
         version=version,
         directed=directed,

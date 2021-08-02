@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Vibriocholeraeo1biovar(
+def VibrioCholeraeO1Biovar(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Vibriocholeraeo1biovar(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Vibriocholeraeo1biovar",
+        graph_name="VibrioCholeraeO1Biovar",
         dataset="string",
         version=version,
         directed=directed,

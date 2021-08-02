@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Methylococcuscapsulatus(
+def MethylococcusCapsulatus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Methylococcuscapsulatus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Methylococcuscapsulatus",
+        graph_name="MethylococcusCapsulatus",
         dataset="string",
         version=version,
         directed=directed,

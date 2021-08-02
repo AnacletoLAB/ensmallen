@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Paracoccusalcaliphilus(
+def ParacoccusAlcaliphilus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Paracoccusalcaliphilus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Paracoccusalcaliphilus",
+        graph_name="ParacoccusAlcaliphilus",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Coraliomargaritaakajimensis(
+def CoraliomargaritaAkajimensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Coraliomargaritaakajimensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Coraliomargaritaakajimensis",
+        graph_name="CoraliomargaritaAkajimensis",
         dataset="string",
         version=version,
         directed=directed,

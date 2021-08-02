@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Chelativoransspbnc1(
+def ChelativoransSpBnc1(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Chelativoransspbnc1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Chelativoransspbnc1",
+        graph_name="ChelativoransSpBnc1",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Thermotogacaldifontisazm44c09(
+def ThermotogaCaldifontisAzm44c09(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Thermotogacaldifontisazm44c09(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Thermotogacaldifontisazm44c09",
+        graph_name="ThermotogaCaldifontisAzm44c09",
         dataset="string",
         version=version,
         directed=directed,

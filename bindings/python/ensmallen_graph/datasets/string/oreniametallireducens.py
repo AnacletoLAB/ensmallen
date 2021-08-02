@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Oreniametallireducens(
+def OreniaMetallireducens(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Oreniametallireducens(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Oreniametallireducens",
+        graph_name="OreniaMetallireducens",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microtusochrogaster(
+def MicrotusOchrogaster(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Microtusochrogaster(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microtusochrogaster",
+        graph_name="MicrotusOchrogaster",
         dataset="string",
         version=version,
         directed=directed,

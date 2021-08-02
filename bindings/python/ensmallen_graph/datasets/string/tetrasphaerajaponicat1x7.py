@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tetrasphaerajaponicat1x7(
+def TetrasphaeraJaponicaT1X7(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tetrasphaerajaponicat1x7(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tetrasphaerajaponicat1x7",
+        graph_name="TetrasphaeraJaponicaT1X7",
         dataset="string",
         version=version,
         directed=directed,

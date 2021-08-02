@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Epilithonimonastenax(
+def EpilithonimonasTenax(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Epilithonimonastenax(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Epilithonimonastenax",
+        graph_name="EpilithonimonasTenax",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Lipotesvexillifer(
+def LipotesVexillifer(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Lipotesvexillifer(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Lipotesvexillifer",
+        graph_name="LipotesVexillifer",
         dataset="string",
         version=version,
         directed=directed,

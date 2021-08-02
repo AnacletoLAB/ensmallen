@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Nitrosococcuswatsonii(
+def NitrosococcusWatsonii(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Nitrosococcuswatsonii(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Nitrosococcuswatsonii",
+        graph_name="NitrosococcusWatsonii",
         dataset="string",
         version=version,
         directed=directed,

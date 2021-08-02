@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Brochothrixthermosphacta(
+def BrochothrixThermosphacta(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Brochothrixthermosphacta(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Brochothrixthermosphacta",
+        graph_name="BrochothrixThermosphacta",
         dataset="string",
         version=version,
         directed=directed,

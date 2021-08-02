@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Zootermopsisnevadensis(
+def ZootermopsisNevadensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Zootermopsisnevadensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Zootermopsisnevadensis",
+        graph_name="ZootermopsisNevadensis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Beggiatoaleptomitoformis(
+def BeggiatoaLeptomitoformis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Beggiatoaleptomitoformis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Beggiatoaleptomitoformis",
+        graph_name="BeggiatoaLeptomitoformis",
         dataset="string",
         version=version,
         directed=directed,

@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Dendrosporobacterquercicolus(
+def DendrosporobacterQuercicolus(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Dendrosporobacterquercicolus(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Dendrosporobacterquercicolus",
+        graph_name="DendrosporobacterQuercicolus",
         dataset="string",
         version=version,
         directed=directed,

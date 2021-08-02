@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pseudomicrostromaglucosiphilum(
+def PseudomicrostromaGlucosiphilum(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Pseudomicrostromaglucosiphilum(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pseudomicrostromaglucosiphilum",
+        graph_name="PseudomicrostromaGlucosiphilum",
         dataset="string",
         version=version,
         directed=directed,

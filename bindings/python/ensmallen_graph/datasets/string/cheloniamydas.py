@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Cheloniamydas(
+def CheloniaMydas(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Cheloniamydas(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Cheloniamydas",
+        graph_name="CheloniaMydas",
         dataset="string",
         version=version,
         directed=directed,

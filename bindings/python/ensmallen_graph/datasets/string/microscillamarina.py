@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microscillamarina(
+def MicroscillaMarina(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Microscillamarina(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microscillamarina",
+        graph_name="MicroscillaMarina",
         dataset="string",
         version=version,
         directed=directed,

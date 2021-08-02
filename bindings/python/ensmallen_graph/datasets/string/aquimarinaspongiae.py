@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Aquimarinaspongiae(
+def AquimarinaSpongiae(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Aquimarinaspongiae(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Aquimarinaspongiae",
+        graph_name="AquimarinaSpongiae",
         dataset="string",
         version=version,
         directed=directed,

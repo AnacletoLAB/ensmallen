@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Pythiumirregulare(
+def PythiumIrregulare(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -86,7 +86,7 @@ def Pythiumirregulare(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Pythiumirregulare",
+        graph_name="PythiumIrregulare",
         dataset="string",
         version=version,
         directed=directed,

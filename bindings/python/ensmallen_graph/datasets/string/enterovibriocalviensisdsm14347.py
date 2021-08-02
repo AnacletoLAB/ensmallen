@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Enterovibriocalviensisdsm14347(
+def EnterovibrioCalviensisDsm14347(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Enterovibriocalviensisdsm14347(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Enterovibriocalviensisdsm14347",
+        graph_name="EnterovibrioCalviensisDsm14347",
         dataset="string",
         version=version,
         directed=directed,

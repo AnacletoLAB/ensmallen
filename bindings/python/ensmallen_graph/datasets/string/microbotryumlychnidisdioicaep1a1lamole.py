@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Microbotryumlychnidisdioicaep1a1lamole(
+def MicrobotryumLychnidisDioicaeP1a1Lamole(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Microbotryumlychnidisdioicaep1a1lamole(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Microbotryumlychnidisdioicaep1a1lamole",
+        graph_name="MicrobotryumLychnidisDioicaeP1a1Lamole",
         dataset="string",
         version=version,
         directed=directed,

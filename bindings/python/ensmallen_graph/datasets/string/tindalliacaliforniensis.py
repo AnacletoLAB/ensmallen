@@ -27,7 +27,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Tindalliacaliforniensis(
+def TindalliaCaliforniensis(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -85,7 +85,7 @@ def Tindalliacaliforniensis(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Tindalliacaliforniensis",
+        graph_name="TindalliaCaliforniensis",
         dataset="string",
         version=version,
         directed=directed,
