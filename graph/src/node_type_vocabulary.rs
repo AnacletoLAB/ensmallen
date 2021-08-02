@@ -109,9 +109,11 @@ impl NodeTypeVocabulary {
 
     pub fn build_counts(&mut self) {
         let mut counts = vec![NodeT::from_usize(0); self.vocabulary.len()];
+        let mut max_multilabel_count: NodeTypeT = 0;
         for index in self.ids.iter() {
             match index {
                 Some(values) => {
+                    max_multilabel_count = max_multilabel_count.max(values.len() as NodeTypeT);
                     values.iter().for_each(|value| {
                         counts[NodeTypeT::to_usize(*value)] += NodeT::from_usize(1)
                     });
@@ -119,6 +121,8 @@ impl NodeTypeVocabulary {
                 None => self.unknown_count += NodeT::from_usize(1),
             }
         }
+        self.multilabel = max_multilabel_count > 1;
+        self.max_multilabel_count = max_multilabel_count;
         self.counts = counts;
         self.update_min_max_count();
     }
