@@ -10,29 +10,40 @@ use bindgen::*;
 
 fn main() {
     // Generate the bindings
-    let mut modules = Vec::new();
-    modules.extend(gen_bindings("graph", false));
-    modules.extend(gen_bindings("edge_list_utils", true));
-    modules.extend(gen_bindings("url_utilities", true));
-
-
-    fix_init(
-        modules,
-        "../bindings/python/ensmallen_graph/__init__.py",
-        "../bindings/python/src/auto_import.rs",
+    gen_bindings(
+        "graph",
+        r#"
+#[allow(unused_imports)]
+use utils::*;
+#[allow(unused_imports)]
+use crate::types::*;
+#[allow(unused_imports)]
+use graph::{{DumpGraph, Graph}};
+"#,
+"../bindings/python/crates/py_graph/src/auto.rs"
+    );
+    gen_bindings(
+        "url_utilities",
+        r#"
+#[allow(unused_imports)]
+use utils::*;
+"#,
+    "../bindings/python/crates/py_url_utilities/src/lib.rs"
+    );
+    gen_bindings(
+        "edge_list_utils",
+        r#"
+#[allow(unused_imports)]
+use utils::*;
+"#,
+        "../bindings/python/crates/py_edge_list_utils/src/lib.rs"
     );
 
     // Generate the tfidf weights
-    tfidf_gen("../bindings/python/src/method_names_list.rs");
+    tfidf_gen("../bindings/python/crates/py_graph/src/method_names_list.rs");
 
     // Format the files
-    assert!(
-        std::process::Command::new("cargo")
-            .args(&["fmt"])
-            .current_dir("../bindings/python")
-            .status()
-            .expect("Could not run format on the python bindings")
-            .success(),
-        "The cargo format failed and returned non-zero exit status"
-    );
+    format_crate("../bindings/python/crates/py_graph/");
+    format_crate("../bindings/python/crates/py_url_utilities/");
+    format_crate("../bindings/python/crates/py_edge_list_utils/");
 }

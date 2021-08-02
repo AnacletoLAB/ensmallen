@@ -2,7 +2,7 @@ use super::*;
 use std::collections::HashSet;
 
 pub fn get_binding_names() -> HashSet<String> {
-    let bindings_files: Vec<String> = read_dir("../bindings/python/src")
+    let bindings_files: Vec<String> = read_dir("../bindings/python/crates/py_graph/src")
         .unwrap()
         .map(|path| {
             path.unwrap()

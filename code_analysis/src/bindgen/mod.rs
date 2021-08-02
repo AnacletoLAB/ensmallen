@@ -1,6 +1,4 @@
 use super::*;
-use std::collections::HashMap;
-use regex::Regex;
 
 mod binding;
 pub use binding::*;
@@ -17,72 +15,9 @@ pub use translate_type::*;
 mod tfidf_gen;
 pub use tfidf_gen::*;
 
-mod fix_init;
-pub use fix_init::fix_init;
 
-pub fn extract_module_name_from_path(path: &str) -> Option<String> {
-    let re = Regex::new(r"\.\./crates/graph/src/(.+)/.+\.rs").unwrap();
-    re.captures(path).map(|x| x.get(1).unwrap().as_str().to_string())
-}
-
-pub enum ValueToWrap {
-    Function(String),
-    Module{
-        module_name: String,
-        values: Vec<ValueToWrap>,
-    },
-}
-
-impl ValueToWrap {
-    pub fn get(&self) -> String {
-        match self {
-            ValueToWrap::Function(func) => {
-                func.to_string()
-            },
-            ValueToWrap::Module{module_name, ..} => {
-                module_name.to_string()
-            }
-        }
-    }
-
-    pub fn wrap(&self) -> String {
-        match self {
-            ValueToWrap::Function(func) => {
-                format!("wrap_pyfunction!({})", func)
-            },
-            ValueToWrap::Module{module_name, ..} => {
-                format!("wrap_pymodule!({})", module_name)
-            }
-        }
-    }
-
-    pub fn gen_module(&self) -> String {
-        match self {
-            ValueToWrap::Function(func) => {
-                String::new()
-            },
-            ValueToWrap::Module{module_name, values} => {
-                format!(
-r#"
-#[pymodule]
-fn {module_name}(_py: Python, m: &PyModule) -> PyResult<()> {{
-{wraps}
-    Ok(())
-}}
-"#,
-    module_name=module_name,
-    wraps = values.iter().map(|x| format!("\t{};\n", x.wrap())).collect::<Vec<_>>().join(""),
-                )
-            }
-        }
-    }
-}
-
-
-pub fn gen_bindings(lib_name: &str, is_submodule: bool) -> Vec<ValueToWrap> {
-
+pub fn gen_bindings(lib_name: &str, imports: &str, target_file: &str) {
     let src_path = format!("../crates/{}/src", lib_name);
-    let path = format!("../bindings/python/src/auto_{}.rs", lib_name);
 
     print_sep();
     println!("Parsing the library source files");
@@ -98,13 +33,6 @@ pub fn gen_bindings(lib_name: &str, is_submodule: bool) -> Vec<ValueToWrap> {
 
     let mut method_bindings = vec![];
     let mut function_bindings = vec![];
-    let mut functions_modules: HashMap<String, Vec<Binding>> = HashMap::new();
-
-    let submodule = if is_submodule {
-        Some(lib_name.to_string())
-    } else {
-        None
-    };
 
     for mut func in functions {
         if !func.name.starts_with("iter")
@@ -121,15 +49,7 @@ pub fn gen_bindings(lib_name: &str, is_submodule: bool) -> Vec<ValueToWrap> {
             if binding.is_method {
                 method_bindings.push(binding);
             } else {
-                match extract_module_name_from_path(binding.file_path.as_str()).or(submodule.clone()) {
-                    Some(module_name) => {
-                        let module_functions = functions_modules.entry(module_name).or_insert_with(Vec::new);
-                        module_functions.push(binding);
-                    }
-                    None => {
-                        function_bindings.push(binding);
-                    }
-                }
+                function_bindings.push(binding);
             }
         }
     }
@@ -138,51 +58,44 @@ pub fn gen_bindings(lib_name: &str, is_submodule: bool) -> Vec<ValueToWrap> {
 
     print_sep();
     println!(
-        "Generated bindings for {} functions, {} methods, and {} modules at {}",  
-        function_bindings.len() + functions_modules.iter().map(|(_, funcs)| funcs.len()).sum::<usize>(), 
+        "Generated bindings for {} functions, {} methods, at {}",  
+        function_bindings.len(), 
         method_bindings.len(),
-        functions_modules.len(),
-        path,
+        target_file,
     );
     print_sep();
 
     let file_content = format!(
         r#"
-#[allow(unused_imports)]
-use tags::*;
-#[allow(unused_imports)]
-use shared::*;
-#[allow(unused_imports)]
-use pyo3::prelude::*;
-#[allow(unused_imports)]
-use pyo3::types::PyDict;
-#[allow(unused_imports)]
-use numpy::{{PyArray, PyArray1, PyArray2}};
-#[allow(unused_imports)]
-use crate::types::EnsmallenGraph;
-#[allow(unused_imports)]
-use graph::{{DumpGraph, Graph}};
-#[allow(unused_imports)]
-use std::collections::{{HashMap, HashSet}};
+{imports}
+
+#[pymodule]
+fn py_{lib_name}(_py: Python, m: &PyModule) -> PyResult<()> {{
+    {maybe_ensmallen}
+    {func_wrapping}
+    Ok(())
+}}
+
 
 {function_bindings}
 
-{function_modules_bindings}
-
 {methods}
 "#,
+    imports=imports,
+    lib_name =lib_name,
+    maybe_ensmallen = if lib_name == "graph" {
+        "m.add_class::<EnsmallenGraph>()?;\nenv_logger::init();\n".to_string()
+    } else {
+        String::new()
+    },
+    func_wrapping = function_bindings.iter()
+        .map(|func| {
+            format!("m.add_wrapped(wrap_pyfunction!({}))?;", func.name)
+        })
+        .collect::<Vec<_>>().join("\n"),
 
     function_bindings=function_bindings.iter()
         .map(|x| x.clone().into())
-        .collect::<Vec<String>>().join(""),
-
-    function_modules_bindings=functions_modules.iter()
-        .flat_map(|(_module_name, functions)| {
-            functions.iter()
-                .map(|function| function.clone().into())
-                .collect::<Vec<String>>()
-        
-        })
         .collect::<Vec<String>>().join(""),
 
     methods = if method_bindings.is_empty() {
@@ -202,22 +115,8 @@ impl EnsmallenGraph {{
     
 
     fs::write(
-        path,
+        target_file,
         file_content,
     )
     .expect("Cannot write the automatically generated bindings file");
-
-
-
-    
-    functions_modules.iter()
-        .map(|(module_name, bindings)| ValueToWrap::Module{
-            module_name: module_name.clone(),
-            values: bindings.iter().map(|x| ValueToWrap::Function(x.name.clone())).collect::<Vec<_>>()
-        })
-        .chain(
-            function_bindings.iter()
-                .map(|x| ValueToWrap::Function(x.name.clone()))
-        )
-        .collect::<Vec<_>>()
 }

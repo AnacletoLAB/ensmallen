@@ -99,7 +99,7 @@ impl From<Function> for  Binding {
             args_signatures.push(arg.name.clone());
         }
 
-        let text_signature = format!("#[text_signature = \"({})\"]", args_signatures.join(", "));
+        let text_signature = format!("#[pyo3(text_signature = \"({})\")]", args_signatures.join(", "));
 
         // build the call
         let mut body = format!(

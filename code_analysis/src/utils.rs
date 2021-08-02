@@ -64,3 +64,16 @@ pub fn get_sources(root: &str) -> Vec<Module> {
 pub fn print_sep() {
     println!("--------------------------------------------------------------------------------");
 }
+
+
+pub fn format_crate(path: &str) {
+    assert!(
+        std::process::Command::new("cargo")
+            .args(&["fmt"])
+            .current_dir(path)
+            .status()
+            .expect("Could not run format on the python bindings")
+            .success(),
+        "The cargo format failed and returned non-zero exit status"
+    );
+}
