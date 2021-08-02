@@ -60,7 +60,7 @@ pub const TFIDF_FREQUENCIES: &[&[(&str, f64)]] = &[
             .join("\n"),
         tfidf
             .iter()
-            .map(|vals| format!("&{:?},", vals.iter().collect::<Vec<(&String, &f64)>>()))
+            .map(|vals| format!("&{:?},", vals.iter().collect::<Vec<(&&str, &f64)>>()))
             .collect::<Vec<String>>()
             .join("\n"),
     );

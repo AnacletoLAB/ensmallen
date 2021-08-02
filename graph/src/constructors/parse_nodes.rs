@@ -1,6 +1,4 @@
 use rayon::iter::ParallelIterator;
-use std::sync::atomic::AtomicU32;
-use std::sync::atomic::Ordering::Relaxed;
 
 use super::*;
 
@@ -76,101 +74,6 @@ pub(crate) fn parse_nodes(
         minimum_node_ids,
         node_list_is_correct,
     ) {
-        // (Some(ni), Some(ntn), true, Some(ntm), false) => {
-        //     // In case the node types are expected to exist.
-        //     let (nodes_number, min, max, node_types_ids) = if has_node_types {
-        //         let min = AtomicU32::new(NodeT::MAX);
-        //         let max = AtomicU32::new(0);
-        //         let nodes_number = AtomicU32::new(0);
-        //         let node_type_ids = ni
-        //             .map(|line| match line {
-        //                 Ok((line_number, (node_name, node_type_ids))) => {
-        //                     let node_id = match node_name.parse::<NodeT>() {
-        //                         Ok(node_id) => Ok(node_id),
-        //                         Err(_) => Err(format!(
-        //                             concat!(
-        //                                 "While parsing the provided node list, ",
-        //                                 "the node ID {:?} was found and it is not ",
-        //                                 "possible to convert it to an integer as was requested.\n",
-        //                                 "Specifically the line with the error is {}."
-        //                             ),
-        //                             node_name, line_number
-        //                         )),
-        //                     }?;
-        //                     min.fetch_min(node_id, Relaxed);
-        //                     max.fetch_max(node_id, Relaxed);
-        //                     nodes_number.fetch_add(1, Relaxed);
-        //                     Ok(node_type_ids)
-        //                 }
-        //                 Err(e) => Err(e),
-        //             })
-        //             .collect::<Result<Vec<Option<Vec<NodeTypeT>>>>>()?;
-        //         (   
-        //             nodes_number,
-        //             min.into_inner(),
-        //             max.into_inner(),
-        //             optionify!(node_type_ids),
-        //         )
-        //     } else {
-        //         // Alternatively we can focus exclusively on the
-        //         // node IDs, which being numeric boil down to collecting
-        //         // the minimum and the maximum value.
-        //         let (min, max): (NodeT, NodeT) = ni
-        //             .map(|line| match line {
-        //                 Ok((line_number, (node_name, _))) => match node_name.parse::<NodeT>() {
-        //                     Ok(node_id) => Ok(node_id),
-        //                     Err(_) => Err(format!(
-        //                         concat!(
-        //                             "While parsing the provided node list, ",
-        //                             "the node ID {:?} was found and it is not ",
-        //                             "possible to convert it to an integer as was requested.\n",
-        //                             "Specifically the line with the error is {}."
-        //                         ),
-        //                         node_name, line_number
-        //                     )),
-        //                 },
-        //                 Err(e) => Err(e),
-        //             })
-        //             .map(|maybe_node_id: Result<NodeT>| {
-        //                 maybe_node_id.map(|node_id| (node_id, node_id))
-        //             })
-        //             .reduce(
-        //                 || Ok((NodeT::MAX, 0 as NodeT)),
-        //                 |line1: Result<(NodeT, NodeT)>, line2: Result<(NodeT, NodeT)>| match (
-        //                     line1, line2,
-        //                 ) {
-        //                     (Ok((min1, max1)), Ok((min2, max2))) => {
-        //                         Ok((min1.min(min2), max1.max(max2)))
-        //                     }
-        //                     (Err(e), _) => Err(e),
-        //                     (_, Err(e)) => Err(e),
-        //                 },
-        //             )?;
-        //         (min, max, None)
-        //     };
-        //     let minimum_node_ids = minimum_node_ids.unwrap_or(min);
-
-        //     if min < minimum_node_ids {
-        //         return Err(format!(
-        //             concat!(
-        //                 "The given minimum id {:?} is higher ",
-        //                 "than the minimum id found in the iterator {:?}."
-        //             ),
-        //             minimum_node_ids, min
-        //         ));
-        //     }
-
-        //     let mut node_type_vocabulary = node_type_parser.into_inner();
-        //     if node_type_vocabulary.is_empty() {
-        //         node_type_vocabulary.build()?;
-        //     }
-
-        //     Ok((
-        //         Vocabulary::from_range(min.min(minimum_node_ids)..max),
-        //         node_types_ids,
-        //         Some(node_type_vocabulary),
-        //     ))
-        // },
         // When the nodes iterator was provided, and the node IDs are expected
         // NOT to be numeric and a minimum node ID is therefore meaningless.
         // Note that this is the use case when the node list is ASSUMED TO BE CORRECT
@@ -280,43 +183,19 @@ pub(crate) fn parse_nodes(
         }
         // When the node iterator was provided, and the nodes number is not known
         // and the node IDs are expected to be numeric.
-        (Some(ni), None, true, _, _) => {
+        (Some(ni), maybe_nodes_number, true, _, _) => {
             // In case the node types are expected to exist.
             let (min, max, node_types_ids) = if has_node_types {
-                let min = AtomicU32::new(NodeT::MAX);
-                let max = AtomicU32::new(0);
-                let node_type_ids = ni
-                    .map(|line| match line {
-                        Ok((line_number, (node_name, node_type_ids))) => {
-                            let node_id = match node_name.parse::<NodeT>() {
-                                Ok(node_id) => Ok(node_id),
-                                Err(_) => Err(format!(
-                                    concat!(
-                                        "While parsing the provided node list, ",
-                                        "the node ID {:?} was found and it is not ",
-                                        "possible to convert it to an integer as was requested.\n",
-                                        "Specifically the line with the error is {}."
-                                    ),
-                                    node_name, line_number
-                                )),
-                            }?;
-                            min.fetch_min(node_id, Relaxed);
-                            max.fetch_max(node_id, Relaxed);
-                            Ok(node_type_ids)
-                        }
-                        Err(e) => Err(e),
-                    })
-                    .collect::<Result<Vec<Option<Vec<NodeTypeT>>>>>()?;
-                (
-                    min.into_inner(),
-                    max.into_inner(),
-                    optionify!(node_type_ids),
-                )
+                return Err(concat!(
+                    "This case is not supported. You cannot have a nodes iterator of numeric node ids with node types.",
+                    " This would require to sort the csv and thus it requires a higher memory peak.",
+                    " If you want to load it just set numeric_node_ids to false and load them as strings.",
+                ).to_string());
             } else {
                 // Alternatively we can focus exclusively on the
                 // node IDs, which being numeric boil down to collecting
                 // the minimum and the maximum value.
-                let (min, max): (NodeT, NodeT) = ni
+                let (min, max, actual_nodes_number): (NodeT, NodeT, NodeT) = ni
                     .map(|line| match line {
                         Ok((line_number, (node_name, _))) => match node_name.parse::<NodeT>() {
                             Ok(node_id) => Ok(node_id),
@@ -333,20 +212,30 @@ pub(crate) fn parse_nodes(
                         Err(e) => Err(e),
                     })
                     .map(|maybe_node_id: Result<NodeT>| {
-                        maybe_node_id.map(|node_id| (node_id, node_id))
+                        maybe_node_id.map(|node_id| (node_id, node_id, 1))
                     })
                     .reduce(
-                        || Ok((NodeT::MAX, 0 as NodeT)),
-                        |line1: Result<(NodeT, NodeT)>, line2: Result<(NodeT, NodeT)>| match (
+                        || Ok((NodeT::MAX, 0 as NodeT, 0)),
+                        |line1: Result<(NodeT, NodeT, NodeT)>, line2: Result<(NodeT, NodeT, NodeT)>| match (
                             line1, line2,
                         ) {
-                            (Ok((min1, max1)), Ok((min2, max2))) => {
-                                Ok((min1.min(min2), max1.max(max2)))
+                            (Ok((min1, max1, count1)), Ok((min2, max2, count2))) => {
+                                Ok((min1.min(min2), max1.max(max2), count1 + count2))
                             }
                             (Err(e), _) => Err(e),
                             (_, Err(e)) => Err(e),
                         },
                     )?;
+                
+                    if let Some(nn) = maybe_nodes_number {
+                        if nn != actual_nodes_number {
+                            return Err(format!(
+                                "The given nodes number '{}' is different from the actual nodes number '{}'.",
+                                nn, actual_nodes_number,
+                            ));
+                        }
+                    }
+
                 (min, max, None)
             };
             let minimum_node_ids = minimum_node_ids.unwrap_or(min);

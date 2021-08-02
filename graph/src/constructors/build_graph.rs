@@ -1,6 +1,7 @@
 use super::*;
 use rayon::prelude::*;
 
+#[manual_binding]
 /// Return new graph object built from string iterators.
 ///
 /// # Arguments
@@ -158,6 +159,7 @@ pub fn build_graph_from_strings<S: Into<String>>(
     ))
 }
 
+#[manual_binding]
 /// Return new graph object built from string iterators.
 ///
 /// # Arguments
@@ -287,6 +289,7 @@ pub fn build_empty_graph<S: Into<String>>(directed: bool, name: S) -> Result<Gra
     )
 }
 
+#[manual_binding]
 /// Return new graph object built from integer iterators.
 ///
 /// # Arguments
