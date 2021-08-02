@@ -1656,9 +1656,9 @@ pub fn test_remove_components(graph: &mut Graph, verbose: Option<bool>) -> Resul
 pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
     let k = 3;
     for i in 0..k {
-        let (train, test) = graph.kfold(k, i, None, None, None)?;
+        let (train, test) = graph.get_edge_prediction_kfold(k, i, None, None, None)?;
         assert!(
-            test.get_edges_number() <= (graph.get_edges_number() / k) + 1,
+            test.get_edges_number() <= (graph.get_edges_number() / k as EdgeT) + 1,
             concat!(
                 "Check that test kfolds respect size bound has failed!\n",
                 "The value of k is {}.\n",
@@ -1672,7 +1672,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
             graph.textual_report(),
             train.textual_report(),
             test.textual_report(),
-            (graph.get_edges_number() / k) + 1,
+            (graph.get_edges_number() / k as EdgeT) + 1,
             test.get_edges_number(),
             i
         );
@@ -1681,7 +1681,7 @@ pub fn test_kfold(graph: &mut Graph, _verbose: Option<bool>) -> Result<()> {
 
     if let Ok(edge_t) = graph.get_edge_type_name_from_edge_type_id(0) {
         for i in 0..k {
-            let (train, test) = graph.kfold(k, i, Some(vec![Some(edge_t.clone())]), None, None)?;
+            let (train, test) = graph.get_edge_prediction_kfold(k, i, Some(vec![Some(edge_t.clone())]), None, None)?;
             default_holdout_test_suite(graph, &train, &test)?;
         }
     }
@@ -1729,7 +1729,7 @@ pub fn test_negative_edges_generation(graph: &mut Graph, verbose: Option<bool>) 
 
 pub fn test_subgraph_generation(graph: &mut Graph, verbose: Option<bool>) -> Result<()> {
     let expected_nodes = graph.get_connected_nodes_number() / 10;
-    let subgraph = graph.random_subgraph(expected_nodes, None, verbose)?;
+    let subgraph = graph.get_random_subgraph(expected_nodes, None, verbose)?;
     assert!(subgraph.overlaps(&graph)?);
     assert!(subgraph.get_connected_nodes_number() <= expected_nodes + 1);
     Ok(())

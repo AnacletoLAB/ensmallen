@@ -576,6 +576,32 @@ impl Graph {
             .map(|_| self.node_types.as_ref().map(|nts| nts.ids.clone()).unwrap())
     }
 
+    /// Returns boolean mask of known node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_known_node_types_mask(&self) -> Result<Vec<bool>> {
+        self.must_have_node_types()?;
+        Ok(unsafe {
+            self.iter_unchecked_node_type_ids()
+                .map(|nt| nt.is_some())
+                .collect()
+        })
+    }
+
+    /// Returns boolean mask of unknown node types.
+    ///
+    /// # Raises
+    /// * If the graph does not have node types.
+    pub fn get_unknown_node_types_mask(&self) -> Result<Vec<bool>> {
+        self.must_have_node_types()?;
+        Ok(unsafe {
+            self.iter_unchecked_node_type_ids()
+                .map(|nt| nt.is_none())
+                .collect()
+        })
+    }
+
     /// Returns one-hot encoded node types.
     ///
     /// # Raises

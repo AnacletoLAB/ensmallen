@@ -4075,7 +4075,7 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the graph has less than the requested number of nodes.
     ///
-    pub fn random_subgraph(
+    pub fn get_random_subgraph(
         &self,
         nodes_number: NodeT,
         random_state: Option<usize>,
@@ -4084,8 +4084,172 @@ impl EnsmallenGraph {
         Ok(EnsmallenGraph {
             graph: pe!(self
                 .graph
-                .random_subgraph(nodes_number, random_state, verbose))?,
+                .get_random_subgraph(nodes_number, random_state, verbose))?,
         })
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    /// Returns node-label holdout for training ML algorithms on the graph node labels.
+    ///
+    /// Parameters
+    /// ----------
+    /// train_size: float,
+    ///     rate target to reserve for training,
+    /// use_stratification: Optional[bool],
+    ///     Whether to use node-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If stratification is requested but the graph has a single node type.
+    /// ValueError
+    ///     If stratification is requested but the graph has a multilabel node types.
+    ///
+    pub fn get_node_label_random_holdout(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let (g1, g2) = pe!(self.graph.get_node_label_random_holdout(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, k, k_index, use_stratification, random_state)"]
+    /// Returns node-label fold for training ML algorithms on the graph node labels.
+    ///
+    /// Parameters
+    /// ----------
+    /// k: int,
+    ///     The number of folds.
+    /// k_index: int,
+    ///     Which fold to use for the validation.
+    /// use_stratification: Optional[bool],
+    ///     Whether to use node-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    /// ValueError
+    ///     If stratification is requested but the graph has a single node type.
+    /// ValueError
+    ///     If stratification is requested but the graph has a multilabel node types.
+    ///
+    pub fn get_node_label_kfold(
+        &self,
+        k: usize,
+        k_index: usize,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let (g1, g2) =
+            pe!(self
+                .graph
+                .get_node_label_kfold(k, k_index, use_stratification, random_state))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, train_size, use_stratification, random_state)"]
+    /// Returns edge-label holdout for training ML algorithms on the graph edge labels.
+    /// This is commonly used for edge type prediction tasks.
+    ///
+    /// This method returns two graphs, the train and the test one.
+    /// The edges of the graph will be splitted in the train and test graphs according
+    /// to the `train_size` argument.
+    ///
+    /// If stratification is enabled, the train and test will have the same ratios of
+    /// edge types.
+    ///
+    /// Parameters
+    /// ----------
+    /// train_size: float,
+    ///     rate target to reserve for training,
+    /// use_stratification: Optional[bool],
+    ///     Whether to use edge-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    /// ValueError
+    ///     If stratification is required but the graph has singleton edge types.
+    ///
+    pub fn get_edge_label_random_holdout(
+        &self,
+        train_size: f64,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let (g1, g2) = pe!(self.graph.get_edge_label_random_holdout(
+            train_size,
+            use_stratification,
+            random_state
+        ))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self, k, k_index, use_stratification, random_state)"]
+    /// Returns edge-label kfold for training ML algorithms on the graph edge labels.
+    /// This is commonly used for edge type prediction tasks.
+    ///
+    /// This method returns two graphs, the train and the test one.
+    /// The edges of the graph will be splitted in the train and test graphs according
+    /// to the `train_size` argument.
+    ///
+    /// If stratification is enabled, the train and test will have the same ratios of
+    /// edge types.
+    ///
+    /// Parameters
+    /// ----------
+    /// k: int,
+    ///     The number of folds.
+    /// k_index: int,
+    ///     Which fold to use for the validation.
+    /// use_stratification: Optional[bool],
+    ///     Whether to use edge-label stratification,
+    /// random_state: Optional[int],
+    ///     The random_state to use for the holdout,
+    ///
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have edge types.
+    /// ValueError
+    ///     If stratification is required but the graph has singleton edge types.
+    ///
+    pub fn get_edge_label_kfold(
+        &self,
+        k: usize,
+        k_index: usize,
+        use_stratification: Option<bool>,
+        random_state: Option<EdgeT>,
+    ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
+        let (g1, g2) =
+            pe!(self
+                .graph
+                .get_edge_label_kfold(k, k_index, use_stratification, random_state))?;
+        Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
     #[automatically_generated_binding]
@@ -4120,17 +4284,21 @@ impl EnsmallenGraph {
     /// ValueError
     ///     If the number of k folds is higher than the number of edges in the graph.
     ///
-    pub fn kfold(
+    pub fn get_edge_prediction_kfold(
         &self,
-        k: EdgeT,
-        k_index: u64,
+        k: usize,
+        k_index: usize,
         edge_types: Option<Vec<Option<String>>>,
         random_state: Option<EdgeT>,
         verbose: Option<bool>,
     ) -> PyResult<(EnsmallenGraph, EnsmallenGraph)> {
-        let (g1, g2) = pe!(self
-            .graph
-            .kfold(k, k_index, edge_types, random_state, verbose))?;
+        let (g1, g2) = pe!(self.graph.get_edge_prediction_kfold(
+            k,
+            k_index,
+            edge_types,
+            random_state,
+            verbose
+        ))?;
         Ok((EnsmallenGraph { graph: g1 }, EnsmallenGraph { graph: g2 }))
     }
 
@@ -5219,6 +5387,42 @@ impl EnsmallenGraph {
     /// Return the node types of the graph nodes.
     pub fn get_node_type_ids(&self) -> PyResult<Vec<Option<Vec<NodeTypeT>>>> {
         pe!(self.graph.get_node_type_ids())
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Returns boolean mask of known node types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn get_known_node_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_known_node_types_mask())?,
+            bool
+        ))
+    }
+
+    #[automatically_generated_binding]
+    #[text_signature = "($, self)"]
+    /// Returns boolean mask of unknown node types.
+    ///
+    /// Raises
+    /// -------
+    /// ValueError
+    ///     If the graph does not have node types.
+    ///
+    pub fn get_unknown_node_types_mask(&self) -> PyResult<Py<PyArray1<bool>>> {
+        let gil = pyo3::Python::acquire_gil();
+        Ok(to_ndarray_1d!(
+            gil,
+            pe!(self.graph.get_unknown_node_types_mask())?,
+            bool
+        ))
     }
 
     #[automatically_generated_binding]
