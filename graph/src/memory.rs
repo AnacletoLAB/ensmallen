@@ -149,6 +149,7 @@ impl Graph {
         to_human_readable_memory_requirement(self.get_edge_weights_total_memory_requirements())
     }
 
+    #[no_binding]
     /// Returns node types memory stats.
     pub fn get_node_types_memory_stats(&self) -> Result<NodeTypeVocabularyMemoryStats> {
         self.must_have_node_types()
@@ -167,6 +168,7 @@ impl Graph {
             .map(|amount| to_human_readable_memory_requirement(amount))
     }
 
+    #[no_binding]
     /// Returns edge types memory stats.
     pub fn get_edge_types_memory_stats(&self) -> Result<EdgeTypeVocabularyMemoryStats> {
         self.must_have_edge_types()

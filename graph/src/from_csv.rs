@@ -127,88 +127,88 @@ impl Graph {
     /// Return graph renderized from given CSVs or TSVs-like files.
     ///
     /// # Arguments
-    /// * `node_type_path: Option<String> - The path to the file with the unique node type names.
-    /// * `node_type_list_separator: Option<String> - The separator to use for the node types file. Note that if this is not provided, one will be automatically detected among the following: comma, semi-column, tab and space.
-    /// * `node_types_column_number: Option<usize> - The number of the column of the node types file from where to load the node types.
-    /// * `node_types_column: Option<String> - The name of the column of the node types file from where to load the node types.
-    /// * `node_types_number: Option<NodeTypeT> - The number of the unique node types. This will be used in order to allocate the correct size for the data structure.
-    /// * `numeric_node_type_ids: Option<bool> - Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
-    /// * `minimum_node_type_id: Option<NodeTypeT> - The minimum node type ID to be used when using numeric node type IDs.
-    /// * `node_type_list_header: Option<bool> - Whether the node type file has an header.
-    /// * `node_type_list_rows_to_skip: Option<usize> - The number of lines to skip in the node types file: the header is already skipped if it has been specified that the file has an header.
-    /// * `node_type_list_is_correct: Option<bool> - Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
-    /// * `node_type_list_max_rows_number: Option<usize> - The maximum number of lines to be loaded from the node types file.
-    /// * `node_type_list_comment_symbol: Option<String> - The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped.
-    /// * `load_node_type_list_in_parallel: Option<bool> - Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable.
-    /// * `node_path: Option<String> - The path to the file with the unique node names.
-    /// * `node_list_separator: Option<String> - The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following: comma, semi-column, tab and space.
-    /// * `node_list_header: Option<bool> - Whether the nodes file has an header.
-    /// * `node_list_rows_to_skip: Option<usize>,
-    /// * `node_list_is_correct: Option<bool>,
-    /// * `node_list_max_rows_number: Option<usize>,
-    /// * `node_list_comment_symbol: Option<String>,
-    /// * `default_node_type: Option<String>,
-    /// * `nodes_column_number: Option<usize>,
-    /// * `nodes_column: Option<String>,
-    /// * `node_types_separator: Option<String>,
-    /// * `node_list_node_types_column_number: Option<usize>,
-    /// * `node_list_node_types_column: Option<String>,
-    /// * `node_ids_column: Option<String>,
-    /// * `node_ids_column_number: Option<usize>,
-    /// * `nodes_number: Option<NodeT>,
-    /// * `minimum_node_id: Option<NodeT>,
-    /// * `numeric_node_ids: Option<bool>,
-    /// * `node_list_numeric_node_type_ids: Option<bool>,
-    /// * `skip_node_types_if_unavailable: Option<bool>,
-    /// * `load_node_list_in_parallel: Option<bool>,
-    /// * `edge_type_path: Option<String>,
-    /// * `edge_types_column_number: Option<usize>,
-    /// * `edge_types_column: Option<String>,
-    /// * `edge_types_number: Option<NodeTypeT>,
-    /// * `numeric_edge_type_ids: Option<bool>,
-    /// * `minimum_edge_type_id: Option<NodeTypeT>,
-    /// * `edge_type_list_separator: Option<String>,
-    /// * `edge_type_list_header: Option<bool>,
-    /// * `edge_type_list_rows_to_skip: Option<usize>,
-    /// * `edge_type_list_is_correct: Option<bool>,
-    /// * `edge_type_list_max_rows_number: Option<usize>,
-    /// * `edge_type_list_comment_symbol: Option<String>,
-    /// * `load_edge_type_list_in_parallel: Option<bool>,
-    /// * `edge_path: Option<String>,
-    /// * `edge_list_separator: Option<String>,
-    /// * `edge_list_header: Option<bool>,
-    /// * `edge_list_rows_to_skip: Option<usize>,
-    /// * `sources_column_number: Option<usize>,
-    /// * `sources_column: Option<String>,
-    /// * `destinations_column_number: Option<usize>,
-    /// * `destinations_column: Option<String>,
-    /// * `edge_list_edge_types_column_number: Option<usize>,
-    /// * `edge_list_edge_types_column: Option<String>,
-    /// * `default_edge_type: Option<String>,
-    /// * `weights_column_number: Option<usize>,
-    /// * `weights_column: Option<String>,
-    /// * `default_weight: Option<WeightT>,
-    /// * `edge_ids_column: Option<String>,
-    /// * `edge_ids_column_number: Option<usize>,
-    /// * `edge_list_numeric_edge_type_ids: Option<bool>,
-    /// * `edge_list_numeric_node_ids: Option<bool>,
-    /// * `skip_weights_if_unavailable: Option<bool>,
-    /// * `skip_edge_types_if_unavailable: Option<bool>,
-    /// * `edge_list_is_complete: Option<bool>,
-    /// * `edge_list_may_contain_duplicates: Option<bool>,
-    /// * `edge_list_is_sorted: Option<bool>,
-    /// * `edge_list_is_correct: Option<bool>,
-    /// * `edge_list_max_rows_number: Option<usize>,
-    /// * `edge_list_comment_symbol: Option<String>,
-    /// * `edges_number: Option<EdgeT>,
-    /// * `load_edge_list_in_parallel: Option<bool>,
-    /// * `verbose: Option<bool>,
-    /// * `may_have_singletons: Option<bool>,
-    /// * `may_have_singleton_with_selfloops: Option<bool>,
-    /// * `directed: bool,
-    /// * `name: S,
+    /// * `node_type_path`: Option<String> - The path to the file with the unique node type names.
+    /// * `node_type_list_separator`: Option<String> - The separator to use for the node types file. Note that if this is not provided, one will be automatically detected among the following`: comma, semi-column, tab and space.
+    /// * `node_types_column_number`: Option<usize> - The number of the column of the node types file from where to load the node types.
+    /// * `node_types_column`: Option<String> - The name of the column of the node types file from where to load the node types.
+    /// * `node_types_number`: Option<NodeTypeT> - The number of the unique node types. This will be used in order to allocate the correct size for the data structure.
+    /// * `numeric_node_type_ids`: Option<bool> - Whether the node type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
+    /// * `minimum_node_type_id`: Option<NodeTypeT> - The minimum node type ID to be used when using numeric node type IDs.
+    /// * `node_type_list_header`: Option<bool> - Whether the node type file has an header.
+    /// * `node_type_list_rows_to_skip`: Option<usize> - The number of lines to skip in the node types file`: the header is already skipped if it has been specified that the file has an header.
+    /// * `node_type_list_is_correct`: Option<bool> - Whether the node types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
+    /// * `node_type_list_max_rows_number`: Option<usize> - The maximum number of lines to be loaded from the node types file.
+    /// * `node_type_list_comment_symbol`: Option<String> - The comment symbol to skip lines in the node types file. Lines starting with this symbol will be skipped.
+    /// * `load_node_type_list_in_parallel`: Option<bool> - Whether to load the node type list in parallel. Note that when loading in parallel, the internal order of the node type IDs may result changed across different iterations. We are working to get this to be stable.
+    /// * `node_path`: Option<String> - The path to the file with the unique node names.
+    /// * `node_list_separator`: Option<String> - The separator to use for the nodes file. Note that if this is not provided, one will be automatically detected among the following`: comma, semi-column, tab and space.
+    /// * `node_list_header`: Option<bool> - Whether the nodes file has an header.
+    /// * `node_list_rows_to_skip`: Option<usize> - Number of rows to skip in the node list file.
+    /// * `node_list_is_correct`: Option<bool> - Whether the nodes file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
+    /// * `node_list_max_rows_number`: Option<usize> - The maximum number of lines to be loaded from the nodes file.
+    /// * `node_list_comment_symbol`: Option<String> - The comment symbol to skip lines in the nodes file. Lines starting with this symbol will be skipped.
+    /// * `default_node_type`: Option<String> - The node type to be used when the node type for a given node in the node file is None.
+    /// * `nodes_column_number`: Option<usize> - The number of the column of the node file from where to load the node names.
+    /// * `nodes_column`: Option<String> - The name of the column of the node file from where to load the node names.
+    /// * `node_types_separator`: Option<String> - The node types separator.
+    /// * `node_list_node_types_column_number`: Option<usize> - The number of the column of the node file from where to load the node types.
+    /// * `node_list_node_types_column`: Option<String> - The name of the column of the node file from where to load the node types.
+    /// * `node_ids_column`: Option<String> - The name of the column of the node file from where to load the node IDs.
+    /// * `node_ids_column_number`: Option<usize> - The number of the column of the node file from where to load the node IDs
+    /// * `nodes_number`: Option<NodeT> - The expected number of nodes. Note that this must be the EXACT number of nodes in the graph.
+    /// * `minimum_node_id`: Option<NodeT> - The minimum node ID to be used, when loading the node IDs as numerical.
+    /// * `numeric_node_ids`: Option<bool> - Whether to load the numeric node IDs as numeric.
+    /// * `node_list_numeric_node_type_ids`: Option<bool> - Whether to load the node types IDs in the node file to be numeric.
+    /// * `skip_node_types_if_unavailable`: Option<bool> - Whether to skip the node types without raising an error if these are unavailable.
+    /// * `load_node_list_in_parallel`: Option<bool> - Whether to load the node list in parallel. When loading in parallel, without node IDs, the nodes may not be loaded in a deterministic order.
+    /// * `edge_type_path`: Option<String> - The path to the file with the unique edge type names.
+    /// * `edge_types_column_number`: Option<usize> - The number of the column of the edge types file from where to load the edge types.
+    /// * `edge_types_column`: Option<String> - The name of the column of the edge types file from where to load the edge types.
+    /// * `edge_types_number`: Option<EdgeTypeT> - The number of the unique edge types. This will be used in order to allocate the correct size for the data structure.
+    /// * `numeric_edge_type_ids`: Option<bool> - Whether the edge type names should be loaded as numeric values, i.e. casted from string to a numeric representation.
+    /// * `minimum_edge_type_id`: Option<EdgeTypeT> - The minimum edge type ID to be used when using numeric edge type IDs.
+    /// * `edge_type_list_separator`: Option<String> - The separator to use for the edge type list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.
+    /// * `edge_type_list_header`: Option<bool> - Whether the edge type file has an header.
+    /// * `edge_type_list_rows_to_skip`: Option<usize> - Number of rows to skip in the edge type list file.
+    /// * `edge_type_list_is_correct`: Option<bool> - Whether the edge types file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
+    /// * `edge_type_list_max_rows_number`: Option<usize> - The maximum number of lines to be loaded from the edge types file.
+    /// * `edge_type_list_comment_symbol`: Option<String> - The comment symbol to skip lines in the edge types file. Lines starting with this symbol will be skipped.
+    /// * `load_edge_type_list_in_parallel`: Option<bool> - Whether to load the edge type list in parallel. When loading in parallel, without edge type IDs, the edge types may not be loaded in a deterministic order.
+    /// * `edge_path`: Option<String> - The path to the file with the edge list.
+    /// * `edge_list_separator`: Option<String> - The separator to use for the edge list. Note that, if None is provided, one will be attempted to be detected automatically between ';', ',', tab or space.
+    /// * `edge_list_header`: Option<bool> - Whether the edges file has an header.
+    /// * `edge_list_rows_to_skip`: Option<usize> - Number of rows to skip in the edge list file.
+    /// * `sources_column_number`: Option<usize> - The number of the column of the edges file from where to load the source nodes.
+    /// * `sources_column`: Option<String> - The name of the column of the edges file from where to load the source nodes.
+    /// * `destinations_column_number`: Option<usize> - The number of the column of the edges file from where to load the destinaton nodes.
+    /// * `destinations_column`: Option<String> - The name of the column of the edges file from where to load the destinaton nodes.
+    /// * `edge_list_edge_types_column_number`: Option<usize> - The number of the column of the edges file from where to load the edge types.
+    /// * `edge_list_edge_types_column`: Option<String> - The name of the column of the edges file from where to load the edge types.
+    /// * `default_edge_type`: Option<String> - The edge type to be used when the edge type for a given edge in the edge file is None.
+    /// * `weights_column_number`: Option<usize> - The number of the column of the edges file from where to load the edge weights.
+    /// * `weights_column`: Option<String> - The name of the column of the edges file from where to load the edge weights.
+    /// * `default_weight`: Option<WeightT> - The edge weight to be used when the edge weight for a given edge in the edge file is None.
+    /// * `edge_ids_column`: Option<String> - The name of the column of the edges file from where to load the edge IDs.
+    /// * `edge_ids_column_number`: Option<usize> - The number of the column of the edges file from where to load the edge IDs.
+    /// * `edge_list_numeric_edge_type_ids`: Option<bool> - Whether to load the edge type IDs as numeric from the edge list.
+    /// * `edge_list_numeric_node_ids`: Option<bool> - Whether to load the edge node IDs as numeric from the edge list.
+    /// * `skip_weights_if_unavailable`: Option<bool> - Whether to skip the weights without raising an error if these are unavailable.
+    /// * `skip_edge_types_if_unavailable`: Option<bool> - Whether to skip the edge types without raising an error if these are unavailable.
+    /// * `edge_list_is_complete`: Option<bool> - Whether to consider the edge list as complete, i.e. the edges are presented in both directions when loading an undirected graph.
+    /// * `edge_list_may_contain_duplicates`: Option<bool> - Whether the edge list may contain duplicates. If the edge list surely DOES NOT contain duplicates, a validation step may be skipped. By default, it is assumed that the edge list may contain duplicates.
+    /// * `edge_list_is_sorted`: Option<bool> - Whether the edge list is sorted. Note that a sorted edge list has the minimal memory peak, but requires the nodes number and the edges number.
+    /// * `edge_list_is_correct`: Option<bool> - Whether the edges file can be assumed to be correct, i.e. does not have something wrong in it. If this parameter is passed as true on a malformed file, the constructor will crash.
+    /// * `edge_list_max_rows_number`: Option<usize> - The maximum number of lines to be loaded from the edges file.
+    /// * `edge_list_comment_symbol`: Option<String> - The comment symbol to skip lines in the edges file. Lines starting with this symbol will be skipped.
+    /// * `edges_number`: Option<EdgeT> - The expected number of edges. Note that this must be the EXACT number of edges in the graph.
+    /// * `load_edge_list_in_parallel`: Option<bool> - Whether to load the edge list in parallel. Note that, if the edge IDs indices are not given, it is NOT possible to load a sorted edge list. Similarly, when loading in parallel, without edge IDs, the edges may not be loaded in a deterministic order.
+    /// * `verbose`: Option<bool> - Whether to show a loading bar while reading the files. Note that, if parallel loading is enabled, loading bars will not be showed because they are a synchronization bottleneck.
+    /// * `may_have_singletons`: Option<bool> - Whether the graph may be expected to have singleton nodes. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.
+    /// * `may_have_singleton_with_selfloops`: Option<bool> - Whether the graph may be expected to have singleton nodes with selfloops. If it is said that it surely DOES NOT have any, it will allow for some speedups and lower mempry peaks.
+    /// * `directed`: bool - Whether to load the graph as directed or undirected.
+    /// * `name`: Option<String> - The name of the graph to be loaded.
     ///
-    pub fn from_csv<S: Clone + Into<String>>(
+    pub fn from_csv(
         node_type_path: Option<String>,
         node_type_list_separator: Option<String>,
         node_types_column_number: Option<usize>,
@@ -295,8 +295,9 @@ impl Graph {
         may_have_singletons: Option<bool>,
         may_have_singleton_with_selfloops: Option<bool>,
         directed: bool,
-        name: S,
+        name: Option<String>,
     ) -> Result<Graph> {
+        let name = name.unwrap_or("Graph".to_string());
         let node_type_file_reader: Option<TypeFileReader<NodeTypeT>> =
             if node_type_path.is_some() || node_types_number.is_some() {
                 Some(
