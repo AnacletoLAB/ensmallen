@@ -10,8 +10,13 @@ import os
 def get_available_repository() -> List[str]:
     """Return list of available repositories."""
     return [
-        directory_candidate
-        for directory_candidate in os.listdir()
+        directory_candidate.split(os.sep)[-1]
+        for directory_candidate in glob(
+            os.path.join(
+                os.path.dirname(os.path.abspath(__file__)),
+                "*"
+            )
+        )
         if os.path.isdir(directory_candidate)
     ]
 

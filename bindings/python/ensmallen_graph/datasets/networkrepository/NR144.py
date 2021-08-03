@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph 3elt.
+This file offers the methods to automatically retrieve the graph 144.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,7 +24,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def 3elt(
+def NR144(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -33,7 +33,7 @@ def 3elt(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the 3elt graph.
+    """Return new instance of the 144 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def 3elt(
 
     Returns
     -----------------------
-    Instace of 3elt graph.
+    Instace of 144 graph.
 
 	References
 	---------------------
@@ -77,7 +77,7 @@ def 3elt(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="3elt",
+        graph_name="144",
         dataset="networkrepository",
         version=version,
         directed=directed,

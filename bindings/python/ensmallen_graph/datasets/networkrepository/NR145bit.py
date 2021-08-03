@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph 12month1.
+This file offers the methods to automatically retrieve the graph 145bit.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,7 +24,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def 12month1(
+def NR145bit(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -33,7 +33,7 @@ def 12month1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the 12month1 graph.
+    """Return new instance of the 145bit graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def 12month1(
 
     Returns
     -----------------------
-    Instace of 12month1 graph.
+    Instace of 145bit graph.
 
 	References
 	---------------------
@@ -77,7 +77,7 @@ def 12month1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="12month1",
+        graph_name="145bit",
         dataset="networkrepository",
         version=version,
         directed=directed,

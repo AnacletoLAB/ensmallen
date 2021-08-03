@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph 3dtube.
+This file offers the methods to automatically retrieve the graph 08blocks.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,7 +24,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def 3dtube(
+def NR08blocks(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -33,7 +33,7 @@ def 3dtube(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the 3dtube graph.
+    """Return new instance of the 08blocks graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def 3dtube(
 
     Returns
     -----------------------
-    Instace of 3dtube graph.
+    Instace of 08blocks graph.
 
 	References
 	---------------------
@@ -77,7 +77,7 @@ def 3dtube(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="3dtube",
+        graph_name="08blocks",
         dataset="networkrepository",
         version=version,
         directed=directed,

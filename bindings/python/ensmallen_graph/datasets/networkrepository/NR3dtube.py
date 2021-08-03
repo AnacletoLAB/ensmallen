@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph 208bit.
+This file offers the methods to automatically retrieve the graph 3dtube.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,7 +24,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def 208bit(
+def NR3dtube(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -33,7 +33,7 @@ def 208bit(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the 208bit graph.
+    """Return new instance of the 3dtube graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def 208bit(
 
     Returns
     -----------------------
-    Instace of 208bit graph.
+    Instace of 3dtube graph.
 
 	References
 	---------------------
@@ -77,7 +77,7 @@ def 208bit(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="208bit",
+        graph_name="3dtube",
         dataset="networkrepository",
         version=version,
         directed=directed,

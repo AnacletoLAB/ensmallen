@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph 176bit.
+This file offers the methods to automatically retrieve the graph 3elt.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,7 +24,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def 176bit(
+def NR3elt(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -33,7 +33,7 @@ def 176bit(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the 176bit graph.
+    """Return new instance of the 3elt graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def 176bit(
 
     Returns
     -----------------------
-    Instace of 176bit graph.
+    Instace of 3elt graph.
 
 	References
 	---------------------
@@ -77,7 +77,7 @@ def 176bit(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="176bit",
+        graph_name="3elt",
         dataset="networkrepository",
         version=version,
         directed=directed,

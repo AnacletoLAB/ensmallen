@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph 192bit.
+This file offers the methods to automatically retrieve the graph 208bit.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,7 +24,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def 192bit(
+def NR208bit(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -33,7 +33,7 @@ def 192bit(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the 192bit graph.
+    """Return new instance of the 208bit graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def 192bit(
 
     Returns
     -----------------------
-    Instace of 192bit graph.
+    Instace of 208bit graph.
 
 	References
 	---------------------
@@ -77,7 +77,7 @@ def 192bit(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="192bit",
+        graph_name="208bit",
         dataset="networkrepository",
         version=version,
         directed=directed,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph 08blocks.
+This file offers the methods to automatically retrieve the graph 162bit.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,7 +24,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def 08blocks(
+def NR162bit(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -33,7 +33,7 @@ def 08blocks(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the 08blocks graph.
+    """Return new instance of the 162bit graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def 08blocks(
 
     Returns
     -----------------------
-    Instace of 08blocks graph.
+    Instace of 162bit graph.
 
 	References
 	---------------------
@@ -77,7 +77,7 @@ def 08blocks(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="08blocks",
+        graph_name="162bit",
         dataset="networkrepository",
         version=version,
         directed=directed,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph 598a.
+This file offers the methods to automatically retrieve the graph 192bit.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,7 +24,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def 598a(
+def NR192bit(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -33,7 +33,7 @@ def 598a(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the 598a graph.
+    """Return new instance of the 192bit graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def 598a(
 
     Returns
     -----------------------
-    Instace of 598a graph.
+    Instace of 192bit graph.
 
 	References
 	---------------------
@@ -77,7 +77,7 @@ def 598a(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="598a",
+        graph_name="192bit",
         dataset="networkrepository",
         version=version,
         directed=directed,

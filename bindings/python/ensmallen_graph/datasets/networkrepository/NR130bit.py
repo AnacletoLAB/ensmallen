@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph 144.
+This file offers the methods to automatically retrieve the graph 130bit.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,7 +24,7 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def 144(
+def NR130bit(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
@@ -33,7 +33,7 @@ def 144(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the 144 graph.
+    """Return new instance of the 130bit graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def 144(
 
     Returns
     -----------------------
-    Instace of 144 graph.
+    Instace of 130bit graph.
 
 	References
 	---------------------
@@ -77,7 +77,7 @@ def 144(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="144",
+        graph_name="130bit",
         dataset="networkrepository",
         version=version,
         directed=directed,
