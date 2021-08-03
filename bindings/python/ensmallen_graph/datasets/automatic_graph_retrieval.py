@@ -5,7 +5,7 @@ from typing import Callable, Dict, List, Optional
 import compress_json
 from downloaders import BaseDownloader
 from environments_utils import is_windows
-
+from userinput.utils import set_validator, closest
 from ..ensmallen_graph import EnsmallenGraph, edge_list_utils
 
 
@@ -68,13 +68,16 @@ class AutomaticallyRetrievedGraph:
                 "{}.json.gz".format(graph_name)
             ))
 
-            if version not in all_versions:
-                raise ValueError(
-                    (
-                        "Requested graph `{}` from dataset `{}` is ",
-                        "not available in the requested version `{}`."
-                    ).format(graph_name, dataset, version)
-                )
+            if not set_validator(all_versions)(version):
+                raise ValueError((
+                    "The provided version `{}` is not within the set "
+                    "of supported versions, {}.\n"
+                    "Did you mean `{}`?"
+                ).format(
+                    version,
+                    ", ".join(all_versions),
+                    closest(version, all_versions)
+                ))
                 
             self._graph = all_versions[version]
         except FileNotFoundError:
