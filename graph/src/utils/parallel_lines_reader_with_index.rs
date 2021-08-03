@@ -181,6 +181,16 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
     }
 }
 
+fn upper_power_of_two(mut v: usize) -> usize {
+    v -= 1;
+    v |= v >> 1;
+    v |= v >> 2;
+    v |= v >> 4;
+    v |= v >> 8;
+    v |= v >> 16;
+    v + 1
+}
+
 impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
     type Item = IterType;
 
@@ -189,7 +199,7 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
         // Check if it's reasonable to split the stream
         let cond = {
             let mut count = self.prod_count.lock().unwrap();
-            if *count > self.max {
+            if *count > self.max || (self.modulus + 1) > upper_power_of_two(self.max) {
                 true
             } else {
                 *count += 1;
