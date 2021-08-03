@@ -4,3 +4,4 @@ environments_utils
 tqdm
 pandas
 userinput
+environments_utils
