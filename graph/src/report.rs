@@ -1259,7 +1259,7 @@ impl Graph {
                     )
                 }
             },
-            ram_edge_types = self.get_edge_types_total_memory_requirements().unwrap()
+            ram_edge_types = self.get_edge_types_total_memory_requirements_human_readable().unwrap()
         ));
 
         // When the graph contains singleton edge types, we build their report.
