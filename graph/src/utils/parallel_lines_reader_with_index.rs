@@ -8,7 +8,7 @@ use std::io::{prelude::*, BufReader, SeekFrom};
 use std::os::unix::io::AsRawFd;
 use std::sync::{Arc, Mutex};
 
-pub const READER_CAPACITY: usize = 16 * 1024;
+pub const READER_CAPACITY: usize = 1 << 17;
 
 type IterType = (usize, Result<String, String>);
 
@@ -135,13 +135,13 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
     type Item = IterType;
 
     fn next(&mut self) -> Option<Self::Item> {
-        let mut line = String::with_capacity(128);
+        let mut line = Vec::with_capacity(128);
 
         loop {
             line.clear();
 
             // read a line
-            let result_bytes_read = self.file.read_line(&mut line);
+            let result_bytes_read = self.file.read_until(b'\n', &mut line);
 
             // check if it's ok, if we reached EOF, and if it's a comment
             if let Ok(bytes_read) = result_bytes_read {
@@ -151,7 +151,7 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
                 }
                 // Comment
                 if let Some(cs) = self.comment_symbol.as_ref() {
-                    if line.starts_with(cs) {
+                    if line.starts_with(cs.as_bytes()) {
                         continue;
                     }
                 }
@@ -162,9 +162,9 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
 
             // check if we are at the line we want to return
             if (self.line_count & self.modulus) == self.remainder {
-                if line.ends_with("\n") {
+                if line.ends_with(&[b'\n']) {
                     line.pop();
-                    if line.ends_with("\r") {
+                    if line.ends_with(&[b'\r']) {
                         line.pop();
                     }
                 }
@@ -172,7 +172,7 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
                 return Some((
                     self.line_count - 1,
                     match result_bytes_read {
-                        Ok(_) => Ok(line),
+                        Ok(_) => Ok(unsafe{String::from_utf8_unchecked(line)}),
                         Err(error) => Err(error.to_string()),
                     },
                 ));
