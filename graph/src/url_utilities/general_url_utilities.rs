@@ -71,6 +71,17 @@ pub(crate) fn is_valid_node_name_from_seeds(
                 // Finally, we check that the final `numeric_part_length` values must
                 // be numeric digits, if this value was provided.
                 if let Some(numeric_part_length) = numeric_part_length {
+                    if numeric_part_length > node_name.len() {
+                        return Err(format!(
+                            concat!(
+                                "The expected numeric part length is {}, but the node ",
+                                "name provided `{}` has length {}."
+                            ),
+                            numeric_part_length,
+                            node_name,
+                            node_name.len(),
+                        ));
+                    }
                     if node_name[(node_name.len() - numeric_part_length)..node_name.len()]
                         .chars()
                         .any(|character| !character.is_ascii_digit())
