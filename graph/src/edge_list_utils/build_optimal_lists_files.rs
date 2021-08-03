@@ -1,6 +1,6 @@
 use crate::{
     add_numeric_id_to_csv, convert_edge_list_to_numeric, convert_node_list_node_types_to_numeric,
-    densify_sparse_numeric_edge_list, get_minmax_node_from_numeric_edge_list, is_numeric_edge_list,
+    densify_sparse_numeric_edge_list, get_minmax_node_from_numeric_edge_list, is_numeric_edge_list, get_rows_number,
     sort_numeric_edge_list_inplace, EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT,
 };
 use log::info;
@@ -456,9 +456,6 @@ pub fn build_optimal_lists_files(
     // We identify if the edge list is meant to have edge weights
     let has_edge_weights =
         original_weights_column.is_some() || original_weights_column_number.is_some();
-    // We update the target path to a temporary one
-    let target_numeric_edge_path: String =
-        format!("{}.numeric_edge_list.tmp", target_edge_path.clone());
 
     // We convert the edge list to dense numeric
     let (nodes_number, edge_types_number) = if numeric_edge_list_node_ids {
@@ -514,7 +511,7 @@ pub fn build_optimal_lists_files(
             edge_type_list_max_rows_number,
             edge_type_list_comment_symbol,
             load_edge_type_list_in_parallel,
-            target_numeric_edge_path.as_ref(),
+            target_edge_path.as_ref(),
             target_edge_list_separator.clone(),
             Some(false),
             None,
@@ -537,7 +534,7 @@ pub fn build_optimal_lists_files(
             target_node_ids_column,
             target_node_ids_column_number,
             target_edge_type_list_path,
-            target_edge_type_list_separator,
+            target_edge_type_list_separator.clone(),
             target_edge_type_list_header,
             target_edge_type_list_edge_types_column,
             target_edge_type_list_edge_types_column_number,
@@ -599,7 +596,7 @@ pub fn build_optimal_lists_files(
             original_edge_list_edge_types_column_number,
             original_weights_column.clone(),
             original_weights_column_number,
-            target_numeric_edge_path.as_ref(),
+            target_edge_path.as_ref(),
             target_edge_list_separator.clone(),
             Some(false),
             None,
@@ -622,7 +619,7 @@ pub fn build_optimal_lists_files(
             target_node_ids_column,
             target_node_ids_column_number,
             target_edge_type_list_path,
-            target_edge_type_list_separator,
+            target_edge_type_list_separator.clone(),
             target_edge_type_list_header,
             target_edge_type_list_edge_types_column,
             target_edge_type_list_edge_types_column_number,
@@ -642,13 +639,11 @@ pub fn build_optimal_lists_files(
         )
     }?;
 
-    original_edge_path = target_numeric_edge_path;
-
     // Sort the edge list
     info!("Sorting the edge list.");
     sort_numeric_edge_list_inplace(
-        original_edge_path.as_ref(),
-        original_edge_list_separator.clone(),
+        target_edge_path.as_ref(),
+        target_edge_type_list_separator.clone(),
         Some(false),
         None,
         Some(0),
@@ -661,33 +656,8 @@ pub fn build_optimal_lists_files(
     )?;
 
     // Add the edge IDs to the edge list
-    info!("Adding edge ID to the sorted complete edge list.");
-    let edges_number = add_numeric_id_to_csv(
-        original_edge_path.as_ref(),
-        original_edge_list_separator.clone(),
-        Some(false),
-        target_edge_path.as_ref(),
-        target_edge_list_separator,
-        None,
-        None,
-        Some(0),
-        None,
-        None,
-        None,
-        edges_number.map(|edges_number| edges_number as usize),
-        verbose,
-    )? as EdgeT;
-
-    info!("Deleting previous temporary file with sorted complete edge list without edge ID.");
-    match std::fs::remove_file(original_edge_path.clone()) {
-        Ok(()) => {}
-        Err(_) => {
-            return Err(format!(
-                concat!("It is not possible to delete the edge list without edge IDs file {}.",),
-                original_edge_path.clone()
-            ));
-        }
-    };
+    info!("Count the lines in the path, that match exactly with the number of edges.");
+    let edges_number = get_rows_number(target_edge_path.as_ref())? as EdgeT;
 
     Ok((
         node_types_number,

@@ -1,12 +1,12 @@
+#[cfg(target_os = "linux")]
+use nix::fcntl::*;
 use rayon::iter::plumbing::{bridge_unindexed, UnindexedProducer};
 use rayon::prelude::*;
 use std::fs::File;
 use std::io::{prelude::*, BufReader, SeekFrom};
-use std::sync::{Arc, Mutex};
-#[cfg(target_os = "linux")]
-use nix::fcntl::*;
 #[cfg(target_os = "linux")]
 use std::os::unix::io::AsRawFd;
+use std::sync::{Arc, Mutex};
 
 pub const READER_CAPACITY: usize = 16 * 1024;
 
@@ -63,8 +63,7 @@ impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
     fn drive_unindexed<C>(self, consumer: C) -> C::Result
     where
         C: rayon::iter::plumbing::UnindexedConsumer<Self::Item>,
-    {   
-
+    {
         #[cfg(target_os = "linux")]
         let _ = posix_fadvise(
             self.file.as_raw_fd(),
@@ -74,10 +73,7 @@ impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
         );
 
         // Create the file reader
-        let mut reader = BufReader::with_capacity(
-            self.buffer_size, 
-            self.file
-        );
+        let mut reader = BufReader::with_capacity(self.buffer_size, self.file);
         // Skip the first rows (as specified by the user)
         if let Some(rts) = self.number_of_rows_to_skip {
             for _ in 0..rts {
@@ -96,7 +92,7 @@ impl<'a> ParallelIterator for ParallelLinesWithIndex<'a> {
         }
 
         // Create the first producer
-        let producer = ParalellLinesProducerWithIndex{
+        let producer = ParalellLinesProducerWithIndex {
             path: self.path,
             file: reader,
             line_count: 0,
@@ -140,13 +136,13 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
 
     fn next(&mut self) -> Option<Self::Item> {
         let mut line = String::with_capacity(128);
-        
+
         loop {
             line.clear();
 
             // read a line
             let result_bytes_read = self.file.read_line(&mut line);
-            
+
             // check if it's ok, if we reached EOF, and if it's a comment
             if let Ok(bytes_read) = result_bytes_read {
                 // EOF
@@ -155,8 +151,8 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
                 }
                 // Comment
                 if let Some(cs) = self.comment_symbol.as_ref() {
-                    if line.starts_with(cs){
-                        continue
+                    if line.starts_with(cs) {
+                        continue;
                     }
                 }
             };
@@ -174,14 +170,13 @@ impl<'a> Iterator for ParalellLinesProducerWithIndex<'a> {
                 }
 
                 return Some((
-                    self.line_count - 1,  
+                    self.line_count - 1,
                     match result_bytes_read {
                         Ok(_) => Ok(line),
                         Err(error) => Err(error.to_string()),
-                    }
-                ))
+                    },
+                ));
             }
-
         }
     }
 }
@@ -206,8 +201,8 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
             return (self, None);
         }
 
-        let file = File::open(self.path.clone())
-        .expect(&format!("Could not open the file {}", self.path));
+        let file =
+            File::open(self.path.clone()).expect(&format!("Could not open the file {}", self.path));
 
         #[cfg(target_os = "linux")]
         let _ = posix_fadvise(
@@ -218,22 +213,17 @@ impl<'a> UnindexedProducer for ParalellLinesProducerWithIndex<'a> {
         );
 
         // Create a copy of the file reader of the father
-        let mut new_file = BufReader::with_capacity(
-            self.buffer_size, 
-            file,
-        );
+        let mut new_file = BufReader::with_capacity(self.buffer_size, file);
 
-        
         // Updated its position to the same byte in the file as the father.
-        new_file.seek(
-            SeekFrom::Start(
-                self.file.stream_position()
-                .expect("Could not read the file pointer position in the file.")
-            )
-        ).expect("Could seek the new file to the position of the old one.");
+        new_file
+            .seek(SeekFrom::Start(self.file.stream_position().expect(
+                "Could not read the file pointer position in the file.",
+            )))
+            .expect("Could seek the new file to the position of the old one.");
 
-        // Create the child 
-        let new = ParalellLinesProducerWithIndex{
+        // Create the child
+        let new = ParalellLinesProducerWithIndex {
             path: self.path.clone(),
             line_count: self.line_count,
             file: new_file,

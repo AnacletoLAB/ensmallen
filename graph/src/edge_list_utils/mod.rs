@@ -22,3 +22,5 @@ mod build_optimal_lists_files;
 pub use build_optimal_lists_files::*;
 mod convert_undirected_edge_list_to_directed;
 pub use convert_undirected_edge_list_to_directed::*;
+mod get_rows_number;
+pub use get_rows_number::*;

@@ -673,18 +673,6 @@ impl EdgeFileReader {
             impl ParallelIterator<Item = Result<(usize, StringQuadruple)>> + '_,
         >,
     > {
-        if self.sorted.as_ref().map_or(false, |sorted| *sorted)
-            && self.reader.parallel
-            && self.edge_ids_column_number.is_none()
-        {
-            return Err(concat!(
-                "We do not currently support parallel loading of a sorted ",
-                "edge list unless the edge id column is provided.\n",
-                "The edge ID column is a column with an unique numeric ",
-                "edge ID for all the rows, basically the row's number."
-            )
-            .to_string());
-        }
         let columns_and_names = [
             (self.edge_ids_column_number, "edge ids"),
             (Some(self.sources_column_number), "sources"),
