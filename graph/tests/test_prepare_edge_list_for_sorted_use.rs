@@ -43,21 +43,10 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
         Some("tests/data/macaque_node_list.tsv".to_string()),
         Some("\t".to_string()),
         Some(true),
         Some("node_name".to_string()),
-        Some(1),
-        None,
-        None,
-        None,
-        Some("node_id".to_string()),
         Some(0),
         None,
         None,
@@ -71,8 +60,7 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
-        None,
-        None,
+        None,  
         None,
         None,
         None,
@@ -121,8 +109,8 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_complete(Some(true))
         .set_sorted(Some(true))
         .set_parallel(Some(false))
-        .set_sources_column_number(Some(1))?
-        .set_destinations_column_number(Some(2))?
+        .set_sources_column_number(Some(0))?
+        .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
         .set_edges_number(Some(edges_number));
 
@@ -156,9 +144,8 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_complete(Some(true))
         .set_sorted(Some(true))
         .set_parallel(Some(true))
-        .set_edge_ids_column_number(Some(0))?
-        .set_sources_column_number(Some(1))?
-        .set_destinations_column_number(Some(2))?
+        .set_sources_column_number(Some(0))?
+        .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
         .set_edges_number(Some(edges_number));
 
@@ -219,23 +206,11 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         None,
         None,
         None,
-        None,
-        None,
-        None,
-        None,
-        None,
-        None,
         Some("tests/data/macaque_node_list.tsv".to_string()),
         Some("\t".to_string()),
         Some(true),
         Some("node_name".to_string()),
-        Some(1),
-        None,
-        None,
-        None,
-        Some("node_id".to_string()),
         Some(0),
-        None,
         None,
         None,
         None,
@@ -297,8 +272,8 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_complete(Some(true))
         .set_sorted(Some(true))
         .set_parallel(Some(false))
-        .set_sources_column_number(Some(1))?
-        .set_destinations_column_number(Some(2))?
+        .set_sources_column_number(Some(0))?
+        .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
         .set_edges_number(Some(edges_number));
 
@@ -332,9 +307,8 @@ fn test_prepare_edge_list_for_sorted_undirected_use() -> Result<(), String> {
         .set_complete(Some(true))
         .set_sorted(Some(true))
         .set_parallel(Some(true))
-        .set_edge_ids_column_number(Some(0))?
-        .set_sources_column_number(Some(1))?
-        .set_destinations_column_number(Some(2))?
+        .set_sources_column_number(Some(0))?
+        .set_destinations_column_number(Some(1))?
         .set_csv_is_correct(Some(true))
         .set_edges_number(Some(edges_number));
 

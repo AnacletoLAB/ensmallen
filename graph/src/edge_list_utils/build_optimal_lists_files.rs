@@ -1,5 +1,5 @@
 use crate::{
-    add_numeric_id_to_csv, convert_edge_list_to_numeric, convert_node_list_node_types_to_numeric,
+    convert_edge_list_to_numeric, convert_node_list_node_types_to_numeric,
     densify_sparse_numeric_edge_list, get_minmax_node_from_numeric_edge_list, is_numeric_edge_list, get_rows_number,
     sort_numeric_edge_list_inplace, EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT,
 };
@@ -7,29 +7,26 @@ use log::info;
 
 /// TODO: write the docstring
 pub fn build_optimal_lists_files(
-    mut original_node_type_path: Option<String>,
-    mut original_node_type_list_separator: Option<String>,
-    mut original_node_types_column_number: Option<usize>,
+    original_node_type_path: Option<String>,
+    original_node_type_list_separator: Option<String>,
+    original_node_types_column_number: Option<usize>,
     original_node_types_column: Option<String>,
-    mut original_node_types_ids_column_number: Option<usize>,
-    mut original_node_types_ids_column: Option<String>,
     original_numeric_node_type_ids: Option<bool>,
     original_minimum_node_type_id: Option<NodeTypeT>,
-    mut original_node_type_list_header: Option<bool>,
-    mut original_node_type_list_rows_to_skip: Option<usize>,
-    mut original_node_type_list_max_rows_number: Option<usize>,
-    mut original_node_type_list_comment_symbol: Option<String>,
+
+    original_node_type_list_header: Option<bool>,
+    original_node_type_list_rows_to_skip: Option<usize>,
+    original_node_type_list_max_rows_number: Option<usize>,
+    original_node_type_list_comment_symbol: Option<String>,
     original_load_node_type_list_in_parallel: Option<bool>,
     original_node_type_list_is_correct: Option<bool>,
     mut node_types_number: Option<NodeTypeT>,
 
-    mut target_node_type_list_path: Option<String>,
-    mut target_node_type_list_separator: Option<String>,
+    target_node_type_list_path: Option<String>,
+    target_node_type_list_separator: Option<String>,
     mut target_node_type_list_node_types_column_number: Option<usize>,
     mut target_node_type_list_node_types_column: Option<String>,
-    mut target_node_types_ids_column_number: Option<usize>,
-    mut target_node_types_ids_column: Option<String>,
-    mut target_node_type_list_header: Option<bool>,
+    target_node_type_list_header: Option<bool>,
 
     mut original_node_path: Option<String>,
     mut original_node_list_separator: Option<String>,
@@ -44,8 +41,6 @@ pub fn build_optimal_lists_files(
     original_node_types_separator: Option<String>,
     original_node_list_node_types_column_number: Option<usize>,
     original_node_list_node_types_column: Option<String>,
-    mut original_node_ids_column: Option<String>,
-    mut original_node_ids_column_number: Option<usize>,
     nodes_number: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
@@ -62,34 +57,28 @@ pub fn build_optimal_lists_files(
     target_node_types_separator: Option<String>,
     mut target_node_list_node_types_column: Option<String>,
     mut target_node_list_node_types_column_number: Option<usize>,
-    mut target_node_ids_column: Option<String>,
-    mut target_node_ids_column_number: Option<usize>,
 
-    mut original_edge_type_path: Option<String>,
-    mut original_edge_type_list_separator: Option<String>,
-    mut original_edge_types_column_number: Option<usize>,
+    original_edge_type_path: Option<String>,
+    original_edge_type_list_separator: Option<String>,
+    original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    mut original_edge_types_ids_column_number: Option<usize>,
-    mut original_edge_types_ids_column: Option<String>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
-    mut original_edge_type_list_header: Option<bool>,
-    mut edge_type_list_rows_to_skip: Option<usize>,
-    mut edge_type_list_max_rows_number: Option<usize>,
-    mut edge_type_list_comment_symbol: Option<String>,
+    original_edge_type_list_header: Option<bool>,
+    edge_type_list_rows_to_skip: Option<usize>,
+    edge_type_list_max_rows_number: Option<usize>,
+    edge_type_list_comment_symbol: Option<String>,
     load_edge_type_list_in_parallel: Option<bool>,
     edge_type_list_is_correct: Option<bool>,
-    mut edge_types_number: Option<NodeTypeT>,
+    edge_types_number: Option<NodeTypeT>,
 
-    mut target_edge_type_list_path: Option<String>,
-    mut target_edge_type_list_separator: Option<String>,
+    target_edge_type_list_path: Option<String>,
+    target_edge_type_list_separator: Option<String>,
     mut target_edge_type_list_edge_types_column_number: Option<usize>,
     mut target_edge_type_list_edge_types_column: Option<String>,
-    mut target_edge_types_ids_column_number: Option<usize>,
-    mut target_edge_types_ids_column: Option<String>,
-    mut target_edge_type_list_header: Option<bool>,
+    target_edge_type_list_header: Option<bool>,
 
-    mut original_edge_path: String,
+    original_edge_path: String,
     original_edge_list_separator: Option<String>,
     original_edge_list_header: Option<bool>,
     original_sources_column_number: Option<usize>,
@@ -132,111 +121,23 @@ pub fn build_optimal_lists_files(
         .to_string());
     }
 
-    let _ = target_node_ids_column.insert("node_id".to_string());
-    let _ = target_node_ids_column_number.insert(0);
     let _ = target_nodes_column.insert("node_name".to_string());
-    let _ = target_nodes_column_number.insert(1);
+    let _ = target_nodes_column_number.insert(0);
 
     if original_node_list_node_types_column_number.is_some()
         || original_node_list_node_types_column.is_some()
     {
-        let _ = target_node_types_ids_column.insert("node_type_id".to_string());
-        let _ = target_node_types_ids_column_number.insert(0);
         let _ = target_node_type_list_node_types_column.insert("node_type".to_string());
-        let _ = target_node_type_list_node_types_column_number.insert(1);
+        let _ = target_node_type_list_node_types_column_number.insert(0);
         let _ = target_node_list_node_types_column.insert("node_type".to_string());
-        let _ = target_node_list_node_types_column_number.insert(2);
+        let _ = target_node_list_node_types_column_number.insert(1);
     }
 
     if original_edge_list_edge_types_column_number.is_some()
         || original_edge_list_edge_types_column.is_some()
     {
-        let _ = target_edge_types_ids_column.insert("edge_type_id".to_string());
-        let _ = target_edge_types_ids_column_number.insert(0);
         let _ = target_edge_type_list_edge_types_column.insert("edge_type".to_string());
-        let _ = target_edge_type_list_edge_types_column_number.insert(1);
-    }
-
-    // If the node types have been provided, we need to check that
-    // the node type IDs have been provided, which are necessary
-    // to guarantee that the node types are loaded in parallel
-    // in a deterministic way.
-    if let Some(original_node_type_path) = &mut original_node_type_path {
-        if original_node_types_ids_column_number.is_none()
-            && original_node_types_ids_column.is_none()
-        {
-            if target_node_type_list_path.is_none() {
-                return Err(concat!(
-                    "The original node type path was provided, and since ",
-                    "neither the node type ids column number nor the ",
-                    "node type ids column name was provided it has been ",
-                    "assumed that the node types list does not come with ",
-                    "an index.\n",
-                    "Since the index is necessary to guarantee determinism ",
-                    "when loading the file in parallel, it was attempted ",
-                    "to create a version of the file with also the index.\n",
-                    "Since the target node type path was not provided, ",
-                    "the pipeline has failed because it is not known where ",
-                    "to store this file.\n",
-                    "Please provide the expected target node types list file path."
-                )
-                .to_string());
-            }
-            info!("Creating the node types file with numeric indices.");
-            node_types_number = Some(add_numeric_id_to_csv(
-                original_node_type_path.as_ref(),
-                original_node_type_list_separator.clone(),
-                original_node_type_list_header,
-                target_node_type_list_path.clone().unwrap().as_ref(),
-                target_node_type_list_separator.clone(),
-                target_node_type_list_header,
-                target_node_types_ids_column.clone(),
-                target_node_types_ids_column_number,
-                original_node_type_list_comment_symbol.clone(),
-                original_node_type_list_max_rows_number,
-                original_node_type_list_rows_to_skip,
-                node_types_number
-                    .as_ref()
-                    .map(|node_types_number| (*node_types_number) as usize),
-                verbose,
-            )? as NodeTypeT);
-            // After we recreate the correct file, we now refer
-            // to this file as the original node type list file.
-            // Since the file is now without commented lines,
-            // lines top skip etc.. we can set all of these parameters
-            // to None.
-            original_node_type_list_comment_symbol = None;
-            original_node_type_list_max_rows_number = None;
-            original_node_type_list_rows_to_skip = None;
-            original_node_types_ids_column = target_node_types_ids_column;
-            target_node_types_ids_column = None;
-            original_node_types_ids_column_number = target_node_types_ids_column_number;
-            target_node_types_ids_column_number = None;
-            *original_node_type_path = target_node_type_list_path.unwrap();
-            target_node_type_list_path = None;
-            // If the node types column number is higher or equal to the node type IDs column,
-            // we need to offset it.
-            if let (
-                Some(original_node_types_column_number),
-                Some(original_node_types_ids_column_number),
-            ) = (
-                &mut original_node_types_column_number,
-                original_node_types_ids_column_number,
-            ) {
-                if *original_node_types_column_number >= original_node_types_ids_column_number {
-                    *original_node_types_column_number += 1;
-                }
-            }
-            if target_node_type_list_separator.is_some() {
-                original_node_type_list_separator = target_node_type_list_separator;
-            }
-            if target_node_type_list_header.is_some() {
-                original_node_type_list_header = target_node_type_list_header;
-            }
-
-            target_node_type_list_separator = None;
-            target_node_type_list_header = None;
-        }
+        let _ = target_edge_type_list_edge_types_column_number.insert(0);
     }
 
     // It does not make sense to provide a edge types file
@@ -251,89 +152,6 @@ pub fn build_optimal_lists_files(
             "for the edge list file."
         )
         .to_string());
-    }
-    // If the edge types have been provided, we need to check that
-    // the edge type IDs have been provided, which are necessary
-    // to guarantee that the edge types are loaded in parallel
-    // in a deterministic way.
-    if let Some(original_edge_type_path) = &mut original_edge_type_path {
-        if original_edge_types_ids_column_number.is_none()
-            && original_edge_types_ids_column.is_none()
-        {
-            if target_edge_type_list_path.is_none() {
-                return Err(concat!(
-                    "The original edge type path was provided, and since ",
-                    "neither the edge type ids column number nor the ",
-                    "edge type ids column name was provided it has been ",
-                    "assumed that the edge types list does not come with ",
-                    "an index.\n",
-                    "Since the index is necessary to guarantee determinism ",
-                    "when loading the file in parallel, it was attempted ",
-                    "to create a version of the file with also the index.\n",
-                    "Since the target edge type path was not provided, ",
-                    "the pipeline has failed because it is not known where ",
-                    "to store this file.\n",
-                    "Please provide the expected target edge types list file path."
-                )
-                .to_string());
-            }
-            info!("Creating the edge types file with numeric indices.");
-            edge_types_number = Some(add_numeric_id_to_csv(
-                original_edge_type_path.as_ref(),
-                original_edge_type_list_separator.clone(),
-                original_edge_type_list_header,
-                target_edge_type_list_path.clone().unwrap().as_ref(),
-                target_edge_type_list_separator.clone(),
-                target_edge_type_list_header,
-                target_edge_types_ids_column.clone(),
-                target_edge_types_ids_column_number,
-                edge_type_list_comment_symbol.clone(),
-                edge_type_list_max_rows_number,
-                edge_type_list_rows_to_skip,
-                edge_types_number
-                    .as_ref()
-                    .map(|edge_types_number| (*edge_types_number) as usize),
-                verbose,
-            )? as EdgeTypeT);
-            // After we recreate the correct file, we now refer
-            // to this file as the original edge type list file.
-            // Since the file is now without commented lines,
-            // lines top skip etc.. we can set all of these parameters
-            // to None.
-            edge_type_list_comment_symbol = None;
-            edge_type_list_max_rows_number = None;
-            edge_type_list_rows_to_skip = None;
-            original_edge_types_ids_column = target_edge_types_ids_column;
-            original_edge_types_ids_column_number = target_edge_types_ids_column_number;
-            *original_edge_type_path = target_edge_type_list_path.unwrap();
-            // If the edge types column number is higher or equal to the edge type IDs column,
-            // we need to offset it.
-            if let (
-                Some(original_edge_types_column_number),
-                Some(original_edge_types_ids_column_number),
-            ) = (
-                &mut original_edge_types_column_number,
-                original_edge_types_ids_column_number,
-            ) {
-                if *original_edge_types_column_number >= original_edge_types_ids_column_number {
-                    *original_edge_types_column_number += 1;
-                }
-            }
-            if target_edge_type_list_separator.is_some() {
-                original_edge_type_list_separator = target_edge_type_list_separator;
-            }
-            if target_edge_type_list_header.is_some() {
-                original_edge_type_list_header = target_edge_type_list_header;
-            }
-
-            target_edge_type_list_path = None;
-            target_edge_type_list_separator = None;
-            target_edge_type_list_header = None;
-            target_edge_type_list_edge_types_column = None;
-            target_edge_type_list_edge_types_column_number = None;
-            target_edge_types_ids_column = None;
-            target_edge_types_ids_column_number = None;
-        }
     }
 
     // We need to handle the optimization of the
@@ -363,8 +181,6 @@ pub fn build_optimal_lists_files(
             original_node_type_list_separator,
             original_node_types_column_number,
             original_node_types_column,
-            original_node_types_ids_column_number,
-            original_node_types_ids_column,
             node_types_number,
             original_numeric_node_type_ids,
             original_minimum_node_type_id,
@@ -379,8 +195,6 @@ pub fn build_optimal_lists_files(
             target_node_type_list_header,
             target_node_type_list_node_types_column,
             target_node_type_list_node_types_column_number,
-            target_node_types_ids_column,
-            target_node_types_ids_column_number,
             original_node_path.clone(),
             original_node_list_separator,
             original_node_list_header,
@@ -394,8 +208,6 @@ pub fn build_optimal_lists_files(
             original_node_types_separator,
             original_node_list_node_types_column_number,
             original_node_list_node_types_column,
-            original_node_ids_column,
-            original_node_ids_column_number,
             original_minimum_node_id,
             original_numeric_node_ids,
             original_node_list_numeric_node_type_ids,
@@ -408,8 +220,6 @@ pub fn build_optimal_lists_files(
             target_node_types_separator.clone(),
             target_node_list_node_types_column_number,
             target_node_list_node_types_column,
-            target_node_ids_column.clone(),
-            target_node_ids_column_number,
             nodes_number,
         )? as NodeTypeT);
         // Now we need to update the node list parameters
@@ -422,8 +232,6 @@ pub fn build_optimal_lists_files(
         original_node_list_header = target_node_list_header;
         original_nodes_column_number = target_nodes_column_number;
         original_nodes_column = None;
-        original_node_ids_column = None;
-        original_node_ids_column_number = target_node_ids_column_number;
     }
 
     // We check if the edge list has numeric node IDs
@@ -499,8 +307,6 @@ pub fn build_optimal_lists_files(
             original_edge_type_path,
             original_edge_types_column_number,
             original_edge_types_column,
-            original_edge_types_ids_column_number,
-            original_edge_types_ids_column,
             edge_types_number,
             original_numeric_edge_type_ids,
             original_minimum_edge_type_id,
@@ -531,15 +337,11 @@ pub fn build_optimal_lists_files(
             target_node_list_header,
             target_nodes_column,
             target_nodes_column_number,
-            target_node_ids_column,
-            target_node_ids_column_number,
             target_edge_type_list_path,
             target_edge_type_list_separator.clone(),
             target_edge_type_list_header,
             target_edge_type_list_edge_types_column,
             target_edge_type_list_edge_types_column_number,
-            target_edge_types_ids_column,
-            target_edge_types_ids_column_number,
             edge_list_comment_symbol.clone(),
             default_edge_type.clone(),
             default_weight,
@@ -564,8 +366,6 @@ pub fn build_optimal_lists_files(
             node_list_comment_symbol,
             original_nodes_column_number,
             original_nodes_column,
-            original_node_ids_column,
-            original_node_ids_column_number,
             nodes_number,
             original_minimum_node_id,
             original_numeric_node_ids,
@@ -573,8 +373,6 @@ pub fn build_optimal_lists_files(
             original_edge_type_path,
             original_edge_types_column_number,
             original_edge_types_column,
-            original_edge_types_ids_column_number,
-            original_edge_types_ids_column,
             edge_types_number,
             original_numeric_edge_type_ids,
             original_minimum_edge_type_id,
@@ -616,15 +414,11 @@ pub fn build_optimal_lists_files(
             target_node_list_header,
             target_nodes_column,
             target_nodes_column_number,
-            target_node_ids_column,
-            target_node_ids_column_number,
             target_edge_type_list_path,
             target_edge_type_list_separator.clone(),
             target_edge_type_list_header,
             target_edge_type_list_edge_types_column,
             target_edge_type_list_edge_types_column_number,
-            target_edge_types_ids_column,
-            target_edge_types_ids_column_number,
             edge_list_comment_symbol.clone(),
             default_edge_type.clone(),
             default_weight,

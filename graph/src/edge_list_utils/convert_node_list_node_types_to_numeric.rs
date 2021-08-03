@@ -8,8 +8,6 @@ pub fn convert_node_list_node_types_to_numeric(
     original_node_type_list_separator: Option<String>,
     original_node_types_column_number: Option<usize>,
     original_node_types_column: Option<String>,
-    original_node_types_ids_column_number: Option<usize>,
-    original_node_types_ids_column: Option<String>,
     node_types_number: Option<NodeTypeT>,
     original_numeric_node_type_ids: Option<bool>,
     original_minimum_node_type_id: Option<NodeTypeT>,
@@ -25,8 +23,6 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_type_list_header: Option<bool>,
     target_node_type_list_node_types_column: Option<String>,
     target_node_type_list_node_types_column_number: Option<usize>,
-    target_node_types_ids_column: Option<String>,
-    target_node_types_ids_column_number: Option<usize>,
 
     original_node_path: String,
     original_node_list_separator: Option<String>,
@@ -41,8 +37,6 @@ pub fn convert_node_list_node_types_to_numeric(
     original_node_types_separator: Option<String>,
     original_node_list_node_types_column_number: Option<usize>,
     original_node_list_node_types_column: Option<String>,
-    original_node_ids_column: Option<String>,
-    original_node_ids_column_number: Option<usize>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
     original_node_list_numeric_node_type_ids: Option<bool>,
@@ -56,8 +50,6 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_types_separator: Option<String>,
     target_node_list_node_types_column_number: Option<usize>,
     target_node_list_node_types_column: Option<String>,
-    target_node_ids_column: Option<String>,
-    target_node_ids_column_number: Option<usize>,
     nodes_number: Option<NodeT>,
 ) -> Result<NodeTypeT> {
     let mut node_types: Vocabulary<NodeTypeT> =
@@ -70,8 +62,6 @@ pub fn convert_node_list_node_types_to_numeric(
                 .set_separator(original_node_type_list_separator)?
                 .set_type_column_number(original_node_types_column_number)?
                 .set_type_column(original_node_types_column)?
-                .set_type_ids_column(original_node_types_ids_column)?
-                .set_type_ids_column_number(original_node_types_ids_column_number)?
                 .set_minimum_type_id(original_minimum_node_type_id)
                 .set_numeric_type_ids(original_numeric_node_type_ids)
                 .set_csv_is_correct(original_node_type_list_is_correct)?
@@ -97,8 +87,6 @@ pub fn convert_node_list_node_types_to_numeric(
         .set_rows_to_skip(node_list_rows_to_skip)?
         .set_separator(original_node_list_separator)?
         .set_nodes_column_number(original_nodes_column_number)?
-        .set_node_ids_column(original_node_ids_column.clone())?
-        .set_node_ids_column_number(original_node_ids_column_number)?
         .set_nodes_column(original_nodes_column.clone())?
         .set_minimum_node_id(original_minimum_node_id)
         .set_skip_node_types_if_unavailable(original_skip_node_types_if_unavailable)?
@@ -118,10 +106,6 @@ pub fn convert_node_list_node_types_to_numeric(
             target_node_types_separator.or(nodes_reader.get_node_types_separator()),
         )?
         .set_header(target_node_list_header.or(Some(nodes_reader.has_header()?)))
-        .set_node_ids_column(target_node_ids_column.or(original_node_ids_column))
-        .set_node_ids_column_number(
-            target_node_ids_column_number.or(nodes_reader.get_node_ids_column_number()),
-        )
         .set_node_types_column(
             target_node_list_node_types_column.or(original_node_list_node_types_column),
         )
@@ -169,8 +153,6 @@ pub fn convert_node_list_node_types_to_numeric(
         let node_type_writer = TypeFileWriter::new(target_node_type_list_path)
             .set_separator(target_node_type_list_separator)?
             .set_header(target_node_type_list_header)
-            .set_type_ids_column(target_node_types_ids_column)
-            .set_type_ids_column_number(target_node_types_ids_column_number)
             .set_types_column(target_node_type_list_node_types_column)
             .set_types_column_number(target_node_type_list_node_types_column_number);
 

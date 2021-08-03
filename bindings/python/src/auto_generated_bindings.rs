@@ -23,6 +23,7 @@ fn edge_list_utils(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_wrapped(wrap_pyfunction!(convert_edge_list_to_numeric))?;
     m.add_wrapped(wrap_pyfunction!(densify_sparse_numeric_edge_list))?;
     m.add_wrapped(wrap_pyfunction!(are_there_selfloops_in_edge_list))?;
+    m.add_wrapped(wrap_pyfunction!(get_rows_number))?;
     m.add_wrapped(wrap_pyfunction!(convert_directed_edge_list_to_undirected))?;
     m.add_wrapped(wrap_pyfunction!(add_numeric_id_to_csv))?;
     m.add_wrapped(wrap_pyfunction!(build_optimal_lists_files))?;
@@ -53,7 +54,7 @@ pub fn build_empty_graph(directed: bool, name: String) -> PyResult<EnsmallenGrap
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, original_node_ids_column, original_node_ids_column_number, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, original_edge_types_ids_column_number, original_edge_types_ids_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_ids_column, target_node_ids_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, target_edge_types_ids_column, target_edge_types_ids_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, directed, verbose, name)"]
+#[text_signature = "(original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, original_nodes_column_number, original_nodes_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_load_node_list_in_parallel, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, directed, verbose, name)"]
 /// Create a new edge list starting from given one with node IDs densified.
 ///
 /// Parameters
@@ -165,8 +166,6 @@ pub fn convert_edge_list_to_numeric(
     node_list_comment_symbol: Option<String>,
     original_nodes_column_number: Option<usize>,
     original_nodes_column: Option<String>,
-    original_node_ids_column: Option<String>,
-    original_node_ids_column_number: Option<usize>,
     nodes_number: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
@@ -174,8 +173,6 @@ pub fn convert_edge_list_to_numeric(
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    original_edge_types_ids_column_number: Option<usize>,
-    original_edge_types_ids_column: Option<String>,
     edge_types_number: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
@@ -213,15 +210,11 @@ pub fn convert_edge_list_to_numeric(
     target_node_list_header: Option<bool>,
     target_nodes_column: Option<String>,
     target_nodes_column_number: Option<usize>,
-    target_node_ids_column: Option<String>,
-    target_node_ids_column_number: Option<usize>,
     target_edge_type_list_path: Option<String>,
     target_edge_type_list_separator: Option<String>,
     target_edge_type_list_header: Option<bool>,
     target_edge_type_list_edge_types_column: Option<String>,
     target_edge_type_list_edge_types_column_number: Option<usize>,
-    target_edge_types_ids_column: Option<String>,
-    target_edge_types_ids_column_number: Option<usize>,
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
@@ -244,8 +237,6 @@ pub fn convert_edge_list_to_numeric(
         node_list_comment_symbol,
         original_nodes_column_number,
         original_nodes_column,
-        original_node_ids_column,
-        original_node_ids_column_number,
         nodes_number,
         original_minimum_node_id,
         original_numeric_node_ids,
@@ -253,8 +244,6 @@ pub fn convert_edge_list_to_numeric(
         original_edge_type_path,
         original_edge_types_column_number,
         original_edge_types_column,
-        original_edge_types_ids_column_number,
-        original_edge_types_ids_column,
         edge_types_number,
         original_numeric_edge_type_ids,
         original_minimum_edge_type_id,
@@ -292,15 +281,11 @@ pub fn convert_edge_list_to_numeric(
         target_node_list_header,
         target_nodes_column,
         target_nodes_column_number,
-        target_node_ids_column,
-        target_node_ids_column_number,
         target_edge_type_list_path,
         target_edge_type_list_separator,
         target_edge_type_list_header,
         target_edge_type_list_edge_types_column,
         target_edge_type_list_edge_types_column_number,
-        target_edge_types_ids_column,
-        target_edge_types_ids_column_number,
         comment_symbol,
         default_edge_type,
         default_weight,
@@ -317,7 +302,7 @@ pub fn convert_edge_list_to_numeric(
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(maximum_node_id, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, original_edge_types_ids_column_number, original_edge_types_ids_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_ids_column, target_node_ids_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, target_edge_types_ids_column, target_edge_types_ids_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, directed, verbose, name)"]
+#[text_signature = "(maximum_node_id, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column, original_sources_column_number, original_destinations_column, original_destinations_column_number, original_edge_list_edge_types_column, original_edge_list_edge_types_column_number, original_weights_column, original_weights_column_number, original_edge_type_path, original_edge_types_column_number, original_edge_types_column, edge_types_number, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_separator, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_is_correct, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, target_edge_path, target_edge_list_separator, target_edge_list_header, target_sources_column, target_sources_column_number, target_destinations_column, target_destinations_column_number, target_edge_list_edge_types_column, target_edge_list_edge_types_column_number, target_weights_column, target_weights_column_number, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_header, target_edge_type_list_edge_types_column, target_edge_type_list_edge_types_column_number, comment_symbol, default_edge_type, default_weight, max_rows_number, rows_to_skip, edges_number, skip_edge_types_if_unavailable, skip_weights_if_unavailable, directed, verbose, name)"]
 /// Create a new edge list starting from given numeric one with node IDs densified and returns the number of unique nodes.
 ///
 /// This method is meant as a solution to parse very large sparse numeric graphs,
@@ -413,8 +398,6 @@ pub fn densify_sparse_numeric_edge_list(
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    original_edge_types_ids_column_number: Option<usize>,
-    original_edge_types_ids_column: Option<String>,
     edge_types_number: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
@@ -441,15 +424,11 @@ pub fn densify_sparse_numeric_edge_list(
     target_node_list_header: Option<bool>,
     target_nodes_column: Option<String>,
     target_nodes_column_number: Option<usize>,
-    target_node_ids_column: Option<String>,
-    target_node_ids_column_number: Option<usize>,
     target_edge_type_list_path: Option<String>,
     target_edge_type_list_separator: Option<String>,
     target_edge_type_list_header: Option<bool>,
     target_edge_type_list_edge_types_column: Option<String>,
     target_edge_type_list_edge_types_column_number: Option<usize>,
-    target_edge_types_ids_column: Option<String>,
-    target_edge_types_ids_column_number: Option<usize>,
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
     default_weight: Option<WeightT>,
@@ -478,8 +457,6 @@ pub fn densify_sparse_numeric_edge_list(
         original_edge_type_path,
         original_edge_types_column_number,
         original_edge_types_column,
-        original_edge_types_ids_column_number,
-        original_edge_types_ids_column,
         edge_types_number,
         original_numeric_edge_type_ids,
         original_minimum_edge_type_id,
@@ -506,15 +483,11 @@ pub fn densify_sparse_numeric_edge_list(
         target_node_list_header,
         target_nodes_column,
         target_nodes_column_number,
-        target_node_ids_column,
-        target_node_ids_column_number,
         target_edge_type_list_path,
         target_edge_type_list_separator,
         target_edge_type_list_header,
         target_edge_type_list_edge_types_column,
         target_edge_type_list_edge_types_column_number,
-        target_edge_types_ids_column,
-        target_edge_types_ids_column_number,
         comment_symbol,
         default_edge_type,
         default_weight,
@@ -597,6 +570,26 @@ pub fn are_there_selfloops_in_edge_list(
         verbose,
         name
     ))
+}
+
+#[pyfunction]
+#[automatically_generated_binding]
+#[text_signature = "(file_path)"]
+/// Return number of rows in given CSV path.
+///
+/// Parameters
+/// ----------
+/// file_path: str,
+///     The path from where to load the original CSV.
+///
+///
+/// Raises
+/// -------
+/// ValueError
+///     If there are problems with opening the file.
+///
+pub fn get_rows_number(file_path: &str) -> PyResult<usize> {
+    pe!(graph::get_rows_number(file_path))
 }
 
 #[pyfunction]
@@ -823,15 +816,13 @@ pub fn add_numeric_id_to_csv(
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_node_types_ids_column_number, original_node_types_ids_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_types_ids_column_number, target_node_types_ids_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_node_ids_column, original_node_ids_column_number, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, target_node_ids_column, target_node_ids_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_edge_types_ids_column_number, original_edge_types_ids_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_types_ids_column_number, target_edge_types_ids_column, target_edge_type_list_header, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_path, target_edge_list_separator, verbose, directed, name)"]
+#[text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_rows_to_skip, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, original_node_type_list_is_correct, node_types_number, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_node_types_column_number, target_node_type_list_node_types_column, target_node_type_list_header, original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, nodes_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, original_load_node_list_in_parallel, maximum_node_id, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column, target_nodes_column_number, target_node_types_separator, target_node_list_node_types_column, target_node_list_node_types_column_number, original_edge_type_path, original_edge_type_list_separator, original_edge_types_column_number, original_edge_types_column, original_numeric_edge_type_ids, original_minimum_edge_type_id, original_edge_type_list_header, edge_type_list_rows_to_skip, edge_type_list_max_rows_number, edge_type_list_comment_symbol, load_edge_type_list_in_parallel, edge_type_list_is_correct, edge_types_number, target_edge_type_list_path, target_edge_type_list_separator, target_edge_type_list_edge_types_column_number, target_edge_type_list_edge_types_column, target_edge_type_list_header, original_edge_path, original_edge_list_separator, original_edge_list_header, original_sources_column_number, original_sources_column, original_destinations_column_number, original_destinations_column, original_edge_list_edge_types_column_number, original_edge_list_edge_types_column, default_edge_type, original_weights_column_number, original_weights_column, default_weight, original_edge_list_numeric_node_ids, skip_weights_if_unavailable, skip_edge_types_if_unavailable, edge_list_comment_symbol, edge_list_max_rows_number, edge_list_rows_to_skip, load_edge_list_in_parallel, edges_number, target_edge_path, target_edge_list_separator, verbose, directed, name)"]
 /// TODO: write the docstrin
 pub fn build_optimal_lists_files(
     original_node_type_path: Option<String>,
     original_node_type_list_separator: Option<String>,
     original_node_types_column_number: Option<usize>,
     original_node_types_column: Option<String>,
-    original_node_types_ids_column_number: Option<usize>,
-    original_node_types_ids_column: Option<String>,
     original_numeric_node_type_ids: Option<bool>,
     original_minimum_node_type_id: Option<NodeTypeT>,
     original_node_type_list_header: Option<bool>,
@@ -845,8 +836,6 @@ pub fn build_optimal_lists_files(
     target_node_type_list_separator: Option<String>,
     target_node_type_list_node_types_column_number: Option<usize>,
     target_node_type_list_node_types_column: Option<String>,
-    target_node_types_ids_column_number: Option<usize>,
-    target_node_types_ids_column: Option<String>,
     target_node_type_list_header: Option<bool>,
     original_node_path: Option<String>,
     original_node_list_separator: Option<String>,
@@ -861,8 +850,6 @@ pub fn build_optimal_lists_files(
     original_node_types_separator: Option<String>,
     original_node_list_node_types_column_number: Option<usize>,
     original_node_list_node_types_column: Option<String>,
-    original_node_ids_column: Option<String>,
-    original_node_ids_column_number: Option<usize>,
     nodes_number: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
@@ -878,14 +865,10 @@ pub fn build_optimal_lists_files(
     target_node_types_separator: Option<String>,
     target_node_list_node_types_column: Option<String>,
     target_node_list_node_types_column_number: Option<usize>,
-    target_node_ids_column: Option<String>,
-    target_node_ids_column_number: Option<usize>,
     original_edge_type_path: Option<String>,
     original_edge_type_list_separator: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    original_edge_types_ids_column_number: Option<usize>,
-    original_edge_types_ids_column: Option<String>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
     original_edge_type_list_header: Option<bool>,
@@ -899,8 +882,6 @@ pub fn build_optimal_lists_files(
     target_edge_type_list_separator: Option<String>,
     target_edge_type_list_edge_types_column_number: Option<usize>,
     target_edge_type_list_edge_types_column: Option<String>,
-    target_edge_types_ids_column_number: Option<usize>,
-    target_edge_types_ids_column: Option<String>,
     target_edge_type_list_header: Option<bool>,
     original_edge_path: String,
     original_edge_list_separator: Option<String>,
@@ -934,8 +915,6 @@ pub fn build_optimal_lists_files(
         original_node_type_list_separator,
         original_node_types_column_number,
         original_node_types_column,
-        original_node_types_ids_column_number,
-        original_node_types_ids_column,
         original_numeric_node_type_ids,
         original_minimum_node_type_id,
         original_node_type_list_header,
@@ -949,8 +928,6 @@ pub fn build_optimal_lists_files(
         target_node_type_list_separator,
         target_node_type_list_node_types_column_number,
         target_node_type_list_node_types_column,
-        target_node_types_ids_column_number,
-        target_node_types_ids_column,
         target_node_type_list_header,
         original_node_path,
         original_node_list_separator,
@@ -965,8 +942,6 @@ pub fn build_optimal_lists_files(
         original_node_types_separator,
         original_node_list_node_types_column_number,
         original_node_list_node_types_column,
-        original_node_ids_column,
-        original_node_ids_column_number,
         nodes_number,
         original_minimum_node_id,
         original_numeric_node_ids,
@@ -982,14 +957,10 @@ pub fn build_optimal_lists_files(
         target_node_types_separator,
         target_node_list_node_types_column,
         target_node_list_node_types_column_number,
-        target_node_ids_column,
-        target_node_ids_column_number,
         original_edge_type_path,
         original_edge_type_list_separator,
         original_edge_types_column_number,
         original_edge_types_column,
-        original_edge_types_ids_column_number,
-        original_edge_types_ids_column,
         original_numeric_edge_type_ids,
         original_minimum_edge_type_id,
         original_edge_type_list_header,
@@ -1003,8 +974,6 @@ pub fn build_optimal_lists_files(
         target_edge_type_list_separator,
         target_edge_type_list_edge_types_column_number,
         target_edge_type_list_edge_types_column,
-        target_edge_types_ids_column_number,
-        target_edge_types_ids_column,
         target_edge_type_list_header,
         original_edge_path,
         original_edge_list_separator,
@@ -1541,15 +1510,13 @@ pub fn is_numeric_edge_list(
 
 #[pyfunction]
 #[automatically_generated_binding]
-#[text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, original_node_types_ids_column_number, original_node_types_ids_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, target_node_types_ids_column, target_node_types_ids_column_number, original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_node_ids_column, original_node_ids_column_number, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, target_node_ids_column, target_node_ids_column_number, nodes_number)"]
+#[text_signature = "(original_node_type_path, original_node_type_list_separator, original_node_types_column_number, original_node_types_column, node_types_number, original_numeric_node_type_ids, original_minimum_node_type_id, original_node_type_list_header, original_node_type_list_rows_to_skip, original_node_type_list_is_correct, original_node_type_list_max_rows_number, original_node_type_list_comment_symbol, original_load_node_type_list_in_parallel, target_node_type_list_path, target_node_type_list_separator, target_node_type_list_header, target_node_type_list_node_types_column, target_node_type_list_node_types_column_number, original_node_path, original_node_list_separator, original_node_list_header, node_list_rows_to_skip, node_list_is_correct, node_list_max_rows_number, node_list_comment_symbol, default_node_type, original_nodes_column_number, original_nodes_column, original_node_types_separator, original_node_list_node_types_column_number, original_node_list_node_types_column, original_minimum_node_id, original_numeric_node_ids, original_node_list_numeric_node_type_ids, original_skip_node_types_if_unavailable, target_node_path, target_node_list_separator, target_node_list_header, target_nodes_column_number, target_nodes_column, target_node_types_separator, target_node_list_node_types_column_number, target_node_list_node_types_column, nodes_number)"]
 ///
 pub fn convert_node_list_node_types_to_numeric(
     original_node_type_path: Option<String>,
     original_node_type_list_separator: Option<String>,
     original_node_types_column_number: Option<usize>,
     original_node_types_column: Option<String>,
-    original_node_types_ids_column_number: Option<usize>,
-    original_node_types_ids_column: Option<String>,
     node_types_number: Option<NodeTypeT>,
     original_numeric_node_type_ids: Option<bool>,
     original_minimum_node_type_id: Option<NodeTypeT>,
@@ -1564,8 +1531,6 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_type_list_header: Option<bool>,
     target_node_type_list_node_types_column: Option<String>,
     target_node_type_list_node_types_column_number: Option<usize>,
-    target_node_types_ids_column: Option<String>,
-    target_node_types_ids_column_number: Option<usize>,
     original_node_path: String,
     original_node_list_separator: Option<String>,
     original_node_list_header: Option<bool>,
@@ -1579,8 +1544,6 @@ pub fn convert_node_list_node_types_to_numeric(
     original_node_types_separator: Option<String>,
     original_node_list_node_types_column_number: Option<usize>,
     original_node_list_node_types_column: Option<String>,
-    original_node_ids_column: Option<String>,
-    original_node_ids_column_number: Option<usize>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
     original_node_list_numeric_node_type_ids: Option<bool>,
@@ -1593,8 +1556,6 @@ pub fn convert_node_list_node_types_to_numeric(
     target_node_types_separator: Option<String>,
     target_node_list_node_types_column_number: Option<usize>,
     target_node_list_node_types_column: Option<String>,
-    target_node_ids_column: Option<String>,
-    target_node_ids_column_number: Option<usize>,
     nodes_number: Option<NodeT>,
 ) -> PyResult<NodeTypeT> {
     pe!(graph::convert_node_list_node_types_to_numeric(
@@ -1602,8 +1563,6 @@ pub fn convert_node_list_node_types_to_numeric(
         original_node_type_list_separator,
         original_node_types_column_number,
         original_node_types_column,
-        original_node_types_ids_column_number,
-        original_node_types_ids_column,
         node_types_number,
         original_numeric_node_type_ids,
         original_minimum_node_type_id,
@@ -1618,8 +1577,6 @@ pub fn convert_node_list_node_types_to_numeric(
         target_node_type_list_header,
         target_node_type_list_node_types_column,
         target_node_type_list_node_types_column_number,
-        target_node_types_ids_column,
-        target_node_types_ids_column_number,
         original_node_path,
         original_node_list_separator,
         original_node_list_header,
@@ -1633,8 +1590,6 @@ pub fn convert_node_list_node_types_to_numeric(
         original_node_types_separator,
         original_node_list_node_types_column_number,
         original_node_list_node_types_column,
-        original_node_ids_column,
-        original_node_ids_column_number,
         original_minimum_node_id,
         original_numeric_node_ids,
         original_node_list_numeric_node_type_ids,
@@ -1647,8 +1602,6 @@ pub fn convert_node_list_node_types_to_numeric(
         target_node_types_separator,
         target_node_list_node_types_column_number,
         target_node_list_node_types_column,
-        target_node_ids_column,
-        target_node_ids_column_number,
         nodes_number
     ))
 }

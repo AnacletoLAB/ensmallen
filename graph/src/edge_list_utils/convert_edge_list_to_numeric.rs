@@ -70,8 +70,6 @@ pub fn convert_edge_list_to_numeric(
     node_list_comment_symbol: Option<String>,
     original_nodes_column_number: Option<usize>,
     original_nodes_column: Option<String>,
-    original_node_ids_column: Option<String>,
-    original_node_ids_column_number: Option<usize>,
     nodes_number: Option<NodeT>,
     original_minimum_node_id: Option<NodeT>,
     original_numeric_node_ids: Option<bool>,
@@ -80,8 +78,6 @@ pub fn convert_edge_list_to_numeric(
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    original_edge_types_ids_column_number: Option<usize>,
-    original_edge_types_ids_column: Option<String>,
     edge_types_number: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
@@ -122,16 +118,12 @@ pub fn convert_edge_list_to_numeric(
     target_node_list_header: Option<bool>,
     target_nodes_column: Option<String>,
     target_nodes_column_number: Option<usize>,
-    target_node_ids_column: Option<String>,
-    target_node_ids_column_number: Option<usize>,
 
     target_edge_type_list_path: Option<String>,
     target_edge_type_list_separator: Option<String>,
     target_edge_type_list_header: Option<bool>,
     target_edge_type_list_edge_types_column: Option<String>,
     target_edge_type_list_edge_types_column_number: Option<usize>,
-    target_edge_types_ids_column: Option<String>,
-    target_edge_types_ids_column_number: Option<usize>,
 
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
@@ -178,8 +170,6 @@ pub fn convert_edge_list_to_numeric(
             .set_rows_to_skip(node_list_rows_to_skip)?
             .set_separator(original_node_list_separator)?
             .set_nodes_column_number(original_nodes_column_number)?
-            .set_node_ids_column(original_node_ids_column)?
-            .set_node_ids_column_number(original_node_ids_column_number)?
             .set_nodes_column(original_nodes_column)?
             .set_minimum_node_id(original_minimum_node_id)
             .set_numeric_node_ids(original_numeric_node_ids)
@@ -211,8 +201,6 @@ pub fn convert_edge_list_to_numeric(
                 .set_separator(original_edge_type_list_separator)?
                 .set_type_column_number(original_edge_types_column_number)?
                 .set_type_column(original_edge_types_column)?
-                .set_type_ids_column(original_edge_types_ids_column)?
-                .set_type_ids_column_number(original_edge_types_ids_column_number)?
                 .set_minimum_type_id(original_minimum_edge_type_id)
                 .set_numeric_type_ids(original_numeric_edge_type_ids)
                 .set_csv_is_correct(edge_type_list_is_correct)?
@@ -339,8 +327,6 @@ pub fn convert_edge_list_to_numeric(
             let node_file_writer = NodeFileWriter::new(target_node_path)
                 .set_separator(target_node_list_separator)?
                 .set_header(target_node_list_header)
-                .set_node_ids_column(target_node_ids_column)
-                .set_node_ids_column_number(target_node_ids_column_number)
                 .set_nodes_column(target_nodes_column)
                 .set_nodes_column_number(target_nodes_column_number);
 
@@ -359,8 +345,6 @@ pub fn convert_edge_list_to_numeric(
         let edge_type_writer = TypeFileWriter::new(target_edge_type_list_path)
             .set_separator(target_edge_type_list_separator)?
             .set_header(target_edge_type_list_header)
-            .set_type_ids_column(target_edge_types_ids_column)
-            .set_type_ids_column_number(target_edge_types_ids_column_number)
             .set_types_column(target_edge_type_list_edge_types_column)
             .set_types_column_number(target_edge_type_list_edge_types_column_number);
 
@@ -445,8 +429,6 @@ pub fn densify_sparse_numeric_edge_list(
     original_edge_type_path: Option<String>,
     original_edge_types_column_number: Option<usize>,
     original_edge_types_column: Option<String>,
-    original_edge_types_ids_column_number: Option<usize>,
-    original_edge_types_ids_column: Option<String>,
     edge_types_number: Option<EdgeTypeT>,
     original_numeric_edge_type_ids: Option<bool>,
     original_minimum_edge_type_id: Option<EdgeTypeT>,
@@ -475,16 +457,12 @@ pub fn densify_sparse_numeric_edge_list(
     target_node_list_header: Option<bool>,
     target_nodes_column: Option<String>,
     target_nodes_column_number: Option<usize>,
-    target_node_ids_column: Option<String>,
-    target_node_ids_column_number: Option<usize>,
 
     target_edge_type_list_path: Option<String>,
     target_edge_type_list_separator: Option<String>,
     target_edge_type_list_header: Option<bool>,
     target_edge_type_list_edge_types_column: Option<String>,
     target_edge_type_list_edge_types_column_number: Option<usize>,
-    target_edge_types_ids_column: Option<String>,
-    target_edge_types_ids_column_number: Option<usize>,
 
     comment_symbol: Option<String>,
     default_edge_type: Option<String>,
@@ -539,11 +517,9 @@ pub fn densify_sparse_numeric_edge_list(
                 .set_separator(original_edge_type_list_separator)?
                 .set_type_column_number(original_edge_types_column_number)?
                 .set_type_column(original_edge_types_column)?
-                .set_type_ids_column(original_edge_types_ids_column)?
-                .set_type_ids_column_number(original_edge_types_ids_column_number)?
+                .set_csv_is_correct(edge_type_list_is_correct)?
                 .set_minimum_type_id(original_minimum_edge_type_id)
                 .set_numeric_type_ids(original_numeric_edge_type_ids)
-                .set_csv_is_correct(edge_type_list_is_correct)?
                 .set_types_number(edge_types_number)
                 .set_parallel(load_edge_type_list_in_parallel)?;
             let edge_types_vocabulary = parse_types(
@@ -671,8 +647,6 @@ pub fn densify_sparse_numeric_edge_list(
         let node_file_writer = NodeFileWriter::new(target_node_path)
             .set_separator(target_node_list_separator)?
             .set_header(target_node_list_header)
-            .set_node_ids_column(target_node_ids_column)
-            .set_node_ids_column_number(target_node_ids_column_number)
             .set_nodes_column(target_nodes_column)
             .set_nodes_column_number(target_nodes_column_number);
 
@@ -693,8 +667,6 @@ pub fn densify_sparse_numeric_edge_list(
         let edge_type_writer = TypeFileWriter::new(target_edge_type_list_path)
             .set_separator(target_edge_type_list_separator)?
             .set_header(target_edge_type_list_header)
-            .set_type_ids_column(target_edge_types_ids_column)
-            .set_type_ids_column_number(target_edge_types_ids_column_number)
             .set_types_column(target_edge_type_list_edge_types_column)
             .set_types_column_number(target_edge_type_list_edge_types_column_number);
 

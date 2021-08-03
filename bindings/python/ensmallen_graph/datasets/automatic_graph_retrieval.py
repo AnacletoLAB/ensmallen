@@ -293,8 +293,6 @@ class AutomaticallyRetrievedGraph:
                     # original_node_type_list_separator,
                     # original_node_types_column_number,
                     # original_node_types_column,
-                    # original_node_types_ids_column_number,
-                    # original_node_types_ids_column,
                     # original_numeric_node_type_ids,
                     # original_minimum_node_type_id,
                     # original_node_type_list_header,
@@ -306,8 +304,7 @@ class AutomaticallyRetrievedGraph:
                     # node_types_number,
                     target_node_type_list_path=target_node_type_list_path,
                     target_node_type_list_separator="\t",
-                    target_node_types_ids_column_number=0,
-                    target_node_type_list_node_types_column_number=1,
+                    target_node_type_list_node_types_column_number=0,
                     original_node_path=node_path,
                     original_node_list_header=self._graph["arguments"].get(
                         "node_header"
@@ -345,12 +342,6 @@ class AutomaticallyRetrievedGraph:
                     original_node_list_node_types_column=self._graph["arguments"].get(
                         "node_list_node_types_column"
                     ),
-                    original_node_ids_column=self._graph["arguments"].get(
-                        "node_ids_column"
-                    ),
-                    original_node_ids_column_number=self._graph["arguments"].get(
-                        "node_ids_column_number"
-                    ),
                     nodes_number=self._graph["arguments"].get("nodes_number"),
                     # original_minimum_node_id,
                     # original_numeric_node_ids,
@@ -365,16 +356,13 @@ class AutomaticallyRetrievedGraph:
                     target_nodes_column=self._graph["arguments"].get(
                         "nodes_column"
                     ),
-                    target_node_ids_column_number=0,
-                    target_nodes_column_number=1,
-                    target_node_list_node_types_column_number=2,
+                    target_nodes_column_number=0,
+                    target_node_list_node_types_column_number=1,
                     target_node_types_separator="|",
                     # original_edge_type_path,
                     # original_edge_type_list_separator,
                     # original_edge_types_column_number,
                     # original_edge_types_column,
-                    # original_edge_types_ids_column_number,
-                    # original_edge_types_ids_column,
                     # original_numeric_edge_type_ids,
                     # original_minimum_edge_type_id,
                     # original_edge_type_list_header,
@@ -386,8 +374,7 @@ class AutomaticallyRetrievedGraph:
                     # edge_types_number,
                     target_edge_type_list_path=target_edge_type_list_path,
                     target_edge_type_list_separator="\t",
-                    target_edge_type_list_edge_types_column_number=1,
-                    target_edge_types_ids_column_number=0,
+                    target_edge_type_list_edge_types_column_number=0,
                     original_edge_path=os.path.join(
                         self._cache_path, self._graph["arguments"]["edge_path"]),
                     original_edge_list_header=self._graph["arguments"].get(
@@ -461,32 +448,28 @@ class AutomaticallyRetrievedGraph:
             return EnsmallenGraph.from_csv(**{
                 **metadata,
                 "node_type_path": target_node_type_list_path,
-                "node_types_ids_column_number": 0,
-                "node_types_column_number": 1,
+                "node_types_column_number": 0,
                 "node_type_list_is_correct": True,
 
                 "node_path": target_node_path,
                 "node_list_is_correct": True,
                 "node_types_separator": "|",
-                "node_ids_column_number": 0,
-                "nodes_column_number": 1,
-                "node_list_node_types_column_number": None if metadata["node_types_number"] is None else 2,
+                "nodes_column_number": 0,
+                "node_list_node_types_column_number": None if metadata["node_types_number"] is None else 1,
                 "nodes_number": metadata["nodes_number"],
                 "node_list_numeric_node_type_ids": True,
                 "skip_node_types_if_unavailable": True,
 
                 "edge_type_path": target_edge_type_list_path,
-                "edge_types_ids_column_number": 0,
-                "edge_types_column_number": 1,
+                "edge_types_column_number": 0,
                 "edge_type_list_is_correct": True,
 
                 "edge_path": target_edge_path,
                 "edge_list_header": False,
-                "edge_ids_column_number": 0,
-                "sources_column_number": 1,
-                "destinations_column_number": 2,
-                "edge_list_edge_types_column_number": None if metadata["edge_types_number"] is None else 3,
-                "weights_column_number": 3 + int(metadata["edge_types_number"] is not None),
+                "sources_column_number": 0,
+                "destinations_column_number": 1,
+                "edge_list_edge_types_column_number": None if metadata["edge_types_number"] is None else 2,
+                "weights_column_number": 2 + int(metadata["edge_types_number"] is not None),
                 "edge_list_numeric_edge_type_ids": True,
                 "edge_list_numeric_node_ids": True,
                 "skip_weights_if_unavailable": True,
